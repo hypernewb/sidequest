@@ -5,6 +5,7 @@ export type FeverEvent = {
  id:string; name:string; url:string; location:string; description:string;
  sessions:string[]; timezone:'Asia/Tokyo'; minPrice:number|null; maxPrice:number|null;
  currency:string|null; retrievedAt:string; priceLabel:string;
+ coordinates?:{lat:number;lon:number};
 };
 export type FeverReply = {status:'success'|'not_configured'|'authentication_required'|'error';events:FeverEvent[];message:string;retrievedAt?:string;reauthenticationRequired?:boolean};
 export type EventQuery = {area:keyof typeof AREAS;dates:string[];budget:string;rejected:string[]};
@@ -41,7 +42,9 @@ export function parseFeverEvents(data:unknown,q:EventQuery,at=new Date().toISOSt
    if(currency!=='JPY'||min===null||max===null||max<min||max>cap)continue;
   }
   const priceLabel=min===null||currency===null?'Price not supplied':currency==='JPY'?`From ¥${min.toLocaleString('en-US')}`:`From ${min.toLocaleString('en-US')} ${currency}`;
-  out.push({id,name:e.name,url,location:e.location||'Tokyo · venue details on Fever',description:(e.description||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,1200),sessions,timezone:'Asia/Tokyo',minPrice:min,maxPrice:max,currency,retrievedAt:at,priceLabel});seen.add(id);
+  const lat=e.venue?.latitude,lon=e.venue?.longitude;
+  const coordinates=typeof lat==='number'&&typeof lon==='number'&&Number.isFinite(lat)&&Number.isFinite(lon)&&Math.abs(lat)<=90&&Math.abs(lon)<=180?{lat,lon}:undefined;
+  out.push({id,name:e.name,url,location:e.location||'Tokyo · venue details on Fever',description:(e.description||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,1200),sessions,timezone:'Asia/Tokyo',minPrice:min,maxPrice:max,currency,retrievedAt:at,priceLabel,...(coordinates?{coordinates}:{})});seen.add(id);
  }
  return out.sort((a,b)=>a.sessions[0].localeCompare(b.sessions[0])||a.id.localeCompare(b.id)).slice(0,6);
 }

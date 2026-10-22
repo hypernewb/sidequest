@@ -8,6 +8,7 @@ const RESOURCE=ISSUER+'/mcp';
 const STATE_COOKIE='__Host-sq_fever_state';
 const SESSION_COOKIES=['__Host-sq_fever_0','__Host-sq_fever_1','__Host-sq_fever_2'];
 const MAX_AGE=30*86400;
+const FLOW_SECONDS=30*60;
 const sessionSchema=z.object({uid:z.string().min(1).max(300),accessToken:z.string().min(1).max(16000),refreshToken:z.string().min(1).max(16000).optional(),expiresAt:z.number().finite(),reauthAt:z.number().finite()});
 export type FeverSession=z.infer<typeof sessionSchema>;
 const flowSchema=z.object({uid:z.string().min(1),state:z.string(),verifier:z.string(),expires:z.number()});
@@ -43,9 +44,9 @@ export async function startPersonalFever(req:Request,c:OAuthConfig){
  if(new URL(req.url).origin!==origin)return Response.json({error:'Open the private SideQuest site to connect Fever.'},{status:400});
  const user=uid(req);if(!user)return new Response(null,{status:303,headers:{Location:origin+'/signin-with-chatgpt?return_to=%2Fapi%2Ffever%2Fstart','Cache-Control':'private, no-store'}});
  const state=random(),verifier=random(),challenge=b64(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(verifier))));
- const flow=await seal({uid:user,state,verifier,expires:Date.now()+600000},c.FEVER_SESSION_KEY,purpose(c,'flow'));
+ const flow=await seal({uid:user,state,verifier,expires:Date.now()+FLOW_SECONDS*1000},c.FEVER_SESSION_KEY,purpose(c,'flow'));
  const url=new URL(ISSUER+'/authorize');url.search=new URLSearchParams({client_id:c.FEVER_OAUTH_CLIENT_ID,redirect_uri:c.FEVER_OAUTH_REDIRECT_URI,response_type:'code',scope:'openid offline_access',state,code_challenge:challenge,code_challenge_method:'S256',resource:RESOURCE}).toString();
- return new Response(null,{status:303,headers:{Location:url.href,'Set-Cookie':cookie(STATE_COOKIE,flow,600),'Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'}});
+ return new Response(null,{status:303,headers:{Location:url.href,'Set-Cookie':cookie(STATE_COOKIE,flow,FLOW_SECONDS),'Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'}});
 }
 export async function completePersonalFever(req:Request,c:OAuthConfig,fetcher:typeof fetch=fetch){
  if(!personalConfigured(c))return Response.json({error:'Personal Fever sign-in is not configured.'},{status:503});
@@ -53,7 +54,8 @@ export async function completePersonalFever(req:Request,c:OAuthConfig,fetcher:ty
  try{
   if(new URL(req.url).origin!==new URL(c.FEVER_OAUTH_REDIRECT_URI).origin)throw Error('Wrong origin');
   const query=new URL(req.url).searchParams,flow=flowSchema.parse(await unseal(cookies(req)[STATE_COOKIE]||'',c.FEVER_SESSION_KEY,purpose(c,'flow')));
-  if(!uid(req)||flow.uid!==uid(req)||flow.state!==query.get('state')||flow.expires<Date.now())throw Error('Invalid sign-in state');
+  if(!uid(req)||flow.uid!==uid(req)||flow.state!==query.get('state'))throw Error('Invalid sign-in state');
+  if(flow.expires<Date.now())return redirect(c,'expired',clear);
   if(query.has('error'))return redirect(c,'cancelled',clear);
   const code=query.get('code');if(!code||code.length>4096)throw Error('Missing sign-in code');
   const token=await exchange(c,{grant_type:'authorization_code',code,redirect_uri:c.FEVER_OAUTH_REDIRECT_URI,code_verifier:flow.verifier},fetcher);

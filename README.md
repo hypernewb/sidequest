@@ -49,3 +49,5 @@ Browser-local saves do not sync between devices or origins. Cached saved records
 ## License
 
 MIT for authored code; third-party provider content and trademarks retain their own terms. Self-hosted DM Serif Display and DM Sans are supplied under the bundled SIL OFL files.
+
+Map: on-demand Leaflet/OpenStreetMap view of the current and saved discoveries. Uses only finite coordinates; Fever city listings acquire pins only after an event-ID match in an explicit venue-scoped search. Unresolved locations remain in the list. No geolocation permission or map API key is needed. Tiles load directly in the browser with attribution; no prefetch/offline cache. OAuth connection window is 30 minutes; the personal session still has a 30-day ceiling.

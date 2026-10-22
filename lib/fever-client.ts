@@ -1,10 +1,26 @@
-import {eventWindow,parseFeverEvents,parseFeverVenues,type EventQuery,type FeverReply} from './fever-data.ts';
+import {eventWindow,parseFeverEvents,parseFeverVenues,type EventQuery,type FeverReply,type FeverEvent} from './fever-data.ts';
 import {AREAS} from './discovery.ts';
 
 type Config={FEVER_CLIENT_ID?:string;FEVER_CLIENT_SECRET?:string;FEVER_AUDIENCE?:string};
 type Rpc={jsonrpc?:string;id?:number;result?:Record<string,unknown>;error?:unknown};
 const TOKEN_URL='https://feverup.us.auth0.com/oauth/token';
 const MCP_URL='https://data-search.apigw.feverup.com/mcp/';
+type ToolCall=(name:'search_events'|'search_venues',args:Record<string,unknown>)=>Promise<unknown>;
+export async function attachFeverCoordinates(events:FeverEvent[],query:EventQuery,args:Record<string,unknown>,call:ToolCall){
+ // Search names only to find candidates. Confirm the event ID in a venue-scoped
+ // response before assigning a point; a fuzzy venue match alone proves nothing.
+ const groups=[...new Set(events.filter(e=>!e.coordinates).map(e=>e.location))].slice(0,6);
+ const found=new Map<string,{lat:number;lon:number}>();
+ await Promise.all(groups.map(async location=>{try{
+  const venues=parseFeverVenues(await call('search_venues',{query:location.replace(/,\s*Tokyo\s*$/i,''),country_code:'JP',limit:1,locale:'en'}),'tokyo');
+  const venue=venues[0];if(!venue)return;
+  const page=await call('search_events',{...args,page_size:36,venue_id:venue.venue_id});
+  if(!page||typeof page!=='object'||!('results' in page)||!Array.isArray(page.results))return;
+  const ids=new Set(page.results.filter(e=>e&&typeof e==='object'&&'id' in e).map(e=>'fever:'+e.id));
+  for(const e of events)if(e.location===location&&ids.has(e.id))found.set(e.id,{lat:venue.latitude,lon:venue.longitude});
+ }catch{/* Optional map enrichment must never discard valid event listings. */}}));
+ return events.map(e=>found.has(e.id)?{...e,coordinates:found.get(e.id)!}:e);
+}
 export class FeverAccessError extends Error {
  status:number;
  constructor(status:number){super(status===429?'Fever is busy. Please try again shortly.':status===401||status===403?'Fever access could not be authorized. The app owner needs to check the server credentials.':'Fever could not complete this search. Please try again.');this.status=status;}
@@ -75,7 +91,8 @@ export function createFeverClient(fetcher:typeof fetch=fetch){
      return response.results.map((e:unknown)=>e&&typeof e==='object'?{...e,venue}:e);
     }));data={results:pages.flat()};
    }
-   const retrievedAt=new Date().toISOString();const events=parseFeverEvents(data,query,retrievedAt);
+   const retrievedAt=new Date().toISOString();let events=parseFeverEvents(data,query,retrievedAt);
+   if(query.area==='tokyo'&&personalToken)events=await attachFeverCoordinates(events,query,arguments_,call);
    return {status:'success',events,retrievedAt,message:'Fever listings match your dates and area. They are not ranked by Qloo taste affinity. Starting prices may refer to a ticket category; check the adult ticket and booking fees on Fever.'};
   }catch(e){const denied=e instanceof FeverAccessError&&(e.status===401||e.status===403);if(denied&&!personalToken)token=undefined;return {status:'error',events:[],...(denied&&personalToken?{reauthenticationRequired:true}:{}),message:denied&&personalToken?'Your Fever connection needs a fresh sign-in.':e instanceof FeverAccessError?e.message:e instanceof Error&&/too much|unexpected event format|protocol version/.test(e.message)?e.message:'Fever could not complete this search. Please try again.'};}
   finally{if(session&&authorization){try{const closed=await fetcher(MCP_URL,{method:'DELETE',redirect:'error',headers:{Authorization:authorization,'Mcp-Session-Id':session,'MCP-Protocol-Version':negotiated},signal:AbortSignal.timeout(1500)});await closed.body?.cancel();}catch{}}}
