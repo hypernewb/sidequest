@@ -33,6 +33,10 @@ export function parseFeverEvents(data:unknown,q:EventQuery,at=new Date().toISOSt
   const sessions=(e.session_start_times||[]).filter(s=>/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?$/.test(s)&&q.dates.includes(s.slice(0,10))&&!Number.isNaN(Date.parse(s+'+09:00'))&&new Date(s+'+09:00').toISOString()>=at).sort();
   if(!sessions.length)continue;
   const a=AREAS[q.area];
+  // Fever can cross-sell other cities even in an HND response. Require an
+  // explicit Tokyo location or actual coordinates inside the selected area.
+  const hasPoint=Number.isFinite(e.venue?.latitude)&&Number.isFinite(e.venue?.longitude);
+  if(q.area==='tokyo'&&(hasPoint?distance(e.venue!.latitude!,e.venue!.longitude!,a.lat,a.lon)>a.radius:!/(?:\bTokyo\b|東京)/i.test(e.location||'')))continue;
   // The city-wide query uses Fever's confirmed Tokyo city code. A strict neighborhood needs actual venue coordinates.
   if(q.area!=='tokyo'&&(!Number.isFinite(e.venue?.latitude)||!Number.isFinite(e.venue?.longitude)||distance(e.venue!.latitude!,e.venue!.longitude!,a.lat,a.lon)>a.radius))continue;
   const min=e.min_price??null,max=e.max_price??null,currency=e.currency??null;

@@ -6,6 +6,10 @@ const q:EventQuery={area:'tokyo',dates:['2099-10-24','2099-10-25'],budget:'flexi
 const at='2099-10-23T15:00:00.000Z';
 const event={id:100,name:'Contract test event',url:'https://feverup.com/m/100',location:'Test venue, Tokyo',timezone:'Asia/Tokyo',session_start_times:['2099-10-24T09:00:00'],min_price:600,max_price:1500,currency:'JPY'};
 const config={FEVER_CLIENT_ID:'fixture-client',FEVER_CLIENT_SECRET:'fixture-secret',FEVER_AUDIENCE:'fixture-audience'};
+test('Tokyo requests exclude provider cross-sells in Kyoto and locations without city evidence',()=>{
+ const events=parseFeverEvents({results:[event,{...event,id:101,location:'Kyoto'},{...event,id:102,location:undefined},{...event,id:103,location:'Tokyo',venue:{latitude:34.9858,longitude:135.7588}}]},q,at);
+ assert.deepEqual(events.map(e=>e.id),['fever:100']);
+});
 test('Tokyo dates become the correct UTC interval',()=>{assert.deepEqual(eventWindow(q.dates),{start_datetime:'2099-10-23T15:00:00.000Z',end_datetime:'2099-10-25T14:59:59.000Z'});});
 test('missing sessions, wrong timezone, unsafe links and duplicates cannot become event listings',()=>{
  const events=parseFeverEvents({results:[event,event,{...event,id:101,session_start_times:undefined},{...event,id:102,timezone:'UTC'},{...event,id:103,url:'javascript:alert(1)'},{...event,id:104,url:'https://feverup.com.attacker.test/m/104'},{...event,id:105,session_start_times:['2099-10-26T09:00:00']}]},q,at);
