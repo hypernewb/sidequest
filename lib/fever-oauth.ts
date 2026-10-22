@@ -32,7 +32,7 @@ export async function readSession(req:Request,c:OAuthConfig):Promise<FeverSessio
 function redirect(c:Required<OAuthConfig>,status:string,setCookies:string[]=[]){const response=new Response(null,{status:303,headers:{Location:new URL('/?fever='+status,c.FEVER_OAUTH_REDIRECT_URI).href,'Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'}});for(const value of setCookies)response.headers.append('Set-Cookie',value);return response;}
 class TokenFailure extends Error{reauth:boolean;constructor(reauth:boolean){super('Fever token exchange failed');this.reauth=reauth;}}
 async function exchange(c:Required<OAuthConfig>,params:Record<string,string>,fetcher:typeof fetch){
- const r=await fetcher(ISSUER+'/token',{method:'POST',redirect:'error',headers:{'Content-Type':'application/x-www-form-urlencoded',Accept:'application/json'},body:new URLSearchParams({...params,client_id:c.FEVER_OAUTH_CLIENT_ID,client_secret:c.FEVER_OAUTH_CLIENT_SECRET,resource:RESOURCE}),signal:AbortSignal.timeout(15000)});
+ const r=await fetcher(ISSUER+'/token',{method:'POST',redirect:'manual',headers:{'Content-Type':'application/x-www-form-urlencoded',Accept:'application/json'},body:new URLSearchParams({...params,client_id:c.FEVER_OAUTH_CLIENT_ID,client_secret:c.FEVER_OAUTH_CLIENT_SECRET,resource:RESOURCE}),signal:AbortSignal.timeout(15000)});
  if(!r.ok){const text=await r.text();let code='';try{code=JSON.parse(text.slice(0,50000)).error;}catch{}throw new TokenFailure(r.status===401||code==='invalid_grant'||code==='invalid_client');}
  if(Number(r.headers.get('content-length'))>50000)throw Error('Invalid token response');
  const text=await r.text();if(text.length>50000)throw Error('Invalid token response');
@@ -91,6 +91,6 @@ export async function personalFeverSearch(req:Request,c:OAuthConfig,query:EventQ
 export async function disconnectPersonalFever(req:Request,c:OAuthConfig,fetcher:typeof fetch=fetch){
  if(req.headers.get('origin')!==new URL(req.url).origin||!uid(req))return Response.json({error:'Sign in to disconnect Fever.'},{status:403});
  const s=await readSession(req,c);
- if(s&&personalConfigured(c)){try{const r=await fetcher(ISSUER+'/revoke',{method:'POST',redirect:'error',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:c.FEVER_OAUTH_CLIENT_ID,client_secret:c.FEVER_OAUTH_CLIENT_SECRET,token:s.refreshToken||s.accessToken,token_type_hint:s.refreshToken?'refresh_token':'access_token'}),signal:AbortSignal.timeout(5000)});await r.body?.cancel();}catch{}}
+ if(s&&personalConfigured(c)){try{const r=await fetcher(ISSUER+'/revoke',{method:'POST',redirect:'manual',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:c.FEVER_OAUTH_CLIENT_ID,client_secret:c.FEVER_OAUTH_CLIENT_SECRET,token:s.refreshToken||s.accessToken,token_type_hint:s.refreshToken?'refresh_token':'access_token'}),signal:AbortSignal.timeout(5000)});await r.body?.cancel();}catch{}}
  const response=Response.json({connected:false},{headers:{'Cache-Control':'private, no-store'}});for(const value of [...clearSession(),cookie(STATE_COOKIE,'',0)])response.headers.append('Set-Cookie',value);return response;
 }

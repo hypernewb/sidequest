@@ -50,7 +50,7 @@ export function createFeverClient(fetcher:typeof fetch=fetch){
   if(token?.config===identity&&token.expires>Date.now()+60000)return token.value;
   if(inFlight?.config===identity)return inFlight.promise;
   const promise=(async()=>{
-   const r=await fetcher(TOKEN_URL,{method:'POST',redirect:'error',headers:{'Content-Type':'application/json'},body:JSON.stringify({grant_type:'client_credentials',client_id:config.FEVER_CLIENT_ID,client_secret:config.FEVER_CLIENT_SECRET,audience:config.FEVER_AUDIENCE,scope:'mcp:service'}),signal});
+   const r=await fetcher(TOKEN_URL,{method:'POST',redirect:'manual',headers:{'Content-Type':'application/json'},body:JSON.stringify({grant_type:'client_credentials',client_id:config.FEVER_CLIENT_ID,client_secret:config.FEVER_CLIENT_SECRET,audience:config.FEVER_AUDIENCE,scope:'mcp:service'}),signal});
    if(!r.ok)throw new FeverAccessError(r.status);
    const b=JSON.parse(await boundedBody(r,20000)) as Record<string,unknown>;
    if(typeof b.access_token!=='string'||typeof b.expires_in!=='number'||b.expires_in<=0||String(b.token_type).toLowerCase()!=='bearer')throw Error('Fever did not issue a usable access token.');
@@ -62,16 +62,16 @@ export function createFeverClient(fetcher:typeof fetch=fetch){
   const signal=AbortSignal.timeout(25000);let session:string|null=null,authorization='',negotiated='2025-06-18';
   try{
    authorization='Bearer '+(personalToken||await access(config as Required<Config>,signal));
-   const initial=await fetcher(MCP_URL,{method:'POST',redirect:'error',headers:{Authorization:authorization,Accept:'application/json, text/event-stream','Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method:'initialize',params:{protocolVersion:'2025-06-18',capabilities:{},clientInfo:{name:'sidequest',version:'0.2.0'}}}),signal});
+   const initial=await fetcher(MCP_URL,{method:'POST',redirect:'manual',headers:{Authorization:authorization,Accept:'application/json, text/event-stream','Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method:'initialize',params:{protocolVersion:'2025-06-18',capabilities:{},clientInfo:{name:'sidequest',version:'0.2.0'}}}),signal});
    session=initial.headers.get('mcp-session-id');const init=await rpcResult(initial,1),version=init.result?.protocolVersion;
    if(!['2025-03-26','2025-06-18','2025-11-25'].includes(String(version)))throw Error('Fever selected an unsupported protocol version.');
    negotiated=String(version);
    const headers:Record<string,string>={Authorization:authorization,Accept:'application/json, text/event-stream','Content-Type':'application/json','MCP-Protocol-Version':String(version),...(session?{'Mcp-Session-Id':session}:{})};
-   const ready=await fetcher(MCP_URL,{method:'POST',redirect:'error',headers,body:JSON.stringify({jsonrpc:'2.0',method:'notifications/initialized'}),signal});
+   const ready=await fetcher(MCP_URL,{method:'POST',redirect:'manual',headers,body:JSON.stringify({jsonrpc:'2.0',method:'notifications/initialized'}),signal});
    if(!ready.ok)throw new FeverAccessError(ready.status);await ready.body?.cancel();
    let nextId=2;
    async function call(name:'search_events'|'search_venues',args:Record<string,unknown>){
-    const id=nextId++,r=await fetcher(MCP_URL,{method:'POST',redirect:'error',headers,body:JSON.stringify({jsonrpc:'2.0',id,method:'tools/call',params:{name,arguments:args}}),signal});
+    const id=nextId++,r=await fetcher(MCP_URL,{method:'POST',redirect:'manual',headers,body:JSON.stringify({jsonrpc:'2.0',id,method:'tools/call',params:{name,arguments:args}}),signal});
     const rpc=await rpcResult(r,id),result=rpc.result!;
     if(result.isError===true)throw Error('Fever could not complete the event search.');
     if(result.structuredContent!==undefined)return result.structuredContent;
@@ -95,7 +95,7 @@ export function createFeverClient(fetcher:typeof fetch=fetch){
    if(query.area==='tokyo'&&personalToken)events=await attachFeverCoordinates(events,query,arguments_,call);
    return {status:'success',events,retrievedAt,message:'Fever listings match your dates and area. They are not ranked by Qloo taste affinity. Starting prices may refer to a ticket category; check the adult ticket and booking fees on Fever.'};
   }catch(e){const denied=e instanceof FeverAccessError&&(e.status===401||e.status===403);if(denied&&!personalToken)token=undefined;return {status:'error',events:[],...(denied&&personalToken?{reauthenticationRequired:true}:{}),message:denied&&personalToken?'Your Fever connection needs a fresh sign-in.':e instanceof FeverAccessError?e.message:e instanceof Error&&/too much|unexpected event format|protocol version/.test(e.message)?e.message:'Fever could not complete this search. Please try again.'};}
-  finally{if(session&&authorization){try{const closed=await fetcher(MCP_URL,{method:'DELETE',redirect:'error',headers:{Authorization:authorization,'Mcp-Session-Id':session,'MCP-Protocol-Version':negotiated},signal:AbortSignal.timeout(1500)});await closed.body?.cancel();}catch{}}}
+  finally{if(session&&authorization){try{const closed=await fetcher(MCP_URL,{method:'DELETE',redirect:'manual',headers:{Authorization:authorization,'Mcp-Session-Id':session,'MCP-Protocol-Version':negotiated},signal:AbortSignal.timeout(1500)});await closed.body?.cancel();}catch{}}}
  }};
 }
 export const feverClient=createFeverClient();
