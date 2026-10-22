@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {explorationSchema} from './taste-exploration.ts';
 export const TOPICS=[
  {id:'digimon',name:'Digimon',prompt:'A digital companion, a tiny screen, a whole adventure.',query:'Digimon',aliases:['Digimon','Digimon Adventure']},
  {id:'pokemon',name:'Pokémon',prompt:'Starter choices, trading cards and a world to explore.',query:'Pokémon',aliases:['Pokémon','Pokemon']},
@@ -15,7 +16,7 @@ export const ENJOYMENTS=['collect','play','watch','visit'] as const;
 export type Answer=typeof ANSWERS[number];
 export type Enjoyment=typeof ENJOYMENTS[number];
 const topicIds=TOPICS.map(t=>t.id) as [TopicId,...TopicId[]];
-export const tasteSchema=z.object({version:z.literal(1),answers:z.record(z.enum(topicIds),z.enum(ANSWERS)),enjoyments:z.array(z.enum(ENJOYMENTS)).max(4)});
+export const tasteSchema=z.object({version:z.literal(1),answers:z.record(z.enum(topicIds),z.enum(ANSWERS)),enjoyments:z.array(z.enum(ENJOYMENTS)).max(4),exploration:explorationSchema.optional()});
 export type TasteProfile=z.infer<typeof tasteSchema>;
 export const EMPTY_TASTE:TasteProfile={version:1,answers:{},enjoyments:[]};
 export function selectedTopics(profile:TasteProfile){return TOPICS.filter(t=>profile.answers[t.id]==='love'||profile.answers[t.id]==='curious');}
@@ -27,3 +28,4 @@ export function qlooAnchors(topic:typeof TOPICS[number],data:unknown){
  const schema=z.object({entity_id:z.string().uuid(),name:z.string().min(1),types:z.array(z.string())});
  return response.data.results.map(e=>schema.safeParse(e)).filter(e=>e.success).map(e=>e.data!).filter(e=>exact.has(normalizeName(e.name))&&e.types.some(type=>/^urn:entity:(brand|movie|tv_show|video_game)$/.test(type))).slice(0,3).map(e=>({id:e.entity_id,name:e.name,type:e.types.find(type=>/^urn:entity:(brand|movie|tv_show|video_game)$/.test(type))!.split(':').pop()!}));
 }
+
