@@ -21,3 +21,6 @@ Tokyo independent city guide: warm paper, strong red ink, oversized editorial se
 
 ## Still unverified
 Hosted Fever credentials, event reuse rights, public launch approval, human taste-quality evaluation, public submission repository.
+
+## Fever integration update
+Server-side M2M adapter, event session/price normalization, separate event results and browser-local event saves are implemented. Live activation still requires Fever-issued FEVER_CLIENT_ID, FEVER_CLIENT_SECRET and FEVER_AUDIENCE with mcp:service. No personal chat OAuth credentials are reused. Event listings are date/area matches rather than Qloo-ranked recommendations.

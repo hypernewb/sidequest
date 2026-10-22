@@ -24,15 +24,31 @@ On Windows, if the system npm shim fails, invoke npm's official JavaScript entry
 
 ## Honest limits / remaining hackathon work
 
-Fever MCP works in the development chat and returned Tokyo listings for Oct 24–25, 2026. That OAuth session is not a hosted app credential. This app deliberately does not copy session credentials or masquerade a build-time event snapshot as live data. Events mode explains the missing connection; no fake event listings ship. To enable hosted events, provision a supported Sites connector grant (if eligible) or a Fever-approved server-to-server data path and confirm display/reuse terms. Then join actual venue IDs to Qloo evidence; never label an event Qloo-backed based only on guessed tags.
+Fever's server adapter is implemented but requires credentials issued specifically for this hosted integration. Your personal chat OAuth connection does not supply these.
 
-Only the 37 selected IDs are searched. This is not exhaustive Tokyo coverage. Provider descriptions/weekly hours are not independent verification. There is no live ticket capacity or confirmed admission-price feed. No generated satisfaction score is shown. Human recommendation quality evaluation, public repository setup, and the hackathon submission are still required. Initial deployment is private; judges need a deliberately public deployment later.
+Request a client ID, client secret and audience from data-ai@feverup.com for SideQuest, using the client_credentials grant and mcp:service scope. Include the app URL and explain this is a Tokyo event-discovery hackathon demo. Confirm the permitted public display of event descriptions/prices and booking links. Official instructions: https://developer.feverup.com/en/#mcp-server
+
+Save these values only in ignored local .dev.vars, then configure the same three as secret Sites runtime values and redeploy:
+
+- FEVER_CLIENT_ID
+- FEVER_CLIENT_SECRET
+- FEVER_AUDIENCE
+
+The server exchanges them at Fever's documented Auth0 token endpoint, caches the token only until expiry, initializes an MCP session and calls read-only search tools. It supports JSON and SSE responses, bounds requests to 25 seconds and closes the session. No chat credentials, refresh tokens or provider secrets reach the browser or Git.
+
+The combined discovery endpoint isolates provider errors. Missing/failed Fever access does not discard Qloo places. Event-only mode does not call Qloo. Event listings show source, session starts in Tokyo time, starting ticket price and Fever link; users can save/pass events separately. They are explicitly date/area matches, not Qloo-ranked or Qloo-endorsed. Venue association uses explicit Fever venue IDs only. Neighborhood searches inspect at most three provider-selected venues; city searches inspect one page of 36 listings. Coverage is bounded, not exhaustive.
+
+Events lacking explicit matching session times/timezone are excluded. Strict neighborhoods require confirmed venue coordinates; hard budgets require a known JPY upper ticket price. Starting fares alone do not pass caps. Ticket category, fees and availability still require confirmation on Fever. The feed's partial session list is not a complete calendar.
+
+Verification: OAuth/MCP behavior and provider edge cases have contract tests with injected fixture responses. These tests do not prove live M2M access. Live chat venue reads and Qloo place reads work; live hosted Fever activation remains blocked until issued credentials are supplied.
+
+Only the 37 selected IDs are searched. This is not exhaustive Tokyo coverage. Provider descriptions/weekly hours are not independent verification. There is no guaranteed ticket capacity; place admission prices remain unknown. No generated satisfaction score is shown. Human recommendation quality evaluation, public repository setup, and the hackathon submission are still required. Initial deployment is private; judges need a deliberately public deployment later.
 
 Browser-local saves do not sync between devices or origins. Cached saved records may become stale. No analytics or app accounts are added. Normal discovery sends selected entity IDs to Qloo; map and venue links open external websites.
 
 ## Structure
 
-`app/page.tsx` — discovery UI. `app/api/search` — interest lookup. `app/api/discover` — validation and live ranking. `lib/qloo.ts` — provider normalization. `lib/discovery.ts` — deterministic hard filters, modes and Tokyo dates. `tests/` — ranking/filter/date/link checks.
+`app/page.tsx` — discovery UI. `app/api/search` — interest lookup. `app/api/discover` — validation and live ranking. `lib/qloo.ts` — provider normalization. `lib/discovery.ts` — deterministic hard filters, modes and Tokyo dates. `lib/fever-client.ts` — M2M authentication and read-only MCP transport. `lib/fever-data.ts` — strict event normalization. `components/fever-events.tsx` — sourced event results. `tests/` — ranking/filter/date/link and Fever contract checks.
 
 ## License
 
