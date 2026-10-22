@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T09:41:18.6541736Z",
+  "title": "Design System: SideQuest",
+  "extensions": {
+    "typographyMeta": {
+      "display": {
+        "purpose": "Main editorial opening; self-hosted DM Serif Display alias.",
+        "displayName": "Field Serif Display"
+      },
+      "detail": {
+        "purpose": "Source, provenance and expanded details at 12px or greater.",
+        "displayName": "Evidence Reading"
+      }
+    },
+    "colorMeta": {
+      "paper": {
+        "tonalRamp": [
+          "oklch(15% 0.012 85)",
+          "oklch(27% 0.012 85)",
+          "oklch(39% 0.012 85)",
+          "oklch(51% 0.012 85)",
+          "oklch(63% 0.012 85)",
+          "oklch(75% 0.012 85)",
+          "oklch(87% 0.012 85)",
+          "oklch(95% 0.012 85)"
+        ],
+        "displayName": "Warm Paper",
+        "role": "neutral"
+      },
+      "ink": {
+        "tonalRamp": [
+          "oklch(15% 0.012 135)",
+          "oklch(27% 0.012 135)",
+          "oklch(39% 0.012 135)",
+          "oklch(51% 0.012 135)",
+          "oklch(63% 0.012 135)",
+          "oklch(75% 0.012 135)",
+          "oklch(87% 0.012 135)",
+          "oklch(95% 0.012 135)"
+        ],
+        "displayName": "Near-black Ink",
+        "role": "neutral"
+      },
+      "muted": {
+        "tonalRamp": [
+          "oklch(15% 0.016 120)",
+          "oklch(27% 0.016 120)",
+          "oklch(39% 0.016 120)",
+          "oklch(51% 0.016 120)",
+          "oklch(63% 0.016 120)",
+          "oklch(75% 0.016 120)",
+          "oklch(87% 0.016 120)",
+          "oklch(95% 0.016 120)"
+        ],
+        "displayName": "Muted Ink",
+        "role": "neutral"
+      },
+      "line": {
+        "tonalRamp": [
+          "oklch(15% 0.018 110)",
+          "oklch(27% 0.018 110)",
+          "oklch(39% 0.018 110)",
+          "oklch(51% 0.018 110)",
+          "oklch(63% 0.018 110)",
+          "oklch(75% 0.018 110)",
+          "oklch(87% 0.018 110)",
+          "oklch(95% 0.018 110)"
+        ],
+        "displayName": "Rule Gray",
+        "role": "neutral"
+      },
+      "red": {
+        "tonalRamp": [
+          "oklch(15% 0.16 30)",
+          "oklch(27% 0.16 30)",
+          "oklch(39% 0.16 30)",
+          "oklch(51% 0.16 30)",
+          "oklch(63% 0.16 30)",
+          "oklch(75% 0.16 30)",
+          "oklch(87% 0.16 30)",
+          "oklch(95% 0.16 30)"
+        ],
+        "displayName": "Red Ink",
+        "role": "primary"
+      },
+      "red-hover": {
+        "tonalRamp": [
+          "oklch(15% 0.15 30)",
+          "oklch(27% 0.15 30)",
+          "oklch(39% 0.15 30)",
+          "oklch(51% 0.15 30)",
+          "oklch(63% 0.15 30)",
+          "oklch(75% 0.15 30)",
+          "oklch(87% 0.15 30)",
+          "oklch(95% 0.15 30)"
+        ],
+        "displayName": "Deep Red Ink",
+        "role": "primary"
+      },
+      "moss": {
+        "tonalRamp": [
+          "oklch(15% 0.04 125)",
+          "oklch(27% 0.04 125)",
+          "oklch(39% 0.04 125)",
+          "oklch(51% 0.04 125)",
+          "oklch(63% 0.04 125)",
+          "oklch(75% 0.04 125)",
+          "oklch(87% 0.04 125)",
+          "oklch(95% 0.04 125)"
+        ],
+        "displayName": "Moss",
+        "role": "secondary"
+      },
+      "pale": {
+        "tonalRamp": [
+          "oklch(15% 0.018 115)",
+          "oklch(27% 0.018 115)",
+          "oklch(39% 0.018 115)",
+          "oklch(51% 0.018 115)",
+          "oklch(63% 0.018 115)",
+          "oklch(75% 0.018 115)",
+          "oklch(87% 0.018 115)",
+          "oklch(95% 0.018 115)"
+        ],
+        "displayName": "Pale Moss Paper",
+        "role": "secondary"
+      },
+      "white": {
+        "tonalRamp": [
+          "oklch(15% 0.009 85)",
+          "oklch(27% 0.009 85)",
+          "oklch(39% 0.009 85)",
+          "oklch(51% 0.009 85)",
+          "oklch(63% 0.009 85)",
+          "oklch(75% 0.009 85)",
+          "oklch(87% 0.009 85)",
+          "oklch(95% 0.009 85)"
+        ],
+        "displayName": "Soft White",
+        "role": "neutral"
+      }
+    },
+    "breakpoints": [
+      {
+        "value": "1450px",
+        "name": "wide-min"
+      },
+      {
+        "value": "1440px",
+        "name": "desktop-max"
+      },
+      {
+        "value": "1150px",
+        "name": "compact-desktop-max"
+      },
+      {
+        "value": "850px",
+        "name": "tablet-max"
+      },
+      {
+        "value": "640px",
+        "name": "mobile-max"
+      }
+    ],
+    "tonalRampProvenance": "Synthesized OKLCH ramps for panel exploration only; the implemented CSS custom properties in DESIGN.md remain normative.",
+    "shadows": [
+      {
+        "value": "0 8px 24px #24292322",
+        "purpose": "Ambient lift for transient fixed confirmation.",
+        "name": "toast"
+      },
+      {
+        "value": "drop-shadow(3px 6px 4px #24292319)",
+        "purpose": "Small depth cue within the geometric diagram.",
+        "name": "compass-needle"
+      }
+    ],
+    "motion": [
+      {
+        "value": "background .15s",
+        "purpose": "Filled primary button hover.",
+        "name": "action-hover"
+      },
+      {
+        "value": "background .2s,color .2s",
+        "purpose": "Discovery mode hover.",
+        "name": "mode-hover"
+      },
+      {
+        "value": "transform .8s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Needle movement between taste modes.",
+        "name": "compass-rotation"
+      },
+      {
+        "value": "spin 1s linear infinite",
+        "purpose": "Connection progress indicator.",
+        "name": "loading"
+      },
+      {
+        "value": "animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important",
+        "purpose": "Applied under prefers-reduced-motion:reduce; html scroll-behavior becomes auto.",
+        "name": "reduced-motion"
+      }
+    ]
+  },
+  "components": [
+    {
+      "refersTo": "button-primary",
+      "html": "<button class=\"ds-primary\">Find my sidequest <svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "kind": "button",
+      "description": "Main discovery action; red darkens on hover.",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:12px;background:var(--red,#b83b2b);color:var(--white,#fffdf8);padding:14px 17px;border:0;border-radius:5px;font:500 13px var(--sans,sans-serif);min-height:46px;cursor:pointer;transition:background .15s}.ds-primary:hover{background:var(--red-hover,#982e21)}.ds-primary:focus-visible{outline:2px solid var(--red,#b83b2b);outline-offset:5px}.ds-primary:disabled{opacity:.5;cursor:not-allowed}",
+      "name": "Primary Action"
+    },
+    {
+      "refersTo": "button-text",
+      "html": "<button class=\"ds-text\">Open map</button>",
+      "kind": "button",
+      "description": "Supporting actions and links.",
+      "css": ".ds-text{display:inline-flex;align-items:center;padding:9px 0;min-height:42px;border:0;background:transparent;color:var(--red,#b83b2b);font:500 12px var(--sans,sans-serif);cursor:pointer;text-underline-offset:4px}.ds-text:hover{text-decoration:underline}.ds-text:focus-visible{outline:2px solid var(--red,#b83b2b);outline-offset:5px}",
+      "name": "Text Action"
+    },
+    {
+      "refersTo": "field",
+      "html": "<label class=\"ds-label\">Where<select class=\"ds-field\"><option>Tokyo</option><option>Shibuya</option></select></label>",
+      "kind": "input",
+      "description": "Soft-white filter field with moss focus.",
+      "css": ".ds-label{display:flex;flex-direction:column;gap:7px;color:var(--ink,#242923);font:600 11px var(--sans,sans-serif)}.ds-field{width:100%;height:42px;border:1px solid var(--line,#d8d8ca);border-radius:5px;background:var(--white,#fffdf8);padding:0 30px 0 12px;color:var(--ink,#242923);font:400 12px var(--sans,sans-serif)}.ds-field:focus{outline:2px solid var(--moss,#505e47);outline-offset:2px}",
+      "name": "Filter Field"
+    },
+    {
+      "kind": "chip",
+      "css": ".ds-chip{display:inline-flex;align-items:center;max-width:100%;overflow-wrap:anywhere;background:var(--pale,#e8eadf);color:#384733;border:1px solid #cdd3c1;border-radius:30px;padding:0 2px 0 12px;font:500 11px var(--sans,sans-serif)}.ds-chip button{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:0;border-radius:50%;background:transparent;color:inherit;cursor:pointer}.ds-chip button:hover{background:#d6ddcc}.ds-chip button:focus-visible{outline:2px solid var(--red,#b83b2b);outline-offset:5px}",
+      "name": "Interest Chip",
+      "description": "A wrapping interest label and a 40px remove target.",
+      "html": "<span class=\"ds-chip\">Jazz<button aria-label=\"Remove Jazz\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M6 6l12 12M18 6 6 18\"/></svg></button></span>"
+    },
+    {
+      "kind": "nav",
+      "css": ".ds-nav{display:flex;gap:32px;height:74px}.ds-nav button{position:relative;display:flex;align-items:center;border:0;background:transparent;padding:0;color:var(--muted,#62665c);font:400 14px var(--sans,sans-serif);cursor:pointer}.ds-nav .ds-active{color:var(--ink,#242923);font-weight:600}.ds-active:after{content:\"\";position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--red,#b83b2b)}.ds-nav button:focus-visible{outline:2px solid var(--red,#b83b2b);outline-offset:5px}",
+      "name": "Header Navigation",
+      "description": "Text navigation with an active red rule.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><button class=\"ds-active\">Discover</button><button>Saved</button></nav>"
+    },
+    {
+      "refersTo": "dial",
+      "html": "<section class=\"ds-dial\"><h2>How far will you wander?</h2><p>A new angle on your kind of thing.</p><div class=\"ds-options\" role=\"group\" aria-label=\"Discovery mode\"><button aria-pressed=\"false\">Familiar</button><button class=\"ds-selected\" aria-pressed=\"true\">Explore</button><button aria-pressed=\"false\">Surprise</button></div></section>",
+      "kind": "custom",
+      "description": "Three equal mode controls on a pale moss surface.",
+      "css": ".ds-dial{background:var(--pale,#e8eadf);border-radius:12px;padding:23px 28px 15px;font-family:var(--sans,sans-serif);color:var(--ink,#242923)}.ds-dial h2{font-size:18px;font-weight:600;letter-spacing:-.4px;margin:0}.ds-dial p{font-size:11px;color:var(--moss,#505e47);margin:4px 0 0}.ds-options{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:20px;padding-bottom:6px;border-bottom:1px solid #c2c9b7}.ds-options button{border:0;border-radius:5px;min-height:42px;background:transparent;color:#4b5843;font:400 12px var(--sans,sans-serif);cursor:pointer;transition:background .2s,color .2s}.ds-options button:hover{background:#dce1d3}.ds-options .ds-selected{background:var(--moss,#505e47);color:var(--white,#fffdf8)}.ds-options button:focus-visible{outline:2px solid var(--red,#b83b2b);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-options button{transition:none}}",
+      "name": "Discovery Dial"
+    },
+    {
+      "refersTo": "icon-button",
+      "html": "<button class=\"ds-save\" aria-label=\"Save place\" aria-pressed=\"false\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z\"/></svg></button>",
+      "kind": "button",
+      "description": "Circular 40px save control; moss indicates saved.",
+      "css": ".ds-save{display:grid;place-items:center;width:40px;height:40px;min-width:40px;min-height:40px;border:1px solid var(--line,#d8d8ca);border-radius:50%;background:transparent;color:var(--moss,#505e47);cursor:pointer}.ds-save:hover{background:var(--pale,#e8eadf)}.ds-save[aria-pressed=true]{background:var(--moss,#505e47);color:var(--paper,#f4f1e8);border-color:var(--moss,#505e47)}.ds-save:focus-visible{outline:2px solid var(--red,#b83b2b);outline-offset:5px}",
+      "name": "Save Control"
+    }
+  ],
+  "narrative": {
+    "donts": [
+      "**Don't** turn each result into a shadowed card; the built result pattern is an open ruled list.",
+      "**Don't** use atmospheric or invented venue photography as evidence for a result.",
+      "**Don't** promote the small decorative compass lettering into a reading-text style."
+    ],
+    "rules": [
+      {
+        "section": "colors",
+        "name": "The Ink Role Rule",
+        "body": "Use red to signal an action or editorial emphasis; use moss to show selection and supporting orientation."
+      },
+      {
+        "section": "typography",
+        "name": "The Evidence Legibility Rule",
+        "body": "Keep source, detail and result metadata text at least 12px; the final stylesheet overrides earlier smaller declarations."
+      },
+      {
+        "section": "layout",
+        "name": "The Choice Before Search Rule",
+        "body": "The discovery mode must remain available before mobile submission."
+      }
+    ],
+    "keyCharacteristics": [
+      "Paper background with restrained red actions and moss selection states.",
+      "Oversized serif headlines paired with compact sans-serif controls.",
+      "Open numbered result rows with inline source and evidence details.",
+      "A desktop sidebar that becomes an inline mobile form."
+    ],
+    "dos": [
+      "**Do** preserve the paper canvas, serif headlines and open ruled result index.",
+      "**Do** keep the discovery dial before the mobile submission action.",
+      "**Do** retain visible focus and minimum-40px compact action targets.",
+      "**Do** keep source, detail and result metadata text at least 12px.",
+      "**Do** respect reduced-motion preferences."
+    ],
+    "northStar": "Pocket City Field Guide",
+    "overview": "Warm paper, red ink and an editorial serif make discovery feel like consulting an independent city guide. Practical sans-serif controls and open ruled results keep the experience useful when planning a visit. The compass connects familiar interests with a wider cultural radius; it is a functional geometric diagram rather than venue imagery.\n\nThis records the direct-code implementation in `app/globals.css` and `app/page.tsx`, including its final cascade overrides. No approved visual comp exists. The named direction comes from `.impeccable/direction.md`; implementation values take precedence over the direction's intentions."
+  }
+}
