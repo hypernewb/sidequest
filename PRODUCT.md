@@ -24,3 +24,6 @@ Hosted Fever credentials, event reuse rights, public launch approval, human tast
 
 ## Fever integration update
 Server-side M2M adapter, event session/price normalization, separate event results and browser-local event saves are implemented. Live activation still requires Fever-issued FEVER_CLIENT_ID, FEVER_CLIENT_SECRET and FEVER_AUDIENCE with mcp:service. No personal chat OAuth credentials are reused. Event listings are date/area matches rather than Qloo-ranked recommendations.
+
+## Personal Fever demo decision
+User explicitly chose personal Fever sign-in for a private demo. Register SideQuest as its own OAuth client; user completes sign-in, no company M2M credentials. Preserve Sites/ChatGPT app authentication. Provider tokens stay encrypted in host-only HttpOnly cookies bound to that Site user, with PKCE/state validation, refresh, disconnect and a 30-day ceiling. Read live event data only through that visitor connection.

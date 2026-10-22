@@ -24,23 +24,19 @@ On Windows, if the system npm shim fails, invoke npm's official JavaScript entry
 
 ## Honest limits / remaining hackathon work
 
-Fever's server adapter is implemented but requires credentials issued specifically for this hosted integration. Your personal chat OAuth connection does not supply these.
+The private demo now uses personal Fever OAuth. SideQuest's HTTPS callback was accepted through Fever's advertised Dynamic Client Registration endpoint. No company-issued M2M credentials are needed for this flow. A visitor signs into the private Site through ChatGPT and then explicitly clicks Connect Fever. Sites still owns app sign-in; Fever authorizes only event access.
 
-Request a client ID, client secret and audience from data-ai@feverup.com for SideQuest, using the client_credentials grant and mcp:service scope. Include the app URL and explain this is a Tokyo event-discovery hackathon demo. Confirm the permitted public display of event descriptions/prices and booking links. Official instructions: https://developer.feverup.com/en/#mcp-server
+Hosted configuration uses secret runtime values FEVER_OAUTH_CLIENT_ID, FEVER_OAUTH_CLIENT_SECRET, FEVER_OAUTH_REDIRECT_URI and FEVER_SESSION_KEY (a random 32-byte base64url AES key). These are already provisioned for the private demo. Never copy OAuth credentials from the chat client or expose them in source, browser scripts, URLs or logs.
 
-Save these values only in ignored local .dev.vars, then configure the same three as secret Sites runtime values and redeploy:
+The app uses authorization-code flow with S256 PKCE, a random ten-minute state cookie, exact registered redirect and MCP resource binding. Tokens are encrypted with AES-GCM in Secure, HttpOnly, SameSite=Lax host-only cookies. The encrypted payload is bound to the signed-in Site user and Site origin. Personal tokens never enter the shared M2M cache. Expired access tokens renew with the provider refresh token; rotated refresh tokens replace the old encrypted value. Connections expire after at most 30 days and require sign-in again. Temporary refresh failures preserve the connection; revoked grants prompt reauthentication. Disconnect attempts provider revocation and clears the browser session.
 
-- FEVER_CLIENT_ID
-- FEVER_CLIENT_SECRET
-- FEVER_AUDIENCE
+Routes: /api/fever/start, /api/fever/callback, /api/fever/status and POST /api/fever/disconnect. Callback errors return only a fixed outcome flag; codes and tokens are never echoed into the app page. Status returns only configuration/connection booleans. The reserved Sites /callback route is unchanged.
 
-The server exchanges them at Fever's documented Auth0 token endpoint, caches the token only until expiry, initializes an MCP session and calls read-only search tools. It supports JSON and SSE responses, bounds requests to 25 seconds and closes the session. No chat credentials, refresh tokens or provider secrets reach the browser or Git.
+The combined discovery endpoint isolates provider errors. Unconnected/failed Fever access does not discard Qloo places. Event-only mode does not call Qloo. Listings show source, Tokyo session starts, starting ticket prices and Fever links; users can save/pass events separately. Listings are date/area matches, not Qloo-ranked or Qloo-endorsed. Venue association uses explicit Fever venue IDs. Neighborhood searches inspect at most three provider-selected venues; city searches inspect one page of 36 listings.
 
-The combined discovery endpoint isolates provider errors. Missing/failed Fever access does not discard Qloo places. Event-only mode does not call Qloo. Event listings show source, session starts in Tokyo time, starting ticket price and Fever link; users can save/pass events separately. They are explicitly date/area matches, not Qloo-ranked or Qloo-endorsed. Venue association uses explicit Fever venue IDs only. Neighborhood searches inspect at most three provider-selected venues; city searches inspect one page of 36 listings. Coverage is bounded, not exhaustive.
+Events lacking explicit matching session times/timezone are excluded. Strict neighborhoods require confirmed coordinates; hard budgets require a known JPY upper ticket price. Starting fares alone do not pass caps. Ticket category, fees and availability require confirmation on Fever. Published session lists are partial.
 
-Events lacking explicit matching session times/timezone are excluded. Strict neighborhoods require confirmed venue coordinates; hard budgets require a known JPY upper ticket price. Starting fares alone do not pass caps. Ticket category, fees and availability still require confirmation on Fever. The feed's partial session list is not a complete calendar.
-
-Verification: OAuth/MCP behavior and provider edge cases have contract tests with injected fixture responses. These tests do not prove live M2M access. Live chat venue reads and Qloo place reads work; live hosted Fever activation remains blocked until issued credentials are supplied.
+Verification: client registration and callback acceptance are live-verified. OAuth/MCP, encrypted storage, visitor isolation, state/PKCE checks, refresh, disconnect and provider edge cases have automated tests with fixture credentials/responses. Final live personal event access requires the owner to complete Fever's sign-in. These tests and a successful deployment are not a claim that the owner has authorized Fever yet.
 
 Only the 37 selected IDs are searched. This is not exhaustive Tokyo coverage. Provider descriptions/weekly hours are not independent verification. There is no guaranteed ticket capacity; place admission prices remain unknown. No generated satisfaction score is shown. Human recommendation quality evaluation, public repository setup, and the hackathon submission are still required. Initial deployment is private; judges need a deliberately public deployment later.
 

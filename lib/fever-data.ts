@@ -6,7 +6,7 @@ export type FeverEvent = {
  sessions:string[]; timezone:'Asia/Tokyo'; minPrice:number|null; maxPrice:number|null;
  currency:string|null; retrievedAt:string; priceLabel:string;
 };
-export type FeverReply = {status:'success'|'not_configured'|'error';events:FeverEvent[];message:string;retrievedAt?:string};
+export type FeverReply = {status:'success'|'not_configured'|'authentication_required'|'error';events:FeverEvent[];message:string;retrievedAt?:string;reauthenticationRequired?:boolean};
 export type EventQuery = {area:keyof typeof AREAS;dates:string[];budget:string;rejected:string[]};
 const record=z.object({id:z.union([z.number().int().positive(),z.string().min(1).max(100)]),name:z.string().min(1).max(300),url:z.string(),location:z.string().optional(),description:z.string().optional(),timezone:z.string().optional(),session_start_times:z.array(z.string()).optional(),min_price:z.number().finite().nonnegative().optional(),max_price:z.number().finite().nonnegative().optional(),currency:z.string().optional(),venue:z.object({latitude:z.number().optional(),longitude:z.number().optional()}).passthrough().optional()}).passthrough();
 const venueSchema=z.object({venue_id:z.number().int().positive(),latitude:z.number().finite(),longitude:z.number().finite(),city_code:z.literal('HND'),country_code:z.literal('JP')}).passthrough();

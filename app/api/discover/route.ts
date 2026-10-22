@@ -1,7 +1,7 @@
 import {env} from 'cloudflare:workers';
 import {qloo,normalize} from '@/lib/qloo';
 import {AREAS,eligible,rankPlaces,publishedHours,validVisitDate,type Interest,type Place} from '@/lib/discovery';
-import {feverClient} from '@/lib/fever-client';
+import {personalFeverSearch} from '@/lib/fever-oauth';
 import type {FeverReply} from '@/lib/fever-data';
 import {z} from 'zod';
 import candidateIds from '@/lib/candidate-ids.json';
@@ -31,14 +31,16 @@ export async function POST(req:Request){
    return {places:rankPlaces(filtered,b.mode,savedFamilies),examined:entities.length,retrievedAt};
   }
   // Separate provider failures: a failed event search must not discard useful Qloo places.
-  const [placeResult,eventResult]=await Promise.allSettled([places(),b.kind==='places'?Promise.resolve(null):feverClient.search(env,{area:b.area,dates:b.dates,budget:b.budget,rejected})]);
-  const fever:FeverReply|null=eventResult.status==='fulfilled'?eventResult.value:{status:'error',events:[],message:'Fever could not complete this search. Please retry.'};
+  const [placeResult,eventResult]=await Promise.allSettled([places(),b.kind==='places'?Promise.resolve(null):personalFeverSearch(req,env,{area:b.area,dates:b.dates,budget:b.budget,rejected})]);
+  const fever:FeverReply|null=eventResult.status==='fulfilled'?(eventResult.value?.reply||null):{status:'error',events:[],message:'Fever could not complete this search. Please retry.'};
   if(placeResult.status==='rejected'&&b.kind==='places')throw placeResult.reason;
   const p=placeResult.status==='fulfilled'?placeResult.value:{places:[],examined:0,retrievedAt:undefined};
   const notices:string[]=[];
   if(placeResult.status==='rejected')notices.push(placeResult.reason instanceof Error?placeResult.reason.message:'Place discovery could not complete.');
   if(fever&&fever.status!=='success')notices.push(fever.message);
   const provider=b.kind==='events'?(fever?.status==='success'?'fever':'unavailable'):placeResult.status==='fulfilled'?(fever?.status==='success'?'qloo+fever':'qloo'):fever?.status==='success'?'fever':'unavailable';
-  return Response.json({...p,fever,provider,notice:notices.join(' ')||null,budgetLimited:b.budget!=='flexible'&&b.kind!=='events',hoursNotice:'Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.'},{headers});
+  const response=Response.json({...p,fever,provider,notice:notices.join(' ')||null,budgetLimited:b.budget!=='flexible'&&b.kind!=='events',hoursNotice:'Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.'},{headers});
+  if(eventResult.status==='fulfilled')for(const value of eventResult.value?.cookies||[])response.headers.append('Set-Cookie',value);
+  return response;
  }catch(e){return Response.json({error:e instanceof SyntaxError?'The search could not be read. Try again.':e instanceof Error?e.message:'Discovery failed. Please retry.'},{status:502,headers});}
 }

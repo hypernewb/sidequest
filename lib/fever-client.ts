@@ -41,11 +41,11 @@ export function createFeverClient(fetcher:typeof fetch=fetch){
    token={value:b.access_token,expires:Date.now()+Math.min(b.expires_in,86400)*1000,config:identity};return token.value;
   })();inFlight={config:identity,promise};try{return await promise;}finally{if(inFlight?.promise===promise)inFlight=undefined;}
  }
- return {async search(config:Config,query:EventQuery):Promise<FeverReply>{
-  if(!config.FEVER_CLIENT_ID||!config.FEVER_CLIENT_SECRET||!config.FEVER_AUDIENCE)return {status:'not_configured',events:[],message:'Live events need Fever access for this app. Places are still available.'};
+ return {async search(config:Config,query:EventQuery,personalToken?:string):Promise<FeverReply>{
+  if(!personalToken&&(!config.FEVER_CLIENT_ID||!config.FEVER_CLIENT_SECRET||!config.FEVER_AUDIENCE))return {status:'not_configured',events:[],message:'Live events need Fever access for this app. Places are still available.'};
   const signal=AbortSignal.timeout(25000);let session:string|null=null,authorization='',negotiated='2025-06-18';
   try{
-   authorization='Bearer '+await access(config as Required<Config>,signal);
+   authorization='Bearer '+(personalToken||await access(config as Required<Config>,signal));
    const initial=await fetcher(MCP_URL,{method:'POST',redirect:'error',headers:{Authorization:authorization,Accept:'application/json, text/event-stream','Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method:'initialize',params:{protocolVersion:'2025-06-18',capabilities:{},clientInfo:{name:'sidequest',version:'0.2.0'}}}),signal});
    session=initial.headers.get('mcp-session-id');const init=await rpcResult(initial,1),version=init.result?.protocolVersion;
    if(!['2025-03-26','2025-06-18','2025-11-25'].includes(String(version)))throw Error('Fever selected an unsupported protocol version.');
@@ -77,7 +77,7 @@ export function createFeverClient(fetcher:typeof fetch=fetch){
    }
    const retrievedAt=new Date().toISOString();const events=parseFeverEvents(data,query,retrievedAt);
    return {status:'success',events,retrievedAt,message:'Fever listings match your dates and area. They are not ranked by Qloo taste affinity. Starting prices may refer to a ticket category; check the adult ticket and booking fees on Fever.'};
-  }catch(e){if(e instanceof FeverAccessError&&(e.status===401||e.status===403))token=undefined;return {status:'error',events:[],message:e instanceof FeverAccessError?e.message:e instanceof Error&&/too much|unexpected event format|protocol version/.test(e.message)?e.message:'Fever could not complete this search. Please try again.'};}
+  }catch(e){const denied=e instanceof FeverAccessError&&(e.status===401||e.status===403);if(denied&&!personalToken)token=undefined;return {status:'error',events:[],...(denied&&personalToken?{reauthenticationRequired:true}:{}),message:denied&&personalToken?'Your Fever connection needs a fresh sign-in.':e instanceof FeverAccessError?e.message:e instanceof Error&&/too much|unexpected event format|protocol version/.test(e.message)?e.message:'Fever could not complete this search. Please try again.'};}
   finally{if(session&&authorization){try{const closed=await fetcher(MCP_URL,{method:'DELETE',redirect:'error',headers:{Authorization:authorization,'Mcp-Session-Id':session,'MCP-Protocol-Version':negotiated},signal:AbortSignal.timeout(1500)});await closed.body?.cancel();}catch{}}}
  }};
 }
