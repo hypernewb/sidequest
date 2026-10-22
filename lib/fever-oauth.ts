@@ -51,17 +51,27 @@ export async function startPersonalFever(req:Request,c:OAuthConfig){
 export async function completePersonalFever(req:Request,c:OAuthConfig,fetcher:typeof fetch=fetch){
  if(!personalConfigured(c))return Response.json({error:'Personal Fever sign-in is not configured.'},{status:503});
  const clear=[cookie(STATE_COOKIE,'',0)];
+ let phase='state';
  try{
   if(new URL(req.url).origin!==new URL(c.FEVER_OAUTH_REDIRECT_URI).origin)throw Error('Wrong origin');
-  const query=new URL(req.url).searchParams,flow=flowSchema.parse(await unseal(cookies(req)[STATE_COOKIE]||'',c.FEVER_SESSION_KEY,purpose(c,'flow')));
-  if(!uid(req)||flow.uid!==uid(req)||flow.state!==query.get('state'))throw Error('Invalid sign-in state');
+  const query=new URL(req.url).searchParams;
+  phase='cookie';const stored=cookies(req)[STATE_COOKIE];if(!stored)throw Error('Missing flow cookie');
+  phase='decrypt';const flow=flowSchema.parse(await unseal(stored,c.FEVER_SESSION_KEY,purpose(c,'flow')));
+  phase='identity';if(!uid(req)||flow.uid!==uid(req))throw Error('Invalid visitor');
+  phase='state';if(flow.state!==query.get('state'))throw Error('Invalid sign-in state');
   if(flow.expires<Date.now())return redirect(c,'expired',clear);
   if(query.has('error'))return redirect(c,'cancelled',clear);
   const code=query.get('code');if(!code||code.length>4096)throw Error('Missing sign-in code');
+  phase='exchange';
   const token=await exchange(c,{grant_type:'authorization_code',code,redirect_uri:c.FEVER_OAUTH_REDIRECT_URI,code_verifier:flow.verifier},fetcher);
+  phase='session';
   const now=Date.now();const s:FeverSession={uid:flow.uid,accessToken:token.access_token,refreshToken:token.refresh_token,expiresAt:now+token.expires_in*1000,reauthAt:now+MAX_AGE*1000};
   return redirect(c,'connected',[...clear,...await sessionCookies(s,c)]);
- }catch{return redirect(c,'failed',clear);}
+ }catch(e){
+  // Only static stage/schema information: never log codes, cookies, IDs or tokens.
+  console.warn('Fever OAuth callback failed',{phase,issue:e instanceof z.ZodError?e.issues.map(i=>({path:i.path.join('.'),code:i.code})):e instanceof TokenFailure?'token_rejected':'invalid_flow'});
+  return redirect(c,'failed_'+phase,clear);
+ }
 }
 export async function connectionStatus(req:Request,c:OAuthConfig){const s=await readSession(req,c);return {configured:personalConfigured(c),connected:!!s&&!!(s.expiresAt>Date.now()||s.refreshToken),requiresSiteSignIn:!uid(req)};}
 export async function personalFeverSearch(req:Request,c:OAuthConfig,query:EventQuery,fetcher:typeof fetch=fetch,client=feverClient):Promise<{reply:FeverReply;cookies:string[]}>{
