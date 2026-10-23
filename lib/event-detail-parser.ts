@@ -21,7 +21,7 @@ export function extractEventDetails(text:string,url:string,checkedAt=new Date().
  const times=lines.filter(l=>/(?:OPEN|START|開場|開演|営業時間|終演|show).*\d{1,2}[:：]\d{2}/i.test(l)).slice(0,6);
  const prices=lines.filter(l=>/[¥￥]\s*[\d,]+|\d[\d,]*\s*円|入場無料|入場料.*無料/i.test(l)).slice(0,10);
  const feeText=prices.join('\n');const amounts=[...feeText.matchAll(/[¥￥]\s*([\d,]+)|([\d,]+)\s*円/g)].map(m=>Number((m[1]||m[2]).replaceAll(',',''))).filter(n=>n>=0&&n<1000000);
- const extraDrink=/drink|ドリンク|飲食|一品/i.test(original),drink=prices.find(l=>/^(?:※\s*)?(?:1\s*drink|ドリンク代)\s*[¥￥]\s*[\d,]+/i.test(l));const drinkAmount=drink?Number(drink.match(/[¥￥]\s*([\d,]+)/)?.[1].replaceAll(',','')):null;
+ const extraDrink=/drink|ドリンク|飲食|一品|\+\s*1D\b|要1D/i.test(original),drink=prices.find(l=>/^(?:※\s*)?(?:1\s*drink|ドリンク代)\s*[¥￥]\s*[\d,]+/i.test(l));const drinkAmount=drink?Number(drink.match(/[¥￥]\s*([\d,]+)/)?.[1].replaceAll(',','')):null;
  // Never use a child/advance/starting fare as an all-in budget guarantee. Unknown compulsory extras stay unknown.
  let priceCeiling=amounts.length?Math.max(...amounts):/入場無料|入場料.*無料/.test(original)?0:null;
  if(extraDrink){if(drinkAmount!=null&&priceCeiling!=null)priceCeiling+=drinkAmount;else priceCeiling=null;}

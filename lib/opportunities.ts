@@ -34,7 +34,7 @@ export function rankOpportunities(items:Opportunity[],p:Preferences,now=new Date
   if(p.intent==='music'&&['popup','release'].includes(o.kind))continue;
   if(p.intent==='play'&&o.kind==='place'&&!/arcade|amusement|play area|game tables|ゲームセンター|ボードゲームカフェ/i.test(content))continue;
   if(p.intent!=='mix'){score+=4;reasons.push('Fits: '+INTENTS[p.intent].toLowerCase());}
-  if(p.direction!=='any'&&rules[p.direction]?.test(content)){score+=5;reasons.push('Source mentions your preference: '+(FOLLOWUPS[p.intent] as readonly (readonly string[])[]).find(x=>x[0]===p.direction)?.[1]);}
+  if(p.direction!=='any'&&rules[p.direction]?.test(content)){score+=5;reasons.push('Source or verified artist metadata matches: '+(FOLLOWUPS[p.intent] as readonly (readonly string[])[]).find(x=>x[0]===p.direction)?.[1]);}
   for(const seed of p.seeds){const direct=content.toLocaleLowerCase().includes(seed.name.toLocaleLowerCase());const associated=o.signals?.includes(seed.name);if(direct||associated){score+=seed.feeling==='love'?6:2;reasons.push((direct?'Mentions ':'Qloo association with ')+seed.name+(seed.feeling==='curious'?' · something you want to try':' · already a favourite'));}}
   if(p.direction!=='any'&&!rules[p.direction]?.test(content))reasons.push('Activity match only; the source does not establish your preferred style.');
   if(!reasons.length)reasons.push('An option to react to; no personal match established yet.');
