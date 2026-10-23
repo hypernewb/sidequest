@@ -6,6 +6,8 @@ The signature interaction is a trail: search any supported cultural entity, insp
 
 First viewport of the active exploration: clear question, live provider label, one named item with its actual description and source connection, four reactions. A positive choice opens a contextual follow-up with real Qloo tags. Worlds are films, music, games and books; mixed discovery queries three categories at a time. Existing drops use explicit follows independently.
 
+Current entry refinement: visitors without valid stored search interests enter an empty, focused setup. Your taste is a permanent navigation action. Choose a persona is active by default and Try this persona merges curiosity seeds while preserving existing picks/feelings, then requests live Qloo connections in one action. Paste names and Use a screenshot keep exact-match review; manual search is a disclosure. Review my interests leads to Use these interests for explicit browser-local application. The active connection's category appears inline with cultural metadata below the evidence, without a separate category eyebrow above its title.
+
 Preserve DESIGN.md palette, Field Serif/Sans, ruled open rows, 5px controls, moss selection and red actions. Desktop reaction column becomes a two-by-two mobile choice group. Keyboard focus, bounded loading/error states, no overflow, honest browser-local storage. No new imagery or visual world.
 
 Quality bar: real Qloo must drive follow-ups; no fixed fake questions; user can recover from errors without losing the trail; exact search result confirmation; restored saved profile; application to Tokyo search. Desktop 1440x1000 and mobile 390x844 viewport crops are review evidence, not full-page captures. Old franchise profile must survive migration.
