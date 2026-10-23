@@ -1,0 +1,26 @@
+import {plainText,decodeText,htmlAnnouncement} from './announcements.ts';
+import {publicSource,rememberDetail,withDetails} from './event-enrichment.ts';
+import type {Opportunity} from './opportunities.ts';
+type SourceResult={items:Opportunity[];health:{name:string;count:number;status:string}[]};
+let cached:{at:number;value:SourceResult}|undefined,pending:Promise<SourceResult>|undefined;
+function date(year:number,month:number,day:number){const s=year+'-'+String(month).padStart(2,'0')+'-'+String(day).padStart(2,'0');return Number.isFinite(Date.parse(s+'T12:00:00Z'))&&new Date(s+'T12:00:00Z').toISOString().slice(0,10)===s?s:'';}
+export function parseCotton(html:string,year:number,month:number,at:string):Opportunity[]{
+ return html.split('<div class="m-schedule-list__row">').slice(1).flatMap(row=>{const url=row.match(/href="(https:\/\/reserve\.cottonclubjapan\.co\.jp\/reserve\/schedule\/exec\/\d+)"/)?.[1],title=plainText(row.match(/<p class="c-schedule-list-card__title">([\s\S]*?)<\/p>/)?.[1]||''),days=[...row.matchAll(/class="m-schedule-list__date-num">(\d+)</g)].map(m=>date(year,month,+m[1])).filter(Boolean);if(!url||!title||!days.length)return [];const charge=plainText(row.match(/<span class="c-schedule-list-card__charge-price">([\s\S]*?)<\/span>/)?.[1]||'');return [{id:'cotton:'+url.split('/').pop()+':'+days[0],title,kind:'gig',source:'Cotton Club',url,description:title,location:'Cotton Club · Marunouchi, Tokyo',start:days[0],end:days.at(-1),checkedAt:at,price:null,priceLabel:charge?'Music charge '+charge+' · food/drink extra':'Check music charge',availability:'Music charge excludes food/drink. At least one order is required. Confirm the current show times and seating.',category:'live music concert'} satisfies Opportunity];});
+}
+export function towerLinks(html:string){return [...new Set([...html.matchAll(/<a\b[^>]*href="(https:\/\/towershibuya.jp\/news\/\d{4}\/\d{2}\/\d{2}\/\d+)"[^>]*>([\s\S]*?)<\/a>/g)].filter(m=>/POP.?UP|ポップアップ|期間限定/i.test(plainText(m[2]))).map(m=>m[1]))].slice(0,5);}
+export function parseTower(url:string,html:string,at:string):Opportunity|null{
+ const p=htmlAnnouncement(html),text=p.text;const lines=text.split('\n');const rangeLine=lines.find(l=>/開催期間|期間[:：]/.test(l)&&/20\d{2}年/.test(l));if(!rangeLine)return null;
+ const r=rangeLine.match(/(20\d{2})年\s*(\d{1,2})月\s*(\d{1,2})日[^\d]*[〜～–—-]\s*(?:(20\d{2})年\s*)?(\d{1,2})月\s*(\d{1,2})日/);if(!r)return null;
+ const start=date(+r[1],+r[2],+r[3]),end=date(+(r[4]||r[1]),+r[5],+r[6]);if(!start||!end||end<start||!/タワーレコード渋谷|TOWER.*SHIBUYA|東京都渋谷/.test(text))return null;
+ const d=rememberDetail(url,text);return withDetails({id:'tower:'+url.split('/').pop(),title:p.title.replace(/\s*[–—|]\s*TowerRecords Shibuya.*$/i,''),kind:'popup',source:'Tower Records Shibuya',url,description:'Official temporary shop announcement. Read the original and English excerpt for the participating artists and goods.',location:'Tower Records Shibuya · Tokyo',start,end,checkedAt:at,price:null,priceLabel:'Entry and goods prices: check source',availability:'Dates describe the shop window. Limited goods, admission reservations and stock conditions must be checked.',category:'popup character goods collectibles',actionLabel:'Pop-up dates'},d);
+}
+export async function scanAdditional(fetcher:typeof fetch=fetch,now=new Date()):Promise<SourceResult>{
+ const at=now.toISOString(),local=new Date(now.toLocaleDateString('en-CA',{timeZone:'Asia/Tokyo'})+'T12:00:00Z');const health:SourceResult['health']=[];
+ const tasks=await Promise.allSettled([
+  (async()=>{const results=await Promise.allSettled([0,1].map(async offset=>{const d=new Date(Date.UTC(local.getUTCFullYear(),local.getUTCMonth()+offset,1)),y=d.getUTCFullYear(),m=d.getUTCMonth()+1;return parseCotton(await publicSource('https://reserve.cottonclubjapan.co.jp/reserve/schedule/move/'+y+String(m).padStart(2,'0'),fetcher),y,m,at);}));const items=results.flatMap(r=>r.status==='fulfilled'?r.value:[]);health.push({name:'Cotton Club calendar',count:items.length,status:results.every(r=>r.status==='fulfilled')?'Checked':'Some calendar pages unavailable'});return items;})(),
+  (async()=>{const html=await publicSource('https://towershibuya.jp/floor2',fetcher),links=towerLinks(html);const results=await Promise.allSettled(links.map(async url=>parseTower(url,await publicSource(url,fetcher),at)));const items=results.flatMap(r=>r.status==='fulfilled'&&r.value?[r.value]:[]);health.push({name:'Tower Records official pop-ups',count:items.length,status:items.length?'Checked full announcement pages':'No date ranges recognized; inspect the official source'});return items;})()
+ ]);
+ tasks.forEach((r,i)=>{if(r.status==='rejected')health.push({name:i?'Tower Records official pop-ups':'Cotton Club calendar',count:0,status:'Unavailable; existing sources still included'});});const today=local.toISOString().slice(0,10),horizon=new Date(local.getTime()+45*86400000).toISOString().slice(0,10);
+ return {items:tasks.flatMap(r=>r.status==='fulfilled'?r.value:[]).filter(o=>o.end!>=today&&o.start!<=horizon),health};
+}
+export async function getAdditional(){if(cached&&Date.now()-cached.at<600000)return cached.value;if(pending)return pending;pending=scanAdditional().then(value=>{cached={at:Date.now(),value};return value;}).finally(()=>{pending=undefined;});return pending;}

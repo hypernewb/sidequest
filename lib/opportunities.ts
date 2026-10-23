@@ -1,3 +1,4 @@
+import type {EventDetails} from './event-detail-parser.ts';
 import {z} from 'zod';
 
 export const INTENTS={collect:'Find objects worth collecting',play:'Play games',music:'Hear live music',art:'See art & unusual exhibitions',cafe:'Find somewhere to unwind',mix:'Show me a mix'} as const;
@@ -12,7 +13,7 @@ export const FOLLOWUPS={
 export type Intent=keyof typeof INTENTS;
 export const preferenceSchema=z.object({intent:z.enum(['collect','play','music','art','cafe','mix']),direction:z.string().max(30),format:z.enum(['any','dated','places','drops']),date:z.string().regex(/^\d{4}-\d{2}-\d{2}$/),days:z.union([z.literal(1),z.literal(7),z.literal(30)]),budget:z.enum(['any','1000','3000','10000']),unknownPrice:z.boolean(),seeds:z.array(z.object({id:z.string().uuid(),name:z.string().min(1).max(100),type:z.string().max(40),feeling:z.enum(['love','curious'])})).max(8),exclude:z.array(z.string().max(800)).max(150)}).refine(p=>(FOLLOWUPS[p.intent] as readonly (readonly string[])[]).some(x=>x[0]===p.direction),'Choose a direction for this activity.');
 export type Preferences=z.infer<typeof preferenceSchema>;
-export type Opportunity={id:string;title:string;kind:'place'|'gig'|'exhibition'|'popup'|'release'|'event';source:string;url:string;description:string;actionLabel?:string;location:string;start?:string;end?:string;closedDays?:number[];checkedAt:string;price:number|null;priceLabel:string;availability:string;category:string;affinity?:number;signals?:string[];map?:string;online?:boolean;reasons?:string[];score?:number};
+export type Opportunity={details?:EventDetails;detailStatus?:'read'|'unavailable';id:string;title:string;kind:'place'|'gig'|'exhibition'|'popup'|'release'|'event';source:string;url:string;description:string;actionLabel?:string;location:string;start?:string;end?:string;closedDays?:number[];checkedAt:string;price:number|null;priceLabel:string;availability:string;category:string;affinity?:number;signals?:string[];map?:string;online?:boolean;reasons?:string[];score?:number};
 const rules:Record<string,RegExp>={retro:/retro|vintage|中古|レトロ|tamagotchi|digimon|たまごっち|デジモン|handheld|old game/i,design:/designer toys?|artist toys?|bearbrick|be@rbrick|art toys?|デザイナーズ|アートトイ/i,characters:/anime|character|manga|pokemon|pokémon|gundam|sanrio|digimon|tamagotchi|アニメ|キャラ|ポケモン|ガンダム|サンリオ|たまごっち/i,social:/tabletop|board game|trading card|カード|ボードゲーム|magic.*gathering/i,jazz:/jazz|ジャズ|blues|ブルース/i,heavy:/metal|punk|hardcore|grindcore|メタル|パンク/i,electronic:/electronic|techno|ambient|experimental|テクノ|電子|実験/i,independent:/gallery|independent|ギャラリー|mograg/i,listening:/listening|record|vinyl|レコード|リスニング/i,coffee:/coffee|kissaten|コーヒー|喫茶/i};
 const activities:Record<Intent,RegExp>={collect:/\b(toys?|collectibles?|collecting|hobby|comics?|model kits?|figures?|merchandise|goods|medicom|bandai|tamagotchi|digimon|sanrio|pokemon|gundam)\b|玩具|グッズ|フィギュア/i,play:/arcade|game store|video game|tabletop|board game|ゲーム|amusement/i,music:/music|jazz|concert|record|live|punk|metal|音楽|ライブ|公演/i,art:/\b(art|gallery|museum|exhibition|illustration)\b|展|美術|アート/i,cafe:/cafe|coffee|tea room|kissaten|listening|喫茶|カフェ/i,mix:/.*/};
 export function dateWindow(p:Pick<Preferences,'date'|'days'>){return Array.from({length:p.days},(_,i)=>new Date(Date.parse(p.date+'T12:00:00Z')+i*86400000).toISOString().slice(0,10));}
@@ -20,11 +21,12 @@ export function canonical(url:string){try{const u=new URL(url);u.hash='';for(con
 export function rankOpportunities(items:Opportunity[],p:Preferences,now=new Date()){
  const dates=dateWindow(p),excluded=new Set(p.exclude),dedup=new Map<string,Opportunity>();
  for(const o of items){
+  if(o.details?.status==='cancelled'||o.details?.status==='sold_out')continue;
   if(excluded.has(o.id)||!/^https:\/\//.test(o.url)||!Number.isFinite(Date.parse(o.checkedAt))||now.getTime()-Date.parse(o.checkedAt)>(o.source==='Qloo'?86400000: o.source==='Official catalog'?14*86400000:86400000))continue;
   if(o.start&&!dates.some(d=>d>=o.start!&&d<=(o.end||o.start!)&&!o.closedDays?.includes(new Date(d+'T12:00:00Z').getUTCDay())))continue;
   if(p.format==='places'&&o.kind!=='place'||p.format==='dated'&&o.kind==='place'||p.format==='drops'&&!['popup','release'].includes(o.kind))continue;
   if(p.budget!=='any'&&(o.price===null?!p.unknownPrice:o.price>Number(p.budget)))continue;
-  const content=[o.title,o.description,o.category].join(' '),reasons:string[]=[];
+  const content=[o.title,o.description,o.category,o.details?.original||''].join(' '),reasons:string[]=[];
   let score=0;
   const activity=activities[p.intent].test(content)||(p.intent==='music'&&o.kind==='gig')||(p.intent==='art'&&o.kind==='exhibition')||(p.intent==='collect'&&o.kind==='release');
   if(p.intent!=='mix'&&!activity)continue;
@@ -45,6 +47,7 @@ export function rankOpportunities(items:Opportunity[],p:Preferences,now=new Date
  while(pool.length){let index=0,best=-Infinity;pool.forEach((o,i)=>{const v=(o.score||0)-(counts.get(o.source)||0)*1.5;if(v>best){best=v;index=i;}});const o=pool.splice(index,1)[0];out.push(o);counts.set(o.source,(counts.get(o.source)||0)+1);}
  return out;
 }
+
 
 
 

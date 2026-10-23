@@ -77,3 +77,6 @@ The user requested preparation for an optional PullMD connection and explicitly 
 
 ## Activity-first opportunity discovery
 The main route now uses an activity, relevant direction and practical window/format/price choices. Optional exact cultural interests preserve favourite versus curious influence. Places, available Fever sessions, official calendars and current release catalog entries share eligibility, deduplication and evidence-based ranking in /api/opportunities. Coverage gaps and activity-only matches are explicit. The prior experience and its browser saves remain at /classic. See evaluation/OPPORTUNITY-PIPELINE.md for verification and limitations.
+
+## v16 — Official event detail evidence
+Full-page enrichment and translated excerpts now inform the outing recommendations. Added Cotton Club calendars and Tower Records Shibuya pop-up announcements. See evaluation/EVENT-ENRICHMENT.md for source coverage, verification and limits.

@@ -1,3 +1,5 @@
+import {getAdditional} from '@/lib/additional-sources';
+import {enrichCandidates,translateShortlist} from '@/lib/event-enrichment';
 import {env} from 'cloudflare:workers';
 import {preferenceSchema,dateWindow,rankOpportunities,type Opportunity} from '@/lib/opportunities';
 import {getOfficial} from '@/lib/official-scan';
@@ -29,11 +31,15 @@ export async function POST(req:Request){
   const names=['Official calendars','Qloo places','Fever events'];jobs.forEach((r,i)=>{health.push({name:names[i],count:r.status==='fulfilled'?r.value.length:0,status:r.status==='fulfilled'?'Checked':'Unavailable'});if(r.status==='rejected')notices.push(names[i]+' could not be checked. Other sources remain available.');});
   const catalog:Opportunity[]=DROPS.filter(d=>!['ended','needs-review'].includes(dropState(d))).map(d=>({id:'catalog:'+d.id,title:d.title,kind:d.category,source:'Official catalog',url:d.sourceUrl,description:d.summary,location:d.location,start:d.startsAt.slice(0,10),end:d.endsAt?.slice(0,10)||d.startsAt.slice(0,10),checkedAt:d.checkedAt,price:d.price,priceLabel:d.price===null?d.priceNote:'¥'+d.price+' · '+d.priceNote,availability:d.restrictions+(d.evidenceNote?' '+d.evidenceNote:''),category:d.category+' '+d.topics.join(' '),actionLabel:d.method==='preorder'?'Preorder window':d.method==='lottery'?'Lottery window':d.method==='visit'?'Pop-up dates':'Release date',online:d.channel!=='tokyo'}));
   health.push({name:'Official release catalog',count:catalog.length,status:'Manually checked; stale entries excluded'});
-  const all=[...jobs.flatMap<Opportunity>(r=>r.status==='fulfilled'?r.value:[]),...catalog];const ranked=rankOpportunities(all,p);
-  const response=Response.json({items:ranked.slice(0,60),total:ranked.length,examined:all.length,health,notices,checkedAt:at,scope:'Tokyo places and events, plus Japan/online releases explicitly labelled. Five official source families; this is a bounded scan, not complete city coverage.'},{headers});
+  const extra=await getAdditional();health.push(...extra.health);
+  const all=[...jobs.flatMap<Opportunity>(r=>r.status==='fulfilled'?r.value:[]),...extra.items,...catalog];
+  const enriched=await enrichCandidates(all,p);health.push({name:'Full official pages',count:enriched.read,status:enriched.failed+' unavailable; '+enriched.remaining+' further pages can be read on demand'});
+  const ranked=rankOpportunities(enriched.items,p);await translateShortlist(ranked);
+  const response=Response.json({items:ranked.slice(0,60),total:ranked.length,examined:all.length,health,notices,checkedAt:at,scope:'Tokyo places and events, plus Japan/online releases explicitly labelled. Seven official source families; full-page reading is bounded to 12 candidates per search, with more available on demand. This is not complete city coverage.'},{headers});
   for(const c of cookies)response.headers.append('Set-Cookie',c);return response;
  }catch{return Response.json({error:'The search could not complete. Your choices are kept; try again.'},{status:502,headers});}
 }
+
 
 
 
