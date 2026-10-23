@@ -74,3 +74,6 @@ Live observations on 23 October 2026 are retained in `evaluation/baseline.json` 
 ## Optional announcement reader
 
 The user requested preparation for an optional PullMD connection and explicitly supplied no hosted endpoint. The connection remains inactive. A future server-configured HTTPS service can read supported public official announcement pages through bounded static extraction, with a direct-reader fallback and a visible fallback notice. Pasted text, X posts, unsupported hosts and MEDICOM's dedicated official-feed path remain outside that connection. This adds no browser rendering, background monitoring or broader source coverage.
+
+## Activity-first opportunity discovery
+The main route now uses an activity, relevant direction and practical window/format/price choices. Optional exact cultural interests preserve favourite versus curious influence. Places, available Fever sessions, official calendars and current release catalog entries share eligibility, deduplication and evidence-based ranking in /api/opportunities. Coverage gaps and activity-only matches are explicit. The prior experience and its browser saves remain at /classic. See evaluation/OPPORTUNITY-PIPELINE.md for verification and limitations.

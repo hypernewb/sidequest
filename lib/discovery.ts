@@ -38,7 +38,7 @@ export function familyFor(category: string) {
 export function eligible(p:Place,area:keyof typeof AREAS,budget:string,rejected:string[]) {
  const a=AREAS[area];
  return !rejected.includes(p.id) && Number.isFinite(p.lat) && Number.isFinite(p.lon)
-   && distance(p.lat,p.lon,a.lat,a.lon)<=a.radius && budget==='flexible';
+   && distance(p.lat,p.lon,a.lat,a.lon)<=a.radius;
 }
 export function rankPlaces(places:Place[],mode:Mode,savedFamilies:string[]=[]) {
  const max=Math.max(...places.map(p=>p.affinity),0.00001);
