@@ -17,6 +17,7 @@ export function planScout(input:Opportunity[],p:Preferences,now=new Date()):Scou
  if(start+100>1080){date=tokyoDate(new Date(Date.parse(date+'T12:00:00+09:00')+86400000));start=780;notes.push('There is too little afternoon left in Tokyo. Planning the next afternoon instead.');}
  const ranked=rankOpportunities(input,{...p,date,days:1,format:'places'},now);
  const pool=ranked.filter(o=>o.kind==='place'&&!o.online&&Number.isFinite(o.lat)&&Number.isFinite(o.lon)&&distance(o.lat!,o.lon!,35.6762,139.7006)<=25000&&openingWindows(o.hours||{},date).length&&(!(p.seeds.length||p.direction!=='any')||o.matchLevel==='taste')).slice(0,36);
+ const windows=new Map(pool.map(o=>[o.id,openingWindows(o.hours||{},date)]));
  let best:ScoutStop[]=[],bestValue=-Infinity;
  function visit(stops:ScoutStop[],time:number,value:number){
   if(stops.length>=2){const score=stops.length*1000+value;if(score>bestValue){bestValue=score;best=stops;}}
@@ -24,7 +25,7 @@ export function planScout(input:Opportunity[],p:Preferences,now=new Date()):Scou
   for(const item of pool){if(stops.some(s=>s.item.id===item.id||s.item.url===item.url))continue;const prev=stops.at(-1)?.item;
    const metres=prev?distance(prev.lat!,prev.lon!,item.lat!,item.lon!):0;if(metres>1800)continue;
    const travel=prev?Math.ceil(metres*1.35/4000*60)+5:0;
-   const window=openingWindows(item.hours||{},date).find(w=>Math.max(time+travel,w.open)+45<=Math.min(1080,w.close));if(!window)continue;
+   const window=windows.get(item.id)!.find(w=>Math.max(time+travel,w.open)+45<=Math.min(1080,w.close));if(!window)continue;
    const arrival=Math.max(time+travel,window.open);if(arrival-time-travel>45)continue;
    visit([...stops,{item,arrival:clock(arrival),departure:clock(arrival+45),hours:clock(window.open)+'–'+clock(window.close),travelMinutes:travel,distanceMetres:Math.round(metres),reason:item.reasons?.filter(r=>!/overlap|Activity match only/.test(r)).join('. ')||'Matches your activity choice.'}],arrival+45,value+(item.score||0)-travel*.15-(arrival-time-travel)*.1);
   }
