@@ -30,7 +30,7 @@ export function distance(lat:number,lon:number,a:number,b:number) {
 export function familyFor(category: string) {
  if (/toy|hobby|video game|comic|collectible|arcade|amusement|model shop/i.test(category)) return 'Games & collectibles';
  if (/museum|gallery|art center/i.test(category)) return 'Art & culture';
- if (/music|jazz|live|record|concert/i.test(category)) return 'Music & nightlife';
+ if (/music|jazz|live|record|cd store|concert/i.test(category)) return 'Music & nightlife';
  if (/cafe|coffee|tea|bar/i.test(category)) return 'Cafés & listening';
  if (/book|shop|design/i.test(category)) return 'Books & design';
  return 'Culture & discovery';

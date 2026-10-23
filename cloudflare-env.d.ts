@@ -1,6 +1,8 @@
 declare namespace Cloudflare {
   interface Env {
     QLOO_API_KEY?: string;
+    PULLMD_URL?: string;
+    PULLMD_BEARER_TOKEN?: string;
     FEVER_CLIENT_ID?: string;
     FEVER_CLIENT_SECRET?: string;
     FEVER_AUDIENCE?: string;

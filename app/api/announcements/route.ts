@@ -1,9 +1,10 @@
+import {env} from 'cloudflare:workers';
 import {z} from 'zod';
 import {readAnnouncement,translateJapanese} from '@/lib/announcement-reader';
 import {announcementSchema,publicLink,extractFields,detectedTopics,classifyAnnouncement} from '@/lib/announcements';
 const input=z.object({url:publicLink,text:z.string().max(12000).default('')});
 export async function POST(req:Request){const headers={'Cache-Control':'private, no-store'};if(req.headers.get('origin')&&req.headers.get('origin')!==new URL(req.url).origin)return Response.json({error:'Open SideQuest to import an announcement.'},{status:403,headers});let data;try{const raw=await req.text();if(raw.length>60000)throw Error();data=input.parse(JSON.parse(raw));}catch{return Response.json({error:'Use a public HTTPS link and up to 12,000 characters of announcement text.'},{status:400,headers});}
- try{const read=await readAnnouncement(data.url,data.text);const fields=extractFields(read.text);const lines=[...new Set([read.title,...(read.text.length<=1500?read.text.split('\n'):fields.map(f=>f.original))])].filter(Boolean);let budget=0;const translatedLines=new Map<string,string>();let failed=0,completed=0,omitted=false;
+ try{const read=await readAnnouncement(data.url,data.text,fetch,env);const fields=extractFields(read.text);const lines=[...new Set([read.title,...(read.text.length<=1500?read.text.split('\n'):fields.map(f=>f.original))])].filter(Boolean);let budget=0;const translatedLines=new Map<string,string>();let failed=0,completed=0,omitted=false;
  for(let i=0;i<lines.length;i+=3){await Promise.all(lines.slice(i,i+3).map(async line=>{if(budget+line.length>1500){omitted=true;return;}budget+=line.length;const t=await translateJapanese(line);translatedLines.set(line,t.text);if(t.status==='unavailable'||t.status==='partial')failed++;else completed++;}));}
  const hasJapanese=/[\u3040-\u30ff\u3400-\u9fff]/.test(read.text);const status=!hasJapanese?'not_needed':failed&&!completed?'unavailable':failed||omitted?'partial':'translated';const translation={text:[...translatedLines.values()].join('\n'),status};
  const translatedFields=fields.map(f=>({...f,value:translatedLines.get(f.original)||f.original}));

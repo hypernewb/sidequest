@@ -1,0 +1,2293 @@
+{
+  "checkedAt": "2026-10-23T06:04:58.883Z",
+  "mode": "explore",
+  "scope": "Qloo places only. Fixed Across Tokyo / today / flexible budget, explicit sample activity. Fictional samples; no visitor cookies or profile. Metrics are diagnostics, not a human taste-quality pass.",
+  "results": [
+    {
+      "profile": {
+        "id": "jazz",
+        "name": "Jazz & instrumental hip-hop",
+        "seeds": [
+          {
+            "name": "Nujabes",
+            "type": "artist"
+          },
+          {
+            "name": "John Coltrane",
+            "type": "artist"
+          }
+        ],
+        "activity": "music",
+        "pair": "metal"
+      },
+      "name": "Jazz & instrumental hip-hop",
+      "activity": "music",
+      "status": 200,
+      "elapsedMs": 2812,
+      "places": [
+        {
+          "id": "02BD7755-0FC9-4D80-8905-E63B94CDBDAC",
+          "name": "Cotton Club",
+          "category": "Jazz club",
+          "popularity": 0.9928498224992302,
+          "signals": [
+            {
+              "name": "John Coltrane",
+              "contribution": 0.5280780046823041
+            },
+            {
+              "name": "Nujabes",
+              "contribution": 0.4719219953176959
+            }
+          ]
+        },
+        {
+          "id": "B011BC1B-CBFB-44FA-B630-8D6CE74A3979",
+          "name": "FORESTLIMIT",
+          "category": "Live music venue",
+          "popularity": 0.9492026859319171,
+          "signals": [
+            {
+              "name": "Nujabes",
+              "contribution": 0.5222562143739962
+            },
+            {
+              "name": "John Coltrane",
+              "contribution": 0.47774378562600384
+            }
+          ]
+        },
+        {
+          "id": "6EFEA22B-59DA-45E0-A9F3-F7ADF0234B45",
+          "name": "Billboard Live Tokyo",
+          "category": "Live music venue",
+          "popularity": 0.9984257648580049,
+          "signals": [
+            {
+              "name": "John Coltrane",
+              "contribution": 0.5101669840096734
+            },
+            {
+              "name": "Nujabes",
+              "contribution": 0.4898330159903266
+            }
+          ]
+        },
+        {
+          "id": "DE71EC48-353F-4205-80C8-7F7F62B44F18",
+          "name": "Absolute Blue",
+          "category": "Live music venue",
+          "popularity": 0.7264909451762768,
+          "signals": [
+            {
+              "name": "John Coltrane",
+              "contribution": 0.5251595401385687
+            },
+            {
+              "name": "Nujabes",
+              "contribution": 0.47484045986143136
+            }
+          ]
+        },
+        {
+          "id": "680057FB-A2A9-4EF6-B1C7-CB2A495882EA",
+          "name": "Club Heavy Sick",
+          "category": "Live music venue",
+          "popularity": 0.9144883494341408,
+          "signals": [
+            {
+              "name": "Nujabes",
+              "contribution": 0.5061060578454031
+            },
+            {
+              "name": "John Coltrane",
+              "contribution": 0.4938939421545968
+            }
+          ]
+        },
+        {
+          "id": "F410BD61-1AAC-4F59-9CC0-0C2CE5A10E6E",
+          "name": "Bar & Music Spot ALT_SPEAKER",
+          "category": "Live music venue",
+          "popularity": 0.5412257935344922,
+          "signals": [
+            {
+              "name": "John Coltrane",
+              "contribution": 0.5091492035877109
+            },
+            {
+              "name": "Nujabes",
+              "contribution": 0.4908507964122891
+            }
+          ]
+        },
+        {
+          "id": "154C72DF-F3D7-49C0-913D-2BCFD2FC6C85",
+          "name": "Earthdom",
+          "category": "Live music venue",
+          "popularity": 0.9392524648963765,
+          "signals": [
+            {
+              "name": "Nujabes",
+              "contribution": 0.5215772372961703
+            },
+            {
+              "name": "John Coltrane",
+              "contribution": 0.4784227627038297
+            }
+          ]
+        },
+        {
+          "id": "571464AC-9854-4460-A744-F2577C74F5CA",
+          "name": "Live Music JIROKICHI",
+          "category": "Live music venue",
+          "popularity": 0.9154526520364578,
+          "signals": [
+            {
+              "name": "John Coltrane",
+              "contribution": 0.5169234614608431
+            },
+            {
+              "name": "Nujabes",
+              "contribution": 0.4830765385391568
+            }
+          ]
+        }
+      ],
+      "examined": 19,
+      "retrievedAt": "2026-10-23T06:04:49.717Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "E11125AF-936B-4935-B607-F2DA2E6A6B92",
+          "name": "Nujabes",
+          "type": "artist",
+          "description": "Nujabes was a Japanese record producer and DJ known for blending hip hop with jazz and soulful beats.",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "02CD4C7F-C5A3-4AD2-B005-D0CBC07E1609",
+          "name": "John Coltrane",
+          "type": "artist",
+          "description": "John Coltrane was an influential American jazz saxophonist and composer known for his pioneering work in jazz music.",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 1,
+        "lowerPopularity": 2,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 4,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "metal",
+        "name": "Metal & loud guitars",
+        "seeds": [
+          {
+            "name": "BABYMETAL",
+            "type": "artist"
+          },
+          {
+            "name": "Metallica",
+            "type": "artist"
+          }
+        ],
+        "activity": "music",
+        "pair": "jazz"
+      },
+      "name": "Metal & loud guitars",
+      "activity": "music",
+      "status": 200,
+      "elapsedMs": 962,
+      "places": [
+        {
+          "id": "154C72DF-F3D7-49C0-913D-2BCFD2FC6C85",
+          "name": "Earthdom",
+          "category": "Live music venue",
+          "popularity": 0.9392524648963765,
+          "signals": [
+            {
+              "name": "BABYMETAL",
+              "contribution": 0.5523898812820288
+            },
+            {
+              "name": "Metallica",
+              "contribution": 0.44761011871797113
+            }
+          ]
+        },
+        {
+          "id": "57D087B1-507B-40EE-9D07-CE4C40EB0364",
+          "name": "GARRET udagawa",
+          "category": "Live music venue",
+          "popularity": 0.8570831852148192,
+          "signals": [
+            {
+              "name": "BABYMETAL",
+              "contribution": 0.5563481218205728
+            },
+            {
+              "name": "Metallica",
+              "contribution": 0.44365187817942725
+            }
+          ]
+        },
+        {
+          "id": "F410BD61-1AAC-4F59-9CC0-0C2CE5A10E6E",
+          "name": "Bar & Music Spot ALT_SPEAKER",
+          "category": "Live music venue",
+          "popularity": 0.5412257935344922,
+          "signals": [
+            {
+              "name": "BABYMETAL",
+              "contribution": 0.5831956951650573
+            },
+            {
+              "name": "Metallica",
+              "contribution": 0.4168043048349427
+            }
+          ]
+        },
+        {
+          "id": "B9001F7D-8691-497C-8F40-FE5DEE81889B",
+          "name": "Tower Records Shibuya",
+          "category": "CD store",
+          "popularity": 0.9959490747189649,
+          "signals": [
+            {
+              "name": "BABYMETAL",
+              "contribution": 0.5695313906512728
+            },
+            {
+              "name": "Metallica",
+              "contribution": 0.43046860934872727
+            }
+          ]
+        },
+        {
+          "id": "CA098595-B391-4C8D-BC61-2576E7383C5B",
+          "name": "TOKIO TOKYO",
+          "category": "Live music venue",
+          "popularity": 0.43040379985743477,
+          "signals": [
+            {
+              "name": "BABYMETAL",
+              "contribution": 0.5625126299640016
+            },
+            {
+              "name": "Metallica",
+              "contribution": 0.4374873700359984
+            }
+          ]
+        },
+        {
+          "id": "19F6D49E-17C7-4862-9780-41E8E69A7F01",
+          "name": "RE:LIVE HALL",
+          "category": "Live music venue",
+          "popularity": 0.76480302930685,
+          "signals": [
+            {
+              "name": "BABYMETAL",
+              "contribution": 0.5704876923149638
+            },
+            {
+              "name": "Metallica",
+              "contribution": 0.4295123076850362
+            }
+          ]
+        },
+        {
+          "id": "A3BBB344-E5DD-44DF-8BFF-B3B3011DA1AB",
+          "name": "CLUB SEATA",
+          "category": "Live music venue",
+          "popularity": 0.975979170172293,
+          "signals": [
+            {
+              "name": "BABYMETAL",
+              "contribution": 0.555629671693308
+            },
+            {
+              "name": "Metallica",
+              "contribution": 0.444370328306692
+            }
+          ]
+        },
+        {
+          "id": "752F2F60-4726-4FDA-AE57-A184611CE231",
+          "name": "池袋Live inn ROSA",
+          "category": "Live music venue",
+          "popularity": 0.803302884995771,
+          "signals": [
+            {
+              "name": "BABYMETAL",
+              "contribution": 0.5797500896702598
+            },
+            {
+              "name": "Metallica",
+              "contribution": 0.4202499103297402
+            }
+          ]
+        }
+      ],
+      "examined": 29,
+      "retrievedAt": "2026-10-23T06:04:50.683Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "41A3C65D-668D-481A-A9DD-46B5BE633ADF",
+          "name": "BABYMETAL",
+          "type": "artist",
+          "description": "A Japanese kawaii metal band known for blending heavy metal with J-pop idol music.",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "C445C761-CB38-4FEE-B085-D35F444A04DF",
+          "name": "Metallica",
+          "type": "artist",
+          "description": "American heavy metal band known for pioneering thrash metal and influencing the metal genre.",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 1,
+        "lowerPopularity": 3,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 4,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "electronic",
+        "name": "Experimental electronics",
+        "seeds": [
+          {
+            "name": "Aphex Twin",
+            "type": "artist"
+          },
+          {
+            "name": "Björk",
+            "type": "artist"
+          }
+        ],
+        "activity": "music",
+        "pair": "pop"
+      },
+      "name": "Experimental electronics",
+      "activity": "music",
+      "status": 200,
+      "elapsedMs": 917,
+      "places": [
+        {
+          "id": "B011BC1B-CBFB-44FA-B630-8D6CE74A3979",
+          "name": "FORESTLIMIT",
+          "category": "Live music venue",
+          "popularity": 0.9492026859319171,
+          "signals": [
+            {
+              "name": "Aphex Twin",
+              "contribution": 0.5143272347018979
+            },
+            {
+              "name": "Björk",
+              "contribution": 0.48567276529810216
+            }
+          ]
+        },
+        {
+          "id": "7D46387B-5A41-4E5A-B777-A8613CD4E61C",
+          "name": "WWW",
+          "category": "Live music venue",
+          "popularity": 0.9990713572782002,
+          "signals": [
+            {
+              "name": "Aphex Twin",
+              "contribution": 0.5015992292422339
+            },
+            {
+              "name": "Björk",
+              "contribution": 0.4984007707577662
+            }
+          ]
+        },
+        {
+          "id": "6EFEA22B-59DA-45E0-A9F3-F7ADF0234B45",
+          "name": "Billboard Live Tokyo",
+          "category": "Live music venue",
+          "popularity": 0.9984257648580049,
+          "signals": [
+            {
+              "name": "Aphex Twin",
+              "contribution": 0.5068159992587294
+            },
+            {
+              "name": "Björk",
+              "contribution": 0.49318400074127056
+            }
+          ]
+        },
+        {
+          "id": "02BD7755-0FC9-4D80-8905-E63B94CDBDAC",
+          "name": "Cotton Club",
+          "category": "Jazz club",
+          "popularity": 0.9928498224992302,
+          "signals": [
+            {
+              "name": "Aphex Twin",
+              "contribution": 0.5052863189371456
+            },
+            {
+              "name": "Björk",
+              "contribution": 0.4947136810628543
+            }
+          ]
+        },
+        {
+          "id": "F410BD61-1AAC-4F59-9CC0-0C2CE5A10E6E",
+          "name": "Bar & Music Spot ALT_SPEAKER",
+          "category": "Live music venue",
+          "popularity": 0.5412257935344922,
+          "signals": [
+            {
+              "name": "Aphex Twin",
+              "contribution": 0.5115228694460148
+            },
+            {
+              "name": "Björk",
+              "contribution": 0.4884771305539852
+            }
+          ]
+        },
+        {
+          "id": "CA098595-B391-4C8D-BC61-2576E7383C5B",
+          "name": "TOKIO TOKYO",
+          "category": "Live music venue",
+          "popularity": 0.43040379985743477,
+          "signals": [
+            {
+              "name": "Aphex Twin",
+              "contribution": 0.5060886940500475
+            },
+            {
+              "name": "Björk",
+              "contribution": 0.4939113059499525
+            }
+          ]
+        },
+        {
+          "id": "D452B3EE-0A85-4C43-8C1C-DA537281EC19",
+          "name": "SPACE ODD",
+          "category": "Live music venue",
+          "popularity": 0.9780021254774617,
+          "signals": [
+            {
+              "name": "Aphex Twin",
+              "contribution": 0.5089035223596061
+            },
+            {
+              "name": "Björk",
+              "contribution": 0.49109647764039394
+            }
+          ]
+        },
+        {
+          "id": "E023E5B6-960C-4B11-A37A-2D268D4D20FB",
+          "name": "Ruby Room",
+          "category": "Live music venue",
+          "popularity": 0.9692439102396233,
+          "signals": [
+            {
+              "name": "Aphex Twin",
+              "contribution": 0.5123462372957467
+            },
+            {
+              "name": "Björk",
+              "contribution": 0.4876537627042532
+            }
+          ]
+        }
+      ],
+      "examined": 23,
+      "retrievedAt": "2026-10-23T06:04:51.601Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "4278382F-4991-4D63-B207-942D86A26ACB",
+          "name": "Aphex Twin",
+          "type": "artist",
+          "description": "Aphex Twin is the stage name of Richard D. James, an influential electronic music artist known for pioneering IDM and experimental electronic music.",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "01381184-B533-4E3C-B9DB-43A2FE326744",
+          "name": "Björk",
+          "type": "artist",
+          "description": "Icelandic singer, songwriter, and producer known for her eclectic musical style and innovative artistry.",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 1,
+        "lowerPopularity": 2,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 1,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "pop",
+        "name": "Chart pop",
+        "seeds": [
+          {
+            "name": "Taylor Swift",
+            "type": "artist"
+          },
+          {
+            "name": "Dua Lipa",
+            "type": "artist"
+          }
+        ],
+        "activity": "music",
+        "pair": "electronic"
+      },
+      "name": "Chart pop",
+      "activity": "music",
+      "status": 200,
+      "elapsedMs": 683,
+      "places": [
+        {
+          "id": "CA098595-B391-4C8D-BC61-2576E7383C5B",
+          "name": "TOKIO TOKYO",
+          "category": "Live music venue",
+          "popularity": 0.43040379985743477,
+          "signals": [
+            {
+              "name": "Dua Lipa",
+              "contribution": 0.5016175681314502
+            },
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.49838243186854975
+            }
+          ]
+        },
+        {
+          "id": "19F6D49E-17C7-4862-9780-41E8E69A7F01",
+          "name": "RE:LIVE HALL",
+          "category": "Live music venue",
+          "popularity": 0.76480302930685,
+          "signals": [
+            {
+              "name": "Dua Lipa",
+              "contribution": 0.5014800954174599
+            },
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.49851990458254014
+            }
+          ]
+        },
+        {
+          "id": "AD6C8CBF-2598-4CB4-B06C-33C3400984BF",
+          "name": "Shibuya LUSH",
+          "category": "Live music venue",
+          "popularity": 0.9616184533938362,
+          "signals": [
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.5008084494709775
+            },
+            {
+              "name": "Dua Lipa",
+              "contribution": 0.49919155052902264
+            }
+          ]
+        },
+        {
+          "id": "A3BBB344-E5DD-44DF-8BFF-B3B3011DA1AB",
+          "name": "CLUB SEATA",
+          "category": "Live music venue",
+          "popularity": 0.975979170172293,
+          "signals": [
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.5083760096500028
+            },
+            {
+              "name": "Dua Lipa",
+              "contribution": 0.49162399034999715
+            }
+          ]
+        },
+        {
+          "id": "E54550BD-A134-4B7B-976B-3B34989B544C",
+          "name": "新宿ケントス",
+          "category": "Live music venue",
+          "popularity": 0.7626476495495526,
+          "signals": [
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.5048154838917238
+            },
+            {
+              "name": "Dua Lipa",
+              "contribution": 0.49518451610827624
+            }
+          ]
+        },
+        {
+          "id": "7D46387B-5A41-4E5A-B777-A8613CD4E61C",
+          "name": "WWW",
+          "category": "Live music venue",
+          "popularity": 0.9990713572782002,
+          "signals": [
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.5004191346198814
+            },
+            {
+              "name": "Dua Lipa",
+              "contribution": 0.49958086538011864
+            }
+          ]
+        },
+        {
+          "id": "B9001F7D-8691-497C-8F40-FE5DEE81889B",
+          "name": "Tower Records Shibuya",
+          "category": "CD store",
+          "popularity": 0.9959490747189649,
+          "signals": [
+            {
+              "name": "Dua Lipa",
+              "contribution": 0.509718579585152
+            },
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.49028142041484807
+            }
+          ]
+        },
+        {
+          "id": "752F2F60-4726-4FDA-AE57-A184611CE231",
+          "name": "池袋Live inn ROSA",
+          "category": "Live music venue",
+          "popularity": 0.803302884995771,
+          "signals": [
+            {
+              "name": "Dua Lipa",
+              "contribution": 0.5009429988160126
+            },
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.49905700118398755
+            }
+          ]
+        }
+      ],
+      "examined": 19,
+      "retrievedAt": "2026-10-23T06:04:52.284Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "4BBEF799-A0C4-4110-AB01-39216993C312",
+          "name": "Taylor Swift",
+          "type": "artist",
+          "description": "An American singer-songwriter known for narrative songwriting and genre versatility.",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "1D792A35-7D72-4D57-88D0-C3A4F3E73EF6",
+          "name": "Dua Lipa",
+          "type": "artist",
+          "description": "Dua Lipa is a British singer and songwriter known for her distinctive voice and modern pop hits.",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 1,
+        "lowerPopularity": 3,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 2,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "retro-games",
+        "name": "Nintendo & classic games",
+        "seeds": [
+          {
+            "name": "Nintendo",
+            "type": "brand"
+          },
+          {
+            "name": "The Legend of Zelda: Breath of the Wild",
+            "type": "videogame"
+          }
+        ],
+        "activity": "collect",
+        "pair": "anime"
+      },
+      "name": "Nintendo & classic games",
+      "activity": "collect",
+      "status": 200,
+      "elapsedMs": 777,
+      "places": [
+        {
+          "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+          "name": "Akihabara Gamers",
+          "category": "Hobby store",
+          "popularity": 0.9677357944594204,
+          "signals": [
+            {
+              "name": "The Legend of Zelda: Breath of the Wild",
+              "contribution": 0.5264390420842061
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.47356095791579383
+            }
+          ]
+        },
+        {
+          "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+          "name": "Kiddy Land",
+          "category": "Toy store",
+          "popularity": 0.993671671308023,
+          "signals": [
+            {
+              "name": "The Legend of Zelda: Breath of the Wild",
+              "contribution": 0.520093187764573
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.47990681223542697
+            }
+          ]
+        },
+        {
+          "id": "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+          "name": "The Gundam Base Tokyo",
+          "category": "Toy store",
+          "popularity": 0.9964341976768331,
+          "signals": [
+            {
+              "name": "The Legend of Zelda: Breath of the Wild",
+              "contribution": 0.5445495297247493
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.4554504702752507
+            }
+          ]
+        },
+        {
+          "id": "3D8796BA-33E9-4012-A196-3CDCBAD48EA1",
+          "name": "Animate Shinjuku",
+          "category": "Comic book store",
+          "popularity": 0.8993772893364699,
+          "signals": [
+            {
+              "name": "The Legend of Zelda: Breath of the Wild",
+              "contribution": 0.5191060084696325
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.4808939915303675
+            }
+          ]
+        },
+        {
+          "id": "F44101E9-B9A5-4BEC-B038-3773642AFB38",
+          "name": "GiGO Ikebukuro 2",
+          "category": "Video arcade",
+          "popularity": 0.8554322441840035,
+          "signals": [
+            {
+              "name": "Nintendo",
+              "contribution": 0.5020970035205379
+            },
+            {
+              "name": "The Legend of Zelda: Breath of the Wild",
+              "contribution": 0.4979029964794621
+            }
+          ]
+        },
+        {
+          "id": "0DAE9027-C122-461A-BACD-F86522F074D4",
+          "name": "Pokémon Center DX",
+          "category": "Hobby store",
+          "popularity": 0.909468106880091,
+          "signals": [
+            {
+              "name": "The Legend of Zelda: Breath of the Wild",
+              "contribution": 0.510155126823727
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.489844873176273
+            }
+          ]
+        },
+        {
+          "id": "EFC75C74-76F3-40D3-8300-06739C2A19E8",
+          "name": "Gigo Shinjuku Nishiguchi",
+          "category": "Video arcade",
+          "popularity": 0.6158925686666288,
+          "signals": [
+            {
+              "name": "The Legend of Zelda: Breath of the Wild",
+              "contribution": 0.5223227134457051
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.47767728655429476
+            }
+          ]
+        },
+        {
+          "id": "99EA8878-526F-4D88-A401-DC6C31548ECC",
+          "name": "Takadanobaba Mikado Game Center",
+          "category": "Video arcade",
+          "popularity": 0.7199285985184063,
+          "signals": [
+            {
+              "name": "The Legend of Zelda: Breath of the Wild",
+              "contribution": 0.5315986212774324
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.4684013787225677
+            }
+          ]
+        }
+      ],
+      "examined": 17,
+      "retrievedAt": "2026-10-23T06:04:53.063Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "FFD31D42-DF50-4B60-932C-7497C8E73A80",
+          "name": "Nintendo",
+          "type": "brand",
+          "description": "Nintendo is a global video game company known for its consoles like the Nintendo Switch and popular game franchises such as Super Mario, The Legend of Zelda, and Pokémon.",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "7E606158-8878-49D6-82AB-4C83A83F9974",
+          "name": "The Legend of Zelda: Breath of the Wild",
+          "type": "videogame",
+          "description": "Awakened with no memory, a hero explores a vast, ruined Hyrule to uncover its fate, recover lost strength, and stop an ancient evil from destroying the land.",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 1,
+        "lowerPopularity": 2,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 0,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "anime",
+        "name": "Digimon & Evangelion",
+        "seeds": [
+          {
+            "name": "Digimon Adventure",
+            "type": "tv_show"
+          },
+          {
+            "name": "Neon Genesis Evangelion",
+            "type": "tv_show"
+          }
+        ],
+        "activity": "collect",
+        "pair": "retro-games"
+      },
+      "name": "Digimon & Evangelion",
+      "activity": "collect",
+      "status": 200,
+      "elapsedMs": 693,
+      "places": [
+        {
+          "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+          "name": "Kiddy Land",
+          "category": "Toy store",
+          "popularity": 0.993671671308023,
+          "signals": [
+            {
+              "name": "Neon Genesis Evangelion",
+              "contribution": 0.526247688605541
+            },
+            {
+              "name": "Digimon Adventure",
+              "contribution": 0.47375231139445884
+            }
+          ]
+        },
+        {
+          "id": "E9E79D87-EFBF-44E6-89BE-A5EB62F70406",
+          "name": "TokyoMTG",
+          "category": "Game store",
+          "popularity": 0.5034045899466625,
+          "signals": [
+            {
+              "name": "Digimon Adventure",
+              "contribution": 0.5113940205859581
+            },
+            {
+              "name": "Neon Genesis Evangelion",
+              "contribution": 0.4886059794140419
+            }
+          ]
+        },
+        {
+          "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+          "name": "Akihabara Gamers",
+          "category": "Hobby store",
+          "popularity": 0.9677357944594204,
+          "signals": [
+            {
+              "name": "Digimon Adventure",
+              "contribution": 0.5011311563057272
+            },
+            {
+              "name": "Neon Genesis Evangelion",
+              "contribution": 0.49886884369427276
+            }
+          ]
+        },
+        {
+          "id": "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+          "name": "The Gundam Base Tokyo",
+          "category": "Toy store",
+          "popularity": 0.9964341976768331,
+          "signals": [
+            {
+              "name": "Digimon Adventure",
+              "contribution": 0.5299961932352965
+            },
+            {
+              "name": "Neon Genesis Evangelion",
+              "contribution": 0.47000380676470366
+            }
+          ]
+        },
+        {
+          "id": "B7927A53-735A-4F4C-BFF6-3A75D062E3BF",
+          "name": "Nicohapikids",
+          "category": "Video arcade",
+          "popularity": 0.8434144929926477,
+          "signals": [
+            {
+              "name": "Neon Genesis Evangelion",
+              "contribution": 0.5173514165349743
+            },
+            {
+              "name": "Digimon Adventure",
+              "contribution": 0.4826485834650257
+            }
+          ]
+        },
+        {
+          "id": "0DAE9027-C122-461A-BACD-F86522F074D4",
+          "name": "Pokémon Center DX",
+          "category": "Hobby store",
+          "popularity": 0.909468106880091,
+          "signals": [
+            {
+              "name": "Digimon Adventure",
+              "contribution": 0.5300231091299851
+            },
+            {
+              "name": "Neon Genesis Evangelion",
+              "contribution": 0.469976890870015
+            }
+          ]
+        },
+        {
+          "id": "5FF7E9C8-41DC-4AC3-BDC3-654B5302A822",
+          "name": "Tokyo Leisureland",
+          "category": "Video arcade",
+          "popularity": 0.5893889196579177,
+          "signals": [
+            {
+              "name": "Digimon Adventure",
+              "contribution": 0.511693760832676
+            },
+            {
+              "name": "Neon Genesis Evangelion",
+              "contribution": 0.48830623916732396
+            }
+          ]
+        },
+        {
+          "id": "3D8796BA-33E9-4012-A196-3CDCBAD48EA1",
+          "name": "Animate Shinjuku",
+          "category": "Comic book store",
+          "popularity": 0.8993772893364699,
+          "signals": [
+            {
+              "name": "Digimon Adventure",
+              "contribution": 0.5000204733722929
+            },
+            {
+              "name": "Neon Genesis Evangelion",
+              "contribution": 0.49997952662770717
+            }
+          ]
+        }
+      ],
+      "examined": 16,
+      "retrievedAt": "2026-10-23T06:04:53.756Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "5B879CFA-C75D-4A0F-ABD0-A0678B996E4D",
+          "name": "Digimon Adventure",
+          "type": "tv_show",
+          "description": "Digimon Adventure (1999) is a classic anime TV series produced by Toei Animation and created under the Akiyoshi Hongo pseudonym. Across its original 1999\u00022000 run the show follows a group of children who are transported to the Digital World and paired with evolving digital creatures; together they journey to overcome threats to both the digital and real worlds. Combining action-oriented monster battles with coming-of-age character arcs, the series mixes science-fiction ideas about virtual worlds with family-friendly adventure. Notable contributors include series-level direction by Hiroyuki Kak",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "E60E4025-D03A-4BDF-82D6-1CC3405B84F3",
+          "name": "Neon Genesis Evangelion",
+          "type": "tv_show",
+          "description": "Neon Genesis Evangelion (released 1997) is a Japanese animated series created and directed by Hideaki Anno, featuring the voice work of Megumi Ogata, Megumi Hayashibara, and Kotono Mitsuishi. Ostensibly a mecha and science-fiction action drama, it follows a reluctant teenage pilot recruited by a paramilitary organization to fight enigmatic, angelic attackers using giant biomechanical Evangelions. Over its run the series subverts genre expectations, shifting toward intense psychological drama that examines identity, trauma, religion, and existential despair. Its tone is bleak and introspective,",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 2,
+        "lowerPopularity": 2,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 0,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "pokemon",
+        "name": "Pokémon collecting",
+        "seeds": [
+          {
+            "name": "Pokémon",
+            "type": "brand"
+          },
+          {
+            "name": "Nintendo",
+            "type": "brand"
+          }
+        ],
+        "activity": "collect",
+        "pair": "comic-cinema"
+      },
+      "name": "Pokémon collecting",
+      "activity": "collect",
+      "status": 200,
+      "elapsedMs": 645,
+      "places": [
+        {
+          "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+          "name": "Kiddy Land",
+          "category": "Toy store",
+          "popularity": 0.993671671308023,
+          "signals": [
+            {
+              "name": "Pokémon",
+              "contribution": 0.5093304351044239
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.49066956489557606
+            }
+          ]
+        },
+        {
+          "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+          "name": "Akihabara Gamers",
+          "category": "Hobby store",
+          "popularity": 0.9677357944594204,
+          "signals": [
+            {
+              "name": "Nintendo",
+              "contribution": 0.5035634659607465
+            },
+            {
+              "name": "Pokémon",
+              "contribution": 0.4964365340392534
+            }
+          ]
+        },
+        {
+          "id": "F44101E9-B9A5-4BEC-B038-3773642AFB38",
+          "name": "GiGO Ikebukuro 2",
+          "category": "Video arcade",
+          "popularity": 0.8554322441840035,
+          "signals": [
+            {
+              "name": "Pokémon",
+              "contribution": 0.518740937148233
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.4812590628517671
+            }
+          ]
+        },
+        {
+          "id": "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+          "name": "The Gundam Base Tokyo",
+          "category": "Toy store",
+          "popularity": 0.9964341976768331,
+          "signals": [
+            {
+              "name": "Pokémon",
+              "contribution": 0.5195753920758974
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.4804246079241025
+            }
+          ]
+        },
+        {
+          "id": "3D8796BA-33E9-4012-A196-3CDCBAD48EA1",
+          "name": "Animate Shinjuku",
+          "category": "Comic book store",
+          "popularity": 0.8993772893364699,
+          "signals": [
+            {
+              "name": "Pokémon",
+              "contribution": 0.5162142131887891
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.4837857868112108
+            }
+          ]
+        },
+        {
+          "id": "0DAE9027-C122-461A-BACD-F86522F074D4",
+          "name": "Pokémon Center DX",
+          "category": "Hobby store",
+          "popularity": 0.909468106880091,
+          "signals": [
+            {
+              "name": "Pokémon",
+              "contribution": 0.5267697797724594
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.47323022022754047
+            }
+          ]
+        },
+        {
+          "id": "99EA8878-526F-4D88-A401-DC6C31548ECC",
+          "name": "Takadanobaba Mikado Game Center",
+          "category": "Video arcade",
+          "popularity": 0.7199285985184063,
+          "signals": [
+            {
+              "name": "Pokémon",
+              "contribution": 0.5264154376216541
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.47358456237834595
+            }
+          ]
+        },
+        {
+          "id": "5FF7E9C8-41DC-4AC3-BDC3-654B5302A822",
+          "name": "Tokyo Leisureland",
+          "category": "Video arcade",
+          "popularity": 0.5893889196579177,
+          "signals": [
+            {
+              "name": "Pokémon",
+              "contribution": 0.5159444722711047
+            },
+            {
+              "name": "Nintendo",
+              "contribution": 0.4840555277288954
+            }
+          ]
+        }
+      ],
+      "examined": 17,
+      "retrievedAt": "2026-10-23T06:04:54.401Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "9ED59F51-F7D3-4016-BED9-5887A26D7F62",
+          "name": "Pokémon",
+          "type": "brand",
+          "description": "Originally launched in Japan as a role-playing video game, this massive media franchise has expanded into one of the world's highest-grossing entertainment properties. It centers on the fictional creatures and the trainers who collect, train, and battle them, creating a deeply loyal multi-generational fan base. The brand encompasses video games, an extensive trading card game, animated series, movies, and a vast array of merchandise. Its market positioning is rooted in long-term legacy and massive accessibility, serving as a pillar of global pop culture for both casual fans and intense competi",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "FFD31D42-DF50-4B60-932C-7497C8E73A80",
+          "name": "Nintendo",
+          "type": "brand",
+          "description": "Nintendo is a global video game company known for its consoles like the Nintendo Switch and popular game franchises such as Super Mario, The Legend of Zelda, and Pokémon.",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 1,
+        "lowerPopularity": 2,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 0,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "comic-cinema",
+        "name": "Superhero cinema",
+        "seeds": [
+          {
+            "name": "The Dark Knight",
+            "type": "movie"
+          },
+          {
+            "name": "Spider-Man: Into the Spider-Verse",
+            "type": "movie"
+          }
+        ],
+        "activity": "collect",
+        "pair": "pokemon"
+      },
+      "name": "Superhero cinema",
+      "activity": "collect",
+      "status": 200,
+      "elapsedMs": 1066,
+      "places": [
+        {
+          "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+          "name": "Akihabara Gamers",
+          "category": "Hobby store",
+          "popularity": 0.9677357944594204,
+          "signals": [
+            {
+              "name": "The Dark Knight",
+              "contribution": 0.5116071514896834
+            },
+            {
+              "name": "Spider-Man: Into the Spider-Verse",
+              "contribution": 0.48839284851031667
+            }
+          ]
+        },
+        {
+          "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+          "name": "Kiddy Land",
+          "category": "Toy store",
+          "popularity": 0.993671671308023,
+          "signals": [
+            {
+              "name": "The Dark Knight",
+              "contribution": 0.5132401746994847
+            },
+            {
+              "name": "Spider-Man: Into the Spider-Verse",
+              "contribution": 0.4867598253005152
+            }
+          ]
+        },
+        {
+          "id": "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+          "name": "The Gundam Base Tokyo",
+          "category": "Toy store",
+          "popularity": 0.9964341976768331,
+          "signals": [
+            {
+              "name": "The Dark Knight",
+              "contribution": 0.5079743109643299
+            },
+            {
+              "name": "Spider-Man: Into the Spider-Verse",
+              "contribution": 0.4920256890356701
+            }
+          ]
+        },
+        {
+          "id": "B7927A53-735A-4F4C-BFF6-3A75D062E3BF",
+          "name": "Nicohapikids",
+          "category": "Video arcade",
+          "popularity": 0.8434144929926477,
+          "signals": [
+            {
+              "name": "Spider-Man: Into the Spider-Verse",
+              "contribution": 0.5013450992302235
+            },
+            {
+              "name": "The Dark Knight",
+              "contribution": 0.49865490076977653
+            }
+          ]
+        },
+        {
+          "id": "0DAE9027-C122-461A-BACD-F86522F074D4",
+          "name": "Pokémon Center DX",
+          "category": "Hobby store",
+          "popularity": 0.909468106880091,
+          "signals": [
+            {
+              "name": "The Dark Knight",
+              "contribution": 0.503996722384868
+            },
+            {
+              "name": "Spider-Man: Into the Spider-Verse",
+              "contribution": 0.4960032776151319
+            }
+          ]
+        },
+        {
+          "id": "42A3BE10-BBC7-45BF-A7A9-26FC95519DA0",
+          "name": "GiGO Akihabara Building 3",
+          "category": "Video arcade",
+          "popularity": 0.9129770762686839,
+          "signals": [
+            {
+              "name": "The Dark Knight",
+              "contribution": 0.5097526021715258
+            },
+            {
+              "name": "Spider-Man: Into the Spider-Verse",
+              "contribution": 0.49024739782847426
+            }
+          ]
+        },
+        {
+          "id": "EFC75C74-76F3-40D3-8300-06739C2A19E8",
+          "name": "Gigo Shinjuku Nishiguchi",
+          "category": "Video arcade",
+          "popularity": 0.6158925686666288,
+          "signals": [
+            {
+              "name": "Spider-Man: Into the Spider-Verse",
+              "contribution": 0.5115548167379329
+            },
+            {
+              "name": "The Dark Knight",
+              "contribution": 0.48844518326206704
+            }
+          ]
+        },
+        {
+          "id": "1B6A8552-2327-4B2D-BD88-D333062E0FBD",
+          "name": "Tamtam Hobby Shop",
+          "category": "Hobby store",
+          "popularity": 0.6610181044470471,
+          "signals": [
+            {
+              "name": "The Dark Knight",
+              "contribution": 0.5131471115194204
+            },
+            {
+              "name": "Spider-Man: Into the Spider-Verse",
+              "contribution": 0.48685288848057956
+            }
+          ]
+        }
+      ],
+      "examined": 17,
+      "retrievedAt": "2026-10-23T06:04:55.467Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "3432C364-C883-4A0D-A76B-99A57E5361E5",
+          "name": "The Dark Knight",
+          "type": "movie",
+          "description": "The Dark Knight (2008), directed by Christopher Nolan and starring Christian Bale, Heath Ledger, and Aaron Eckhart, is a dark action-crime thriller that continues the story of a vigilante protector confronting an agent of chaos in a corrupt metropolis. Combining tense set pieces with psychological confrontations, the film follows the escalating confrontation between the Joker’s anarchic assaults and the city’s efforts to preserve order, forcing characters into tragic ethical dilemmas. Themes of justice, corruption, identity, and sacrifice pervade the narrative, delivered through a moody, reali",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "7CCA6DC8-1092-41E6-92CA-2C2F8AD0A822",
+          "name": "Spider-Man: Into the Spider-Verse",
+          "type": "movie",
+          "description": "Spider-Man: Into the Spider-Verse (2018), directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman and produced by Phil Lord and Christopher Miller, is an animated superhero adventure starring Shameik Moore, Jake Johnson and Hailee Steinfeld. The film follows a Brooklyn teen who acquires spider-like powers and must team with alternate-universe spider-heroes to stop a multiversal threat; it blends high-energy action and family-friendly humor with a tender coming-of-age story. Visually groundbreaking, the film uses comic-inspired paneling and mixed-media textures to deliver an immersive, ki",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 1,
+        "lowerPopularity": 2,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 0,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "arthouse",
+        "name": "Quiet, romantic cinema",
+        "seeds": [
+          {
+            "name": "In the Mood for Love",
+            "type": "movie"
+          },
+          {
+            "name": "Before Sunrise",
+            "type": "movie"
+          }
+        ],
+        "activity": "art",
+        "pair": "surreal"
+      },
+      "name": "Quiet, romantic cinema",
+      "activity": "art",
+      "status": 200,
+      "elapsedMs": 854,
+      "places": [
+        {
+          "id": "FAED09E0-38AE-4B21-90A2-137FA5898C63",
+          "name": "Ghibli Museum",
+          "category": "Art museum",
+          "popularity": 0.9995440364235962,
+          "signals": [
+            {
+              "name": "Before Sunrise",
+              "contribution": 0.5147531597352355
+            },
+            {
+              "name": "In the Mood for Love",
+              "contribution": 0.48524684026476456
+            }
+          ]
+        },
+        {
+          "id": "2C22E484-392B-4AE2-A00E-E811AAED1075",
+          "name": "Mori Art Museum",
+          "category": "Modern art museum",
+          "popularity": 0.9999453958079582,
+          "signals": [
+            {
+              "name": "In the Mood for Love",
+              "contribution": 0.5229386565458048
+            },
+            {
+              "name": "Before Sunrise",
+              "contribution": 0.4770613434541951
+            }
+          ]
+        },
+        {
+          "id": "0E0FBA3B-8EC7-439A-8AF6-A8DE3E78D251",
+          "name": "The Sumida Hokusai Museum",
+          "category": "Art museum",
+          "popularity": 0.9855519908056941,
+          "signals": [
+            {
+              "name": "In the Mood for Love",
+              "contribution": 0.5217685754904625
+            },
+            {
+              "name": "Before Sunrise",
+              "contribution": 0.4782314245095375
+            }
+          ]
+        },
+        {
+          "id": "175F1BBD-E883-4291-AB31-3806E330686E",
+          "name": "SCAI The Bathhouse",
+          "category": "Art gallery",
+          "popularity": 0.9768012047096302,
+          "signals": [
+            {
+              "name": "In the Mood for Love",
+              "contribution": 0.5390371264786803
+            },
+            {
+              "name": "Before Sunrise",
+              "contribution": 0.46096287352131976
+            }
+          ]
+        },
+        {
+          "id": "AA033E1B-C5B9-4A05-8422-C5CA64788A85",
+          "name": "Pola Museum Annex",
+          "category": "Art gallery",
+          "popularity": 0.991753281173329,
+          "signals": [
+            {
+              "name": "In the Mood for Love",
+              "contribution": 0.5411841744541076
+            },
+            {
+              "name": "Before Sunrise",
+              "contribution": 0.4588158255458924
+            }
+          ]
+        },
+        {
+          "id": "C786AD5F-90E6-43C1-9281-4295703A168C",
+          "name": "Tokyo Opera City Art Gallery",
+          "category": "Art museum",
+          "popularity": 0.99844173751282,
+          "signals": [
+            {
+              "name": "In the Mood for Love",
+              "contribution": 0.5367306534680797
+            },
+            {
+              "name": "Before Sunrise",
+              "contribution": 0.4632693465319203
+            }
+          ]
+        },
+        {
+          "id": "F362CEF0-71BB-4C18-BB6A-C91D99B7F080",
+          "name": "Fugensha",
+          "category": "Art gallery",
+          "popularity": 0.43727315579913234,
+          "signals": [
+            {
+              "name": "In the Mood for Love",
+              "contribution": 0.5324593258903385
+            },
+            {
+              "name": "Before Sunrise",
+              "contribution": 0.4675406741096616
+            }
+          ]
+        },
+        {
+          "id": "03D43981-69C5-419A-BD21-95FFE53DCE58",
+          "name": "Gallery Café 3 Temporary",
+          "category": "Art gallery",
+          "popularity": 0.34509552204764976,
+          "signals": [
+            {
+              "name": "In the Mood for Love",
+              "contribution": 0.5170849434958811
+            },
+            {
+              "name": "Before Sunrise",
+              "contribution": 0.4829150565041188
+            }
+          ]
+        }
+      ],
+      "examined": 29,
+      "retrievedAt": "2026-10-23T06:04:56.321Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "900B6C69-9D86-4153-B8FD-4D6CD726FCF8",
+          "name": "In the Mood for Love",
+          "type": "movie",
+          "description": "In the Mood for Love (2000), directed by Wong Kar-wai and starring Maggie Cheung and Tony Leung Chiu-wai, is a restrained romantic drama set in 1960s Hong Kong. The story follows two neighbors who, after suspecting their spouses of mutual infidelity, develop a close but platonic companionship as they privately reconstruct the affair. Renowned for its sumptuous cinematography, meticulous framing, and recurring musical motifs, the film meditates on yearning, social constraint, memory, and regret in an art-house, period style.",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "EDA54D37-08C7-457D-83F8-1BCE21FEDC63",
+          "name": "Before Sunrise",
+          "type": "movie",
+          "description": "Before Sunrise (1995), directed by Richard Linklater and starring Ethan Hawke, Julie Delpy and Andrea Eckert, is a quietly observant romantic drama with touches of comedy. The film follows an American man and a French woman who meet on a train and spend one night roaming Vienna, talking about life, love and identity. Its elliptical, dialogue-driven approach emphasizes naturalism and the emotional intensity of a fleeting encounter, exploring themes of chance, communication and missed opportunity. The tone is wistful and intimate, inviting viewers to linger on small moments and the possibilities",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 1,
+        "lowerPopularity": 2,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 0,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "surreal",
+        "name": "Strange, surreal cinema",
+        "seeds": [
+          {
+            "name": "Eraserhead",
+            "type": "movie"
+          },
+          {
+            "name": "Paprika",
+            "type": "movie"
+          }
+        ],
+        "activity": "art",
+        "pair": "arthouse"
+      },
+      "name": "Strange, surreal cinema",
+      "activity": "art",
+      "status": 200,
+      "elapsedMs": 675,
+      "places": [
+        {
+          "id": "2C22E484-392B-4AE2-A00E-E811AAED1075",
+          "name": "Mori Art Museum",
+          "category": "Modern art museum",
+          "popularity": 0.9999453958079582,
+          "signals": [
+            {
+              "name": "Paprika",
+              "contribution": 0.5712294431279337
+            },
+            {
+              "name": "Eraserhead",
+              "contribution": 0.42877055687206644
+            }
+          ]
+        },
+        {
+          "id": "D8EFDA88-BA59-48FA-AFE0-15A46D81A1A5",
+          "name": "Ba-Tsu Art Gallery",
+          "category": "Art gallery",
+          "popularity": 0.9938161681155351,
+          "signals": [
+            {
+              "name": "Paprika",
+              "contribution": 0.5983036902147308
+            },
+            {
+              "name": "Eraserhead",
+              "contribution": 0.4016963097852692
+            }
+          ]
+        },
+        {
+          "id": "A35AACA6-9494-4F4C-AF08-5433DFE851CA",
+          "name": "Bank Gallery",
+          "category": "Art gallery",
+          "popularity": 0.9805120610259422,
+          "signals": [
+            {
+              "name": "Paprika",
+              "contribution": 0.5959396440250513
+            },
+            {
+              "name": "Eraserhead",
+              "contribution": 0.4040603559749486
+            }
+          ]
+        },
+        {
+          "id": "FAED09E0-38AE-4B21-90A2-137FA5898C63",
+          "name": "Ghibli Museum",
+          "category": "Art museum",
+          "popularity": 0.9995440364235962,
+          "signals": [
+            {
+              "name": "Paprika",
+              "contribution": 0.5225583521339371
+            },
+            {
+              "name": "Eraserhead",
+              "contribution": 0.47744164786606286
+            }
+          ]
+        },
+        {
+          "id": "03D43981-69C5-419A-BD21-95FFE53DCE58",
+          "name": "Gallery Café 3 Temporary",
+          "category": "Art gallery",
+          "popularity": 0.34509552204764976,
+          "signals": [
+            {
+              "name": "Paprika",
+              "contribution": 0.5874770130703648
+            },
+            {
+              "name": "Eraserhead",
+              "contribution": 0.41252298692963524
+            }
+          ]
+        },
+        {
+          "id": "C786AD5F-90E6-43C1-9281-4295703A168C",
+          "name": "Tokyo Opera City Art Gallery",
+          "category": "Art museum",
+          "popularity": 0.99844173751282,
+          "signals": [
+            {
+              "name": "Paprika",
+              "contribution": 0.5877147049499767
+            },
+            {
+              "name": "Eraserhead",
+              "contribution": 0.41228529505002337
+            }
+          ]
+        },
+        {
+          "id": "A4BA60F9-0099-40F9-9E64-EDDBEF0A24C8",
+          "name": "The Mass",
+          "category": "Art gallery",
+          "popularity": 0.9905146575109923,
+          "signals": [
+            {
+              "name": "Paprika",
+              "contribution": 0.5947257461488662
+            },
+            {
+              "name": "Eraserhead",
+              "contribution": 0.4052742538511338
+            }
+          ]
+        },
+        {
+          "id": "06395FC1-F6D6-48EF-8135-3C07F01933A6",
+          "name": "Kameido Art Center",
+          "category": "Art gallery",
+          "popularity": 0.2390118349943037,
+          "signals": [
+            {
+              "name": "Paprika",
+              "contribution": 0.5942166700497464
+            },
+            {
+              "name": "Eraserhead",
+              "contribution": 0.4057833299502536
+            }
+          ]
+        }
+      ],
+      "examined": 27,
+      "retrievedAt": "2026-10-23T06:04:56.996Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "D435761F-D403-4F14-958C-F3B2BF757F0F",
+          "name": "Eraserhead",
+          "type": "movie",
+          "description": "Eraserhead (1977/1978), directed by David Lynch and starring Jack Nance, Charlotte Stewart and Allen Joseph, is an experimental black-and-white fantasy-horror art film. It follows Henry Spencer as he navigates an oppressive industrial city, strained domestic relationships, and the disturbing presence of a deformed newborn, rendered through surreal imagery and dense sound design. The film emphasizes atmosphere and subconscious symbolism over linear plot, exploring themes of fatherhood, guilt, alienation and the erosion of identity. Its tone is eerie, nightmarish and uncompromising, marking it a",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "D2A7599F-FB1E-44C1-8BE6-3CFE9438C574",
+          "name": "Paprika",
+          "type": "movie",
+          "description": "Paprika is a 2006 Japanese animated film directed by Satoshi Kon (U.S. release in 2007) starring Megumi Hayashibara, Tôru Emori, and Katsunosuke Hori. The film combines anime, fantasy, science-fiction, and psychological-thriller elements to follow therapists who use a device to enter patients' dreams and the chaos that ensues when it is stolen. Visually ambitious and conceptually dense, it interrogates identity, memory, and the ethical implications of technology while shifting seamlessly between playful wonder and mounting dread. The result is a provocative, dreamlike experience that rewards r",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 1,
+        "lowerPopularity": 2,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 2,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "quiet-design",
+        "name": "MUJI & Ghibli",
+        "seeds": [
+          {
+            "name": "MUJI",
+            "type": "brand"
+          },
+          {
+            "name": "Spirited Away",
+            "type": "movie"
+          }
+        ],
+        "activity": "cafe",
+        "pair": "familiar-coffee"
+      },
+      "name": "MUJI & Ghibli",
+      "activity": "cafe",
+      "status": 200,
+      "elapsedMs": 834,
+      "places": [
+        {
+          "id": "86DD44DB-5551-4DA7-94DD-8F65A2E9CDF2",
+          "name": "Canal Cafe",
+          "category": "Cafe",
+          "popularity": 0.9981365855144365,
+          "signals": [
+            {
+              "name": "Muji",
+              "contribution": 0.6285362765919787
+            },
+            {
+              "name": "Spirited Away",
+              "contribution": 0.37146372340802125
+            }
+          ]
+        },
+        {
+          "id": "844BD264-2213-4E1A-ABDF-B62AECC350E5",
+          "name": "Caffè Michelangelo",
+          "category": "Cafe",
+          "popularity": 0.9926551789847409,
+          "signals": [
+            {
+              "name": "Muji",
+              "contribution": 0.6102428760007499
+            },
+            {
+              "name": "Spirited Away",
+              "contribution": 0.38975712399925005
+            }
+          ]
+        },
+        {
+          "id": "FB94161B-E320-401D-8151-FA8CC4B90D65",
+          "name": "GARDEN HOUSE CRAFTS DAIKANYAMA",
+          "category": "Cafe",
+          "popularity": 0.9938241544429425,
+          "signals": [
+            {
+              "name": "Muji",
+              "contribution": 0.6234062054269278
+            },
+            {
+              "name": "Spirited Away",
+              "contribution": 0.3765937945730722
+            }
+          ]
+        },
+        {
+          "id": "9CA5D0BA-BAEF-44B4-AF75-82A93B7E7DBB",
+          "name": "crisscross",
+          "category": "Cafe",
+          "popularity": 0.9985048852179023,
+          "signals": [
+            {
+              "name": "Muji",
+              "contribution": 0.5968821467734741
+            },
+            {
+              "name": "Spirited Away",
+              "contribution": 0.403117853226526
+            }
+          ]
+        },
+        {
+          "id": "5B3D0C3D-E7CE-48FD-93A7-8BEC452A22D2",
+          "name": "Coffee Zingaro（Cafe Zingaro）",
+          "category": "Cafe",
+          "popularity": 0.9924040739927662,
+          "signals": [
+            {
+              "name": "Muji",
+              "contribution": 0.6130957657990631
+            },
+            {
+              "name": "Spirited Away",
+              "contribution": 0.38690423420093684
+            }
+          ]
+        },
+        {
+          "id": "786941B1-2F6E-4E58-A372-3D77822AB57E",
+          "name": "Mirliton Cafe",
+          "category": "Cafe",
+          "popularity": 0.6662844373223739,
+          "signals": [
+            {
+              "name": "Muji",
+              "contribution": 0.5888102396712745
+            },
+            {
+              "name": "Spirited Away",
+              "contribution": 0.41118976032872545
+            }
+          ]
+        },
+        {
+          "id": "1A38D043-D0DC-414D-850E-CCA24F0D657E",
+          "name": "LONGBOARD CAFÉ",
+          "category": "Cafe",
+          "popularity": 0.7150658537699737,
+          "signals": [
+            {
+              "name": "Muji",
+              "contribution": 0.6166531049678519
+            },
+            {
+              "name": "Spirited Away",
+              "contribution": 0.38334689503214814
+            }
+          ]
+        },
+        {
+          "id": "5F845C02-1D4D-4533-8714-A499B0C2BFDA",
+          "name": "Peter Rabbit Garden Cafe",
+          "category": "Cafe",
+          "popularity": 0.8679577772156394,
+          "signals": [
+            {
+              "name": "Muji",
+              "contribution": 0.598873509227169
+            },
+            {
+              "name": "Spirited Away",
+              "contribution": 0.40112649077283097
+            }
+          ]
+        }
+      ],
+      "examined": 29,
+      "retrievedAt": "2026-10-23T06:04:57.831Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "E12201A5-CC50-40AF-97AE-C54A2CA303F7",
+          "name": "Muji",
+          "type": "brand",
+          "description": "Muji is a Japanese retail brand offering minimalist, quality household goods, clothing, stationery, and furniture.",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "9B33A620-68CA-49B3-BFCF-F09CCF8AD595",
+          "name": "Spirited Away",
+          "type": "movie",
+          "description": "Spirited Away (2001), directed by Hayao Miyazaki and produced by Studio Ghibli, is an animated fantasy adventure featuring voices including Daveigh Chase, Miyu Irino and Suzanne Pleshette in its English-language release. The film follows a ten-year-old girl who falls into a hidden spirit world after her parents are transformed, and must work in a supernatural bathhouse to survive and save them. The narrative blends coming-of-age drama, folklore-inspired mythmaking, and environmental and anti-consumerist themes, delivered with evocative, emotionally resonant visuals and a sweeping score. Its to",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 8,
+        "unique": 8,
+        "families": 1,
+        "lowerPopularity": 2,
+        "popularityKnown": 8,
+        "individualExplanations": 8,
+        "missingHours": 0,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    },
+    {
+      "profile": {
+        "id": "familiar-coffee",
+        "name": "Coffee & mainstream pop",
+        "seeds": [
+          {
+            "name": "Starbucks",
+            "type": "brand"
+          },
+          {
+            "name": "Taylor Swift",
+            "type": "artist"
+          }
+        ],
+        "activity": "cafe",
+        "pair": "quiet-design"
+      },
+      "name": "Coffee & mainstream pop",
+      "activity": "cafe",
+      "status": 200,
+      "elapsedMs": 1047,
+      "places": [
+        {
+          "id": "3185BA16-04E7-4B7E-8DC7-F7C156BC5B3F",
+          "name": "SEGA Collabocafe",
+          "category": "Cafe",
+          "popularity": 0.009755391792507041,
+          "signals": [
+            {
+              "name": "Starbucks",
+              "contribution": 0.5232813532546787
+            },
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.47671864674532144
+            }
+          ]
+        },
+        {
+          "id": "A6D43765-0348-49EC-8396-35240753DB2B",
+          "name": "In Akihabara, there is no problem even if a maid from another world serves you!",
+          "category": "Cosplay cafe",
+          "popularity": 0.7779953278127381,
+          "signals": [
+            {
+              "name": "Starbucks",
+              "contribution": 0.5134701252952228
+            },
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.4865298747047772
+            }
+          ]
+        },
+        {
+          "id": "CF279497-794A-42AF-92C0-04A6247B3AAE",
+          "name": "Swallowtail",
+          "category": "Cafe",
+          "popularity": 0.5475728808094495,
+          "signals": [
+            {
+              "name": "Starbucks",
+              "contribution": 0.5400933693691108
+            },
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.4599066306308891
+            }
+          ]
+        },
+        {
+          "id": "3EA66770-E243-4E2C-B2B5-DEE9E74A8592",
+          "name": "ORIGAMI",
+          "category": "Cafe",
+          "popularity": 0.12907186617441174,
+          "signals": [
+            {
+              "name": "Starbucks",
+              "contribution": 0.5182411923368009
+            },
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.4817588076631991
+            }
+          ]
+        },
+        {
+          "id": "65470E21-5B9B-4A77-83E3-E156C17C2D51",
+          "name": "Coffee & Cake SHU Shinjyuku",
+          "category": "Cafe",
+          "popularity": 0.15271120957200343,
+          "signals": [
+            {
+              "name": "Starbucks",
+              "contribution": 0.5202430805729338
+            },
+            {
+              "name": "Taylor Swift",
+              "contribution": 0.47975691942706633
+            }
+          ]
+        }
+      ],
+      "examined": 5,
+      "retrievedAt": "2026-10-23T06:04:58.879Z",
+      "partial": false,
+      "provider": "qloo",
+      "notice": null,
+      "budgetLimited": false,
+      "hoursNotice": "Place dates filter weekly closures only. Check special closures, admission prices and availability with the venue.",
+      "interests": [
+        {
+          "id": "B13C02E3-BA3C-4B39-85B4-ACF12FEBC892",
+          "name": "Starbucks",
+          "type": "brand",
+          "description": "Starbucks is a global coffee company known for its handcrafted beverages, coffee products, and café experience.",
+          "themes": [],
+          "connections": []
+        },
+        {
+          "id": "4BBEF799-A0C4-4110-AB01-39216993C312",
+          "name": "Taylor Swift",
+          "type": "artist",
+          "description": "An American singer-songwriter known for narrative songwriting and genre versatility.",
+          "themes": [],
+          "connections": []
+        }
+      ],
+      "metrics": {
+        "count": 5,
+        "unique": 5,
+        "families": 1,
+        "lowerPopularity": 5,
+        "popularityKnown": 5,
+        "individualExplanations": 5,
+        "missingHours": 0,
+        "needsHumanReview": true
+      },
+      "unresolved": []
+    }
+  ],
+  "pairs": [
+    {
+      "a": "jazz",
+      "b": "metal",
+      "shared": 2,
+      "left": 8,
+      "right": 8,
+      "jaccard": 0.14285714285714285,
+      "sharedIds": [
+        "F410BD61-1AAC-4F59-9CC0-0C2CE5A10E6E",
+        "154C72DF-F3D7-49C0-913D-2BCFD2FC6C85"
+      ]
+    },
+    {
+      "a": "electronic",
+      "b": "pop",
+      "shared": 2,
+      "left": 8,
+      "right": 8,
+      "jaccard": 0.14285714285714285,
+      "sharedIds": [
+        "7D46387B-5A41-4E5A-B777-A8613CD4E61C",
+        "CA098595-B391-4C8D-BC61-2576E7383C5B"
+      ]
+    },
+    {
+      "a": "retro-games",
+      "b": "anime",
+      "shared": 5,
+      "left": 8,
+      "right": 8,
+      "jaccard": 0.45454545454545453,
+      "sharedIds": [
+        "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+        "510180A6-407B-476B-9CCF-515055B3A1C6",
+        "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+        "3D8796BA-33E9-4012-A196-3CDCBAD48EA1",
+        "0DAE9027-C122-461A-BACD-F86522F074D4"
+      ]
+    },
+    {
+      "a": "pokemon",
+      "b": "comic-cinema",
+      "shared": 4,
+      "left": 8,
+      "right": 8,
+      "jaccard": 0.3333333333333333,
+      "sharedIds": [
+        "510180A6-407B-476B-9CCF-515055B3A1C6",
+        "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+        "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+        "0DAE9027-C122-461A-BACD-F86522F074D4"
+      ]
+    },
+    {
+      "a": "arthouse",
+      "b": "surreal",
+      "shared": 4,
+      "left": 8,
+      "right": 8,
+      "jaccard": 0.3333333333333333,
+      "sharedIds": [
+        "FAED09E0-38AE-4B21-90A2-137FA5898C63",
+        "2C22E484-392B-4AE2-A00E-E811AAED1075",
+        "C786AD5F-90E6-43C1-9281-4295703A168C",
+        "03D43981-69C5-419A-BD21-95FFE53DCE58"
+      ]
+    },
+    {
+      "a": "quiet-design",
+      "b": "familiar-coffee",
+      "shared": 0,
+      "left": 8,
+      "right": 5,
+      "jaccard": 0,
+      "sharedIds": []
+    }
+  ]
+}
