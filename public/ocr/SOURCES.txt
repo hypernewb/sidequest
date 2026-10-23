@@ -1,0 +1,6 @@
+OCR assets are self-hosted so screenshot pixels stay in the user's browser.
+Tesseract.js 7.0.0 worker: npm tesseract.js/dist/worker.min.js (Apache-2.0).
+Core files: npm tesseract.js-core 7.0.0, embedded Wasm JavaScript builds (Apache-2.0).
+English language data: https://cdn.jsdelivr.net/npm/@tesseract.js-data/eng@1.0.0/4.0.0_best_int/eng.traineddata.gz
+Japanese language data: https://cdn.jsdelivr.net/npm/@tesseract.js-data/jpn@1.0.0/4.0.0_best_int/jpn.traineddata.gz
+Language models derive from Tesseract tessdata (Apache-2.0). No screenshots or OCR text are sent to these asset sources.
