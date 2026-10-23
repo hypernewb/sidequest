@@ -28,7 +28,8 @@ export function extractEventDetails(text:string,url:string,checkedAt=new Date().
  let priceCeiling=amounts.length?Math.max(...amounts):/入場無料|入場料.*無料/.test(original)?0:null;
  if(extraDrink){if(drinkAmount!=null&&priceCeiling!=null)priceCeiling+=drinkAmount;else priceCeiling=null;}
  if(/送料|手数料|fees? extra|別途.*料金/i.test(original))priceCeiling=null;
- const status=/^(?:【|\[)(?:公演中止|開催中止|CANCELLED|CANCELED)(?:】|\])|^(?:公演中止|開催中止|CANCELLED|CANCELED)\s*[!！。]?\s*$/im.test(original)?'cancelled':/^(?:【|\[)?(?:SOLD\s*OUT|完売|売り切れ)(?:】|\])?\s*[!！。]*\s*$/im.test(original)?'sold_out':'unknown';
+ const ticketSoldOut=prices.some(line=>/SOLD\s*OUT|完売|売り切れ/i.test(line)&&!/場合|if |when /i.test(line));
+ const status=/^(?:【|\[)(?:公演中止|開催中止|CANCELLED|CANCELED)(?:】|\])|^(?:公演中止|開催中止|CANCELLED|CANCELED)\s*[!！。]?\s*$/im.test(original)?'cancelled':ticketSoldOut||/^(?:【|\[)?(?:SOLD\s*OUT|完売|売り切れ)(?:】|\])?\s*[!！。]*\s*$/im.test(original)?'sold_out':'unknown';
  return {original,artists:[...new Set(artists)].filter(a=>! /^(?:live|dj|shop|band members|【バンドメンバー】)$/i.test(a)).slice(0,12),genres,times,prices,priceCeiling,status,checkedAt,url};
 }
 
