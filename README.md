@@ -2,6 +2,30 @@
 
 Taste-led Tokyo discovery for the Qloo Agentic Hackathon. Vinext/React app with a server-side Qloo adapter. No language model or second API key is required to run the current experience.
 
+## Dispatch SideQuest Agent
+
+The home screen now starts with one cultural seed, such as **Nujabes**, and one dispatch button. Exact, unique names resolve automatically. Ambiguous or partial names ask which entity the person means. The output is one curated quest with a title, pace, ordered route and a concrete suggested action at every stop. Date and price controls are optional. The full event/drop catalog and previous saves remain under `/explore` and `/classic`.
+
+`POST /api/quests` resolves the seed, calls the bounded scout, and composes editorial instructions from verified venue categories. A new quest can exclude the preceding stops. Quests save in the visitor's browser separately from earlier venue saves. Editorial prompts suggest what to do; they do not invent room smells, a currently playing record, exhibitions or product stock. Museum and live-show visits explicitly require a current programme check. The scorecard below evaluates the earlier place ranking, not this quest experience.
+
+The advanced outing form and results at `/explore` include **Dispatch SideQuest Agent**. `POST /api/scout` reads the chosen activity, direction, confirmed Qloo seeds, date, price rules and dismissed IDs. It fetches fresh Qloo places with coordinates and weekly hours, checks Tokyo's current date/time, and searches nearby stop sequences that fit an afternoon ending at 18:00. It plans the next afternoon when there is too little time left today. A successful plan has two or three taste-matched stops, arrival/departure times, individual reasons, venue links and a Google Maps route. Unknown hours never become assumed opening hours, and a one-stop result is not padded.
+
+The scout is a bounded tool-driven planner with deterministic scheduling and brief composition. It does not use an LLM to invent a route. Each visit allows 45 minutes. Walking estimates use straight-line distance × 1.35 at 4 km/h, plus five minutes per leg, with at most 1.8 km straight-line between stops. These are estimates, not live routing. Qloo weekly hours do not verify special closures, reservations, admission, current exhibitions or stock. Price limits apply per stop; strict limits exclude unknown prices. Date/format windows for the event feed do not turn a venue into a confirmed event. The scout plans places for the selected starting date.
+
+Live checks on 24 October 2026 JST produced three nearby stops for mixed Akihabara, Ueno art and Aoyama café choices. Constraint tests cover split hours, missing hours/coordinates, insufficient time, exclusions, budgets, taste filtering, origin validation, source failure and profile forwarding.
+
+## Measured ranking comparison
+
+The scored workbook now includes all twelve fictional profiles. Codex rated the top four choices per condition on the original 1–5 rubric. A uses the saved app Qloo ranking with diversity rules. B uses the local model's fresh metadata ranking of the same five-to-eight-place pool, without Qloo affinity or contributor scores. Each candidate receives the same rating wherever it appears within a profile.
+
+| Condition | Relevance | Novelty | Coherence | Mean of three |
+| --- | ---: | ---: | ---: | ---: |
+| A: App Qloo ranking | 2.56 | 2.17 | 2.56 | 2.43 |
+| B: Local-model metadata ranking | 2.79 | 2.33 | 2.79 | 2.64 |
+| Descriptive relative difference | -8.2% | -7.1% | -8.2% | -7.9% |
+
+This evaluation does **not** show a 30–40% Qloo gain. It is an unblinded agent desk review on provider-derived candidate pools, not a human study or an independent retrieval benchmark. It excludes live events, drops and scout routes. The original one-profile, eight-per-list comparison is also scored and favours the local-model list on relevance/coherence. See [the complete method and findings](evaluation/RANKING-SCORECARD.md). The practical next test is independent user save/reject feedback after fixing explicit franchise and programme evidence.
+
 ## Run locally
 
 Node 22.13+ (tested on Node 24) is required.

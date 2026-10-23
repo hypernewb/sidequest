@@ -89,3 +89,6 @@ Added six direct official/publisher readers, a source registry with explicit acc
 
 ## v19 — Contrasting taste audit and English catalog
 Corrected activity leakage, verified Qloo genre hydration, bounded source diversity and opt-in activity-only alternatives. Added persisted English card fields and guarded translation envelopes for future refreshes. See evaluation/CONTRASTING-TASTE-AUDIT.md.
+
+## v20 — Quests and a measured ranking review
+The main entry accepts one cultural seed and returns one afternoon quest with a title, suggested actions, timed nearby stops and a walking-map link. Optional date and price settings remain folded away. The scout checks fresh Qloo coordinates, weekly hours and Tokyo time, and refuses to pad an unverified route. The earlier catalog is available at `/explore`. The twelve-profile local-model comparison and original workbook review are scored, with limitations and negative results retained in evaluation/RANKING-SCORECARD.md. The benchmark does not evaluate quest quality.

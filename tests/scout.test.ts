@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {openingWindows,planScout} from '../lib/scout.ts';
+import type {Preferences,Opportunity} from '../lib/opportunities.ts';
+const now=new Date('2026-10-24T02:00:00Z');
+const p:Preferences={intent:'art',direction:'any',format:'dated',date:'2026-10-24',days:7,budget:'any',unknownPrice:true,seeds:[],exclude:[]};
+function place(id:string,patch:Partial<Opportunity>={}):Opportunity{return {id,title:id,kind:'place',source:'Qloo',url:'https://example.com/'+id,description:'Art gallery',location:'Tokyo',checkedAt:now.toISOString(),price:null,priceLabel:'Unknown',availability:'Check',category:'Art gallery',lat:35.6762,lon:139.7006,hours:{saturday:[{opens:'T12:00:00',closes:'T18:00:00'}]},...patch};}
+test('clusters three stops, allows travel, and finishes within published hours',()=>{const r=planScout([place('a'),place('b',{lon:139.705}),place('c',{lon:139.709}),place('far',{lon:139.8})],p,now);assert.equal(r.stops.length,3);assert.ok(r.stops.every(s=>s.departure<='18:00'));assert.ok(r.stops[1].travelMinutes>=5);assert.match(r.map!,/waypoints=/);assert.ok(!r.stops.some(s=>s.item.id==='far'));});
+test('unknown, closed, split-hour gaps and too-short visits never become open',()=>{const r=planScout([place('unknown',{hours:{}}),place('closed',{hours:{saturday:[{closed:true}]}}),place('short',{hours:{saturday:[{opens:'13:00',closes:'13:30'}]}}),place('split',{hours:{saturday:[{opens:'10:00',closes:'12:00'},{opens:'17:45',closes:'20:00'}]}})],p,now);assert.equal(r.stops.length,0);assert.deepEqual(openingWindows({saturday:[{opens:'bad',closes:'18:00'}]},p.date),[]);});
+test('late Tokyo time rolls to next afternoon without fabricating Sunday hours',()=>{const r=planScout([place('a'),place('b')],p,new Date('2026-10-24T08:00:00Z'));assert.equal(r.date,'2026-10-25');assert.equal(r.stops.length,0);assert.match(r.notes.join(' '),/next afternoon/);});
+test('budget, explicit taste, dismissed places and missing coordinates restrict routes',()=>{const rows=[place('a'),place('b'),place('missing',{lat:undefined}),place('excluded')];assert.equal(planScout(rows,{...p,budget:'1000',unknownPrice:false},now).stops.length,0);assert.equal(planScout(rows,{...p,direction:'independent'},now).stops.length,0);assert.equal(planScout(rows,{...p,exclude:['a','b','excluded']},now).stops.length,0);});
+test('two verified stops are valid; one stop is not padded',()=>{assert.equal(planScout([place('a'),place('b')],p,now).stops.length,2);assert.equal(planScout([place('a')],p,now).stops.length,0);});

@@ -1,1 +1,1 @@
-export {default} from '@/components/outing-builder';
+export {default} from '@/components/quest-builder';

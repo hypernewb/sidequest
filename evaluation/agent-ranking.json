@@ -1,0 +1,1203 @@
+{
+  "checkedAt": "2026-10-23T15:22:05.219Z",
+  "snapshot": "2026-10-23T06:04:58.880Z",
+  "model": "bionic qwen3.5-text-9b-nsfw-rp-roleplay-i1",
+  "scope": "Paired top-four ranking within the same provider-derived 5–8 place pool for each of 12 fictional profiles. A=existing app Qloo ranking with diversity rules. B=local model metadata ranking. Same candidate metadata, no affinities/signals provided to B. Ranking only, not retrieval or event evaluation.",
+  "evaluator": "Unblinded Codex agent desk review. Not human ratings.",
+  "summary": [
+    [
+      "Condition",
+      "Relevance",
+      "Novelty",
+      "Coherence",
+      "Mean of three"
+    ],
+    [
+      "A · App Qloo",
+      2.5625,
+      2.1666666666666665,
+      2.5625,
+      2.4305555555555554
+    ],
+    [
+      "B · Local model",
+      2.7916666666666665,
+      2.3333333333333335,
+      2.7916666666666665,
+      2.638888888888889
+    ],
+    [
+      "Relative change",
+      -0.08208955223880587,
+      -0.07142857142857151,
+      -0.08208955223880587,
+      -0.07894736842105265
+    ]
+  ],
+  "profiles": [
+    {
+      "id": "jazz",
+      "seeds": [
+        {
+          "name": "Nujabes",
+          "type": "artist"
+        },
+        {
+          "name": "John Coltrane",
+          "type": "artist"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "02BD7755-0FC9-4D80-8905-E63B94CDBDAC",
+              "scores": [
+                5,
+                2,
+                5
+              ],
+              "reason": "Explicit jazz venue."
+            },
+            {
+              "id": "B011BC1B-CBFB-44FA-B630-8D6CE74A3979",
+              "scores": [
+                3,
+                4,
+                3
+              ],
+              "reason": "Experimental electronic is adjacent to instrumental hip-hop, not confirmed jazz."
+            },
+            {
+              "id": "6EFEA22B-59DA-45E0-A9F3-F7ADF0234B45",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Generic live music, no jazz programme supplied."
+            },
+            {
+              "id": "DE71EC48-353F-4205-80C8-7F7F62B44F18",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Generic live music, no genre supplied."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "02BD7755-0FC9-4D80-8905-E63B94CDBDAC",
+              "scores": [
+                5,
+                2,
+                5
+              ],
+              "reason": "Explicit jazz venue."
+            },
+            {
+              "id": "571464AC-9854-4460-A744-F2577C74F5CA",
+              "scores": [
+                5,
+                4,
+                5
+              ],
+              "reason": "Explicit jazz and blues programme supports both relevance and discovery."
+            },
+            {
+              "id": "DE71EC48-353F-4205-80C8-7F7F62B44F18",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Generic live music, no genre supplied."
+            },
+            {
+              "id": "B011BC1B-CBFB-44FA-B630-8D6CE74A3979",
+              "scores": [
+                3,
+                4,
+                3
+              ],
+              "reason": "Experimental electronic is adjacent to instrumental hip-hop, not confirmed jazz."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "metal",
+      "seeds": [
+        {
+          "name": "BABYMETAL",
+          "type": "artist"
+        },
+        {
+          "name": "Metallica",
+          "type": "artist"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "154C72DF-F3D7-49C0-913D-2BCFD2FC6C85",
+              "scores": [
+                5,
+                4,
+                5
+              ],
+              "reason": "Explicit metal, hardcore and grindcore."
+            },
+            {
+              "id": "57D087B1-507B-40EE-9D07-CE4C40EB0364",
+              "scores": [
+                4,
+                3,
+                4
+              ],
+              "reason": "Rock venue is adjacent to metal."
+            },
+            {
+              "id": "F410BD61-1AAC-4F59-9CC0-0C2CE5A10E6E",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic bands do not establish heavy style."
+            },
+            {
+              "id": "B9001F7D-8691-497C-8F40-FE5DEE81889B",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Records and in-store events are a music lead, with unknown metal stock."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "154C72DF-F3D7-49C0-913D-2BCFD2FC6C85",
+              "scores": [
+                5,
+                4,
+                5
+              ],
+              "reason": "Explicit metal, hardcore and grindcore."
+            },
+            {
+              "id": "19F6D49E-17C7-4862-9780-41E8E69A7F01",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Underground performers are plausible but no genre supplied."
+            },
+            {
+              "id": "B9001F7D-8691-497C-8F40-FE5DEE81889B",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Records and in-store events are a music lead, with unknown metal stock."
+            },
+            {
+              "id": "CA098595-B391-4C8D-BC61-2576E7383C5B",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic live music does not establish heavy style."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "electronic",
+      "seeds": [
+        {
+          "name": "Aphex Twin",
+          "type": "artist"
+        },
+        {
+          "name": "Björk",
+          "type": "artist"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "B011BC1B-CBFB-44FA-B630-8D6CE74A3979",
+              "scores": [
+                5,
+                4,
+                5
+              ],
+              "reason": "Explicit experimental electronic."
+            },
+            {
+              "id": "7D46387B-5A41-4E5A-B777-A8613CD4E61C",
+              "scores": [
+                4,
+                3,
+                4
+              ],
+              "reason": "Club nights support electronic exploration, programme unknown."
+            },
+            {
+              "id": "6EFEA22B-59DA-45E0-A9F3-F7ADF0234B45",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic stage performances do not establish electronic fit."
+            },
+            {
+              "id": "02BD7755-0FC9-4D80-8905-E63B94CDBDAC",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Jazz venue lacks evidence for these electronic seeds."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "B011BC1B-CBFB-44FA-B630-8D6CE74A3979",
+              "scores": [
+                5,
+                4,
+                5
+              ],
+              "reason": "Explicit experimental electronic."
+            },
+            {
+              "id": "CA098595-B391-4C8D-BC61-2576E7383C5B",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic concerts, no electronic programme."
+            },
+            {
+              "id": "F410BD61-1AAC-4F59-9CC0-0C2CE5A10E6E",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic local bands, no electronic programme."
+            },
+            {
+              "id": "D452B3EE-0A85-4C43-8C1C-DA537281EC19",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "DJs support plausible electronic adjacency."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pop",
+      "seeds": [
+        {
+          "name": "Taylor Swift",
+          "type": "artist"
+        },
+        {
+          "name": "Dua Lipa",
+          "type": "artist"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "CA098595-B391-4C8D-BC61-2576E7383C5B",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic concerts, no pop evidence."
+            },
+            {
+              "id": "19F6D49E-17C7-4862-9780-41E8E69A7F01",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Underground performances, no pop evidence."
+            },
+            {
+              "id": "AD6C8CBF-2598-4CB4-B06C-33C3400984BF",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Indie and underground are weak evidence for these pop seeds."
+            },
+            {
+              "id": "A3BBB344-E5DD-44DF-8BFF-B3B3011DA1AB",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic touring acts, no pop evidence."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "7D46387B-5A41-4E5A-B777-A8613CD4E61C",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Domestic and international concerts are adjacent, no named programme."
+            },
+            {
+              "id": "AD6C8CBF-2598-4CB4-B06C-33C3400984BF",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Indie and underground are weak evidence for these pop seeds."
+            },
+            {
+              "id": "CA098595-B391-4C8D-BC61-2576E7383C5B",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic concerts, no pop evidence."
+            },
+            {
+              "id": "A3BBB344-E5DD-44DF-8BFF-B3B3011DA1AB",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic touring acts, no pop evidence."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "retro-games",
+      "seeds": [
+        {
+          "name": "Nintendo",
+          "type": "brand"
+        },
+        {
+          "name": "The Legend of Zelda: Breath of the Wild",
+          "type": "videogame"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Games and hobby retail, no Zelda stock."
+            },
+            {
+              "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "General toys, no Nintendo stock."
+            },
+            {
+              "id": "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Gundam is a different franchise."
+            },
+            {
+              "id": "3D8796BA-33E9-4012-A196-3CDCBAD48EA1",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Anime shop has no explicit Nintendo stock."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "General toys, no Nintendo stock."
+            },
+            {
+              "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Games and hobby retail, no Zelda stock."
+            },
+            {
+              "id": "0DAE9027-C122-461A-BACD-F86522F074D4",
+              "scores": [
+                4,
+                1,
+                4
+              ],
+              "reason": "Direct Nintendo-adjacent Pokemon store. Stock unknown."
+            },
+            {
+              "id": "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Gundam is a different franchise."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anime",
+      "seeds": [
+        {
+          "name": "Digimon Adventure",
+          "type": "tv_show"
+        },
+        {
+          "name": "Neon Genesis Evangelion",
+          "type": "tv_show"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Broad character toys, specific franchise unknown."
+            },
+            {
+              "id": "E9E79D87-EFBF-44E6-89BE-A5EB62F70406",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Trading cards and video games are weak anime goods evidence."
+            },
+            {
+              "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+              "scores": [
+                4,
+                3,
+                4
+              ],
+              "reason": "Anime specialty and exclusive merchandise, named stock unknown."
+            },
+            {
+              "id": "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Gundam is adjacent mecha, not Evangelion."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+              "scores": [
+                4,
+                3,
+                4
+              ],
+              "reason": "Anime specialty and exclusive merchandise, named stock unknown."
+            },
+            {
+              "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Broad character toys, specific franchise unknown."
+            },
+            {
+              "id": "E9E79D87-EFBF-44E6-89BE-A5EB62F70406",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Trading cards and video games are weak anime goods evidence."
+            },
+            {
+              "id": "0DAE9027-C122-461A-BACD-F86522F074D4",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Different franchise."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pokemon",
+      "seeds": [
+        {
+          "name": "Pokémon",
+          "type": "brand"
+        },
+        {
+          "name": "Nintendo",
+          "type": "brand"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Broad character toys, Pokemon stock unknown."
+            },
+            {
+              "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Games and character goods, named stock unknown."
+            },
+            {
+              "id": "F44101E9-B9A5-4BEC-B038-3773642AFB38",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Arcade prizes do not establish Pokemon goods."
+            },
+            {
+              "id": "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Different franchise."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "0DAE9027-C122-461A-BACD-F86522F074D4",
+              "scores": [
+                5,
+                1,
+                5
+              ],
+              "reason": "Direct official Pokemon store. Current stock unknown."
+            },
+            {
+              "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Games and character goods, named stock unknown."
+            },
+            {
+              "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Broad character toys, Pokemon stock unknown."
+            },
+            {
+              "id": "3D8796BA-33E9-4012-A196-3CDCBAD48EA1",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Anime goods, named stock unknown."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-cinema",
+      "seeds": [
+        {
+          "name": "The Dark Knight",
+          "type": "movie"
+        },
+        {
+          "name": "Spider-Man: Into the Spider-Verse",
+          "type": "movie"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Anime and games retail, no Western comic goods evidence."
+            },
+            {
+              "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "American character toys are a plausible lead, named stock unknown."
+            },
+            {
+              "id": "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Different franchise."
+            },
+            {
+              "id": "B7927A53-735A-4F4C-BFF6-3A75D062E3BF",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Children's play centre lacks a comic-cinema connection."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "0136823C-5AF0-4F98-98A9-F9FEB54AF992",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Different franchise."
+            },
+            {
+              "id": "1B6A8552-2327-4B2D-BD88-D333062E0FBD",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Figures and models are adjacent, specific comic stock unknown."
+            },
+            {
+              "id": "2254CB35-6421-4FFA-ADE0-9F9BFFFB9FED",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Anime and games retail, no Western comic goods evidence."
+            },
+            {
+              "id": "510180A6-407B-476B-9CCF-515055B3A1C6",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "American character toys are a plausible lead, named stock unknown."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arthouse",
+      "seeds": [
+        {
+          "name": "In the Mood for Love",
+          "type": "movie"
+        },
+        {
+          "name": "Before Sunrise",
+          "type": "movie"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "FAED09E0-38AE-4B21-90A2-137FA5898C63",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Cinema connection through animation, different films."
+            },
+            {
+              "id": "2C22E484-392B-4AE2-A00E-E811AAED1075",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Contemporary visual art is plausible cross-domain adjacency."
+            },
+            {
+              "id": "0E0FBA3B-8EC7-439A-8AF6-A8DE3E78D251",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Historic prints do not establish these film tastes."
+            },
+            {
+              "id": "175F1BBD-E883-4291-AB31-3806E330686E",
+              "scores": [
+                3,
+                4,
+                3
+              ],
+              "reason": "Historic setting and contemporary art are defensible visual exploration."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "2C22E484-392B-4AE2-A00E-E811AAED1075",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Contemporary visual art is plausible cross-domain adjacency."
+            },
+            {
+              "id": "C786AD5F-90E6-43C1-9281-4295703A168C",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Design and fashion are plausible visual exploration."
+            },
+            {
+              "id": "AA033E1B-C5B9-4A05-8422-C5CA64788A85",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic art description gives weak cinema connection."
+            },
+            {
+              "id": "175F1BBD-E883-4291-AB31-3806E330686E",
+              "scores": [
+                3,
+                4,
+                3
+              ],
+              "reason": "Historic setting and contemporary art are defensible visual exploration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "surreal",
+      "seeds": [
+        {
+          "name": "Eraserhead",
+          "type": "movie"
+        },
+        {
+          "name": "Paprika",
+          "type": "movie"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "2C22E484-392B-4AE2-A00E-E811AAED1075",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Contemporary art is adjacent, current surreal programme unknown."
+            },
+            {
+              "id": "D8EFDA88-BA59-48FA-AFE0-15A46D81A1A5",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic gallery has no surreal programme evidence."
+            },
+            {
+              "id": "A35AACA6-9494-4F4C-AF08-5433DFE851CA",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Brand exhibitions do not establish experimental cinema fit."
+            },
+            {
+              "id": "FAED09E0-38AE-4B21-90A2-137FA5898C63",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Animation is adjacent to Paprika, distinct film world."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "2C22E484-392B-4AE2-A00E-E811AAED1075",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Contemporary art is adjacent, current surreal programme unknown."
+            },
+            {
+              "id": "A35AACA6-9494-4F4C-AF08-5433DFE851CA",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Brand exhibitions do not establish experimental cinema fit."
+            },
+            {
+              "id": "D8EFDA88-BA59-48FA-AFE0-15A46D81A1A5",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Generic gallery has no surreal programme evidence."
+            },
+            {
+              "id": "C786AD5F-90E6-43C1-9281-4295703A168C",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Contemporary art and design are adjacent, no named programme."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiet-design",
+      "seeds": [
+        {
+          "name": "MUJI",
+          "type": "brand"
+        },
+        {
+          "name": "Spirited Away",
+          "type": "movie"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "86DD44DB-5551-4DA7-94DD-8F65A2E9CDF2",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Waterfront setting is plausible for unwinding. Quiet and minimal design unverified."
+            },
+            {
+              "id": "844BD264-2213-4E1A-ABDF-B62AECC350E5",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Airy setting and windows are plausible. Quietness unverified."
+            },
+            {
+              "id": "FB94161B-E320-401D-8151-FA8CC4B90D65",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Garden setting and craft bakery are plausible, no named taste link."
+            },
+            {
+              "id": "9CA5D0BA-BAEF-44B4-AF75-82A93B7E7DBB",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Leafy terrace is plausible, no named taste link."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "86DD44DB-5551-4DA7-94DD-8F65A2E9CDF2",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Waterfront setting is plausible for unwinding. Quiet and minimal design unverified."
+            },
+            {
+              "id": "844BD264-2213-4E1A-ABDF-B62AECC350E5",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Airy setting and windows are plausible. Quietness unverified."
+            },
+            {
+              "id": "786941B1-2F6E-4E58-A372-3D77822AB57E",
+              "scores": [
+                3,
+                4,
+                3
+              ],
+              "reason": "Hidden cafe is a plausible discovery. Quietness unverified."
+            },
+            {
+              "id": "FB94161B-E320-401D-8151-FA8CC4B90D65",
+              "scores": [
+                3,
+                3,
+                3
+              ],
+              "reason": "Garden setting and craft bakery are plausible, no named taste link."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "familiar-coffee",
+      "seeds": [
+        {
+          "name": "Starbucks",
+          "type": "brand"
+        },
+        {
+          "name": "Taylor Swift",
+          "type": "artist"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "qlooApp",
+          "top4": [
+            {
+              "id": "3185BA16-04E7-4B7E-8DC7-F7C156BC5B3F",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Character collaboration has no Starbucks or pop connection."
+            },
+            {
+              "id": "A6D43765-0348-49EC-8396-35240753DB2B",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Maid performance has no supplied seed connection."
+            },
+            {
+              "id": "CF279497-794A-42AF-92C0-04A6247B3AAE",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Tea service is cafe-adjacent but different experience."
+            },
+            {
+              "id": "3EA66770-E243-4E2C-B2B5-DEE9E74A8592",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Conventional hotel coffee lounge fits cafe intent, pop connection absent."
+            }
+          ]
+        },
+        {
+          "condition": "localModel",
+          "top4": [
+            {
+              "id": "65470E21-5B9B-4A77-83E3-E156C17C2D51",
+              "scores": [
+                4,
+                3,
+                4
+              ],
+              "reason": "Coffee and cakes directly fit the stated coffee activity, no Taylor Swift connection."
+            },
+            {
+              "id": "CF279497-794A-42AF-92C0-04A6247B3AAE",
+              "scores": [
+                2,
+                2,
+                2
+              ],
+              "reason": "Tea service is cafe-adjacent but different experience."
+            },
+            {
+              "id": "3EA66770-E243-4E2C-B2B5-DEE9E74A8592",
+              "scores": [
+                3,
+                2,
+                3
+              ],
+              "reason": "Conventional hotel coffee lounge fits cafe intent, pop connection absent."
+            },
+            {
+              "id": "3185BA16-04E7-4B7E-8DC7-F7C156BC5B3F",
+              "scores": [
+                1,
+                1,
+                1
+              ],
+              "reason": "Character collaboration has no Starbucks or pop connection."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
