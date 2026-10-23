@@ -8,7 +8,7 @@ export async function publicSource(url:string,fetcher:typeof fetch=fetch){
  const u=new URL(url);if(u.protocol!=='https:'||!officialHost(u.hostname)||u.username||u.password||u.port)throw Error('Unsupported official source.');
  const r=await fetcher(url,{redirect:'manual',headers:{Accept:'text/html,application/json','User-Agent':'SideQuest official detail reader'},signal:AbortSignal.timeout(10000)});
  if(!r.ok)throw Error('Official source unavailable ('+r.status+').');
- if(!/text\/html|application\/json/.test(r.headers.get('content-type')||''))throw Error('Unsupported source format.');
+ if(!/text\/html|application\/(?:json|xml|rss\+xml)|text\/xml/.test(r.headers.get('content-type')||''))throw Error('Unsupported source format.');
  const reader=r.body?.getReader();if(!reader)throw Error('Empty source');let size=0,text='';const decoder=new TextDecoder();try{for(;;){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>1000000)throw Error('Source too large');text+=decoder.decode(value,{stream:true});}return text+decoder.decode();}finally{await reader.cancel();}
 }
 export async function enrichOne(url:string,fetcher:typeof fetch=fetch):Promise<EventDetails>{

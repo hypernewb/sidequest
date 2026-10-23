@@ -83,3 +83,6 @@ Full-page enrichment and translated excerpts now inform the outing recommendatio
 
 ## v17 — Persistent catalog and verified performers
 D1 catalog stores official source records, translations, source health and exact Qloo artist matches. Added U.F.O.CLUB, Taka Ishii Gallery and Sanrio weekly official release announcements. Unattended updater contract: evaluation/CATALOG-REFRESH.md. Refresh schedule is linked in Sites after publishing; stored translations are produced by the scheduled task model, with the public translation service as an optional on-demand fallback.
+
+## v18 — Expanded Tokyo source coverage
+Added six direct official/publisher readers, a source registry with explicit access gaps, and the prepared Connpass v2 adapter. Source refresh groups alternate automatically. See evaluation/CATALOG-REFRESH.md.
