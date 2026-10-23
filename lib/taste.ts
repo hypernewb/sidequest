@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {tasteContextSchema} from './taste-context.ts';
 import {explorationSchema} from './taste-exploration.ts';
 export const TOPICS=[
  {id:'digimon',name:'Digimon',prompt:'A digital companion, a tiny screen, a whole adventure.',query:'Digimon',aliases:['Digimon','Digimon Adventure']},
@@ -16,7 +17,7 @@ export const ENJOYMENTS=['collect','play','watch','visit'] as const;
 export type Answer=typeof ANSWERS[number];
 export type Enjoyment=typeof ENJOYMENTS[number];
 const topicIds=TOPICS.map(t=>t.id) as [TopicId,...TopicId[]];
-export const tasteSchema=z.object({version:z.literal(1),answers:z.record(z.enum(topicIds),z.enum(ANSWERS)),enjoyments:z.array(z.enum(ENJOYMENTS)).max(4),exploration:explorationSchema.optional()});
+export const tasteSchema=z.object({version:z.literal(1),answers:z.record(z.enum(topicIds),z.enum(ANSWERS)),enjoyments:z.array(z.enum(ENJOYMENTS)).max(4),exploration:explorationSchema.optional(),discovery:tasteContextSchema.optional()});
 export type TasteProfile=z.infer<typeof tasteSchema>;
 export const EMPTY_TASTE:TasteProfile={version:1,answers:{},enjoyments:[]};
 export function selectedTopics(profile:TasteProfile){return TOPICS.filter(t=>profile.answers[t.id]==='love'||profile.answers[t.id]==='curious');}

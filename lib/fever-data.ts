@@ -50,5 +50,14 @@ export function parseFeverEvents(data:unknown,q:EventQuery,at=new Date().toISOSt
   const coordinates=typeof lat==='number'&&typeof lon==='number'&&Number.isFinite(lat)&&Number.isFinite(lon)&&Math.abs(lat)<=90&&Math.abs(lon)<=180?{lat,lon}:undefined;
   out.push({id,name:e.name,url,location:e.location||'Tokyo · venue details on Fever',description:(e.description||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,1200),sessions,timezone:'Asia/Tokyo',minPrice:min,maxPrice:max,currency,retrievedAt:at,priceLabel,...(coordinates?{coordinates}:{})});seen.add(id);
  }
- return out.sort((a,b)=>a.sessions[0].localeCompare(b.sessions[0])||a.id.localeCompare(b.id)).slice(0,6);
+ return out.sort((a,b)=>a.sessions[0].localeCompare(b.sessions[0])||a.id.localeCompare(b.id)).slice(0,72);
+}
+
+export function variedFeverEvents(events:FeverEvent[],interests:{name:string}[]){
+ const format=(e:FeverEvent)=>/candlelight|concert|jazz|music/i.test(e.name)?'music':/exhibition|museum|immersive|art\b/i.test(e.name)?'art':/tour|walk|cruise/i.test(e.name)?'tour':/food|tast|dining/i.test(e.name)?'food':'other';
+ const score=(e:FeverEvent)=>interests.filter(i=>i.name.length>=3&&(e.name+' '+e.description).toLowerCase().includes(i.name.toLowerCase())).length;
+ const pool=[...events].sort((a,b)=>score(b)-score(a)||a.sessions[0].localeCompare(b.sessions[0])||a.id.localeCompare(b.id));
+ const chosen:FeverEvent[]=[],formats=new Map<string,number>(),venues=new Map<string,number>();
+ while(pool.length&&chosen.length<6){let best=0,value=-Infinity;pool.forEach((e,i)=>{const v=score(e)*4-(formats.get(format(e))||0)*1.2-(venues.get(e.location)||0)*.6;if(v>value){best=i;value=v;}});const e=pool.splice(best,1)[0];chosen.push(e);formats.set(format(e),(formats.get(format(e))||0)+1);venues.set(e.location,(venues.get(e.location)||0)+1);}
+ return chosen;
 }

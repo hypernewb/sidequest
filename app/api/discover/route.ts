@@ -2,10 +2,10 @@ import {env} from 'cloudflare:workers';
 import {qloo,normalize} from '@/lib/qloo';
 import {AREAS,eligible,rankPlaces,publishedHours,validVisitDate,type Interest,type Place} from '@/lib/discovery';
 import {personalFeverSearch} from '@/lib/fever-oauth';
-import type {FeverReply} from '@/lib/fever-data';
+import {variedFeverEvents,type FeverReply} from '@/lib/fever-data';
 import {z} from 'zod';
-import candidateIds from '@/lib/candidate-ids.json';
-const schema=z.object({interests:z.array(z.object({id:z.string().uuid(),name:z.string().min(1).max(100),type:z.string().max(40)})).min(3).max(8),area:z.enum(['tokyo','shibuya','shinjuku','roppongi','ueno']),mode:z.enum(['familiar','explore','surprise']),budget:z.enum(['flexible','free','1000','3000']),kind:z.enum(['places','events','both']),dates:z.array(z.string().regex(/^\d{4}-\d{2}-\d{2}$/)).min(1).max(2),rejected:z.array(z.string().max(100)).max(500).optional(),savedFamilies:z.array(z.string().max(80)).max(100).optional()});
+import {tasteContextSchema,PLACE_TAGS,activityFits,type Activity} from '@/lib/taste-context';
+const schema=z.object({interests:z.array(z.object({id:z.string().uuid(),name:z.string().min(1).max(100),type:z.string().max(40)})).min(1).max(8),area:z.enum(['tokyo','shibuya','shinjuku','roppongi','ueno']),mode:z.enum(['familiar','explore','surprise']),budget:z.enum(['flexible','free','1000','3000']),kind:z.enum(['places','events','both']),dates:z.array(z.string().regex(/^\d{4}-\d{2}-\d{2}$/)).min(1).max(2),rejected:z.array(z.string().max(100)).max(500).optional(),savedFamilies:z.array(z.string().max(80)).max(100).optional(),context:tasteContextSchema.optional()});
 const headers={'Cache-Control':'private, no-store'};
 export async function POST(req:Request){
  const origin=req.headers.get('origin');
@@ -18,24 +18,29 @@ export async function POST(req:Request){
   if(new Set(interests.map(i=>i.id.toUpperCase())).size!==interests.length)return Response.json({error:'Choose different interests.'},{status:400,headers});
   if(!b.dates.every(validVisitDate))return Response.json({error:'Choose a real date today or in the future.'},{status:400,headers});
   const rejected=b.rejected||[],savedFamilies=b.savedFamilies||[];
+  if(b.context&&b.context.ids.some(id=>!interests.some(i=>i.id.toUpperCase()===id.toUpperCase())))return Response.json({error:'Your chosen direction is no longer in your interests. Update your taste and retry.'},{status:400,headers});
   async function places(){
    if(b.kind==='events')return {places:[] as Place[],examined:0};
    if(!env.QLOO_API_KEY)throw Error('The Qloo connection needs attention. Events may still be available.');
    const a=AREAS[b.area];
-   const raw=await qloo('/v2/insights',{'filter.type':'urn:entity:place','filter.results.entities':candidateIds.join(','),'signal.interests.entities':interests.map(i=>i.id).join(','),'filter.location':`POINT(${a.lon} ${a.lat})`,'filter.location.radius':String(a.radius),take:'50','feature.explainability':'true'},env.QLOO_API_KEY);
-   const entities=(raw.results as {entities?:Record<string,any>[]})?.entities;
-   if(!Array.isArray(entities))throw Error('Qloo returned an unexpected response. Please retry.');
+   const activity=b.context?.activity||'any',ids=b.context?.ids||interests.map(i=>i.id);
+   const groups=activity==='any'?Object.entries(PLACE_TAGS):[[activity,PLACE_TAGS[activity]]];
+   const calls=groups.flatMap(([group,tags])=>[false,true].map(async lower=>{const raw=await qloo('/v2/insights',{'filter.type':'urn:entity:place','signal.interests.entities':ids.join(','),...(b.context?.tags.length?{'signal.interests.tags':b.context.tags.map(t=>t.id).join(',')}:{}),'filter.tags':(tags as string[]).join(','),'operator.filter.tags':'union','filter.location':`POINT(${a.lon} ${a.lat})`,'filter.location.radius':String(a.radius),...(lower?{'filter.popularity.max':'.8'}:{}),take:lower?'16':'30','feature.explainability':'true'},env.QLOO_API_KEY!);const entities=(raw.results as {entities?:Record<string,any>[]})?.entities;if(!Array.isArray(entities))throw Error('Unexpected response');return entities.filter(e=>activityFits(String(e.properties?.primary_genre?.name||''),group as Activity));}));
+   const results=await Promise.allSettled(calls),good=results.filter((r):r is PromiseFulfilledResult<Record<string,any>[]>=>r.status==='fulfilled');if(!good.length)throw Error('Qloo place discovery could not complete. Please retry.');
+   const entities=good.flatMap(r=>r.value).filter((e,i,all)=>all.findIndex(x=>x.entity_id===e.entity_id)===i);
    const retrievedAt=new Date().toISOString();
    const normalized=entities.map(e=>normalize(e,interests,retrievedAt)).filter((x):x is Place=>!!x);
    const filtered=normalized.filter(p=>eligible(p,b.area,b.budget,rejected)&&b.dates.some(date=>publishedHours(p,date)!=='Listed as closed'));
-   return {places:rankPlaces(filtered,b.mode,savedFamilies),examined:entities.length,retrievedAt};
+   return {places:rankPlaces(filtered,b.mode,savedFamilies),examined:entities.length,retrievedAt,partial:good.length<results.length};
   }
   // Separate provider failures: a failed event search must not discard useful Qloo places.
   const [placeResult,eventResult]=await Promise.allSettled([places(),b.kind==='places'?Promise.resolve(null):personalFeverSearch(req,env,{area:b.area,dates:b.dates,budget:b.budget,rejected})]);
   const fever:FeverReply|null=eventResult.status==='fulfilled'?(eventResult.value?.reply||null):{status:'error',events:[],message:'Fever could not complete this search. Please retry.'};
+  if(fever?.status==='success'){fever.events=variedFeverEvents(fever.events,interests);fever.message='Fever sessions match your dates and area. We vary formats and venues, and prioritize literal mentions of your interests. This is not Qloo event-affinity ranking. Fever does not cover every Tokyo event.';}
   if(placeResult.status==='rejected'&&b.kind==='places')throw placeResult.reason;
   const p=placeResult.status==='fulfilled'?placeResult.value:{places:[],examined:0,retrievedAt:undefined};
   const notices:string[]=[];
+  if('partial' in p&&p.partial)notices.push('Some place categories could not be searched. These results came from the categories that responded.');
   if(placeResult.status==='rejected')notices.push(placeResult.reason instanceof Error?placeResult.reason.message:'Place discovery could not complete.');
   if(fever&&fever.status!=='success')notices.push(fever.message);
   const provider=b.kind==='events'?(fever?.status==='success'?'fever':'unavailable'):placeResult.status==='fulfilled'?(fever?.status==='success'?'qloo+fever':'qloo'):fever?.status==='success'?'fever':'unavailable';

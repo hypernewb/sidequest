@@ -80,7 +80,10 @@ export function createFeverClient(fetcher:typeof fetch=fetch){
    }
    const arguments_={city_code:'HND',locale:'en',page:0,page_size:36,sort_by:'closest_session',include_description:true,...eventWindow(query.dates)};
    let data:unknown;
-   if(query.area==='tokyo')data=await call('search_events',arguments_);
+   if(query.area==='tokyo'){
+    const pages=await Promise.allSettled([0,1].map(async page=>{const response=await call('search_events',{...arguments_,page});if(!response||typeof response!=='object'||!('results' in response)||!Array.isArray(response.results))throw Error('Fever returned an unexpected event format.');return response.results;}));
+    const good=pages.filter((p):p is PromiseFulfilledResult<unknown[]>=>p.status==='fulfilled');if(!good.length)throw (pages[0] as PromiseRejectedResult).reason;data={results:good.flatMap(p=>p.value)};
+   }
    else{
     const a=AREAS[query.area];
     const venues=parseFeverVenues(await call('search_venues',{latitude:a.lat,longitude:a.lon,radius:a.radius,country_code:'JP',limit:6,locale:'en'}),query.area);

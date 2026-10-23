@@ -4,6 +4,7 @@ export type Place = {
   id: string; name: string; category: string; family: string; area: string; address: string;
   description: string; website: string | null; map: string; image: string | null;
   lat: number; lon: number; affinity: number; signals: {name: string; contribution: number}[];
+  popularity?: number | null;
   hours: Record<string, {opens?: string; closes?: string; closed?: boolean}[]>;
   price: null; retrievedAt: string; reason: string;
 };
@@ -27,6 +28,7 @@ export function distance(lat:number,lon:number,a:number,b:number) {
  return 6371000*2*Math.asin(Math.sqrt(Math.sin(dLat/2)**2+Math.cos(lat*r)*Math.cos(a*r)*Math.sin(dLon/2)**2));
 }
 export function familyFor(category: string) {
+ if (/toy|hobby|video game|comic|collectible|arcade|amusement|model shop/i.test(category)) return 'Games & collectibles';
  if (/museum|gallery|art center/i.test(category)) return 'Art & culture';
  if (/music|jazz|live|record|concert/i.test(category)) return 'Music & nightlife';
  if (/cafe|coffee|tea|bar/i.test(category)) return 'Cafés & listening';
@@ -41,7 +43,7 @@ export function eligible(p:Place,area:keyof typeof AREAS,budget:string,rejected:
 export function rankPlaces(places:Place[],mode:Mode,savedFamilies:string[]=[]) {
  const max=Math.max(...places.map(p=>p.affinity),0.00001);
  // Keep a relevance floor in every mode. Exploration changes diversity, not geographic/budget eligibility.
- const pool=places.filter(p=>p.affinity>=max*.18).sort((a,b)=>b.affinity-a.affinity || a.id.localeCompare(b.id));
+ const pool=places.filter(p=>p.affinity>=max*.55).sort((a,b)=>b.affinity-a.affinity || a.id.localeCompare(b.id));
  const chosen:Place[]=[], counts:Record<string,number>={};
  const penalty={familiar:.015,explore:.22,surprise:.48}[mode];
  while(pool.length && chosen.length<8) {
@@ -53,6 +55,8 @@ export function rankPlaces(places:Place[],mode:Mode,savedFamilies:string[]=[]) {
   });
   const p=pool.splice(best,1)[0]; chosen.push(p); counts[p.family]=(counts[p.family]||0)+1;
  }
+ // Reserve two slots for lower-popularity places when relevant candidates exist.
+ if(mode!=='familiar'){const lower=places.filter(p=>p.affinity>=max*.55&&p.popularity!=null&&p.popularity<.8).sort((a,b)=>b.affinity-a.affinity);for(const p of lower){if(chosen.filter(x=>x.popularity!=null&&x.popularity<.8).length>=2)break;if(chosen.some(x=>x.id===p.id))continue;const replace=chosen.findLastIndex(x=>x.popularity==null||x.popularity>=.8);if(replace>=0)chosen[replace]=p;else if(chosen.length<8)chosen.push(p);}}
  return chosen;
 }
 export function tokyoDate(date=new Date()) {return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(date);}
