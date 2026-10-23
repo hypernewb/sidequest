@@ -5,6 +5,8 @@ export function officialPageContent(url:string,html:string){
  if(host==='www-shibuya.jp')body=html.match(/<section id="scheduleDetail"[^>]*>([\s\S]*?)<\/div><!-- END mainArea -->/)?.[1]||'';
  else if(host.endsWith('fever-popo.com'))body=html.split(/<div class="asset-content entry-content">/)[1]?.split(/<div class="asset-footer/)[0]||'';
  else if(host.endsWith('cottonclubjapan.co.jp'))body=html.match(/<article id="article"[^>]*>([\s\S]*?)<\/article>/)?.[1]||'';
+ else if(host.endsWith('unit-tokyo.com'))body=html.split('<div id="content" class="p-detail">')[1]?.split('<section class="c-section c-section--white">')[0]||'';
+ else if(host.endsWith('liquidroom.net'))body=html.split('<div class="main_column">')[1]?.match(/<article[^>]*>([\s\S]*?)<\/article>/)?.[1]||'';
  if(!body)return htmlAnnouncement(html);
  if(host.endsWith('fever-popo.com'))body=body.replace(/<h3[^>]*>/i,'<h3>LINE UP<br>');
  // WWW's event fields are inside a header; preserve these, but exclude related shows outside mainArea.
@@ -27,7 +29,7 @@ export function extractEventDetails(text:string,url:string,checkedAt=new Date().
  if(extraDrink){if(drinkAmount!=null&&priceCeiling!=null)priceCeiling+=drinkAmount;else priceCeiling=null;}
  if(/送料|手数料|fees? extra|別途.*料金/i.test(original))priceCeiling=null;
  const status=/^(?:【|\[)(?:公演中止|開催中止|CANCELLED|CANCELED)(?:】|\])|^(?:公演中止|開催中止|CANCELLED|CANCELED)\s*[!！。]?\s*$/im.test(original)?'cancelled':/^(?:【|\[)?(?:SOLD\s*OUT|完売|売り切れ)(?:】|\])?\s*[!！。]*\s*$/im.test(original)?'sold_out':'unknown';
- return {original,artists:[...new Set(artists)].slice(0,12),genres,times,prices,priceCeiling,status,checkedAt,url};
+ return {original,artists:[...new Set(artists)].filter(a=>! /^(?:live|dj|shop|band members|【バンドメンバー】)$/i.test(a)).slice(0,12),genres,times,prices,priceCeiling,status,checkedAt,url};
 }
 
 

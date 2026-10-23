@@ -86,3 +86,6 @@ D1 catalog stores official source records, translations, source health and exact
 
 ## v18 — Expanded Tokyo source coverage
 Added six direct official/publisher readers, a source registry with explicit access gaps, and the prepared Connpass v2 adapter. Source refresh groups alternate automatically. See evaluation/CATALOG-REFRESH.md.
+
+## v19 — Contrasting taste audit and English catalog
+Corrected activity leakage, verified Qloo genre hydration, bounded source diversity and opt-in activity-only alternatives. Added persisted English card fields and guarded translation envelopes for future refreshes. See evaluation/CONTRASTING-TASTE-AUDIT.md.
