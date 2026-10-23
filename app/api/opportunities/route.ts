@@ -1,3 +1,5 @@
+import {catalogItems,state} from '@/lib/catalog';
+import {artistAffinities} from '@/lib/artist-matching';
 import {getAdditional} from '@/lib/additional-sources';
 import {enrichCandidates,translateShortlist} from '@/lib/event-enrichment';
 import {env} from 'cloudflare:workers';
@@ -32,10 +34,11 @@ export async function POST(req:Request){
   const catalog:Opportunity[]=DROPS.filter(d=>!['ended','needs-review'].includes(dropState(d))).map(d=>({id:'catalog:'+d.id,title:d.title,kind:d.category,source:'Official catalog',url:d.sourceUrl,description:d.summary,location:d.location,start:d.startsAt.slice(0,10),end:d.endsAt?.slice(0,10)||d.startsAt.slice(0,10),checkedAt:d.checkedAt,price:d.price,priceLabel:d.price===null?d.priceNote:'¥'+d.price+' · '+d.priceNote,availability:d.restrictions+(d.evidenceNote?' '+d.evidenceNote:''),category:d.category+' '+d.topics.join(' '),actionLabel:d.method==='preorder'?'Preorder window':d.method==='lottery'?'Lottery window':d.method==='visit'?'Pop-up dates':'Release date',online:d.channel!=='tokyo'}));
   health.push({name:'Official release catalog',count:catalog.length,status:'Manually checked; stale entries excluded'});
   const extra=await getAdditional();health.push(...extra.health);
-  const all=[...jobs.flatMap<Opportunity>(r=>r.status==='fulfilled'?r.value:[]),...extra.items,...catalog];
+  const stored=await catalogItems();const lastRefresh=await state("lastRefresh");health.push({name:"Persistent catalog",count:stored.length,status:lastRefresh?"Last refreshed "+lastRefresh.at:"Awaiting first refresh"});
+  const all=[...jobs.flatMap<Opportunity>(r=>r.status==='fulfilled'?r.value:[]),...extra.items,...catalog,...stored];
   const enriched=await enrichCandidates(all,p);health.push({name:'Full official pages',count:enriched.read,status:enriched.failed+' unavailable; '+enriched.remaining+' further pages can be read on demand'});
-  const ranked=rankOpportunities(enriched.items,p);await translateShortlist(ranked);
-  const response=Response.json({items:ranked.slice(0,60),total:ranked.length,examined:all.length,health,notices,checkedAt:at,scope:'Tokyo places and events, plus Japan/online releases explicitly labelled. Seven official source families; full-page reading is bounded to 12 candidates per search, with more available on demand. This is not complete city coverage.'},{headers});
+  const saved=new Map(stored.map(o=>[o.id,o]));const merged=enriched.items.map(o=>{const d=saved.get(o.id);return d?{...o,artists:d.artists,details:d.details?.english&&d.details.original===o.details?.original?d.details:o.details||d.details}:o;});const associated=env.QLOO_API_KEY?await artistAffinities(merged,p,env.QLOO_API_KEY):merged;const ranked=rankOpportunities(associated,p);await translateShortlist(ranked);
+  const response=Response.json({items:ranked.slice(0,60),total:ranked.length,examined:all.length,health,notices,checkedAt:at,scope:'Tokyo places and events, plus Japan/online releases explicitly labelled. Official calendars plus a persistent catalog; full-page reading is bounded to 12 candidates per search, with more available on demand. This is not complete city coverage.'},{headers});
   for(const c of cookies)response.headers.append('Set-Cookie',c);return response;
  }catch{return Response.json({error:'The search could not complete. Your choices are kept; try again.'},{status:502,headers});}
 }
