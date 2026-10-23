@@ -18,8 +18,8 @@ export function extractEventDetails(text:string,url:string,checkedAt=new Date().
  const original=text.slice(0,12000),lines=original.split(/\n/).map(s=>s.trim()).filter(Boolean);
  for(let i=0;i<lines.length-1;i++)if(/^(?:OPEN.?START|OPEN|START|開場.?開演)\s*[:：]?$/i.test(lines[i]))lines[i]+=' '+lines[i+1];
  const artists:string[]=[];
- for(let i=0;i<lines.length;i++)if(/^(?:LINE\s*UP|MEMBER|出演(?:者)?|出演アーティスト|ACT)\s*[:：]?$/i.test(lines[i])){for(let j=i+1;j<Math.min(i+9,lines.length);j++){if(/^(?:TICKET|INFORMATION|CHARGE|DATE|OPEN|START|＜|【|\[|予約)/i.test(lines[j]))break;artists.push(...lines[j].split(/\s+\/\s+|、/).filter(s=>s.length<120));}break;}
- const genres=genreRules.flatMap(([name,re])=>{const evidence=lines.find(line=>re.test(line)&&!/(?:not |no |without )jazz|ジャズではない/i.test(line));return evidence?[{name,evidence:evidence.slice(0,300)}]:[];});
+ for(let i=0;i<lines.length;i++)if(/^(?:LINE\s*UP|MEMBER|出演(?:者)?|出演アーティスト|ACT)\s*[:：]?$/i.test(lines[i])){for(let j=i+1;j<Math.min(i+9,lines.length);j++){if(/^(?:TICKET|INFORMATION|CHARGE|DATE|OPEN|START|＜|【|\[|予約|※)/i.test(lines[j]))break;artists.push(...lines[j].split(/\s+\/\s+|、/).filter(s=>s.length<120));}break;}
+ const genres=genreRules.flatMap(([name,re])=>{const evidence=lines.find(line=>re.test(line)&&!/(?:not |no |without )jazz|ジャズではない/i.test(line));return evidence&&!(name==='blues'&&/トーキングブルース|talking blues/i.test(evidence))?[{name,evidence:evidence.slice(0,300)}]:[];});
  const times=lines.filter(l=>/(?:OPEN|START|開場|開演|営業時間|終演|show).*\d{1,2}[:：]\d{2}/i.test(l)).slice(0,6);
  const prices=lines.filter(l=>/[¥￥]\s*[\d,]+|\d[\d,]*\s*円|入場無料|入場料.*無料/i.test(l)).slice(0,10);
  const feeText=prices.join('\n');const amounts=[...feeText.matchAll(/[¥￥]\s*([\d,]+)|([\d,]+)\s*円/g)].map(m=>Number((m[1]||m[2]).replaceAll(',',''))).filter(n=>n>=0&&n<1000000);

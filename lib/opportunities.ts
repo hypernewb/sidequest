@@ -32,6 +32,8 @@ export function rankOpportunities(items:Opportunity[],p:Preferences,now=new Date
   const directionText=p.intent==='music'&&o.kind==='gig'?content:brief;
   const directionMatch=p.direction==='independent'?/mograg|Taka Ishii/i.test(o.source)||/independent gallery|自主企画|個展/i.test(brief):p.direction!=='any'&&!!rules[p.direction]?.test(directionText);
   let interestMatch=false;
+  const overview=scoped.split(/MEMBER|LINE UP|〈Artist〉|Information/)[0].slice(0,1800);
+  if(p.intent==='music'&&o.kind==='gig'&&/トーク(?:ライブ|ライヴ|ショー)|お笑い芸人|talk show|stand.up comedy/i.test(overview)&&!/バンド演奏|音楽ライブ|演奏を披露/.test(overview))continue;
   let score=0;
   const activity=p.intent==='music'?o.kind==='gig'||(o.kind==='place'&&activities.music.test(brief))||(o.kind==='event'&&/concert|live music|ジャズライブ|音楽ライブ|演奏会|コンサート/i.test(brief)):
    p.intent==='art'?o.kind==='exhibition'||(o.kind==='place'&&activities.art.test(brief))||(/展覧会|美術|アート|installation|visual art/i.test(brief)&&!['gig','release'].includes(o.kind)):
@@ -43,7 +45,7 @@ export function rankOpportunities(items:Opportunity[],p:Preferences,now=new Date
   if(p.intent==='music'&&['popup','release'].includes(o.kind))continue;
   if(p.intent==='play'&&o.kind==='place'&&!/arcade|amusement|play area|game tables|ゲームセンター|ボードゲームカフェ/i.test(content))continue;
   if(p.intent!=='mix'){score+=4;reasons.push('Fits: '+INTENTS[p.intent].toLowerCase());}
-  if(directionMatch){score+=5;const artist=(o.artists||[]).find(a=>a.genres.some(g=>rules[p.direction]?.test(g)));reasons.push(artist?'Verified Qloo artist '+artist.name+' — '+artist.genres.filter(g=>rules[p.direction]?.test(g)).slice(0,3).join(', '):'Source matches: '+(FOLLOWUPS[p.intent] as readonly (readonly string[])[]).find(x=>x[0]===p.direction)?.[1]);}
+  if(directionMatch){score+=5;const artist=[...(o.artists||[])].sort((a,b)=>b.genres.filter(g=>rules[p.direction]?.test(g)).length-a.genres.filter(g=>rules[p.direction]?.test(g)).length).find(a=>a.genres.some(g=>rules[p.direction]?.test(g)));reasons.push(artist?'Verified Qloo artist '+artist.name+' — '+[...new Set(artist.genres.filter(g=>rules[p.direction]?.test(g)))].slice(0,3).join(', '):'Source matches: '+(FOLLOWUPS[p.intent] as readonly (readonly string[])[]).find(x=>x[0]===p.direction)?.[1]);}
   for(const seed of p.seeds){const direct=[brief,...(o.details?.artists||[]),...(o.artists||[]).map(a=>a.name)].join(' ').toLocaleLowerCase().includes(seed.name.toLocaleLowerCase());const associated=o.signals?.includes(seed.name);if(direct||associated){interestMatch=true;score+=seed.feeling==='love'?6:2;reasons.push((direct?'Mentions ':'Qloo association with ')+seed.name+(seed.feeling==='curious'?' · something you want to try':' · already a favourite'));}}
   if(p.direction!=='any'&&!directionMatch)reasons.push('Activity match only; the source does not establish your preferred style.');
   if(!reasons.length)reasons.push('An option to react to; no personal match established yet.');
