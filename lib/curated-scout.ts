@@ -56,7 +56,7 @@ export async function scoutCurated(p:Preferences,key:string,seed:QuestSeed,now=n
  const items=await rankedCurated(p,key,seed,now,hooks),checked=new Set<string>(),failed=new Set<string>();
  reportRun(hooks,'operations','running','Checking Tokyo time and the published opening windows.');
  const initial=prepareScout(items,p,now);reportRun(hooks,'operations','complete',initial.tokyoNow+' JST · '+initial.pool.length+' of '+items.length+' candidates pass hours, location and price checks for '+initial.date+'.');
- reportRun(hooks,'cluster','running','Comparing three-stop loops. Every estimated walking leg must fit within 1.5 km.');
+ reportRun(hooks,'cluster','running','Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.');
  let plan=planScout(items,p,now);
  if(flexibleDate&&!plan.stops.length){for(let i=1;i<=6&&!plan.stops.length;i++){const date=new Date(Date.parse(p.date+'T12:00:00+09:00')+i*86400000).toLocaleDateString('en-CA',{timeZone:'Asia/Tokyo'});reportRun(hooks,'cluster','running','No complete loop yet. Trying '+date+' against the published schedules.');plan=planScout(items,{...p,date},now);}if(plan.stops.length)plan.notes.push('No complete loop fit the first day. This is the next day with a route.');}
  const active={...p,date:plan.date};

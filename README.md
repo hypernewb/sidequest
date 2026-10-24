@@ -26,6 +26,21 @@ Each estimated walking leg, including the return, is limited to 1.5 km. The enti
 
 Share Quest opens a selectable itinerary with a copy action. A separate device-share action is available when supported, so a stalled device share sheet never blocks copying. It shares the actual itinerary, suggested tasks, sourced door notes and Google Maps link. It does not create a public copy of the private app, regenerate a different route from a seed link or transmit anything until the visitor chooses to share. The scout uses deterministic scheduling and authored instructions; a language model is not used to fabricate a dossier.
 
+## Named neighborhood pools
+
+The planner groups live venue coordinates into Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. These are discovery districts around catalog anchors, not promises that the whole district fits a walk. A route cannot mix named pools. Other Tokyo areas remain available as local routes. Every leg, including the return, must still satisfy the 1.5 km walking estimate and the full loop must fit within 4 km. A missing third eligible stop produces no route rather than a cross-city filler.
+
+## Original four-metric workbook result
+
+The original Review sheet is already fully scored, with 64 numeric ratings across 16 recommendations. This is an agent desk review of the earlier venue lists, not a human study or an evaluation of the current quest engine. The original condition key differs from the twelve-profile comparison below.
+
+| Original condition | Relevance | Novelty | Coherence | Actionability |
+| --- | ---: | ---: | ---: | ---: |
+| A: Local-model baseline | 3.63 | 2.75 | 3.63 | 3.00 |
+| B: Qloo affinity | 2.75 | 3.00 | 2.75 | 3.00 |
+
+The original four-metric mean is 3.25 for the baseline and 2.875 for Qloo, a descriptive relative difference of -11.5%. It does not support a 35% lift. Actionability was not scored in the separate twelve-profile comparison. Existing scores were preserved rather than rewritten to favor the new implementation.
+
 ## Measured ranking comparison
 
 The scored workbook now includes all twelve fictional profiles. Codex rated the top four choices per condition on the original 1–5 rubric. A uses the saved app Qloo ranking with diversity rules. B uses the local model's fresh metadata ranking of the same five-to-eight-place pool, without Qloo affinity or contributor scores. Each candidate receives the same rating wherever it appears within a profile.

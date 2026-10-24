@@ -1,7 +1,8 @@
+import {neighborhood} from './neighborhoods.ts';
 import {distance,tokyoDate,type Place} from './discovery.ts';
 import {rankOpportunities,type Opportunity,type Preferences} from './opportunities.ts';
 export type ScoutStop={item:Opportunity;arrival:string;departure:string;hours:string;travelMinutes:number;distanceMetres:number;reason:string};
-export type ScoutPlan={date:string;checkedAt:string;tokyoNow:string;stops:ScoutStop[];brief:string;map:string|null;examined:number;eligible:number;notes:string[];trace?:string[];walkingMinutes?:number;walkingMetres?:number;returnMinutes?:number};
+export type ScoutPlan={date:string;checkedAt:string;tokyoNow:string;stops:ScoutStop[];brief:string;map:string|null;examined:number;eligible:number;notes:string[];neighborhood?:{id:string;name:string};trace?:string[];walkingMinutes?:number;walkingMetres?:number;returnMinutes?:number};
 const clock=(n:number)=>String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');
 function minutes(v:unknown){const m=String(v||'').match(/^T?(\d{2}):(\d{2})(?::\d{2})?$/);if(!m)return null;const n=+m[1]*60 + +m[2];return +m[1]<=24&&+m[2]<60&&n<=1440?n:null;}
 export function openingWindows(hours:Place['hours'],date:string){
@@ -20,11 +21,12 @@ export function prepareScout(input:Opportunity[],p:Preferences,now=new Date()){
 }
 export function planScout(input:Opportunity[],p:Preferences,now=new Date()):ScoutPlan{
  const {date,start,notes,tokyoNow,pool}=prepareScout(input,p,now);
+ const districts=new Map(pool.map(o=>[o.id,neighborhood(o.lat!,o.lon!)?.id||null]));
  const windows=new Map(pool.map(o=>[o.id,openingWindows(o.hours||{},date)])),role=(o:Opportunity)=>o.curation?.role||o.category;
  const legs=new Map<string,{metres:number;minutes:number}>();for(const a of pool)for(const b of pool)if(a.id!==b.id){const metres=Math.round(distance(a.lat!,a.lon!,b.lat!,b.lon!)*1.35);legs.set(a.id+'|'+b.id,{metres,minutes:Math.ceil(metres/4000*60)+5});}
  let best:ScoutStop[]=[],bestValue=-Infinity,bestWalk=0,bestMetres=0,returnMinutes=0;
  for(const a of pool)for(const b of pool){if(a.id===b.id||role(b)==='coffee'||role(a)==='listen')continue;const ab=legs.get(a.id+'|'+b.id)!;if(ab.metres>1500)continue;
-  for(const c of pool){if(c.id===a.id||c.id===b.id||role(c)==='coffee'||new Set([role(a),role(b),role(c)]).size<2||role(b)==='listen')continue;const bc=legs.get(b.id+'|'+c.id)!,ca=legs.get(c.id+'|'+a.id)!;const metres=ab.metres+bc.metres+ca.metres;if(bc.metres>1500||ca.metres>1500||metres>4000)continue;
+  for(const c of pool){if(c.id===a.id||c.id===b.id||role(c)==='coffee'||new Set([role(a),role(b),role(c)]).size<2||role(b)==='listen')continue;if(districts.get(a.id)!==districts.get(b.id)||districts.get(a.id)!==districts.get(c.id))continue;const bc=legs.get(b.id+'|'+c.id)!,ca=legs.get(c.id+'|'+a.id)!;const metres=ab.metres+bc.metres+ca.metres;if(bc.metres>1500||ca.metres>1500||metres>4000)continue;
    for(let departure=start;departure<=1140;departure+=15){let time=departure,waiting=0;const stops:ScoutStop[]=[];
     for(const [i,item] of [a,b,c].entries()){const leg=i===0?{metres:0,minutes:0}:i===1?ab:bc;const w=windows.get(item.id)!.find(w=>Math.max(time+leg.minutes,w.open)+45<=Math.min(1320,w.close));if(!w)break;const arrival=Math.max(time+leg.minutes,w.open),wait=arrival-time-leg.minutes;if(wait>30)break;waiting+=wait;stops.push({item,arrival:clock(arrival),departure:clock(arrival+45),hours:clock(w.open)+'–'+clock(w.close),travelMinutes:leg.minutes,distanceMetres:leg.metres,reason:item.curation?.matchBasis==='genre_bridge'?'Your Qloo taste links to '+item.curation.matchedTags?.join(', ')+', which matches our source-reviewed venue tags.':item.signals?.length?'Qloo connects '+item.signals.join(', ')+' with this stop.':item.curation?.matchBasis==='album_tags'?'Ranked using the album’s Qloo genre tags.':'Qloo ranked this venue for your seed; it supplied no individual explanation.'});time=arrival+45;}
     if(stops.length!==3||time+ca.minutes>1320)continue;
@@ -35,5 +37,5 @@ export function planScout(input:Opportunity[],p:Preferences,now=new Date()):Scou
  }
  const points=best.map(s=>s.item.lat+','+s.item.lon),map=best.length?'https://www.google.com/maps/dir/?api=1&origin='+points[0]+'&destination='+points[0]+'&waypoints='+points.slice(1).join('|')+'&travelmode=walking':null;
  const brief=best.length?'Three stops on '+date+', starting at '+best[0].arrival+' JST. Allow about '+bestWalk+' minutes walking, including the loop back.':'I could not fit three different stops into a short walking loop with published hours. Try another day or another seed.';
- return {date,checkedAt:now.toISOString(),tokyoNow,stops:best,brief,map,examined:input.length,eligible:pool.length,notes,walkingMinutes:bestWalk,walkingMetres:bestMetres,returnMinutes};
+ return {neighborhood:best.length?neighborhood(best[0].item.lat!,best[0].item.lon!)||undefined:undefined,date,checkedAt:now.toISOString(),tokyoNow,stops:best,brief,map,examined:input.length,eligible:pool.length,notes,walkingMinutes:bestWalk,walkingMetres:bestMetres,returnMinutes};
 }
