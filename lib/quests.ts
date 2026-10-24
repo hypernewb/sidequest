@@ -1,6 +1,6 @@
 import type {ScoutPlan,ScoutStop} from './scout.ts';
 import type {QuestSeed} from './quest-seeds.ts';
-export type Quest=Omit<ScoutPlan,'stops'> & {title:string;vibe:string;invitation:string;stops:(ScoutStop & {mission:string;programme?:{title:string;url:string;start:string;end:string;priceLabel:string}})[];seed:{id:string;name:string;type:string}};
+export type Quest=Omit<ScoutPlan,'stops'> & {title:string;vibe:string;invitation:string;stops:(ScoutStop & {mission:string;programme?:{title:string;url:string;start:string;end:string;priceLabel:string}})[];run?:import('./quest-run.ts').RunEvent[];seed:{id:string;name:string;type:string}};
 const normalized=(v:string)=>v.normalize('NFKC').toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
 export function resolveQuestSeed<T extends Pick<QuestSeed,'id'|'name'|'type'>>(query:string,candidates:T[],choice?:string){
  if(choice)return candidates.find(c=>c.id.toUpperCase()===choice.toUpperCase())||null;

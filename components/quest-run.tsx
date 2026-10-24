@@ -1,0 +1,12 @@
+'use client';
+import type {Ref} from 'react';
+import {RUN_STAGES,type RunEvent} from '@/lib/quest-run';
+export default function QuestRun({events,busy,seed,onCancel,panelRef}:{events:RunEvent[];busy:boolean;seed:string;onCancel:()=>void;panelRef?:Ref<HTMLElement>}){
+ const latest=new Map(events.map(e=>[e.stage,e])),active=[...events].reverse().find(e=>e.status==='running'),associations=[...events].reverse().find(e=>e.associations)?.associations||[];
+ return <section ref={panelRef} className="agent-run" aria-label="SideQuest Agent run"><div className="agent-run-heading"><div><p className="outing-kicker">SideQuest Agent / live run</p><h2>{busy?'Following '+seed:'The scout’s field notes'}</h2></div>{busy&&<button onClick={onCancel}>Cancel run</button>}</div>
+ <ol className="agent-nodes">{RUN_STAGES.map((s,i)=>{const e=latest.get(s.id),state=e?.status||'pending';return <li key={s.id} className={'agent-node '+state} aria-current={state==='running'?'step':undefined}><span className="agent-node-number">{state==='complete'?'✓':i+1}</span><div><h3>{s.name}</h3><span className="agent-node-state">{state==='pending'?'Next':state==='running'?'Working':state==='complete'?'Done':state==='blocked'?'Needs your choice':state==='cancelled'?'Stopped':'Could not finish'}</span><p>{e?.detail||s.description}</p></div></li>;})}</ol>
+ {associations.length>0&&<div className="agent-associations"><p className="outing-kicker">Returned by Qloo</p><div className="agent-graph"><span className="agent-seed">{seed}</span><span aria-hidden="true">→</span><ul>{[...associations].sort((a,b)=>({related_entity:0,related_tag:1,seed_tag:2}[a.relation]-{related_entity:0,related_tag:1,seed_tag:2}[b.relation])).slice(0,8).map((a,i)=><li key={a.name+i}><strong>{a.name}</strong><small>{a.relation==='related_entity'?`Related ${a.type.replaceAll('_',' ')}`:a.relation==='related_tag'?'Related genre':'Seed metadata'} · via {a.via}</small></li>)}</ul></div></div>}
+ <p className="sr-only" role="status" aria-live="polite">{busy?latest.get(active?.stage||'taste')?.detail:'Scout run finished.'}</p>
+ <details className="agent-log"><summary>Tool calls & decisions ({events.length})</summary><ol>{events.map((e,i)=><li key={i}><time>{new Date(e.at).toLocaleTimeString('en-GB',{timeZone:'Asia/Tokyo',hour12:false})} JST</time><span>{e.detail}</span></li>)}</ol><p>These are tool results and planning decisions. The scout uses a bounded planner and authored venue notes.</p></details>
+ </section>;
+}

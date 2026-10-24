@@ -10,11 +10,21 @@ The local catalog contains 100 source-reviewed entries. 73 have exact Qloo IDs a
 
 Dispatch resolves the seed, requests Qloo affinities only for allowlisted venue IDs, retrieves fresh venue coordinates and hours, and considers complete three-stop loops. Some indexed shops have no computed place affinity. A separate genre bridge matches Qloo seed tags against source-reviewed venue tags. The dossier distinguishes that bridge from direct place affinity. Albums use their Qloo genre tags because the tested Insights endpoint did not accept the album ID as a signal. No individual preference or psychological trait is inferred.
 
-The planner combines direct affinity and explicit genre overlap, then penalizes distance and waiting. It requires varied activities, allows 45 minutes per stop, finishes by 22:00, limits each estimated walking leg to 1.6 km and the whole loop to 4 km, and includes the return leg in the map. Weekly hours are checked for the chosen Tokyo date; dated overrides take precedence. It reads selected venue pages and replans after failed sources, with at most twelve page reads. Unknown hours cannot become opening windows. Special closures and gallery changeovers remain a limit outside source-specific adapters.
+The planner combines direct affinity and explicit genre overlap, then penalizes distance and waiting. It requires varied activities, allows 45 minutes per stop, finishes by 22:00, limits each estimated walking leg to 1.5 km and the whole loop to 4 km, and includes the return leg in the map. Weekly hours are checked for the chosen Tokyo date; dated overrides take precedence. It reads selected venue pages and replans after failed sources, with at most twelve page reads. Unknown hours cannot become opening windows. Special closures and gallery changeovers remain a limit outside source-specific adapters.
 
 The scout is deterministic tool orchestration. It does not use a language model. Venue tasks are authored in the catalog. No room smells, current records, products in stock, cash rules or photo restrictions are invented. Door notes are shown only when backed by a linked source. Qloo response descriptions, coordinates and hours are fetched at dispatch, rather than bundled in the public catalog.
 
 Live checks on 25 October 2026 JST separated Nujabes into a gallery, Hi-Fi Record Store and Bar Music; MUJI into Fuglen, SPBS and Gallery Conceal. Their estimated loops were 2.1 km and 3.1 km. A Spirited Away check still shared MUJI's three venues in a different order. This is a remaining coverage/ranking weakness, not evidence that changing the seed always produces a distinct route. The old scorecard below does not evaluate this pipeline.
+
+## Visible scout run and sharing
+
+The main dispatch streams newline-delimited stage events while the work runs. The four visible nodes cover Qloo taste expansion, Tokyo operational checks, geographic optimization and dossier composition. Every status update comes from a tool call or completed planning operation. There are no timed pretend steps. The completed dossier retains the run for inspection. Cancelling aborts the request and bounded provider calls; an interrupted stream cannot become a completed quest.
+
+Taste expansion now makes a bounded cross-domain Insights request, such as music into television or a brand into books. Only returned entities with finite affinity are shown. Tags from those lateral results have weight 0.25, below direct seed metadata at 1.0. The display distinguishes direct seed tags, related genres and related entities. It does not invent a chain of cultural influence. Missing lateral results leave the direct seed route available.
+
+Each estimated walking leg, including the return, is limited to 1.5 km. The entire loop remains capped at 4 km. The planner keeps a selected future date during source-check replanning. Published hours remain schedule evidence, rather than proof of an unscheduled opening.
+
+Share Quest opens a selectable itinerary with a copy action. A separate device-share action is available when supported, so a stalled device share sheet never blocks copying. It shares the actual itinerary, suggested tasks, sourced door notes and Google Maps link. It does not create a public copy of the private app, regenerate a different route from a seed link or transmit anything until the visitor chooses to share. The scout uses deterministic scheduling and authored instructions; a language model is not used to fabricate a dossier.
 
 ## Measured ranking comparison
 

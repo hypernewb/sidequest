@@ -28,3 +28,8 @@ test('dated closures override weekly hours and the loop includes its return leg'
  const plan=planScout(rows,p,now);assert.equal(plan.stops.length,3);const map=new URL(plan.map!);assert.equal(map.searchParams.get('origin'),map.searchParams.get('destination'));assert.equal(map.searchParams.get('waypoints')?.split('|').length,2);assert.ok(plan.walkingMinutes!>=plan.returnMinutes!+plan.stops.reduce((n,s)=>n+s.travelMinutes,0));
  assert.equal(planScout(rows.map(r=>({...r,hours})),p,now).stops.length,0);
 });
+test('the corridor excludes a leg between 1.5 km and the previous 1.6 km limit',()=>{
+ const now=new Date('2026-10-25T02:00:00Z'),p:Preferences={intent:'mix',direction:'any',format:'places',date:'2026-10-25',days:1,budget:'any',unknownPrice:true,seeds:[],exclude:[]};
+ const rows=['Coffee shop','Bookshop','Art gallery'].map((category,i)=>({id:String(i),title:String(i),kind:'place',source:'Qloo',url:'https://example.com/'+i,description:'',location:'Tokyo',checkedAt:now.toISOString(),price:null,priceLabel:'Unknown',availability:'',category,lat:35.67,lon:139.70+[0,.0124,.0001][i],hours:{sunday:[{opens:'12:00',closes:'20:00'}]}} as Opportunity));
+ assert.equal(planScout(rows,p,now).stops.length,0);
+});

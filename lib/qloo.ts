@@ -1,8 +1,8 @@
 import {safeUrl, familyFor, type Interest, type Place} from './discovery';
 const BASE='https://hackathon.api.qloo.com';
-export async function qloo(path:string,params:Record<string,string>,key:string) {
+export async function qloo(path:string,params:Record<string,string>,key:string,signal?:AbortSignal) {
  const url=new URL(path,BASE);for(const [k,v] of Object.entries(params))url.searchParams.set(k,v);
- const r=await fetch(url,{headers:{'X-Api-Key':key,Accept:'application/json'},signal:AbortSignal.timeout(18000)});
+ const r=await fetch(url,{headers:{'X-Api-Key':key,Accept:'application/json'},signal:signal?AbortSignal.any([signal,AbortSignal.timeout(18000)]):AbortSignal.timeout(18000)});
  if(!r.ok)throw new Error(r.status===429 ? 'Qloo is busy. Please try again in a minute.' : 'Qloo could not complete this search. Please try again.');
  const b=await r.json() as {results?:unknown; success?:boolean};
  if(b.success===false)throw new Error('Qloo could not complete this search. Please try again.');

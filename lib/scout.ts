@@ -8,7 +8,7 @@ export function openingWindows(hours:Place['hours'],date:string){
  const day=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Tokyo',weekday:'long'}).format(new Date(date+'T12:00:00+09:00')).toLowerCase();
  const rows=hours?.[date]??hours?.[day];return (Array.isArray(rows)?rows:[]).flatMap(h=>{if(!h||typeof h!=='object')return [];const a=minutes(h.opens),b=minutes(h.closes);if(h.closed||a===null||b===null||a===b)return [];return [{open:a,close:b<a?1440:b}];}).sort((a,b)=>a.open-b.open);
 }
-export function planScout(input:Opportunity[],p:Preferences,now=new Date()):ScoutPlan{
+export function prepareScout(input:Opportunity[],p:Preferences,now=new Date()){
  const today=tokyoDate(now),tokyoNow=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tokyo',dateStyle:'medium',timeStyle:'short'}).format(now);
  const current=+new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tokyo',hour:'2-digit',hourCycle:'h23'}).format(now)*60 + +new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tokyo',minute:'2-digit'}).format(now);
  let date=p.date<today?today:p.date,start=date===today?Math.max(720,Math.ceil((current+15)/15)*15):720;
@@ -16,11 +16,15 @@ export function planScout(input:Opportunity[],p:Preferences,now=new Date()):Scou
  if(start>1140){date=tokyoDate(new Date(Date.parse(date+'T12:00:00+09:00')+86400000));start=720;notes.push('Planning tomorrow because there is too little time left today.');}
  const ranked=rankOpportunities(input,{...p,intent:'mix',direction:'any',date,days:1,format:'places'},now);
  const pool=ranked.filter(o=>o.kind==='place'&&!o.online&&Number.isFinite(o.lat)&&Number.isFinite(o.lon)&&distance(o.lat!,o.lon!,35.6762,139.7006)<=25000&&openingWindows(o.hours||{},date).length&&(!p.seeds.length||Number.isFinite(o.affinity)||!!o.curation?.matchedTags?.length)).sort((a,b)=>(b.curation?.tasteScore??(b.affinity||0)*100)-(a.curation?.tasteScore??(a.affinity||0)*100)).slice(0,65);
+ return {date,start,notes,tokyoNow,pool};
+}
+export function planScout(input:Opportunity[],p:Preferences,now=new Date()):ScoutPlan{
+ const {date,start,notes,tokyoNow,pool}=prepareScout(input,p,now);
  const windows=new Map(pool.map(o=>[o.id,openingWindows(o.hours||{},date)])),role=(o:Opportunity)=>o.curation?.role||o.category;
  const legs=new Map<string,{metres:number;minutes:number}>();for(const a of pool)for(const b of pool)if(a.id!==b.id){const metres=Math.round(distance(a.lat!,a.lon!,b.lat!,b.lon!)*1.35);legs.set(a.id+'|'+b.id,{metres,minutes:Math.ceil(metres/4000*60)+5});}
  let best:ScoutStop[]=[],bestValue=-Infinity,bestWalk=0,bestMetres=0,returnMinutes=0;
- for(const a of pool)for(const b of pool){if(a.id===b.id||role(b)==='coffee'||role(a)==='listen')continue;const ab=legs.get(a.id+'|'+b.id)!;if(ab.metres>1600)continue;
-  for(const c of pool){if(c.id===a.id||c.id===b.id||role(c)==='coffee'||new Set([role(a),role(b),role(c)]).size<2||role(b)==='listen')continue;const bc=legs.get(b.id+'|'+c.id)!,ca=legs.get(c.id+'|'+a.id)!;const metres=ab.metres+bc.metres+ca.metres;if(bc.metres>1600||ca.metres>1600||metres>4000)continue;
+ for(const a of pool)for(const b of pool){if(a.id===b.id||role(b)==='coffee'||role(a)==='listen')continue;const ab=legs.get(a.id+'|'+b.id)!;if(ab.metres>1500)continue;
+  for(const c of pool){if(c.id===a.id||c.id===b.id||role(c)==='coffee'||new Set([role(a),role(b),role(c)]).size<2||role(b)==='listen')continue;const bc=legs.get(b.id+'|'+c.id)!,ca=legs.get(c.id+'|'+a.id)!;const metres=ab.metres+bc.metres+ca.metres;if(bc.metres>1500||ca.metres>1500||metres>4000)continue;
    for(let departure=start;departure<=1140;departure+=15){let time=departure,waiting=0;const stops:ScoutStop[]=[];
     for(const [i,item] of [a,b,c].entries()){const leg=i===0?{metres:0,minutes:0}:i===1?ab:bc;const w=windows.get(item.id)!.find(w=>Math.max(time+leg.minutes,w.open)+45<=Math.min(1320,w.close));if(!w)break;const arrival=Math.max(time+leg.minutes,w.open),wait=arrival-time-leg.minutes;if(wait>30)break;waiting+=wait;stops.push({item,arrival:clock(arrival),departure:clock(arrival+45),hours:clock(w.open)+'–'+clock(w.close),travelMinutes:leg.minutes,distanceMetres:leg.metres,reason:item.curation?.matchBasis==='genre_bridge'?'Your Qloo taste links to '+item.curation.matchedTags?.join(', ')+', which matches our source-reviewed venue tags.':item.signals?.length?'Qloo connects '+item.signals.join(', ')+' with this stop.':item.curation?.matchBasis==='album_tags'?'Ranked using the album’s Qloo genre tags.':'Qloo ranked this venue for your seed; it supplied no individual explanation.'});time=arrival+45;}
     if(stops.length!==3||time+ca.minutes>1320)continue;
