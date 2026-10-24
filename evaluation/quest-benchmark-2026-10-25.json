@@ -1,0 +1,606 @@
+{
+  "date": "2026-10-25",
+  "planningTime": "2026-10-25T03:00:00.000Z",
+  "method": "Codex unblinded desk judgments, fixed once per seed and venue across all conditions. 1 unsupported or conflicting, 2 generic break or weak adjacency, 3 plausible cultural adjacency, 4 strong reviewed connection, 5 explicit subject/genre fit. These are not human satisfaction or novelty scores.",
+  "summary": {
+    "before": {
+      "quests": 4,
+      "threeStopQuests": 4,
+      "twoStopQuests": 0,
+      "profiles": 8,
+      "relevanceReturned": 2.5,
+      "relevanceIncludingMissing": 1.25,
+      "meanPairwiseJaccard": 0.08333333333333333
+    },
+    "qloo": {
+      "quests": 6,
+      "threeStopQuests": 3,
+      "twoStopQuests": 3,
+      "profiles": 8,
+      "relevanceReturned": 2.9166666666666665,
+      "relevanceIncludingMissing": 2.1875,
+      "meanPairwiseJaccard": 0.15555555555555553
+    },
+    "baseline": {
+      "quests": 8,
+      "threeStopQuests": 8,
+      "twoStopQuests": 0,
+      "profiles": 8,
+      "relevanceReturned": 2,
+      "relevanceIncludingMissing": 2,
+      "meanPairwiseJaccard": 0.05357142857142857
+    }
+  },
+  "profiles": [
+    {
+      "seed": "Nujabes",
+      "before": {
+        "stops": [
+          {
+            "name": "GALLERY CONCEAL SHIBUYA",
+            "grade": 2,
+            "evidence": "Independent gallery, no specific music connection",
+            "arrival": "16:00",
+            "departure": "16:45",
+            "role": "art"
+          },
+          {
+            "name": "Hi-Fi Record Store",
+            "grade": 4,
+            "evidence": "Reviewed jazz and soul selection",
+            "arrival": "17:06",
+            "departure": "17:51",
+            "role": "dig"
+          },
+          {
+            "name": "Bar Music",
+            "grade": 4,
+            "evidence": "Reviewed jazz and soul listening",
+            "arrival": "18:11",
+            "departure": "18:56",
+            "role": "listen"
+          }
+        ],
+        "walkingMetres": 2073,
+        "relevance": 3.3333333333333335
+      },
+      "qloo": {
+        "stops": [
+          {
+            "name": "Hi-Fi Record Store",
+            "grade": 4,
+            "evidence": "Reviewed jazz and soul selection",
+            "arrival": "16:00",
+            "departure": "16:45",
+            "role": "dig"
+          },
+          {
+            "name": "HMV record shop Shibuya",
+            "grade": 3,
+            "evidence": "Vinyl and jazz adjacency",
+            "arrival": "17:01",
+            "departure": "17:46",
+            "role": "dig"
+          },
+          {
+            "name": "Bar Music",
+            "grade": 4,
+            "evidence": "Reviewed jazz and soul listening",
+            "arrival": "18:02",
+            "departure": "18:47",
+            "role": "listen"
+          }
+        ],
+        "walkingMetres": 2373,
+        "relevance": 3.6666666666666665
+      },
+      "baseline": {
+        "stops": [
+          {
+            "name": "Bear Pond Espresso",
+            "grade": 2,
+            "evidence": "Coffee break, no music evidence",
+            "arrival": "16:45",
+            "departure": "17:30",
+            "role": "coffee"
+          },
+          {
+            "name": "Record Station",
+            "grade": 3,
+            "evidence": "Soul and rock record selection",
+            "arrival": "17:36",
+            "departure": "18:21",
+            "role": "dig"
+          },
+          {
+            "name": "Little Soul Cafe",
+            "grade": 4,
+            "evidence": "Reviewed jazz and soul listening",
+            "arrival": "19:00",
+            "departure": "19:45",
+            "role": "listen"
+          }
+        ],
+        "walkingMetres": 514,
+        "relevance": 3
+      }
+    },
+    {
+      "seed": "Slayer",
+      "before": {
+        "stops": [
+          {
+            "name": "GALLERY CONCEAL SHIBUYA",
+            "grade": 1,
+            "evidence": "No metal connection supplied",
+            "arrival": "15:45",
+            "departure": "16:30",
+            "role": "art"
+          },
+          {
+            "name": "SHIBUYA PUBLISHING & BOOKSELLERS",
+            "grade": 1,
+            "evidence": "No metal connection supplied",
+            "arrival": "16:53",
+            "departure": "17:38",
+            "role": "books"
+          },
+          {
+            "name": "Bar Music",
+            "grade": 1,
+            "evidence": "Jazz/soul conflicts with requested thrash metal",
+            "arrival": "18:02",
+            "departure": "18:47",
+            "role": "listen"
+          }
+        ],
+        "walkingMetres": 2448,
+        "relevance": 1
+      },
+      "qloo": {
+        "stops": [],
+        "walkingMetres": 0,
+        "relevance": null
+      },
+      "baseline": {
+        "stops": [
+          {
+            "name": "KOFFEE MAMEYA",
+            "grade": 1,
+            "evidence": "No metal connection supplied",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "WATARI-UM",
+            "grade": 1,
+            "evidence": "No metal connection supplied",
+            "arrival": "13:12",
+            "departure": "13:57",
+            "role": "art"
+          },
+          {
+            "name": "BIG LOVE RECORDS",
+            "grade": 2,
+            "evidence": "Punk adjacency, no metal selection evidence",
+            "arrival": "14:12",
+            "departure": "14:57",
+            "role": "dig"
+          }
+        ],
+        "walkingMetres": 1879,
+        "relevance": 1.3333333333333333
+      }
+    },
+    {
+      "seed": "Aphex Twin",
+      "before": {
+        "stops": [
+          {
+            "name": "Bear Pond Espresso",
+            "grade": 2,
+            "evidence": "Generic coffee break",
+            "arrival": "16:45",
+            "departure": "17:30",
+            "role": "coffee"
+          },
+          {
+            "name": "Pianola Records",
+            "grade": 5,
+            "evidence": "Reviewed experimental and ambient records",
+            "arrival": "17:49",
+            "departure": "18:34",
+            "role": "dig"
+          },
+          {
+            "name": "Little Soul Cafe",
+            "grade": 1,
+            "evidence": "Jazz/soul selection does not establish electronic fit",
+            "arrival": "19:00",
+            "departure": "19:45",
+            "role": "listen"
+          }
+        ],
+        "walkingMetres": 2026,
+        "relevance": 2.6666666666666665
+      },
+      "qloo": {
+        "stops": [
+          {
+            "name": "Dandelion Chocolate Kuramae",
+            "grade": 2,
+            "evidence": "Nearby craft/design stopover",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "Mograg Gallery",
+            "grade": 3,
+            "evidence": "Experimental visual art, not an electronic music programme",
+            "arrival": "13:20",
+            "departure": "14:05",
+            "role": "art"
+          }
+        ],
+        "walkingMetres": 1946,
+        "relevance": 2.5
+      },
+      "baseline": {
+        "stops": [
+          {
+            "name": "Fuglen Tokyo",
+            "grade": 2,
+            "evidence": "Design adjacency only",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "Hi-Fi Record Store",
+            "grade": 1,
+            "evidence": "Jazz/soul selection does not establish electronic fit",
+            "arrival": "13:25",
+            "departure": "14:10",
+            "role": "dig"
+          },
+          {
+            "name": "SHIBUYA PUBLISHING & BOOKSELLERS",
+            "grade": 2,
+            "evidence": "Design adjacency only",
+            "arrival": "14:32",
+            "departure": "15:17",
+            "role": "books"
+          }
+        ],
+        "walkingMetres": 2789,
+        "relevance": 1.6666666666666667
+      }
+    },
+    {
+      "seed": "MUJI",
+      "before": {
+        "stops": [],
+        "walkingMetres": 0,
+        "relevance": null
+      },
+      "qloo": {
+        "stops": [
+          {
+            "name": "GLITCH COFFEE Jimbocho",
+            "grade": 4,
+            "evidence": "Reviewed design and craft coffee",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "Bohemian's Guild",
+            "grade": 4,
+            "evidence": "Reviewed art/design books",
+            "arrival": "13:10",
+            "departure": "13:55",
+            "role": "books"
+          },
+          {
+            "name": "Komiyama Tokyo",
+            "grade": 2,
+            "evidence": "Photography/fashion adjacency",
+            "arrival": "14:02",
+            "departure": "14:47",
+            "role": "books"
+          }
+        ],
+        "walkingMetres": 772,
+        "relevance": 3.3333333333333335
+      },
+      "baseline": {
+        "stops": [
+          {
+            "name": "Bear Pond Espresso",
+            "grade": 2,
+            "evidence": "Craft coffee adjacency",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "NAT RECORDS",
+            "grade": 1,
+            "evidence": "Punk and garage records, no minimal-design fit",
+            "arrival": "13:10",
+            "departure": "13:55",
+            "role": "dig"
+          },
+          {
+            "name": "Record Station",
+            "grade": 1,
+            "evidence": "Record shop, no minimal-design fit",
+            "arrival": "14:06",
+            "departure": "14:51",
+            "role": "dig"
+          }
+        ],
+        "walkingMetres": 770,
+        "relevance": 1.3333333333333333
+      }
+    },
+    {
+      "seed": "Spirited Away",
+      "before": {
+        "stops": [],
+        "walkingMetres": 0,
+        "relevance": null
+      },
+      "qloo": {
+        "stops": [
+          {
+            "name": "Daikanyama T-Site",
+            "grade": 3,
+            "evidence": "Film/books connection, no Ghibli-specific stock confirmed",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "books"
+          },
+          {
+            "name": "Art Front Gallery",
+            "grade": 2,
+            "evidence": "General art/architecture, no animation programme evidence",
+            "arrival": "13:11",
+            "departure": "13:56",
+            "role": "art"
+          }
+        ],
+        "walkingMetres": 670,
+        "relevance": 2.5
+      },
+      "baseline": {
+        "stops": [
+          {
+            "name": "ONIBUS COFFEE Nakameguro",
+            "grade": 2,
+            "evidence": "Architecture/coffee adjacency",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "Art Front Gallery",
+            "grade": 2,
+            "evidence": "General art/architecture, no animation programme evidence",
+            "arrival": "13:17",
+            "departure": "14:02",
+            "role": "art"
+          },
+          {
+            "name": "Daikanyama T-Site",
+            "grade": 3,
+            "evidence": "Film/books connection, no Ghibli-specific stock confirmed",
+            "arrival": "14:13",
+            "departure": "14:58",
+            "role": "books"
+          }
+        ],
+        "walkingMetres": 1999,
+        "relevance": 2.3333333333333335
+      }
+    },
+    {
+      "seed": "Akira",
+      "before": {
+        "stops": [],
+        "walkingMetres": 0,
+        "relevance": null
+      },
+      "qloo": {
+        "stops": [
+          {
+            "name": "Daikanyama T-Site",
+            "grade": 3,
+            "evidence": "Film/books connection, no Akira-specific stock confirmed",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "books"
+          },
+          {
+            "name": "Art Front Gallery",
+            "grade": 2,
+            "evidence": "General art, no animation programme evidence",
+            "arrival": "13:11",
+            "departure": "13:56",
+            "role": "art"
+          }
+        ],
+        "walkingMetres": 670,
+        "relevance": 2.5
+      },
+      "baseline": {
+        "stops": [
+          {
+            "name": "Kanda Brazil",
+            "grade": 2,
+            "evidence": "Generic coffee/books break",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "Komiyama Tokyo",
+            "grade": 3,
+            "evidence": "Visual culture and photography adjacency",
+            "arrival": "13:06",
+            "departure": "13:51",
+            "role": "books"
+          },
+          {
+            "name": "Bohemian's Guild",
+            "grade": 3,
+            "evidence": "Art/design books, no Akira-specific stock confirmed",
+            "arrival": "13:58",
+            "departure": "14:43",
+            "role": "books"
+          }
+        ],
+        "walkingMetres": 239,
+        "relevance": 2.6666666666666665
+      }
+    },
+    {
+      "seed": "Pokemon FireRed Version",
+      "before": {
+        "stops": [],
+        "walkingMetres": 0,
+        "relevance": null
+      },
+      "qloo": {
+        "stops": [],
+        "walkingMetres": 0,
+        "relevance": null
+      },
+      "baseline": {
+        "stops": [
+          {
+            "name": "KOFFEE MAMEYA",
+            "grade": 1,
+            "evidence": "No game connection supplied",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "UTRECHT",
+            "grade": 2,
+            "evidence": "Illustration/zine adjacency, no game stock evidence",
+            "arrival": "13:18",
+            "departure": "14:03",
+            "role": "books"
+          },
+          {
+            "name": "BIG LOVE RECORDS",
+            "grade": 1,
+            "evidence": "No game connection supplied",
+            "arrival": "14:30",
+            "departure": "15:15",
+            "role": "dig"
+          }
+        ],
+        "walkingMetres": 3055,
+        "relevance": 1.3333333333333333
+      }
+    },
+    {
+      "seed": "Comme des Garcons",
+      "before": {
+        "stops": [
+          {
+            "name": "ONIBUS COFFEE Nakameguro",
+            "grade": 3,
+            "evidence": "Architecture adjacency",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "Daikanyama T-Site",
+            "grade": 3,
+            "evidence": "Design/books adjacency",
+            "arrival": "13:19",
+            "departure": "14:04",
+            "role": "books"
+          },
+          {
+            "name": "Art Front Gallery",
+            "grade": 3,
+            "evidence": "Contemporary art/architecture adjacency",
+            "arrival": "14:15",
+            "departure": "15:00",
+            "role": "art"
+          }
+        ],
+        "walkingMetres": 1999,
+        "relevance": 3
+      },
+      "qloo": {
+        "stops": [
+          {
+            "name": "ONIBUS COFFEE Nakameguro",
+            "grade": 3,
+            "evidence": "Architecture adjacency",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "Art Front Gallery",
+            "grade": 3,
+            "evidence": "Contemporary art/architecture adjacency",
+            "arrival": "13:17",
+            "departure": "14:02",
+            "role": "art"
+          },
+          {
+            "name": "Daikanyama T-Site",
+            "grade": 3,
+            "evidence": "Design/books adjacency",
+            "arrival": "14:13",
+            "departure": "14:58",
+            "role": "books"
+          }
+        ],
+        "walkingMetres": 1999,
+        "relevance": 3
+      },
+      "baseline": {
+        "stops": [
+          {
+            "name": "Fuglen Tokyo",
+            "grade": 3,
+            "evidence": "Reviewed design/architecture",
+            "arrival": "12:15",
+            "departure": "13:00",
+            "role": "coffee"
+          },
+          {
+            "name": "HMV record shop Shibuya",
+            "grade": 1,
+            "evidence": "No fashion/design connection supplied",
+            "arrival": "13:19",
+            "departure": "14:04",
+            "role": "dig"
+          },
+          {
+            "name": "SHIBUYA PUBLISHING & BOOKSELLERS",
+            "grade": 3,
+            "evidence": "Design/publishing adjacency",
+            "arrival": "14:18",
+            "departure": "15:03",
+            "role": "books"
+          }
+        ],
+        "walkingMetres": 1849,
+        "relevance": 2.3333333333333335
+      }
+    }
+  ]
+}

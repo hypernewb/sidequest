@@ -14,7 +14,7 @@ The planner combines direct affinity and explicit genre overlap, then penalizes 
 
 The scout is deterministic tool orchestration. It does not use a language model. Venue tasks are authored in the catalog. No room smells, current records, products in stock, cash rules or photo restrictions are invented. Door notes are shown only when backed by a linked source. Qloo response descriptions, coordinates and hours are fetched at dispatch, rather than bundled in the public catalog.
 
-Live checks on 25 October 2026 JST separated Nujabes into a gallery, Hi-Fi Record Store and Bar Music; MUJI into Fuglen, SPBS and Gallery Conceal. Their estimated loops were 2.1 km and 3.1 km. A Spirited Away check still shared MUJI's three venues in a different order. This is a remaining coverage/ranking weakness, not evidence that changing the seed always produces a distinct route. The old scorecard below does not evaluate this pipeline.
+The current quest-engine benchmark uses eight contrasting seeds and frozen Qloo/source responses. The fixed engine returns 6/8 quests (previously 4/8), with desk-review relevance 2.92/5 for returned quests, versus 2.00 for a local-model baseline that returns 8/8. Counting missing quests as zero gives 2.19 versus 2.00. These are unblinded agent judgments on the diagnosis set, not a held-out user study. Film/fashion routes still overlap, and metal/game coverage remains incomplete. See [the current benchmark, bad matches and limitations](evaluation/QUEST-BENCHMARK.md).
 
 ## Visible scout run and sharing
 
@@ -155,3 +155,13 @@ Run `node --experimental-strip-types scripts/evaluate-tastes.mjs` against the lo
 No hosted PullMD endpoint is configured. To connect an externally deployed instance later, set server-only `PULLMD_URL` to its HTTPS base URL and optionally `PULLMD_BEARER_TOKEN` if the instance accepts bearer authentication. Leave them blank to retain the direct announcement reader. `.env.example` documents the variables; local preview reads ignored `.dev.vars`.
 
 `lib/pullmd-reader.ts` calls the service's `api` endpoint with plain-text output, `frontmatter=false`, `render=skip` and `comments=false`. It uses manual redirects, a 12-second timeout and a 150,000-byte response cap, then retains at most 12,000 characters of stripped text. Only the existing supported official-host path uses it. Pasted text, X oEmbed, unsupported hosts and MEDICOM's exact Atom-entry path bypass it. Failure falls back to direct official-page reading with a source notice. Contract and failure fixtures cover this path; a real hosted service comparison remains untested.
+
+## Current quest benchmark
+
+| Condition | Quests / eight seeds | Relevance on returned quests | Missing quests as zero |
+| --- | ---: | ---: | ---: |
+| Previous Qloo quest engine | 4 | 2.50 | 1.25 |
+| Fixed Qloo quest engine | 6 | 2.92 | 2.19 |
+| Local-model baseline with current planner | 8 | 2.00 | 2.00 |
+
+Codex desk ratings, 1–5. The last column is a separate coverage penalty. No human-quality or novelty uplift is established. See [method and per-profile routes](evaluation/QUEST-BENCHMARK.md) and [auditable results](evaluation/quest-benchmark-2026-10-25.json). Historical workbook results above remain unchanged.

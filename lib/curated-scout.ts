@@ -1,7 +1,7 @@
 import {reportRun,type RunHooks,type Association} from './quest-run.ts';
 import {questSeed} from './quest-seeds.ts';
 import {datedVenueHours} from './venue-programmes.ts';
-import {tasteThreads,culturalOverlap} from './curated-taste.ts';
+import {tasteThreads,culturalFit} from './curated-taste.ts';
 import {qloo} from './qloo.ts';
 import {VENUES,venueById,type Curation} from './curated-venues.ts';
 import type {Opportunity,Preferences} from './opportunities.ts';
@@ -33,10 +33,10 @@ export async function rankedCurated(p:Preferences,key:string,seed:QuestSeed,now=
  for(const e of (b.results as {entities?:Record<string,any>[]})?.entities||[]){const related=questSeed(e);if(!related||related.type!==type||related.id===seed.id||!Number.isFinite(e.query?.affinity))continue;associations.push({name:related.name,type:related.type,relation:'related_entity',via:seed.name});taste.push(...(related.taste||[]).map(t=>({...t,weight:.25})));}
  }catch{hooks?.signal?.throwIfAborted();reportRun(hooks,'taste','running','The related-world lookup was unavailable. Keeping the seed evidence and continuing.',associations);}
  if(seed.type==='album'&&!taste.length)taste=seed.tags.map(name=>({name,weight:1}));
- const threads=tasteThreads(taste),musicSeed=['artist','album'].includes(seed.type)||['hiphop','jazz','soul','funk','electronic','ambient','experimental','punk','metal','rock'].some(t=>(threads.get(t)||0)>=1),direct=new Map<string,Record<string,any>>();
+ const threads=tasteThreads(taste);if(['movie','tv_show'].includes(seed.type))threads.set('film',1);if(['videogame','video_game'].includes(seed.type))threads.set('games',1);const musicSeed=['artist','album'].includes(seed.type),direct=new Map<string,Record<string,any>>();
  for(let i=0;i<ids.length;i+=20){reportRun(hooks,'taste','running','Qloo /v2/insights · ranking curated venues '+(i+1)+'–'+Math.min(i+20,ids.length)+' of '+ids.length+'.',associations);const b=await qloo('/v2/insights',{'filter.type':'urn:entity:place','filter.results.entities':ids.slice(i,i+20).join(','),...(seed.type==='album'?{'signal.interests.tags':seed.tags.join(',')}:{'signal.interests.entities':seed.id}),take:'50','feature.explainability':'true'},key,hooks?.signal);for(const e of (b.results as {entities?:Record<string,any>[]})?.entities||[])direct.set(String(e.entity_id).toUpperCase(),e);}
- for(let i=0;i<ids.length;i+=40){reportRun(hooks,'taste','running','Qloo /entities · loading venue coordinates and published schedules.',associations);const b=await qloo('/entities',{entity_ids:ids.slice(i,i+40).join(',')},key,hooks?.signal);for(const raw of Array.isArray(b.results)?b.results:[]){const e=raw as Record<string,any>,id=String(e.entity_id).toUpperCase(),v=venueById.get(id);if(!v||!musicSeed&&['dig','listen'].includes(v.role))continue;const overlap=culturalOverlap(v.tags,threads),ranked=direct.get(id),o=curatedOpportunity({...e,query:ranked?.query||{affinity:0}},seed,now.toISOString());if(!o||!ranked&&!overlap.length)continue;
- const genreScore=overlap.reduce((n,t)=>n+t.weight,0);o.curation!.matchedTags=overlap.map(t=>t.name);o.curation!.tasteScore=(ranked?.query?.affinity||0)*35+genreScore*30;
+ for(let i=0;i<ids.length;i+=40){reportRun(hooks,'taste','running','Qloo /entities · loading venue coordinates and published schedules.',associations);const b=await qloo('/entities',{entity_ids:ids.slice(i,i+40).join(',')},key,hooks?.signal);for(const raw of Array.isArray(b.results)?b.results:[]){const e=raw as Record<string,any>,id=String(e.entity_id).toUpperCase(),v=venueById.get(id);if(!v)continue;const ranked=direct.get(id),fit=culturalFit(v.tags,threads,ranked?.query?.affinity||0),overlap=fit.overlap;if(['dig','listen'].includes(v.role)&&(!musicSeed||!overlap.some(t=>t.weight>=.35)))continue;const o=curatedOpportunity({...e,query:ranked?.query||{affinity:0}},seed,now.toISOString());if(!o)continue;
+ o.curation!.matchedTags=overlap.map(t=>t.name);o.curation!.matchStrength=fit.strength;o.curation!.tasteScore=fit.score;
  if(!ranked){o.affinity=undefined;o.curation!.matchBasis='genre_bridge';}items.push(o);}}
  const unique=[...new Map(items.map(o=>[o.id,o])).values()],links=[...new Map(associations.map(a=>[a.relation+':'+a.name,a])).values()];
  reportRun(hooks,'taste','complete','Found '+unique.length+' candidates in the curated catalog. '+links.filter(a=>a.relation==='related_entity').length+' lateral cultural links returned by Qloo.',links);
@@ -67,6 +67,6 @@ export async function scoutCurated(p:Preferences,key:string,seed:QuestSeed,now=n
   plan=planScout(items.filter(o=>!failed.has(o.id)),active,now);
  }
  if(plan.stops.some(s=>!checked.has(s.item.id)))plan=planScout(items.filter(o=>checked.has(o.id)),active,now);
- reportRun(hooks,'cluster',plan.stops.length?'complete':'blocked',plan.stops.length?'Selected '+plan.stops.map(s=>s.item.title).join(' → ')+'. About '+plan.walkingMinutes+' minutes walking including the return.':'No complete three-stop loop passed the checks.');
- return {...plan,trace:['Started with '+seed.name+(seed.type==='album'?' using its Qloo genre tags':'')+'.','Ranked '+items.length+' candidates within '+VENUES.length+' curated venues; '+VENUES.filter(v=>v.qlooId).length+' have resolved Qloo IDs.','Read '+checked.size+' venue pages'+(failed.size?'; replaced '+failed.size+' unreadable sources':'')+'.',plan.stops.length?'Fitted three stops with varied activities around their weekly hours and a return walk.':'No complete three-stop loop passed the checks.']};
+ reportRun(hooks,'cluster',plan.stops.length?'complete':'blocked',plan.stops.length?'Selected '+plan.stops.map(s=>s.item.title).join(' → ')+'. About '+plan.walkingMinutes+' minutes walking including the return.':'No short loop with a supported cultural anchor passed the checks.');
+ return {...plan,trace:['Started with '+seed.name+(seed.type==='album'?' using its Qloo genre tags':'')+'.','Ranked '+items.length+' candidates within '+VENUES.length+' curated venues; '+VENUES.filter(v=>v.qlooId).length+' have resolved Qloo IDs.','Read '+checked.size+' venue pages'+(failed.size?'; replaced '+failed.size+' unreadable sources':'')+'.',plan.stops.length?'Fitted '+plan.stops.length+' stops with varied activities around their weekly hours and a return walk.':'No short loop with a supported cultural anchor passed the checks.']};
 }

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {VENUES} from '../lib/curated-venues.ts';
-import {tasteThreads,culturalOverlap} from '../lib/curated-taste.ts';
+import {tasteThreads,culturalOverlap,culturalFit} from '../lib/curated-taste.ts';
 import {questSeed} from '../lib/quest-seeds.ts';
 import {openingWindows,planScout} from '../lib/scout.ts';
 import type {Opportunity,Preferences} from '../lib/opportunities.ts';
@@ -10,6 +10,22 @@ test('the local catalog has unique identities, authored tasks and reviewable sou
  assert.ok(VENUES.every(v=>/^https?:\/\//.test(v.source)&&v.mission.length>50&&Number.isFinite(Date.parse(v.reviewedAt))));
  assert.ok(!VENUES.some(v=>/Cotton Club|Billboard Live|3331|^VACANT$/.test(v.name)));
  assert.equal(VENUES.find(v=>v.name==='NAT RECORDS')?.area,'Shimokitazawa');
+});
+
+test('a direct cultural anchor beats multiple weak lateral tags and affinity alone',()=>{
+ const t=tasteThreads([{name:'Hip hop',weight:1},{name:'Jazz',weight:.35},{name:'Soul',weight:.35},{name:'Funk',weight:.35}]);
+ assert.ok(culturalFit(['hiphop'],t).score>culturalFit(['jazz','soul','funk'],t,.99).score);
+ assert.equal(culturalFit(['jazz'],tasteThreads([{name:'Metal'}]),.99).strength,'stopover');
+ assert.equal(tasteThreads([{name:'Postmodernism'}]).has('design'),false);
+});
+
+test('curated routes need a cultural anchor, can cross a district boundary, and can return two stops',()=>{
+ const now=new Date('2026-10-25T02:00:00Z'),p:Preferences={intent:'mix',direction:'any',format:'places',date:'2026-10-25',days:1,budget:'any',unknownPrice:true,seeds:[],exclude:[]};
+ const make=(id:string,role:'art'|'coffee'|'books',lat:number,strength:'anchor'|'adjacent'|'stopover'):Opportunity=>({id,title:id,kind:'place',source:'Qloo',url:'https://example.com/'+id,description:'',location:'Tokyo',checkedAt:now.toISOString(),price:null,priceLabel:'Unknown',availability:'',category:role,lat,lon:139.694,hours:{sunday:[{opens:'12:00',closes:'20:00'}]},curation:{role,area:'Tokyo',mission:'Browse',tags:[],doorNotes:[],source:'https://example.com',reviewedAt:now.toISOString(),matchBasis:'entity',matchStrength:strength,tasteScore:strength==='anchor'?80:2}});
+ const a=make('anchor','art',35.673,'anchor'),b=make('break','coffee',35.670,'adjacent'),c=make('book','books',35.667,'stopover');
+ assert.equal(planScout([a,b,c],p,now).stops.length,3);
+ assert.equal(planScout([a,b],p,now).stops.length,2);
+ assert.equal(planScout([a,b,c].map(o=>({...o,curation:{...o.curation!,matchStrength:'stopover'}})),p,now).stops.length,0);
 });
 test('film tags do not turn witchcraft into coffee craft, steampunk into punk or a bathhouse into house music',()=>{
  const threads=tasteThreads([{name:'Witchcraft'},{name:'Steampunk'},{name:'Bathhouse'},{name:'Rocky mountain'}]);

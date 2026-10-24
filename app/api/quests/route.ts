@@ -29,7 +29,7 @@ export async function POST(req:Request){
   reportRun(hooks,'synthesis','running','Composing the mission, timetable and sourced door notes.');
   const quest=composeQuest(plan,seed);
   for(const stop of quest.stops){const programme=programmeFor(stop.item,quest.date,records);if(!programme)continue;stop.programme={title:programme.englishTitle||programme.title,url:programme.url,start:programme.start!,end:programme.end||programme.start!,priceLabel:programme.priceLabel};stop.mission=programme.kind==='exhibition'?`Visit ${stop.programme.title}. Give one work five unhurried minutes. `+(seed.type==='artist'?`Look for a rhythm, texture or mood that brings ${seed.name} to mind. Keep one image or artist’s name for later.`:'Notice what holds your attention before you read the label. Keep one image or artist’s name for later.'):`The official calendar lists ${stop.programme.title}. `+stop.mission;}
-  reportRun(hooks,'synthesis',quest.stops.length?'complete':'blocked',quest.stops.length?'Dossier ready. Three stops, a return walk and venue sources.':'No complete route to write. Your seed is kept.');
+  reportRun(hooks,'synthesis',quest.stops.length?'complete':'blocked',quest.stops.length?'Dossier ready. '+quest.stops.length+' stops, a return walk and venue sources.':'No complete route to write. Your seed is kept.');
   quest.run=[...events];return {quest};
  }
  const failure='I could not finish checking this quest. Your seed is still here. Try again.';
