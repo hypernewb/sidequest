@@ -18,7 +18,7 @@ test('film tags do not turn witchcraft into coffee craft, steampunk into punk or
 });
 test('album and place seeds retain useful disambiguation and genre evidence',()=>{
  const id='81B5270B-19ED-462D-8378-EC2B1239C2C8';const album=questSeed({entity_id:id,name:'Modal Soul',types:['urn:entity:album'],properties:{release_date:'2005-11-11'},tags:[{name:'Jazz',type:'urn:tag:genre',value:'urn:tag:genre:jazz'}]});
- assert.equal(album?.type,'album');assert.match(album!.description,/2005/);assert.deepEqual(album?.tags,['urn:tag:genre:jazz']);assert.equal(questSeed({entity_id:'invalid',name:'Album',types:['urn:entity:album']}),null);
+ assert.equal(questSeed({entity_id:id,name:'Nujabes',types:['urn:entity:album'],properties:{}}),null);assert.equal(album?.type,'album');assert.match(album!.description,/2005/);assert.deepEqual(album?.tags,['urn:tag:genre:jazz']);assert.equal(questSeed({entity_id:'invalid',name:'Album',types:['urn:entity:album']}),null);
  assert.equal(questSeed({entity_id:id,name:'A place',types:['urn:entity:place'],properties:{address:'Tokyo'}})?.description,'Tokyo');
 });
 test('dated closures override weekly hours and the loop includes its return leg',()=>{
