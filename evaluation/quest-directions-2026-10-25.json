@@ -1,0 +1,862 @@
+{
+  "method": "Frozen Qloo/source snapshot from the eight-seed quest benchmark. No fresh provider responses, new event records or user-quality scores. Tests whether the selected activity appears and whether directions change the route.",
+  "date": "2026-10-25",
+  "runs": [
+    {
+      "seed": "Nujabes",
+      "focus": "any",
+      "stops": [
+        {
+          "name": "Hi-Fi Record Store",
+          "role": "dig",
+          "reason": "Your Qloo taste links to jazz, soul, which matches our source-reviewed venue tags."
+        },
+        {
+          "name": "HMV record shop Shibuya",
+          "role": "dig",
+          "reason": "Your Qloo taste links to jazz, which matches our source-reviewed venue tags."
+        },
+        {
+          "name": "Bar Music",
+          "role": "listen",
+          "reason": "Qloo connects Nujabes with this stop."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Nujabes",
+      "focus": "sound",
+      "stops": [
+        {
+          "name": "Hi-Fi Record Store",
+          "role": "dig",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        },
+        {
+          "name": "HMV record shop Shibuya",
+          "role": "dig",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Bar Music",
+          "role": "listen",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Nujabes",
+      "focus": "visual",
+      "stops": [
+        {
+          "name": "GALLERY CONCEAL SHIBUYA",
+          "role": "art",
+          "reason": "You asked for art & photography. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Hi-Fi Record Store",
+          "role": "dig",
+          "reason": "Your Qloo taste links to jazz, soul, which matches our source-reviewed venue tags."
+        },
+        {
+          "name": "Bar Music",
+          "role": "listen",
+          "reason": "Qloo connects Nujabes with this stop."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Nujabes",
+      "focus": "print",
+      "stops": [
+        {
+          "name": "Hi-Fi Record Store",
+          "role": "dig",
+          "reason": "Your Qloo taste links to jazz, soul, which matches our source-reviewed venue tags."
+        },
+        {
+          "name": "SHIBUYA PUBLISHING & BOOKSELLERS",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Bar Music",
+          "role": "listen",
+          "reason": "Qloo connects Nujabes with this stop."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Nujabes",
+      "focus": "design",
+      "stops": [
+        {
+          "name": "Fuglen Tokyo",
+          "role": "coffee",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "SHIBUYA PUBLISHING & BOOKSELLERS",
+          "role": "books",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Hi-Fi Record Store",
+          "role": "dig",
+          "reason": "Your Qloo taste links to jazz, soul, which matches our source-reviewed venue tags."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Nujabes",
+      "focus": "games",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for retro games. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Nujabes",
+      "focus": "collect",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for objects & collectibles. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Slayer",
+      "focus": "any",
+      "stops": [
+        {
+          "name": "Record Boy",
+          "role": "dig",
+          "reason": "The reviewed venue tags match metal."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Slayer",
+      "focus": "sound",
+      "stops": [
+        {
+          "name": "Record Boy",
+          "role": "dig",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Slayer",
+      "focus": "visual",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "A nearby stopover for this walk, rather than a cultural match to your seed."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "You asked for art & photography. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "A lateral connection through film. This is an adjacent interest, not a direct seed match."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Slayer",
+      "focus": "print",
+      "stops": [
+        {
+          "name": "Kanda Brazil",
+          "role": "coffee",
+          "reason": "A nearby stopover for this walk, rather than a cultural match to your seed."
+        },
+        {
+          "name": "Komiyama Tokyo",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Bohemian's Guild",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Slayer",
+      "focus": "design",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Slayer",
+      "focus": "games",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for retro games. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Slayer",
+      "focus": "collect",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for objects & collectibles. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Aphex Twin",
+      "focus": "any",
+      "stops": [
+        {
+          "name": "Dandelion Chocolate Kuramae",
+          "role": "coffee",
+          "reason": "An adjacent interest through design."
+        },
+        {
+          "name": "Mograg Gallery",
+          "role": "art",
+          "reason": "The cultural anchor for this walk: experimental."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Aphex Twin",
+      "focus": "sound",
+      "stops": [
+        {
+          "name": "Bear Pond Espresso",
+          "role": "coffee",
+          "reason": "A nearby stopover, rather than a cultural match to your seed."
+        },
+        {
+          "name": "Pianola Records",
+          "role": "dig",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Aphex Twin",
+      "focus": "visual",
+      "stops": [
+        {
+          "name": "GLITCH COFFEE Jimbocho",
+          "role": "coffee",
+          "reason": "A lateral connection through design. This is an adjacent interest, not a direct seed match."
+        },
+        {
+          "name": "Komiyama Tokyo",
+          "role": "books",
+          "reason": "You asked for art & photography. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Bohemian's Guild",
+          "role": "books",
+          "reason": "A lateral connection through design. This is an adjacent interest, not a direct seed match."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Aphex Twin",
+      "focus": "print",
+      "stops": [
+        {
+          "name": "GLITCH COFFEE Jimbocho",
+          "role": "coffee",
+          "reason": "A lateral connection through design. This is an adjacent interest, not a direct seed match."
+        },
+        {
+          "name": "Bohemian's Guild",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Komiyama Tokyo",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Aphex Twin",
+      "focus": "design",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Aphex Twin",
+      "focus": "games",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for retro games. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Aphex Twin",
+      "focus": "collect",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for objects & collectibles. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "MUJI",
+      "focus": "any",
+      "stops": [
+        {
+          "name": "GLITCH COFFEE Jimbocho",
+          "role": "coffee",
+          "reason": "Qloo connects Muji with this stop."
+        },
+        {
+          "name": "Bohemian's Guild",
+          "role": "books",
+          "reason": "Your Qloo taste links to design, which matches our source-reviewed venue tags."
+        },
+        {
+          "name": "Komiyama Tokyo",
+          "role": "books",
+          "reason": "A nearby stopover for this walk, rather than a cultural match to your seed."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "MUJI",
+      "focus": "sound",
+      "stops": [],
+      "chosenActivityPresent": null
+    },
+    {
+      "seed": "MUJI",
+      "focus": "visual",
+      "stops": [
+        {
+          "name": "GLITCH COFFEE Jimbocho",
+          "role": "coffee",
+          "reason": "Qloo connects Muji with this stop."
+        },
+        {
+          "name": "Komiyama Tokyo",
+          "role": "books",
+          "reason": "You asked for art & photography. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Bohemian's Guild",
+          "role": "books",
+          "reason": "Your Qloo taste links to design, which matches our source-reviewed venue tags."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "MUJI",
+      "focus": "print",
+      "stops": [
+        {
+          "name": "GLITCH COFFEE Jimbocho",
+          "role": "coffee",
+          "reason": "Qloo connects Muji with this stop."
+        },
+        {
+          "name": "Bohemian's Guild",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Komiyama Tokyo",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "MUJI",
+      "focus": "design",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "MUJI",
+      "focus": "games",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for retro games. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "MUJI",
+      "focus": "collect",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for objects & collectibles. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Akira",
+      "focus": "any",
+      "stops": [
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "The cultural anchor for this walk: film, design."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "A nearby stopover, rather than a cultural match to your seed."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Akira",
+      "focus": "sound",
+      "stops": [
+        {
+          "name": "Bear Pond Espresso",
+          "role": "coffee",
+          "reason": "A nearby stopover for this walk, rather than a cultural match to your seed."
+        },
+        {
+          "name": "Record Station",
+          "role": "dig",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        },
+        {
+          "name": "NAT RECORDS",
+          "role": "dig",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Akira",
+      "focus": "visual",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "A nearby stopover for this walk, rather than a cultural match to your seed."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "You asked for art & photography. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "Qloo connects Akira with this stop."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Akira",
+      "focus": "print",
+      "stops": [
+        {
+          "name": "GLITCH COFFEE Jimbocho",
+          "role": "coffee",
+          "reason": "A lateral connection through design. This is an adjacent interest, not a direct seed match."
+        },
+        {
+          "name": "Bohemian's Guild",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Komiyama Tokyo",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Akira",
+      "focus": "design",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Akira",
+      "focus": "games",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for retro games. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Akira",
+      "focus": "collect",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for objects & collectibles. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Pokemon FireRed Version",
+      "focus": "any",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "The reviewed venue tags match games."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Pokemon FireRed Version",
+      "focus": "sound",
+      "stops": [],
+      "chosenActivityPresent": null
+    },
+    {
+      "seed": "Pokemon FireRed Version",
+      "focus": "visual",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "A nearby stopover for this walk, rather than a cultural match to your seed."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "You asked for art & photography. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "A lateral connection through film. This is an adjacent interest, not a direct seed match."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Pokemon FireRed Version",
+      "focus": "print",
+      "stops": [
+        {
+          "name": "Kanda Brazil",
+          "role": "coffee",
+          "reason": "A nearby stopover for this walk, rather than a cultural match to your seed."
+        },
+        {
+          "name": "Komiyama Tokyo",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Bohemian's Guild",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Pokemon FireRed Version",
+      "focus": "design",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Pokemon FireRed Version",
+      "focus": "games",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for retro games. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Pokemon FireRed Version",
+      "focus": "collect",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for objects & collectibles. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Comme des Garcons",
+      "focus": "any",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "Qloo connects Comme des Garcons with this stop."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "Your Qloo taste links to architecture, which matches our source-reviewed venue tags."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "Qloo connects Comme des Garcons with this stop."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Comme des Garcons",
+      "focus": "sound",
+      "stops": [
+        {
+          "name": "Bear Pond Espresso",
+          "role": "coffee",
+          "reason": "A nearby stopover, rather than a cultural match to your seed."
+        },
+        {
+          "name": "Pianola Records",
+          "role": "dig",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Comme des Garcons",
+      "focus": "visual",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "Qloo connects Comme des Garcons with this stop."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "You asked for art & photography. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "Qloo connects Comme des Garcons with this stop."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Comme des Garcons",
+      "focus": "print",
+      "stops": [
+        {
+          "name": "GLITCH COFFEE Jimbocho",
+          "role": "coffee",
+          "reason": "Qloo connects Comme des Garcons with this stop."
+        },
+        {
+          "name": "Bohemian's Guild",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Komiyama Tokyo",
+          "role": "books",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Comme des Garcons",
+      "focus": "design",
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "role": "coffee",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "role": "books",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Art Front Gallery",
+          "role": "art",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Comme des Garcons",
+      "focus": "games",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for retro games. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    },
+    {
+      "seed": "Comme des Garcons",
+      "focus": "collect",
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "role": "play",
+          "reason": "You asked for objects & collectibles. This matches the reviewed venue activity."
+        }
+      ],
+      "chosenActivityPresent": true
+    }
+  ]
+}

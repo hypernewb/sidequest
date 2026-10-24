@@ -10,7 +10,7 @@ export type Association={name:string;type:string;relation:'seed_tag'|'related_ta
 export type RunEvent={type:'stage';stage:RunStage;status:'running'|'complete'|'blocked'|'failed'|'cancelled';detail:string;at:string;associations?:Association[]};
 export type RunHooks={report?:(event:RunEvent)=>void;signal?:AbortSignal};
 export function reportRun(hooks:RunHooks|undefined,stage:RunStage,status:RunEvent['status'],detail:string,associations?:Association[]){hooks?.signal?.throwIfAborted();hooks?.report?.({type:'stage',stage,status,detail,at:new Date().toISOString(),...(associations?{associations}: {})});}
-export type QuestReply={quest?:Quest;choices?:{id:string;name:string;type:string;description?:string}[];message?:string;error?:string};
+export type QuestReply={quest?:Quest;question?:ReturnType<typeof import('./quest-focus.ts').focusQuestion>;resolved?:{id:string;name:string;type:string};leads?:import('./quest-event-matching.ts').EventLead[];choices?:{id:string;name:string;type:string;description?:string}[];message?:string;error?:string};
 export type RunMessage=RunEvent|{type:'result';data:QuestReply}|{type:'error';error:string};
 
 export async function readQuestRun(response:Response,onEvent:(event:RunEvent)=>void):Promise<QuestReply>{

@@ -4,7 +4,7 @@ Taste-led Tokyo discovery for the Qloo Agentic Hackathon. Vinext/React app with 
 
 ## Dispatch SideQuest Agent
 
-The main screen asks for one artist, album or place. One dispatch produces a three-stop quest dossier with an authored task at each door, scheduled visits, source links and a walking loop. Date and price settings stay in an optional disclosure. Events and drops remain under /explore; older tools and saves remain under /classic.
+The main screen asks for one artist, album or place. After one optional activity choice, dispatch produces a quest dossier with an authored task at each door, scheduled visits, source links and a walking loop. Date and price settings stay in an optional disclosure. Events and drops remain under /explore; older tools and saves remain under /classic.
 
 The local catalog contains 100 source-reviewed entries. 73 have exact Qloo IDs after name, domain and branch checks. The remaining entries are not route candidates. Closed locations and event-only rooms without a dated performance are excluded. The catalog includes independent record shops, small galleries, bookshops, coffee rooms and game shops. It is a maintained editorial selection, not a claim to cover all Tokyo subcultures.
 
@@ -164,4 +164,10 @@ No hosted PullMD endpoint is configured. To connect an externally deployed insta
 | Fixed Qloo quest engine | 6 | 2.92 | 2.19 |
 | Local-model baseline with current planner | 8 | 2.00 | 2.00 |
 
-Codex desk ratings, 1–5. The last column is a separate coverage penalty. No human-quality or novelty uplift is established. See [method and per-profile routes](evaluation/QUEST-BENCHMARK.md) and [auditable results](evaluation/quest-benchmark-2026-10-25.json). Historical workbook results above remain unchanged.
+Codex desk ratings, 1â€“5. The last column is a separate coverage penalty. No human-quality or novelty uplift is established. See [method and per-profile routes](evaluation/QUEST-BENCHMARK.md) and [auditable results](evaluation/quest-benchmark-2026-10-25.json). Historical workbook results above remain unchanged.
+
+## Event-first quests and explicit direction
+
+The current app asks one optional activity question after resolving a seed, and any returned route must contain that activity. Matching dated exhibitions and pop-ups affect selection before route planning. Separate upcoming event/release leads can appear outside the walk. A single useful find remains visible when no compatible loop fits.
+
+Stale catalogs refresh on demand, and expanded-source events now receive exact artist reconciliation. A live check recovered 189 records across 13 sources. Artist graph associations cannot qualify conflicting genres; the repaired live check keeps DEXCORE for Slayer and rejects it for Nujabes, MUJI and the other tested seeds. These are functional findings, not a new relevance uplift claim. See [the repair review and remaining gaps](evaluation/QUEST-EVENT-REPAIR.md). The historical benchmark above retains its original conditions and scores.

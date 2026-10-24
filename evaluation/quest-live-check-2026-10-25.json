@@ -1,0 +1,127 @@
+{
+  "method": "Live local app requests with current official catalog. Functional check, not a relevance score or baseline comparison.",
+  "results": [
+    {
+      "seed": "Nujabes",
+      "focus": "sound",
+      "status": 200,
+      "stops": [
+        {
+          "name": "Hi-Fi Record Store",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        },
+        {
+          "name": "HMV record shop Shibuya",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Bar Music",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        }
+      ],
+      "leads": [
+        {
+          "title": "WOLFGANG HAFFNER TRIO",
+          "start": "2026-10-27",
+          "reason": "The published programme or resolved artists match jazz."
+        }
+      ]
+    },
+    {
+      "seed": "Nujabes",
+      "focus": "visual",
+      "status": 200,
+      "stops": [
+        {
+          "name": "GALLERY CONCEAL SHIBUYA",
+          "reason": "You asked for art & photography. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Hi-Fi Record Store",
+          "reason": "Your Qloo taste links to jazz, soul, which matches our source-reviewed venue tags."
+        },
+        {
+          "name": "Bar Music",
+          "reason": "Qloo connects Nujabes with this stop."
+        }
+      ],
+      "leads": [
+        {
+          "title": "WOLFGANG HAFFNER TRIO",
+          "start": "2026-10-27",
+          "reason": "The published programme or resolved artists match jazz."
+        }
+      ]
+    },
+    {
+      "seed": "Slayer",
+      "focus": "sound",
+      "status": 200,
+      "stops": [
+        {
+          "name": "Record Boy",
+          "reason": "You asked for records & listening. This matches the reviewed venue activity."
+        }
+      ],
+      "leads": [
+        {
+          "title": "DEXCORE",
+          "start": "2026-10-28",
+          "reason": "The published programme or resolved artists match metal. Qloo also returned an artist association."
+        }
+      ]
+    },
+    {
+      "seed": "Akira",
+      "focus": "print",
+      "status": 200,
+      "stops": [
+        {
+          "name": "GLITCH COFFEE Jimbocho",
+          "reason": "A lateral connection through design. This is an adjacent interest, not a direct seed match."
+        },
+        {
+          "name": "Bohemian's Guild",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Komiyama Tokyo",
+          "reason": "You asked for books & illustration. This matches the reviewed venue activity."
+        }
+      ],
+      "leads": []
+    },
+    {
+      "seed": "MUJI",
+      "focus": "design",
+      "status": 200,
+      "stops": [
+        {
+          "name": "ONIBUS COFFEE Nakameguro",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Daikanyama T-Site",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        },
+        {
+          "name": "Art Front Gallery",
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity."
+        }
+      ],
+      "leads": []
+    },
+    {
+      "seed": "Pokemon FireRed Version",
+      "focus": "games",
+      "status": 200,
+      "stops": [
+        {
+          "name": "BEEP Akihabara",
+          "reason": "You asked for retro games. This matches the reviewed venue activity."
+        }
+      ],
+      "leads": []
+    }
+  ]
+}
