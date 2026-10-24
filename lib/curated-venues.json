@@ -1,0 +1,1620 @@
+[
+  {
+    "name": "Little Soul Cafe",
+    "source": "https://www.littlesoulcafe.com/",
+    "area": "Shimokitazawa",
+    "role": "listen",
+    "tags": [
+      "soul",
+      "jazz",
+      "funk",
+      "vinyl"
+    ],
+    "mission": "Take a seat near the handmade counter and follow a record from its first track. Ask for the artist's name when there is a natural pause.",
+    "reviewedAt": "2026-10-24T16:38:49.277Z",
+    "qlooId": "8BFCFF4E-A8F4-4385-ADB5-DFCC2914EE22",
+    "doorNotes": [
+      "Taisei Building, second floor. Opens at 19:00."
+    ],
+    "eventOnly": false
+  },
+  {
+    "name": "Bookshop B&B",
+    "source": "https://bookandbeer.com/about/",
+    "area": "Shimokitazawa",
+    "role": "books",
+    "tags": [
+      "books",
+      "independent",
+      "literature"
+    ],
+    "mission": "Browse one shelf outside your usual subject. Choose a book by its first page, and take the title into the rest of the walk.",
+    "reviewedAt": "2026-10-24T16:38:49.991Z",
+    "qlooId": null,
+    "doorNotes": [
+      "Browsing does not require buying a drink. Talks require a separate reservation."
+    ],
+    "eventOnly": false
+  },
+  {
+    "name": "Bear Pond Espresso",
+    "source": "http://bearpondespresso.com/",
+    "area": "Shimokitazawa",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "craft"
+    ],
+    "mission": "Start at the espresso counter. Ask what is being served today and keep the first drink short enough to leave time for the streets outside.",
+    "reviewedAt": "2026-10-24T16:48:48.887Z",
+    "qlooId": "47C493EF-E223-4B22-BB43-86EE85EE26DF",
+    "doorNotes": [
+      "Kitazawa 2-36-12."
+    ],
+    "eventOnly": false
+  },
+  {
+    "name": "Reload",
+    "source": "https://reload-shimokita.com/",
+    "area": "Shimokitazawa",
+    "role": "art",
+    "tags": [
+      "design",
+      "independent",
+      "architecture"
+    ],
+    "mission": "Walk the small courtyards and look for one independent shop or display that would disappear inside a department store.",
+    "reviewedAt": "2026-10-24T16:38:50.494Z",
+    "qlooId": "DF176A71-AD79-480C-B79D-3F7A50017D91",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "BIG LOVE RECORDS",
+    "source": "https://bigloverecords.jp/en/pages/about",
+    "area": "Harajuku",
+    "role": "dig",
+    "tags": [
+      "indie",
+      "punk",
+      "vinyl"
+    ],
+    "mission": "Head for a label or artist you do not recognise. Ask which new arrival the staff would keep for themselves.",
+    "reviewedAt": "2026-10-24T16:38:50.502Z",
+    "qlooId": "077FF2B7-DECC-437D-9E6F-4BB5569ECA57",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "NAT RECORDS",
+    "source": "https://natrecords.shop-pro.jp/",
+    "area": "Shimokitazawa",
+    "role": "dig",
+    "tags": [
+      "punk",
+      "garage",
+      "vinyl"
+    ],
+    "mission": "Look for the independent label behind a punk or garage record. Follow that label to another band instead of shopping by fame.",
+    "reviewedAt": "2026-10-24T16:42:50.144Z",
+    "qlooId": "D396A6A7-CDDC-4C8B-8E07-100E3D1CBD12",
+    "doorNotes": [
+      "Kitazawa 2-10-10, FI Kyodo Building, fourth floor. This is the relocated Shimokitazawa shop."
+    ],
+    "eventOnly": false
+  },
+  {
+    "name": "Record Shop BASE",
+    "source": "https://www.recordshopbase.com/",
+    "area": "Shinjuku",
+    "role": "dig",
+    "tags": [
+      "punk",
+      "hardcore",
+      "vinyl"
+    ],
+    "mission": "Find a small-label release and read the insert if a browsing copy is available. Look for the scene around the band.",
+    "reviewedAt": "2026-10-24T16:42:51.544Z",
+    "qlooId": "E993954E-F7B1-43EE-9ED3-36C60F3AF853",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Record Boy",
+    "source": "http://recordboy.shop-pro.jp/",
+    "area": "Shinjuku",
+    "role": "dig",
+    "tags": [
+      "metal",
+      "punk",
+      "hardcore"
+    ],
+    "mission": "Compare one heavy record from Japan with one from elsewhere. Look for what the artwork and label tell you before asking for a recommendation.",
+    "reviewedAt": "2026-10-24T16:42:50.276Z",
+    "qlooId": "13AB5DC0-8955-4286-8453-FDF3CECB60A3",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Face Records Shibuya",
+    "source": "https://recordstoreday.jp/storeinfo/face-records/",
+    "area": "Shibuya",
+    "role": "dig",
+    "tags": [
+      "jazz",
+      "soul",
+      "vinyl"
+    ],
+    "mission": "Give the jazz or soul section fifteen focused minutes. Leave with one unfamiliar musician's name even if you leave the record in its sleeve.",
+    "reviewedAt": "2026-10-24T16:48:50.409Z",
+    "qlooId": null,
+    "doorNotes": [
+      "Udagawacho 10-2, third floor. Record Store Day lists shop hours as 13:00–19:00."
+    ],
+    "eventOnly": false
+  },
+  {
+    "name": "ELLA RECORDS",
+    "source": "https://ellarecords.jp/",
+    "area": "Nishihara",
+    "role": "dig",
+    "tags": [
+      "jazz",
+      "soul",
+      "vinyl"
+    ],
+    "mission": "Look for one Japanese pressing and compare its sleeve and credits with a release you already know.",
+    "reviewedAt": "2026-10-24T16:38:51.512Z",
+    "qlooId": "5F23F22A-A926-4439-AF15-DDF659140838",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Lighthouse Records",
+    "source": "https://www.lighthouserecords.jp/",
+    "area": "Shibuya",
+    "role": "dig",
+    "tags": [
+      "house",
+      "electronic",
+      "vinyl"
+    ],
+    "mission": "Choose a dance record by the label rather than the headliner. Ask where that sound sits in the shop's current selection.",
+    "reviewedAt": "2026-10-24T16:38:51.830Z",
+    "qlooId": "91F77244-1596-4D27-AA62-2E7FD313BE58",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Manhattan Records",
+    "source": "https://manhattanrecords.jp/",
+    "area": "Shibuya",
+    "role": "dig",
+    "tags": [
+      "hiphop",
+      "rnb",
+      "vinyl"
+    ],
+    "mission": "Read the production credits on a hip-hop release. Find one collaborator whose name is new to you.",
+    "reviewedAt": "2026-10-24T16:38:51.899Z",
+    "qlooId": "89106194-4C3A-4C2C-A311-A7D648F6A1ED",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Waltz",
+    "source": "https://waltz-store.co.jp/",
+    "area": "Nakameguro",
+    "role": "dig",
+    "tags": [
+      "cassette",
+      "experimental",
+      "independent"
+    ],
+    "mission": "Go to the cassette shelf first. Pick a format you usually stream past and read the small print on its label.",
+    "reviewedAt": "2026-10-24T16:38:52.122Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Organic Music",
+    "source": "https://organicmusic.jp/",
+    "area": "Hatagaya",
+    "role": "dig",
+    "tags": [
+      "jazz",
+      "ambient",
+      "world",
+      "vinyl"
+    ],
+    "mission": "Find a record filed somewhere you do not normally browse. Use the sleeve notes to decide which sound to follow next.",
+    "reviewedAt": "2026-10-24T16:38:51.982Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Record Station",
+    "source": "https://www.recordstation.jp/",
+    "area": "Shimokitazawa",
+    "role": "dig",
+    "tags": [
+      "vinyl",
+      "soul",
+      "rock"
+    ],
+    "mission": "Browse a small run of records slowly. Compare the original release date with what the sleeve makes you expect.",
+    "reviewedAt": "2026-10-24T16:38:52.598Z",
+    "qlooId": "4B5C67EE-B55E-4B56-AC4B-808628B9E646",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Universounds",
+    "source": "https://www.universounds.net/",
+    "area": "Higashi-Koenji",
+    "role": "dig",
+    "tags": [
+      "jazz",
+      "soul",
+      "independent"
+    ],
+    "mission": "Look for a Japanese jazz release and trace one musician through the credits to another recording.",
+    "reviewedAt": "2026-10-24T16:38:53.161Z",
+    "qlooId": "5EC4E40F-7535-451A-BC41-FBB5D2FD17CD",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Pianola Records",
+    "source": "https://pianola-records.com/",
+    "area": "Shimokitazawa",
+    "role": "dig",
+    "tags": [
+      "experimental",
+      "ambient",
+      "vinyl"
+    ],
+    "mission": "Choose a record whose description makes you hesitate. Let that uncertainty be the point of the stop.",
+    "reviewedAt": "2026-10-24T16:38:52.844Z",
+    "qlooId": "C6638534-917C-4F05-B78B-27FA1DA60928",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Dub Store Records",
+    "source": "https://www.dubstore.co.jp/",
+    "area": "Shinjuku",
+    "role": "dig",
+    "tags": [
+      "reggae",
+      "dub",
+      "vinyl"
+    ],
+    "mission": "Find a seven-inch and read the producer and studio credits. Follow the rhythm beyond the singer on the label.",
+    "reviewedAt": "2026-10-24T16:38:53.246Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Coconuts Disk Kichijoji",
+    "source": "https://coconutsdisk.com/kichijoji/",
+    "area": "Kichijoji",
+    "role": "dig",
+    "tags": [
+      "indie",
+      "vinyl",
+      "rock"
+    ],
+    "mission": "Choose one record from the shop's own recommendations before searching for a title you came in knowing.",
+    "reviewedAt": "2026-10-24T16:38:52.961Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Coconuts Disk Ekoda",
+    "source": "https://coconutsdisk.com/ekoda/",
+    "area": "Ekoda",
+    "role": "dig",
+    "tags": [
+      "electronic",
+      "experimental",
+      "vinyl"
+    ],
+    "mission": "Find a record at the boundary between two genres. Read the shop's note and decide which part you want to hear first.",
+    "reviewedAt": "2026-10-24T16:38:53.111Z",
+    "qlooId": "0DB4F935-18EA-489B-998B-2D50F2ADA076",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Bar Music",
+    "source": "https://barmusic.buyshop.jp/about",
+    "area": "Shibuya",
+    "role": "listen",
+    "tags": [
+      "jazz",
+      "soul",
+      "coffee",
+      "vinyl"
+    ],
+    "mission": "Settle in for the selection rather than asking for a favourite immediately. Keep one track name for the walk home.",
+    "reviewedAt": "2026-10-24T16:42:51.531Z",
+    "qlooId": "5A623B12-EBF8-4215-A57C-7CA071EF5030",
+    "doorNotes": [
+      "Dogenzaka 1-6-7, fifth floor. Opens at 18:00; irregular days off."
+    ],
+    "eventOnly": false
+  },
+  {
+    "name": "Alfie",
+    "source": "https://alfie.tokyo/",
+    "area": "Roppongi",
+    "role": "listen",
+    "tags": [
+      "jazz",
+      "live"
+    ],
+    "mission": "Use the published lineup to choose one musician you do not know. Give the room enough time for a whole set.",
+    "reviewedAt": "2026-10-24T16:42:51.704Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": true
+  },
+  {
+    "name": "Shinjuku PIT INN",
+    "source": "https://pit-inn.com/",
+    "area": "Shinjuku",
+    "role": "listen",
+    "tags": [
+      "jazz",
+      "experimental",
+      "live"
+    ],
+    "mission": "Choose a show from the official programme and arrive for its door time. Follow the least familiar name in the lineup.",
+    "reviewedAt": "2026-10-24T16:38:55.971Z",
+    "qlooId": "8E30ACD5-8435-493C-A15A-EA99A89C71C1",
+    "doorNotes": [],
+    "eventOnly": true
+  },
+  {
+    "name": "The Room",
+    "source": "https://theroom.jp/",
+    "area": "Shibuya",
+    "role": "listen",
+    "tags": [
+      "soul",
+      "jazz",
+      "dj"
+    ],
+    "mission": "Check the selector and entry time for the night. Follow a transition between two records rather than waiting for a song you know.",
+    "reviewedAt": "2026-10-24T16:38:56.917Z",
+    "qlooId": "2A6D037E-8C6C-4EA9-8DC9-A044D0805591",
+    "doorNotes": [],
+    "eventOnly": true
+  },
+  {
+    "name": "Forestlimit",
+    "source": "https://www.forestlimit.com/",
+    "area": "Hatagaya",
+    "role": "listen",
+    "tags": [
+      "experimental",
+      "electronic",
+      "live"
+    ],
+    "mission": "Choose a dated event from the programme. Give the unfamiliar act in the lineup your attention before deciding what scene this is.",
+    "reviewedAt": "2026-10-24T16:38:54.150Z",
+    "qlooId": "B011BC1B-CBFB-44FA-B630-8D6CE74A3979",
+    "doorNotes": [],
+    "eventOnly": true
+  },
+  {
+    "name": "SPREAD",
+    "source": "https://spread.tokyo/",
+    "area": "Shimokitazawa",
+    "role": "listen",
+    "tags": [
+      "electronic",
+      "experimental",
+      "live"
+    ],
+    "mission": "Read the night's lineup and door time first. Stay for one act you cannot place by name alone.",
+    "reviewedAt": "2026-10-24T16:38:54.580Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": true
+  },
+  {
+    "name": "Bonobo",
+    "source": "https://www.bonobo.jp/",
+    "area": "Harajuku",
+    "role": "listen",
+    "tags": [
+      "electronic",
+      "dj",
+      "independent"
+    ],
+    "mission": "Choose the night by its posted selectors. Listen for one transition that changes the mood of the room.",
+    "reviewedAt": "2026-10-24T16:38:54.826Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": true
+  },
+  {
+    "name": "Bookshop Title",
+    "source": "https://www.title-books.com/",
+    "area": "Ogikubo",
+    "role": "books",
+    "tags": [
+      "literature",
+      "independent",
+      "coffee"
+    ],
+    "mission": "Read the first page of a book outside your usual shelf. Choose one sentence to carry into the next stop.",
+    "reviewedAt": "2026-10-24T16:38:56.401Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "UTRECHT",
+    "source": "https://utrecht.jp/",
+    "area": "Harajuku",
+    "role": "books",
+    "tags": [
+      "art",
+      "zine",
+      "independent"
+    ],
+    "mission": "Find an artist's book whose form changes how you read it. Spend time with its paper, binding or sequence of images.",
+    "reviewedAt": "2026-10-24T16:38:55.398Z",
+    "qlooId": "EED32B89-2BE8-49A9-95E7-88F50491014E",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "POST",
+    "source": "https://post-books.info/",
+    "area": "Ebisu",
+    "role": "books",
+    "tags": [
+      "art",
+      "photography",
+      "design"
+    ],
+    "mission": "Follow the publisher being presented rather than starting with an artist you know. Look for a visual idea repeated across different books.",
+    "reviewedAt": "2026-10-24T16:38:55.701Z",
+    "qlooId": "DB75894F-05CC-465F-8CBA-0B248DE2A9BD",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Flying Books",
+    "source": "https://www.flying-books.com/",
+    "area": "Shibuya",
+    "role": "books",
+    "tags": [
+      "photography",
+      "art",
+      "independent"
+    ],
+    "mission": "Take the stairs and browse one narrow subject slowly. Look for a publication that could not work as a feed post.",
+    "reviewedAt": "2026-10-24T16:38:57.126Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "SHIBUYA PUBLISHING & BOOKSELLERS",
+    "source": "https://shibuyabooks.co.jp/",
+    "area": "Shibuya",
+    "role": "books",
+    "tags": [
+      "publishing",
+      "design",
+      "independent"
+    ],
+    "mission": "Find a book from a publisher you have never followed. Notice how its cover and typography frame the subject.",
+    "reviewedAt": "2026-10-24T16:38:57.145Z",
+    "qlooId": "B15FE794-D40A-4FA9-966D-BC4F341D450A",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Sunny Boy Books",
+    "source": "https://www.sunnyboybooks.jp/",
+    "area": "Gakugeidaigaku",
+    "role": "books",
+    "tags": [
+      "independent",
+      "literature",
+      "zine"
+    ],
+    "mission": "Choose a slim book you could finish in a sitting. Ask what has arrived from a small publisher recently.",
+    "reviewedAt": "2026-10-24T16:38:59.142Z",
+    "qlooId": "5FABBCDE-ACE2-43FF-8440-CC6E362C64BA",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Kosho Horo",
+    "source": "https://horo.bz/",
+    "area": "Nezu",
+    "role": "books",
+    "tags": [
+      "used-books",
+      "independent",
+      "music"
+    ],
+    "mission": "Browse across subjects rather than following one alphabet. Find a book that connects something you read with something you listen to.",
+    "reviewedAt": "2026-10-24T16:38:59.775Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "tata bookshop/gallery",
+    "source": "https://tata-books.com/",
+    "area": "Koenji",
+    "role": "books",
+    "tags": [
+      "art",
+      "design",
+      "zine"
+    ],
+    "mission": "Find a book you would rarely see in a general bookshop. Look for what its maker did with the page itself.",
+    "reviewedAt": "2026-10-24T16:38:57.946Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Fugensha",
+    "source": "https://fugensha.jp/",
+    "area": "Meguro",
+    "role": "books",
+    "tags": [
+      "photography",
+      "art",
+      "publishing"
+    ],
+    "mission": "Follow a photographer through the books rather than searching for one famous image. Notice how a full sequence changes your reading.",
+    "reviewedAt": "2026-10-24T16:38:59.584Z",
+    "qlooId": "F362CEF0-71BB-4C18-BB6A-C91D99B7F080",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Bohemian's Guild",
+    "source": "https://www.bohemiansguild.com/about/",
+    "area": "Jimbocho",
+    "role": "books",
+    "tags": [
+      "art",
+      "used-books",
+      "design"
+    ],
+    "mission": "Compare an older art publication with a contemporary one. Look for an idea that outlasted its original design.",
+    "reviewedAt": "2026-10-24T16:38:58.612Z",
+    "qlooId": "AF292E65-1EC3-4B07-B688-BE67651E3082",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Yamada Shoten",
+    "source": "https://www.yamada-shoten.com/",
+    "area": "Jimbocho",
+    "role": "books",
+    "tags": [
+      "prints",
+      "art",
+      "used-books"
+    ],
+    "mission": "Spend time with a print or illustrated book. Look closely at the marks that a small screen usually hides.",
+    "reviewedAt": "2026-10-24T16:38:59.298Z",
+    "qlooId": "DD86FD35-9B90-4917-B7B6-E6FFEEAF4AE3",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Komiyama Tokyo",
+    "source": "https://www.book-komiyama.co.jp/",
+    "area": "Jimbocho",
+    "role": "books",
+    "tags": [
+      "photography",
+      "fashion",
+      "art"
+    ],
+    "mission": "Choose a photobook from a decade you rarely browse. Notice what its images assume about the person looking at them.",
+    "reviewedAt": "2026-10-24T16:38:59.711Z",
+    "qlooId": "642708ED-0A1F-4ADD-8EC5-CCAAAB8172CA",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Magnif",
+    "source": "https://www.magnif.jp/",
+    "area": "Jimbocho",
+    "role": "books",
+    "tags": [
+      "fashion",
+      "magazine",
+      "design"
+    ],
+    "mission": "Pick an old magazine by its cover date. Find one detail that feels unexpectedly current.",
+    "reviewedAt": "2026-10-24T16:39:01.113Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Isseido Booksellers",
+    "source": "https://www.isseido-books.co.jp/",
+    "area": "Jimbocho",
+    "role": "books",
+    "tags": [
+      "rare-books",
+      "history",
+      "craft"
+    ],
+    "mission": "Look at a book as a physical object. Find a binding, map or illustration worth seeing at its original size.",
+    "reviewedAt": "2026-10-24T16:39:00.130Z",
+    "qlooId": "19553736-F9F3-4C54-B62A-D086084215A3",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Ohya Shobo",
+    "source": "https://www.ohya-shobo.com/",
+    "area": "Jimbocho",
+    "role": "books",
+    "tags": [
+      "prints",
+      "history",
+      "rare-books"
+    ],
+    "mission": "Look for a map or printed image of an older city. Compare one street or landmark with the Tokyo outside.",
+    "reviewedAt": "2026-10-24T16:39:00.267Z",
+    "qlooId": "09134EC7-CF0E-4B8C-9B4A-F3CFC38B6D25",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "GA Bookshop",
+    "source": "https://www.ga-ada.co.jp/",
+    "area": "Aoyama",
+    "role": "books",
+    "tags": [
+      "architecture",
+      "design",
+      "art"
+    ],
+    "mission": "Follow one building through its drawings and photographs. Look for the detail that explains how it meets the street.",
+    "reviewedAt": "2026-10-24T16:39:01.821Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Sanyodo Book Store",
+    "source": "https://sanyodo-shoten.co.jp/menu/english",
+    "area": "Aoyama",
+    "role": "books",
+    "tags": [
+      "books",
+      "art",
+      "coffee"
+    ],
+    "mission": "Browse the ground-floor books and notice how the gallery and cafe extend the same visit upstairs.",
+    "reviewedAt": "2026-10-24T16:39:00.619Z",
+    "qlooId": "21A8A7C3-74DA-4B35-9EE2-0CEC81B4F8F1",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Mograg Gallery",
+    "source": "https://mograg.com/",
+    "area": "Kuramae",
+    "role": "art",
+    "tags": [
+      "independent",
+      "illustration",
+      "experimental"
+    ],
+    "mission": "Choose one work from the current show and inspect its smallest repeated detail. Keep the artist's name rather than collecting every image.",
+    "reviewedAt": "2026-10-24T16:39:01.141Z",
+    "qlooId": "D69BE3A6-C238-4B9B-BD0C-3D330AEF6941",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Taka Ishii Gallery",
+    "source": "https://www.takaishiigallery.com/en/",
+    "area": "Roppongi",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "photography",
+      "art"
+    ],
+    "mission": "Use the current exhibition to follow one artist beyond a single work. Notice what changes as you move across the room.",
+    "reviewedAt": "2026-10-24T16:39:03.309Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "SCAI THE BATHHOUSE",
+    "source": "https://www.scaithebathhouse.com/en/",
+    "area": "Yanaka",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "architecture",
+      "art"
+    ],
+    "mission": "Look at where the old building ends and the exhibition begins. Choose one work that changes how you see the room.",
+    "reviewedAt": "2026-10-24T16:39:04.052Z",
+    "qlooId": "175F1BBD-E883-4291-AB31-3806E330686E",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "KAYOKOYUKI",
+    "source": "https://www.kayokoyuki.com/",
+    "area": "Komagome",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "independent",
+      "art"
+    ],
+    "mission": "Stay with one work before reading the explanation. Compare what you first noticed with what the artist's text asks you to notice.",
+    "reviewedAt": "2026-10-24T16:39:01.995Z",
+    "qlooId": "8EDB9F58-0972-453B-AD7D-5A6D435CE1BE",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "TALION GALLERY",
+    "source": "https://taliongallery.com/",
+    "area": "Mejiro",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "independent",
+      "art"
+    ],
+    "mission": "Look for one material or gesture that repeats through the show. Follow it across several works before moving on.",
+    "reviewedAt": "2026-10-24T16:39:02.866Z",
+    "qlooId": "AD871353-B33F-4356-B868-1BFA54C1FEBD",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "MISAKO & ROSEN",
+    "source": "https://misakoandrosen.jp/",
+    "area": "Otsuka",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "independent",
+      "art"
+    ],
+    "mission": "Read one artist's name and then look across the whole show. Find a visual decision that belongs to that artist.",
+    "reviewedAt": "2026-10-24T16:39:04.047Z",
+    "qlooId": "FAF260B2-F12B-4044-8D8A-5AF9AC8543BA",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "KANA KAWANISHI GALLERY",
+    "source": "https://www.kanakawanishi.com/",
+    "area": "Kiyosumi-Shirakawa",
+    "role": "art",
+    "tags": [
+      "photography",
+      "contemporary",
+      "art"
+    ],
+    "mission": "Compare the surface of a photographic work with the scene it represents. Notice what only becomes visible in person.",
+    "reviewedAt": "2026-10-24T16:39:03.297Z",
+    "qlooId": "7270E8E6-C3D9-4157-9C1B-449A0678B080",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "WAITINGROOM",
+    "source": "https://waitingroom.jp/",
+    "area": "Edogawabashi",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "independent",
+      "art"
+    ],
+    "mission": "Follow one small detail through the current exhibition. Ask how it changes when it appears in another work.",
+    "reviewedAt": "2026-10-24T16:39:04.915Z",
+    "qlooId": "BD2845C6-BA30-4DB7-9F6E-7FF70AC1880E",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Maki Fine Arts",
+    "source": "https://makifinearts.com/",
+    "area": "Kagurazaka",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "independent",
+      "art"
+    ],
+    "mission": "Take a second look at the work you initially walked past. Find one decision in its colour, scale or placement that you missed.",
+    "reviewedAt": "2026-10-24T16:39:04.816Z",
+    "qlooId": "D8454B3B-4E29-48FA-9DB9-D73EC75222AB",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Satoko Oe Contemporary",
+    "source": "https://satokooe.com/",
+    "area": "Kiyosumi-Shirakawa",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "independent",
+      "art"
+    ],
+    "mission": "Look at the spaces between works as well as the works themselves. Notice how the exhibition changes your pace.",
+    "reviewedAt": "2026-10-24T16:39:08.185Z",
+    "qlooId": "1977CC6A-43D4-4138-958C-81CACECB231E",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Take Ninagawa",
+    "source": "https://www.takeninagawa.com/",
+    "area": "Azabudai",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "independent",
+      "art"
+    ],
+    "mission": "Find a work that makes ordinary material look unfamiliar. Spend a few minutes deciding what caused the change.",
+    "reviewedAt": "2026-10-24T16:39:04.872Z",
+    "qlooId": "AB4EC816-5D41-4320-BF9B-7F49511E3EE5",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "TARO NASU",
+    "source": "https://www.taronasugallery.com/",
+    "area": "Roppongi",
+    "role": "art",
+    "tags": [
+      "conceptual",
+      "contemporary",
+      "art"
+    ],
+    "mission": "Read a title, return to the work and see what the title changes. Keep the question rather than forcing an immediate answer.",
+    "reviewedAt": "2026-10-24T16:39:08.488Z",
+    "qlooId": "BF501E05-B39E-4A2C-9E67-8C6DD3A7D531",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Ota Fine Arts",
+    "source": "https://www.otafinearts.com/",
+    "area": "Roppongi",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "art",
+      "asia"
+    ],
+    "mission": "Choose one artist you have not followed before. Look for the connection between two works in the current show.",
+    "reviewedAt": "2026-10-24T16:39:05.413Z",
+    "qlooId": "F753E84E-FF56-4BE9-A741-1D0D48685A3D",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "HAGISO",
+    "source": "https://hagiso.com/",
+    "area": "Yanaka",
+    "role": "coffee",
+    "tags": [
+      "architecture",
+      "coffee",
+      "art"
+    ],
+    "mission": "Take a break in the reused building and notice one detail of how the space has been kept in use. Then look at what is on display.",
+    "reviewedAt": "2026-10-24T16:39:05.492Z",
+    "qlooId": "AB1EA378-F4C8-4BDA-8F49-446740AB85F5",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "WISH LESS",
+    "source": "https://wish-less.com/",
+    "area": "Tabata",
+    "role": "art",
+    "tags": [
+      "illustration",
+      "independent",
+      "zine"
+    ],
+    "mission": "Look for the link between the exhibition and the small editions around it. Follow one artist through both formats.",
+    "reviewedAt": "2026-10-24T16:39:06.633Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "GALLERY CONCEAL SHIBUYA",
+    "source": "https://galleryconceal.com/",
+    "area": "Shibuya",
+    "role": "art",
+    "tags": [
+      "independent",
+      "contemporary",
+      "coffee"
+    ],
+    "mission": "Take the stairs and choose one work to see twice, once before and once after reading the artist's text.",
+    "reviewedAt": "2026-10-24T16:39:06.435Z",
+    "qlooId": "D89B4B08-1223-4490-B74F-9B36D6206AE7",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "WATARI-UM",
+    "source": "http://www.watarium.co.jp/",
+    "area": "Aoyama",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "architecture",
+      "art"
+    ],
+    "mission": "Follow one idea through the current exhibition and into its printed material. Keep a question to take back into the street.",
+    "reviewedAt": "2026-10-24T16:42:53.920Z",
+    "qlooId": "EA753A11-197E-4925-933A-E0B8711E96FD",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "21_21 DESIGN SIGHT",
+    "source": "https://www.2121designsight.jp/",
+    "area": "Roppongi",
+    "role": "art",
+    "tags": [
+      "design",
+      "architecture",
+      "craft"
+    ],
+    "mission": "Choose one ordinary object being reconsidered in the current show. Notice what its display asks you to see differently.",
+    "reviewedAt": "2026-10-24T16:39:07.920Z",
+    "qlooId": "6E6F123F-29AE-4D81-AEBF-9E1D4C09C849",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "GALLERY COMMUNE",
+    "source": "https://ccommunee.com/en-international",
+    "area": "Hatagaya",
+    "role": "art",
+    "tags": [
+      "zine",
+      "illustration",
+      "independent"
+    ],
+    "mission": "Look for an edition or small publication alongside the show. Compare the same artist's work on a wall and on a page.",
+    "reviewedAt": "2026-10-24T16:39:08.197Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Cafe Bach",
+    "source": "https://www.bach-kaffee.co.jp/",
+    "area": "Minami-Senju",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "craft"
+    ],
+    "mission": "Choose a coffee by the question you want answered, such as roast or origin. Notice what changes as the cup cools.",
+    "reviewedAt": "2026-10-24T16:39:08.253Z",
+    "qlooId": "E38C540B-F26D-4D95-A0D8-62053CFFADDA",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "GLITCH COFFEE Jimbocho",
+    "source": "https://glitchcoffee.com/",
+    "area": "Jimbocho",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "craft",
+      "design"
+    ],
+    "mission": "Choose one origin you do not normally drink. Keep the tasting note that matches your own experience, not the one you think you should find.",
+    "reviewedAt": "2026-10-24T16:39:08.340Z",
+    "qlooId": "C8C19ACE-E329-40B9-8012-EE35C094ED3C",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "LEAVES COFFEE ROASTERS",
+    "source": "https://leavescoffee.jp/",
+    "area": "Kuramae",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "craft"
+    ],
+    "mission": "Ask which coffee best shows what the roastery is interested in now. Follow how the first sip differs from the last.",
+    "reviewedAt": "2026-10-24T16:39:09.352Z",
+    "qlooId": "A9CB3452-0B1F-4807-85FC-F2B1147B05EE",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "KOFFEE MAMEYA",
+    "source": "https://www.koffee-mameya.com/",
+    "area": "Harajuku",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "craft",
+      "design"
+    ],
+    "mission": "Tell the staff how you usually drink coffee and try the next step they suggest. Treat the conversation as part of the visit.",
+    "reviewedAt": "2026-10-24T16:39:08.797Z",
+    "qlooId": "52C04EB1-78FE-4A30-A4C7-2543CC7731AB",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Fuglen Tokyo",
+    "source": "https://fuglencoffee.jp/",
+    "area": "Tomigaya",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "design",
+      "architecture"
+    ],
+    "mission": "Look at one piece of design while you drink. Notice how it works as part of a room rather than as an isolated object.",
+    "reviewedAt": "2026-10-24T16:39:08.729Z",
+    "qlooId": "EB53FDE2-1641-4D38-8CC8-4026B3FCE5A4",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Cafe de l'Ambre",
+    "source": "https://cafedelambre.com/",
+    "area": "Ginza",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "craft",
+      "history"
+    ],
+    "mission": "Take time over one coffee and notice its changing temperature. Let a small, deliberate drink interrupt the shopping streets outside.",
+    "reviewedAt": "2026-10-24T16:39:09.369Z",
+    "qlooId": "6EC48FCA-EBC7-41C7-BB5C-E7AB8A0B7274",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "ONIBUS COFFEE Nakameguro",
+    "source": "https://onibuscoffee.com/",
+    "area": "Nakameguro",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "craft",
+      "architecture"
+    ],
+    "mission": "Use the coffee stop to watch how the shop meets the neighbourhood. Keep one small detail from the street, not just the cup.",
+    "reviewedAt": "2026-10-24T16:39:09.031Z",
+    "qlooId": "0965D2B5-F4B4-487F-849F-1E30043A97E2",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "ARiSE COFFEE ROASTERS",
+    "source": "https://arisecoffee.jp/",
+    "area": "Kiyosumi-Shirakawa",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "craft",
+      "independent"
+    ],
+    "mission": "Ask about one origin that is new to you. Use the answer to decide the cup rather than choosing from habit.",
+    "reviewedAt": "2026-10-24T16:39:09.269Z",
+    "qlooId": "7EEE7954-116A-4839-8EEF-6E5B6712A742",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "iki ESPRESSO",
+    "source": "https://iki-espresso.com/",
+    "area": "Kiyosumi-Shirakawa",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "design",
+      "independent"
+    ],
+    "mission": "Pause before the next gallery. Notice one detail of the surrounding streets that would never appear on a museum wall.",
+    "reviewedAt": "2026-10-24T16:42:55.024Z",
+    "qlooId": "267C2286-310F-4135-A35F-C0643B7BABC0",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Dandelion Chocolate Kuramae",
+    "source": "https://dandelionchocolate.jp/",
+    "area": "Kuramae",
+    "role": "coffee",
+    "tags": [
+      "craft",
+      "chocolate",
+      "design"
+    ],
+    "mission": "Compare the idea of origin in chocolate with origin in coffee. Choose one flavour you can identify without reading its description.",
+    "reviewedAt": "2026-10-24T16:39:09.561Z",
+    "qlooId": "9F10ABF3-1DC6-4312-9A0A-58F1E01CE3AF",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Pelican Cafe",
+    "source": "https://pelicancafe.jp/",
+    "area": "Tawaramachi",
+    "role": "coffee",
+    "tags": [
+      "bread",
+      "craft",
+      "history"
+    ],
+    "mission": "Make the bread the focus of the stop. Compare crust, texture and the way a simple serving changes your pace.",
+    "reviewedAt": "2026-10-24T16:39:10.243Z",
+    "qlooId": "341F4A91-4212-409D-A39E-4965B607E4E0",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "MIA MIA",
+    "source": "https://www.mia-mia.tokyo/",
+    "area": "Higashi-Nagasaki",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "independent",
+      "community"
+    ],
+    "mission": "Take a coffee break that leaves room for a conversation. Notice how the cafe connects to the street around it.",
+    "reviewedAt": "2026-10-24T16:39:09.514Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "BEEP Akihabara",
+    "source": "https://www.beep-shop.com/",
+    "area": "Akihabara",
+    "role": "play",
+    "tags": [
+      "retro",
+      "games",
+      "computers"
+    ],
+    "mission": "Read the labels on one piece of older game hardware. Look for a design constraint that explains how people played with it.",
+    "reviewedAt": "2026-10-24T16:39:10.073Z",
+    "qlooId": "1E28A81A-5290-4F52-A220-DAEA3A8AC6EF",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Super Potato Akihabara",
+    "source": "https://www.superpotato.com/",
+    "area": "Akihabara",
+    "role": "play",
+    "tags": [
+      "retro",
+      "games",
+      "nostalgia"
+    ],
+    "mission": "Choose one game you remember and one you have never seen. Compare the controls or packaging before looking at the price.",
+    "reviewedAt": "2026-10-24T16:39:11.242Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "HEY Akihabara",
+    "source": "https://www.taito.co.jp/store/00001703",
+    "area": "Akihabara",
+    "role": "play",
+    "tags": [
+      "arcade",
+      "retro",
+      "games"
+    ],
+    "mission": "Choose a cabinet by what is happening on screen rather than by the title. Watch someone play, then try to understand one rule yourself.",
+    "reviewedAt": "2026-10-24T16:39:10.995Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Mandarake Nakano",
+    "source": "https://www.mandarake.co.jp/dir/nkn/",
+    "area": "Nakano",
+    "role": "play",
+    "tags": [
+      "manga",
+      "anime",
+      "collectibles"
+    ],
+    "mission": "Pick one narrowly specialised room and inspect the labels. Look for a corner of collecting you did not know had a name.",
+    "reviewedAt": "2026-10-24T16:39:10.019Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "ROBOTROBOT",
+    "source": "https://robotrobot.com/",
+    "area": "Nakano",
+    "role": "play",
+    "tags": [
+      "toys",
+      "collectibles",
+      "nostalgia"
+    ],
+    "mission": "Find one toy from a world you know and one from a world you do not. Notice what their packaging assumes about the collector.",
+    "reviewedAt": "2026-10-24T16:39:11.058Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Yamashiroya",
+    "source": "https://e-yamashiroya.com/",
+    "area": "Ueno",
+    "role": "play",
+    "tags": [
+      "toys",
+      "collectibles",
+      "design"
+    ],
+    "mission": "Compare two versions of the same kind of toy. Look for the small change that turns a familiar character into a collector's object.",
+    "reviewedAt": "2026-10-24T16:39:13.440Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "THE MUSIC BAR CAVE SHIBUYA",
+    "source": "https://the-musicbar.jp/",
+    "area": "Shibuya",
+    "role": "listen",
+    "tags": [
+      "vinyl",
+      "design",
+      "listening"
+    ],
+    "mission": "Take the sound system as the main attraction. Pick one element in the mix and follow it through the next record.",
+    "reviewedAt": "2026-10-24T16:42:55.966Z",
+    "qlooId": "A9CAA1DF-4424-4480-9FE4-1F4818AC4245",
+    "doorNotes": [
+      "Closed Sundays and public holidays."
+    ],
+    "eventOnly": true
+  },
+  {
+    "name": "Onn. Good Track Lounge",
+    "source": "https://track-onn.com/",
+    "area": "Shibuya",
+    "role": "listen",
+    "tags": [
+      "vinyl",
+      "cocktails",
+      "listening"
+    ],
+    "mission": "Settle in with the selectors' choice and notice how a familiar instrument changes through the room's sound system.",
+    "reviewedAt": "2026-10-24T16:42:55.524Z",
+    "qlooId": null,
+    "doorNotes": [
+      "Second floor. ¥1,000 music charge per person plus 20% service; drinks extra.",
+      "Advance reservations recommended."
+    ],
+    "eventOnly": false
+  },
+  {
+    "name": "ShugoArts",
+    "source": "https://shugoarts.com/",
+    "area": "Roppongi",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "art",
+      "independent"
+    ],
+    "mission": "Compare the first and last works you see. Look for the change in attention the exhibition asks of you.",
+    "reviewedAt": "2026-10-24T16:42:56.200Z",
+    "qlooId": "B1599A4E-A2D0-4C1B-AA9C-E19FA2965A6E",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Tomio Koyama Gallery",
+    "source": "https://www.tomiokoyamagallery.com/",
+    "area": "Roppongi",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "art",
+      "independent"
+    ],
+    "mission": "Choose a work that repays a second look. Notice what its scale does that a reproduced image would not.",
+    "reviewedAt": "2026-10-24T16:42:57.517Z",
+    "qlooId": "3664BE5D-503F-4A31-9FD5-F860F4853BF8",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Mizuma Art Gallery",
+    "source": "https://mizuma-art.co.jp/",
+    "area": "Ichigaya",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "illustration",
+      "art"
+    ],
+    "mission": "Look at how an artist builds a world through repeated details. Find the one detail you would use to describe that world to a friend.",
+    "reviewedAt": "2026-10-24T16:42:58.333Z",
+    "qlooId": "3EED7C09-1D7D-4D4B-AFDC-170DEBBC86E6",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Tokyo Gallery + BTAP",
+    "source": "https://www.tokyo-gallery.com/",
+    "area": "Ginza",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "art",
+      "asia"
+    ],
+    "mission": "Choose one artist you do not already follow. Notice how the current show connects a local room to a wider artistic conversation.",
+    "reviewedAt": "2026-10-24T16:42:58.534Z",
+    "qlooId": "C0AA7D6A-16F3-46BA-9DBA-ED46B00E2399",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Art Front Gallery",
+    "source": "https://artfrontgallery.com/",
+    "area": "Daikanyama",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "architecture",
+      "art"
+    ],
+    "mission": "Find a work that changes your sense of space. Carry that shift in scale back out to the street.",
+    "reviewedAt": "2026-10-24T16:42:59.173Z",
+    "qlooId": "6466776F-4129-4131-9519-E803DA5D6E07",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Yutaka Kikutake Gallery",
+    "source": "https://www.yutakakikutakegallery.com/",
+    "area": "Roppongi",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "independent",
+      "art"
+    ],
+    "mission": "Look for a small formal decision that runs through the show. Follow it through more than one work.",
+    "reviewedAt": "2026-10-24T16:42:59.549Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "KOTARO NUKAGA",
+    "source": "https://kotaronukaga.com/",
+    "area": "Roppongi",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "design",
+      "art"
+    ],
+    "mission": "Look for a work that uses a familiar visual language in an unfamiliar way. Notice what changes when you stand in front of it.",
+    "reviewedAt": "2026-10-24T16:42:59.988Z",
+    "qlooId": "E9F44300-597F-42B4-AD78-480A5062C3A9",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "GINZA GEKKOSO",
+    "source": "https://gekkoso.co.jp/pages/gallery",
+    "area": "Ginza",
+    "role": "art",
+    "tags": [
+      "painting",
+      "craft",
+      "art"
+    ],
+    "mission": "Look at the tools and the work together. Find one material that makes you want to make something rather than only look.",
+    "reviewedAt": "2026-10-24T16:43:00.943Z",
+    "qlooId": "A4FB7770-0C46-4EFE-85F2-FDA9A9E8F9EE",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Spincoaster Music Bar",
+    "source": "https://bar.spincoaster.com/",
+    "area": "Shinjuku",
+    "role": "listen",
+    "tags": [
+      "music",
+      "listening",
+      "independent"
+    ],
+    "mission": "Choose one unfamiliar artist from the night's selection. Keep the track name and listen again after the walk.",
+    "reviewedAt": "2026-10-24T16:43:00.251Z",
+    "qlooId": null,
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Bunkitsu Roppongi",
+    "source": "https://roppongi.bunkitsu.jp/store/",
+    "area": "Roppongi",
+    "role": "books",
+    "tags": [
+      "books",
+      "design",
+      "coffee"
+    ],
+    "mission": "Choose a book from a shelf you normally walk past. Take it into the reading area and give the opening chapter your full attention.",
+    "reviewedAt": "2026-10-24T17:00:46.959Z",
+    "qlooId": "656B9004-7837-4322-B1C4-FDCA23032162",
+    "doorNotes": [
+      "The reading area has an admission fee. Check the current rate before entering."
+    ],
+    "eventOnly": false
+  },
+  {
+    "name": "Hi-Fi Record Store",
+    "source": "https://www.hi-fi.gr.jp/",
+    "area": "Shibuya",
+    "role": "dig",
+    "tags": [
+      "jazz",
+      "soul",
+      "vinyl"
+    ],
+    "mission": "Choose one record for its arrangement or players rather than its headline name. Use the credits as a map to another record.",
+    "reviewedAt": "2026-10-24T16:43:01.576Z",
+    "qlooId": "3AAD60F0-FA59-4B54-8BF3-16DD19B815A8",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "HMV record shop Shibuya",
+    "source": "https://www.hmv.co.jp/store/SHU/",
+    "area": "Shibuya",
+    "role": "dig",
+    "tags": [
+      "vinyl",
+      "jazz",
+      "rock"
+    ],
+    "mission": "Choose one older Japanese release and compare it with a reissue. Look for a detail in the sleeve or credits that changes your choice.",
+    "reviewedAt": "2026-10-24T16:48:53.420Z",
+    "qlooId": "F740AA78-0D92-44F9-B0ED-BA7092306F45",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Kanda Brazil",
+    "source": "https://k-brazil.jp/",
+    "area": "Jimbocho",
+    "role": "coffee",
+    "tags": [
+      "coffee",
+      "history",
+      "books"
+    ],
+    "mission": "Start with a coffee before the book streets. Look for one detail of the room that makes you slow your browsing pace.",
+    "reviewedAt": "2026-10-24T16:48:54.551Z",
+    "qlooId": "DF5F14F6-D334-46CB-B4ED-EECCA2787197",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Tokyo Opera City Art Gallery",
+    "source": "https://www.operacity.jp/ag/",
+    "area": "Hatsudai",
+    "role": "art",
+    "tags": [
+      "contemporary",
+      "design",
+      "art"
+    ],
+    "mission": "Follow one artist through the current exhibition. Compare the work's original size with what you expected from its reproduction.",
+    "reviewedAt": "2026-10-24T16:43:04.625Z",
+    "qlooId": "C786AD5F-90E6-43C1-9281-4295703A168C",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "NTT InterCommunication Center",
+    "source": "https://www.ntticc.or.jp/ja/about/",
+    "area": "Hatsudai",
+    "role": "art",
+    "tags": [
+      "sound",
+      "experimental",
+      "media-art"
+    ],
+    "mission": "Choose one work that uses time, sound or participation. Stay with it long enough to notice what changes.",
+    "reviewedAt": "2026-10-24T16:48:55.003Z",
+    "qlooId": "08CDA9B0-D605-4370-8424-247A985862D1",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "Daikanyama T-Site",
+    "source": "https://store.tsite.jp/daikanyama/",
+    "area": "Daikanyama",
+    "role": "books",
+    "tags": [
+      "books",
+      "design",
+      "film"
+    ],
+    "mission": "Choose one cultural subject and follow it across a book, a magazine and a related display. Keep the least obvious connection.",
+    "reviewedAt": "2026-10-24T16:43:03.094Z",
+    "qlooId": "9D5E5475-EE16-49E0-8AE0-ED15D77C6E41",
+    "doorNotes": [],
+    "eventOnly": false
+  },
+  {
+    "name": "GALLERY TARGET",
+    "source": "https://www.gallery-target.com/about/",
+    "area": "Harajuku",
+    "role": "art",
+    "tags": [
+      "illustration",
+      "contemporary",
+      "pop"
+    ],
+    "mission": "Look for the marks that distinguish the artist from their influences. Choose one detail you could recognise again without a label.",
+    "reviewedAt": "2026-10-24T16:48:52.490Z",
+    "qlooId": "B3DF095F-C3C0-4FC6-A6CB-911FE5A52E68",
+    "doorNotes": [],
+    "eventOnly": false
+  }
+]
