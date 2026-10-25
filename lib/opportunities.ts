@@ -54,10 +54,10 @@ export function rankOpportunities(items:Opportunity[],p:Preferences,now=new Date
   if(!reasons.length)reasons.push('An option to react to; no personal match established yet.');
   if(o.kind!=='place'){score+=1;reasons.push('Published dates overlap your selected window.');}
   if(now.getTime()-Date.parse(o.checkedAt)>86400000)reasons.push('Source last checked '+o.checkedAt.slice(0,10)+'. Recheck the official page.');
-  if(o.kind==='release'&&o.start&&o.start<p.date&&(o.end||o.start)===o.start)reasons.push('Recently released. Current stock is unknown.');
+  if(o.kind==='release'&&o.start&&o.start<p.date&&(o.end||o.start)===o.start)reasons.push(/shipping/i.test(o.actionLabel||'')?'Manufacturer shipping date. Store arrival and stock are unconfirmed.':'Recently released. Current stock is unknown.');
   // Provider affinity is only a tie-breaker within place results, never a cross-provider confidence score.
   score+=Math.max(0,Math.min(1,o.affinity||0))*.2;
-  const k=canonical(o.url)+'#'+(o.start||'place');const previous=dedup.get(k);if(!previous||(previous.score||0)<score)dedup.set(k,{...o,score,reasons,matchLevel:(p.direction!=='any'?directionMatch:interestMatchFound)?'taste':'activity'});
+  const k=canonical(o.url)+'#'+(o.start||'place')+(o.kind==='release'?'#'+o.title.normalize('NFKC').toLocaleLowerCase().replace(/\s+/g,' ').trim():'');const previous=dedup.get(k);if(!previous||(previous.score||0)<score)dedup.set(k,{...o,score,reasons,matchLevel:(p.direction!=='any'?directionMatch:interestMatchFound)?'taste':'activity'});
  }
  const pool=[...dedup.values()].sort((a,b)=>(b.score||0)-(a.score||0)||(a.start||'9999').localeCompare(b.start||'9999')||a.id.localeCompare(b.id)),out:Opportunity[]=[];const counts=new Map<string,number>();
  while(pool.length){let index=0,best=-Infinity;pool.forEach((o,i)=>{const v=(o.matchLevel==='taste'?100:0)+(o.score||0)-Math.min(3,(counts.get(o.source)||0)*.7)-Math.min(3,(counts.get('kind:'+o.kind)||0)*.6);if(v>best){best=v;index=i;}});const o=pool.splice(index,1)[0];out.push(o);counts.set(o.source,(counts.get(o.source)||0)+1);counts.set('kind:'+o.kind,(counts.get('kind:'+o.kind)||0)+1);}

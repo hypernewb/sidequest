@@ -1,0 +1,586 @@
+{
+  "at": "2026-10-25T04:27:07.710Z",
+  "environment": "published",
+  "inventory": {
+    "total": 533,
+    "byKind": {
+      "gig": 142,
+      "popup": 50,
+      "exhibition": 14,
+      "event": 10,
+      "release": 317
+    },
+    "bySource": {
+      "UNIT / SALOON": 4,
+      "LIQUIDROOM": 6,
+      "Laforet Harajuku": 4,
+      "Daikanyama T-Site": 12,
+      "21_21 DESIGN SIGHT": 2,
+      "MEDICOM TOY preorders": 8,
+      "Animate Tokyo pop-ups": 17,
+      "Tokyo Midtown": 4,
+      "BANDAI SPIRITS": 213,
+      "U.F.O.CLUB": 7,
+      "Taka Ishii Gallery": 2,
+      "Shindaita FEVER": 38,
+      "WWW / WWW X": 67,
+      "Shibuya PARCO": 20,
+      "mograg gallery": 2,
+      "Cotton Club": 20,
+      "Tower Records Shibuya": 3,
+      "Sanrio / Sony": 2,
+      "Sanrio / Mon cher": 1,
+      "Sanrio": 24,
+      "Good Smile Company": 60,
+      "MEDICOM TOY": 2,
+      "Sanrio / Takara Tomy Arts": 1,
+      "Sanrio / Shufunotomo": 1,
+      "Sanrio / to/one": 2,
+      "Bandai": 2,
+      "The Pokémon Company": 2,
+      "Bandai Toys": 6,
+      "PR Times · issuer press release": 1
+    },
+    "withArtists": 12,
+    "withGenres": 24,
+    "olderThanADay": 24
+  },
+  "results": [
+    {
+      "label": "Browse",
+      "milliseconds": 424,
+      "total": 452,
+      "returned": 452,
+      "personal": 0,
+      "kinds": {
+        "popup": 48,
+        "exhibition": 13,
+        "event": 10,
+        "release": 258,
+        "gig": 123
+      },
+      "first": [
+        {
+          "title": "UOOYAA",
+          "kind": "popup",
+          "source": "Laforet Harajuku",
+          "start": "2025-10-04",
+          "end": "2026-10-31",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Curated Exhibition: \"Learning from the Pillow Book of a Hermit – Weaving New Ways to Live Through Small Architecture\"",
+          "kind": "exhibition",
+          "source": "21_21 DESIGN SIGHT",
+          "start": "2026-08-28",
+          "end": "2027-01-11",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "LOUVRE meets TOKYO MIDTOWN",
+          "kind": "event",
+          "source": "Tokyo Midtown",
+          "start": "2026-09-09",
+          "end": "2026-12-13",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Digital Monster COLOR · DIGIMON BEATBREAK EDITION",
+          "kind": "release",
+          "source": "Official catalog",
+          "start": "2026-09-27",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window.",
+            "Source last checked 2026-10-23. Recheck the official page."
+          ]
+        },
+        {
+          "title": "30th Anniversary: 蘭寿とむ 1st LIVE",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-10-25",
+          "end": "2026-10-26",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "YEN TOWN MARKET",
+          "kind": "popup",
+          "source": "Shibuya PARCO",
+          "start": "2026-09-03",
+          "end": "2026-11-01",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Pokémon",
+      "milliseconds": 886,
+      "total": 452,
+      "returned": 452,
+      "personal": 14,
+      "kinds": {
+        "release": 258,
+        "gig": 123,
+        "popup": 48,
+        "exhibition": 13,
+        "event": 10
+      },
+      "first": [
+        {
+          "title": "Pokémon MEGA Special Deck Set",
+          "kind": "release",
+          "source": "Official catalog",
+          "start": "2026-11-13",
+          "end": "2026-11-13",
+          "match": "taste",
+          "reasons": [
+            "Names Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Source last checked 2026-10-23. Recheck the official page."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Mew, Scream Tail ·",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-14",
+          "end": "2026-10-14",
+          "match": "taste",
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Slowpoke, Slowpoke（Galarian form） ·",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-14",
+          "end": "2026-10-14",
+          "match": "taste",
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Ditto · surprisedver.",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-15",
+          "end": "2026-10-15",
+          "match": "taste",
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Victini ·",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-22",
+          "end": "2026-10-22",
+          "match": "taste",
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Charmander, Raichu ·",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-22",
+          "end": "2026-10-22",
+          "match": "taste",
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Gundam",
+      "milliseconds": 858,
+      "total": 452,
+      "returned": 452,
+      "personal": 3,
+      "kinds": {
+        "release": 258,
+        "gig": 123,
+        "popup": 48,
+        "exhibition": 13,
+        "event": 10
+      },
+      "first": [
+        {
+          "title": "GUNDAM UNIVERSE ZGMF-X10A FREEDOM GUNDAM RENEWAL",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "match": "taste",
+          "reasons": [
+            "Names Gundam · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "GUNDAM UNIVERSE XXXG-00W0 WING GUNDAM ZERO(EW) RENEWAL",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "match": "taste",
+          "reasons": [
+            "Names Gundam · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "GUNDAM UNIVERSE MS-06S CHAR'S ZAKU II RENEWAL",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "match": "taste",
+          "reasons": [
+            "Names Gundam · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "THE GUAYS presents ✴\"Blue distortion / Attitude\" New double A-side 7inch single release party✴ — THE GUAYS テニスコーツ Massage Attack 原田真哉 (あびこ⭐あきゆき)",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "UOOYAA",
+          "kind": "popup",
+          "source": "Laforet Harajuku",
+          "start": "2025-10-04",
+          "end": "2026-10-31",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Curated Exhibition: \"Learning from the Pillow Book of a Hermit – Weaving New Ways to Live Through Small Architecture\"",
+          "kind": "exhibition",
+          "source": "21_21 DESIGN SIGHT",
+          "start": "2026-08-28",
+          "end": "2027-01-11",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Nujabes",
+      "milliseconds": 585,
+      "total": 123,
+      "returned": 123,
+      "personal": 3,
+      "kinds": {
+        "gig": 123
+      },
+      "first": [
+        {
+          "title": "WOLFGANG HAFFNER TRIO",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-10-27",
+          "end": "2026-10-27",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Published genre or resolved artist matches jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "[kihito+migon Presents HALLOWEEN NIGHTMARE]",
+          "kind": "gig",
+          "source": "U.F.O.CLUB",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Published genre or resolved artist matches ambient · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "荒谷翔大 — 1st Full Album “TASOGARE SOUL” Release One Man Live Tour",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "start": "2026-11-03",
+          "end": "2026-11-03",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Published genre or resolved artist matches soul · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "THE GUAYS presents ✴\"Blue distortion / Attitude\" New double A-side 7inch single release party✴ — THE GUAYS テニスコーツ Massage Attack 原田真哉 (あびこ⭐あきゆき)",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "DEXCORE",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "moon drop FC TOUR “MAISON MOONDROP 住人会 vol.2”",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Slayer",
+      "milliseconds": 646,
+      "total": 123,
+      "returned": 123,
+      "personal": 5,
+      "kinds": {
+        "gig": 123
+      },
+      "first": [
+        {
+          "title": "DEXCORE",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Verified Qloo artist dexcore — Metal, Metalcore, Melodic Death Metal",
+            "Published genre or resolved artist matches metal · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "imakinn records presents GIANTS CHAIR Japan Tour 2026 Final — GIANTS CHAIR (from US) the cabs",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-10-26",
+          "end": "2026-10-26",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Verified Qloo artist Giants Chair — Post-Punk",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Ivy to Fraudulent Game — Ivy to Fraudulent Game one-man live “Shadow Dance”",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "start": "2026-11-18",
+          "end": "2026-11-18",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Verified Qloo artist Ivy to Fraudulent Game — Post-Punk",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Hosted by 5B Records: “Katayoru, 2nd Edition” — 6th album “Machi” release show — Discharming man",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Verified Qloo artist Discharming Man — Punk Rock, Garage Punk",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "砂上の楼閣47 狐疑逡巡 牧歌コアパンクの嵐 — fOUL STORM OF VOID",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-11-03",
+          "end": "2026-11-03",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Source matches: Punk, metal & loud guitars",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "WOLFGANG HAFFNER TRIO",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-10-27",
+          "end": "2026-10-27",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Activity match only; the source does not establish your preferred style.",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Art",
+      "milliseconds": 318,
+      "total": 16,
+      "returned": 16,
+      "personal": 0,
+      "kinds": {
+        "exhibition": 13,
+        "event": 2,
+        "popup": 1
+      },
+      "first": [
+        {
+          "title": "Curated Exhibition: \"Learning from the Pillow Book of a Hermit – Weaving New Ways to Live Through Small Architecture\"",
+          "kind": "exhibition",
+          "source": "21_21 DESIGN SIGHT",
+          "start": "2026-08-28",
+          "end": "2027-01-11",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "LOUVRE meets TOKYO MIDTOWN",
+          "kind": "event",
+          "source": "Tokyo Midtown",
+          "start": "2026-09-09",
+          "end": "2026-12-13",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "[Fair] Arisa Adams Exhibition “BITTERSWEET”",
+          "kind": "popup",
+          "source": "Daikanyama T-Site",
+          "start": "2026-10-16",
+          "end": "2026-10-29",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "\"Late Night Diner\" and \"Seagull Restaurant\" Exhibition: Food Stylist Nami Iijima's Two Decades of Work.",
+          "kind": "exhibition",
+          "source": "Shibuya PARCO",
+          "start": "2026-10-02",
+          "end": "2026-11-08",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "薬指ささく — solo exhibition “I’ll Give You a Name”",
+          "kind": "exhibition",
+          "source": "mograg gallery",
+          "start": "2026-10-03",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "DAIKANYAMA drawing",
+          "kind": "event",
+          "source": "Daikanyama T-Site",
+          "start": "2026-10-07",
+          "end": "2026-10-27",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    }
+  ],
+  "interpretation": "Functional evidence from live official records. These are not independent human relevance ratings."
+}

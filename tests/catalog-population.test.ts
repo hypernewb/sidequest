@@ -13,6 +13,11 @@ test('product labels preserve character identity even when a cached machine tran
  const title=catalogTitle({source:'BANDAI SPIRITS',title:'ポケットモンスター もふぐっと しっぽみてみて！ぬいぐるみ～ヒトカゲ・ライチュウ～',englishTitle:'Human Lizard'});
  assert.match(title,/Pokémon.*plush.*Charmander, Raichu/);assert.ok(!title.includes('Human Lizard'));
 });
+test('distinct products on one shipping calendar survive deduplication without claiming release stock',()=>{
+ const a=item('Figure A',{url:'https://www.goodsmile.com/ja/releaseinfo',actionLabel:'Shipping date'}),b={...a,id:'b',title:'Figure B'};
+ const rows=rankOpportunities([a,b,{...a,id:'duplicate'}],p,now);assert.equal(rows.length,2);assert.match(rows[0].reasons!.join(' '),/shipping date/);
+ assert.equal(catalogDrop(a,now)?.method,'shipping');
+});
 test('release dates remain exact while recent releases stay browseable; ended preorders do not',()=>{
  const release=item('recent');assert.ok(catalogCurrent(release,now));assert.ok(overlapsWindow(release,['2026-10-25']));assert.equal(release.end,'2026-10-24');
  assert.equal(catalogCurrent(item('old',{start:'2026-10-01',end:'2026-10-01'}),now),false);

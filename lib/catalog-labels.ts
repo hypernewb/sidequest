@@ -10,6 +10,6 @@ export function productLabel(o:Pick<Opportunity,'source'|'title'>){
  const form=forms.find(([re])=>re.test(o.title));if(!form)return null;
  let variant=o.title.split(/[～〜]/).slice(1).join(' · ').trim();
  for(const [jp,en] of Object.entries(names).sort((a,b)=>b[0].length-a[0].length))variant=variant.replaceAll(jp,en);
- return brand+' · '+form[1]+(variant?' · '+variant.replace(/・/g,', ').replace(/ · $/,''):'');
+ return brand+' · '+form[1]+(variant?' · '+variant.replace(/・/g,', ').replace(/\s*·\s*$/,''):'');
 }
 export const catalogTitle=(o:Pick<Opportunity,'title'|'source'|'englishTitle'>)=>productLabel(o)||o.englishTitle||o.title;
