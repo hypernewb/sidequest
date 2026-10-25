@@ -1,0 +1,1499 @@
+{
+  "at": "2026-10-25T05:37:57.299Z",
+  "method": "Current hosted API, current Tokyo time, real Qloo seed resolution. Functional audit, not human quality ratings.",
+  "results": [
+    {
+      "seed": "Pokemon FireRed Version",
+      "focus": "games",
+      "status": 200,
+      "seconds": 15,
+      "quest": {
+        "neighborhood": {
+          "id": "akihabara",
+          "name": "Akihabara"
+        },
+        "date": "2026-10-25",
+        "checkedAt": "2026-10-25T05:37:44.719Z",
+        "tokyoNow": "25 Oct 2026, 14:37",
+        "stops": [
+          {
+            "item": {
+              "id": "74BFF80D-626E-408F-BAFC-EC0524614C46",
+              "title": "HEY Akihabara",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://www.taito.co.jp/store/00001703",
+              "description": "arcade, retro, games",
+              "location": "Japan 〒101-0021 Tokyo, Chiyoda City, Sotokanda, 1 Chome−10−5 １階～４階 廣瀬本社ビル",
+              "checkedAt": "2026-10-25T05:37:44.719Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "play",
+              "affinity": 0.6239395777560421,
+              "signals": [
+                "Pokemon FireRed Version"
+              ],
+              "lat": 35.699072,
+              "lon": 139.770917,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T10:00:00",
+                    "closes": "T23:30:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T10:00:00",
+                    "closes": "T23:30:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T10:00:00",
+                    "closes": "T23:30:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": false,
+                    "opens": "T10:00:00",
+                    "closes": "T23:30:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T10:00:00",
+                    "closes": "T23:30:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T10:00:00",
+                    "closes": "T23:30:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T10:00:00",
+                    "closes": "T23:30:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "play",
+                "area": "Akihabara",
+                "mission": "Choose a cabinet by what is happening on screen rather than by the title. Watch someone play, then try to understand one rule yourself.",
+                "tags": [
+                  "arcade",
+                  "retro",
+                  "games"
+                ],
+                "doorNotes": [],
+                "source": "https://www.taito.co.jp/store/00001703",
+                "reviewedAt": "2026-10-25T05:35:00Z",
+                "matchBasis": "entity",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "games"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 161.23939577756042,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for retro games. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:37:44.719Z"
+              },
+              "score": 0.22478791555120844,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "15:00",
+            "departure": "15:45",
+            "hours": "10:00–23:30",
+            "travelMinutes": 0,
+            "distanceMetres": 0,
+            "reason": "You asked for retro games. This matches the reviewed venue activity. Your Qloo taste tags overlap games in the reviewed venue profile.",
+            "mission": "Choose a cabinet by what is happening on screen rather than by the title. Watch someone play, then try to understand one rule yourself."
+          },
+          {
+            "item": {
+              "id": "1E28A81A-5290-4F52-A220-DAEA3A8AC6EF",
+              "title": "BEEP Akihabara",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://www.beep-shop.com/",
+              "description": "retro, games, computers",
+              "location": "中栄ビル B1 3 Chome-9-8 Sotokanda Chiyoda City, Tokyo 101-0021 Japan",
+              "checkedAt": "2026-10-25T05:37:44.719Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "play",
+              "signals": [],
+              "lat": 35.701510899999995,
+              "lon": 139.7708645,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": true
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "play",
+                "area": "Akihabara",
+                "mission": "Read the labels on one piece of older game hardware. Look for a design constraint that explains how people played with it.",
+                "tags": [
+                  "retro",
+                  "games",
+                  "computers"
+                ],
+                "doorNotes": [],
+                "source": "https://www.beep-shop.com/",
+                "reviewedAt": "2026-10-24T16:39:10.073Z",
+                "matchBasis": "genre_bridge",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "games"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 155,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for retro games. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:37:44.719Z"
+              },
+              "score": 0,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "15:56",
+            "departure": "16:41",
+            "hours": "11:00–20:00",
+            "travelMinutes": 11,
+            "distanceMetres": 366,
+            "reason": "You asked for retro games. This matches the reviewed venue activity. Your Qloo taste tags overlap games in the reviewed venue profile.",
+            "mission": "Read the labels on one piece of older game hardware. Look for a design constraint that explains how people played with it."
+          }
+        ],
+        "brief": "2 stops on 2026-10-25, starting at 15:00 JST. Allow about 22 minutes walking, including the loop back.",
+        "map": "https://www.google.com/maps/dir/?api=1&origin=35.699072,139.770917&destination=35.699072,139.770917&waypoints=35.701510899999995,139.7708645&travelmode=walking",
+        "examined": 55,
+        "eligible": 37,
+        "notes": [
+          "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+          "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions.",
+          "Two stops fit this taste and the published hours. A third would weaken the route, so this is a shorter quest."
+        ],
+        "walkingMinutes": 22,
+        "walkingMetres": 732,
+        "returnMinutes": 11,
+        "trace": [
+          "Started with Pokemon FireRed Version.",
+          "Ranked 55 candidates within 100 curated venues; 74 have resolved Qloo IDs.",
+          "Read 2 venue pages.",
+          "Fitted 2 stops with varied activities around their weekly hours and a return walk."
+        ],
+        "title": "Akihabara, one more credit",
+        "vibe": "22 minutes on foot. 2 stops. One loop.",
+        "invitation": "You brought Pokemon FireRed Version. The route gives you a turn outside your usual games, then a turn outside your usual games. Keep one name from each stop and see which one follows you home.",
+        "seed": {
+          "id": "B069A50F-4B91-481D-95F0-187DA3CF9F05",
+          "name": "Pokemon FireRed Version",
+          "type": "videogame"
+        },
+        "run": [
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /search · resolving Pokemon FireRed Version.",
+            "at": "2026-10-25T05:37:43.223Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · checking resolved artists from the event catalog.",
+            "at": "2026-10-25T05:37:44.114Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · reading the seed’s cultural metadata.",
+            "at": "2026-10-25T05:37:44.719Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · following links into movie.",
+            "at": "2026-10-25T05:37:45.504Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 70.",
+            "at": "2026-10-25T05:37:47.382Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 70.",
+            "at": "2026-10-25T05:37:47.750Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 70.",
+            "at": "2026-10-25T05:37:48.105Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 61–70 of 70.",
+            "at": "2026-10-25T05:37:48.701Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:37:49.039Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:37:49.328Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "complete",
+            "detail": "Found 55 candidates in the curated catalog. 3 lateral cultural links returned by Qloo.",
+            "at": "2026-10-25T05:37:49.637Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "running",
+            "detail": "Checking Tokyo time and the published opening windows.",
+            "at": "2026-10-25T05:37:49.637Z"
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "complete",
+            "detail": "25 Oct 2026, 14:37 JST · 37 of 55 candidates pass hours, location and price checks for 2026-10-25.",
+            "at": "2026-10-25T05:37:49.637Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.",
+            "at": "2026-10-25T05:37:49.637Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Reading venue pages for HEY Akihabara, BEEP Akihabara.",
+            "at": "2026-10-25T05:37:49.637Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read BEEP Akihabara and applied any supported dated hours.",
+            "at": "2026-10-25T05:37:50.326Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read HEY Akihabara and applied any supported dated hours.",
+            "at": "2026-10-25T05:37:51.223Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "complete",
+            "detail": "Selected HEY Akihabara → BEEP Akihabara. About 22 minutes walking including the return.",
+            "at": "2026-10-25T05:37:51.223Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "running",
+            "detail": "Composing the mission, timetable and sourced door notes.",
+            "at": "2026-10-25T05:37:51.223Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "complete",
+            "detail": "Dossier ready. 2 stops, a return walk and venue sources.",
+            "at": "2026-10-25T05:37:51.223Z"
+          }
+        ]
+      },
+      "leads": [],
+      "failures": []
+    },
+    {
+      "seed": "Slayer",
+      "focus": "sound",
+      "status": 200,
+      "seconds": 6,
+      "quest": {
+        "neighborhood": {
+          "id": "koenji",
+          "name": "Koenji"
+        },
+        "date": "2026-10-25",
+        "checkedAt": "2026-10-25T05:37:52.723Z",
+        "tokyoNow": "25 Oct 2026, 14:37",
+        "stops": [
+          {
+            "item": {
+              "id": "13AB5DC0-8955-4286-8453-FDF3CECB60A3",
+              "title": "Record Boy",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://recordboy.shop-pro.jp/",
+              "description": "metal, punk, hardcore",
+              "location": "高円寺ビル 303 4 Chome-7-10 Koenjiminami Suginami City, Tokyo 166-0003 Japan",
+              "checkedAt": "2026-10-25T05:37:52.723Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "dig",
+              "signals": [],
+              "lat": 35.7035008,
+              "lon": 139.648746,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": true
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "dig",
+                "area": "Koenji",
+                "mission": "Compare one heavy record from Japan with one from elsewhere. Look for what the artwork and label tell you before asking for a recommendation.",
+                "tags": [
+                  "metal",
+                  "punk",
+                  "hardcore"
+                ],
+                "doorNotes": [],
+                "source": "http://recordboy.shop-pro.jp/",
+                "reviewedAt": "2026-10-24T16:42:50.276Z",
+                "matchBasis": "genre_bridge",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "metal"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 155,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for records & listening. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:37:52.723Z"
+              },
+              "score": 0,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "15:00",
+            "departure": "15:45",
+            "hours": "13:00–20:00",
+            "travelMinutes": 0,
+            "distanceMetres": 0,
+            "reason": "You asked for records & listening. This matches the reviewed venue activity. Your Qloo taste tags overlap metal in the reviewed venue profile.",
+            "mission": "Compare one heavy record from Japan with one from elsewhere. Look for what the artwork and label tell you before asking for a recommendation."
+          }
+        ],
+        "brief": "One supported stop on 2026-10-25 at 15:00 JST. No walking loop fit the current evidence.",
+        "map": "https://www.google.com/maps/search/?api=1&query=35.7035008,139.648746",
+        "examined": 56,
+        "eligible": 38,
+        "notes": [
+          "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+          "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions.",
+          "One supported stop fits. I could not add a compatible nearby stop with usable hours, so this is a focused find rather than a walking loop."
+        ],
+        "walkingMinutes": 0,
+        "walkingMetres": 0,
+        "returnMinutes": 0,
+        "trace": [
+          "Started with Slayer.",
+          "Ranked 56 candidates within 100 curated venues; 74 have resolved Qloo IDs.",
+          "Read 1 venue pages.",
+          "Fitted 1 stops with varied activities around their weekly hours and a return walk."
+        ],
+        "title": "Record Boy",
+        "vibe": "One place worth a closer look. Take your time here.",
+        "invitation": "You brought Slayer. This is one place to follow that interest, with enough time to browse.",
+        "seed": {
+          "id": "CB394FA2-EF25-4000-9175-3C244CDB0BB0",
+          "name": "Slayer",
+          "type": "artist"
+        },
+        "run": [
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /search · resolving Slayer.",
+            "at": "2026-10-25T05:37:51.754Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · checking resolved artists from the event catalog.",
+            "at": "2026-10-25T05:37:52.128Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · reading the seed’s cultural metadata.",
+            "at": "2026-10-25T05:37:52.723Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · expanding related music genres.",
+            "at": "2026-10-25T05:37:52.999Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · following links into tv show.",
+            "at": "2026-10-25T05:37:53.563Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 70.",
+            "at": "2026-10-25T05:37:54.289Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 70.",
+            "at": "2026-10-25T05:37:54.638Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 70.",
+            "at": "2026-10-25T05:37:54.979Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 61–70 of 70.",
+            "at": "2026-10-25T05:37:55.330Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:37:55.667Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:37:56.027Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "complete",
+            "detail": "Found 56 candidates in the curated catalog. 3 lateral cultural links returned by Qloo.",
+            "at": "2026-10-25T05:37:56.318Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "running",
+            "detail": "Checking Tokyo time and the published opening windows.",
+            "at": "2026-10-25T05:37:56.318Z"
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "complete",
+            "detail": "25 Oct 2026, 14:37 JST · 38 of 56 candidates pass hours, location and price checks for 2026-10-25.",
+            "at": "2026-10-25T05:37:56.318Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.",
+            "at": "2026-10-25T05:37:56.318Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Reading venue pages for Record Boy.",
+            "at": "2026-10-25T05:37:56.318Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Record Boy and applied any supported dated hours.",
+            "at": "2026-10-25T05:37:57.261Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "complete",
+            "detail": "Selected Record Boy. About 0 minutes walking including the return.",
+            "at": "2026-10-25T05:37:57.261Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "running",
+            "detail": "Composing the mission, timetable and sourced door notes.",
+            "at": "2026-10-25T05:37:57.261Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "complete",
+            "detail": "One supported find. No complete walking route fit.",
+            "at": "2026-10-25T05:37:57.261Z"
+          }
+        ]
+      },
+      "leads": [
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/14976/:2026-10-31",
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "url": "https://www.unit-tokyo.com/schedule/14976/",
+          "location": "Daikanyama, Tokyo",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "priceLabel": "Check admission / ticket / goods prices",
+          "reason": "Performer genre overlaps metal.",
+          "times": [
+            "OPEN : 18:00",
+            "OPEN : 18:00",
+            "OPEN: 18:00",
+            "START: 19:00"
+          ],
+          "kind": "gig"
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/dexcore_20261028:2026-10-28",
+          "title": "DEXCORE",
+          "url": "https://www.liquidroom.net/schedule/dexcore_20261028",
+          "location": "Ebisu, Tokyo",
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "priceLabel": "¥5,000(税込・ドリンクチャージ別)",
+          "reason": "Performer genre overlaps metal.",
+          "times": [
+            "OPEN: 17:45",
+            "START: 18:30"
+          ],
+          "kind": "gig"
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/see_20261029:2026-10-29",
+          "title": "SOUND ENERGY EX",
+          "url": "https://www.liquidroom.net/schedule/see_20261029",
+          "location": "Ebisu, Tokyo",
+          "start": "2026-10-29",
+          "end": "2026-10-29",
+          "priceLabel": "前売チケット ¥9,500(税込・ドリンクチャージ別) PRIORITYチケット ¥16,500(税込・ドリンクチャージ別)",
+          "reason": "Official programme mentions metal.",
+          "times": [
+            "OPEN: 17:15",
+            "START: 18:00"
+          ],
+          "kind": "gig"
+        }
+      ],
+      "failures": []
+    }
+  ]
+}
