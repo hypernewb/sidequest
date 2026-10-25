@@ -179,3 +179,5 @@ The event browser now opens on the saved catalog, with category counts and edita
 ## Independent shops and full gig programmes
 
 BIG LOVE RECORDS, pianola records, CIBONE, PARCEL and WISH LESS add 39 current vinyl, fashion, design and art records. Vinyl and fashion have separate catalog filters. Gigs receive a dedicated full-page queue, named lineups and more careful Qloo genre reconciliation. The local audit reached 178 full gig programmes, 91 with Qloo artist name matches and 108 with genre evidence. See [source evidence, contrasting tastes and limitations](evaluation/INDEPENDENT-MUSIC.md). BEAMS is prepared but its app-runtime fetch still times out.
+
+The published check confirmed all 39 additions after retrying CIBONE. Hosted gig coverage rose from 120 to 178 lineups, 12 to 71 Qloo artist name matches, and 16 to 94 records with genre evidence. The final source-context safeguards are stricter than the earlier local run. Seven contrasting tastes were checked; [the dated hosted report](evaluation/independent-published.json) records the results. BEAMS returned a hosted access error and is not counted.

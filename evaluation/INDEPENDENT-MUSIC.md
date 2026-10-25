@@ -36,3 +36,17 @@ The first local check had 142 gigs, 120 lineups, four gigs with reconciled artis
 Run `node scripts/audit-independent.mjs --refresh --enrich` against the local preview. Add `--hosted` for the private deployed site; the script requests its supported Sites service credential through hidden stdin. It saves a dated report and checks seven contrasting tastes with live Qloo seeds. It never writes the credential.
 
 The local report is [independent-local.json](independent-local.json). Nujabes leads with Skaai, Slayer with DEXCORE, and Fontaines D.C. with its own vinyl editions. The independent-gallery case includes PARCEL and WISH LESS. Artist-name reconciliation can still confuse namesakes, genre matching is coarser than musical taste, and translation is incomplete for some source text. No quality-uplift percentage is claimed.
+
+## Published verification
+
+The [hosted report](independent-published.json) checks all seven tastes against the deployed app. CIBONE timed out on the initial run and succeeded on a second read. All 39 independent records are now in the hosted catalog; BEAMS returned 520/403 and remains unavailable. The current catalog has 608 records, including 178 gigs, 18 exhibitions and 58 pop-ups. These totals include existing sources and should not be described as newly added events.
+
+| Hosted music coverage | Before refresh | After backfill |
+| --- | ---: | ---: |
+| Gigs with lineups | 120 | 178 |
+| Gigs with Qloo artist name matches | 12 | 71 |
+| Gigs with genre evidence | 16 | 94 |
+
+All 178 current gigs have now had their full official programmes read. Older records did not track full-page status, so the previous zero in that field does not prove that no pages had ever been read. Sold-out shows found during the backfill are excluded.
+
+The browser check also caught a Japanese ambient guitar duo named Lakeside being linked to an American funk band. A sole artist's identity now remains unresolved when its Qloo genre evidence conflicts with the official programme. Fashion pop-ups keep product prices in source evidence without treating them as admission prices. The final suite passed 168 tests, type checking and a production build.

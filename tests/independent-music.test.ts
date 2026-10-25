@@ -8,8 +8,10 @@ import {interestMatch} from '../lib/interest-match.ts';
 import {rankOpportunities,type Opportunity,type Preferences} from '../lib/opportunities.ts';
 import {build} from 'esbuild';
 import {inCatalogCategory} from '../lib/catalog-categories.ts';
+import {priceContext} from '../lib/price-context.ts';
 // artist-matching uses runtime aliases, so exercise its export through the same bundled import used below.
 const at='2026-10-25T04:00:00Z',now=new Date(at);
+test('fashion pop-up product prices cannot become admission or budget constraints',()=>{const o={...gig('design','CIBONE'),kind:'popup' as const,price:462000,details:extractEventDetails('Eclipse Shelf ¥462,000','https://www.cibone.com/topics_detail.html?info_id=1')};const fixed=priceContext(o);assert.equal(fixed.price,null);assert.equal(fixed.details?.priceCeiling,null);assert.equal(fixed.details?.prices.length,1);});
 test('venue menu cheese is not a rock genre',()=>{assert.deepEqual(extractEventDetails('ロックフォールのテリーヌとアカシアはちみつのアイス','https://www.cottonclubjapan.co.jp/jp/sp/show/').genres,[]);});
 const gig=(id:string,source='A'):Opportunity=>({id,title:id,source,kind:'gig',url:'https://www.unit-tokyo.com/schedule/'+id+'/',description:'',location:'Tokyo',category:'music',checkedAt:at,start:'2026-11-01',end:'2026-11-01',price:null,priceLabel:'Check',availability:'Check'});
 test('vinyl feed distinguishes original listing publication from an update or invented release date',()=>{

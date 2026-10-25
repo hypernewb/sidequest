@@ -1,4 +1,5 @@
 import {plainText} from './announcements.ts';
+import {priceContext} from './price-context.ts';
 import {readAnnouncement,translateJapanese,officialHost} from './announcement-reader.ts';
 import {extractEventDetails,type EventDetails} from './event-detail-parser.ts';
 import type {Opportunity,Preferences} from './opportunities.ts';
@@ -32,7 +33,7 @@ export async function enrichOne(url:string,fetcher:typeof fetch=fetch,full=false
   return d;
  })();pending.set(url,work);try{return await work;}finally{pending.delete(url);}
 }
-export function withDetails(o:Opportunity,d:EventDetails):Opportunity{if(o.kind==='gig'&&!d.artists.length&&o.details?.artists.length)d={...d,artists:o.details.artists};return {...o,details:d,price:d.priceCeiling,priceLabel:d.prices.length?d.prices.slice(0,3).join(' · '):o.priceLabel,category:o.category+' '+d.genres.map(g=>g.name).join(' '),availability:o.availability+(d.status==='cancelled'?' · Official page says cancelled.':d.status==='sold_out'?' · Official page says sold out.':''),detailStatus:'read'};}
+export function withDetails(o:Opportunity,d:EventDetails):Opportunity{if(o.kind==='gig'&&!d.artists.length&&o.details?.artists.length)d={...d,artists:o.details.artists};return priceContext({...o,details:d,price:d.priceCeiling,priceLabel:d.prices.length?d.prices.slice(0,3).join(' · '):o.priceLabel,category:o.category+' '+d.genres.map(g=>g.name).join(' '),availability:o.availability+(d.status==='cancelled'?' · Official page says cancelled.':d.status==='sold_out'?' · Official page says sold out.':''),detailStatus:'read'});}
 export async function enrichCandidates(items:Opportunity[],p:Preferences,fetcher:typeof fetch=fetch,reuseTranslations=false){
  items=items.map(o=>{const c=cache.get(o.url);return c&&Date.now()-c.at<1800000&&!o.details?withDetails(o,c.details):o;});
  const dates=dateWindow(p);const eligible=items.filter(o=>!(reuseTranslations&&o.details?.translation==='translated')&&!(o.details&&Date.now()-Date.parse(o.details.checkedAt)<1800000)&&o.kind!=='place'&&o.source!=='Fever'&&o.source!=='Official catalog'&&dates.some(d=>d>=(o.start||d)&&d<=(o.end||o.start||d))&&!p.exclude.includes(o.id)&&(p.format!=='places')&&(p.format!=='drops'||o.kind==='release'||o.kind==='popup')&&(p.intent!=='music'||o.kind==='gig')&&(!['collect','play'].includes(p.intent)||o.kind!=='gig'));
