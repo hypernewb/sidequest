@@ -171,3 +171,7 @@ Codex desk ratings, 1–5. The last column is a separate coverage penalty. No hu
 The current app asks one optional activity question after resolving a seed, and any returned route must contain that activity. Matching dated exhibitions and pop-ups affect selection before route planning. Separate upcoming event/release leads can appear outside the walk. A single useful find remains visible when no compatible loop fits.
 
 Stale catalogs refresh on demand, and expanded-source events now receive exact artist reconciliation. A live check recovered 189 records across 13 sources. Artist graph associations cannot qualify conflicting genres; the repaired live check keeps DEXCORE for Slayer and rejects it for Nujabes, MUJI and the other tested seeds. These are functional findings, not a new relevance uplift claim. See [the repair review and remaining gaps](evaluation/QUEST-EVENT-REPAIR.md). The historical benchmark above retains its original conditions and scores.
+
+## Catalog population and shared taste
+
+The event browser now opens on the saved catalog, with category counts and editable named interests. Dated Bandai products, MEDICOM preorders, Animate Tokyo pop-ups and Midtown events join the existing source readers. Recent releases retain their actual launch dates; expired buying windows are removed. The legacy drops view reads the shared catalog. See [the population and matching review](evaluation/CATALOG-POPULATION.md) and [the live contrast audit](evaluation/catalog-population-local.json). These checks do not establish a human-rated recommendation uplift.

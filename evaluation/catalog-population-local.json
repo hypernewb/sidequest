@@ -1,0 +1,576 @@
+{
+  "at": "2026-10-25T04:20:04.783Z",
+  "environment": "local",
+  "inventory": {
+    "total": 432,
+    "byKind": {
+      "exhibition": 14,
+      "gig": 142,
+      "popup": 43,
+      "event": 10,
+      "release": 223
+    },
+    "bySource": {
+      "Taka Ishii Gallery": 2,
+      "U.F.O.CLUB": 7,
+      "Cotton Club": 20,
+      "Tower Records Shibuya": 3,
+      "Shindaita FEVER": 38,
+      "WWW / WWW X": 67,
+      "Shibuya PARCO": 20,
+      "mograg gallery": 2,
+      "UNIT / SALOON": 4,
+      "21_21 DESIGN SIGHT": 2,
+      "LIQUIDROOM": 6,
+      "Daikanyama T-Site": 12,
+      "Laforet Harajuku": 4,
+      "MEDICOM TOY preorders": 8,
+      "Animate Tokyo pop-ups": 17,
+      "Tokyo Midtown": 4,
+      "BANDAI SPIRITS": 213,
+      "PR Times · issuer press release": 1,
+      "MEDICOM TOY": 2
+    },
+    "withArtists": 4,
+    "withGenres": 18,
+    "olderThanADay": 3
+  },
+  "results": [
+    {
+      "label": "Browse",
+      "milliseconds": 82,
+      "total": 411,
+      "returned": 411,
+      "personal": 0,
+      "kinds": {
+        "popup": 41,
+        "exhibition": 13,
+        "event": 10,
+        "release": 224,
+        "gig": 123
+      },
+      "first": [
+        {
+          "title": "UOOYAA",
+          "kind": "popup",
+          "source": "Laforet Harajuku",
+          "start": "2025-10-04",
+          "end": "2026-10-31",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Project Exhibition \"Learning from Hojoki: Small Architecture that Weaves Life\"",
+          "kind": "exhibition",
+          "source": "21_21 DESIGN SIGHT",
+          "start": "2026-08-28",
+          "end": "2027-01-11",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "LOUVRE meets TOKYO MIDTOWN",
+          "kind": "event",
+          "source": "Tokyo Midtown",
+          "start": "2026-09-09",
+          "end": "2026-12-13",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Digital Monster COLOR · DIGIMON BEATBREAK EDITION",
+          "kind": "release",
+          "source": "Official catalog",
+          "start": "2026-09-27",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window.",
+            "Source last checked 2026-10-23. Recheck the official page."
+          ]
+        },
+        {
+          "title": "30th anniversary\n蘭寿とむ 1st LIVE",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-10-25",
+          "end": "2026-10-26",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "YEN TOWN MARKET",
+          "kind": "popup",
+          "source": "Shibuya PARCO",
+          "start": "2026-09-03",
+          "end": "2026-11-01",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Pokémon",
+      "milliseconds": 371,
+      "total": 411,
+      "returned": 411,
+      "personal": 14,
+      "kinds": {
+        "release": 224,
+        "gig": 123,
+        "popup": 41,
+        "exhibition": 13,
+        "event": 10
+      },
+      "first": [
+        {
+          "title": "Pokémon MEGA Special Deck Set",
+          "kind": "release",
+          "source": "Official catalog",
+          "start": "2026-11-13",
+          "end": "2026-11-13",
+          "match": "taste",
+          "reasons": [
+            "Names Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Source last checked 2026-10-23. Recheck the official page."
+          ]
+        },
+        {
+          "title": "Pokemon Fluffy Plush Animals ~ Miu Sakebushippo ~",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-14",
+          "end": "2026-10-14",
+          "match": "taste",
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokemon Focus [Shigata by Region] Plush Toy ~ Yadon Yadon (Galar Shigata) ~",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-14",
+          "end": "2026-10-14",
+          "match": "taste",
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokemon Stuffed Toy ~ Metamon ~ Amazing ver.",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-15",
+          "end": "2026-10-15",
+          "match": "taste",
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokemon Mechumo Stuffed Toy ~ Biktini ~",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-22",
+          "end": "2026-10-22",
+          "match": "taste",
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Check out the Pokémon Fugu Tail! Stuffed Animal ~ Human Lizard Lai Chiu ~",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-22",
+          "end": "2026-10-22",
+          "match": "taste",
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Gundam",
+      "milliseconds": 352,
+      "total": 411,
+      "returned": 411,
+      "personal": 3,
+      "kinds": {
+        "release": 224,
+        "gig": 123,
+        "popup": 41,
+        "exhibition": 13,
+        "event": 10
+      },
+      "first": [
+        {
+          "title": "GUNDAM UNIVERSE ZGMF-X10A FREEDOM GUNDAM RENEWAL",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "match": "taste",
+          "reasons": [
+            "Names Gundam · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "GUNDAM UNIVERSE XXXG-00W0 WING GUNDAM ZERO(EW) RENEWAL",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "match": "taste",
+          "reasons": [
+            "Names Gundam · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "GUNDAM UNIVERSE MS-06S CHAR'S ZAKU II RENEWAL",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "match": "taste",
+          "reasons": [
+            "Names Gundam · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "DEXCORE",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "UOOYAA",
+          "kind": "popup",
+          "source": "Laforet Harajuku",
+          "start": "2025-10-04",
+          "end": "2026-10-31",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Project Exhibition \"Learning from Hojoki: Small Architecture that Weaves Life\"",
+          "kind": "exhibition",
+          "source": "21_21 DESIGN SIGHT",
+          "start": "2026-08-28",
+          "end": "2027-01-11",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Nujabes",
+      "milliseconds": 344,
+      "total": 123,
+      "returned": 123,
+      "personal": 2,
+      "kinds": {
+        "gig": 123
+      },
+      "first": [
+        {
+          "title": "WOLFGANG HAFFNER TRIO",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-10-27",
+          "end": "2026-10-27",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Published genre or resolved artist matches jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "荒谷翔大 — 1st Full Album “TASOGARE SOUL” Release One Man Live Tour",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "start": "2026-11-03",
+          "end": "2026-11-03",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Published genre or resolved artist matches soul · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "DEXCORE",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "『FLAG FES -2nd Anniversary-』 — おやすみホログラム 月刊PAM さくまる。 AFTERS diig",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-11-04",
+          "end": "2026-11-04",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "moon drop FC TOUR “MAISON MOONDROP 住人会 vol.2”",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "【BEAT MANIA!】",
+          "kind": "gig",
+          "source": "U.F.O.CLUB",
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Slayer",
+      "milliseconds": 335,
+      "total": 123,
+      "returned": 123,
+      "personal": 2,
+      "kinds": {
+        "gig": 123
+      },
+      "first": [
+        {
+          "title": "DEXCORE",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Verified Qloo artist dexcore — Metal, Metalcore, Melodic Death Metal",
+            "Published genre or resolved artist matches metal · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "砂上の楼閣47 狐疑逡巡 牧歌コアパンクの嵐 — fOUL STORM OF VOID",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-11-03",
+          "end": "2026-11-03",
+          "match": "taste",
+          "reasons": [
+            "Fits: hear live music",
+            "Source matches: Punk, metal & loud guitars",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "30th anniversary\n蘭寿とむ 1st LIVE",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-10-25",
+          "end": "2026-10-26",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Activity match only; the source does not establish your preferred style.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "moon drop FC TOUR “MAISON MOONDROP 住人会 vol.2”",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Activity match only; the source does not establish your preferred style.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "【BEAT MANIA!】",
+          "kind": "gig",
+          "source": "U.F.O.CLUB",
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Activity match only; the source does not establish your preferred style.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "lilbesh ramko with Friends / トップシークレットマン / gummyboy / swetty / ODETRASH / VaVa / krynX -Produced by krynX Set- / eijin / the bercedes menz / Le Makeup / SleepInside / Siero / iga / cephalo / MADEINBEN10 / otuyyuto / ksr:3 / Jairo nark / glico / DJ melody — WWW & WWW X Anniversaries \"LYRICADE\"",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "Fits: hear live music",
+            "Activity match only; the source does not establish your preferred style.",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Art",
+      "milliseconds": 51,
+      "total": 17,
+      "returned": 17,
+      "personal": 0,
+      "kinds": {
+        "exhibition": 13,
+        "event": 2,
+        "popup": 2
+      },
+      "first": [
+        {
+          "title": "Project Exhibition \"Learning from Hojoki: Small Architecture that Weaves Life\"",
+          "kind": "exhibition",
+          "source": "21_21 DESIGN SIGHT",
+          "start": "2026-08-28",
+          "end": "2027-01-11",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "LOUVRE meets TOKYO MIDTOWN",
+          "kind": "event",
+          "source": "Tokyo Midtown",
+          "start": "2026-09-09",
+          "end": "2026-12-13",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "【フェア】アダムス亜里咲展 『BITTERSWEET』",
+          "kind": "popup",
+          "source": "Daikanyama T-Site",
+          "start": "2026-10-16",
+          "end": "2026-10-29",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "『深夜食堂』と『かもめ食堂』展 フードスタイリスト・ 飯島奈美さん20年の仕事と。",
+          "kind": "exhibition",
+          "source": "Shibuya PARCO",
+          "start": "2026-10-02",
+          "end": "2026-11-08",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "シンガポールのジュエリーブランド「RISIS」、本物の蘭から生まれたジュエリーを大阪へ　創業50周年の年に、なんばパークスでポップアップストア",
+          "kind": "popup",
+          "source": "PR Times · issuer press release",
+          "start": "2026-10-24",
+          "end": "2026-11-30",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window.",
+            "Source last checked 2026-10-23. Recheck the official page."
+          ]
+        },
+        {
+          "title": "薬指ささく個展『名前をつけてやる』",
+          "kind": "exhibition",
+          "source": "mograg gallery",
+          "start": "2026-10-03",
+          "end": "2026-10-25",
+          "match": "activity",
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    }
+  ],
+  "interpretation": "Functional evidence from live official records. These are not independent human relevance ratings."
+}

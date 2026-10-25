@@ -27,6 +27,7 @@ import {
   type Place,
 } from '@/lib/discovery';
 import { TasteDiscovery } from '@/components/taste-discovery';
+import {writeBrowserTaste} from '@/lib/browser-taste';
 import { EMPTY_TASTE, selectedTopics, type TasteProfile } from '@/lib/taste';
 import { DiscoveryMap } from '@/components/discovery-map';
 
@@ -171,6 +172,7 @@ export default function Home() {
 
   function applyTaste(profile: TasteProfile, anchors: Interest[]) {
     setTaste(profile);
+    try{writeBrowserTaste(localStorage,profile.exploration?.picks.map(p=>({id:p.id,name:p.name,type:p.type,feeling:p.feeling}))||anchors.map(p=>({...p,feeling:"love" as const})));}catch{}
     if (anchors.length) {
       setInterests(anchors);
       setChanged(true);
