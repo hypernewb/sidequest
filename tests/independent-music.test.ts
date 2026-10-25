@@ -8,6 +8,7 @@ import {interestMatch} from '../lib/interest-match.ts';
 import {rankOpportunities,type Opportunity,type Preferences} from '../lib/opportunities.ts';
 import {build} from 'esbuild';
 import {inCatalogCategory} from '../lib/catalog-categories.ts';
+// artist-matching uses runtime aliases, so exercise its export through the same bundled import used below.
 const at='2026-10-25T04:00:00Z',now=new Date(at);
 test('venue menu cheese is not a rock genre',()=>{assert.deepEqual(extractEventDetails('ロックフォールのテリーヌとアカシアはちみつのアイス','https://www.cottonclubjapan.co.jp/jp/sp/show/').genres,[]);});
 const gig=(id:string,source='A'):Opportunity=>({id,title:id,source,kind:'gig',url:'https://www.unit-tokyo.com/schedule/'+id+'/',description:'',location:'Tokyo',category:'music',checkedAt:at,start:'2026-11-01',end:'2026-11-01',price:null,priceLabel:'Check',availability:'Check'});
@@ -67,7 +68,8 @@ test('a record-store name does not make an anime merchandise pop-up a vinyl fair
  const o={...gig('Tower Records anime pop-up'),kind:'popup' as const,category:'anime goods music record'};assert.equal(inCatalogCategory(o,'vinyl'),false);assert.equal(inCatalogCategory({...o,title:'Record fair',category:'music vinyl record fair'},'vinyl'),true);
 });
 test('Qloo genre families cannot turn a metal guitarist into soul or a post-punk band into synthpop',async()=>{
- const b=await build({stdin:{contents:"export {genreTags} from './lib/artist-matching.ts'",resolveDir:process.cwd(),loader:'ts'},bundle:true,write:false,format:'esm',platform:'node'});const {genreTags}=await import('data:text/javascript;base64,'+Buffer.from(b.outputFiles[0].text).toString('base64'));
+ const b=await build({stdin:{contents:"export {genreTags,artistFitsProgramme} from './lib/artist-matching.ts'",resolveDir:process.cwd(),loader:'ts'},bundle:true,write:false,format:'esm',platform:'node'});const {genreTags,artistFitsProgramme}=await import('data:text/javascript;base64,'+Buffer.from(b.outputFiles[0].text).toString('base64'));
  assert.deepEqual(genreTags({tags:[{tag_id:'urn:tag:genre:hard_rock',name:'Hard Rock'},{tag_id:'urn:tag:genre:neo_classical_metal',name:'Neo-classical Metal'},{tag_id:'urn:tag:subgenre:qloo:soul',name:'Soul'}]}),['Hard Rock','Neo-classical Metal']);
+ assert.equal(artistFitsProgramme({...gig('Lakeside'),details:{artists:['Lakeside'],genres:[{name:'ambient'}]}},{genres:['Funk','Soul']}),false);
  const seed={id:'00000000-0000-4000-8000-000000000001',name:'Aphex Twin',type:'artist',taste:[{name:'Electronic',weight:1}]};const o={...gig('IQ99'),artists:[{input:'Pocket',name:'Pocket',id:'00000000-0000-4000-8000-000000000002',genres:['Electronic']}]};assert.equal(interestMatch(o,seed),null);
 });
