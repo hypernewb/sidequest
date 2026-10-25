@@ -5,9 +5,14 @@ import {catalogDrop} from '../lib/drop-catalog.ts';
 import {rankOpportunities,type Opportunity,type Preferences} from '../lib/opportunities.ts';
 import {readBrowserTaste,writeBrowserTaste} from '../lib/browser-taste.ts';
 import {enrichOne} from '../lib/event-enrichment.ts';
+import {catalogTitle} from '../lib/catalog-labels.ts';
 const now=new Date('2026-10-25T03:00:00Z'),at=now.toISOString();
 const p:Preferences={intent:'mix',direction:'any',format:'dated',date:'2026-10-25',days:30,budget:'any',unknownPrice:true,seeds:[],exclude:[]};
 const item=(id:string,patch:Partial<Opportunity>={}):Opportunity=>({id,title:id,kind:'release',source:'Official',url:'https://example.org/'+id,description:'',location:'Japan retailers',online:true,category:'character goods',start:'2026-10-24',end:'2026-10-24',checkedAt:at,price:null,priceLabel:'Unknown',availability:'Check stock',...patch});
+test('product labels preserve character identity even when a cached machine translation mangles it',()=>{
+ const title=catalogTitle({source:'BANDAI SPIRITS',title:'ポケットモンスター もふぐっと しっぽみてみて！ぬいぐるみ～ヒトカゲ・ライチュウ～',englishTitle:'Human Lizard'});
+ assert.match(title,/Pokémon.*plush.*Charmander, Raichu/);assert.ok(!title.includes('Human Lizard'));
+});
 test('release dates remain exact while recent releases stay browseable; ended preorders do not',()=>{
  const release=item('recent');assert.ok(catalogCurrent(release,now));assert.ok(overlapsWindow(release,['2026-10-25']));assert.equal(release.end,'2026-10-24');
  assert.equal(catalogCurrent(item('old',{start:'2026-10-01',end:'2026-10-01'}),now),false);

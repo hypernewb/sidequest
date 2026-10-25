@@ -14,7 +14,7 @@ Ranking shares Japanese/English subject matching and genre evidence with the que
 
 A separate bug allowed an anchored U.F.O.CLUB detail request to read the whole monthly calendar. It now scopes the read to the exact day, preventing another night's jazz from leaking into a punk show.
 
-Visible title translation runs after the list loads and persists successes. It remains machine translation with the original available; the public translation service can be unavailable or transliterate names poorly. Neither translation nor enrichment renews source freshness.
+Visible title translation runs after the list loads and persists successes. Known product formats and character names use concise English labels while unmapped variants retain their source wording. Other titles remain machine translation with the original available; the public translation service can be unavailable or transliterate names poorly. Neither translation nor enrichment renews source freshness.
 
 ## Validation and remaining coverage gaps
 

@@ -1,3 +1,4 @@
+import {productLabel} from './catalog-labels.ts';
 import {plainText,decodeText} from './announcements.ts';
 import {publicSource,rememberDetail,withDetails} from './event-enrichment.ts';
 import {dotRange} from './expanded-sources.ts';
@@ -19,7 +20,7 @@ export function parseSpirits(html:string,at=new Date().toISOString()){
    if(!path||!title)continue;
    const lottery=/一番くじ/.test(card),prize=/プライズ/.test(card);
    const o=entry('BANDAI SPIRITS',new URL(decodeText(path),'https://www.bandaispirits.co.jp').href,title,title+'\n'+price,start,start,'release','Japan · participating retailers',prize?'Prize-machine release':lottery?'In-store lottery release':'Release date',at);
-   o.category+=' '+(lottery?'lottery':prize?'arcade prize':'model kit figure');o.priceLabel=price||'Prize / retailer conditions vary';out.push(o);
+   o.englishTitle=productLabel(o)||undefined;o.category+=' '+(lottery?'lottery':prize?'arcade prize':'model kit figure');o.priceLabel=price||'Prize / retailer conditions vary';out.push(o);
   }
  }
  return out;
