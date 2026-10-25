@@ -37,7 +37,7 @@ export async function POST(req:Request){
   if(catalog.unavailable)quest.notes.push('No fresh event catalog was available for this dispatch. This route uses checked venues; it does not claim a current event or release.');
   for(const stop of quest.stops){const programme=programmeFor(stop.item,quest.date,records,new Date(),e=>eventFit(e,seed)?.score||0);if(!programme)continue;stop.programme={title:programme.englishTitle||programme.title,url:programme.url,start:programme.start!,end:programme.end||programme.start!,priceLabel:programme.priceLabel};stop.mission=programme.kind==='exhibition'?`Visit ${stop.programme.title}. Give one work five unhurried minutes. Notice what holds your attention before you read the label. Keep one image or artist's name for later.`:`The official calendar lists ${stop.programme.title}. `+stop.mission;}
   reportRun(hooks,'synthesis',quest.stops.length?'complete':'blocked',quest.stops.length?quest.stops.length===1?'One supported find. No complete walking route fit.':'Dossier ready. '+quest.stops.length+' stops, a return walk and venue sources.':'No complete route to write. Your seed is kept.');
-  const leads=eventLeads(records,seed,{...preferences,date:quest.date},new Date()).filter(e=>!quest.stops.some(s=>s.programme?.url===e.url));
+  const leads=eventLeads(records,seed,{...preferences,date:quest.date},new Date(),3,data.focus).filter(e=>!quest.stops.some(s=>s.programme?.url===e.url));
   if(!quest.stops.length){quest.notes.push(data.focus==='any'?'The current catalog could not support a complete walk for this seed.':'No checked walking route included the activity you chose. Try another direction or keep the seed without a direction.');}
   quest.run=[...events];return {quest,leads};
  }
