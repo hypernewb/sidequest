@@ -1,4 +1,11 @@
 import test from 'node:test';
+test('retro hardware browsing and arcade play form a short quest, while two hardware shops alone do not',()=>{
+ const now=new Date('2026-10-25T02:00:00Z');
+ const p:Preferences={intent:'mix',direction:'any',format:'places',date:'2026-10-25',days:1,budget:'any',unknownPrice:true,seeds:[],exclude:[]};
+ const rows=[false,true].map((arcade,i)=>({id:String(i),title:'Games '+i,kind:'place',source:'Qloo',url:'https://example.com/'+i,description:'',location:'Tokyo',checkedAt:now.toISOString(),price:null,priceLabel:'Unknown',availability:'',category:'games',lat:35.699,lon:139.770+i*.002,hours:{sunday:[{opens:'12:00',closes:'20:00'}]},curation:{role:'play',area:'Akihabara',tags:arcade?['games','arcade']:['games','computers'],mission:'Try a game',doorNotes:[],source:'https://example.com',reviewedAt:now.toISOString(),matchBasis:'genre_bridge',matchStrength:'anchor',tasteScore:80,matchedTags:['games']}} as Opportunity));
+ assert.equal(planScout(rows,p,now).stops.length,2);
+ assert.equal(planScout(rows.map(o=>({...o,curation:{...o.curation!,tags:['games','computers']}})),p,now).stops.length,1);
+});
 import assert from 'node:assert/strict';
 import {VENUES} from '../lib/curated-venues.ts';
 import {tasteThreads,culturalOverlap,culturalFit} from '../lib/curated-taste.ts';

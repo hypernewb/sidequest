@@ -23,7 +23,7 @@ export function prepareScout(input:Opportunity[],p:Preferences,now=new Date()){
 export function planScout(input:Opportunity[],p:Preferences,now=new Date()):ScoutPlan{
  const {date,start,notes,tokyoNow,pool}=prepareScout(input,p,now);
  const focusRequired=pool.some(o=>o.curation?.focusRequested);
- const windows=new Map(pool.map(o=>[o.id,openingWindows(o.hours||{},date)])),role=(o:Opportunity)=>o.curation?.role||o.category;
+ const windows=new Map(pool.map(o=>[o.id,openingWindows(o.hours||{},date)])),role=(o:Opportunity)=>o.curation?.role==='play'&&o.curation.tags.includes('arcade')?'arcade':o.curation?.role||o.category;
  const legs=new Map<string,{metres:number;minutes:number}>();for(const a of pool)for(const b of pool)if(a.id!==b.id){const metres=Math.round(distance(a.lat!,a.lon!,b.lat!,b.lon!)*1.35);legs.set(a.id+'|'+b.id,{metres,minutes:Math.ceil(metres/4000*60)+5});}
  let best:ScoutStop[]=[],bestValue=-Infinity,bestWalk=0,bestMetres=0,returnMinutes=0;
  for(const a of pool)for(const b of pool){if(a.id===b.id||role(b)==='coffee'||role(a)==='listen')continue;const ab=legs.get(a.id+'|'+b.id)!;if(ab.metres>1500)continue;

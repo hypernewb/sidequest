@@ -202,7 +202,7 @@
                 ],
                 "doorNotes": [],
                 "source": "https://www.hmv.co.jp/store/SHU/",
-                "reviewedAt": "2026-10-24T16:48:53.420Z",
+                "reviewedAt": "2026-10-24T16:48:53.42Z",
                 "matchBasis": "genre_bridge",
                 "hoursBasis": "Qloo weekly hours",
                 "matchedTags": [
@@ -374,7 +374,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · checking resolved artists from the event catalog.",
-            "at": "2026-10-25T05:27:55.700Z"
+            "at": "2026-10-25T05:27:55.7Z"
           },
           {
             "type": "stage",
@@ -673,7 +673,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · ranking curated venues 61–69 of 69.",
-            "at": "2026-10-25T05:27:59.840Z",
+            "at": "2026-10-25T05:27:59.84Z",
             "associations": [
               {
                 "name": "Chillout",
@@ -2210,7 +2210,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · following links into tv show.",
-            "at": "2026-10-25T05:28:10.780Z",
+            "at": "2026-10-25T05:28:10.78Z",
             "associations": [
               {
                 "name": "Heavy Metal",
@@ -2267,7 +2267,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 69.",
-            "at": "2026-10-25T05:28:11.480Z",
+            "at": "2026-10-25T05:28:11.48Z",
             "associations": [
               {
                 "name": "Heavy Metal",
@@ -2381,7 +2381,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 69.",
-            "at": "2026-10-25T05:28:12.180Z",
+            "at": "2026-10-25T05:28:12.18Z",
             "associations": [
               {
                 "name": "Heavy Metal",
@@ -2862,7 +2862,7 @@
                 ],
                 "doorNotes": [],
                 "source": "https://glitchcoffee.com/",
-                "reviewedAt": "2026-10-24T16:39:08.340Z",
+                "reviewedAt": "2026-10-24T16:39:08.34Z",
                 "matchBasis": "entity",
                 "hoursBasis": "Qloo weekly hours",
                 "matchedTags": [
@@ -4085,7 +4085,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 69.",
-            "at": "2026-10-25T05:28:26.720Z",
+            "at": "2026-10-25T05:28:26.72Z",
             "associations": [
               {
                 "name": "Retail",
@@ -4175,7 +4175,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · ranking curated venues 61–69 of 69.",
-            "at": "2026-10-25T05:28:27.460Z",
+            "at": "2026-10-25T05:28:27.46Z",
             "associations": [
               {
                 "name": "Retail",
@@ -4265,7 +4265,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /entities · loading venue coordinates and published schedules.",
-            "at": "2026-10-25T05:28:28.140Z",
+            "at": "2026-10-25T05:28:28.14Z",
             "associations": [
               {
                 "name": "Retail",
@@ -4443,15 +4443,15 @@
       "seed": "Pokemon FireRed Version",
       "focus": "games",
       "status": 200,
-      "seconds": 6,
+      "seconds": 11,
       "quest": {
         "neighborhood": {
           "id": "yanaka",
           "name": "Yanaka / Ueno"
         },
         "date": "2026-10-25",
-        "checkedAt": "2026-10-25T05:28:31.231Z",
-        "tokyoNow": "25 Oct 2026, 14:28",
+        "checkedAt": "2026-10-25T05:31:17.13Z",
+        "tokyoNow": "25 Oct 2026, 14:31",
         "stops": [
           {
             "item": {
@@ -4462,7 +4462,7 @@
               "url": "https://www.beep-shop.com/",
               "description": "retro, games, computers",
               "location": "中栄ビル B1 3 Chome-9-8 Sotokanda Chiyoda City, Tokyo 101-0021 Japan",
-              "checkedAt": "2026-10-25T05:28:31.231Z",
+              "checkedAt": "2026-10-25T05:31:17.13Z",
               "price": null,
               "priceLabel": "Not published",
               "availability": "",
@@ -4541,7 +4541,7 @@
                 "focusRequested": true,
                 "focusMatch": true,
                 "focusReason": "You asked for retro games. This matches the reviewed venue activity.",
-                "sourceReadAt": "2026-10-25T05:28:31.231Z"
+                "sourceReadAt": "2026-10-25T05:31:17.13Z"
               },
               "score": 0,
               "reasons": [
@@ -4549,8 +4549,8 @@
               ],
               "matchLevel": "activity"
             },
-            "arrival": "14:45",
-            "departure": "15:30",
+            "arrival": "15:00",
+            "departure": "15:45",
             "hours": "11:00–20:00",
             "travelMinutes": 0,
             "distanceMetres": 0,
@@ -4558,7 +4558,7 @@
             "mission": "Read the labels on one piece of older game hardware. Look for a design constraint that explains how people played with it."
           }
         ],
-        "brief": "One supported stop on 2026-10-25 at 14:45 JST. No walking loop fit the current evidence.",
+        "brief": "One supported stop on 2026-10-25 at 15:00 JST. No walking loop fit the current evidence.",
         "map": "https://www.google.com/maps/search/?api=1&query=35.701510899999995,139.7708645",
         "examined": 54,
         "eligible": 36,
@@ -4590,28 +4590,28 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /search · resolving Pokemon FireRed Version.",
-            "at": "2026-10-25T05:28:30.281Z"
+            "at": "2026-10-25T05:31:15.281Z"
           },
           {
             "type": "stage",
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · checking resolved artists from the event catalog.",
-            "at": "2026-10-25T05:28:30.824Z"
+            "at": "2026-10-25T05:31:15.811Z"
           },
           {
             "type": "stage",
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /entities · reading the seed’s cultural metadata.",
-            "at": "2026-10-25T05:28:31.231Z"
+            "at": "2026-10-25T05:31:17.13Z"
           },
           {
             "type": "stage",
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · following links into movie.",
-            "at": "2026-10-25T05:28:31.534Z",
+            "at": "2026-10-25T05:31:17.881Z",
             "associations": [
               {
                 "name": "2D Sprites",
@@ -4656,7 +4656,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 69.",
-            "at": "2026-10-25T05:28:33.190Z",
+            "at": "2026-10-25T05:31:19.457Z",
             "associations": [
               {
                 "name": "2D Sprites",
@@ -4701,7 +4701,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 69.",
-            "at": "2026-10-25T05:28:33.537Z",
+            "at": "2026-10-25T05:31:20.041Z",
             "associations": [
               {
                 "name": "2D Sprites",
@@ -4746,7 +4746,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 69.",
-            "at": "2026-10-25T05:28:33.897Z",
+            "at": "2026-10-25T05:31:20.375Z",
             "associations": [
               {
                 "name": "2D Sprites",
@@ -4791,7 +4791,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /v2/insights · ranking curated venues 61–69 of 69.",
-            "at": "2026-10-25T05:28:34.261Z",
+            "at": "2026-10-25T05:31:20.715Z",
             "associations": [
               {
                 "name": "2D Sprites",
@@ -4836,7 +4836,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /entities · loading venue coordinates and published schedules.",
-            "at": "2026-10-25T05:28:34.607Z",
+            "at": "2026-10-25T05:31:21.039Z",
             "associations": [
               {
                 "name": "2D Sprites",
@@ -4881,7 +4881,7 @@
             "stage": "taste",
             "status": "running",
             "detail": "Qloo /entities · loading venue coordinates and published schedules.",
-            "at": "2026-10-25T05:28:34.918Z",
+            "at": "2026-10-25T05:31:21.798Z",
             "associations": [
               {
                 "name": "2D Sprites",
@@ -4926,7 +4926,7 @@
             "stage": "taste",
             "status": "complete",
             "detail": "Found 54 candidates in the curated catalog. 3 lateral cultural links returned by Qloo.",
-            "at": "2026-10-25T05:28:35.259Z",
+            "at": "2026-10-25T05:31:22.088Z",
             "associations": [
               {
                 "name": "2D Sprites",
@@ -4971,101 +4971,62 @@
             "stage": "operations",
             "status": "running",
             "detail": "Checking Tokyo time and the published opening windows.",
-            "at": "2026-10-25T05:28:35.259Z"
+            "at": "2026-10-25T05:31:22.088Z"
           },
           {
             "type": "stage",
             "stage": "operations",
             "status": "complete",
-            "detail": "25 Oct 2026, 14:28 JST · 36 of 54 candidates pass hours, location and price checks for 2026-10-25.",
-            "at": "2026-10-25T05:28:35.259Z"
+            "detail": "25 Oct 2026, 14:31 JST · 36 of 54 candidates pass hours, location and price checks for 2026-10-25.",
+            "at": "2026-10-25T05:31:22.088Z"
           },
           {
             "type": "stage",
             "stage": "cluster",
             "status": "running",
             "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.",
-            "at": "2026-10-25T05:28:35.259Z"
+            "at": "2026-10-25T05:31:22.088Z"
           },
           {
             "type": "stage",
             "stage": "cluster",
             "status": "running",
             "detail": "Reading venue pages for BEEP Akihabara.",
-            "at": "2026-10-25T05:28:35.259Z"
+            "at": "2026-10-25T05:31:22.088Z"
           },
           {
             "type": "stage",
             "stage": "cluster",
             "status": "running",
             "detail": "Read BEEP Akihabara and applied any supported dated hours.",
-            "at": "2026-10-25T05:28:35.723Z"
+            "at": "2026-10-25T05:31:22.737Z"
           },
           {
             "type": "stage",
             "stage": "cluster",
             "status": "complete",
             "detail": "Selected BEEP Akihabara. About 0 minutes walking including the return.",
-            "at": "2026-10-25T05:28:35.723Z"
+            "at": "2026-10-25T05:31:22.737Z"
           },
           {
             "type": "stage",
             "stage": "synthesis",
             "status": "running",
             "detail": "Composing the mission, timetable and sourced door notes.",
-            "at": "2026-10-25T05:28:35.723Z"
+            "at": "2026-10-25T05:31:22.737Z"
           },
           {
             "type": "stage",
             "stage": "synthesis",
             "status": "complete",
             "detail": "One supported find. No complete walking route fit.",
-            "at": "2026-10-25T05:28:35.723Z"
+            "at": "2026-10-25T05:31:22.737Z"
           }
         ]
       },
-      "leads": [
-        {
-          "id": "release-source:https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2859903&grp_id=10000:2026-10-27",
-          "title": "『ぽこ あ ポケモン』 シリコンバンド付きアクリルブロック",
-          "url": "https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2859903&grp_id=10000",
-          "location": "Japan · participating retailers",
-          "start": "2026-10-27",
-          "end": "2026-10-27",
-          "priceLabel": "Prize / retailer conditions vary",
-          "reason": "Same franchise or creator: Pokémon. This does not confirm this particular edition or stock.",
-          "times": [],
-          "kind": "release",
-          "online": true
-        },
-        {
-          "id": "release-source:https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2859904&grp_id=10000:2026-10-27",
-          "title": "『ぽこ あ ポケモン』 ラグマット",
-          "url": "https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2859904&grp_id=10000",
-          "location": "Japan · participating retailers",
-          "start": "2026-10-27",
-          "end": "2026-10-27",
-          "priceLabel": "Prize / retailer conditions vary",
-          "reason": "Same franchise or creator: Pokémon. This does not confirm this particular edition or stock.",
-          "times": [],
-          "kind": "release",
-          "online": true
-        },
-        {
-          "id": "release-source:https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2761144&grp_id=10000:2026-10-27",
-          "title": "Pokémon · plush · ヒバニー",
-          "url": "https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2761144&grp_id=10000",
-          "location": "Japan · participating retailers",
-          "start": "2026-10-27",
-          "end": "2026-10-27",
-          "priceLabel": "Prize / retailer conditions vary",
-          "reason": "Same franchise or creator: Pokémon. This does not confirm this particular edition or stock.",
-          "times": [],
-          "kind": "release",
-          "online": true
-        }
-      ],
+      "leads": [],
       "failures": []
     }
-  ]
+  ],
+  "finalRegressionAt": "2026-10-25T05:31:22.739Z"
 }

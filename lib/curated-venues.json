@@ -122,7 +122,7 @@
   {
     "name": "Record Boy",
     "source": "http://recordboy.shop-pro.jp/",
-    "area": "Shinjuku",
+    "area": "Koenji",
     "role": "dig",
     "tags": [
       "metal",
@@ -180,7 +180,7 @@
       "vinyl"
     ],
     "mission": "Choose a dance record by the label rather than the headliner. Ask where that sound sits in the shop's current selection.",
-    "reviewedAt": "2026-10-24T16:38:51.830Z",
+    "reviewedAt": "2026-10-24T16:38:51.83Z",
     "qlooId": "91F77244-1596-4D27-AA62-2E7FD313BE58",
     "doorNotes": [],
     "eventOnly": false
@@ -407,7 +407,7 @@
       "live"
     ],
     "mission": "Choose a dated event from the programme. Give the unfamiliar act in the lineup your attention before deciding what scene this is.",
-    "reviewedAt": "2026-10-24T16:38:54.150Z",
+    "reviewedAt": "2026-10-24T16:38:54.15Z",
     "qlooId": "B011BC1B-CBFB-44FA-B630-8D6CE74A3979",
     "doorNotes": [],
     "eventOnly": true
@@ -423,7 +423,7 @@
       "live"
     ],
     "mission": "Read the night's lineup and door time first. Stay for one act you cannot place by name alone.",
-    "reviewedAt": "2026-10-24T16:38:54.580Z",
+    "reviewedAt": "2026-10-24T16:38:54.58Z",
     "qlooId": null,
     "doorNotes": [],
     "eventOnly": true
@@ -663,7 +663,7 @@
       "craft"
     ],
     "mission": "Look at a book as a physical object. Find a binding, map or illustration worth seeing at its original size.",
-    "reviewedAt": "2026-10-24T16:39:00.130Z",
+    "reviewedAt": "2026-10-24T16:39:00.13Z",
     "qlooId": "19553736-F9F3-4C54-B62A-D086084215A3",
     "doorNotes": [],
     "eventOnly": false
@@ -983,7 +983,7 @@
       "art"
     ],
     "mission": "Follow one idea through the current exhibition and into its printed material. Keep a question to take back into the street.",
-    "reviewedAt": "2026-10-24T16:42:53.920Z",
+    "reviewedAt": "2026-10-24T16:42:53.92Z",
     "qlooId": "EA753A11-197E-4925-933A-E0B8711E96FD",
     "doorNotes": [],
     "eventOnly": false
@@ -999,7 +999,7 @@
       "craft"
     ],
     "mission": "Choose one ordinary object being reconsidered in the current show. Notice what its display asks you to see differently.",
-    "reviewedAt": "2026-10-24T16:39:07.920Z",
+    "reviewedAt": "2026-10-24T16:39:07.92Z",
     "qlooId": "6E6F123F-29AE-4D81-AEBF-9E1D4C09C849",
     "doorNotes": [],
     "eventOnly": false
@@ -1046,7 +1046,7 @@
       "design"
     ],
     "mission": "Choose one origin you do not normally drink. Keep the tasting note that matches your own experience, not the one you think you should find.",
-    "reviewedAt": "2026-10-24T16:39:08.340Z",
+    "reviewedAt": "2026-10-24T16:39:08.34Z",
     "qlooId": "C8C19ACE-E329-40B9-8012-EE35C094ED3C",
     "doorNotes": [],
     "eventOnly": false
@@ -1253,8 +1253,8 @@
       "games"
     ],
     "mission": "Choose a cabinet by what is happening on screen rather than by the title. Watch someone play, then try to understand one rule yourself.",
-    "reviewedAt": "2026-10-24T16:39:10.995Z",
-    "qlooId": null,
+    "reviewedAt": "2026-10-25T05:35:00Z",
+    "qlooId": "74BFF80D-626E-408F-BAFC-EC0524614C46",
     "doorNotes": [],
     "eventOnly": false
   },
@@ -1301,7 +1301,7 @@
       "design"
     ],
     "mission": "Compare two versions of the same kind of toy. Look for the small change that turns a familiar character into a collector's object.",
-    "reviewedAt": "2026-10-24T16:39:13.440Z",
+    "reviewedAt": "2026-10-24T16:39:13.44Z",
     "qlooId": null,
     "doorNotes": [],
     "eventOnly": false
@@ -1354,7 +1354,7 @@
       "independent"
     ],
     "mission": "Compare the first and last works you see. Look for the change in attention the exhibition asks of you.",
-    "reviewedAt": "2026-10-24T16:42:56.200Z",
+    "reviewedAt": "2026-10-24T16:42:56.2Z",
     "qlooId": "B1599A4E-A2D0-4C1B-AA9C-E19FA2965A6E",
     "doorNotes": [],
     "eventOnly": false
@@ -1532,7 +1532,7 @@
       "rock"
     ],
     "mission": "Choose one older Japanese release and compare it with a reissue. Look for a detail in the sleeve or credits that changes your choice.",
-    "reviewedAt": "2026-10-24T16:48:53.420Z",
+    "reviewedAt": "2026-10-24T16:48:53.42Z",
     "qlooId": "F740AA78-0D92-44F9-B0ED-BA7092306F45",
     "doorNotes": [],
     "eventOnly": false
@@ -1612,7 +1612,7 @@
       "pop"
     ],
     "mission": "Look for the marks that distinguish the artist from their influences. Choose one detail you could recognise again without a label.",
-    "reviewedAt": "2026-10-24T16:48:52.490Z",
+    "reviewedAt": "2026-10-24T16:48:52.49Z",
     "qlooId": "B3DF095F-C3C0-4FC6-A6CB-911FE5A52E68",
     "doorNotes": [],
     "eventOnly": false

@@ -2,6 +2,8 @@ import {distance} from './discovery.ts';
 // Discovery districts are broad buckets, not proof that every pair is walkable.
 // Anchor locations correspond to Little Soul, Gallery Conceal, ICC and SCAI.
 export const NEIGHBORHOODS=[
+ {id:'akihabara',name:'Akihabara',lat:35.699072,lon:139.770917},
+ {id:'koenji',name:'Koenji',lat:35.703501,lon:139.648746},
  {id:'shimokitazawa',name:'Shimokitazawa',lat:35.6632,lon:139.6693},
  {id:'shibuya',name:'Shibuya / Daikanyama',lat:35.6576,lon:139.6988},
  {id:'shinjuku',name:'Shinjuku / Hatagaya',lat:35.6830,lon:139.6868},
