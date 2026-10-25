@@ -6,6 +6,8 @@ const item=(title:string,kind='release',category=''):Opportunity=>({title,kind,c
 test('retro game answers reject franchise plush and homeware but retain software releases',()=>{
  assert.equal(leadFitsActivity(item('Pokémon plush'),'games'),false);
  assert.equal(leadFitsActivity(item('Pokémon rug'),'games'),false);
+ assert.equal(leadFitsActivity(item('Pokémon plush','release','character goods collectibles toys arcade prize'),'games'),false);
+ assert.equal(leadFitsActivity(item('Pokémon ラグマット','release','arcade prize'),'games'),false);
  assert.equal(leadFitsActivity(item('Pokémon FireRed','release','retro game software'),'games'),true);
 });
 test('art and music answers select different kinds of seed-related leads',()=>{

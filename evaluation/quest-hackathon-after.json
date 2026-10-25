@@ -1,0 +1,5071 @@
+{
+  "at": "2026-10-25T05:28:35.837Z",
+  "method": "Current hosted API, current Tokyo time, real Qloo seed resolution. Functional audit, not human quality ratings.",
+  "results": [
+    {
+      "seed": "Nujabes",
+      "focus": "sound",
+      "status": 200,
+      "seconds": 11,
+      "quest": {
+        "neighborhood": {
+          "id": "shibuya",
+          "name": "Shibuya / Daikanyama"
+        },
+        "date": "2026-10-25",
+        "checkedAt": "2026-10-25T05:27:56.584Z",
+        "tokyoNow": "25 Oct 2026, 14:27",
+        "stops": [
+          {
+            "item": {
+              "id": "3AAD60F0-FA59-4B54-8BF3-16DD19B815A8",
+              "title": "Hi-Fi Record Store",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://www.hi-fi.gr.jp/",
+              "description": "jazz, soul, vinyl",
+              "location": "GEMS神宮前 3F 6 Chome-19-17 Jingumae Shibuya, Tokyo 150-0001 Japan",
+              "checkedAt": "2026-10-25T05:27:56.584Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "dig",
+              "signals": [],
+              "lat": 35.663784899999996,
+              "lon": 139.7024669,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "dig",
+                "area": "Shibuya",
+                "mission": "Choose one record for its arrangement or players rather than its headline name. Use the credits as a map to another record.",
+                "tags": [
+                  "jazz",
+                  "soul",
+                  "vinyl"
+                ],
+                "doorNotes": [],
+                "source": "https://www.hi-fi.gr.jp/",
+                "reviewedAt": "2026-10-24T16:43:01.576Z",
+                "matchBasis": "genre_bridge",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "jazz",
+                  "soul"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 160,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for records & listening. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:27:56.584Z"
+              },
+              "score": 0,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "16:00",
+            "departure": "16:45",
+            "hours": "12:00–19:00",
+            "travelMinutes": 0,
+            "distanceMetres": 0,
+            "reason": "You asked for records & listening. This matches the reviewed venue activity. Your Qloo taste tags overlap jazz, soul in the reviewed venue profile.",
+            "mission": "Choose one record for its arrangement or players rather than its headline name. Use the credits as a map to another record."
+          },
+          {
+            "item": {
+              "id": "F740AA78-0D92-44F9-B0ED-BA7092306F45",
+              "title": "HMV record shop Shibuya",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://www.hmv.co.jp/store/SHU/",
+              "description": "vinyl, jazz, rock",
+              "location": "Noa Shibuya, １Ｆ／２Ｆ 36-2 Udagawacho Shibuya, Tokyo 150-0042 Japan",
+              "checkedAt": "2026-10-25T05:27:56.584Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "dig",
+              "signals": [],
+              "lat": 35.6621203,
+              "lon": 139.6972624,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T21:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T21:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T21:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T21:00:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T21:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T21:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T21:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "dig",
+                "area": "Shibuya",
+                "mission": "Choose one older Japanese release and compare it with a reissue. Look for a detail in the sleeve or credits that changes your choice.",
+                "tags": [
+                  "vinyl",
+                  "jazz",
+                  "rock"
+                ],
+                "doorNotes": [],
+                "source": "https://www.hmv.co.jp/store/SHU/",
+                "reviewedAt": "2026-10-24T16:48:53.420Z",
+                "matchBasis": "genre_bridge",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "jazz"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 155,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for records & listening. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:27:56.584Z"
+              },
+              "score": 0,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "17:01",
+            "departure": "17:46",
+            "hours": "11:00–21:00",
+            "travelMinutes": 16,
+            "distanceMetres": 682,
+            "reason": "You asked for records & listening. This matches the reviewed venue activity. Your Qloo taste tags overlap jazz in the reviewed venue profile.",
+            "mission": "Choose one older Japanese release and compare it with a reissue. Look for a detail in the sleeve or credits that changes your choice."
+          },
+          {
+            "item": {
+              "id": "5A623B12-EBF8-4215-A57C-7CA071EF5030",
+              "title": "Bar Music",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://barmusic.buyshop.jp/about",
+              "description": "jazz, soul, coffee, vinyl",
+              "location": "5F 1 Chome-6-7 Dogenzaka Shibuya, Tokyo 150-0043 Japan",
+              "checkedAt": "2026-10-25T05:27:56.584Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "listen",
+              "affinity": 0.6810336628178374,
+              "signals": [
+                "Nujabes"
+              ],
+              "lat": 35.6577398,
+              "lon": 139.6990811,
+              "hours": {
+                "monday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "sunday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "listen",
+                "area": "Shibuya",
+                "mission": "Settle in for the selection rather than asking for a favourite immediately. Keep one track name for the walk home.",
+                "tags": [
+                  "jazz",
+                  "soul",
+                  "coffee",
+                  "vinyl"
+                ],
+                "doorNotes": [
+                  "Dogenzaka 1-6-7, fifth floor. Opens at 18:00; irregular days off."
+                ],
+                "source": "https://barmusic.buyshop.jp/about",
+                "reviewedAt": "2026-10-24T16:42:51.531Z",
+                "matchBasis": "entity",
+                "hoursBasis": "Official weekly hours",
+                "matchedTags": [
+                  "jazz",
+                  "soul"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 166.8103366281784,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for records & listening. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:27:56.584Z"
+              },
+              "score": 0.2362067325635675,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "18:02",
+            "departure": "18:47",
+            "hours": "18:00–24:00",
+            "travelMinutes": 16,
+            "distanceMetres": 694,
+            "reason": "You asked for records & listening. This matches the reviewed venue activity. Your Qloo taste tags overlap jazz, soul in the reviewed venue profile.",
+            "mission": "Settle in for the selection rather than asking for a favourite immediately. Keep one track name for the walk home."
+          }
+        ],
+        "brief": "3 stops on 2026-10-25, starting at 16:00 JST. Allow about 52 minutes walking, including the loop back.",
+        "map": "https://www.google.com/maps/dir/?api=1&origin=35.663784899999996,139.7024669&destination=35.663784899999996,139.7024669&waypoints=35.6621203,139.6972624|35.6577398,139.6990811&travelmode=walking",
+        "examined": 63,
+        "eligible": 45,
+        "notes": [
+          "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+          "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions."
+        ],
+        "walkingMinutes": 52,
+        "walkingMetres": 2373,
+        "returnMinutes": 20,
+        "trace": [
+          "Started with Nujabes.",
+          "Ranked 63 candidates within 100 curated venues; 73 have resolved Qloo IDs.",
+          "Read 3 venue pages.",
+          "Fitted 3 stops with varied activities around their weekly hours and a return walk."
+        ],
+        "title": "Shibuya, from sleeve to sound",
+        "vibe": "52 minutes on foot. 3 stops. One loop.",
+        "invitation": "You brought Nujabes. The route gives you an unfamiliar sleeve, then an unfamiliar sleeve, then a room where the selection sets the pace. Keep one name from each stop and see which one follows you home.",
+        "seed": {
+          "id": "E11125AF-936B-4935-B607-F2DA2E6A6B92",
+          "name": "Nujabes",
+          "type": "artist"
+        },
+        "run": [
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /search · resolving Nujabes.",
+            "at": "2026-10-25T05:27:54.827Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · checking resolved artists from the event catalog.",
+            "at": "2026-10-25T05:27:55.700Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · reading the seed’s cultural metadata.",
+            "at": "2026-10-25T05:27:56.584Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · expanding related music genres.",
+            "at": "2026-10-25T05:27:57.417Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · following links into tv show.",
+            "at": "2026-10-25T05:27:57.775Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 69.",
+            "at": "2026-10-25T05:27:58.487Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 69.",
+            "at": "2026-10-25T05:27:59.119Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 69.",
+            "at": "2026-10-25T05:27:59.477Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 61–69 of 69.",
+            "at": "2026-10-25T05:27:59.840Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:00.204Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:00.551Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "complete",
+            "detail": "Found 63 candidates in the curated catalog. 3 lateral cultural links returned by Qloo.",
+            "at": "2026-10-25T05:28:00.871Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "running",
+            "detail": "Checking Tokyo time and the published opening windows.",
+            "at": "2026-10-25T05:28:00.871Z"
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "complete",
+            "detail": "25 Oct 2026, 14:27 JST · 45 of 63 candidates pass hours, location and price checks for 2026-10-25.",
+            "at": "2026-10-25T05:28:00.871Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.",
+            "at": "2026-10-25T05:28:00.871Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Reading venue pages for Hi-Fi Record Store, HMV record shop Shibuya, Bar Music.",
+            "at": "2026-10-25T05:28:00.871Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read HMV record shop Shibuya and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:01.364Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Hi-Fi Record Store and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:01.887Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Bar Music and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:02.466Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "complete",
+            "detail": "Selected Hi-Fi Record Store → HMV record shop Shibuya → Bar Music. About 52 minutes walking including the return.",
+            "at": "2026-10-25T05:28:02.466Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "running",
+            "detail": "Composing the mission, timetable and sourced door notes.",
+            "at": "2026-10-25T05:28:02.466Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "complete",
+            "detail": "Dossier ready. 3 stops, a return walk and venue sources.",
+            "at": "2026-10-25T05:28:02.466Z"
+          }
+        ]
+      },
+      "leads": [
+        {
+          "id": "www:https://www-shibuya.jp/schedule/019944.php#2026-10-25",
+          "title": "lilbesh ramko with Friends / トップシークレットマン / gummyboy / swetty / ODETRASH / VaVa / krynX -Produced by krynX Set- / eijin / the bercedes menz / Le Makeup / SleepInside / Siero / iga / cephalo / MADEINBEN10 / otuyyuto / ksr:3 / Jairo nark / glico / DJ melody — WWW & WWW X Anniversaries \"LYRICADE\"",
+          "url": "https://www-shibuya.jp/schedule/019944.php",
+          "location": "WWW & WWW X & WWW β · Shibuya, Tokyo",
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "priceLabel": "ADV ¥2,500(税込 / スタンディング / 2ドリンク代別)",
+          "reason": "Official programme mentions hiphop.",
+          "times": [
+            "OPEN/START: 17:00"
+          ],
+          "kind": "gig",
+          "online": false
+        },
+        {
+          "id": "cotton:5742:2026-10-27",
+          "title": "WOLFGANG HAFFNER TRIO",
+          "url": "https://reserve.cottonclubjapan.co.jp/reserve/schedule/exec/5742",
+          "location": "Cotton Club · Marunouchi, Tokyo",
+          "start": "2026-10-27",
+          "end": "2026-10-27",
+          "priceLabel": "テーブル席 : ¥8,000 · ボックスシート・センター (2〜4名席) : ¥10,500 · ボックスシート・サイド (2〜4名席) :¥9,500",
+          "reason": "Official programme mentions jazz.",
+          "times": [
+            "[1st.show] open 5:00pm / start 6:00pm",
+            "[2nd.show] open 7:45pm / start 8:30pm"
+          ],
+          "kind": "gig"
+        },
+        {
+          "id": "www:https://www-shibuya.jp/schedule/020018.php#2026-10-29",
+          "title": "タデクイ / Trooper Salute / MIZ — タデクイpresents \"デルタ\"",
+          "url": "https://www-shibuya.jp/schedule/020018.php",
+          "location": "WWW · Shibuya, Tokyo",
+          "start": "2026-10-29",
+          "end": "2026-10-29",
+          "priceLabel": "一般 : ¥4,800 / - (税込 / ドリンク代別 / スタンディング) · U-22 : ¥3,500 (税込 / ドリンク代別 / スタンディング) *pre sale only",
+          "reason": "Official programme mentions jazz.",
+          "times": [
+            "OPEN/START: 18:15 / 19:00"
+          ],
+          "kind": "gig",
+          "online": false
+        }
+      ],
+      "failures": []
+    },
+    {
+      "seed": "Nujabes",
+      "focus": "visual",
+      "status": 200,
+      "seconds": 6,
+      "quest": {
+        "neighborhood": {
+          "id": "shibuya",
+          "name": "Shibuya / Daikanyama"
+        },
+        "date": "2026-10-25",
+        "checkedAt": "2026-10-25T05:28:04.155Z",
+        "tokyoNow": "25 Oct 2026, 14:28",
+        "stops": [
+          {
+            "item": {
+              "id": "D89B4B08-1223-4490-B74F-9B36D6206AE7",
+              "title": "GALLERY CONCEAL SHIBUYA",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://galleryconceal.com/",
+              "description": "independent, contemporary, coffee",
+              "location": "4F 1 Chome-11-4 Dogenzaka Shibuya, Tokyo 150-0043 Japan",
+              "checkedAt": "2026-10-25T05:28:04.155Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "art",
+              "affinity": 0.6940264861276118,
+              "signals": [
+                "Nujabes"
+              ],
+              "lat": 35.6576082,
+              "lon": 139.6987605,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "art",
+                "area": "Shibuya",
+                "mission": "Take the stairs and choose one work to see twice, once before and once after reading the artist's text.",
+                "tags": [
+                  "independent",
+                  "contemporary",
+                  "coffee"
+                ],
+                "doorNotes": [],
+                "source": "https://galleryconceal.com/",
+                "reviewedAt": "2026-10-24T16:39:06.435Z",
+                "matchBasis": "entity",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [],
+                "matchStrength": "anchor",
+                "tasteScore": 87.08207945838284,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for art & photography. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:28:04.155Z"
+              },
+              "score": 0.23880529722552235,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "16:00",
+            "departure": "16:45",
+            "hours": "11:00–20:00",
+            "travelMinutes": 0,
+            "distanceMetres": 0,
+            "reason": "You asked for art & photography. This matches the reviewed venue activity. Qloo links Nujabes to this venue.",
+            "mission": "Take the stairs and choose one work to see twice, once before and once after reading the artist's text."
+          },
+          {
+            "item": {
+              "id": "3AAD60F0-FA59-4B54-8BF3-16DD19B815A8",
+              "title": "Hi-Fi Record Store",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://www.hi-fi.gr.jp/",
+              "description": "jazz, soul, vinyl",
+              "location": "GEMS神宮前 3F 6 Chome-19-17 Jingumae Shibuya, Tokyo 150-0001 Japan",
+              "checkedAt": "2026-10-25T05:28:04.155Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "dig",
+              "signals": [],
+              "lat": 35.663784899999996,
+              "lon": 139.7024669,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "dig",
+                "area": "Shibuya",
+                "mission": "Choose one record for its arrangement or players rather than its headline name. Use the credits as a map to another record.",
+                "tags": [
+                  "jazz",
+                  "soul",
+                  "vinyl"
+                ],
+                "doorNotes": [],
+                "source": "https://www.hi-fi.gr.jp/",
+                "reviewedAt": "2026-10-24T16:43:01.576Z",
+                "matchBasis": "genre_bridge",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "jazz",
+                  "soul"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 75,
+                "focusRequested": true,
+                "focusMatch": false,
+                "sourceReadAt": "2026-10-25T05:28:04.155Z"
+              },
+              "score": 0,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "17:06",
+            "departure": "17:51",
+            "hours": "12:00–19:00",
+            "travelMinutes": 21,
+            "distanceMetres": 1032,
+            "reason": "Your Qloo taste links to jazz, soul, which matches our source-reviewed venue tags.",
+            "mission": "Choose one record for its arrangement or players rather than its headline name. Use the credits as a map to another record."
+          },
+          {
+            "item": {
+              "id": "5A623B12-EBF8-4215-A57C-7CA071EF5030",
+              "title": "Bar Music",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://barmusic.buyshop.jp/about",
+              "description": "jazz, soul, coffee, vinyl",
+              "location": "5F 1 Chome-6-7 Dogenzaka Shibuya, Tokyo 150-0043 Japan",
+              "checkedAt": "2026-10-25T05:28:04.155Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "listen",
+              "affinity": 0.6810336628178374,
+              "signals": [
+                "Nujabes"
+              ],
+              "lat": 35.6577398,
+              "lon": 139.6990811,
+              "hours": {
+                "monday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ],
+                "sunday": [
+                  {
+                    "opens": "18:00",
+                    "closes": "24:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "listen",
+                "area": "Shibuya",
+                "mission": "Settle in for the selection rather than asking for a favourite immediately. Keep one track name for the walk home.",
+                "tags": [
+                  "jazz",
+                  "soul",
+                  "coffee",
+                  "vinyl"
+                ],
+                "doorNotes": [
+                  "Dogenzaka 1-6-7, fifth floor. Opens at 18:00; irregular days off."
+                ],
+                "source": "https://barmusic.buyshop.jp/about",
+                "reviewedAt": "2026-10-24T16:42:51.531Z",
+                "matchBasis": "entity",
+                "hoursBasis": "Official weekly hours",
+                "matchedTags": [
+                  "jazz",
+                  "soul"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 81.81033662817838,
+                "focusRequested": true,
+                "focusMatch": false,
+                "sourceReadAt": "2026-10-25T05:28:04.155Z"
+              },
+              "score": 0.2362067325635675,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "18:11",
+            "departure": "18:56",
+            "hours": "18:00–24:00",
+            "travelMinutes": 20,
+            "distanceMetres": 997,
+            "reason": "Qloo connects Nujabes with this stop.",
+            "mission": "Settle in for the selection rather than asking for a favourite immediately. Keep one track name for the walk home."
+          }
+        ],
+        "brief": "3 stops on 2026-10-25, starting at 16:00 JST. Allow about 47 minutes walking, including the loop back.",
+        "map": "https://www.google.com/maps/dir/?api=1&origin=35.6576082,139.6987605&destination=35.6576082,139.6987605&waypoints=35.663784899999996,139.7024669|35.6577398,139.6990811&travelmode=walking",
+        "examined": 63,
+        "eligible": 45,
+        "notes": [
+          "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+          "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions."
+        ],
+        "walkingMinutes": 47,
+        "walkingMetres": 2073,
+        "returnMinutes": 6,
+        "trace": [
+          "Started with Nujabes.",
+          "Ranked 63 candidates within 100 curated venues; 73 have resolved Qloo IDs.",
+          "Read 3 venue pages.",
+          "Fitted 3 stops with varied activities around their weekly hours and a return walk."
+        ],
+        "title": "Shibuya, from sleeve to sound",
+        "vibe": "47 minutes on foot. 3 stops. One loop.",
+        "invitation": "You brought Nujabes. The route gives you a closer look at a small gallery, then an unfamiliar sleeve, then a room where the selection sets the pace. Keep one name from each stop and see which one follows you home.",
+        "seed": {
+          "id": "E11125AF-936B-4935-B607-F2DA2E6A6B92",
+          "name": "Nujabes",
+          "type": "artist"
+        },
+        "run": [
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /search · resolving Nujabes.",
+            "at": "2026-10-25T05:28:03.177Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · checking resolved artists from the event catalog.",
+            "at": "2026-10-25T05:28:03.563Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · reading the seed’s cultural metadata.",
+            "at": "2026-10-25T05:28:04.155Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · expanding related music genres.",
+            "at": "2026-10-25T05:28:04.451Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · following links into tv show.",
+            "at": "2026-10-25T05:28:04.824Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 69.",
+            "at": "2026-10-25T05:28:05.538Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 69.",
+            "at": "2026-10-25T05:28:05.894Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 69.",
+            "at": "2026-10-25T05:28:06.244Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 61–69 of 69.",
+            "at": "2026-10-25T05:28:06.607Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:06.945Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:07.268Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "complete",
+            "detail": "Found 63 candidates in the curated catalog. 3 lateral cultural links returned by Qloo.",
+            "at": "2026-10-25T05:28:07.575Z",
+            "associations": [
+              {
+                "name": "Chillout",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Japanese",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Hip - Hop",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "instrumental  hip hop",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "beats",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Samurai Champloo",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Cowboy Bebop",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              },
+              {
+                "name": "Trigun",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Nujabes"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "running",
+            "detail": "Checking Tokyo time and the published opening windows.",
+            "at": "2026-10-25T05:28:07.575Z"
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "complete",
+            "detail": "25 Oct 2026, 14:28 JST · 45 of 63 candidates pass hours, location and price checks for 2026-10-25.",
+            "at": "2026-10-25T05:28:07.575Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.",
+            "at": "2026-10-25T05:28:07.575Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Reading venue pages for GALLERY CONCEAL SHIBUYA, Hi-Fi Record Store, Bar Music.",
+            "at": "2026-10-25T05:28:07.575Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read GALLERY CONCEAL SHIBUYA and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:07.745Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Hi-Fi Record Store and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:07.997Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Bar Music and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:08.313Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "complete",
+            "detail": "Selected GALLERY CONCEAL SHIBUYA → Hi-Fi Record Store → Bar Music. About 47 minutes walking including the return.",
+            "at": "2026-10-25T05:28:08.313Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "running",
+            "detail": "Composing the mission, timetable and sourced door notes.",
+            "at": "2026-10-25T05:28:08.313Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "complete",
+            "detail": "Dossier ready. 3 stops, a return walk and venue sources.",
+            "at": "2026-10-25T05:28:08.313Z"
+          }
+        ]
+      },
+      "leads": [],
+      "failures": []
+    },
+    {
+      "seed": "Slayer",
+      "focus": "sound",
+      "status": 200,
+      "seconds": 6,
+      "quest": {
+        "date": "2026-10-25",
+        "checkedAt": "2026-10-25T05:28:09.936Z",
+        "tokyoNow": "25 Oct 2026, 14:28",
+        "stops": [
+          {
+            "item": {
+              "id": "13AB5DC0-8955-4286-8453-FDF3CECB60A3",
+              "title": "Record Boy",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://recordboy.shop-pro.jp/",
+              "description": "metal, punk, hardcore",
+              "location": "高円寺ビル 303 4 Chome-7-10 Koenjiminami Suginami City, Tokyo 166-0003 Japan",
+              "checkedAt": "2026-10-25T05:28:09.936Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "dig",
+              "signals": [],
+              "lat": 35.7035008,
+              "lon": 139.648746,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": true
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T13:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "dig",
+                "area": "Shinjuku",
+                "mission": "Compare one heavy record from Japan with one from elsewhere. Look for what the artwork and label tell you before asking for a recommendation.",
+                "tags": [
+                  "metal",
+                  "punk",
+                  "hardcore"
+                ],
+                "doorNotes": [],
+                "source": "http://recordboy.shop-pro.jp/",
+                "reviewedAt": "2026-10-24T16:42:50.276Z",
+                "matchBasis": "genre_bridge",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "metal"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 155,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for records & listening. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:28:09.936Z"
+              },
+              "score": 0,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "14:45",
+            "departure": "15:30",
+            "hours": "13:00–20:00",
+            "travelMinutes": 0,
+            "distanceMetres": 0,
+            "reason": "You asked for records & listening. This matches the reviewed venue activity. Your Qloo taste tags overlap metal in the reviewed venue profile.",
+            "mission": "Compare one heavy record from Japan with one from elsewhere. Look for what the artwork and label tell you before asking for a recommendation."
+          }
+        ],
+        "brief": "One supported stop on 2026-10-25 at 14:45 JST. No walking loop fit the current evidence.",
+        "map": "https://www.google.com/maps/search/?api=1&query=35.7035008,139.648746",
+        "examined": 55,
+        "eligible": 37,
+        "notes": [
+          "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+          "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions.",
+          "One supported stop fits. I could not add a compatible nearby stop with usable hours, so this is a focused find rather than a walking loop."
+        ],
+        "walkingMinutes": 0,
+        "walkingMetres": 0,
+        "returnMinutes": 0,
+        "trace": [
+          "Started with Slayer.",
+          "Ranked 55 candidates within 100 curated venues; 73 have resolved Qloo IDs.",
+          "Read 1 venue pages.",
+          "Fitted 1 stops with varied activities around their weekly hours and a return walk."
+        ],
+        "title": "Record Boy",
+        "vibe": "One place worth a closer look. Take your time here.",
+        "invitation": "You brought Slayer. This is one place to follow that interest, with enough time to browse.",
+        "seed": {
+          "id": "CB394FA2-EF25-4000-9175-3C244CDB0BB0",
+          "name": "Slayer",
+          "type": "artist"
+        },
+        "run": [
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /search · resolving Slayer.",
+            "at": "2026-10-25T05:28:08.974Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · checking resolved artists from the event catalog.",
+            "at": "2026-10-25T05:28:09.326Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · reading the seed’s cultural metadata.",
+            "at": "2026-10-25T05:28:09.936Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · expanding related music genres.",
+            "at": "2026-10-25T05:28:10.224Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · following links into tv show.",
+            "at": "2026-10-25T05:28:10.780Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 69.",
+            "at": "2026-10-25T05:28:11.480Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 69.",
+            "at": "2026-10-25T05:28:11.838Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 69.",
+            "at": "2026-10-25T05:28:12.180Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 61–69 of 69.",
+            "at": "2026-10-25T05:28:12.547Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:12.889Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:13.217Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "complete",
+            "detail": "Found 55 candidates in the curated catalog. 3 lateral cultural links returned by Qloo.",
+            "at": "2026-10-25T05:28:13.542Z",
+            "associations": [
+              {
+                "name": "Heavy Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Thrash Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Speed Metal",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": " metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "heavy  metal",
+                "type": "genre",
+                "relation": "related_tag",
+                "via": "Slayer"
+              },
+              {
+                "name": "Ash vs Evil Dead",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "The Strain",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              },
+              {
+                "name": "Sleepy Hollow",
+                "type": "tv_show",
+                "relation": "related_entity",
+                "via": "Slayer"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "running",
+            "detail": "Checking Tokyo time and the published opening windows.",
+            "at": "2026-10-25T05:28:13.542Z"
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "complete",
+            "detail": "25 Oct 2026, 14:28 JST · 37 of 55 candidates pass hours, location and price checks for 2026-10-25.",
+            "at": "2026-10-25T05:28:13.542Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.",
+            "at": "2026-10-25T05:28:13.542Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Reading venue pages for Record Boy.",
+            "at": "2026-10-25T05:28:13.542Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Record Boy and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:14.234Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "complete",
+            "detail": "Selected Record Boy. About 0 minutes walking including the return.",
+            "at": "2026-10-25T05:28:14.234Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "running",
+            "detail": "Composing the mission, timetable and sourced door notes.",
+            "at": "2026-10-25T05:28:14.234Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "complete",
+            "detail": "One supported find. No complete walking route fit.",
+            "at": "2026-10-25T05:28:14.234Z"
+          }
+        ]
+      },
+      "leads": [
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/14976/:2026-10-31",
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "url": "https://www.unit-tokyo.com/schedule/14976/",
+          "location": "Daikanyama, Tokyo",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "priceLabel": "Check admission / ticket / goods prices",
+          "reason": "Performer genre overlaps metal.",
+          "times": [
+            "OPEN : 18:00",
+            "OPEN : 18:00",
+            "OPEN: 18:00",
+            "START: 19:00"
+          ],
+          "kind": "gig"
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/dexcore_20261028:2026-10-28",
+          "title": "DEXCORE",
+          "url": "https://www.liquidroom.net/schedule/dexcore_20261028",
+          "location": "Ebisu, Tokyo",
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "priceLabel": "¥5,000(税込・ドリンクチャージ別)",
+          "reason": "Performer genre overlaps metal.",
+          "times": [
+            "OPEN: 17:45",
+            "START: 18:30"
+          ],
+          "kind": "gig"
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/see_20261029:2026-10-29",
+          "title": "SOUND ENERGY EX",
+          "url": "https://www.liquidroom.net/schedule/see_20261029",
+          "location": "Ebisu, Tokyo",
+          "start": "2026-10-29",
+          "end": "2026-10-29",
+          "priceLabel": "前売チケット ¥9,500(税込・ドリンクチャージ別) PRIORITYチケット ¥16,500(税込・ドリンクチャージ別)",
+          "reason": "Official programme mentions metal.",
+          "times": [
+            "OPEN: 17:15",
+            "START: 18:00"
+          ],
+          "kind": "gig"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "seed": "Akira",
+      "focus": "print",
+      "status": 200,
+      "seconds": 10,
+      "quest": {
+        "date": "2026-10-25",
+        "checkedAt": "2026-10-25T05:28:15.977Z",
+        "tokyoNow": "25 Oct 2026, 14:28",
+        "stops": [
+          {
+            "item": {
+              "id": "C8C19ACE-E329-40B9-8012-EE35C094ED3C",
+              "title": "GLITCH COFFEE Jimbocho",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://glitchcoffee.com/",
+              "description": "coffee, craft, design",
+              "location": "１階 3 Chome-16 Kanda Nishikicho Chiyoda City, Tokyo 101-0054 Japan",
+              "checkedAt": "2026-10-25T05:28:15.977Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "coffee",
+              "affinity": 0.9037385519433037,
+              "signals": [
+                "Akira"
+              ],
+              "lat": 35.693742799999995,
+              "lon": 139.76130469999998,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T09:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T08:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T08:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": false,
+                    "opens": "T08:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T08:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T08:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T09:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "coffee",
+                "area": "Jimbocho",
+                "mission": "Choose one origin you do not normally drink. Keep the tasting note that matches your own experience, not the one you think you should find.",
+                "tags": [
+                  "coffee",
+                  "craft",
+                  "design"
+                ],
+                "doorNotes": [],
+                "source": "https://glitchcoffee.com/",
+                "reviewedAt": "2026-10-24T16:39:08.340Z",
+                "matchBasis": "entity",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "design"
+                ],
+                "matchStrength": "adjacent",
+                "tasteScore": 26.537385519433037,
+                "focusRequested": true,
+                "focusMatch": false,
+                "sourceReadAt": "2026-10-25T05:28:15.977Z"
+              },
+              "score": 0.28074771038866075,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "14:45",
+            "departure": "15:30",
+            "hours": "09:00–19:00",
+            "travelMinutes": 0,
+            "distanceMetres": 0,
+            "reason": "A lateral connection through design. This is an adjacent interest, not a direct seed match.",
+            "mission": "Choose one origin you do not normally drink. Keep the tasting note that matches your own experience, not the one you think you should find."
+          },
+          {
+            "item": {
+              "id": "AF292E65-1EC3-4B07-B688-BE67651E3082",
+              "title": "Bohemian's Guild",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://www.bohemiansguild.com/about/",
+              "description": "art, used-books, design",
+              "location": "1 Chome-１ Kanda Jinbocho Chiyoda City, Tokyo 101-0051 Japan",
+              "checkedAt": "2026-10-25T05:28:15.977Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "books",
+              "signals": [],
+              "lat": 35.6954528,
+              "lon": 139.7604021,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "books",
+                "area": "Jimbocho",
+                "mission": "Compare an older art publication with a contemporary one. Look for an idea that outlasted its original design.",
+                "tags": [
+                  "art",
+                  "used-books",
+                  "design"
+                ],
+                "doorNotes": [],
+                "source": "https://www.bohemiansguild.com/about/",
+                "reviewedAt": "2026-10-24T16:38:58.612Z",
+                "matchBasis": "genre_bridge",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "design"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 102.5,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for books & illustration. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:28:15.977Z"
+              },
+              "score": 0,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "15:40",
+            "departure": "16:25",
+            "hours": "12:00–18:00",
+            "travelMinutes": 10,
+            "distanceMetres": 279,
+            "reason": "You asked for books & illustration. This matches the reviewed venue activity. Your Qloo taste tags overlap design in the reviewed venue profile.",
+            "mission": "Compare an older art publication with a contemporary one. Look for an idea that outlasted its original design."
+          },
+          {
+            "item": {
+              "id": "642708ED-0A1F-4ADD-8EC5-CCAAAB8172CA",
+              "title": "Komiyama Tokyo",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://www.book-komiyama.co.jp/",
+              "description": "photography, fashion, art",
+              "location": "1 Chome-７ Kanda Jinbocho Chiyoda City, Tokyo 101-0051 Japan",
+              "checkedAt": "2026-10-25T05:28:15.977Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "books",
+              "signals": [],
+              "lat": 35.6958118,
+              "lon": 139.7595558,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T17:30:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:30:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": true
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": true
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:30:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:30:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T18:30:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "books",
+                "area": "Jimbocho",
+                "mission": "Choose a photobook from a decade you rarely browse. Notice what its images assume about the person looking at them.",
+                "tags": [
+                  "photography",
+                  "fashion",
+                  "art"
+                ],
+                "doorNotes": [],
+                "source": "https://www.book-komiyama.co.jp/",
+                "reviewedAt": "2026-10-24T16:38:59.711Z",
+                "matchBasis": "genre_bridge",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [],
+                "matchStrength": "anchor",
+                "tasteScore": 85,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for books & illustration. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:28:15.977Z"
+              },
+              "score": 0,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "16:32",
+            "departure": "17:17",
+            "hours": "12:00–17:30",
+            "travelMinutes": 7,
+            "distanceMetres": 116,
+            "reason": "You asked for books & illustration. This matches the reviewed venue activity. The activity fits; no specific cultural connection was established.",
+            "mission": "Choose a photobook from a decade you rarely browse. Notice what its images assume about the person looking at them."
+          }
+        ],
+        "brief": "3 stops on 2026-10-25, starting at 14:45 JST. Allow about 28 minutes walking, including the loop back.",
+        "map": "https://www.google.com/maps/dir/?api=1&origin=35.693742799999995,139.76130469999998&destination=35.693742799999995,139.76130469999998&waypoints=35.6954528,139.7604021|35.6958118,139.7595558&travelmode=walking",
+        "examined": 53,
+        "eligible": 35,
+        "notes": [
+          "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+          "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions."
+        ],
+        "walkingMinutes": 28,
+        "walkingMetres": 772,
+        "returnMinutes": 11,
+        "trace": [
+          "Started with Akira.",
+          "Ranked 54 candidates within 100 curated venues; 73 have resolved Qloo IDs.",
+          "Read 5 venue pages; replaced 1 unreadable sources.",
+          "Fitted 3 stops with varied activities around their weekly hours and a return walk."
+        ],
+        "title": "Jimbocho, one shelf over",
+        "vibe": "28 minutes on foot. 3 stops. One loop.",
+        "invitation": "You brought Akira. The route gives you a coffee to start, then a book outside your usual shelf, then a book outside your usual shelf. Keep one name from each stop and see which one follows you home.",
+        "seed": {
+          "id": "0E84F600-B861-4A93-AC5E-6E1DF4AC5826",
+          "name": "Akira",
+          "type": "movie"
+        },
+        "run": [
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /search · resolving Akira.",
+            "at": "2026-10-25T05:28:14.921Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · checking resolved artists from the event catalog.",
+            "at": "2026-10-25T05:28:15.601Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · reading the seed’s cultural metadata.",
+            "at": "2026-10-25T05:28:15.977Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · following links into artist.",
+            "at": "2026-10-25T05:28:16.273Z",
+            "associations": [
+              {
+                "name": "Action",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Bleak urban decay",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Cinematic",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Brian Eno",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Aphex Twin",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Cocteau Twins",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 69.",
+            "at": "2026-10-25T05:28:19.824Z",
+            "associations": [
+              {
+                "name": "Action",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Bleak urban decay",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Cinematic",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Brian Eno",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Aphex Twin",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Cocteau Twins",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 69.",
+            "at": "2026-10-25T05:28:20.171Z",
+            "associations": [
+              {
+                "name": "Action",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Bleak urban decay",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Cinematic",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Brian Eno",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Aphex Twin",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Cocteau Twins",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 69.",
+            "at": "2026-10-25T05:28:20.511Z",
+            "associations": [
+              {
+                "name": "Action",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Bleak urban decay",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Cinematic",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Brian Eno",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Aphex Twin",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Cocteau Twins",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 61–69 of 69.",
+            "at": "2026-10-25T05:28:20.851Z",
+            "associations": [
+              {
+                "name": "Action",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Bleak urban decay",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Cinematic",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Brian Eno",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Aphex Twin",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Cocteau Twins",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:21.186Z",
+            "associations": [
+              {
+                "name": "Action",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Bleak urban decay",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Cinematic",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Brian Eno",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Aphex Twin",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Cocteau Twins",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:21.523Z",
+            "associations": [
+              {
+                "name": "Action",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Bleak urban decay",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Cinematic",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Brian Eno",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Aphex Twin",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Cocteau Twins",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "complete",
+            "detail": "Found 54 candidates in the curated catalog. 3 lateral cultural links returned by Qloo.",
+            "at": "2026-10-25T05:28:21.861Z",
+            "associations": [
+              {
+                "name": "Action",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Bleak urban decay",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Cinematic",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Akira"
+              },
+              {
+                "name": "Brian Eno",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Aphex Twin",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              },
+              {
+                "name": "Cocteau Twins",
+                "type": "artist",
+                "relation": "related_entity",
+                "via": "Akira"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "running",
+            "detail": "Checking Tokyo time and the published opening windows.",
+            "at": "2026-10-25T05:28:21.861Z"
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "complete",
+            "detail": "25 Oct 2026, 14:28 JST · 36 of 54 candidates pass hours, location and price checks for 2026-10-25.",
+            "at": "2026-10-25T05:28:21.861Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.",
+            "at": "2026-10-25T05:28:21.861Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Reading venue pages for ONIBUS COFFEE Nakameguro, Daikanyama T-Site, POST.",
+            "at": "2026-10-25T05:28:21.861Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read ONIBUS COFFEE Nakameguro and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:22.011Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Could not read POST. Removing it and trying another loop.",
+            "at": "2026-10-25T05:28:22.114Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Daikanyama T-Site and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:22.486Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Reading venue pages for GLITCH COFFEE Jimbocho, Bohemian's Guild, Komiyama Tokyo.",
+            "at": "2026-10-25T05:28:22.486Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Bohemian's Guild and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:22.952Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Komiyama Tokyo and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:23.017Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read GLITCH COFFEE Jimbocho and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:23.808Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "complete",
+            "detail": "Selected GLITCH COFFEE Jimbocho → Bohemian's Guild → Komiyama Tokyo. About 28 minutes walking including the return.",
+            "at": "2026-10-25T05:28:23.808Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "running",
+            "detail": "Composing the mission, timetable and sourced door notes.",
+            "at": "2026-10-25T05:28:23.808Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "complete",
+            "detail": "Dossier ready. 3 stops, a return walk and venue sources.",
+            "at": "2026-10-25T05:28:23.808Z"
+          }
+        ]
+      },
+      "leads": [],
+      "failures": []
+    },
+    {
+      "seed": "MUJI",
+      "focus": "design",
+      "status": 200,
+      "seconds": 6,
+      "quest": {
+        "neighborhood": {
+          "id": "shibuya",
+          "name": "Shibuya / Daikanyama"
+        },
+        "date": "2026-10-25",
+        "checkedAt": "2026-10-25T05:28:25.223Z",
+        "tokyoNow": "25 Oct 2026, 14:28",
+        "stops": [
+          {
+            "item": {
+              "id": "0965D2B5-F4B4-487F-849F-1E30043A97E2",
+              "title": "ONIBUS COFFEE Nakameguro",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://onibuscoffee.com/",
+              "description": "coffee, craft, architecture",
+              "location": "2 Chome-14-1 Kamimeguro Meguro City, Tokyo 153-0051 Japan",
+              "checkedAt": "2026-10-25T05:28:25.223Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "coffee",
+              "affinity": 0.8135706973233584,
+              "signals": [
+                "Muji"
+              ],
+              "lat": 35.6431767,
+              "lon": 139.6980318,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T09:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T09:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T09:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": false,
+                    "opens": "T09:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T09:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T09:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T09:00:00",
+                    "closes": "T18:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "coffee",
+                "area": "Nakameguro",
+                "mission": "Use the coffee stop to watch how the shop meets the neighbourhood. Keep one small detail from the street, not just the cup.",
+                "tags": [
+                  "coffee",
+                  "craft",
+                  "architecture"
+                ],
+                "doorNotes": [],
+                "source": "https://onibuscoffee.com/",
+                "reviewedAt": "2026-10-24T16:39:09.031Z",
+                "matchBasis": "entity",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [],
+                "matchStrength": "anchor",
+                "tasteScore": 87.44071209197007,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for design & architecture. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:28:25.223Z"
+              },
+              "score": 0.2627141394646717,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "14:45",
+            "departure": "15:30",
+            "hours": "09:00–18:00",
+            "travelMinutes": 0,
+            "distanceMetres": 0,
+            "reason": "You asked for design & architecture. This matches the reviewed venue activity. Qloo links Muji to this venue.",
+            "mission": "Use the coffee stop to watch how the shop meets the neighbourhood. Keep one small detail from the street, not just the cup."
+          },
+          {
+            "item": {
+              "id": "6466776F-4129-4131-9519-E803DA5D6E07",
+              "title": "Art Front Gallery",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://artfrontgallery.com/",
+              "description": "contemporary, architecture, art",
+              "location": "Japan 〒150-0033 Tokyo, Shibuya, Sarugakucho, 29−18 ヒルサイドテラスA棟",
+              "checkedAt": "2026-10-25T05:28:25.223Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "art",
+              "signals": [],
+              "lat": 35.6474054,
+              "lon": 139.7014615,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T17:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": true
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": true
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T12:00:00",
+                    "closes": "T19:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T17:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "art",
+                "area": "Daikanyama",
+                "mission": "Find a work that changes your sense of space. Carry that shift in scale back out to the street.",
+                "tags": [
+                  "contemporary",
+                  "architecture",
+                  "art"
+                ],
+                "doorNotes": [],
+                "source": "https://artfrontgallery.com/",
+                "reviewedAt": "2026-10-24T16:42:59.173Z",
+                "matchBasis": "genre_bridge",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [],
+                "matchStrength": "anchor",
+                "tasteScore": 85,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for design & architecture. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:28:25.223Z"
+              },
+              "score": 0,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "15:47",
+            "departure": "16:32",
+            "hours": "11:00–17:00",
+            "travelMinutes": 17,
+            "distanceMetres": 760,
+            "reason": "You asked for design & architecture. This matches the reviewed venue activity. The activity fits; no specific cultural connection was established.",
+            "mission": "Find a work that changes your sense of space. Carry that shift in scale back out to the street."
+          },
+          {
+            "item": {
+              "id": "9D5E5475-EE16-49E0-8AE0-ED15D77C6E41",
+              "title": "Daikanyama T-Site",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://store.tsite.jp/daikanyama/",
+              "description": "books, design, film",
+              "location": "16-15 Sarugakucho Shibuya, Tokyo 150-0033 Japan",
+              "checkedAt": "2026-10-25T05:28:25.223Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "books",
+              "affinity": 0.7223520260632923,
+              "signals": [
+                "Muji"
+              ],
+              "lat": 35.649059,
+              "lon": 139.69962239999998,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T07:00:00",
+                    "closes": "T23:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T07:00:00",
+                    "closes": "T23:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T07:00:00",
+                    "closes": "T23:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": false,
+                    "opens": "T07:00:00",
+                    "closes": "T23:00:00"
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T07:00:00",
+                    "closes": "T23:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T07:00:00",
+                    "closes": "T23:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T07:00:00",
+                    "closes": "T23:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "books",
+                "area": "Daikanyama",
+                "mission": "Choose one cultural subject and follow it across a book, a magazine and a related display. Keep the least obvious connection.",
+                "tags": [
+                  "books",
+                  "design",
+                  "film"
+                ],
+                "doorNotes": [],
+                "source": "https://store.tsite.jp/daikanyama/",
+                "reviewedAt": "2026-10-24T16:43:03.094Z",
+                "matchBasis": "entity",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "design"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 162.22352026063294,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for design & architecture. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:28:25.223Z"
+              },
+              "score": 0.24447040521265848,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "16:43",
+            "departure": "17:28",
+            "hours": "07:00–23:00",
+            "travelMinutes": 11,
+            "distanceMetres": 335,
+            "reason": "You asked for design & architecture. This matches the reviewed venue activity. Your Qloo taste tags overlap design in the reviewed venue profile.",
+            "mission": "Visit [Exhibition] Touch and Learn: The New Sensation Karuta 'Reptile Karuta'. Give one work five unhurried minutes. Notice what holds your attention before you read the label. Keep one image or artist's name for later.",
+            "programme": {
+              "title": "[Exhibition] Touch and Learn: The New Sensation Karuta 'Reptile Karuta'",
+              "url": "https://store.tsite.jp/daikanyama/event/kids/57065-1649380927.html",
+              "start": "2026-09-29",
+              "end": "2026-10-29",
+              "priceLabel": "Check admission / ticket / goods prices"
+            }
+          }
+        ],
+        "brief": "3 stops on 2026-10-25, starting at 14:45 JST. Allow about 47 minutes walking, including the loop back.",
+        "map": "https://www.google.com/maps/dir/?api=1&origin=35.6431767,139.6980318&destination=35.6431767,139.6980318&waypoints=35.6474054,139.7014615|35.649059,139.69962239999998&travelmode=walking",
+        "examined": 53,
+        "eligible": 35,
+        "notes": [
+          "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+          "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions."
+        ],
+        "walkingMinutes": 47,
+        "walkingMetres": 1999,
+        "returnMinutes": 19,
+        "trace": [
+          "Started with Muji.",
+          "Ranked 54 candidates within 100 curated venues; 73 have resolved Qloo IDs.",
+          "Read 3 venue pages; replaced 1 unreadable sources.",
+          "Fitted 3 stops with varied activities around their weekly hours and a return walk."
+        ],
+        "title": "Nakameguro, between the page and the wall",
+        "vibe": "47 minutes on foot. 3 stops. One loop.",
+        "invitation": "You brought Muji. The route gives you a coffee to start, then a closer look at a small gallery, then a book outside your usual shelf. Keep one name from each stop and see which one follows you home.",
+        "seed": {
+          "id": "E12201A5-CC50-40AF-97AE-C54A2CA303F7",
+          "name": "Muji",
+          "type": "brand"
+        },
+        "run": [
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /search · resolving MUJI.",
+            "at": "2026-10-25T05:28:24.452Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · checking resolved artists from the event catalog.",
+            "at": "2026-10-25T05:28:24.886Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · reading the seed’s cultural metadata.",
+            "at": "2026-10-25T05:28:25.223Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · following links into book.",
+            "at": "2026-10-25T05:28:25.505Z",
+            "associations": [
+              {
+                "name": "Retail",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Minimalism",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Organization",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "My Brother's Husband, All Volumes (Otouto no Otto, #1-4)",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Zero at the Bone",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Hedy Lamarr: An Incredible Life",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 69.",
+            "at": "2026-10-25T05:28:26.354Z",
+            "associations": [
+              {
+                "name": "Retail",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Minimalism",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Organization",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "My Brother's Husband, All Volumes (Otouto no Otto, #1-4)",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Zero at the Bone",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Hedy Lamarr: An Incredible Life",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 69.",
+            "at": "2026-10-25T05:28:26.720Z",
+            "associations": [
+              {
+                "name": "Retail",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Minimalism",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Organization",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "My Brother's Husband, All Volumes (Otouto no Otto, #1-4)",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Zero at the Bone",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Hedy Lamarr: An Incredible Life",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 69.",
+            "at": "2026-10-25T05:28:27.069Z",
+            "associations": [
+              {
+                "name": "Retail",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Minimalism",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Organization",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "My Brother's Husband, All Volumes (Otouto no Otto, #1-4)",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Zero at the Bone",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Hedy Lamarr: An Incredible Life",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 61–69 of 69.",
+            "at": "2026-10-25T05:28:27.460Z",
+            "associations": [
+              {
+                "name": "Retail",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Minimalism",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Organization",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "My Brother's Husband, All Volumes (Otouto no Otto, #1-4)",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Zero at the Bone",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Hedy Lamarr: An Incredible Life",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:27.808Z",
+            "associations": [
+              {
+                "name": "Retail",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Minimalism",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Organization",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "My Brother's Husband, All Volumes (Otouto no Otto, #1-4)",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Zero at the Bone",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Hedy Lamarr: An Incredible Life",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:28.140Z",
+            "associations": [
+              {
+                "name": "Retail",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Minimalism",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Organization",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "My Brother's Husband, All Volumes (Otouto no Otto, #1-4)",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Zero at the Bone",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Hedy Lamarr: An Incredible Life",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "complete",
+            "detail": "Found 54 candidates in the curated catalog. 3 lateral cultural links returned by Qloo.",
+            "at": "2026-10-25T05:28:28.436Z",
+            "associations": [
+              {
+                "name": "Retail",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Minimalism",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "Organization",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Muji"
+              },
+              {
+                "name": "My Brother's Husband, All Volumes (Otouto no Otto, #1-4)",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Zero at the Bone",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              },
+              {
+                "name": "Hedy Lamarr: An Incredible Life",
+                "type": "book",
+                "relation": "related_entity",
+                "via": "Muji"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "running",
+            "detail": "Checking Tokyo time and the published opening windows.",
+            "at": "2026-10-25T05:28:28.436Z"
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "complete",
+            "detail": "25 Oct 2026, 14:28 JST · 36 of 54 candidates pass hours, location and price checks for 2026-10-25.",
+            "at": "2026-10-25T05:28:28.436Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.",
+            "at": "2026-10-25T05:28:28.436Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Reading venue pages for ONIBUS COFFEE Nakameguro, Daikanyama T-Site, POST.",
+            "at": "2026-10-25T05:28:28.436Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Could not read POST. Removing it and trying another loop.",
+            "at": "2026-10-25T05:28:28.485Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read ONIBUS COFFEE Nakameguro and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:28.575Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Daikanyama T-Site and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:28.946Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Reading venue pages for Art Front Gallery.",
+            "at": "2026-10-25T05:28:28.946Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read Art Front Gallery and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:29.564Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "complete",
+            "detail": "Selected ONIBUS COFFEE Nakameguro → Art Front Gallery → Daikanyama T-Site. About 47 minutes walking including the return.",
+            "at": "2026-10-25T05:28:29.564Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "running",
+            "detail": "Composing the mission, timetable and sourced door notes.",
+            "at": "2026-10-25T05:28:29.564Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "complete",
+            "detail": "Dossier ready. 3 stops, a return walk and venue sources.",
+            "at": "2026-10-25T05:28:29.564Z"
+          }
+        ]
+      },
+      "leads": [],
+      "failures": []
+    },
+    {
+      "seed": "Pokemon FireRed Version",
+      "focus": "games",
+      "status": 200,
+      "seconds": 6,
+      "quest": {
+        "neighborhood": {
+          "id": "yanaka",
+          "name": "Yanaka / Ueno"
+        },
+        "date": "2026-10-25",
+        "checkedAt": "2026-10-25T05:28:31.231Z",
+        "tokyoNow": "25 Oct 2026, 14:28",
+        "stops": [
+          {
+            "item": {
+              "id": "1E28A81A-5290-4F52-A220-DAEA3A8AC6EF",
+              "title": "BEEP Akihabara",
+              "kind": "place",
+              "source": "Qloo",
+              "url": "https://www.beep-shop.com/",
+              "description": "retro, games, computers",
+              "location": "中栄ビル B1 3 Chome-9-8 Sotokanda Chiyoda City, Tokyo 101-0021 Japan",
+              "checkedAt": "2026-10-25T05:28:31.231Z",
+              "price": null,
+              "priceLabel": "Not published",
+              "availability": "",
+              "category": "play",
+              "signals": [],
+              "lat": 35.701510899999995,
+              "lon": 139.7708645,
+              "hours": {
+                "sunday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "monday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "tuesday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "wednesday": [
+                  {
+                    "closed": true
+                  }
+                ],
+                "thursday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "friday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ],
+                "saturday": [
+                  {
+                    "closed": false,
+                    "opens": "T11:00:00",
+                    "closes": "T20:00:00"
+                  }
+                ]
+              },
+              "curation": {
+                "role": "play",
+                "area": "Akihabara",
+                "mission": "Read the labels on one piece of older game hardware. Look for a design constraint that explains how people played with it.",
+                "tags": [
+                  "retro",
+                  "games",
+                  "computers"
+                ],
+                "doorNotes": [],
+                "source": "https://www.beep-shop.com/",
+                "reviewedAt": "2026-10-24T16:39:10.073Z",
+                "matchBasis": "genre_bridge",
+                "hoursBasis": "Qloo weekly hours",
+                "matchedTags": [
+                  "games"
+                ],
+                "matchStrength": "anchor",
+                "tasteScore": 155,
+                "focusRequested": true,
+                "focusMatch": true,
+                "focusReason": "You asked for retro games. This matches the reviewed venue activity.",
+                "sourceReadAt": "2026-10-25T05:28:31.231Z"
+              },
+              "score": 0,
+              "reasons": [
+                "An option to react to; no personal match established yet."
+              ],
+              "matchLevel": "activity"
+            },
+            "arrival": "14:45",
+            "departure": "15:30",
+            "hours": "11:00–20:00",
+            "travelMinutes": 0,
+            "distanceMetres": 0,
+            "reason": "You asked for retro games. This matches the reviewed venue activity. Your Qloo taste tags overlap games in the reviewed venue profile.",
+            "mission": "Read the labels on one piece of older game hardware. Look for a design constraint that explains how people played with it."
+          }
+        ],
+        "brief": "One supported stop on 2026-10-25 at 14:45 JST. No walking loop fit the current evidence.",
+        "map": "https://www.google.com/maps/search/?api=1&query=35.701510899999995,139.7708645",
+        "examined": 54,
+        "eligible": 36,
+        "notes": [
+          "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+          "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions.",
+          "One supported stop fits. I could not add a compatible nearby stop with usable hours, so this is a focused find rather than a walking loop."
+        ],
+        "walkingMinutes": 0,
+        "walkingMetres": 0,
+        "returnMinutes": 0,
+        "trace": [
+          "Started with Pokemon FireRed Version.",
+          "Ranked 54 candidates within 100 curated venues; 73 have resolved Qloo IDs.",
+          "Read 1 venue pages.",
+          "Fitted 1 stops with varied activities around their weekly hours and a return walk."
+        ],
+        "title": "BEEP Akihabara",
+        "vibe": "One place worth a closer look. Take your time here.",
+        "invitation": "You brought Pokemon FireRed Version. This is one place to follow that interest, with enough time to browse.",
+        "seed": {
+          "id": "B069A50F-4B91-481D-95F0-187DA3CF9F05",
+          "name": "Pokemon FireRed Version",
+          "type": "videogame"
+        },
+        "run": [
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /search · resolving Pokemon FireRed Version.",
+            "at": "2026-10-25T05:28:30.281Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · checking resolved artists from the event catalog.",
+            "at": "2026-10-25T05:28:30.824Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · reading the seed’s cultural metadata.",
+            "at": "2026-10-25T05:28:31.231Z"
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · following links into movie.",
+            "at": "2026-10-25T05:28:31.534Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 69.",
+            "at": "2026-10-25T05:28:33.190Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 69.",
+            "at": "2026-10-25T05:28:33.537Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 69.",
+            "at": "2026-10-25T05:28:33.897Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /v2/insights · ranking curated venues 61–69 of 69.",
+            "at": "2026-10-25T05:28:34.261Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:34.607Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "running",
+            "detail": "Qloo /entities · loading venue coordinates and published schedules.",
+            "at": "2026-10-25T05:28:34.918Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "taste",
+            "status": "complete",
+            "detail": "Found 54 candidates in the curated catalog. 3 lateral cultural links returned by Qloo.",
+            "at": "2026-10-25T05:28:35.259Z",
+            "associations": [
+              {
+                "name": "2D Sprites",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Pixel Art",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Cartoon",
+                "type": "tag",
+                "relation": "seed_tag",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Hilda and the Mountain King",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "Chip 'n Dale: Rescue Rangers",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              },
+              {
+                "name": "The Bob's Burgers Movie",
+                "type": "movie",
+                "relation": "related_entity",
+                "via": "Pokemon FireRed Version"
+              }
+            ]
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "running",
+            "detail": "Checking Tokyo time and the published opening windows.",
+            "at": "2026-10-25T05:28:35.259Z"
+          },
+          {
+            "type": "stage",
+            "stage": "operations",
+            "status": "complete",
+            "detail": "25 Oct 2026, 14:28 JST · 36 of 54 candidates pass hours, location and price checks for 2026-10-25.",
+            "at": "2026-10-25T05:28:35.259Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.",
+            "at": "2026-10-25T05:28:35.259Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Reading venue pages for BEEP Akihabara.",
+            "at": "2026-10-25T05:28:35.259Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "running",
+            "detail": "Read BEEP Akihabara and applied any supported dated hours.",
+            "at": "2026-10-25T05:28:35.723Z"
+          },
+          {
+            "type": "stage",
+            "stage": "cluster",
+            "status": "complete",
+            "detail": "Selected BEEP Akihabara. About 0 minutes walking including the return.",
+            "at": "2026-10-25T05:28:35.723Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "running",
+            "detail": "Composing the mission, timetable and sourced door notes.",
+            "at": "2026-10-25T05:28:35.723Z"
+          },
+          {
+            "type": "stage",
+            "stage": "synthesis",
+            "status": "complete",
+            "detail": "One supported find. No complete walking route fit.",
+            "at": "2026-10-25T05:28:35.723Z"
+          }
+        ]
+      },
+      "leads": [
+        {
+          "id": "release-source:https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2859903&grp_id=10000:2026-10-27",
+          "title": "『ぽこ あ ポケモン』 シリコンバンド付きアクリルブロック",
+          "url": "https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2859903&grp_id=10000",
+          "location": "Japan · participating retailers",
+          "start": "2026-10-27",
+          "end": "2026-10-27",
+          "priceLabel": "Prize / retailer conditions vary",
+          "reason": "Same franchise or creator: Pokémon. This does not confirm this particular edition or stock.",
+          "times": [],
+          "kind": "release",
+          "online": true
+        },
+        {
+          "id": "release-source:https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2859904&grp_id=10000:2026-10-27",
+          "title": "『ぽこ あ ポケモン』 ラグマット",
+          "url": "https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2859904&grp_id=10000",
+          "location": "Japan · participating retailers",
+          "start": "2026-10-27",
+          "end": "2026-10-27",
+          "priceLabel": "Prize / retailer conditions vary",
+          "reason": "Same franchise or creator: Pokémon. This does not confirm this particular edition or stock.",
+          "times": [],
+          "kind": "release",
+          "online": true
+        },
+        {
+          "id": "release-source:https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2761144&grp_id=10000:2026-10-27",
+          "title": "Pokémon · plush · ヒバニー",
+          "url": "https://www.bandaispirits.co.jp/products/search/detail.php?prd_id=2761144&grp_id=10000",
+          "location": "Japan · participating retailers",
+          "start": "2026-10-27",
+          "end": "2026-10-27",
+          "priceLabel": "Prize / retailer conditions vary",
+          "reason": "Same franchise or creator: Pokémon. This does not confirm this particular edition or stock.",
+          "times": [],
+          "kind": "release",
+          "online": true
+        }
+      ],
+      "failures": []
+    }
+  ]
+}
