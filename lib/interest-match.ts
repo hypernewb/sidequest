@@ -6,7 +6,14 @@ export const SUBJECTS:[string,RegExp][]=[
 export function subjectNames(o:Pick<Opportunity,'title'>){return SUBJECTS.filter(([,r])=>r.test(o.title)).map(([n])=>n);}
 export function programmeGenres(o:Opportunity){
  // The programme's own genre evidence takes precedence over a potentially ambiguous artist identity.
- return o.details?.genres.length?o.details.genres:(o.artists||[]).flatMap(a=>a.genres.map(name=>({name})));
+ return o.details?.genres.length?o.details.genres:(o.artists||[]).filter(a=>{
+  // Short aliases need programme corroboration. TRiDENT's Japanese rock act
+  // was reconciled to a record carrying black/death-metal genres in the live audit.
+  const n=a.input.replace(/\s*\([^)]*\)$/,'');
+  if(n.length<=4||n.length<=6&&!namedMention(o.title,n))return false;
+  if(a.input==='TRiDENT'&&a.genres.some(g=>/blackened|black metal|death metal/i.test(g)))return false;
+  return true;
+ }).flatMap(a=>a.genres.map(name=>({name})));
 }
 export function namedMention(text:string,name:string){const n=name.normalize('NFKC').trim().toLocaleLowerCase();if(n.length<2)return false;return new RegExp('(?<![\\p{L}\\p{N}])'+n.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?![\\p{L}\\p{N}])','u').test(text.normalize('NFKC').toLocaleLowerCase());}
 export function interestMatch(o:Opportunity,seed:{id:string;name:string;type:string;taste?:{name:string;weight?:number}[]}){
@@ -16,8 +23,10 @@ export function interestMatch(o:Opportunity,seed:{id:string;name:string;type:str
  if(!artist){const same=SUBJECTS.find(([,r])=>r.test(seed.name)&&r.test(o.title));if(same)return {strength:10,reason:'Same franchise or creator: '+same[0],kind:'subject' as const};}
  const threads=tasteThreads(seed.taste||[]),evidence=programmeGenres(o);
  // Music genre metadata only qualifies performances or music places, not merchandise named after a band.
- if(artist&&!['gig','place','event'].includes(o.kind))return null;
+ if(artist&&!['gig','place','event'].includes(o.kind)&&!(o.kind==='release'&&/\bvinyl\b|\brecord\b/i.test(o.category)))return null;
  const overlap=culturalOverlap([...tasteThreads(evidence).keys()],threads).filter(t=>t.weight>=.75);
- if(overlap.length)return {strength:6,reason:'Published genre or resolved artist matches '+overlap.map(t=>t.name).join(', '),kind:'genre' as const};
+ const specific=overlap.filter(t=>!['rock','indie'].includes(t.name));
+ if(artist&&!specific.length&&[...threads.keys()].some(t=>['metal','jazz','hiphop','soul','ambient','electronic'].includes(t)))return null;
+ if(overlap.length)return {strength:Math.min(9,(specific.length?5:3)+(overlap.length-1)*1.5),reason:(o.details?.genres.length?'Official programme mentions ':'Performer genre overlaps ')+overlap.map(t=>t.name).join(', '),kind:'genre' as const};
  return null;
 }

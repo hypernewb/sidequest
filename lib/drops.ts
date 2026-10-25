@@ -1,6 +1,6 @@
 import {selectedTopics,type TasteProfile,type TopicId} from './taste.ts';
 import {visitDates} from './discovery.ts';
-export type Drop={id:string;title:string;category:'release'|'popup';topics:TopicId[];source:string;sourceUrl:string;checkedAt:string;evidence:'direct'|'indexed';evidenceNote?:string;summary:string;location:string;channel:'online'|'tokyo'|'japan';method:'preorder'|'release'|'lottery'|'visit'|'shipping';startsAt:string;endsAt?:string;releaseDate?:string;delivery?:string;price:number|null;priceNote:string;restrictions:string;hours?:string};
+export type Drop={id:string;title:string;category:'release'|'popup';topics:TopicId[];source:string;sourceUrl:string;checkedAt:string;evidence:'direct'|'indexed';evidenceNote?:string;summary:string;location:string;channel:'online'|'tokyo'|'japan';method:'preorder'|'release'|'lottery'|'visit'|'shipping'|'listing';startsAt:string;endsAt?:string;releaseDate?:string;delivery?:string;price:number|null;priceNote:string;restrictions:string;hours?:string};
 export type DropState='upcoming'|'scheduled'|'released'|'ended'|'needs-review';
 const checkedAt='2026-10-23T05:00:00+09:00';
 export const DROPS:Drop[]=[

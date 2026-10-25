@@ -4,29 +4,29 @@ import {extractEventDetails,type EventDetails} from './event-detail-parser.ts';
 import type {Opportunity,Preferences} from './opportunities.ts';
 import {dateWindow} from './opportunities.ts';
 const cache=new Map<string,{at:number;details:EventDetails}>(),pending=new Map<string,Promise<EventDetails>>();
-export function rememberDetail(url:string,text:string){const details=extractEventDetails(text,url);if(cache.size>=300)cache.delete(cache.keys().next().value!);cache.set(url,{at:Date.now(),details});return details;}
+export function rememberDetail(url:string,text:string,level:'calendar'|'full'='calendar'){const details={...extractEventDetails(text,url),level};if(cache.size>=300)cache.delete(cache.keys().next().value!);cache.set(url,{at:Date.now(),details});return details;}
 export async function publicSource(url:string,fetcher:typeof fetch=fetch){
  const u=new URL(url);if(u.protocol!=='https:'||!officialHost(u.hostname)||u.username||u.password||u.port)throw Error('Unsupported official source.');
- const r=await fetcher(url,{redirect:'manual',headers:{Accept:'text/html,application/json','User-Agent':'SideQuest official detail reader'},signal:AbortSignal.timeout(10000)});
+ const r=await fetcher(url,{redirect:'manual',headers:{Accept:'text/html,application/json','User-Agent':'SideQuest official detail reader'},signal:AbortSignal.timeout(u.hostname.endsWith('beams.co.jp')?25000:10000)});
  if(!r.ok)throw Error('Official source unavailable ('+r.status+').');
  if(!/text\/html|application\/(?:json|xml|rss\+xml|atom\+xml)|text\/xml/.test(r.headers.get('content-type')||''))throw Error('Unsupported source format.');
  const reader=r.body?.getReader();if(!reader)throw Error('Empty source');let size=0,text='';const decoder=new TextDecoder();try{for(;;){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>1000000)throw Error('Source too large');text+=decoder.decode(value,{stream:true});}return text+decoder.decode();}finally{await reader.cancel();}
 }
-export async function enrichOne(url:string,fetcher:typeof fetch=fetch):Promise<EventDetails>{
- const hit=cache.get(url);if(hit&&Date.now()-hit.at<1800000)return hit.details;if(pending.has(url))return pending.get(url)!;
+export async function enrichOne(url:string,fetcher:typeof fetch=fetch,full=false):Promise<EventDetails>{
+ const hit=cache.get(url);if(hit&&Date.now()-hit.at<1800000&&(!full||hit.details.level==='full'))return hit.details;if(pending.has(url))return pending.get(url)!;
  const work=(async()=>{let target=url;const u=new URL(url);
   if(u.hostname==='ufoclub.jp'&&/^#\d{4}-\d{2}-\d{2}$/.test(u.hash)){
    const html=await publicSource('https://ufoclub.jp/schedule/',fetcher),month=html.match(/<div class="month">(20\d{2})年(\d{1,2})月/);
    if(!month||u.hash.slice(1,8)!==month[1]+'-'+month[2].padStart(2,'0'))throw Error('That calendar month is no longer published.');
    const row=[...html.matchAll(/<tr>([\s\S]*?)<\/tr>/g)].find(m=>Number(m[1].match(/<th[^>]*>\s*(\d{1,2})\s*<\/th>/)?.[1])===Number(u.hash.slice(-2)));
    if(!row)throw Error('That show is no longer on the calendar.');
-   return rememberDetail(url,plainText(row[1]));
+   return rememberDetail(url,plainText(row[1]),'full');
   }
   if(u.hostname==='reserve.cottonclubjapan.co.jp'&&/^\/reserve\/schedule\/exec\/\d+$/.test(u.pathname)){
    const id=u.pathname.split('/').pop();const info=JSON.parse(await publicSource('https://reserve.cottonclubjapan.co.jp/reserve/schedule/read_event_info/'+id,fetcher));const link=info.links?.detail_page_url;
    if(typeof link!=='string'||!/^https:\/\/(?:www\.)?cottonclubjapan\.co\.jp\/jp\/sp\/artists\//.test(link))throw Error('No public performance details.');target=link;
   }
-  const r=await readAnnouncement(target,'',fetcher);const d=rememberDetail(url,r.text);d.url=r.url;
+  const r=await readAnnouncement(target,'',fetcher);const d=rememberDetail(url,r.text,'full');d.url=r.url;
   // Cotton's calendar states a compulsory food/drink order; artist pages omit its cost.
   if(u.hostname.endsWith('cottonclubjapan.co.jp'))d.priceCeiling=null;
   return d;

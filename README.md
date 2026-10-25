@@ -175,3 +175,7 @@ Stale catalogs refresh on demand, and expanded-source events now receive exact a
 ## Catalog population and shared taste
 
 The event browser now opens on the saved catalog, with category counts and editable named interests. Dated Bandai products, MEDICOM preorders, Animate Tokyo pop-ups and Midtown events join the existing source readers. Recent releases retain their actual launch dates; expired buying windows are removed. The legacy drops view reads the shared catalog. See [the population and matching review](evaluation/CATALOG-POPULATION.md) and [the live contrast audit](evaluation/catalog-population-local.json). These checks do not establish a human-rated recommendation uplift.
+
+## Independent shops and full gig programmes
+
+BIG LOVE RECORDS, pianola records, CIBONE, PARCEL and WISH LESS add 39 current vinyl, fashion, design and art records. Vinyl and fashion have separate catalog filters. Gigs receive a dedicated full-page queue, named lineups and more careful Qloo genre reconciliation. The local audit reached 178 full gig programmes, 91 with Qloo artist name matches and 108 with genre evidence. See [source evidence, contrasting tastes and limitations](evaluation/INDEPENDENT-MUSIC.md). BEAMS is prepared but its app-runtime fetch still times out.

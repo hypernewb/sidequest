@@ -1,0 +1,1956 @@
+{
+  "at": "2026-10-25T04:58:59.301Z",
+  "environment": "local",
+  "before": {
+    "gigs": 178,
+    "withLineup": 178,
+    "fullPages": 178,
+    "withResolvedArtists": 91,
+    "withGenres": 108
+  },
+  "after": {
+    "gigs": 178,
+    "withLineup": 178,
+    "fullPages": 178,
+    "withResolvedArtists": 91,
+    "withGenres": 108
+  },
+  "inventory": {
+    "total": 507,
+    "byKind": {
+      "release": 250,
+      "popup": 51,
+      "exhibition": 18,
+      "gig": 178,
+      "event": 10
+    },
+    "bySource": {
+      "BIG LOVE RECORDS": 21,
+      "pianola records": 6,
+      "CIBONE": 7,
+      "PARCEL": 2,
+      "WISH LESS": 2,
+      "pianola records events": 1,
+      "UNIT / SALOON": 23,
+      "21_21 DESIGN SIGHT": 2,
+      "LIQUIDROOM": 32,
+      "Daikanyama T-Site": 12,
+      "Laforet Harajuku": 4,
+      "MEDICOM TOY preorders": 8,
+      "Animate Tokyo pop-ups": 17,
+      "Tokyo Midtown": 4,
+      "BANDAI SPIRITS": 213,
+      "U.F.O.CLUB": 7,
+      "Taka Ishii Gallery": 2,
+      "Cotton Club": 20,
+      "Tower Records Shibuya": 3,
+      "Shindaita FEVER": 38,
+      "WWW / WWW X": 58,
+      "Shibuya PARCO": 20,
+      "mograg gallery": 2,
+      "PR Times · issuer press release": 1,
+      "MEDICOM TOY": 2
+    },
+    "withArtists": 109,
+    "withGenres": 144,
+    "olderThanADay": 3
+  },
+  "health": [
+    {
+      "name": "Laforet Harajuku",
+      "count": 4,
+      "status": "Checked official date evidence"
+    },
+    {
+      "name": "Daikanyama T-Site",
+      "count": 12,
+      "status": "Checked official date evidence"
+    },
+    {
+      "name": "LIQUIDROOM",
+      "count": 26,
+      "status": "Checked official date evidence"
+    },
+    {
+      "name": "LIQUIDROOM",
+      "count": 33,
+      "status": "Checked official date evidence"
+    },
+    {
+      "name": "21_21 DESIGN SIGHT",
+      "count": 2,
+      "status": "Checked official date evidence"
+    },
+    {
+      "name": "UNIT / SALOON",
+      "count": 21,
+      "status": "Checked official date evidence"
+    },
+    {
+      "name": "UNIT / SALOON",
+      "count": 18,
+      "status": "Checked official date evidence"
+    },
+    {
+      "name": "PR Times",
+      "count": 0,
+      "status": "RSS checked; 5 candidate pages; only explicit Tokyo date ranges accepted"
+    },
+    {
+      "name": "Connpass",
+      "count": 0,
+      "status": "Awaiting approved API key; no scraping"
+    },
+    {
+      "name": "Peatix",
+      "count": 0,
+      "status": "Discovery links; search shell did not expose verified event records"
+    },
+    {
+      "name": "Miyashita Park",
+      "count": 0,
+      "status": "Maintenance page; unavailable"
+    },
+    {
+      "name": "Shelter",
+      "count": 0,
+      "status": "Blocked response; unavailable"
+    },
+    {
+      "name": "Basement Bar",
+      "count": 0,
+      "status": "Blocked response; unavailable"
+    },
+    {
+      "name": "Tokyo Art Beat",
+      "count": 0,
+      "status": "Discovery index; follow original gallery pages; no current API access verified"
+    },
+    {
+      "name": "Vinyl / fashion X lists",
+      "count": 0,
+      "status": "Paste individual announcements; no verified public list RSS reader"
+    },
+    {
+      "name": "MEDICOM TOY preorders",
+      "url": "https://store.medicomtoy.co.jp/blogs/blog.atom",
+      "count": 8,
+      "parsed": 12,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "Animate Tokyo pop-ups",
+      "url": "https://www.animate.co.jp/onlyshop/",
+      "count": 9,
+      "parsed": 9,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "Tokyo Midtown",
+      "url": "https://www.tokyo-midtown.com/jp/event/",
+      "count": 4,
+      "parsed": 4,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "Animate Tokyo pop-ups",
+      "url": "https://www.animate.co.jp/onlyshop/page/2/",
+      "count": 7,
+      "parsed": 9,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "Animate Tokyo pop-ups",
+      "url": "https://www.animate.co.jp/onlyshop/page/3/",
+      "count": 1,
+      "parsed": 10,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "BANDAI SPIRITS",
+      "url": "https://www.bandaispirits.co.jp/products/calendar/?year_frm=2026&month_frm=10",
+      "count": 196,
+      "parsed": 230,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "BANDAI SPIRITS",
+      "url": "https://www.bandaispirits.co.jp/products/calendar/?year_frm=2026&month_frm=11",
+      "count": 17,
+      "parsed": 17,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "pianola records",
+      "url": "https://pianola-records.com/collections/all.atom",
+      "count": 6,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "BIG LOVE RECORDS",
+      "url": "https://bigloverecords.jp/collections/all.atom",
+      "count": 21,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "pianola records events",
+      "url": "https://pianola-records.com/blogs/news.atom",
+      "count": 1,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "WISH LESS",
+      "url": "https://wish-less.com/",
+      "count": 2,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "PARCEL",
+      "url": "https://parceltokyo.jp/",
+      "count": 2,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "CIBONE",
+      "url": "https://www.cibone.com/",
+      "count": 7,
+      "status": "Official dated records checked"
+    },
+    {
+      "name": "BEAMS collaborations",
+      "url": "https://www.beams.co.jp/news/?hashtag=2395",
+      "count": 0,
+      "status": "Unavailable: The operation was aborted due to timeout. Previous check time preserved."
+    }
+  ],
+  "results": [
+    {
+      "seed": "Nujabes",
+      "returned": 146,
+      "personal": 23,
+      "first": [
+        {
+          "title": "Skaai / Jody Fontaine (AG Club) / Bonbero / Flowerboi Take / otuyyuto / Siero — WWW presents Skaai 『BOSS』",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "start": "2026-11-06",
+          "match": "taste",
+          "artists": [
+            "Skaai",
+            "GUEST LIVE:",
+            "Jody Fontaine(AG Club)",
+            "FEATURED ARTIST:",
+            "Bonbero",
+            "Flowerboi Take",
+            "otuyyuto",
+            "Siero"
+          ],
+          "resolved": [],
+          "genres": [
+            {
+              "name": "experimental",
+              "evidence": "Jody Fontaineは、アメリカ・ベイエリア出身のアーティスト/ ディレクター/ソングライター。 ジャンルの枠を越えた表現で注目を集めるコレクティブ、AG Clubの元中心メンバーとして知られる。 2019年の活動開始以降、 感情的なストーリーテリングと実験的なアプローチ、 エネルギッシュなライブパフォーマンスを通して支持を広げ、 Coachella、Lollapalooza、Outside Lands、Camp Flog Gnaw、Austin City Limitsなどのフェスティバルに出演してきた。"
+            },
+            {
+              "name": "hip-hop",
+              "evidence": "そして、米・ベイエリア発のヒップホップ・ コレクティブ「AG Club」のメンバー、Jody Fontaineがゲストライブ出演決定。Bonbero、 Sieroら客演アーティストも発表。"
+            },
+            {
+              "name": "soul",
+              "evidence": "2021年11月のシングル『Period.』を皮切りに、 シングル『Nectar.』やEP『BEANIE』 などを通して、 新鮮なラップとソウルフルな歌唱力を世に知らしめる。 二枚目のEPとなる『WE'LL DIE THIS WAY』では、音楽的により感情的で叙情的な印象を色濃くした。 その後1年以上のブランクを経て、荘子itと共同シングル『 変な空気』をリリース。2025年にはシングル『 MILLION』そして『Runaway』をリリースし、 ロックやネオソウルへの熱量も感じさせつつ、 言葉と感情の揺れ動きに主軸を置いた音楽性を確立させた。 同年にはプロデューサーKMとの共同EP『Podiu"
+            },
+            {
+              "name": "rock",
+              "evidence": "2021年11月のシングル『Period.』を皮切りに、 シングル『Nectar.』やEP『BEANIE』 などを通して、 新鮮なラップとソウルフルな歌唱力を世に知らしめる。 二枚目のEPとなる『WE'LL DIE THIS WAY』では、音楽的により感情的で叙情的な印象を色濃くした。 その後1年以上のブランクを経て、荘子itと共同シングル『 変な空気』をリリース。2025年にはシングル『 MILLION』そして『Runaway』をリリースし、 ロックやネオソウルへの熱量も感じさせつつ、 言葉と感情の揺れ動きに主軸を置いた音楽性を確立させた。 同年にはプロデューサーKMとの共同EP『Podiu"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Official programme mentions hiphop, soul · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "WOLFGANG HAFFNER TRIO",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-10-27",
+          "match": "taste",
+          "artists": [
+            "Wolfgang Haffner (ds)",
+            "Simon Oslender (p,key)",
+            "Thomas Stieger (b)"
+          ],
+          "resolved": [
+            {
+              "name": "Wolfgang Haffner",
+              "genres": [
+                "Contemporary Jazz",
+                "Smooth Jazz",
+                "Modern Jazz",
+                "Jazz",
+                "Nu Jazz"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "jazz",
+              "evidence": "パット・メセニー、ボブ・ジェームス、チャカ・カーンら数多くのミュージシャンと共演。ドイツを代表する世界的ドラマーのウォルフガング・ハフナーが、自身の60歳とキャリア50年を祝う記念公演を開催する。少年の頃からジャズ、ロック、ポップスなど様々なカテゴリーで才能を発揮し、自身のアルバムもマイルス・デイヴィスやチェット・ベイカーゆかりの楽曲をプレイした『Kind of Cool』、エスニック・ミュージックやファンクを取り入れた『Life Rhythm』など数多い。その音楽活動のコアに位置するキーボードのジモン・オスレンダー、ベースのトーマス・スティーガーとの“鉄壁のトリオ”で、今回はどんな音楽世界を"
+            },
+            {
+              "name": "funk",
+              "evidence": "パット・メセニー、ボブ・ジェームス、チャカ・カーンら数多くのミュージシャンと共演。ドイツを代表する世界的ドラマーのウォルフガング・ハフナーが、自身の60歳とキャリア50年を祝う記念公演を開催する。少年の頃からジャズ、ロック、ポップスなど様々なカテゴリーで才能を発揮し、自身のアルバムもマイルス・デイヴィスやチェット・ベイカーゆかりの楽曲をプレイした『Kind of Cool』、エスニック・ミュージックやファンクを取り入れた『Life Rhythm』など数多い。その音楽活動のコアに位置するキーボードのジモン・オスレンダー、ベースのトーマス・スティーガーとの“鉄壁のトリオ”で、今回はどんな音楽世界を"
+            },
+            {
+              "name": "rock",
+              "evidence": "パット・メセニー、ボブ・ジェームス、チャカ・カーンら数多くのミュージシャンと共演。ドイツを代表する世界的ドラマーのウォルフガング・ハフナーが、自身の60歳とキャリア50年を祝う記念公演を開催する。少年の頃からジャズ、ロック、ポップスなど様々なカテゴリーで才能を発揮し、自身のアルバムもマイルス・デイヴィスやチェット・ベイカーゆかりの楽曲をプレイした『Kind of Cool』、エスニック・ミュージックやファンクを取り入れた『Life Rhythm』など数多い。その音楽活動のコアに位置するキーボードのジモン・オスレンダー、ベースのトーマス・スティーガーとの“鉄壁のトリオ”で、今回はどんな音楽世界を"
+            },
+            {
+              "name": "pop",
+              "evidence": "パット・メセニー、ボブ・ジェームス、チャカ・カーンら数多くのミュージシャンと共演。ドイツを代表する世界的ドラマーのウォルフガング・ハフナーが、自身の60歳とキャリア50年を祝う記念公演を開催する。少年の頃からジャズ、ロック、ポップスなど様々なカテゴリーで才能を発揮し、自身のアルバムもマイルス・デイヴィスやチェット・ベイカーゆかりの楽曲をプレイした『Kind of Cool』、エスニック・ミュージックやファンクを取り入れた『Life Rhythm』など数多い。その音楽活動のコアに位置するキーボードのジモン・オスレンダー、ベースのトーマス・スティーガーとの“鉄壁のトリオ”で、今回はどんな音楽世界を"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Official programme mentions jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "【kihito+migon Presents HALLOWEEN NIGHTMARE】",
+          "kind": "gig",
+          "source": "U.F.O.CLUB",
+          "start": "2026-10-31",
+          "match": "taste",
+          "artists": [
+            "Sex Virgin Killer",
+            "Yuko Araki"
+          ],
+          "resolved": [
+            {
+              "name": "Yuko Araki",
+              "genres": [
+                "Experimental",
+                "Ambient",
+                "Electronic",
+                "Noise"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Performer genre overlaps ambient · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "ELECTRIC DELAY LAND Vol.2",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-11-07",
+          "match": "taste",
+          "artists": [
+            "出演",
+            "CHUDAHYE CHAGIS (From KOREA)",
+            "LITTLE TEMPO",
+            "FLYING RHYTHMS",
+            "ANJI",
+            "E.O.U",
+            "Hajime Oishi",
+            "ALL Mixing:",
+            "Naoyuki Uchida"
+          ],
+          "resolved": [
+            {
+              "name": "Little Tempo",
+              "genres": [
+                "World",
+                "Electronic",
+                "Japanese",
+                "Dub",
+                "Reggae"
+              ]
+            },
+            {
+              "name": "Flying Rhythms",
+              "genres": [
+                "Dub",
+                "Japanese",
+                "Hip - Hop",
+                "Tribal"
+              ]
+            },
+            {
+              "name": "Anji",
+              "genres": [
+                "Indonesian",
+                "Hip - Hop"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Performer genre overlaps hiphop · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "THE ORAL CIGARETTES presents \"WANDER ABOUT 放浪 TOUR 2026 関東編\" — THE ORAL CIGARETTES TYOSiN",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-11-11",
+          "match": "taste",
+          "artists": [
+            "THE ORAL CIGARETTES",
+            "TYOSiN"
+          ],
+          "resolved": [
+            {
+              "name": "THE ORAL CIGARETTES",
+              "genres": [
+                "J Rock",
+                "Indie Rock",
+                "Alternative Rock",
+                "Rock",
+                "Japanese"
+              ]
+            },
+            {
+              "name": "TYOSiN",
+              "genres": [
+                "Jrap",
+                "Rap",
+                "J-rap",
+                "Hip - Hop",
+                "Japanese"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Performer genre overlaps hiphop · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "JAPAN 2026",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "start": "2026-11-12",
+          "match": "taste",
+          "artists": [
+            "KIRARA"
+          ],
+          "resolved": [
+            {
+              "name": "Kirara",
+              "genres": [
+                "Electronic",
+                "Korean",
+                "Drone",
+                "Idm",
+                "Indie"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "electronic",
+              "evidence": "FUJI ROCK’26 で圧巻のパフォーマンスを披露した 韓国発のエレクトロニック・ミュージシャン、KIRARA(キララ) 初の単独公演が決定!"
+            },
+            {
+              "name": "ambient",
+              "evidence": "KIRARAはソウルを拠点とするエレクトロニック・ミュージシャン兼ライブ・パフォーマーであり、アナログ・シンセサイザーとモジュラー・シ ステムを駆使した、爆発的で没入感あふれるライブ・セットで知られている。テクノ、アンビエント、ノイズ、実験音楽を融合させた彼女のパ フォーマンスは、すべてリアルタイムで展開され、直感、正確さ、そして生々しいエネルギーによって駆動される、五感を揺さぶる音の物語を紡 ぎ出す。それぞれのセットは唯一無二で二度と繰り返されない旅となり、厳密にコントロールされた構造と完全な解放の瞬間が交錯し、観客を強 烈で催眠的な流れへと深く引き込んでいく。 韓国音楽賞を複数回受賞し、ア"
+            },
+            {
+              "name": "experimental",
+              "evidence": "KIRARAはソウルを拠点とするエレクトロニック・ミュージシャン兼ライブ・パフォーマーであり、アナログ・シンセサイザーとモジュラー・シ ステムを駆使した、爆発的で没入感あふれるライブ・セットで知られている。テクノ、アンビエント、ノイズ、実験音楽を融合させた彼女のパ フォーマンスは、すべてリアルタイムで展開され、直感、正確さ、そして生々しいエネルギーによって駆動される、五感を揺さぶる音の物語を紡 ぎ出す。それぞれのセットは唯一無二で二度と繰り返されない旅となり、厳密にコントロールされた構造と完全な解放の瞬間が交錯し、観客を強 烈で催眠的な流れへと深く引き込んでいく。 韓国音楽賞を複数回受賞し、ア"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Official programme mentions ambient · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "lilbesh ramko with Friends / トップシークレットマン / gummyboy / swetty / ODETRASH / VaVa / krynX -Produced by krynX Set- / eijin / the bercedes menz / Le Makeup / SleepInside / Siero / iga / cephalo / MADEINBEN10 / otuyyuto / ksr:3 / Jairo nark / glico / DJ melody — WWW & WWW X Anniversaries \"LYRICADE\"",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "start": "2026-10-25",
+          "match": "taste",
+          "artists": [
+            "lilbesh ramko with Friends",
+            "トップシークレットマン",
+            "gummyboy",
+            "swetty",
+            "Worldwide Skippa",
+            "ODETRASH",
+            "VaVa -DJ set-",
+            "krynX -Produced by krynX Set-",
+            "eijin",
+            "the bercedes menz",
+            "Siero",
+            "iga",
+            "SleepInside",
+            "Le Makeup",
+            "cephalo",
+            "yvnlazy",
+            "MADEINBEN10",
+            "otuyyuto",
+            "ksr:3",
+            "Jairo nark",
+            "Lily Spacey",
+            "Ludio",
+            "glico",
+            "DJ melody",
+            "naco gotoh"
+          ],
+          "resolved": [],
+          "genres": [
+            {
+              "name": "hip-hop",
+              "evidence": "このほかにも、トップシークレットマン、iga、swetty、MADEINBEN10、eijinなどヒップホップ、バンド、クラブミュージックをはじめ、現在のユースシーンを横断する多彩なアーティストの出演を予定。今後も追加アーティストの発表を控えており、ジャンルレスなラインナップによって、今年も〈 LYRICADE 〉ならではの一日を作り上げる。"
+            },
+            {
+              "name": "pop",
+              "evidence": "さらに、今年同会場でのワンマンライブを即完させ、アルバムをリリースしたばかりのオルタナティブJ-POPバンド・the bercedes menz、ユースシーンと接続しながら独自のアップデートを続けるVaVaがDJとして出演する。"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Official programme mentions hiphop · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "魚返明未 solo piano",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-10-29",
+          "match": "taste",
+          "artists": [
+            "魚返明未 (p)"
+          ],
+          "resolved": [],
+          "genres": [
+            {
+              "name": "jazz",
+              "evidence": "新世代ジャズ・シーンを牽引する俊英ピアニスト"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Official programme mentions jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "seed": "Slayer",
+      "returned": 146,
+      "personal": 13,
+      "first": [
+        {
+          "title": "DEXCORE",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-10-28",
+          "match": "taste",
+          "artists": [
+            "DEXCORE"
+          ],
+          "resolved": [
+            {
+              "name": "dexcore",
+              "genres": [
+                "Metal",
+                "Metalcore",
+                "Japan",
+                "Visual Kei",
+                "Deathcore"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Qloo artist name match dexcore — Metal, Metalcore",
+            "Performer genre overlaps metal · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "start": "2026-10-31",
+          "match": "taste",
+          "artists": [
+            "Mark Boals",
+            "Kelly SIMONZ"
+          ],
+          "resolved": [
+            {
+              "name": "Mark Boals",
+              "genres": [
+                "Metal",
+                "Power Metal",
+                "Heavy Metal",
+                "Progressive Metal",
+                "Melodic Metal"
+              ]
+            },
+            {
+              "name": "Kelly Simonz",
+              "genres": [
+                "Hard Rock",
+                "Neo Classical",
+                "Japanese",
+                "Neo-classical Metal"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Qloo artist name match Mark Boals — Metal, Power Metal, Heavy Metal",
+            "Performer genre overlaps metal · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "worthwhile — DC View From The Soyuz 明日の叙景",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-11-10",
+          "match": "taste",
+          "artists": [
+            "DC",
+            "View From The Soyuz",
+            "明日の叙景"
+          ],
+          "resolved": [
+            {
+              "name": "Dc",
+              "genres": [
+                "Rap",
+                "Electronic",
+                "Grime"
+              ]
+            },
+            {
+              "name": "明日の叙景",
+              "genres": [
+                "Post Black Metal",
+                "Blackgaze",
+                "Black Metal",
+                "Japanese"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Qloo artist name match 明日の叙景 — Post Black Metal, Black Metal",
+            "Performer genre overlaps metal · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "SOUND ENERGY EX",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-10-29",
+          "match": "taste",
+          "artists": [
+            "VANA (from NZ)",
+            "星熊南巫",
+            "DEATHBYROMY (from US)",
+            "愛探眼影"
+          ],
+          "resolved": [
+            {
+              "name": "DeathbyRomy",
+              "genres": [
+                "Trap",
+                "Rap",
+                "Hip - Hop",
+                "Indie Pop"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "metal",
+              "evidence": "ポップとメタルを融合し、新世代オルタナティブシーンを切り拓くダークポップ・アイコン VANA。ダークポップとヘヴィネスを融合するゴシック・オルタナティブの新世代アイコン DEATHBYROMY。"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Source matches: Punk, metal & loud guitars",
+            "Official programme mentions metal · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "start": "2026-11-01",
+          "match": "taste",
+          "artists": [
+            "Mark Boals",
+            "Kelly SIMONZ"
+          ],
+          "resolved": [
+            {
+              "name": "Mark Boals",
+              "genres": [
+                "Metal",
+                "Power Metal",
+                "Heavy Metal",
+                "Progressive Metal",
+                "Melodic Metal"
+              ]
+            },
+            {
+              "name": "Kelly Simonz",
+              "genres": [
+                "Hard Rock",
+                "Neo Classical",
+                "Japanese",
+                "Neo-classical Metal"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Qloo artist name match Mark Boals — Metal, Power Metal, Heavy Metal",
+            "Performer genre overlaps metal · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "『1138 PRESENT: SUDDEN IMPACT Chapter 11』 — S.M.N. FREE KICK QUICKDEAD NOT SO HARD WORK BECAUSE I LOVE IT ＜SPECIAL GUEST＞ PATROLTIME",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-10-31",
+          "match": "taste",
+          "artists": [
+            "S.M.N.",
+            "FREE KICK",
+            "QUICKDEAD",
+            "NOT SO HARD WORK",
+            "BECAUSE I LOVE IT",
+            "PATROLTIME"
+          ],
+          "resolved": [
+            {
+              "name": "Free Kick",
+              "genres": [
+                "Japanese",
+                "Ska",
+                "Skacore",
+                "Ska - Punk",
+                "Punk"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Qloo artist name match Free Kick — Ska - Punk, Punk",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Been Stellar (Tokyo debut)",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "start": "2026-11-02",
+          "match": "taste",
+          "artists": [
+            "Been Stellar"
+          ],
+          "resolved": [
+            {
+              "name": "Been Stellar",
+              "genres": [
+                "Post Punk",
+                "Punk Rock",
+                "Alternative Rock",
+                "Indie Rock"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Qloo artist name match Been Stellar — Post Punk, Punk Rock",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "DOPING PANDA",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-11-20",
+          "match": "taste",
+          "artists": [
+            "DOPING PANDA"
+          ],
+          "resolved": [
+            {
+              "name": "DOPING PANDA",
+              "genres": [
+                "Japanese",
+                "Punk",
+                "Rock",
+                "J Rock",
+                "Electronic"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Qloo artist name match DOPING PANDA — Punk",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "seed": "Aphex Twin",
+      "returned": 146,
+      "personal": 15,
+      "first": [
+        {
+          "title": "【kihito+migon Presents HALLOWEEN NIGHTMARE】",
+          "kind": "gig",
+          "source": "U.F.O.CLUB",
+          "start": "2026-10-31",
+          "match": "taste",
+          "artists": [
+            "Sex Virgin Killer",
+            "Yuko Araki"
+          ],
+          "resolved": [
+            {
+              "name": "Yuko Araki",
+              "genres": [
+                "Experimental",
+                "Ambient",
+                "Electronic",
+                "Noise"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Performer genre overlaps experimental, ambient, electronic · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "JAPAN 2026",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "start": "2026-11-12",
+          "match": "taste",
+          "artists": [
+            "KIRARA"
+          ],
+          "resolved": [
+            {
+              "name": "Kirara",
+              "genres": [
+                "Electronic",
+                "Korean",
+                "Drone",
+                "Idm",
+                "Indie"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "electronic",
+              "evidence": "FUJI ROCK’26 で圧巻のパフォーマンスを披露した 韓国発のエレクトロニック・ミュージシャン、KIRARA(キララ) 初の単独公演が決定!"
+            },
+            {
+              "name": "ambient",
+              "evidence": "KIRARAはソウルを拠点とするエレクトロニック・ミュージシャン兼ライブ・パフォーマーであり、アナログ・シンセサイザーとモジュラー・シ ステムを駆使した、爆発的で没入感あふれるライブ・セットで知られている。テクノ、アンビエント、ノイズ、実験音楽を融合させた彼女のパ フォーマンスは、すべてリアルタイムで展開され、直感、正確さ、そして生々しいエネルギーによって駆動される、五感を揺さぶる音の物語を紡 ぎ出す。それぞれのセットは唯一無二で二度と繰り返されない旅となり、厳密にコントロールされた構造と完全な解放の瞬間が交錯し、観客を強 烈で催眠的な流れへと深く引き込んでいく。 韓国音楽賞を複数回受賞し、ア"
+            },
+            {
+              "name": "experimental",
+              "evidence": "KIRARAはソウルを拠点とするエレクトロニック・ミュージシャン兼ライブ・パフォーマーであり、アナログ・シンセサイザーとモジュラー・シ ステムを駆使した、爆発的で没入感あふれるライブ・セットで知られている。テクノ、アンビエント、ノイズ、実験音楽を融合させた彼女のパ フォーマンスは、すべてリアルタイムで展開され、直感、正確さ、そして生々しいエネルギーによって駆動される、五感を揺さぶる音の物語を紡 ぎ出す。それぞれのセットは唯一無二で二度と繰り返されない旅となり、厳密にコントロールされた構造と完全な解放の瞬間が交錯し、観客を強 烈で催眠的な流れへと深く引き込んでいく。 韓国音楽賞を複数回受賞し、ア"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Official programme mentions electronic, ambient, experimental · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "AIMING FOR ENRIKE JAPAN TOUR 2026 / TONE FLAKES Vol 174 FLAKE RECORDS 20TH ANNIVERSARY TOUR — AIMING FOR ENRIKE (From NO)",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-10-28",
+          "match": "taste",
+          "artists": [
+            "AIMING FOR ENRIKE (From NO)"
+          ],
+          "resolved": [
+            {
+              "name": "Aiming For Enrike",
+              "genres": [
+                "Experimental",
+                "Psychedelic Rock",
+                "Electronic",
+                "Norwegian"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Performer genre overlaps experimental, electronic · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Rival Consoles — Landscape from Memory Tour 2026",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "start": "2026-11-19",
+          "match": "taste",
+          "artists": [
+            "Rival Consoles",
+            "with live visuals by Daito Manabe"
+          ],
+          "resolved": [
+            {
+              "name": "Rival Consoles",
+              "genres": [
+                "Electro",
+                "Ambient",
+                "Electronic",
+                "Idm",
+                "Experimental"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "electronic",
+              "evidence": "ロンドンを拠点とするプロデューサー、ライアン・リー・ウェスト(Rival Consolesの名で広く知られる)は、シンセサイザーの音に人間味と雰囲気をもたらすことで知られてい る。批評家から高い評価を受けてきた18年にわたるキャリアの中で、彼の音楽は初期のEPに見られた挑戦的なエレクトロニック・サウンドから、アルバムでは徐々にコンセプチュアルで変容に富んだものへと多様化してきました。"
+            },
+            {
+              "name": "ambient",
+              "evidence": "2025年7月、Rival ConsolesはErased Tapesより最新スタジオ・アルバム『Landscape from Memory』をリリースし、今回の公演では、過去15年間のキャリアおよびそれ以降 の作品から選りすぐった楽曲を織り交ぜた、まったく新しい独自のパフォーマンスを披露します。ディープなアンビエント作品から彼独自のテクノまで、その間の広大なスペクト ルを横断するこのショーは、アイデアを紡ぎ出す長編の物語となるでしょう。その多くは、ライブで初めて披露される楽曲である。"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Official programme mentions electronic, ambient · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "さらさ",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-11-04",
+          "match": "taste",
+          "artists": [
+            "AAAMYYY"
+          ],
+          "resolved": [
+            {
+              "name": "AAAMYYY",
+              "genres": [
+                "Electronic",
+                "J -pop",
+                "Japanese"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Performer genre overlaps electronic · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "5B records主催「かたよる 第2回」 6th album「街」レコ発 — Discharming man",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-11-01",
+          "match": "taste",
+          "artists": [
+            "Discharming man"
+          ],
+          "resolved": [
+            {
+              "name": "Discharming Man",
+              "genres": [
+                "Japanese",
+                "Indie",
+                "Electronica",
+                "Rock",
+                "Alternative Rock"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Performer genre overlaps electronic · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Meg Bonus — Meg Bonus LIVE TOUR 2026",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "start": "2026-11-05",
+          "match": "taste",
+          "artists": [
+            "Meg Bonus"
+          ],
+          "resolved": [],
+          "genres": [
+            {
+              "name": "electronic",
+              "evidence": "エレクトロニックミュージックやロック、R&B、ヒップホップなど多彩なジャンルの断片を自在に組み合わせながら、独自の美学で一貫するスタイルが特徴。新たな時代を切り拓く存在として、実験性をポップネスで包み込むヴィヴィッドな音楽性が高評価を集める。熱い情熱と冷静な視点を兼ね備え、無限の可能性を秘めた若きアーティストとして、今後のさらなる飛躍が期待されている。"
+            },
+            {
+              "name": "hip-hop",
+              "evidence": "エレクトロニックミュージックやロック、R&B、ヒップホップなど多彩なジャンルの断片を自在に組み合わせながら、独自の美学で一貫するスタイルが特徴。新たな時代を切り拓く存在として、実験性をポップネスで包み込むヴィヴィッドな音楽性が高評価を集める。熱い情熱と冷静な視点を兼ね備え、無限の可能性を秘めた若きアーティストとして、今後のさらなる飛躍が期待されている。"
+            },
+            {
+              "name": "R&B",
+              "evidence": "エレクトロニックミュージックやロック、R&B、ヒップホップなど多彩なジャンルの断片を自在に組み合わせながら、独自の美学で一貫するスタイルが特徴。新たな時代を切り拓く存在として、実験性をポップネスで包み込むヴィヴィッドな音楽性が高評価を集める。熱い情熱と冷静な視点を兼ね備え、無限の可能性を秘めた若きアーティストとして、今後のさらなる飛躍が期待されている。"
+            },
+            {
+              "name": "rock",
+              "evidence": "エレクトロニックミュージックやロック、R&B、ヒップホップなど多彩なジャンルの断片を自在に組み合わせながら、独自の美学で一貫するスタイルが特徴。新たな時代を切り拓く存在として、実験性をポップネスで包み込むヴィヴィッドな音楽性が高評価を集める。熱い情熱と冷静な視点を兼ね備え、無限の可能性を秘めた若きアーティストとして、今後のさらなる飛躍が期待されている。"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Official programme mentions electronic · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Lucky Kilimanjaro",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-11-06",
+          "match": "taste",
+          "artists": [
+            "Lucky Kilimanjaro"
+          ],
+          "resolved": [
+            {
+              "name": "Lucky Kilimanjaro",
+              "genres": [
+                "Electronic",
+                "Indie",
+                "Japanese",
+                "Indie Pop",
+                "Alternative Rock"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Performer genre overlaps electronic · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "seed": "Bill Evans",
+      "returned": 146,
+      "personal": 12,
+      "first": [
+        {
+          "title": "WOLFGANG HAFFNER TRIO",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-10-27",
+          "match": "taste",
+          "artists": [
+            "Wolfgang Haffner (ds)",
+            "Simon Oslender (p,key)",
+            "Thomas Stieger (b)"
+          ],
+          "resolved": [
+            {
+              "name": "Wolfgang Haffner",
+              "genres": [
+                "Contemporary Jazz",
+                "Smooth Jazz",
+                "Modern Jazz",
+                "Jazz",
+                "Nu Jazz"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "jazz",
+              "evidence": "パット・メセニー、ボブ・ジェームス、チャカ・カーンら数多くのミュージシャンと共演。ドイツを代表する世界的ドラマーのウォルフガング・ハフナーが、自身の60歳とキャリア50年を祝う記念公演を開催する。少年の頃からジャズ、ロック、ポップスなど様々なカテゴリーで才能を発揮し、自身のアルバムもマイルス・デイヴィスやチェット・ベイカーゆかりの楽曲をプレイした『Kind of Cool』、エスニック・ミュージックやファンクを取り入れた『Life Rhythm』など数多い。その音楽活動のコアに位置するキーボードのジモン・オスレンダー、ベースのトーマス・スティーガーとの“鉄壁のトリオ”で、今回はどんな音楽世界を"
+            },
+            {
+              "name": "funk",
+              "evidence": "パット・メセニー、ボブ・ジェームス、チャカ・カーンら数多くのミュージシャンと共演。ドイツを代表する世界的ドラマーのウォルフガング・ハフナーが、自身の60歳とキャリア50年を祝う記念公演を開催する。少年の頃からジャズ、ロック、ポップスなど様々なカテゴリーで才能を発揮し、自身のアルバムもマイルス・デイヴィスやチェット・ベイカーゆかりの楽曲をプレイした『Kind of Cool』、エスニック・ミュージックやファンクを取り入れた『Life Rhythm』など数多い。その音楽活動のコアに位置するキーボードのジモン・オスレンダー、ベースのトーマス・スティーガーとの“鉄壁のトリオ”で、今回はどんな音楽世界を"
+            },
+            {
+              "name": "rock",
+              "evidence": "パット・メセニー、ボブ・ジェームス、チャカ・カーンら数多くのミュージシャンと共演。ドイツを代表する世界的ドラマーのウォルフガング・ハフナーが、自身の60歳とキャリア50年を祝う記念公演を開催する。少年の頃からジャズ、ロック、ポップスなど様々なカテゴリーで才能を発揮し、自身のアルバムもマイルス・デイヴィスやチェット・ベイカーゆかりの楽曲をプレイした『Kind of Cool』、エスニック・ミュージックやファンクを取り入れた『Life Rhythm』など数多い。その音楽活動のコアに位置するキーボードのジモン・オスレンダー、ベースのトーマス・スティーガーとの“鉄壁のトリオ”で、今回はどんな音楽世界を"
+            },
+            {
+              "name": "pop",
+              "evidence": "パット・メセニー、ボブ・ジェームス、チャカ・カーンら数多くのミュージシャンと共演。ドイツを代表する世界的ドラマーのウォルフガング・ハフナーが、自身の60歳とキャリア50年を祝う記念公演を開催する。少年の頃からジャズ、ロック、ポップスなど様々なカテゴリーで才能を発揮し、自身のアルバムもマイルス・デイヴィスやチェット・ベイカーゆかりの楽曲をプレイした『Kind of Cool』、エスニック・ミュージックやファンクを取り入れた『Life Rhythm』など数多い。その音楽活動のコアに位置するキーボードのジモン・オスレンダー、ベースのトーマス・スティーガーとの“鉄壁のトリオ”で、今回はどんな音楽世界を"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Source matches: Jazz & listening sessions",
+            "Official programme mentions jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "タデクイ / Trooper Salute / MIZ — タデクイpresents \"デルタ\"",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "start": "2026-10-29",
+          "match": "taste",
+          "artists": [
+            "タデクイ",
+            "Trooper Salute",
+            "MIZ"
+          ],
+          "resolved": [
+            {
+              "name": "Miz",
+              "genres": [
+                "Japanese",
+                "J -pop",
+                "Jpop",
+                "J Rock"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "jazz",
+              "evidence": "「それぞれに自分らしく」をコンセプトに、ジャズ、ブルース、ブラジル音楽など、"
+            },
+            {
+              "name": "blues",
+              "evidence": "「それぞれに自分らしく」をコンセプトに、ジャズ、ブルース、ブラジル音楽など、"
+            },
+            {
+              "name": "rock",
+              "evidence": "名古屋発、5人編成・シンフォニックインディロックバンド。"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Source matches: Jazz & listening sessions",
+            "Official programme mentions jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "魚返明未 solo piano",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-10-29",
+          "match": "taste",
+          "artists": [
+            "魚返明未 (p)"
+          ],
+          "resolved": [],
+          "genres": [
+            {
+              "name": "jazz",
+              "evidence": "新世代ジャズ・シーンを牽引する俊英ピアニスト"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Source matches: Jazz & listening sessions",
+            "Official programme mentions jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "will hyde / LUCKY TAPES — KrosSphere",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "start": "2026-11-09",
+          "match": "taste",
+          "artists": [
+            "will hyde",
+            "LUCKY TAPES"
+          ],
+          "resolved": [
+            {
+              "name": "Will Hyde",
+              "genres": [
+                "Power Pop",
+                "Australian",
+                "Australia"
+              ]
+            },
+            {
+              "name": "Lucky Tapes",
+              "genres": [
+                "Nu Jazz",
+                "Japanese",
+                "Funk",
+                "Jazz"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Fits: hear live music",
+            "Qloo artist name match Lucky Tapes — Nu Jazz, Jazz",
+            "Performer genre overlaps jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "ANATOLE MUSTER",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-11-06",
+          "match": "taste",
+          "artists": [
+            "Anatole Muster (acc,vo,breathalyzer)",
+            "Hugo Piper (b)",
+            "Ananda Brandão (ds)"
+          ],
+          "resolved": [],
+          "genres": [
+            {
+              "name": "jazz",
+              "evidence": "ロンドン発、次世代ジャズを担う鬼才が登場!"
+            },
+            {
+              "name": "rock",
+              "evidence": "ロックフォールのテリーヌとアカシアはちみつのアイス"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Source matches: Jazz & listening sessions",
+            "Official programme mentions jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "LA RESERVE ASIA TOUR 2026 :\nMARIA KIM, LUCY YEGHIAZARYAN & CAITY GYORGY",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-11-11",
+          "match": "taste",
+          "artists": [
+            "Maria Kim (vo,p)",
+            "Lucy Yeghiazaryan (vo)",
+            "Caity Gyorgy (vo)",
+            "Peng Ji (b)",
+            "Gene Jackson (ds)"
+          ],
+          "resolved": [],
+          "genres": [
+            {
+              "name": "jazz",
+              "evidence": "ブルックリン発の注目ジャズ・レーベルが初上陸"
+            },
+            {
+              "name": "rock",
+              "evidence": "ロックフォールのテリーヌとアカシアはちみつのアイス"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Source matches: Jazz & listening sessions",
+            "Official programme mentions jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "BENNY GREEN\n- piano solo -",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-11-12",
+          "match": "taste",
+          "artists": [
+            "Benny Green (p)"
+          ],
+          "resolved": [
+            {
+              "name": "Benny Green",
+              "genres": [
+                "Instrumental",
+                "Jazz",
+                "Jazz - Piano",
+                "Piano"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "jazz",
+              "evidence": "ジャズ・ピアノの伝統を継承する名手、ベニー・グリーンが最新アルバム『Renovation』を携えて一日限りのソロ・ピアノ公演を行う。‘80年代に名門アート・ブレイキー&ジャズ・メッセンジャーズの一員として颯爽と登場し、フレディ・ハバード、レイ・ブラウンなど数々のレジェンドのバックも経験。“鍵盤の皇帝”こと伝説的名手オスカー・ピーターソンが自らの後継者として認定し、’98年には共演アルバム『オスカー・アンド・ベニー』をリリースした。ソロ・ピアノでの初のライヴ盤となる『Renovation』ではデューク・ピアソンへのトリビュート・ナンバーやボビー・ティモンズ、ランディ・ウェストン、ホーギー・カーマ"
+            },
+            {
+              "name": "rock",
+              "evidence": "ロックフォールのテリーヌとアカシアはちみつのアイス"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Source matches: Jazz & listening sessions",
+            "Official programme mentions jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "BENNY GREEN TRIO",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "start": "2026-11-13",
+          "match": "taste",
+          "artists": [
+            "Benny Green (p)",
+            "Essiet Okon Essiet (b)",
+            "Carl Allen (ds)"
+          ],
+          "resolved": [
+            {
+              "name": "Benny Green",
+              "genres": [
+                "Instrumental",
+                "Jazz",
+                "Jazz - Piano",
+                "Piano"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "jazz",
+              "evidence": "ジャズ界の重鎮2人と贈る極上のピアノ・トリオ"
+            },
+            {
+              "name": "rock",
+              "evidence": "ロックフォールのテリーヌとアカシアはちみつのアイス"
+            }
+          ],
+          "reasons": [
+            "Fits: hear live music",
+            "Source matches: Jazz & listening sessions",
+            "Official programme mentions jazz · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "seed": "Fontaines D.C.",
+      "returned": 475,
+      "personal": 65,
+      "first": [
+        {
+          "title": "FONTAINES D.C. 'DOPAMINE CHAMBER'",
+          "kind": "release",
+          "source": "BIG LOVE RECORDS",
+          "start": "2026-10-16",
+          "match": "taste",
+          "artists": [
+            "FONTAINES D.C."
+          ],
+          "resolved": [
+            {
+              "name": "Fontaines D.C.",
+              "genres": [
+                "Post Punk",
+                "Irish",
+                "Indie Rock"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "punk",
+              "evidence": "ダブリンのパンク・バンドから世界のロック・バンドへ、そしてまた知らない場所へ。 成功した場所に居座らない5人組、2026年5thアルバム。"
+            },
+            {
+              "name": "rock",
+              "evidence": "ダブリンのパンク・バンドから世界のロック・バンドへ、そしてまた知らない場所へ。 成功した場所に居座らない5人組、2026年5thアルバム。"
+            }
+          ],
+          "reasons": [
+            "Names Fontaines D.C. · a favourite",
+            "Published dates overlap your selected window.",
+            "Shop listing date, not a verified release or restock date."
+          ]
+        },
+        {
+          "title": "FONTAINES D.C. 'DOPAMINE CHAMBER -JAPAN EDITION-'",
+          "kind": "release",
+          "source": "BIG LOVE RECORDS",
+          "start": "2026-10-23",
+          "match": "taste",
+          "artists": [
+            "FONTAINES D.C."
+          ],
+          "resolved": [
+            {
+              "name": "Fontaines D.C.",
+              "genres": [
+                "Post Punk",
+                "Irish",
+                "Indie Rock"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "punk",
+              "evidence": "ダブリンのパンク・バンドから世界のロック・バンドへ、そしてまた知らない場所へ。自分たちの成功した場所に居座らない5人組による2026年アルバム。全11曲。"
+            },
+            {
+              "name": "rock",
+              "evidence": "ダブリンのパンク・バンドから世界のロック・バンドへ、そしてまた知らない場所へ。自分たちの成功した場所に居座らない5人組による2026年アルバム。全11曲。"
+            }
+          ],
+          "reasons": [
+            "Names Fontaines D.C. · a favourite",
+            "Published dates overlap your selected window.",
+            "Shop listing date, not a verified release or restock date."
+          ]
+        },
+        {
+          "title": "FONTAINES D.C. 'DOPAMINE CHAMBER -BIG LOVE JAPAN EDITION-'",
+          "kind": "release",
+          "source": "BIG LOVE RECORDS",
+          "start": "2026-10-24",
+          "match": "taste",
+          "artists": [
+            "FONTAINES D.C."
+          ],
+          "resolved": [
+            {
+              "name": "Fontaines D.C.",
+              "genres": [
+                "Post Punk",
+                "Irish",
+                "Indie Rock"
+              ]
+            }
+          ],
+          "genres": [
+            {
+              "name": "punk",
+              "evidence": "ダブリンのパンク・バンドから世界のロック・バンドへ、そしてまた知らない場所へ。自分たちの成功した場所に居座らない5人組による2026年アルバム。全11曲。"
+            },
+            {
+              "name": "rock",
+              "evidence": "ダブリンのパンク・バンドから世界のロック・バンドへ、そしてまた知らない場所へ。自分たちの成功した場所に居座らない5人組による2026年アルバム。全11曲。"
+            }
+          ],
+          "reasons": [
+            "Names Fontaines D.C. · a favourite",
+            "Published dates overlap your selected window.",
+            "Shop listing date, not a verified release or restock date."
+          ]
+        },
+        {
+          "title": "Been Stellar (Tokyo debut)",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "start": "2026-11-02",
+          "match": "taste",
+          "artists": [
+            "Been Stellar"
+          ],
+          "resolved": [
+            {
+              "name": "Been Stellar",
+              "genres": [
+                "Post Punk",
+                "Punk Rock",
+                "Alternative Rock",
+                "Indie Rock"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Performer genre overlaps punk, rock, indie · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "HUSKING BEE TOUR 2026 — HUSKING BEE HAWAIIAN6",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-11-15",
+          "match": "taste",
+          "artists": [
+            "HUSKING BEE",
+            "HAWAIIAN6"
+          ],
+          "resolved": [
+            {
+              "name": "Husking Bee",
+              "genres": [
+                "J Rock",
+                "Rock",
+                "Indie",
+                "Japanese",
+                "Punk"
+              ]
+            },
+            {
+              "name": "HAWAIIAN6",
+              "genres": [
+                "Punk Rock",
+                "J-punk",
+                "Japanese",
+                "Punk"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Performer genre overlaps rock, indie, punk · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "TIGERS JAW \"JAPAN 2026\" WITH COUNTRY YARD — TIGERS JAW (from US) COUNTRY YARD Texas 3000",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "start": "2026-11-19",
+          "match": "taste",
+          "artists": [
+            "TIGERS JAW (from US)",
+            "COUNTRY YARD",
+            "Texas 3000"
+          ],
+          "resolved": [
+            {
+              "name": "Tigers Jaw",
+              "genres": [
+                "Indie Rock",
+                "Emo",
+                "Indie",
+                "Pop Punk"
+              ]
+            },
+            {
+              "name": "Country Yard",
+              "genres": [
+                "J Rock",
+                "Pop Punk",
+                "Punk Rock",
+                "Japanese",
+                "Punk"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Performer genre overlaps rock, indie, punk · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Rhythmic Toy World Presents 玩具大戦2026",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "start": "2026-11-23",
+          "match": "taste",
+          "artists": [
+            "Rhythmic Toy World",
+            "アルカラ",
+            "LACCO TOWER",
+            "MAGIC OF LiFE",
+            "忘れらんねえよ",
+            "MAMI(SCANDAL)",
+            "松本明人",
+            "横山直弘",
+            "千野隆尋(GOOD ON THE REEL)"
+          ],
+          "resolved": [
+            {
+              "name": "RHYTHMIC TOY WORLD",
+              "genres": [
+                "J Rock",
+                "Pop Punk",
+                "Rock",
+                "Japanese",
+                "J -pop"
+              ]
+            },
+            {
+              "name": "アルカラ",
+              "genres": [
+                "Alternative Rock",
+                "J Rock",
+                "Rock",
+                "Indie Rock",
+                "Japanese"
+              ]
+            },
+            {
+              "name": "LACCO TOWER",
+              "genres": [
+                "Indie",
+                "Japanese",
+                "Rock",
+                "Alternative Rock",
+                "J Rock"
+              ]
+            },
+            {
+              "name": "MAGIC OF LiFE",
+              "genres": [
+                "J Rock",
+                "J -pop",
+                "Japan",
+                "Japanese"
+              ]
+            },
+            {
+              "name": "忘れらんねえよ",
+              "genres": [
+                "Japanese",
+                "Rock",
+                "J Rock",
+                "Punk",
+                "Alternative Rock"
+              ]
+            },
+            {
+              "name": "Mami",
+              "genres": [
+                "Electronica Latinoamericana",
+                "Noise",
+                "Abstract",
+                "Industrial"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Performer genre overlaps rock, punk, indie · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "BACK DROP BOMB",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "start": "2026-11-13",
+          "match": "taste",
+          "artists": [
+            "BACK DROP BOMB"
+          ],
+          "resolved": [
+            {
+              "name": "BACK DROP BOMB",
+              "genres": [
+                "Punk",
+                "Japanese",
+                "Alternative Rock",
+                "Rock"
+              ]
+            }
+          ],
+          "genres": [],
+          "reasons": [
+            "Performer genre overlaps punk, rock · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    },
+    {
+      "seed": "Pokémon",
+      "returned": 475,
+      "personal": 14,
+      "first": [
+        {
+          "title": "Pokémon MEGA Special Deck Set",
+          "kind": "release",
+          "source": "Official catalog",
+          "start": "2026-11-13",
+          "match": "taste",
+          "reasons": [
+            "Names Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Source last checked 2026-10-23. Recheck the official page."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Mew, Scream Tail",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-14",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Slowpoke, Slowpoke（Galarian form）",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-14",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Ditto · surprisedver.",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-15",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Victini",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-22",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Charmander, Raichu",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-22",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Dragonair, Bagon, Dreepy",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-22",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        },
+        {
+          "title": "Pokémon · plush · Torchic, Litwick, Litten",
+          "kind": "release",
+          "source": "BANDAI SPIRITS",
+          "start": "2026-10-22",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Same franchise or creator: Pokémon · a favourite",
+            "Published dates overlap your selected window.",
+            "Recently released. Current stock is unknown."
+          ]
+        }
+      ]
+    },
+    {
+      "seed": "Small galleries",
+      "returned": 23,
+      "personal": 8,
+      "first": [
+        {
+          "title": "薬指ささく個展『名前をつけてやる』",
+          "kind": "exhibition",
+          "source": "mograg gallery",
+          "start": "2026-10-03",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Source matches: Small galleries & independent artists",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Kohei Yamada “green back / front”",
+          "kind": "exhibition",
+          "source": "Taka Ishii Gallery",
+          "start": "2026-10-03",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Source matches: Small galleries & independent artists",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Yo Soeda solo exhibition “F**k Me If You Can”",
+          "kind": "exhibition",
+          "source": "WISH LESS",
+          "start": "2026-10-10",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Source matches: Small galleries & independent artists",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Kai Yoda · The little blue frog",
+          "kind": "exhibition",
+          "source": "PARCEL",
+          "start": "2026-11-04",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Source matches: Small galleries & independent artists",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "WISH LESS presents duo exhibition “PARADISE PARK 2”",
+          "kind": "exhibition",
+          "source": "WISH LESS",
+          "start": "2026-10-31",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Source matches: Small galleries & independent artists",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "BIEN · Three flames +1",
+          "kind": "exhibition",
+          "source": "PARCEL",
+          "start": "2026-11-04",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Source matches: Small galleries & independent artists",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Sterling Ruby “OCEAN”",
+          "kind": "exhibition",
+          "source": "Taka Ishii Gallery",
+          "start": "2026-11-04",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Source matches: Small galleries & independent artists",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "天久聖一 個展『FANCYSHOCK』",
+          "kind": "exhibition",
+          "source": "mograg gallery",
+          "start": "2026-11-07",
+          "match": "taste",
+          "artists": [],
+          "resolved": [],
+          "genres": [],
+          "reasons": [
+            "Fits: see art & unusual exhibitions",
+            "Source matches: Small galleries & independent artists",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ]
+    }
+  ],
+  "interpretation": "Live functional check against official source records. Not a blinded human quality score or proof of winning."
+}
