@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SideQuest Tokyo - Jimbocho Ink &amp; Bop Circuit</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Editorial Serif and Sans fonts for pocket field guide aesthetic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&amp;family=DM+Serif+Display:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-fixed-dim": "#bccbaf",
+            "tertiary": "#4d5048",
+            "primary": "#962316",
+            "paper": "#f4f1e8",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#ac3324",
+            "on-primary-fixed": "#410100",
+            "primary-fixed": "#ffdad4",
+            "outline-variant": "#e0bfba",
+            "inverse-surface": "#31312b",
+            "on-secondary-container": "#5a6951",
+            "red-hover": "#982e21",
+            "moss": "#505e47",
+            "on-surface-variant": "#59413d",
+            "surface-container-low": "#f6f3ea",
+            "primary-container": "#b83b2b",
+            "surface-container-highest": "#e5e2da",
+            "surface-bright": "#fcf9f0",
+            "inverse-on-surface": "#f4f1e8",
+            "on-primary-fixed-variant": "#8b1a0f",
+            "outline": "#8c716c",
+            "inverse-primary": "#ffb4a8",
+            "muted": "#62665c",
+            "on-error": "#ffffff",
+            "surface-dim": "#dddad1",
+            "ink": "#242923",
+            "error": "#ba1a1a",
+            "surface-variant": "#e5e2da",
+            "on-tertiary-container": "#e5e7dc",
+            "on-background": "#1c1c17",
+            "secondary-fixed": "#d8e8ca",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#65685f",
+            "secondary": "#54634b",
+            "surface": "#fcf9f0",
+            "primary-fixed-dim": "#ffb4a8",
+            "tertiary-fixed-dim": "#c5c8bd",
+            "on-secondary-fixed-variant": "#3d4b35",
+            "on-tertiary-fixed": "#191d16",
+            "background": "#fcf9f0",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#f1eee5",
+            "line": "#d8d8ca",
+            "on-secondary-fixed": "#131f0d",
+            "white": "#fffdf8",
+            "on-surface": "#1c1c17",
+            "on-primary-container": "#ffdfda",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#e1e4d9",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#ebe8df",
+            "red": "#b83b2b",
+            "secondary-container": "#d8e8ca",
+            "pale": "#e8eadf",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#454840"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-xl": "28px",
+            "space-sm": "12px",
+            "space-md": "18px",
+            "gutter": "62px",
+            "space-xs": "7px",
+            "space-lg": "24px",
+            "margin": "60px"
+          },
+          fontFamily: {
+            control: ["'DM Sans', sans-serif"],
+            headline: ["'DM Serif Display', Georgia, serif"],
+            body: ["'DM Sans', sans-serif"],
+            title: ["'DM Serif Display', Georgia, serif"],
+            detail: ["'DM Sans', sans-serif"],
+            display: ["'DM Serif Display', Georgia, serif"],
+            mono: ["'JetBrains Mono', monospace"]
+          },
+          fontSize: {
+            control: ["13px", { fontWeight: "500" }],
+            headline: ["34px", { lineHeight: "1.12", letterSpacing: "-0.6px", fontWeight: "400" }],
+            body: ["14px", { lineHeight: "1.55" }],
+            title: ["23px", { lineHeight: "1.25", letterSpacing: "-0.3px", fontWeight: "400" }],
+            detail: ["11.5px", { lineHeight: "1.65" }],
+            display: ["44px", { lineHeight: "1.05", letterSpacing: "-1px", fontWeight: "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    body {
+      background-color: #f4f1e8;
+      color: #242923;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    /* Subtle paper texture overlay */
+    .paper-canvas {
+      background-color: #f4f1e8;
+      min-height: 100vh;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="paper-canvas text-ink selection:bg-secondary-fixed selection:text-ink">
+<!-- Main Mobile Container (Centered on desktop/large screens to mirror mobile experience) -->
+<div class="w-full max-w-[440px] mx-auto min-h-screen bg-paper flex flex-col relative pb-28">
+<!-- 1. Top Navigation Bar (Shared Component Style: TopAppBar) -->
+<header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-sm border-b border-line px-5 py-3 flex justify-between items-center transition-colors">
+<!-- Brand & Mission Badge -->
+<div class="flex items-center gap-2.5">
+<div class="flex items-baseline font-title text-ink font-semibold tracking-tight text-[19px]">
+<span>SideQuest</span><span class="text-red">.</span>
+</div>
+<div class="px-2 py-0.5 rounded border border-line bg-pale text-muted font-mono text-[10px] tracking-wide font-medium">
+          DOSSIER #042
+        </div>
+</div>
+<!-- Actions: Bookmark Badge & Share Action -->
+<div class="flex items-center gap-3">
+<!-- Bookmark Button -->
+<button aria-label="Bookmark Dossier" class="w-8 h-8 rounded-full border border-line bg-white flex items-center justify-center text-moss hover:bg-pale active:scale-95 transition-all" id="bookmarkBtn" onclick="toggleBookmark()">
+<span class="material-symbols-outlined text-[17px]" id="bookmarkIcon">bookmark</span>
+</button>
+<!-- Share Action -->
+<button class="flex items-center gap-1 font-control text-control text-primary hover:text-red-hover font-medium active:opacity-75 transition-opacity" onclick="shareDossier()">
+<span>Share</span>
+<span class="material-symbols-outlined text-[16px]">share</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-5 pt-5 pb-6 flex-1 flex flex-col space-y-6">
+<!-- 2. Mission Dossier Header -->
+<section class="space-y-2.5">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-red"></span>
+<span class="font-control text-[10.5px] uppercase tracking-[0.2em] text-muted font-medium">
+            Autonomous Field Mission
+          </span>
+</div>
+<h1 class="font-headline text-headline text-ink leading-tight">
+          The Jimbocho <span class="italic text-red font-headline">Ink &amp; Bop</span> Circuit
+        </h1>
+<p class="font-body text-body text-muted leading-relaxed pt-0.5">
+          A 3-stop twilight descent linking avant-garde photography archives, audiophile jazz kissaten, and craft botanical cocktails within a tight 1.8km foot radius.
+        </p>
+</section>
+<!-- 3. Mission Vital Metrics Bar -->
+<section class="bg-pale border border-line rounded-lg p-3.5 shadow-none">
+<div class="grid grid-cols-2 gap-y-3 gap-x-4">
+<!-- Stat 1 -->
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-moss text-[18px] mt-0.5">directions_walk</span>
+<div>
+<div class="font-title text-[17px] text-ink font-semibold leading-none">1.8 km</div>
+<div class="font-detail text-[11px] text-muted uppercase tracking-wider mt-1">Total Walk</div>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-moss text-[18px] mt-0.5">pin_drop</span>
+<div>
+<div class="font-title text-[17px] text-ink font-semibold leading-none">3 Coordinates</div>
+<div class="font-detail text-[11px] text-muted uppercase tracking-wider mt-1">Sequential Stops</div>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-moss text-[18px] mt-0.5">schedule</span>
+<div>
+<div class="font-mono text-[13px] text-ink font-semibold leading-none pt-0.5">18:30–22:30</div>
+<div class="font-detail text-[11px] text-muted uppercase tracking-wider mt-1">Time Window (JST)</div>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-moss text-[18px] mt-0.5">subway</span>
+<div>
+<div class="font-title text-[16px] text-ink font-semibold leading-none truncate">Jimbocho Stn</div>
+<div class="font-detail text-[11px] text-muted uppercase tracking-wider mt-1">Transit Anchor</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Walking Route Map Card -->
+<section class="space-y-2">
+<div class="relative bg-white border border-line rounded-lg p-3.5 overflow-hidden shadow-sm">
+<!-- Top cartographic metadata -->
+<div class="flex justify-between items-center pb-2.5 mb-2 border-b border-line/60">
+<div class="flex items-center gap-1.5 font-mono text-[10.5px] text-muted">
+<span class="text-moss font-semibold">TOKYO-ROUTE-CANVAS</span>
+<span>· 35.6961°N, 139.7582°E</span>
+</div>
+<span class="font-mono text-[10px] text-red uppercase tracking-wider bg-primary-fixed/40 px-1.5 py-0.5 rounded">
+              Footpath Active
+            </span>
+</div>
+<!-- Stylized Cartographic SVG Map -->
+<div class="w-full h-48 bg-[#f8f6f0] rounded border border-line/50 relative overflow-hidden flex items-center justify-center">
+<svg class="w-full h-full" fill="none" viewbox="0 0 380 200" xmlns="http://www.w3.org/2000/svg">
+<!-- Grid lines mimicking street blocks -->
+<defs>
+<pattern height="30" id="city-grid" patternunits="userSpaceOnUse" width="30">
+<path d="M 30 0 L 0 0 0 30" fill="none" stroke="#e8eadf" stroke-width="1.2"></path>
+</pattern>
+<filter height="140%" id="needle-shadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="1.5" flood-color="#242923" flood-opacity="0.15" stddeviation="1"></fedropshadow>
+</filter>
+</defs>
+<rect fill="url(#city-grid)" height="200" width="380"></rect>
+<!-- Main Avenues (Yasukuni-dori & Hakusan-dori) -->
+<!-- Yasukuni-dori (Horizontal main) -->
+<path d="M 0 110 L 380 110" stroke="#d8d8ca" stroke-linecap="round" stroke-width="14"></path>
+<path d="M 0 110 L 380 110" stroke="#fcf9f0" stroke-linecap="round" stroke-width="10"></path>
+<text fill="#8c716c" font-family="'DM Sans', sans-serif" font-size="8" font-weight="600" letter-spacing="1" x="280" y="106">YASUKUNI-DORI</text>
+<!-- Hakusan-dori (Vertical) -->
+<path d="M 90 0 L 90 200" stroke="#d8d8ca" stroke-width="12"></path>
+<path d="M 90 0 L 90 200" stroke="#fcf9f0" stroke-width="8"></path>
+<text fill="#8c716c" font-family="'DM Sans', sans-serif" font-size="7.5" font-weight="600" letter-spacing="0.5" x="96" y="24">HAKUSAN-DORI</text>
+<!-- Suzuran-dori (Alley parallel south) -->
+<path d="M 40 160 L 340 160" stroke="#d8d8ca" stroke-dasharray="1 0" stroke-width="8"></path>
+<path d="M 40 160 L 340 160" stroke="#fcf9f0" stroke-width="5"></path>
+<text fill="#62665c" font-family="'DM Sans', sans-serif" font-size="7.5" font-style="italic" x="140" y="156">Suzuran-dori (Booksellers Alley)</text>
+<!-- Secondary cross lanes -->
+<path d="M 190 70 L 190 190" stroke="#e5e2da" stroke-width="5"></path>
+<path d="M 290 30 L 290 180" stroke="#e5e2da" stroke-width="5"></path>
+<!-- Jimbocho Station Exit Marker -->
+<g transform="translate(82, 102)">
+<rect fill="#505e47" height="16" rx="2" width="16" x="0" y="0"></rect>
+<text fill="#fffdf8" font-family="'DM Sans', sans-serif" font-size="7.5" font-weight="700" text-anchor="middle" x="8" y="11">M</text>
+<text fill="#505e47" font-family="'DM Sans', sans-serif" font-size="7.5" font-weight="600" x="20" y="12">A7</text>
+</g>
+<!-- Walking Circuit (Vermilion Dashed Line) -->
+<!-- Stop 1 (140, 160) -> Stop 2 (215, 65) -> Stop 3 (295, 140) -->
+<path d="M 140 160 L 190 160 L 190 110 L 220 110 L 220 65" stroke="#b83b2b" stroke-dasharray="4 3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<path d="M 220 65 L 290 65 L 290 135" stroke="#b83b2b" stroke-dasharray="4 3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Walking Footstep Indicators -->
+<circle cx="165" cy="160" fill="#b83b2b" r="1.5"></circle>
+<circle cx="190" cy="135" fill="#b83b2b" r="1.5"></circle>
+<circle cx="205" cy="110" fill="#b83b2b" r="1.5"></circle>
+<circle cx="255" cy="65" fill="#b83b2b" r="1.5"></circle>
+<circle cx="290" cy="100" fill="#b83b2b" r="1.5"></circle>
+<!-- Stop 01 Pin -->
+<g filter="url(#needle-shadow)" transform="translate(140, 160)">
+<circle cx="0" cy="0" fill="#b83b2b" r="10"></circle>
+<circle cx="0" cy="0" r="13" stroke="#b83b2b" stroke-opacity="0.35" stroke-width="1"></circle>
+<text fill="#fffdf8" font-family="'DM Sans', sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="0" y="3.5">01</text>
+<text fill="#242923" font-family="'DM Serif Display', serif" font-size="9" font-weight="600" text-anchor="middle" x="0" y="22">Komiyama</text>
+</g>
+<!-- Stop 02 Pin -->
+<g filter="url(#needle-shadow)" transform="translate(220, 65)">
+<circle cx="0" cy="0" fill="#b83b2b" r="10"></circle>
+<circle cx="0" cy="0" r="13" stroke="#b83b2b" stroke-opacity="0.35" stroke-width="1"></circle>
+<text fill="#fffdf8" font-family="'DM Sans', sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="0" y="3.5">02</text>
+<text fill="#242923" font-family="'DM Serif Display', serif" font-size="9" font-weight="600" text-anchor="middle" x="0" y="-12">Jazz Olympus</text>
+</g>
+<!-- Stop 03 Pin -->
+<g filter="url(#needle-shadow)" transform="translate(290, 135)">
+<circle cx="0" cy="0" fill="#b83b2b" r="10"></circle>
+<circle cx="0" cy="0" r="13" stroke="#b83b2b" stroke-opacity="0.35" stroke-width="1"></circle>
+<text fill="#fffdf8" font-family="'DM Sans', sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="0" y="3.5">03</text>
+<text fill="#242923" font-family="'DM Serif Display', serif" font-size="9" font-weight="600" text-anchor="middle" x="0" y="22">Bar AdoniS</text>
+</g>
+<!-- Stylized Compass Rose -->
+<g transform="translate(345, 30)">
+<circle cx="0" cy="0" fill="#fffdf8" r="11" stroke="#d8d8ca" stroke-width="1"></circle>
+<path d="M 0 -8 L 2.5 0 L 0 2 L -2.5 0 Z" fill="#b83b2b"></path>
+<path d="M 0 8 L 2 0 L 0 -1 L -2 0 Z" fill="#62665c" opacity="0.6"></path>
+<text fill="#242923" font-family="'DM Sans', sans-serif" font-size="6.5" font-weight="700" text-anchor="middle" x="0" y="-10">N</text>
+</g>
+</svg>
+</div>
+<!-- Compass Dial / Map Caption -->
+<div class="flex items-center justify-between pt-2.5">
+<div class="flex items-center gap-1.5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-moss opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-moss"></span>
+</span>
+<p class="font-detail text-[11px] text-muted">
+                Pedestrian routing verified via Asia/Tokyo timetable constraints.
+              </p>
+</div>
+<span class="font-mono text-[10px] text-muted/80">SCALE 1:8000</span>
+</div>
+</div>
+</section>
+<!-- 5. The 3-Stop Sequence (Editorial Ruled Dossier Rows) -->
+<section class="space-y-4 pt-1">
+<div class="flex items-center justify-between border-b border-line pb-2">
+<h2 class="font-title text-[18px] text-ink font-semibold tracking-tight">
+            Stop-by-Stop Itinerary
+          </h2>
+<span class="font-mono text-[11px] text-muted">CHRONO-FLOW</span>
+</div>
+<!-- STOP 01 -->
+<article class="space-y-3 pt-1">
+<!-- Row Header -->
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-pale border border-line text-ink font-mono text-[11px] font-bold flex items-center justify-center">
+                01
+              </span>
+<span class="font-mono text-[12px] text-muted">18:30 – 19:15</span>
+</div>
+<span class="font-detail text-[11px] text-moss font-medium">Step 1 of 3</span>
+</div>
+<!-- Venue Headline & Tag -->
+<div>
+<h3 class="font-headline text-[22px] text-ink leading-snug">
+              Komiyama Book Store
+            </h3>
+<div class="mt-1 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-pale border border-line text-moss font-detail text-[11px] font-medium">
+<span class="material-symbols-outlined text-[13px]">auto_stories</span>
+<span>Vintage Photography &amp; Counterculture</span>
+</div>
+</div>
+<!-- Door Notes Box -->
+<div class="bg-white border-l-2 border-primary border-t border-r border-b border-line/70 p-3 rounded-r-lg">
+<div class="flex items-center gap-1.5 text-primary text-[10px] font-mono uppercase tracking-wider font-semibold mb-1">
+<span class="material-symbols-outlined text-[14px]">key</span>
+<span>Tactical Door Notes</span>
+</div>
+<p class="font-body text-[13px] text-ink/90 leading-relaxed">
+              4 floors of rare monographs. 4th-floor Daido Moriyama archives close promptly at 19:00. Cash preferred for vintage prints.
+            </p>
+</div>
+<!-- Walking Leg Connector -->
+<div class="py-2.5 flex items-center gap-3">
+<div class="h-6 border-l-2 border-dashed border-red/60 ml-2.5"></div>
+<div class="flex items-center gap-1.5 text-muted font-detail text-[11.5px] bg-pale/70 px-2 py-1 rounded border border-line/60">
+<span class="material-symbols-outlined text-red text-[15px]">straight</span>
+<span class="font-medium text-ink">380m walk</span>
+<span>(5 mins) along Suzuran-dori</span>
+</div>
+</div>
+</article>
+<!-- STOP 02 -->
+<article class="space-y-3 pt-1 border-t border-line/80">
+<!-- Row Header -->
+<div class="flex items-baseline justify-between pt-3">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-pale border border-line text-ink font-mono text-[11px] font-bold flex items-center justify-center">
+                02
+              </span>
+<span class="font-mono text-[12px] text-muted">19:20 – 20:45</span>
+</div>
+<span class="font-detail text-[11px] text-moss font-medium">Audiophile Anchor</span>
+</div>
+<!-- Venue Headline & Tag -->
+<div>
+<h3 class="font-headline text-[22px] text-ink leading-snug">
+              JAZZ OLYMPUS!
+            </h3>
+<div class="mt-1 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-pale border border-line text-moss font-detail text-[11px] font-medium">
+<span class="material-symbols-outlined text-[13px]">album</span>
+<span>Audiophile Kissaten &amp; Dark Curry</span>
+</div>
+</div>
+<!-- Door Notes Box -->
+<div class="bg-white border-l-2 border-moss border-t border-r border-b border-line/70 p-3 rounded-r-lg">
+<div class="flex items-center gap-1.5 text-moss text-[10px] font-mono uppercase tracking-wider font-semibold mb-1">
+<span class="material-symbols-outlined text-[14px]">volume_up</span>
+<span>Acoustic Etiquette</span>
+</div>
+<p class="font-body text-[13px] text-ink/90 leading-relaxed">
+              Legendary JBL Olympus horn speakers. Maintain low-voice etiquette during Blue Note sides. Order the dark roast coffee with spiced beef curry.
+            </p>
+</div>
+<!-- Walking Leg Connector -->
+<div class="py-2.5 flex items-center gap-3">
+<div class="h-6 border-l-2 border-dashed border-red/60 ml-2.5"></div>
+<div class="flex items-center gap-1.5 text-muted font-detail text-[11.5px] bg-pale/70 px-2 py-1 rounded border border-line/60">
+<span class="material-symbols-outlined text-red text-[15px]">turn_slight_right</span>
+<span class="font-medium text-ink">450m walk</span>
+<span>(6 mins) across Yasukuni-dori</span>
+</div>
+</div>
+</article>
+<!-- STOP 03 -->
+<article class="space-y-3 pt-1 border-t border-line/80">
+<!-- Row Header -->
+<div class="flex items-baseline justify-between pt-3">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-pale border border-line text-ink font-mono text-[11px] font-bold flex items-center justify-center">
+                03
+              </span>
+<span class="font-mono text-[12px] text-muted">20:55 – 22:30</span>
+</div>
+<span class="font-detail text-[11px] text-primary font-medium">Nightcap Finale</span>
+</div>
+<!-- Venue Headline & Tag -->
+<div>
+<h3 class="font-headline text-[22px] text-ink leading-snug">
+              Bar AdoniS / Herbal Salon
+            </h3>
+<div class="mt-1 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-pale border border-line text-moss font-detail text-[11px] font-medium">
+<span class="material-symbols-outlined text-[13px]">local_bar</span>
+<span>Botanical Bitters &amp; Low-Lit Vinyl</span>
+</div>
+</div>
+<!-- Door Notes Box -->
+<div class="bg-white border-l-2 border-primary border-t border-r border-b border-line/70 p-3 rounded-r-lg">
+<div class="flex items-center gap-1.5 text-primary text-[10px] font-mono uppercase tracking-wider font-semibold mb-1">
+<span class="material-symbols-outlined text-[14px]">door_front</span>
+<span>Access &amp; Seating</span>
+</div>
+<p class="font-body text-[13px] text-ink/90 leading-relaxed">
+              Discreet brass doorplate in alley. Counter seating for 8. House specialty: Japanese absinthe and wild mountain pear liqueur.
+            </p>
+</div>
+</article>
+</section>
+<!-- 6. Primary & Secondary Actions -->
+<section class="pt-4 space-y-3">
+<!-- Button 1: Primary Action (Red Vermilion, h-48px) -->
+<a class="w-full h-12 bg-red hover:bg-red-hover active:scale-[0.99] text-white rounded-[5px] flex items-center justify-center gap-2 font-control text-[14px] font-medium transition-all shadow-sm" href="#open-google-maps" onclick="triggerNavigationFeedback(event)">
+<span>Open Route in Google Maps</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<!-- Button 2: Secondary Action (Text / Outlined Paper) -->
+<button class="w-full h-11 border border-line bg-white/70 hover:bg-white text-ink active:scale-[0.99] rounded-[5px] flex items-center justify-center gap-2 font-control text-[13px] font-medium transition-colors" id="calendarActionBtn" onclick="addToCalendar()">
+<span class="material-symbols-outlined text-moss text-[18px]">calendar_today</span>
+<span>Add Door Notes to Calendar / Wallet</span>
+</button>
+</section>
+<!-- Field Guide Protocol Disclaimer -->
+<div class="text-center pt-2">
+<p class="font-detail text-[11px] text-muted">
+          Field Guide Edition 2025.2 · Verified independently with zero sponsored placement.
+        </p>
+</div>
+</main>
+<!-- 7. Bottom Docked Navigation Bar (Shared Component Style: BottomNavBar) -->
+<!-- Destination count: 4 | Labels: "Field Guide", "Explore", "Saved", "Index" | Active: "Explore" -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-paper/95 backdrop-blur-md border-t border-line py-1.5 px-4 flex justify-around items-center max-w-[440px] mx-auto">
+<!-- Tab 1: Field Guide -->
+<a class="flex flex-col items-center justify-center text-muted hover:text-ink gap-0.5 py-1 px-3 transition-colors active:scale-95" href="#field-guide">
+<span class="material-symbols-outlined text-[21px]">auto_stories</span>
+<span class="font-detail text-[11px]">Field Guide</span>
+</a>
+<!-- Tab 2: Explore (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary font-medium gap-0.5 py-1 px-3 transition-colors active:scale-95" href="#explore">
+<span class="material-symbols-outlined text-[21px]" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-detail text-[11px] font-semibold">Explore</span>
+</a>
+<!-- Tab 3: Saved -->
+<a class="flex flex-col items-center justify-center text-muted hover:text-ink gap-0.5 py-1 px-3 transition-colors active:scale-95" href="#saved">
+<span class="material-symbols-outlined text-[21px]">bookmark</span>
+<span class="font-detail text-[11px]">Saved</span>
+</a>
+<!-- Tab 4: Index -->
+<a class="flex flex-col items-center justify-center text-muted hover:text-ink gap-0.5 py-1 px-3 transition-colors active:scale-95" href="#index">
+<span class="material-symbols-outlined text-[21px]">segment</span>
+<span class="font-detail text-[11px]">Index</span>
+</a>
+</nav>
+<!-- Toast Notification for Micro-interactions (Bookmarks/Share) -->
+<div class="fixed top-14 left-1/2 -translate-x-1/2 z-50 bg-ink text-white font-detail text-[12px] px-3.5 py-2 rounded shadow-md opacity-0 pointer-events-none transition-all duration-200" id="toastNotification">
+      Dossier saved to offline field book
+    </div>
+</div>
+<!-- Micro-interaction JS -->
+<script>
+    let isBookmarked = false;
+
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      toast.textContent = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2200);
+    }
+
+    function toggleBookmark() {
+      isBookmarked = !isBookmarked;
+      const icon = document.getElementById('bookmarkIcon');
+      const btn = document.getElementById('bookmarkBtn');
+
+      if (isBookmarked) {
+        icon.style.fontVariationSettings = "'FILL' 1";
+        btn.classList.add('bg-moss', 'text-white', 'border-moss');
+        btn.classList.remove('bg-white', 'text-moss', 'border-line');
+        showToast('Dossier #042 saved to field guide');
+      } else {
+        icon.style.fontVariationSettings = "'FILL' 0";
+        btn.classList.remove('bg-moss', 'text-white', 'border-moss');
+        btn.classList.add('bg-white', 'text-moss', 'border-line');
+        showToast('Removed from saved dossiers');
+      }
+    }
+
+    function shareDossier() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'The Jimbocho Ink & Bop Circuit',
+          text: 'Autonomous 3-stop field mission in Jimbocho Tokyo: Bookstores, Jazz kissaten & botanical cocktails.',
+          url: window.location.href,
+        }).catch(() => {});
+      } else {
+        showToast('Mission dossier URL copied to clipboard');
+      }
+    }
+
+    function triggerNavigationFeedback(e) {
+      e.preventDefault();
+      showToast('Launching Google Maps pedestrian coordinates...');
+      setTimeout(() => {
+        window.open('https://maps.google.com/?q=Jimbocho+Station', '_blank');
+      }, 700);
+    }
+
+    function addToCalendar() {
+      const btn = document.getElementById('calendarActionBtn');
+      btn.innerHTML = '<span class="material-symbols-outlined text-moss text-[18px]">check_circle</span><span>Syncing with Apple/Google Calendar...</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-moss text-[18px]">done</span><span>Mission Schedule Synced (18:30 JST)</span>';
+        showToast('Mission timetable added to calendar with door notes');
+      }, 800);
+    }
+  </script>
+</body></html>

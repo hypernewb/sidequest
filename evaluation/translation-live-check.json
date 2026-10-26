@@ -1,9 +1,11 @@
 {
-  "at": "2026-10-26T05:15:47.496Z",
+  "at": "2026-10-26T05:21:22.018Z",
   "title": "ELECTRIC DELAY LAND Vol.2",
   "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/edl2_20261108:2026-11-08",
-  "status": 503,
+  "status": 429,
   "result": {
-    "error": "Translation unavailable."
+    "error": "The translation service has reached its limit. Try again later. The Japanese source and extracted details are still available.",
+    "reason": "quota",
+    "providerStatus": 429
   }
 }

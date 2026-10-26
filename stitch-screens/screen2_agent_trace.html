@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SideQuest Tokyo - Live Agent Execution Trace</title>
+<!-- Typography: Google Fonts for editorial print aesthetic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary": "#ffffff",
+            "primary-fixed": "#ffdad4",
+            "muted": "#62665c",
+            "on-primary-fixed": "#410100",
+            "background": "#fcf9f0",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#f1eee5",
+            "surface-container-high": "#ebe8df",
+            "on-surface": "#1c1c17",
+            "tertiary-container": "#65685f",
+            "surface-container-low": "#f6f3ea",
+            "surface-dim": "#dddad1",
+            "primary": "#962316",
+            "tertiary-fixed-dim": "#c5c8bd",
+            "inverse-on-surface": "#f4f1e8",
+            "surface-container-highest": "#e5e2da",
+            "ink": "#242923",
+            "secondary": "#54634b",
+            "red-hover": "#982e21",
+            "surface-variant": "#e5e2da",
+            "on-background": "#1c1c17",
+            "white": "#fffdf8",
+            "secondary-fixed-dim": "#bccbaf",
+            "secondary-fixed": "#d8e8ca",
+            "on-secondary": "#ffffff",
+            "primary-container": "#b83b2b",
+            "secondary-container": "#d8e8ca",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#3d4b35",
+            "inverse-primary": "#ffb4a8",
+            "on-secondary-container": "#5a6951",
+            "line": "#d8d8ca",
+            "tertiary-fixed": "#e1e4d9",
+            "red": "#b83b2b",
+            "moss": "#505e47",
+            "on-surface-variant": "#59413d",
+            "surface": "#fcf9f0",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#4d5048",
+            "inverse-surface": "#31312b",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#ffb4a8",
+            "on-tertiary-fixed-variant": "#454840",
+            "surface-tint": "#ac3324",
+            "paper": "#f4f1e8",
+            "on-tertiary-fixed": "#191d16",
+            "on-secondary-fixed": "#131f0d",
+            "outline-variant": "#e0bfba",
+            "on-primary-fixed-variant": "#8b1a0f",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "surface-bright": "#fcf9f0",
+            "pale": "#e8eadf",
+            "on-primary-container": "#ffdfda",
+            "on-tertiary-container": "#e5e7dc",
+            "outline": "#8c716c"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-xl": "28px",
+            "space-sm": "12px",
+            "margin": "60px",
+            "space-lg": "24px",
+            "gutter": "62px",
+            "space-xs": "7px",
+            "space-md": "18px"
+          },
+          fontFamily: {
+            "title": ["\"DM Serif Display\", Georgia, serif"],
+            "body": ["\"DM Sans\", sans-serif"],
+            "headline": ["\"DM Serif Display\", Georgia, serif"],
+            "display": ["\"DM Serif Display\", Georgia, serif"],
+            "detail": ["\"DM Sans\", sans-serif"],
+            "control": ["\"DM Sans\", sans-serif"],
+            "mono": ["\"JetBrains Mono\", monospace"]
+          },
+          fontSize: {
+            "title": ["28px", { lineHeight: "1.2", letterSpacing: "-0.4px", fontWeight: "400" }],
+            "body": ["15px", { lineHeight: "1.5" }],
+            "headline": ["48px", { lineHeight: "1.08", letterSpacing: "-1px", fontWeight: "400" }],
+            "display": ["76px", { lineHeight: "0.99", letterSpacing: "-2px", fontWeight: "400" }],
+            "detail": ["12px", { lineHeight: "1.75" }],
+            "control": ["13px", { fontWeight: "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @keyframes pulse-soft {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.92); }
+    }
+    @keyframes blink-cursor {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .animate-pulse-soft {
+      animation: pulse-soft 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .animate-cursor {
+      animation: blink-cursor 1s steps(2, start) infinite;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-paper text-ink font-body min-h-screen flex flex-col justify-between selection:bg-secondary-fixed selection:text-ink antialiased">
+<!-- TOP APP BAR -->
+<header class="bg-paper dark:bg-inverse-surface border-b border-line dark:border-tertiary sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-4 py-3 max-w-screen-md mx-auto">
+<!-- Brand Logo Anchor -->
+<div class="flex items-center gap-1.5">
+<span class="font-title text-[21px] text-ink dark:text-inverse-on-surface tracking-tight font-normal">SideQuest</span>
+<span class="w-1.5 h-1.5 rounded-full bg-red mb-0.5 inline-block"></span>
+</div>
+<!-- Live Agent Indicator Badge -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-pale border border-line">
+<span class="w-2 h-2 rounded-full bg-red animate-pulse-soft"></span>
+<span class="font-control text-[10px] tracking-wider uppercase font-semibold text-ink">AGENT RUNNING</span>
+</div>
+<!-- Trailing Action: Abort Run -->
+<button class="font-control text-control text-muted hover:text-ink transition-colors duration-150 underline underline-offset-4 decoration-line hover:decoration-ink active:opacity-80" type="button">
+        Abort Run
+      </button>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="w-full max-w-screen-md mx-auto px-4 pt-5 pb-28 flex-1 flex flex-col">
+<!-- 1. MISSION HEADER -->
+<section class="mb-5">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="text-[11px] uppercase tracking-widest font-semibold text-muted font-control">AUTONOMOUS CULTURAL SCOUT</span>
+<span class="w-1 h-1 rounded-full bg-line"></span>
+<span class="font-mono text-[10px] text-muted tracking-tight">RUN#9402</span>
+</div>
+<h1 class="font-title text-title text-ink tracking-tight mb-2.5">
+        Tracing the <span class="italic text-primary font-normal">Murakami Orbit</span>
+</h1>
+<!-- Mission context meta line -->
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-detail font-detail text-muted">
+<span class="inline-flex items-center gap-1">
+<span class="font-semibold text-ink">Seed:</span> Haruki Murakami
+        </span>
+<span class="text-line font-bold">·</span>
+<span class="inline-flex items-center gap-1">
+<span class="font-semibold text-ink">Mode:</span> Curious Detour
+        </span>
+<span class="text-line font-bold">·</span>
+<span class="inline-flex items-center gap-1">
+<span class="font-semibold text-ink">Target:</span> Tokyo Evening (18:42 JST)
+        </span>
+</div>
+</section>
+<!-- 2. EXECUTION PROGRESS BAR -->
+<section class="mb-6 pt-2 pb-3 border-y border-line">
+<div class="flex items-center justify-between mb-2">
+<span class="font-control text-xs font-medium text-ink">Step 4 of 5 · Synthesizing Route</span>
+<span class="font-mono text-[11px] text-red font-medium tracking-tight">80% RESOLVED</span>
+</div>
+<!-- Segmented Bar (5 steps) -->
+<div class="grid grid-cols-5 gap-1.5 h-1.5 w-full">
+<div class="h-full bg-moss rounded-[1px]"></div>
+<div class="h-full bg-moss rounded-[1px]"></div>
+<div class="h-full bg-moss rounded-[1px]"></div>
+<div class="h-full bg-red rounded-[1px] animate-pulse-soft"></div>
+<div class="h-full bg-line rounded-[1px]"></div>
+</div>
+</section>
+<!-- 3. LIVE AGENT EXECUTION TRACE (RULED STEP FEED) -->
+<section class="space-y-0">
+<!-- Step 01: Done -->
+<article class="py-3.5 border-b border-line flex items-start gap-3">
+<div class="flex-shrink-0 pt-0.5">
+<span class="bg-moss text-on-primary font-mono text-[11px] font-semibold px-2 py-0.5 rounded-[5px] inline-block leading-tight shadow-sm">01</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1 gap-2">
+<span class="font-mono text-xs font-semibold text-ink truncate">tool_resolve_entity</span>
+<span class="inline-flex items-center gap-1 font-mono text-[11px] text-moss font-medium uppercase tracking-tight flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              COMPLETED
+            </span>
+</div>
+<p class="font-detail text-detail text-muted leading-relaxed">
+            Resolved entity “Haruki Murakami” → Qloo UUID <code class="font-mono text-[11px] text-ink bg-pale px-1 rounded">ent_murakami_902</code>. Confidence 99.4%.
+          </p>
+</div>
+</article>
+<!-- Step 02: Done -->
+<article class="py-3.5 border-b border-line flex items-start gap-3">
+<div class="flex-shrink-0 pt-0.5">
+<span class="bg-moss text-on-primary font-mono text-[11px] font-semibold px-2 py-0.5 rounded-[5px] inline-block leading-tight shadow-sm">02</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1 gap-2">
+<span class="font-mono text-xs font-semibold text-ink truncate">tool_expand_taste_graph</span>
+<span class="inline-flex items-center gap-1 font-mono text-[11px] text-moss font-medium uppercase tracking-tight flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              COMPLETED
+            </span>
+</div>
+<p class="font-detail text-detail text-muted leading-relaxed">
+            Queried Qloo <code class="font-mono text-[11px] text-ink bg-pale px-1 rounded">/v2/insights</code>. Expanded across 3 latent taste domains: Hard Bop Jazz, Showa Kissaten, Japanese Avant-Garde Bindings. 42 taste affinities mapped.
+          </p>
+</div>
+</article>
+<!-- Step 03: Done -->
+<article class="py-3.5 border-b border-line flex items-start gap-3">
+<div class="flex-shrink-0 pt-0.5">
+<span class="bg-moss text-on-primary font-mono text-[11px] font-semibold px-2 py-0.5 rounded-[5px] inline-block leading-tight shadow-sm">03</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1 gap-2">
+<span class="font-mono text-xs font-semibold text-ink truncate">tool_spatial_cluster</span>
+<span class="inline-flex items-center gap-1 font-mono text-[11px] text-moss font-medium uppercase tracking-tight flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              COMPLETED
+            </span>
+</div>
+<p class="font-detail text-detail text-muted leading-relaxed">
+            Evaluated 70 Tokyo curated venues. Isolated Jimbocho-Ochanomizu walking cluster (leg max: 850m, loop: 2.1km). Transit hop avoided.
+          </p>
+</div>
+</article>
+<!-- Step 04: Active Executing -->
+<article class="py-3.5 px-3 -mx-3 bg-pale/75 border-l-2 border-l-red border-y border-line my-1.5 rounded-r-[6px] transition-all">
+<div class="flex items-start gap-3">
+<div class="flex-shrink-0 pt-0.5">
+<span class="bg-red text-on-primary font-mono text-[11px] font-semibold px-2 py-0.5 rounded-[5px] inline-flex items-center gap-1 leading-tight shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+              04
+            </span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1 gap-2">
+<span class="font-mono text-xs font-semibold text-ink truncate">tool_schedule_verify</span>
+<span class="inline-flex items-center gap-1 font-mono text-[11px] text-red font-medium tracking-tight flex-shrink-0">
+<span class="material-symbols-outlined text-[14px] animate-spin">progress_activity</span>
+                EXECUTING...
+              </span>
+</div>
+<p class="font-detail text-detail text-ink leading-relaxed">
+              Checking Tokyo opening hours (<span class="font-mono text-[11px]">Asia/Tokyo</span>). Verifying <span class="font-medium">Komiyama Books</span> (open til 19:00) → <span class="font-medium">JAZZ OLYMPUS!</span> (opens 19:00). Checking door policies.
+            </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-[11px] font-mono text-muted bg-white/70 px-2 py-0.5 rounded border border-line">
+<span class="material-symbols-outlined text-[12px] text-secondary">schedule</span>
+                Buffer: +25m walk window
+              </span>
+</div>
+</div>
+</div>
+</article>
+<!-- Step 05: Upcoming Queued -->
+<article class="py-3.5 border-b border-line flex items-start gap-3 opacity-75">
+<div class="flex-shrink-0 pt-0.5">
+<span class="border border-line text-muted bg-transparent font-mono text-[11px] font-medium px-2 py-0.5 rounded-[5px] inline-block leading-tight">05</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1 gap-2">
+<span class="font-mono text-xs font-medium text-muted truncate">tool_synthesize_quest</span>
+<span class="font-mono text-[11px] text-muted tracking-tight flex-shrink-0">QUEUED</span>
+</div>
+<p class="font-detail text-detail text-muted/80 leading-relaxed">
+            Pending verification: synthesize quest dossier, door notes, and transit walking sequence.
+          </p>
+</div>
+</article>
+</section>
+<!-- 4. AGENT AUTONOMOUS REASONING BOX -->
+<section class="bg-pale rounded-[8px] p-3.5 border border-line my-5">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-[15px] text-moss">psychology</span>
+<span class="text-[10px] uppercase tracking-wider text-moss font-semibold font-control">
+          AUTONOMOUS PRUNING REASONING
+        </span>
+</div>
+<blockquote class="font-body text-body text-[13.5px] italic text-ink pl-2 border-l border-moss/40 leading-snug">
+        “Pruned Bar Trench (Ebisu) due to 6.2km distance breach. Preserving authentic Jimbocho evening loop under 2.5km total foot travel.”
+      </blockquote>
+</section>
+<!-- 5. STREAMING STATUS & JSON BUTTON -->
+<section class="space-y-3 pt-1 pb-4">
+<div class="flex items-center justify-between text-xs font-mono text-muted px-1">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-moss"></span>
+<span>Streaming live via <code class="text-ink">x-ndjson</code></span>
+<span class="inline-block w-1.5 h-3 bg-red animate-cursor ml-0.5"></span>
+</div>
+<span class="text-[11px] text-muted">Latency: 42ms</span>
+</div>
+<button class="w-full py-2.5 px-4 rounded-[5px] border border-ink text-ink bg-transparent hover:bg-pale font-mono text-xs font-medium text-center transition-colors duration-150 flex items-center justify-center gap-1.5 active:opacity-80" type="button">
+<span class="material-symbols-outlined text-[16px]">data_object</span>
+        View Raw Tool Calls (JSON)
+      </button>
+</section>
+</main>
+<!-- BOTTOM NAVIGATION BAR (Shared Component Exact Implementation) -->
+<nav aria-label="Bottom Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 border-t border-line dark:border-tertiary bg-paper dark:bg-inverse-surface shadow-none">
+<!-- Item 1: Field Guide (Default inactive) -->
+<a class="flex flex-col items-center justify-center text-muted dark:text-tertiary-fixed-dim hover:text-ink dark:hover:text-inverse-on-surface gap-1 hover:text-red-hover dark:hover:text-primary-fixed-dim transition-colors duration-150 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="auto_stories">auto_stories</span>
+<span class="font-detail text-[11px] leading-tight">Field Guide</span>
+</a>
+<!-- Item 2: Explore (Active: Live cultural scout navigation) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-medium gap-1 hover:text-red-hover dark:hover:text-primary-fixed-dim transition-colors duration-150 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-detail text-[11px] leading-tight font-semibold">Explore</span>
+</a>
+<!-- Item 3: Saved -->
+<a class="flex flex-col items-center justify-center text-muted dark:text-tertiary-fixed-dim hover:text-ink dark:hover:text-inverse-on-surface gap-1 hover:text-red-hover dark:hover:text-primary-fixed-dim transition-colors duration-150 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span>
+<span class="font-detail text-[11px] leading-tight">Saved</span>
+</a>
+<!-- Item 4: Index -->
+<a class="flex flex-col items-center justify-center text-muted dark:text-tertiary-fixed-dim hover:text-ink dark:hover:text-inverse-on-surface gap-1 hover:text-red-hover dark:hover:text-primary-fixed-dim transition-colors duration-150 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="segment">segment</span>
+<span class="font-detail text-[11px] leading-tight">Index</span>
+</a>
+</nav>
+</body></html>

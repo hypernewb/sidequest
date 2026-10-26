@@ -3,9 +3,24 @@ import type {QuestSeed} from './quest-seeds.ts';
 export type Quest=Omit<ScoutPlan,'stops'> & {title:string;vibe:string;invitation:string;stops:(ScoutStop & {mission:string;programme?:{title:string;url:string;start:string;end:string;priceLabel:string}})[];catalogNote?:string;run?:import('./quest-run.ts').RunEvent[];seed:{id:string;name:string;type:string}};
 const normalized=(v:string)=>v.normalize('NFKC').toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
 export function questChoices<T extends Pick<QuestSeed,'name'>>(query:string,candidates:T[]){const exact=candidates.filter(c=>normalized(c.name)===normalized(query));return (exact.length?exact:candidates).slice(0,4);}
+const SEED_ALIASES:Record<string,string>={
+ 'isamunoguchi':'Noguchi Museum',
+ 'wongkarwai':'Wong Kar-Wai'
+};
 export function resolveQuestSeed<T extends Pick<QuestSeed,'id'|'name'|'type'>>(query:string,candidates:T[],choice?:string){
  if(choice)return candidates.find(c=>c.id.toUpperCase()===choice.toUpperCase())||null;
- const exact=candidates.filter(c=>normalized(c.name)===normalized(query));return exact.length===1?exact[0]:null;
+ const exact=candidates.filter(c=>normalized(c.name)===normalized(query));
+ if(exact.length===1)return exact[0];
+ if(exact.length>1&&exact.every(c=>c.type==='artist'||c.type==='album')){
+  const artists=exact.filter(c=>c.type==='artist');
+  if(artists.length===1)return artists[0];
+ }
+ const alias=SEED_ALIASES[normalized(query)];
+ if(alias){
+  const match=candidates.find(c=>normalized(c.name)===normalized(alias));
+  if(match)return {...match,name:query.trim()};
+ }
+ return null;
 }
 export function missionFor(category:string,index:number){
  if(/record|cd store/i.test(category))return 'Find one sleeve you would take home for the artwork alone. Ask the staff for a recommendation, and try a listening station if one is available. You can leave with a new name, not a purchase.';
@@ -30,5 +45,5 @@ export function composeQuest(plan:ScoutPlan,seed:Pick<QuestSeed,'id'|'name'|'typ
  if(stops.length===1)title=stops[0].item.title;
  const acts:Record<string,string>={coffee:'a coffee to start',books:'a book outside your usual shelf',dig:'an unfamiliar sleeve',art:'a closer look at a small gallery',listen:'a room where the selection sets the pace',play:'a turn outside your usual games'};
  const arc=roles.map(r=>acts[r||'']||'one small discovery').join(', then ');
- return {...plan,title,vibe:plan.stops.length===1?'One place worth a closer look. Take your time here.':plan.stops.length?plan.walkingMinutes+' minutes on foot. '+stops.length+' stops. One loop.':'',invitation:stops.length===1?'You brought '+seed.name+'. This is one place to follow that interest, with enough time to browse.':stops.length?'You brought '+seed.name+'. The route gives you '+arc+'. Keep one name from each stop and see which one follows you home.':plan.brief,stops,seed:{id:seed.id,name:seed.name,type:seed.type}};
+ return {...plan,title,vibe:plan.stops.length===1?'One place worth a closer look. Take your time here.':plan.stops.length?plan.walkingMinutes+(plan.returnTransit||plan.stops.some(s=>s.transit)?' minutes on foot and by train. ':' minutes on foot. ')+stops.length+' stops. One loop.':'',invitation:stops.length===1?'You brought '+seed.name+'. This is one place to follow that interest, with enough time to browse.':stops.length?'You brought '+seed.name+'. The route gives you '+arc+'. Keep one name from each stop and see which one follows you home.':plan.brief,stops,seed:{id:seed.id,name:seed.name,type:seed.type}};
 }

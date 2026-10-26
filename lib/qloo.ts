@@ -1,4 +1,4 @@
-import {safeUrl, familyFor, type Interest, type Place} from './discovery';
+import {safeUrl, familyFor, type Interest, type Place} from './discovery.ts';
 const BASE='https://hackathon.api.qloo.com';
 export async function qloo(path:string,params:Record<string,string>,key:string,signal?:AbortSignal) {
  const url=new URL(path,BASE);for(const [k,v] of Object.entries(params))url.searchParams.set(k,v);

@@ -1,5 +1,6 @@
 import type {Quest} from './quests.ts';
 export const RUN_STAGES=[
+ {id:'resolve',name:'Cultural identity',description:'Resolve your seed to one Qloo entity.'},
  {id:'taste',name:'Taste graph expansion',description:'Follow Qloo associations into another cultural world.'},
  {id:'operations',name:'Operational filtering',description:'Check Tokyo time, published hours and location.'},
  {id:'cluster',name:'Cluster optimization',description:'Compare short loops and read the selected venue pages.'},

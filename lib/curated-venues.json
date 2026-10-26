@@ -49,7 +49,7 @@
     "reviewedAt": "2026-10-24T16:48:48.887Z",
     "qlooId": "47C493EF-E223-4B22-BB43-86EE85EE26DF",
     "doorNotes": [
-      "Kitazawa 2-36-12."
+      "Kitazawa 2-36-12. Morning espresso service until early afternoon, quiet counter space."
     ],
     "eventOnly": false
   },
@@ -66,7 +66,9 @@
     "mission": "Walk the small courtyards and look for one independent shop or display that would disappear inside a department store.",
     "reviewedAt": "2026-10-24T16:38:50.494Z",
     "qlooId": "DF176A71-AD79-480C-B79D-3F7A50017D91",
-    "doorNotes": [],
+    "doorNotes": [
+      "Kitazawa 3-19-20. Open-air multi-level creative development along the former Odakyu railway tracks."
+    ],
     "eventOnly": false
   },
   {
@@ -149,7 +151,7 @@
     "reviewedAt": "2026-10-24T16:48:50.409Z",
     "qlooId": null,
     "doorNotes": [
-      "Udagawacho 10-2, third floor. Record Store Day lists shop hours as 13:00–19:00."
+      "Udagawacho 10-2, third floor. Record Store Day lists shop hours as 13:00 to 19:00."
     ],
     "eventOnly": false
   },
@@ -272,6 +274,7 @@
     "area": "Shimokitazawa",
     "role": "dig",
     "tags": [
+      "electronic",
       "experimental",
       "ambient",
       "vinyl"
@@ -279,7 +282,9 @@
     "mission": "Choose a record whose description makes you hesitate. Let that uncertainty be the point of the stop.",
     "reviewedAt": "2026-10-24T16:38:52.844Z",
     "qlooId": "C6638534-917C-4F05-B78B-27FA1DA60928",
-    "doorNotes": [],
+    "doorNotes": [
+      "Kitazawa 2-10-8, second floor. Opens at 14:00, curated stock of Japanese electronic, synth pop, and ambient vinyl."
+    ],
     "eventOnly": false
   },
   {
@@ -332,20 +337,20 @@
   },
   {
     "name": "Bar Music",
-    "source": "https://barmusic.buyshop.jp/about",
+    "source": "https://barmusic-coffee.blogspot.com/",
     "area": "Shibuya",
     "role": "listen",
     "tags": [
       "jazz",
       "soul",
-      "coffee",
-      "vinyl"
+      "vinyl",
+      "film"
     ],
     "mission": "Settle in for the selection rather than asking for a favourite immediately. Keep one track name for the walk home.",
     "reviewedAt": "2026-10-24T16:42:51.531Z",
     "qlooId": "5A623B12-EBF8-4215-A57C-7CA071EF5030",
     "doorNotes": [
-      "Dogenzaka 1-6-7, fifth floor. Opens at 18:00; irregular days off."
+      "Dogenzaka 1-6-7, fifth floor. Opens at 18:00, intimate low-lit listening bar with vinyl records and cocktail service."
     ],
     "eventOnly": false
   },
@@ -468,12 +473,15 @@
     "tags": [
       "art",
       "zine",
-      "independent"
+      "design",
+      "books"
     ],
     "mission": "Find an artist's book whose form changes how you read it. Spend time with its paper, binding or sequence of images.",
     "reviewedAt": "2026-10-24T16:38:55.398Z",
     "qlooId": "EED32B89-2BE8-49A9-95E7-88F50491014E",
-    "doorNotes": [],
+    "doorNotes": [
+      "Jingumae 5-36-6, second floor. Independent art and design books, artist editions, and small press titles."
+    ],
     "eventOnly": false
   },
   {
@@ -516,12 +524,15 @@
     "tags": [
       "publishing",
       "design",
-      "independent"
+      "film",
+      "books"
     ],
     "mission": "Find a book from a publisher you have never followed. Notice how its cover and typography frame the subject.",
     "reviewedAt": "2026-10-24T16:38:57.145Z",
     "qlooId": "B15FE794-D40A-4FA9-966D-BC4F341D450A",
-    "doorNotes": [],
+    "doorNotes": [
+      "Kamiyamacho 17-3. Enter from the back street in Oku-Shibuya, excellent selection of independent film monographs and photography zines."
+    ],
     "eventOnly": false
   },
   {
@@ -594,14 +605,17 @@
     "area": "Jimbocho",
     "role": "books",
     "tags": [
+      "books",
       "art",
       "used-books",
-      "design"
+      "nostalgia"
     ],
     "mission": "Compare an older art publication with a contemporary one. Look for an idea that outlasted its original design.",
     "reviewedAt": "2026-10-24T16:38:58.612Z",
     "qlooId": "AF292E65-1EC3-4B07-B688-BE67651E3082",
-    "doorNotes": [],
+    "doorNotes": [
+      "Kanda Jinbocho 1-1. Ground floor has art monographs, upper floor holds rare literary editions and vintage poetry collections."
+    ],
     "eventOnly": false
   },
   {
@@ -626,14 +640,17 @@
     "area": "Jimbocho",
     "role": "books",
     "tags": [
+      "books",
       "photography",
-      "fashion",
-      "art"
+      "art",
+      "nostalgia"
     ],
     "mission": "Choose a photobook from a decade you rarely browse. Notice what its images assume about the person looking at them.",
     "reviewedAt": "2026-10-24T16:38:59.711Z",
     "qlooId": "642708ED-0A1F-4ADD-8EC5-CCAAAB8172CA",
-    "doorNotes": [],
+    "doorNotes": [
+      "Kanda Jinbocho 1-7. Four floors of vintage photobooks, literary counterculture, and twentieth-century publications."
+    ],
     "eventOnly": false
   },
   {
@@ -708,12 +725,15 @@
     "tags": [
       "books",
       "art",
-      "coffee"
+      "design",
+      "architecture"
     ],
     "mission": "Browse the ground-floor books and notice how the gallery and cafe extend the same visit upstairs.",
     "reviewedAt": "2026-10-24T16:39:00.619Z",
     "qlooId": "21A8A7C3-74DA-4B35-9EE2-0CEC81B4F8F1",
-    "doorNotes": [],
+    "doorNotes": [
+      "Kita-Aoyama 3-5-22. Classic bookshop founded in 1891, second floor gallery features curated architecture and art books."
+    ],
     "eventOnly": false
   },
   {
@@ -964,12 +984,15 @@
     "tags": [
       "independent",
       "contemporary",
-      "coffee"
+      "film",
+      "art"
     ],
     "mission": "Take the stairs and choose one work to see twice, once before and once after reading the artist's text.",
     "reviewedAt": "2026-10-24T16:39:06.435Z",
     "qlooId": "D89B4B08-1223-4490-B74F-9B36D6206AE7",
-    "doorNotes": [],
+    "doorNotes": [
+      "Dogenzaka 1-11-3, fourth floor. Up the narrow stairs behind the station, low-lit lounge and exhibition room."
+    ],
     "eventOnly": false
   },
   {
@@ -980,12 +1003,15 @@
     "tags": [
       "contemporary",
       "architecture",
-      "art"
+      "art",
+      "design"
     ],
     "mission": "Follow one idea through the current exhibition and into its printed material. Keep a question to take back into the street.",
     "reviewedAt": "2026-10-24T16:42:53.92Z",
     "qlooId": "EA753A11-197E-4925-933A-E0B8711E96FD",
-    "doorNotes": [],
+    "doorNotes": [
+      "Jingumae 3-7-6. Check current exhibition hours and admission on the ground floor, designed by Swiss architect Mario Botta."
+    ],
     "eventOnly": false
   },
   {
@@ -1079,7 +1105,9 @@
     "mission": "Tell the staff how you usually drink coffee and try the next step they suggest. Treat the conversation as part of the visit.",
     "reviewedAt": "2026-10-24T16:39:08.797Z",
     "qlooId": "52C04EB1-78FE-4A30-A4C7-2543CC7731AB",
-    "doorNotes": [],
+    "doorNotes": [
+      "Jingumae 4-15-3. Stand-up tasting counter, allow time for a one-on-one consultation with the barista."
+    ],
     "eventOnly": false
   },
   {
@@ -1545,12 +1573,15 @@
     "tags": [
       "coffee",
       "history",
-      "books"
+      "books",
+      "nostalgia"
     ],
     "mission": "Start with a coffee before the book streets. Look for one detail of the room that makes you slow your browsing pace.",
     "reviewedAt": "2026-10-24T16:48:54.551Z",
     "qlooId": "DF5F14F6-D334-46CB-B4ED-EECCA2787197",
-    "doorNotes": [],
+    "doorNotes": [
+      "Kanda Jinbocho 1-7, basement floor. Classic Showa kissaten founded in 1972, quiet atmosphere suited for reading over hand-drip coffee."
+    ],
     "eventOnly": false
   },
   {
