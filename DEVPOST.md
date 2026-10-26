@@ -83,5 +83,5 @@ An AI agent operating in the physical world cannot rely on unconstrained generat
 ## 9. Quick Links for Judges
 - Live Demo: [Insert your production URL]
 - 2-Minute Demo Video: [Insert your Loom or YouTube URL]
-- GitHub Repository: [Insert your GitHub URL]
+- GitHub Repository: https://github.com/hypernewb/sidequest
 - Architectural Documentation: README.md
