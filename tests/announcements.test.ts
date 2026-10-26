@@ -1,4 +1,12 @@
 import test from 'node:test';
+test('translation failures distinguish provider quota and network failures, preserving the source',async()=>{
+ const quota=await translateJapanese('新しい会場のテスト',(async()=>Response.json({responseStatus:429,responseDetails:'Quota limit reached'})) as typeof fetch);assert.equal(quota.reason,'quota');assert.equal(quota.providerStatus,429);
+ const network=await translateJapanese('新しい通信のテスト',(async()=>{throw Error('offline');}) as typeof fetch);assert.equal(network.reason,'network');assert.equal(network.status,'unavailable');
+ const http=await translateJapanese('新しい応答のテスト',(async()=>new Response('',{status:403})) as typeof fetch);assert.equal(http.reason,'provider');assert.equal(http.providerStatus,403);
+});
+test('translation chunks prefer sentence boundaries and preserve every source character',()=>{
+ const sentence='これは展示会の説明です。';const source=sentence.repeat(20);const parts=translationSegments(source);assert.equal(parts.join(''),source);assert.ok(parts.every(s=>new TextEncoder().encode(s).length<=450));assert.ok(parts.slice(0,-1).every(s=>s.endsWith('。')));
+});
 import assert from 'node:assert/strict';
 import {publicLink,extractFields,detectedTopics,explicitAnnouncementMatches,htmlAnnouncement,plainText,announcementSchema} from '../lib/announcements.ts';
 import {canonicalAnnouncementUrl,readAnnouncement,translationSegments,translateJapanese} from '../lib/announcement-reader.ts';
