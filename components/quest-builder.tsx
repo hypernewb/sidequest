@@ -1,6 +1,7 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
 import type {Quest} from '@/lib/quests';
+import {routeDistance,nextLeg} from '@/lib/quest-presentation';
 import {writeBrowserTaste} from '@/lib/browser-taste';
 import {focusLabels,focusQuestion,type QuestFocus} from '@/lib/quest-focus';
 import type {EventLead} from '@/lib/quest-event-matching';
@@ -13,21 +14,20 @@ import {safeUrl,tokyoDate} from '@/lib/discovery';
 import '@/app/opportunities.css';
 
 type Choice={id:string;name:string;type:string;description?:string};
-type DispersionMode = 'direct' | 'detour' | 'wild';
 
 const GOLDEN_SEEDS = ['Haruki Murakami', 'Yellow Magic Orchestra', 'Wong Kar-wai', 'Isamu Noguchi'];
 
 export default function QuestBuilder(){
  const [seed,setSeed]=useState(''),[quest,setQuest]=useState<Quest|null>(null),[choices,setChoices]=useState<Choice[]>([]),[busy,setBusy]=useState(false),[error,setError]=useState(''),[date,setDate]=useState(''),[budget,setBudget]=useState('any'),[unknown,setUnknown]=useState(true),[status,setStatus]=useState(''),[saved,setSaved]=useState<Quest[]>([]),[showSaved,setShowSaved]=useState(false);
- const [dispersion,setDispersion]=useState<DispersionMode>('detour');
  const [events,setEvents]=useState<RunEvent[]>([]),[shareText,setShareText]=useState(''),[sharing,setSharing]=useState(false),[shareTitle,setShareTitle]=useState(''),[shareStatus,setShareStatus]=useState(''),[canShare,setCanShare]=useState(false);
  const [question,setQuestion]=useState<QuestReply['question']>(),[resolved,setResolved]=useState<QuestReply['resolved']>(),[focus,setFocus]=useState<QuestFocus>(),[leads,setLeads]=useState<EventLead[]>([]);
- const request=useRef<AbortController|null>(null),result=useRef<HTMLElement|null>(null),runPanel=useRef<HTMLElement|null>(null),sharePanel=useRef<HTMLElement|null>(null),shareCopy=useRef<HTMLTextAreaElement|null>(null);
+ const request=useRef<AbortController|null>(null),result=useRef<HTMLElement|null>(null),questionPanel=useRef<HTMLElement|null>(null),runPanel=useRef<HTMLElement|null>(null),sharePanel=useRef<HTMLElement|null>(null),shareCopy=useRef<HTMLTextAreaElement|null>(null);
  
  useEffect(()=>{setCanShare(typeof navigator.share==='function');},[]);
  useEffect(()=>{if(shareText)sharePanel.current?.scrollIntoView({block:'start'});},[shareText]);
  useEffect(()=>{if(busy)runPanel.current?.scrollIntoView({block:"start"});},[busy]);
- useEffect(()=>{if(quest)result.current?.scrollIntoView({block:"start"});},[quest]);
+ useEffect(()=>{if(quest){result.current?.focus({preventScroll:true});result.current?.scrollIntoView({block:"start"});}},[quest]);
+ useEffect(()=>{if(question){questionPanel.current?.focus({preventScroll:true});questionPanel.current?.scrollIntoView({block:"start"});}},[question]);
  useEffect(()=>{
    try{
      const s=JSON.parse(localStorage.getItem('sidequest-quests-v1')||'[]');
@@ -71,7 +71,7 @@ export default function QuestBuilder(){
        if(!b.quest&&!b.question)setError(b.message||'Try another name.');
      }
    }catch(e){
-     if(!c.signal.aborted)setError(e instanceof Error?e.message:'Try again.');
+     if(!c.signal.aborted){setError(e instanceof Error?e.message:'Try again.');setEvents(v=>[...v,{type:'stage',stage:v.at(-1)?.stage||'resolve',status:'failed',detail:'The request could not finish. Your interest is kept.',at:new Date().toISOString()}]);}
    }finally{
      if(!c.signal.aborted)setBusy(false);
    }
@@ -104,27 +104,21 @@ export default function QuestBuilder(){
        <button onClick={()=>setShowSaved(false)}>Find a quest</button>
        <button onClick={()=>setShowSaved(v=>!v)}>Saved quests ({saved.length})</button>
        <a href="/explore">Events & drops</a>
-       <a href="/explore?format=drops">Browse drops</a>
      </nav>
    </header>
 
    <main>
      <p className="outing-kicker">VOL. 07 · POCKET ALLEYS SERIES</p>
-     <h1>Tuned to your obsessions, <em style={{fontStyle:'italic',color:'#b83b2b'}}>mapped to Tokyo alleys.</em></h1>
-     <p className="outing-intro">An algorithmic field companion linking authors, sounds, and architecture to hyper-local Tokyo coordinates.</p>
+     <h1>One thing you love. <em style={{fontStyle:'italic',color:'#b83b2b'}}>A Tokyo quest.</em></h1>
+     <p className="outing-intro">Name an artist, author or director. Find a few places connected to your taste, with a route and time to explore.</p>
 
      <form className="quest-start" onSubmit={e=>{e.preventDefault();void dispatch();}}>
-       <label htmlFor="quest-seed" style={{fontWeight:600,letterSpacing:'0.04em'}}>TASTE SPARK & SEEDS</label>
+       <label htmlFor="quest-seed" style={{fontWeight:600,letterSpacing:'0.04em'}}>ONE THING YOU LOVE</label>
        <div className="quest-seed-row">
-         <input id="quest-seed" value={seed} onChange={e=>{reset();setFocus(undefined);setSeed(e.target.value);}} placeholder="Enter an artist, author, or director (e.g. Haruki Murakami, Ryuichi Sakamoto)" maxLength={80} autoComplete="off" required minLength={2}/>
-         <button className="primary" disabled={busy||seed.trim().length<2}>
-           {busy?'Checking the route…':'Dispatch SideQuest Agent →'}
-         </button>
+         <input id="quest-seed" value={seed} onChange={e=>{reset();setFocus(undefined);setSeed(e.target.value);}} placeholder="e.g. Nujabes" maxLength={80} autoComplete="off" required minLength={2}/>
        </div>
-     </form>
-
      <div className="quest-seeds-pills">
-       <span className="quest-seeds-label">TASTE SEEDS:</span>
+       <span className="quest-seeds-label">TRY A NAME:</span>
        {GOLDEN_SEEDS.map(v=>(
          <button key={v} type="button" className="quest-seed-chip" onClick={()=>{reset();setFocus(undefined);setSeed(v);}}>
            + {v}
@@ -132,36 +126,12 @@ export default function QuestBuilder(){
        ))}
      </div>
 
-     <div className="quest-dial" role="group" aria-label="Cultural Dispersion Dial">
-       <div className="quest-dial-header">
-         <div className="quest-dial-title">
-           <span>🧭</span>
-           <span>Cultural Dispersion Dial</span>
-         </div>
-         <span className="quest-dial-entropy">Entropy: {dispersion==='direct'?'Tight Orbit':dispersion==='detour'?'Balanced Detour':'Lateral Drift'}</span>
-       </div>
-       <div className="quest-dial-options">
-         <button type="button" className={`quest-dial-btn ${dispersion==='direct'?'selected':''}`} onClick={()=>setDispersion('direct')}>
-           <strong>Tight Orbit</strong>
-           <small>Direct matches & immediate haunts</small>
-         </button>
-         <button type="button" className={`quest-dial-btn ${dispersion==='detour'?'selected':''}`} onClick={()=>setDispersion('detour')}>
-           <strong>Curious Detour</strong>
-           <small>Cross-domain taste affinity</small>
-         </button>
-         <button type="button" className={`quest-dial-btn ${dispersion==='wild'?'selected':''}`} onClick={()=>setDispersion('wild')}>
-           <strong>Wild Drift</strong>
-           <small>High surprise & lateral drift</small>
-         </button>
-       </div>
-     </div>
-
      <details className="quest-options">
        <summary>Filter by date or price limit?</summary>
        <label>Visit date
          <input type="date" min={tokyoDate()} value={date} onChange={e=>{reset();setDate(e.target.value);}}/>
        </label>
-       <p>Leave blank. Tokyo time decides when to go.</p>
+       <p>Leave blank to plan from the current time in Tokyo.</p>
        <label>Price limit per stop
          <select value={budget} onChange={e=>{reset();setBudget(e.target.value);}}>
            <option value="any">No limit set</option>
@@ -173,7 +143,10 @@ export default function QuestBuilder(){
        {budget!=='any'&&<label><input type="checkbox" checked={unknown} onChange={e=>{reset();setUnknown(e.target.checked);}}/> Include places where the price needs checking</label>}
      </details>
 
-     {question&&<section className="quest-question" aria-label="Choose a direction">
+     <button className="primary quest-dispatch" disabled={busy||seed.trim().length<2}>{busy?'Planning your quest…':'Find my quest →'}</button>
+     </form>
+
+     {question&&<section ref={questionPanel} tabIndex={-1} className="quest-question" aria-label="Choose a direction">
        <p>You picked {question.seed}.</p>
        <h2>{question.prompt}</h2>
        <div className="outing-actions">
@@ -191,10 +164,10 @@ export default function QuestBuilder(){
 
      {showSaved&&!saved.length&&<p>Save a quest after scouting an afternoon.</p>}
 
-     {display.map((q,i)=><article ref={i===0?result:undefined} aria-label={q.title} className="quest-brief" key={q.seed.id+q.date+i}>
+     {display.map((q,i)=><article tabIndex={-1} ref={i===0?result:undefined} aria-label={q.title} className="quest-brief" key={q.seed.id+q.date+i}>
        <div className="quest-dossier-label">
-         <span>AUTONOMOUS FIELD MISSION · {q.neighborhood?.name||'Tokyo'}</span>
-         <span>{q.stops.length===1?'One place to try':q.stops.length?'Ready to walk':'No route verified'}</span>
+         <span>YOUR TOKYO QUEST</span>
+         <span>{q.stops.length===1?'One place to try':q.stops.length?'Your route':'No route verified'}</span>
        </div>
        <p className="outing-kicker">{q.seed.name} · {q.date} · {q.stops.length?`${q.stops.length} ${q.stops.length===1?'stop':'stops'}`:'No route verified'}</p>
        <h2>{q.stops.length?q.title:'That afternoon needs another lead'}</h2>
@@ -204,20 +177,20 @@ export default function QuestBuilder(){
        {q.stops.length > 0 && (
          <div className="quest-vital-metrics">
            <div className="quest-metric-card">
-             <strong>{(q.stops.length * 0.6).toFixed(1)} km</strong>
-             <small>Total Walk</small>
+             <strong>{routeDistance(q)}</strong>
+             <small>Estimated walking · includes return</small>
            </div>
            <div className="quest-metric-card">
-             <strong>{q.stops.length} Coordinates</strong>
-             <small>Sequential Stops</small>
+             <strong>{q.stops.length} stops</strong>
+             <small>Places to explore</small>
            </div>
            <div className="quest-metric-card">
-             <strong>{q.stops[0]?.arrival || '18:30'}–{q.stops[q.stops.length-1]?.departure || '22:00'} JST</strong>
+             <strong>{q.stops[0].arrival}–{q.stops[q.stops.length-1].departure} JST</strong>
              <small>Time Window</small>
            </div>
            <div className="quest-metric-card">
-             <strong>{q.neighborhood?.name || 'Tokyo'} Stn</strong>
-             <small>Transit Anchor</small>
+             <strong>{q.stops[0].item.title}</strong>
+             <small>Start here</small>
            </div>
          </div>
        )}
@@ -233,7 +206,7 @@ export default function QuestBuilder(){
            
            {!!s.item.curation?.doorNotes.length&&(
              <div className="quest-tactical-notes">
-               <div className="quest-tactical-label">🔑 TACTICAL DOOR NOTES</div>
+               <div className="quest-tactical-label">DOOR NOTES</div>
                <ul>
                  {s.item.curation.doorNotes.map(note=><li key={note}>{note}</li>)}
                </ul>
@@ -253,7 +226,7 @@ export default function QuestBuilder(){
 
            {n < q.stops.length - 1 && (
              <div className="quest-leg-connector">
-               <span>↓ {s.travelMinutes ? `${s.travelMinutes * 70}m walk (${s.travelMinutes} mins)` : '350m walk (5 mins)'} to next coordinate</span>
+               <span>↓ {nextLeg(q.stops[n+1])}</span>
              </div>
            )}
          </li>)}
@@ -311,7 +284,7 @@ export default function QuestBuilder(){
 
    <footer>
      <span>Follow your taste. Keep your afternoon.</span>
-     <a href="/classic">Previous tools & saves</a>
+     <a href="/classic">Connections & imports</a>
    </footer>
  </div>;
 }

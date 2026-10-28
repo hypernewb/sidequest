@@ -1,10 +1,10 @@
 import type {Quest} from './quests.ts';
 export const RUN_STAGES=[
- {id:'resolve',name:'Cultural identity',description:'Resolve your seed to one Qloo entity.'},
- {id:'taste',name:'Taste graph expansion',description:'Follow Qloo associations into another cultural world.'},
- {id:'operations',name:'Operational filtering',description:'Check Tokyo time, published hours and location.'},
- {id:'cluster',name:'Cluster optimization',description:'Compare short loops and read the selected venue pages.'},
- {id:'synthesis',name:'Quest synthesis',description:'Put the route, tasks and sourced door notes into one dossier.'}
+ {id:'resolve',name:'Find your interest',description:'Find the right artist, author or director in Qloo.'},
+ {id:'taste',name:'Follow taste connections',description:'Follow Qloo associations into another cultural world.'},
+ {id:'operations',name:'Check published hours',description:'Check Tokyo time, published hours and location.'},
+ {id:'cluster',name:'Plan a short route',description:'Compare short loops and read the selected venue pages.'},
+ {id:'synthesis',name:'Write your quest',description:'Bring the stops, times and source notes together.'}
 ] as const;
 export type RunStage=typeof RUN_STAGES[number]['id'];
 export type Association={name:string;type:string;relation:'seed_tag'|'related_tag'|'related_entity';via:string};

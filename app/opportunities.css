@@ -52,3 +52,12 @@
 .agent-telemetry-bar{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#62665c;margin-top:14px;padding-top:10px;border-top:1px dashed #d8d8ca}
 .agent-telemetry-stream{display:inline-flex;align-items:center;gap:6px}
 .agent-telemetry-stream:before{content:"";display:inline-block;width:6px;height:6px;background:#b83b2b;border-radius:50%}
+
+/* Preserve the field-guide palette while reducing setup and browsing overhead. */
+.quest-dispatch{margin-top:18px;min-height:48px}.quest-start .quest-options{margin-top:20px}.quest-question:focus-visible,.quest-brief:focus-visible{outline:2px solid #b83b2b;outline-offset:6px}
+.catalog-taste{margin:20px 0;padding:14px 0;border-top:1px solid #d8d8ca;border-bottom:1px solid #d8d8ca}.catalog-taste>summary{font-size:15px;overflow-wrap:anywhere}.catalog-filter{display:flex;align-items:center;gap:12px;margin:20px 0}.catalog-filter select{max-width:100%;min-width:210px}.agent-log small{overflow-wrap:anywhere}
+@media(max-width:650px){.quest-dispatch{width:100%}.quest-start .quest-seed-row input{font-size:20px!important}.quest-seeds-pills{gap:6px}.quest-metric-card strong{overflow-wrap:anywhere}.quest-leg-connector{padding-left:0}.outing header nav{flex-wrap:wrap}.catalog-filter select{flex:1;min-width:0}}
+@media(prefers-reduced-motion:reduce){.agent-live-dot{animation:none}}
+
+.catalog-page main{padding-top:30px}.catalog-page .catalog-taste{margin:14px 0;padding:10px 0}.catalog-page .catalog-filter{margin:14px 0}.catalog-page .outing-results{margin-top:18px}.catalog-page h1{margin-bottom:16px}
+@media(max-width:650px){.catalog-page h1{font-size:34px}.catalog-page main{padding-top:24px}.catalog-page header nav{gap:8px}.catalog-page .outing-results>article{padding-top:16px}}
