@@ -21,6 +21,29 @@ test('the same seed can choose records or visual art, and a route must include i
  assert.equal(planScout(applyFocus(rows.filter(o=>o.curation?.role!=='art'),'visual'),p,now).stops.length,0);
  assert.ok(focusQuestion({...seed,type:'movie'}).options.some(o=>o.id==='print'));
 });
+
+test('activity choice cannot manufacture cultural anchors for an unrelated taste',()=>{
+ const unrelated=[venue('gallery','art'),venue('coffee','coffee'),venue('books','books')];
+ const focused=applyFocus(unrelated,'visual');
+ assert.equal(focused[0].curation?.matchStrength,'stopover');
+ assert.equal(planScout(focused,p,now).stops.length,0);
+ assert.equal(unrelated[0].curation?.tasteScore,2);
+});
+
+test('specific music genre evidence outranks broad family adjacency',()=>{
+ const slayer={...seed,name:'Slayer',taste:[{name:'Thrash Metal',weight:1}]};
+ const gig=(genre:string)=>event({title:genre+' night',kind:'gig',details:{original:'',artists:[],genres:[{name:genre,evidence:'Official fixture genre'}],times:[],prices:[],priceCeiling:null,status:'unknown',checkedAt:now.toISOString(),url:'https://example.com'}});
+ const exact=eventFit(gig('Thrash Metal'),slayer)!,broad=eventFit(gig('Heavy Metal'),slayer)!;
+ assert.ok(exact.score>broad.score);
+ assert.match(broad.reason,/no exact subgenre/);
+ assert.equal(eventFit(gig('Jazz'),slayer),null);
+});
+
+test('repeat dates of the same programme do not fill the event shortlist',()=>{
+ const a=event({id:'date-one',url:'https://example.com/one'}),b=event({id:'date-two',url:'https://example.com/two',start:'2026-10-26',end:'2026-10-26'});
+ assert.equal(eventLeads([b,a],seed,p,now).length,1);
+ assert.equal(eventLeads([b,a],seed,p,now)[0].id,'date-one');
+});
 test('a relevant dated programme changes venue scores before planning, without mutating the base pool',()=>{
  const rows=[venue('art','art'),venue('coffee','coffee'),venue('book','books')];
  assert.equal(planScout(rows,p,now).stops.length,0);

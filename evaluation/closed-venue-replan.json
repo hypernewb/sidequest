@@ -1,0 +1,73 @@
+{
+  "method": "Controlled official-page HTML fixture with synthetic venue coordinates and weekly hours. The real source-specific closure reader and route planner run unchanged. This is a reproducible failure demonstration, not a live closure claim.",
+  "date": "2026-10-26",
+  "before": [
+    "Fuglen Tokyo",
+    "Mograg Gallery",
+    "KOTARO NUKAGA"
+  ],
+  "after": [
+    "Fuglen Tokyo",
+    "KOTARO NUKAGA"
+  ],
+  "changes": [
+    {
+      "venue": "Mograg Gallery",
+      "basis": "published_schedule",
+      "reason": "The official programme has no public opening window for 2026-10-26.",
+      "before": [
+        "Fuglen Tokyo",
+        "Mograg Gallery",
+        "KOTARO NUKAGA"
+      ],
+      "after": [
+        "Fuglen Tokyo",
+        "KOTARO NUKAGA"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "type": "stage",
+      "stage": "cluster",
+      "status": "running",
+      "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.",
+      "at": "2026-10-28T04:40:07.760Z"
+    },
+    {
+      "type": "stage",
+      "stage": "cluster",
+      "status": "running",
+      "detail": "Reading venue pages for Fuglen Tokyo, Mograg Gallery, KOTARO NUKAGA.",
+      "at": "2026-10-28T04:40:07.763Z"
+    },
+    {
+      "type": "stage",
+      "stage": "cluster",
+      "status": "running",
+      "detail": "Read Fuglen Tokyo and applied any supported dated hours.",
+      "at": "2026-10-28T04:40:07.789Z"
+    },
+    {
+      "type": "stage",
+      "stage": "cluster",
+      "status": "running",
+      "detail": "Mograg Gallery has no public opening in the published programme for 2026-10-26. Replanning around it.",
+      "at": "2026-10-28T04:40:07.789Z"
+    },
+    {
+      "type": "stage",
+      "stage": "cluster",
+      "status": "running",
+      "detail": "Read KOTARO NUKAGA and applied any supported dated hours.",
+      "at": "2026-10-28T04:40:07.789Z"
+    },
+    {
+      "type": "stage",
+      "stage": "cluster",
+      "status": "complete",
+      "detail": "Selected Fuglen Tokyo → KOTARO NUKAGA. About 12 minutes walking including the return.",
+      "at": "2026-10-28T04:40:07.791Z"
+    }
+  ]
+}

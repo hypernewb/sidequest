@@ -4,7 +4,8 @@ import {distance,tokyoDate,type Place} from './discovery.ts';
 import {rankOpportunities,type Opportunity,type Preferences} from './opportunities.ts';
 export type ScoutStop={item:Opportunity;arrival:string;departure:string;hours:string;travelMinutes:number;distanceMetres:number;reason:string;transit?:string};
 type Leg={metres:number;minutes:number;transit?:string};
-export type ScoutPlan={date:string;checkedAt:string;tokyoNow:string;stops:ScoutStop[];brief:string;map:string|null;examined:number;eligible:number;notes:string[];neighborhood?:{id:string;name:string};trace?:string[];walkingMinutes?:number;walkingMetres?:number;returnMinutes?:number;returnTransit?:string};
+export type RouteChange={venue:string;basis:'published_schedule'|'source_unavailable'|'visitor_report';reason:string;before:string[];after:string[]};
+export type ScoutPlan={date:string;checkedAt:string;tokyoNow:string;stops:ScoutStop[];brief:string;map:string|null;examined:number;eligible:number;notes:string[];neighborhood?:{id:string;name:string};trace?:string[];walkingMinutes?:number;walkingMetres?:number;returnMinutes?:number;returnTransit?:string;changes?:RouteChange[]};
 const clock=(n:number)=>String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');
 function minutes(v:unknown){const m=String(v||'').match(/^T?(\d{2}):(\d{2})(?::\d{2})?$/);if(!m)return null;const n=+m[1]*60 + +m[2];return +m[1]<=24&&+m[2]<60&&n<=1440?n:null;}
 export function openingWindows(hours:Place['hours'],date:string){

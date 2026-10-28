@@ -44,6 +44,7 @@ export function composeQuest(plan:ScoutPlan,seed:Pick<QuestSeed,'id'|'name'|'typ
  else if(has('art'))title=area+', look twice';
  if(stops.length===1)title=stops[0].item.title;
  const acts:Record<string,string>={coffee:'a coffee to start',books:'a book outside your usual shelf',dig:'an unfamiliar sleeve',art:'a closer look at a small gallery',listen:'a room where the selection sets the pace',play:'a turn outside your usual games'};
- const arc=roles.map(r=>acts[r||'']||'one small discovery').join(', then ');
+ const seen=new Set<string>();
+ const arc=stops.map(s=>{const role=s.item.curation?.role||'',action=seen.has(role)?'a different selection at '+s.item.title:acts[role]||'one small discovery';seen.add(role);return action;}).join(', then ');
  return {...plan,title,vibe:plan.stops.length===1?'One place worth a closer look. Take your time here.':plan.stops.length?plan.walkingMinutes+(plan.returnTransit||plan.stops.some(s=>s.transit)?' minutes on foot and by train. ':' minutes on foot. ')+stops.length+' stops. One loop.':'',invitation:stops.length===1?'You brought '+seed.name+'. This is one place to follow that interest, with enough time to browse.':stops.length?'You brought '+seed.name+'. The route gives you '+arc+'. Keep one name from each stop and see which one follows you home.':plan.brief,stops,seed:{id:seed.id,name:seed.name,type:seed.type}};
 }

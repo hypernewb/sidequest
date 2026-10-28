@@ -27,6 +27,13 @@ export function interestMatch(o:Opportunity,seed:{id:string;name:string;type:str
  const overlap=culturalOverlap([...tasteThreads(evidence).keys()],threads).filter(t=>t.weight>=.75);
  const specific=overlap.filter(t=>!['rock','indie'].includes(t.name));
  if(artist&&!specific.length&&[...threads.keys()].some(t=>['metal','jazz','hiphop','soul','ambient','electronic'].includes(t)))return null;
- if(overlap.length)return {strength:Math.min(9,(specific.length?5:3)+(overlap.length-1)*1.5),reason:(o.details?.genres.length?'Official programme mentions ':'Performer genre overlaps ')+overlap.map(t=>t.name).join(', '),kind:'genre' as const};
+ if(overlap.length){
+  const normalize=(name:string)=>name.toLowerCase().replace(/[^a-z0-9]/g,'');
+  const broad=new Set(['metal','heavymetal','rock','hardrock','alternativerock','jazz','hiphop','rap','soul','funk','electronic','ambient','indie','punk','music']);
+  const target=(seed.taste||[]).filter(t=>(t.weight??1)>=.75&&tasteThreads([t]).size&&!broad.has(normalize(t.name)));
+  const exact=target.filter(t=>evidence.some(e=>normalize(e.name)===normalize(t.name)));
+  const adjacent=target.length>0&&!exact.length;
+  return {strength:exact.length?9:adjacent?4:Math.min(8,(specific.length?5:3)+(overlap.length-1)*1.5),reason:exact.length?'Shared genre evidence: '+exact.map(t=>t.name).join(', '):adjacent?'Broad '+overlap.map(t=>t.name).join(', ')+' connection; no exact subgenre overlap established.':(o.details?.genres.length?'Official programme mentions ':'Performer genre overlaps ')+overlap.map(t=>t.name).join(', '),kind:'genre' as const};
+ }
  return null;
 }

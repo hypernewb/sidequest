@@ -1,94 +1,91 @@
 # SideQuest
 
-An autonomous cultural concierge that turns personal obsessions into walkable Tokyo quests using Qloo's Taste Graph.
+One thing you love. A Tokyo quest.
 
-[Open the prototype](https://sidequest-tokyo-ckx.ckx-1994.chatgpt.site/) · [2-minute demo video script](DEMO.md) · [Pitch deck](https://chatgpt.com/space/page_d24a68d287908191ab7cfdce84212ace)
+[Open SideQuest](https://sidequest-tokyo-ckx.ckx-1994.chatgpt.site/) · [Two-minute demo script](DEMO.md) · [Three-taste review](evaluation/THREE-TASTES.md)
 
-Tokyo holds thousands of narrow backstreets and niche cultural spaces. Standard map searches surface tourist hubs with ninety-minute queues. Generic large language model itinerary planners hallucinate non-existent coffee shops or pair venues on opposite sides of the prefecture with impossible walking times.
+SideQuest turns an artist, author, film or brand into a short Tokyo outing. Qloo supplies cultural associations and venue affinity. A curated venue catalog and official event pages supply the places, programmes and published schedules. The planner fits supported stops together and explains changes when a venue cannot be used.
 
-SideQuest takes a single cultural spark, such as an author, a synthesizer pioneer, an indie film director, or a modernist sculptor, and runs an autonomous agent pipeline to build a three-stop walking circuit with verified Tokyo opening hours and tactical door notes.
+## What to try
 
----
+Enter a name, choose an activity, then read the quest. Date and price limits are optional. Each stop includes a task, its published hours, source link and door notes where available. Walking distances are estimates; Google Maps provides street directions.
 
-## The 5-Tool Agentic Architecture
+On 28 October 2026 we tested the same visit date, 29 October, with three contrasting tastes. When asked to disambiguate, we chose Slayer the artist and MUJI the brand.
 
-The scouting engine lives in [lib/agent-tools.ts](lib/agent-tools.ts), exporting explicit schemas and typed tool functions designed for hackathon evaluation:
+| Taste and choice | Returned outing | What the connection supports |
+| --- | --- | --- |
+| Nujabes, records & listening | Hi-Fi Record Store → HMV record shop Shibuya → Bar Music | Reviewed jazz/soul selections. This does not promise a Nujabes performance or a particular record in stock. |
+| Slayer, records & listening | Record Boy | A metal specialist. Nearby supported stops did not form a suitable loop, so the result stays at one stop. |
+| MUJI, design & architecture | KOFFEE MAMEYA → UTRECHT → WATARI-UM | Design, publishing and architecture connections. Weekly hours do not establish a current exhibition. |
 
-```mermaid
-flowchart TD
-    A["User Seed (e.g. Haruki Murakami)"] --> B["tool_resolve_entity<br/>(Qloo /search + UUID disambiguation)"]
-    B --> C["tool_expand_taste_graph<br/>(Qloo /v2/insights lateral genre & media links)"]
-    C --> D["tool_schedule_verify<br/>(Asia/Tokyo live hours + HTTP venue checks)"]
-    D --> E["tool_spatial_cluster<br/>(≤1.5km legs, ≤4km loop, rail corridor fallback)"]
-    E --> F["tool_synthesize_quest<br/>(Timetable, tactical door notes, Google Maps dossier)"]
+The three returned sets have no venue overlap in this capture. These are functional examples, not a human satisfaction benchmark. Main routes stayed the same after this repair; the fixes protect matching evidence, explain weaker music links and remove duplicate event leads. Source availability can change the routes between runs. Full evidence is in [the review](evaluation/THREE-TASTES.md), with [before](evaluation/three-tastes-before.json) and [after](evaluation/three-tastes-after.json) captures.
+
+## How the scout works
+
+The five tools are exported from `lib/agent-tools.ts`. This is a bounded, deterministic planning workflow with real API calls. It does not use an LLM to invent venues or opening hours.
+
+1. **Find the interest.** Resolve the name through Qloo `/search`. Ask when several cultural entities share it.
+2. **Follow taste connections.** Read Qloo metadata and `/v2/insights`, then rank resolved entries from the curated Tokyo venue catalog. Direct seed evidence, lateral associations and nearby stopovers remain distinct.
+3. **Check published hours.** Apply Tokyo time, date, budget, coordinates and available schedules. Dated programmes can improve venue relevance when the source supports the connection.
+4. **Plan and recheck.** Compare short loops, read candidate official pages, apply supported dated exceptions, and retry when a candidate becomes unusable. Estimated walking legs are capped at 1.5 km and the full walking loop at 4 km. A direct train corridor can help when walking alone cannot form a route. Train times are estimates.
+5. **Write the quest.** Return the actual stops, times, authored activities, source notes and map. One or two supported stops are allowed. The engine does not force three.
+
+Progress comes from these tool results over `application/x-ndjson`. The visible run reports completed checks and failures. Detailed calls remain expandable.
+
+Activity choices affect route selection but cannot create a cultural anchor. Exact genre evidence ranks above broad music-family adjacency. Repeat dates of the same programme do not fill the event shortlist.
+
+## Replanning when a stop cannot be used
+
+Each current stop has **Closed? Replan without this stop**. It sends a visitor-reported exclusion and reruns planning with the same taste, activity, date and budget. The result labels the report as unconfirmed by an official notice. Reports remain session-local and can be cleared for the next plan.
+
+The scout also records automatic route changes. A source-specific dated closure is labelled as a published-schedule constraint. An unreadable website is labelled as a source failure, which does not establish that the venue is closed. **Why the route changed** shows the evidence and successive route attempts.
+
+A reproducible controlled closure check uses a Mograg exhibition-page fixture with an explicit Monday closure and synthetic coordinates. The real closure reader and planner remove Mograg and retain a two-stop route. This is a controlled demonstration, not a live closure announcement.
+
+```powershell
+node --experimental-strip-types scripts/demo-closed-venue.mjs
 ```
 
-1. **`tool_resolve_entity`**: Queries Qloo `/search`, validates candidate UUIDs via Zod, and resolves exact matches. When a seed has multiple interpretations, such as an eponymous artist versus an album, it automatically selects the primary artist or prompts the user for clarification.
-2. **`tool_expand_taste_graph`**: Uses Qloo `/v2/insights` to expand cross-domain taste associations across music genres and media types. It computes direct venue affinity and bridges seed tags into reviewed venue categories.
-3. **`tool_schedule_verify`**: Enforces strict Asia/Tokyo timezone calculations. It rejects closed venues, checks published opening windows, and fetches official venue pages live over HTTP to catch unindexed temporary closures.
-4. **`tool_spatial_cluster`**: Groups candidates into tight walking circuits where every individual leg is 1.5 km or less and the total loop is under 4 km. If a neighborhood cluster has fewer than three viable venues, it widens along direct transit corridors such as the Inokashira or Odakyu lines.
-5. **`tool_synthesize_quest`**: Compiles the final itinerary with arrival timetables, authored missions, insider door notes, and an exportable Google Maps route.
+See [the closure trace](evaluation/closed-venue-replan.json). General closure detection across arbitrary Japanese pages is not implemented; supported adapters and visitor reports have explicit limits.
 
-The route handler at `app/api/quests/route.ts` runs these tools sequentially and streams live progress to the frontend over `text/event-stream` using newline-delimited JSON.
+Pianola's official Japanese access page was checked on 28 October. Its Thursday closure overrides the provider schedule, and its BONUS TRACK address replaces an outdated floor note. [Official access page](https://pianola-records.com/pages/about-us).
 
----
+## Events, drops and coverage
 
-## Why Qloo Needs Curated Ground Truth
+**Events & drops** browses the persistent source catalog by live music, vinyl, fashion, exhibitions, pop-ups and releases. Interest editing and source evidence are expandable. The catalog ingests official venue calendars, shop and brand announcements, cultural hubs and available event services. Fever is one source, not the whole inventory. Source failures and access-dependent adapters appear in coverage notes.
 
-Qloo's collaborative filtering graph is effective at calculating semantic affinities between artists, films, books, and musical subgenres. An open-ended query to Qloo for Tokyo venues returns commercial corporate concert halls and international hotel lobbies. Qloo does not maintain geocoded records for twenty-seat vinyl listening bars in Dogenzaka or vintage photobook galleries in Jimbocho.
+Current exhibitions or events enter a venue quest only when supported by the catalog and matching logic. Other relevant upcoming announcements appear as separate leads, with their own dates. A shop listing is not proof of a new limited release, current stock or admission. Japanese translation can be unavailable; the original evidence is retained.
 
-SideQuest solves this catalog density challenge through a hybrid design:
-- We maintain a curated, source-reviewed catalog of 100 Tokyo cultural spaces across iconic neighborhoods such as Jimbocho, Shimokitazawa, Shibuya, and Aoyama.
-- Qloo calculates the mathematical affinity between the visitor's cultural seed and these vetted venues.
-- Qloo provides the taste expansion; our local catalog guarantees physical ground truth, accurate coordinates, and real entrance intelligence.
+## Evidence and limits
 
----
+The final regression suite has 196 passing tests, including matching, route constraints, reported closures, source-specific closure replanning and failure labels. Automated tests measure behavior, not how much someone enjoys an outing.
 
-## 4 Golden Demonstration Seeds
+The [25 October comparison](evaluation/QUEST-BENCHMARK.md) remains historical. It used unblinded AI desk judgments and examples also used for debugging. We do not claim a measured percentage improvement in recommendation quality. A held-out human evaluation remains open.
 
-The repository includes automated integration tests ensuring these four flagship seeds produce distinct three-stop circuits across different Tokyo neighborhoods with zero venue overlap:
+Opening times are published schedules. A successful page read does not prove that the venue is open now, that a particular exhibition is running, or that a product is available. Recheck official details before travelling or buying.
 
-| Seed | Cultural Focus | District | Walking Circuit | Verified Stops |
-| :--- | :--- | :--- | :--- | :--- |
-| **Haruki Murakami** | Literature, Showa Kissaten, Rare Books | Jimbocho | 20 min (368 m) | 1. Kanda Brazil (coffee, 12:15)<br/>2. Bohemian's Guild (books, 13:07)<br/>3. Komiyama Tokyo (books, 13:59) |
-| **Yellow Magic Orchestra** | Electronic Music, Synthesizers, Vinyl Culture | Shimokitazawa | 50 min (1,196 m) | 1. Bear Pond Espresso (coffee, 12:15)<br/>2. Reload (art / design, 13:10)<br/>3. Pianola Records (dig, 14:16) |
-| **Wong Kar-wai** | Cinema, Film Noir, Low-Lit Alley Bars | Shibuya | 53 min (2,609 m) | 1. GALLERY CONCEAL SHIBUYA (art, 15:45)<br/>2. SHIBUYA PUBLISHING & BOOKSELLERS (books, 16:53)<br/>3. Bar Music (listen, 18:02) |
-| **Isamu Noguchi** | Sculpture, Industrial Design, Modernist Architecture | Harajuku & Aoyama | 55 min (1,674 m) | 1. KOFFEE MAMEYA (coffee, 12:15)<br/>2. UTRECHT (books, 13:18)<br/>3. WATARI-UM (art, 14:28) |
+## Run locally
 
-Every stop includes tactical door notes detailing floor levels, cash policies, and atmosphere guidance without speculative fluff.
+Requires Node 22.13 or newer.
 
----
+```powershell
+npm run install:ci
+```
 
-## Field Guide Interface
+Save the Qloo key in `.dev.vars` as `QLOO_API_KEY`, then run:
 
-The user interface uses the Google Stitch field guide layout:
-- **Spark Input with Quick-Pick Chips**: Tap any of the four golden seeds or type any cultural entity.
-- **Cultural Dispersion Dial**: Choose between Tight Orbit, Curious Detour, and Wild Drift to control taste exploration radius.
-- **Live Streamed Agent Trace**: Watch monospace tool executions, runtime telemetry, and autonomous decisions stream live as Qloo executes.
-- **Quest Dossier**: Visual itinerary cards displaying sequential stop numbers, arrival timetables, directional walking connectors, and door notes.
-- **One-Click Navigation**: Export the complete walking circuit directly into Google Maps with pre-populated waypoints and origin-destination loop closure.
+```powershell
+npm run dev
+npm test
+npx tsc --noEmit
+```
 
----
+Use the local URL printed by the development server, normally `http://127.0.0.1:5173`. Qloo credentials stay on the server. Hosted catalog persistence uses the configured D1 binding; optional integrations retain their own access requirements.
 
-## Run Locally
+To repeat the three-taste functional check with an explicit visit date:
 
-Requires Node 22.13+.
+```powershell
+node scripts/audit-three-tastes.mjs after 2026-10-29
+```
 
-1. Install dependencies:
-   ```bash
-   npm run install:ci
-   ```
-2. Create `.dev.vars` with your Qloo API key:
-   ```bash
-   QLOO_API_KEY="your-qloo-key-here"
-   ```
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-4. Run the automated test suite:
-   ```bash
-   npm test
-   ```
-
-All 187 automated unit and integration tests execute in approximately 1.2 seconds, covering tool definitions, entity disambiguation, timetable verification, spatial clustering, and the golden demonstration seeds.
+This calls real services and writes a dated report. Routes and service response times can change. Private raw responses remain in ignored `.local/three-tastes/`.

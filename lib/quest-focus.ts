@@ -12,5 +12,5 @@ export function focusFit(o:Opportunity,focus:QuestFocus='any'){
 }
 export function applyFocus(items:Opportunity[],focus:QuestFocus='any'){
  if(focus==='any')return items;
- return items.map(o=>{if(!o.curation)return o;const matches=focusFit(o,focus);return {...o,curation:{...o.curation,focusRequested:true,focusMatch:matches,focusReason:matches?'You asked for '+focusLabels[focus].toLowerCase()+'. This matches the reviewed venue activity.':undefined,tasteScore:(o.curation.tasteScore||0)+(matches?85:0),matchStrength:matches?'anchor' as const:o.curation.matchStrength}};});
+ return items.map(o=>{if(!o.curation)return o;const matches=focusFit(o,focus);return {...o,curation:{...o.curation,focusRequested:true,focusMatch:matches,focusReason:matches?'You asked for '+focusLabels[focus].toLowerCase()+'. This matches the reviewed venue activity.':undefined,tasteScore:(o.curation.tasteScore||0)+(matches?25:0)}};});
 }

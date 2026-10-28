@@ -19,6 +19,7 @@ const GOLDEN_SEEDS = ['Haruki Murakami', 'Yellow Magic Orchestra', 'Wong Kar-wai
 
 export default function QuestBuilder(){
  const [seed,setSeed]=useState(''),[quest,setQuest]=useState<Quest|null>(null),[choices,setChoices]=useState<Choice[]>([]),[busy,setBusy]=useState(false),[error,setError]=useState(''),[date,setDate]=useState(''),[budget,setBudget]=useState('any'),[unknown,setUnknown]=useState(true),[status,setStatus]=useState(''),[saved,setSaved]=useState<Quest[]>([]),[showSaved,setShowSaved]=useState(false);
+ const [reportedClosed,setReportedClosed]=useState<string[]>([]);
  const [events,setEvents]=useState<RunEvent[]>([]),[shareText,setShareText]=useState(''),[sharing,setSharing]=useState(false),[shareTitle,setShareTitle]=useState(''),[shareStatus,setShareStatus]=useState(''),[canShare,setCanShare]=useState(false);
  const [question,setQuestion]=useState<QuestReply['question']>(),[resolved,setResolved]=useState<QuestReply['resolved']>(),[focus,setFocus]=useState<QuestFocus>(),[leads,setLeads]=useState<EventLead[]>([]);
  const request=useRef<AbortController|null>(null),result=useRef<HTMLElement|null>(null),questionPanel=useRef<HTMLElement|null>(null),runPanel=useRef<HTMLElement|null>(null),sharePanel=useRef<HTMLElement|null>(null),shareCopy=useRef<HTMLTextAreaElement|null>(null);
@@ -38,10 +39,12 @@ export default function QuestBuilder(){
    return()=>request.current?.abort();
  },[]);
 
- function reset(){request.current?.abort();setBusy(false);setQuest(null);setChoices([]);setError('');setEvents([]);setShareText('');setQuestion(undefined);setLeads([]);}
+ function reset(){setReportedClosed([]);request.current?.abort();setBusy(false);setQuest(null);setChoices([]);setError('');setEvents([]);setShareText('');setQuestion(undefined);setLeads([]);}
  function cancel(){request.current?.abort();setBusy(false);setEvents(v=>v.length?[...v,{...v.at(-1)!,status:'cancelled',detail:'Stopped. Your seed is kept.',at:new Date().toISOString()}]:v);}
  
- async function dispatch(choice?:string,another=false,answer?:QuestFocus){
+ async function dispatch(choice?:string,another=false,answer?:QuestFocus,closedId?:string){
+   const closed=closedId?[...new Set([...reportedClosed,closedId])].slice(-12):reportedClosed;
+   if(closedId)setReportedClosed(closed);
    const selectedFocus=answer??focus;
    if(answer)setFocus(answer);
    setQuestion(undefined);
@@ -59,7 +62,7 @@ export default function QuestBuilder(){
    const old=quest;
    setQuest(null);
    try{
-     const r=await fetch('/api/quests',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/x-ndjson'},body:JSON.stringify({seed,choice,askFollowup:selectedFocus===undefined,focus:selectedFocus,date:date||undefined,budget,unknownPrice:unknown,exclude:another?old?.stops.map(s=>s.item.id):[]}),signal:c.signal});
+     const r=await fetch('/api/quests',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/x-ndjson'},body:JSON.stringify({seed,choice,askFollowup:selectedFocus===undefined,focus:selectedFocus,date:date||undefined,budget,unknownPrice:unknown,exclude:another?old?.stops.map(s=>s.item.id):[],reportedClosed:closed}),signal:c.signal});
      const b=await readQuestRun(r,event=>{if(!c.signal.aborted)setEvents(v=>[...v,event].slice(-160));});
      if(!c.signal.aborted){
        if(b.quest?.seed){try{writeBrowserTaste(localStorage,[{id:b.quest.seed.id,name:b.quest.seed.name,type:b.quest.seed.type,feeling:'love'}]);}catch{}}
@@ -143,6 +146,7 @@ export default function QuestBuilder(){
        {budget!=='any'&&<label><input type="checkbox" checked={unknown} onChange={e=>{reset();setUnknown(e.target.checked);}}/> Include places where the price needs checking</label>}
      </details>
 
+     {reportedClosed.length>0&&<p>{reportedClosed.length} visitor-reported closed {reportedClosed.length===1?'stop':'stops'} excluded. <button type="button" onClick={()=>setReportedClosed([])}>Clear reports for the next plan</button></p>}
      <button className="primary quest-dispatch" disabled={busy||seed.trim().length<2}>{busy?'Planning your quest…':'Find my quest →'}</button>
      </form>
 
@@ -195,6 +199,7 @@ export default function QuestBuilder(){
          </div>
        )}
 
+       {q.changes&&q.changes.length>0&&<section className="quest-route-changes" aria-label="Route changes"><h3>Why the route changed</h3>{q.changes.map((change,j)=><div key={j}><p><strong>{change.venue}</strong> · {change.reason}</p>{change.before.length>0&&<p>Earlier route: {change.before.join(' → ')}</p>}<p>{change.after.length?'Replanned route: '+change.after.join(' → '):'No supported replacement fit this check.'}</p></div>)}</section>}
        {q.catalogNote&&<p>{q.catalogNote}</p>}
 
        {q.stops.length>0&&<ol className="quest-stops">
@@ -217,6 +222,7 @@ export default function QuestBuilder(){
            <p className="quest-address">{s.item.location}</p>
            <p className="quest-door"><a href={safeUrl(s.item.url)||undefined} target="_blank" rel="noreferrer">Venue & programme ↗</a><span>{s.hours} JST · {s.item.curation?.hoursBasis||'Weekly hours'}</span></p>
            
+           {!showSaved&&<button disabled={busy} onClick={()=>void dispatch(q.seed.id,false,focus||'any',s.item.id)}>Closed? Replan without this stop</button>}
            <details>
              <summary>The connection</summary>
              <p>{s.reason}</p>

@@ -20,9 +20,9 @@ export async function rankedCurated(p:Preferences,key:string,seed:QuestSeed,now=
  return candidates;
 }
 
-export async function scoutCurated(p:Preferences,key:string,seed:QuestSeed,now=new Date(),flexibleDate=false,hooks?:RunHooks,context:{focus?:QuestFocus;records?:Opportunity[]}={}):Promise<ScoutPlan>{
+export async function scoutCurated(p:Preferences,key:string,seed:QuestSeed,now=new Date(),flexibleDate=false,hooks?:RunHooks,context:{focus?:QuestFocus;records?:Opportunity[];reportedClosed?:string[]}={}):Promise<ScoutPlan>{
  const items=await rankedCurated(p,key,seed,now,hooks,context.focus);
  const schedule=await toolScheduleVerify({items,preferences:p,seed,records:context.records,focus:context.focus,now,hooks});
- const cluster=await toolSpatialCluster({items,preferences:schedule.preferences,seed,records:context.records,focus:context.focus,now,flexibleDate,hooks});
+ const cluster=await toolSpatialCluster({items,preferences:schedule.preferences,seed,records:context.records,focus:context.focus,reportedClosed:context.reportedClosed,now,flexibleDate,hooks});
  return cluster.plan;
 }

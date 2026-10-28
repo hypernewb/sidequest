@@ -7,14 +7,14 @@ import {tasteThreads,culturalFit} from './curated-taste.ts';
 import {qloo} from './qloo.ts';
 import {VENUES,venueById,type Curation} from './curated-venues.ts';
 import type {Opportunity,Preferences} from './opportunities.ts';
-import {planScout,prepareScout,type ScoutPlan} from './scout.ts';
+import {planScout,prepareScout,openingWindows,type ScoutPlan,type RouteChange} from './scout.ts';
 import {plainText} from './announcements.ts';
 import {composeQuest,resolveQuestSeed,questChoices,type Quest} from './quests.ts';
 import {programmeFor} from './quest-programmes.ts';
 
 // Official weekly hours explicitly checked by the curator. Unknown admission stays unknown.
 const daily=(opens:string,closes:string)=>Object.fromEntries(['monday','tuesday','wednesday','thursday','friday','saturday','sunday'].map(d=>[d,[{opens,closes}]]));
-export const verifiedHours:Record<string,Opportunity['hours']>={'Little Soul Cafe':daily('19:00','02:00'),'Bar Music':daily('18:00','24:00'),'NAT RECORDS':daily('11:00','20:00'),'Reload':daily('11:00','20:00')};
+export const verifiedHours:Record<string,Opportunity['hours']>={'Little Soul Cafe':daily('19:00','02:00'),'Bar Music':daily('18:00','24:00'),'NAT RECORDS':daily('11:00','20:00'),'Reload':daily('11:00','20:00'),'Pianola Records':{...daily('14:00','21:00'),thursday:[{closed:true}]}};
 
 export function curatedOpportunity(e:Record<string,any>,seed:QuestSeed,at:string):Opportunity|null{
  const v=venueById.get(String(e.entity_id).toUpperCase()),p=e.properties||{},l=e.location||{},a=Number.isFinite(e.query?.affinity)?e.query.affinity:0;
@@ -398,6 +398,7 @@ export interface ToolSpatialClusterInput {
  focus?: QuestFocus;
  now?: Date;
  flexibleDate?: boolean;
+ reportedClosed?: string[];
  hooks?: RunHooks;
  signal?: AbortSignal;
 }
@@ -410,14 +411,16 @@ export interface ToolSpatialClusterOutput {
 }
 
 export async function toolSpatialCluster(input: ToolSpatialClusterInput): Promise<ToolSpatialClusterOutput> {
- const {items, preferences: p, seed, records = [], focus = 'any', now = new Date(), flexibleDate = false, hooks, signal} = input;
+ const {items, preferences: p, seed, records = [], focus = 'any', now = new Date(), flexibleDate = false, reportedClosed = [], hooks, signal} = input;
  const runSignal = signal || hooks?.signal;
  const checked = new Set<string>();
  const failed = new Set<string>();
- const candidates = (prefs: Preferences) => withProgrammes(items, records, seed, prefs, now, focus);
+ const changes:RouteChange[]=[];
+ const candidates = (prefs: Preferences) => withProgrammes(items.filter(o=>!reportedClosed.includes(o.id)), records, seed, prefs, now, focus);
  const initialPrefs = {...p, date: p.date || prepareScout(items, p, now).date};
 
  reportRun(hooks, 'cluster', 'running', 'Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km.');
+ for(const id of reportedClosed){const v=venueById.get(id);if(v){changes.push({venue:v.name,basis:'visitor_report',reason:'You reported this stop closed. Excluded from this plan; not an official closure notice.',before:[],after:[]});reportRun(hooks,'cluster','running','You reported '+v.name+' closed. Planning without it, keeping your taste, date and price choices.');}}
  let rail = false;
  const widen = (walk: ScoutPlan, rows: Opportunity[], prefs: Preferences) => {
   if (rail || walk.stops.length >= 3) return walk;
@@ -450,6 +453,7 @@ export async function toolSpatialCluster(input: ToolSpatialClusterInput): Promis
   if (!pending.length) break;
   reportRun(hooks, 'cluster', 'running', 'Reading venue pages for ' + pending.map(s => s.item.title).join(', ') + '.');
   const failedBefore = failed.size;
+  const before=plan.stops.map(s=>s.item.title),batch:RouteChange[]=[];
   await Promise.all(pending.map(async s => {
    try {
     const value = await checkVenuePage(s.item, fetch, now, plan.date, runSignal);
@@ -457,16 +461,21 @@ export async function toolSpatialCluster(input: ToolSpatialClusterInput): Promis
     original.hours = value.hours;
     original.curation = {...original.curation!, sourceReadAt: value.curation?.sourceReadAt, hoursBasis: value.curation?.hoursBasis};
     checked.add(s.item.id);
-    reportRun(hooks, 'cluster', 'running', 'Read ' + s.item.title + ' and applied any supported dated hours.');
+    if(!openingWindows(value.hours||{},plan.date).length){
+     batch.push({venue:s.item.title,basis:'published_schedule',reason:'The official programme has no public opening window for '+plan.date+'.',before,after:[]});
+     reportRun(hooks,'cluster','running',s.item.title+' has no public opening in the published programme for '+plan.date+'. Replanning around it.');
+    }else reportRun(hooks, 'cluster', 'running', 'Read ' + s.item.title + ' and applied any supported dated hours.');
    } catch {
     runSignal?.throwIfAborted();
     failed.add(s.item.id);
+    batch.push({venue:s.item.title,basis:'source_unavailable',reason:'The official page could not be read. This does not establish a closure.',before,after:[]});
     reportRun(hooks, 'cluster', 'running', 'Could not read ' + s.item.title + '. Removing it and trying another loop.');
    }
   }));
   const rows = candidates(active).filter(o => !failed.has(o.id));
   plan = planScout(rows, active, now, rail);
   if (failed.size > failedBefore) plan = widen(plan, rows, active);
+  changes.push(...batch.map(c=>({...c,after:plan.stops.map(s=>s.item.title)})));
  }
 
  if (plan.stops.some(s => !checked.has(s.item.id))) {
@@ -484,6 +493,7 @@ export async function toolSpatialCluster(input: ToolSpatialClusterInput): Promis
 
  const fullPlan: ScoutPlan = {
   ...plan,
+  changes:changes.map(c=>c.basis==='visitor_report'?{...c,after:plan.stops.map(s=>s.item.title)}:c),
   trace: [
    'Started with ' + seed.name + (seed.type === 'album' ? ' using its Qloo genre tags' : '') + '.',
    'Ranked ' + items.length + ' candidates within ' + VENUES.length + ' curated venues; ' + VENUES.filter(v => v.qlooId).length + ' have resolved Qloo IDs.',

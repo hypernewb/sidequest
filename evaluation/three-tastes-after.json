@@ -1,0 +1,639 @@
+{
+  "at": "2026-10-28T04:48:13.486Z",
+  "date": "2026-10-29",
+  "base": "http://127.0.0.1:5173",
+  "method": "Live functional audit of three named tastes with explicit activity choices. Before/after requests use changing upstream data and current Tokyo time. No human quality score or uplift claim.",
+  "results": [
+    {
+      "seed": "Nujabes",
+      "focus": "sound",
+      "status": 200,
+      "seconds": 8,
+      "title": "Shibuya, from sleeve to sound",
+      "date": "2026-10-29",
+      "stops": [
+        {
+          "id": "3AAD60F0-FA59-4B54-8BF3-16DD19B815A8",
+          "name": "Hi-Fi Record Store",
+          "role": "dig",
+          "match": "anchor",
+          "tags": [
+            "jazz",
+            "soul"
+          ],
+          "reason": "You asked for records & listening. This matches the reviewed venue activity. Your Qloo taste tags overlap jazz, soul in the reviewed venue profile.",
+          "mission": "Choose one record for its arrangement or players rather than its headline name. Use the credits as a map to another record.",
+          "arrival": "16:00",
+          "departure": "16:45",
+          "source": "https://www.hi-fi.gr.jp/",
+          "hoursBasis": "Qloo weekly hours"
+        },
+        {
+          "id": "F740AA78-0D92-44F9-B0ED-BA7092306F45",
+          "name": "HMV record shop Shibuya",
+          "role": "dig",
+          "match": "anchor",
+          "tags": [
+            "jazz"
+          ],
+          "reason": "You asked for records & listening. This matches the reviewed venue activity. Your Qloo taste tags overlap jazz in the reviewed venue profile.",
+          "mission": "Choose one older Japanese release and compare it with a reissue. Look for a detail in the sleeve or credits that changes your choice.",
+          "arrival": "17:01",
+          "departure": "17:46",
+          "source": "https://www.hmv.co.jp/store/SHU/",
+          "hoursBasis": "Qloo weekly hours"
+        },
+        {
+          "id": "5A623B12-EBF8-4215-A57C-7CA071EF5030",
+          "name": "Bar Music",
+          "role": "listen",
+          "match": "anchor",
+          "tags": [
+            "jazz",
+            "soul",
+            "film"
+          ],
+          "reason": "You asked for records & listening. This matches the reviewed venue activity. Your Qloo taste tags overlap jazz, soul, film in the reviewed venue profile.",
+          "mission": "Settle in for the selection rather than asking for a favourite immediately. Keep one track name for the walk home.",
+          "arrival": "18:02",
+          "departure": "18:47",
+          "source": "https://barmusic-coffee.blogspot.com/",
+          "hoursBasis": "Official weekly hours"
+        }
+      ],
+      "leads": [
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/see_20261029:2026-10-29",
+          "title": "SOUND ENERGY EX",
+          "url": "https://www.liquidroom.net/schedule/see_20261029",
+          "location": "Ebisu, Tokyo",
+          "start": "2026-10-29",
+          "end": "2026-10-29",
+          "priceLabel": "前売チケット ¥9,500(税込・ドリンクチャージ別) PRIORITYチケット ¥16,500(税込・ドリンクチャージ別)",
+          "reason": "Broad hiphop connection; no exact subgenre overlap established.",
+          "times": [
+            "OPEN 17:15",
+            "START 18:00"
+          ],
+          "kind": "gig"
+        },
+        {
+          "id": "cotton:5757:2026-10-29",
+          "title": "魚返明未 solo piano",
+          "url": "https://reserve.cottonclubjapan.co.jp/reserve/schedule/exec/5757",
+          "location": "Cotton Club · Marunouchi, Tokyo",
+          "start": "2026-10-29",
+          "end": "2026-10-29",
+          "priceLabel": "Music charge ¥6,000 · food/drink extra",
+          "reason": "Broad jazz connection; no exact subgenre overlap established.",
+          "times": [
+            "open 6:30pm / start 7:30pm"
+          ],
+          "kind": "gig"
+        },
+        {
+          "id": "www:https://www-shibuya.jp/schedule/020018.php#2026-10-29",
+          "title": "タデクイ / Trooper Salute / MIZ — タデクイpresents \"デルタ\"",
+          "url": "https://www-shibuya.jp/schedule/020018.php",
+          "location": "WWW · Shibuya, Tokyo",
+          "start": "2026-10-29",
+          "end": "2026-10-29",
+          "priceLabel": "Price not verified",
+          "reason": "Broad jazz connection; no exact subgenre overlap established.",
+          "times": [
+            "OPEN/START: 18:15 / 19:00"
+          ],
+          "kind": "gig",
+          "online": false
+        }
+      ],
+      "notes": [
+        "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+        "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions."
+      ],
+      "changes": [
+        {
+          "venue": "Manhattan Records",
+          "basis": "source_unavailable",
+          "reason": "The official page could not be read. This does not establish a closure.",
+          "before": [
+            "Hi-Fi Record Store",
+            "Manhattan Records",
+            "Bar Music"
+          ],
+          "after": [
+            "Hi-Fi Record Store",
+            "HMV record shop Shibuya",
+            "Bar Music"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "stage": "resolve",
+          "status": "running",
+          "detail": "Qloo /search · resolving \"Nujabes\" to one cultural entity."
+        },
+        {
+          "stage": "resolve",
+          "status": "complete",
+          "detail": "Resolved \"Nujabes\" → Nujabes · Qloo artist E11125AF."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · checking resolved artists from the event catalog."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /entities · reading the seed's cultural metadata."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · expanding related music genres."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · following links into tv show."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 61–70 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /entities · loading venue coordinates and published schedules."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /entities · loading venue coordinates and published schedules."
+        },
+        {
+          "stage": "taste",
+          "status": "complete",
+          "detail": "Found 64 candidates in the curated catalog. 3 lateral cultural links returned by Qloo."
+        },
+        {
+          "stage": "operations",
+          "status": "running",
+          "detail": "Checking Tokyo time and the published opening windows."
+        },
+        {
+          "stage": "operations",
+          "status": "complete",
+          "detail": "28 Oct 2026, 13:47 JST · 59 of 64 candidates pass hours, location and price checks for 2026-10-29."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Reading venue pages for Hi-Fi Record Store, Manhattan Records, Bar Music."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Read Bar Music and applied any supported dated hours."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Read Hi-Fi Record Store and applied any supported dated hours."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Could not read Manhattan Records. Removing it and trying another loop."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Reading venue pages for HMV record shop Shibuya."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Read HMV record shop Shibuya and applied any supported dated hours."
+        },
+        {
+          "stage": "cluster",
+          "status": "complete",
+          "detail": "Selected Hi-Fi Record Store → HMV record shop Shibuya → Bar Music. About 52 minutes walking including the return."
+        },
+        {
+          "stage": "synthesis",
+          "status": "running",
+          "detail": "Composing the mission, timetable and sourced door notes."
+        },
+        {
+          "stage": "synthesis",
+          "status": "complete",
+          "detail": "Dossier ready. 3 stops, a return walk and venue sources."
+        }
+      ]
+    },
+    {
+      "seed": "Slayer",
+      "focus": "sound",
+      "status": 200,
+      "seconds": 6,
+      "title": "Record Boy",
+      "date": "2026-10-29",
+      "stops": [
+        {
+          "id": "13AB5DC0-8955-4286-8453-FDF3CECB60A3",
+          "name": "Record Boy",
+          "role": "dig",
+          "match": "anchor",
+          "tags": [
+            "metal"
+          ],
+          "reason": "You asked for records & listening. This matches the reviewed venue activity. Your Qloo taste tags overlap metal in the reviewed venue profile.",
+          "mission": "Compare one heavy record from Japan with one from elsewhere. Look for what the artwork and label tell you before asking for a recommendation.",
+          "arrival": "13:00",
+          "departure": "13:45",
+          "source": "https://recordboy.shop-pro.jp/",
+          "hoursBasis": "Qloo weekly hours"
+        }
+      ],
+      "leads": [
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/14976/:2026-10-31",
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "url": "https://www.unit-tokyo.com/schedule/14976/",
+          "location": "Daikanyama, Tokyo",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "priceLabel": "¥9,000(税込/別途ドリンク代¥600) · ¥4,500(税込/別途ドリンク代¥600) · ¥6,000",
+          "reason": "Broad metal connection; no exact subgenre overlap established.",
+          "times": [
+            "OPEN : 18:00",
+            "OPEN : 18:00",
+            "OPEN: 18:00",
+            "START: 19:00"
+          ],
+          "kind": "gig"
+        }
+      ],
+      "notes": [
+        "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+        "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions.",
+        "One supported stop fits. I could not add a compatible nearby stop with usable hours, so this is a focused find rather than a walking loop."
+      ],
+      "changes": [],
+      "decisions": [
+        {
+          "stage": "resolve",
+          "status": "running",
+          "detail": "Qloo /search · resolving \"Slayer\" to one cultural entity."
+        },
+        {
+          "stage": "resolve",
+          "status": "complete",
+          "detail": "Resolved \"Slayer\" → Slayer · Qloo artist CB394FA2."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · checking resolved artists from the event catalog."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /entities · reading the seed's cultural metadata."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · expanding related music genres."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · following links into tv show."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 61–70 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /entities · loading venue coordinates and published schedules."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /entities · loading venue coordinates and published schedules."
+        },
+        {
+          "stage": "taste",
+          "status": "complete",
+          "detail": "Found 56 candidates in the curated catalog. 3 lateral cultural links returned by Qloo."
+        },
+        {
+          "stage": "operations",
+          "status": "running",
+          "detail": "Checking Tokyo time and the published opening windows."
+        },
+        {
+          "stage": "operations",
+          "status": "complete",
+          "detail": "28 Oct 2026, 13:48 JST · 52 of 56 candidates pass hours, location and price checks for 2026-10-29."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Only 1 stop fit a walking loop. Expanding the radius along direct train lines: Inokashira, Odakyu, Yamanote, Chuo-Sobu and Keio New Line."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "No direct train corridor added a stop. Keeping the walking result."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Reading venue pages for Record Boy."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Read Record Boy and applied any supported dated hours."
+        },
+        {
+          "stage": "cluster",
+          "status": "complete",
+          "detail": "Selected Record Boy. About 0 minutes walking including the return."
+        },
+        {
+          "stage": "synthesis",
+          "status": "running",
+          "detail": "Composing the mission, timetable and sourced door notes."
+        },
+        {
+          "stage": "synthesis",
+          "status": "complete",
+          "detail": "One supported find. No complete walking route fit."
+        }
+      ]
+    },
+    {
+      "seed": "MUJI",
+      "focus": "design",
+      "status": 200,
+      "seconds": 8,
+      "title": "Harajuku, between the page and the wall",
+      "date": "2026-10-29",
+      "stops": [
+        {
+          "id": "52C04EB1-78FE-4A30-A4C7-2543CC7731AB",
+          "name": "KOFFEE MAMEYA",
+          "role": "coffee",
+          "match": "anchor",
+          "tags": [
+            "design"
+          ],
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity. Your Qloo taste tags overlap design in the reviewed venue profile.",
+          "mission": "Tell the staff how you usually drink coffee and try the next step they suggest. Treat the conversation as part of the visit.",
+          "arrival": "12:00",
+          "departure": "12:45",
+          "source": "https://www.koffee-mameya.com/",
+          "hoursBasis": "Qloo weekly hours"
+        },
+        {
+          "id": "EED32B89-2BE8-49A9-95E7-88F50491014E",
+          "name": "UTRECHT",
+          "role": "books",
+          "match": "anchor",
+          "tags": [
+            "design",
+            "art"
+          ],
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity. Your Qloo taste tags overlap design, art in the reviewed venue profile.",
+          "mission": "Find an artist's book whose form changes how you read it. Spend time with its paper, binding or sequence of images.",
+          "arrival": "13:03",
+          "departure": "13:48",
+          "source": "https://utrecht.jp/",
+          "hoursBasis": "Qloo weekly hours"
+        },
+        {
+          "id": "EA753A11-197E-4925-933A-E0B8711E96FD",
+          "name": "WATARI-UM",
+          "role": "art",
+          "match": "anchor",
+          "tags": [
+            "design",
+            "contemporary",
+            "art"
+          ],
+          "reason": "You asked for design & architecture. This matches the reviewed venue activity. Your Qloo taste tags overlap design, contemporary, art in the reviewed venue profile.",
+          "mission": "Follow one idea through the current exhibition and into its printed material. Keep a question to take back into the street.",
+          "arrival": "14:13",
+          "departure": "14:58",
+          "source": "https://www.watarium.co.jp/",
+          "hoursBasis": "Qloo weekly hours"
+        }
+      ],
+      "leads": [],
+      "notes": [
+        "Opening windows are weekly schedules unless a dated override is available. Special closures and exhibition changeovers can affect access.",
+        "Walking distance is straight-line distance × 1.35 at 4 km/h, with five minutes per leg. Open the map for street directions."
+      ],
+      "changes": [
+        {
+          "venue": "Bunkitsu Roppongi",
+          "basis": "source_unavailable",
+          "reason": "The official page could not be read. This does not establish a closure.",
+          "before": [
+            "21_21 DESIGN SIGHT",
+            "Bunkitsu Roppongi",
+            "KOTARO NUKAGA"
+          ],
+          "after": [
+            "KOFFEE MAMEYA",
+            "UTRECHT",
+            "WATARI-UM"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "stage": "resolve",
+          "status": "running",
+          "detail": "Qloo /search · resolving \"MUJI\" to one cultural entity."
+        },
+        {
+          "stage": "resolve",
+          "status": "complete",
+          "detail": "Resolved \"MUJI\" → Muji · Qloo brand E12201A5."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · checking resolved artists from the event catalog."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /entities · reading the seed's cultural metadata."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · following links into book."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 1–20 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 21–40 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 41–60 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /v2/insights · ranking curated venues 61–70 of 70."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /entities · loading venue coordinates and published schedules."
+        },
+        {
+          "stage": "taste",
+          "status": "running",
+          "detail": "Qloo /entities · loading venue coordinates and published schedules."
+        },
+        {
+          "stage": "taste",
+          "status": "complete",
+          "detail": "Found 55 candidates in the curated catalog. 3 lateral cultural links returned by Qloo."
+        },
+        {
+          "stage": "operations",
+          "status": "running",
+          "detail": "Checking Tokyo time and the published opening windows."
+        },
+        {
+          "stage": "operations",
+          "status": "complete",
+          "detail": "28 Oct 2026, 13:48 JST · 51 of 55 candidates pass hours, location and price checks for 2026-10-29."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Comparing neighborhood pools, including Shimokitazawa, Shibuya / Daikanyama, Shinjuku / Hatagaya and Yanaka / Ueno. Every estimated walking leg must fit within 1.5 km."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Reading venue pages for 21_21 DESIGN SIGHT, Bunkitsu Roppongi, KOTARO NUKAGA."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Read KOTARO NUKAGA and applied any supported dated hours."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Could not read Bunkitsu Roppongi. Removing it and trying another loop."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Read 21_21 DESIGN SIGHT and applied any supported dated hours."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Reading venue pages for KOFFEE MAMEYA, UTRECHT, WATARI-UM."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Read UTRECHT and applied any supported dated hours."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Read KOFFEE MAMEYA and applied any supported dated hours."
+        },
+        {
+          "stage": "cluster",
+          "status": "running",
+          "detail": "Read WATARI-UM and applied any supported dated hours."
+        },
+        {
+          "stage": "cluster",
+          "status": "complete",
+          "detail": "Selected KOFFEE MAMEYA → UTRECHT → WATARI-UM. About 55 minutes walking including the return."
+        },
+        {
+          "stage": "synthesis",
+          "status": "running",
+          "detail": "Composing the mission, timetable and sourced door notes."
+        },
+        {
+          "stage": "synthesis",
+          "status": "complete",
+          "detail": "Dossier ready. 3 stops, a return walk and venue sources."
+        }
+      ]
+    }
+  ]
+}

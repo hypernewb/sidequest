@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import {readQuestRun,type RunEvent} from '../lib/quest-run.ts';
 import {questShareText} from '../lib/quest-share.ts';
 import type {Quest} from '../lib/quests.ts';
-import {fixtureEntities,fixtureHtml,seedId} from './curated-fixtures.ts';
+import {fixtureEntities,fixtureHtml,seedId,fixtureIds} from './curated-fixtures.ts';
 
 test('stream delivers a real running stage before Qloo finishes, then all stages and the dossier',async()=>{
  const bundle=await build({stdin:{contents:"import {POST} from './app/api/quests/route.ts';export default {fetch:POST};",resolveDir:process.cwd(),loader:'ts'},bundle:true,write:false,format:'esm',platform:'browser',external:['cloudflare:workers']});
@@ -26,6 +26,12 @@ test('stream delivers a real running stage before Qloo finishes, then all stages
   let text=initial;for(;;){const r=await reader.read();if(r.done)break;text+=new TextDecoder().decode(r.value);}const messages=text.trim().split('\n').map(line=>JSON.parse(line));const complete=messages.filter(e=>e.type==='stage'&&e.status==='complete');assert.deepEqual(complete.map(e=>e.stage),['resolve','taste','operations','cluster','synthesis']);assert.match(complete[0].detail,/Resolved "Nujabes" → Nujabes · Qloo artist/);
   assert.ok(complete[1].associations.some((a:any)=>a.name==='Fixture related show'&&a.via==='Nujabes'));assert.ok(!text.includes('Japanese modernism'));
   const result=messages.at(-1);assert.equal(result.type,'result');assert.equal(result.data.quest.stops.length,3);assert.ok(result.data.quest.run.length>4);
+  const closure=await mf.dispatchFetch('http://localhost/api/quests',{method:'POST',headers:{Origin:'http://localhost',Accept:'application/x-ndjson'},body:JSON.stringify({seed:'Nujabes',reportedClosed:[fixtureIds[1]]})});
+  const replacement=await readQuestRun(closure as unknown as Response,()=>{});
+  assert.ok(replacement.quest!.stops.length>0);
+  assert.ok(replacement.quest!.stops.every(s=>s.item.id!==fixtureIds[1]));
+  assert.ok(replacement.quest!.changes!.some(c=>c.basis==='visitor_report'&&/not an official closure/.test(c.reason)));
+  assert.equal((await mf.dispatchFetch('http://localhost/api/quests',{method:'POST',body:JSON.stringify({seed:'Nujabes',reportedClosed:['00000000-0000-4000-8000-000000000000']})})).status,400);
   sourceFail=true;const decisions:RunEvent[]=[];const blocked=await readQuestRun((await send()) as unknown as Response,e=>decisions.push(e));assert.equal(blocked.quest?.stops.length,0);assert.ok(decisions.some(e=>e.stage==='cluster'&&/Removing it/.test(e.detail)));assert.ok(!decisions.some(e=>e.stage==='synthesis'&&e.status==='complete'));
   fail=true;await assert.rejects(async()=>readQuestRun((await send()) as unknown as Response,()=>{}),/could not finish/);
  }finally{release();await mf.dispose();}
