@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {build} from 'esbuild';
+import {Miniflare} from 'miniflare';
+test('event-first API reads persisted online and local events, excludes stock and expired windows, and validates requests',async()=>{
+ const bundle=await build({stdin:{contents:"import {POST} from './app/api/moments/route.ts';export default {fetch:POST};",resolveDir:process.cwd(),loader:'ts'},bundle:true,write:false,format:'esm',platform:'browser',external:['cloudflare:workers']});
+ const mf=new Miniflare({modules:true,compatibilityDate:'2026-05-22',script:bundle.outputFiles[0].text,d1Databases:['DB'],outboundService:()=>{throw Error('Cached discovery should not fetch sources');}});
+ try{
+  const db=await mf.getD1Database('DB');for(const sql of fs.readFileSync('drizzle/0000_numerous_vulture.sql','utf8').split('--> statement-breakpoint'))await db.prepare(sql).run();
+  const now=new Date(),at=now.toISOString(),today=now.toLocaleDateString('en-CA',{timeZone:'Asia/Tokyo'}),future=new Date(now.getTime()+3600000).toISOString();
+  for(const name of ['lastRefresh','lastExpanded','lastGlobal'])await db.prepare('INSERT INTO catalog_state(id,payload) VALUES(?,?)').bind(name,JSON.stringify({at,health:[]})).run();
+  const common={title:'Test event',kind:'event',source:'Official fixture',url:'https://artist.bandcamp.com/live/test',description:'Official dated event',location:'Online · worldwide',online:true,start:today,end:today,checkedAt:at,price:null,priceLabel:'Check access',availability:'Source schedule',category:'online event'};
+  const items=[{...common,id:'global:live',startsAt:future},{...common,id:'local',url:'https://example.com/tokyo',online:false,location:'Tokyo'},{...common,id:'stock',kind:'release',actionLabel:'Shop listing published',title:'Limited stock listing'},{...common,id:'expired',kind:'release',actionLabel:'Preorder window',endsAt:new Date(now.getTime()-3600000).toISOString()}];
+  for(const o of items)await db.prepare('INSERT INTO event_catalog(id,payload,checked_at) VALUES(?,?,?)').bind(o.id,JSON.stringify(o),at).run();
+  const send=(body:unknown,origin='http://localhost')=>mf.dispatchFetch('http://localhost/api/moments',{method:'POST',headers:{Origin:origin},body:JSON.stringify(body)});
+  const response=await send({access:'online'}),b=await response.json() as any;assert.equal(response.status,200);assert.deepEqual(b.items.map((o:any)=>o.id),['global:live']);
+  const local=await (await send({access:'tokyo'})).json() as any;assert.deepEqual(local.items.map((o:any)=>o.id),['local']);
+  assert.equal((await send({access:'anywhere'})).status,400);assert.equal((await send({},'https://evil.example')).status,403);
+ }finally{await mf.dispose();}
+});

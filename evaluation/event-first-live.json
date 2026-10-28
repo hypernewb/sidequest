@@ -1,0 +1,604 @@
+{
+  "at": "2026-10-28T05:27:29.752Z",
+  "base": "http://127.0.0.1:5173",
+  "method": "Live functional checks using official catalog records and Qloo. Counts are a snapshot, not a human recommendation score, stock guarantee or measure of hype.",
+  "results": [
+    {
+      "name": "all",
+      "seconds": 0.496,
+      "total": 266,
+      "online": 47,
+      "byKind": {
+        "gig": 151,
+        "exhibition": 14,
+        "event": 39,
+        "popup": 44,
+        "release": 18
+      },
+      "sources": [
+        "Cotton Club",
+        "Daikanyama T-Site",
+        "Bandcamp listening parties",
+        "CIBONE",
+        "LIQUIDROOM",
+        "Shibuya PARCO",
+        "Tokyo Midtown",
+        "Shindaita FEVER",
+        "Laforet Harajuku",
+        "U.F.O.CLUB",
+        "WWW / WWW X",
+        "hololive official preorder windows",
+        "UNIT / SALOON",
+        "MEDICOM TOY preorders",
+        "Taka Ishii Gallery",
+        "Steam official festivals",
+        "WISH LESS",
+        "Animate Tokyo pop-ups",
+        "PARCEL",
+        "PR Times · issuer press release",
+        "mograg gallery",
+        "pianola records events",
+        "Tower Records Shibuya",
+        "21_21 DESIGN SIGHT"
+      ],
+      "examples": [
+        {
+          "title": "THE CHARM PARK Release Live「り・り・り」",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "url": "https://reserve.cottonclubjapan.co.jp/reserve/schedule/exec/5765",
+          "online": false,
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "【展示】触って学べる新感覚かるた『爬虫類かるた』",
+          "kind": "exhibition",
+          "source": "Daikanyama T-Site",
+          "url": "https://store.tsite.jp/daikanyama/event/kids/57065-1649380927.html",
+          "online": false,
+          "start": "2026-09-29",
+          "end": "2026-10-29",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "New Junction Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "url": "https://jakeallain.bandcamp.com/live/new-junction-listening-party",
+          "online": true,
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "startsAt": "2026-10-28T14:30:00.000Z",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "PURLAM\n26AW COLLECTION\nPOP UP EVENT",
+          "kind": "popup",
+          "source": "CIBONE",
+          "url": "https://www.cibone.com/topics_detail.html?info_id=4246",
+          "online": false,
+          "start": "2026-10-17",
+          "end": "2026-10-28",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "DEXCORE",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "url": "https://www.liquidroom.net/schedule/dexcore_20261028",
+          "online": false,
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ],
+      "health": [
+        {
+          "name": "Steam official festivals",
+          "count": 1,
+          "status": "Explicit festival date ranges checked; client updates excluded"
+        },
+        {
+          "name": "Bandcamp listening parties",
+          "count": 29,
+          "status": "Official online schedules checked"
+        },
+        {
+          "name": "hololive official preorder windows",
+          "count": 10,
+          "status": "24 official product pages checked; 1 unavailable; only explicit order periods included"
+        }
+      ]
+    },
+    {
+      "name": "online",
+      "seconds": 0.327,
+      "total": 47,
+      "online": 47,
+      "byKind": {
+        "event": 29,
+        "release": 18
+      },
+      "sources": [
+        "Bandcamp listening parties",
+        "hololive official preorder windows",
+        "Steam official festivals",
+        "MEDICOM TOY preorders"
+      ],
+      "examples": [
+        {
+          "title": "New Junction Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "url": "https://jakeallain.bandcamp.com/live/new-junction-listening-party",
+          "online": true,
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "startsAt": "2026-10-28T14:30:00.000Z",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "【Made-to-order】Takane Lui 1st Live \"REBELLION\" Concert Merch",
+          "kind": "release",
+          "source": "hololive official preorder windows",
+          "url": "https://shop.hololivepro.com/en/products/takanelui_1stlive_rebellion_madetoorder",
+          "online": true,
+          "start": "2026-10-04",
+          "end": "2026-11-02",
+          "startsAt": "2026-10-04T12:00:00.000Z",
+          "endsAt": "2026-11-02T09:00:00.000Z",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "BOO! Steam Scream FIVE is ready to freak you out",
+          "kind": "event",
+          "source": "Steam official festivals",
+          "url": "https://store.steampowered.com/news/group/27766192/view/686394429475394171",
+          "online": true,
+          "start": "2026-10-26",
+          "end": "2026-11-03",
+          "endsAt": "2026-11-02T18:00:00.000Z",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "アニー",
+          "kind": "release",
+          "source": "MEDICOM TOY preorders",
+          "url": "https://store.medicomtoy.co.jp/products/annie",
+          "online": true,
+          "start": "2026-10-24",
+          "end": "2026-11-30",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "DISASTERS VA - Chapter 01 Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "url": "https://madanrec.bandcamp.com/live/disasters-va-chapter-01-listening-party",
+          "online": true,
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "startsAt": "2026-10-28T14:00:00.000Z",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ],
+      "health": [
+        {
+          "name": "Steam official festivals",
+          "count": 1,
+          "status": "Explicit festival date ranges checked; client updates excluded"
+        },
+        {
+          "name": "Bandcamp listening parties",
+          "count": 29,
+          "status": "Official online schedules checked"
+        },
+        {
+          "name": "hololive official preorder windows",
+          "count": 10,
+          "status": "24 official product pages checked; 1 unavailable; only explicit order periods included"
+        }
+      ]
+    },
+    {
+      "name": "online-drops",
+      "seconds": 0.365,
+      "total": 18,
+      "online": 18,
+      "byKind": {
+        "release": 18
+      },
+      "sources": [
+        "hololive official preorder windows",
+        "MEDICOM TOY preorders"
+      ],
+      "examples": [
+        {
+          "title": "【Made-to-order】Takane Lui 1st Live \"REBELLION\" Concert Merch",
+          "kind": "release",
+          "source": "hololive official preorder windows",
+          "url": "https://shop.hololivepro.com/en/products/takanelui_1stlive_rebellion_madetoorder",
+          "online": true,
+          "start": "2026-10-04",
+          "end": "2026-11-02",
+          "startsAt": "2026-10-04T12:00:00.000Z",
+          "endsAt": "2026-11-02T09:00:00.000Z",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "アニー",
+          "kind": "release",
+          "source": "MEDICOM TOY preorders",
+          "url": "https://store.medicomtoy.co.jp/products/annie",
+          "online": true,
+          "start": "2026-10-24",
+          "end": "2026-11-30",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Kureiji Ollie Birthday 2026",
+          "kind": "release",
+          "source": "hololive official preorder windows",
+          "url": "https://shop.hololivepro.com/en/products/kureijiollie_birthday_2026",
+          "online": true,
+          "start": "2026-10-13",
+          "end": "2026-11-16",
+          "startsAt": "2026-10-13T13:30:00.000Z",
+          "endsAt": "2026-11-16T09:00:00.000Z",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "ASM エヴァンゲリオン 量産機",
+          "kind": "release",
+          "source": "MEDICOM TOY preorders",
+          "url": "https://store.medicomtoy.co.jp/products/asm-evangelion-mass-production-model",
+          "online": true,
+          "start": "2026-10-24",
+          "end": "2026-11-30",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "BE@RBRICK BATMAN THE DARK KNIGHT SUIT 400％",
+          "kind": "release",
+          "source": "MEDICOM TOY preorders",
+          "url": "https://store.medicomtoy.co.jp/products/bearbrick-batman-the-dark-knight-suit-400",
+          "online": true,
+          "start": "2026-10-24",
+          "end": "2026-11-10",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ],
+      "health": [
+        {
+          "name": "Steam official festivals",
+          "count": 1,
+          "status": "Explicit festival date ranges checked; client updates excluded"
+        },
+        {
+          "name": "Bandcamp listening parties",
+          "count": 29,
+          "status": "Official online schedules checked"
+        },
+        {
+          "name": "hololive official preorder windows",
+          "count": 10,
+          "status": "24 official product pages checked; 1 unavailable; only explicit order periods included"
+        }
+      ]
+    },
+    {
+      "name": "tokyo",
+      "seconds": 0.402,
+      "total": 219,
+      "online": 0,
+      "byKind": {
+        "gig": 151,
+        "exhibition": 14,
+        "event": 10,
+        "popup": 44
+      },
+      "sources": [
+        "Cotton Club",
+        "Daikanyama T-Site",
+        "Shibuya PARCO",
+        "CIBONE",
+        "LIQUIDROOM",
+        "Laforet Harajuku",
+        "Shindaita FEVER",
+        "Tokyo Midtown",
+        "U.F.O.CLUB",
+        "WWW / WWW X",
+        "UNIT / SALOON",
+        "Taka Ishii Gallery",
+        "WISH LESS",
+        "Animate Tokyo pop-ups",
+        "PARCEL",
+        "PR Times · issuer press release",
+        "mograg gallery",
+        "pianola records events",
+        "Tower Records Shibuya",
+        "21_21 DESIGN SIGHT"
+      ],
+      "examples": [
+        {
+          "title": "THE CHARM PARK Release Live「り・り・り」",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "url": "https://reserve.cottonclubjapan.co.jp/reserve/schedule/exec/5765",
+          "online": false,
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "【展示】触って学べる新感覚かるた『爬虫類かるた』",
+          "kind": "exhibition",
+          "source": "Daikanyama T-Site",
+          "url": "https://store.tsite.jp/daikanyama/event/kids/57065-1649380927.html",
+          "online": false,
+          "start": "2026-09-29",
+          "end": "2026-10-29",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "WHITE CINE QUINTO 上映スケジュール",
+          "kind": "event",
+          "source": "Shibuya PARCO",
+          "url": "https://shibuya.parco.jp/event/detail/?id=9047",
+          "online": false,
+          "start": "2026-10-23",
+          "end": "2026-10-29",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "PURLAM\n26AW COLLECTION\nPOP UP EVENT",
+          "kind": "popup",
+          "source": "CIBONE",
+          "url": "https://www.cibone.com/topics_detail.html?info_id=4246",
+          "online": false,
+          "start": "2026-10-17",
+          "end": "2026-10-28",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "DEXCORE",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "url": "https://www.liquidroom.net/schedule/dexcore_20261028",
+          "online": false,
+          "start": "2026-10-28",
+          "end": "2026-10-28",
+          "match": "activity",
+          "reasons": [
+            "An option to react to; no personal match established yet.",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ],
+      "health": [
+        {
+          "name": "Steam official festivals",
+          "count": 1,
+          "status": "Explicit festival date ranges checked; client updates excluded"
+        },
+        {
+          "name": "Bandcamp listening parties",
+          "count": 29,
+          "status": "Official online schedules checked"
+        },
+        {
+          "name": "hololive official preorder windows",
+          "count": 10,
+          "status": "24 official product pages checked; 1 unavailable; only explicit order periods included"
+        }
+      ]
+    },
+    {
+      "name": "Nujabes",
+      "seconds": 2.581,
+      "total": 266,
+      "online": 47,
+      "byKind": {
+        "gig": 151,
+        "event": 39,
+        "exhibition": 14,
+        "popup": 44,
+        "release": 18
+      },
+      "sources": [
+        "UNIT / SALOON",
+        "Bandcamp listening parties",
+        "Cotton Club",
+        "LIQUIDROOM",
+        "WWW / WWW X",
+        "Shibuya PARCO",
+        "U.F.O.CLUB",
+        "Shindaita FEVER",
+        "Daikanyama T-Site",
+        "Tokyo Midtown",
+        "CIBONE",
+        "Laforet Harajuku",
+        "hololive official preorder windows",
+        "MEDICOM TOY preorders",
+        "Taka Ishii Gallery",
+        "WISH LESS",
+        "Animate Tokyo pop-ups",
+        "PARCEL",
+        "PR Times · issuer press release",
+        "mograg gallery",
+        "pianola records events",
+        "Steam official festivals",
+        "Tower Records Shibuya",
+        "21_21 DESIGN SIGHT"
+      ],
+      "examples": [
+        {
+          "title": "KOTA THE FRIEND “JUST HAPPY TO BE HERE! “JAPAN TOUR 2026 – HEADLINE SHOW",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "url": "https://www.unit-tokyo.com/schedule/15199/",
+          "online": false,
+          "start": "2026-11-24",
+          "end": "2026-11-24",
+          "match": "taste",
+          "reasons": [
+            "Shared genre evidence: Jazz Hop · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "Like Minds Vol. 1 Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "url": "https://emmaculate.bandcamp.com/live/like-minds-vol-1-listening-party",
+          "online": true,
+          "start": "2026-10-29",
+          "end": "2026-10-29",
+          "startsAt": "2026-10-29T01:00:00.000Z",
+          "match": "activity",
+          "reasons": [
+            "Broad soul connection; no exact subgenre overlap established. · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "魚返明未 solo piano",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "url": "https://reserve.cottonclubjapan.co.jp/reserve/schedule/exec/5757",
+          "online": false,
+          "start": "2026-10-29",
+          "end": "2026-10-29",
+          "match": "activity",
+          "reasons": [
+            "Broad jazz connection; no exact subgenre overlap established. · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "SOUND ENERGY EX",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "url": "https://www.liquidroom.net/schedule/see_20261029",
+          "online": false,
+          "start": "2026-10-29",
+          "end": "2026-10-29",
+          "match": "activity",
+          "reasons": [
+            "Broad hiphop connection; no exact subgenre overlap established. · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        },
+        {
+          "title": "タデクイ / Trooper Salute / MIZ — タデクイpresents \"デルタ\"",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "url": "https://www-shibuya.jp/schedule/020018.php",
+          "online": false,
+          "start": "2026-10-29",
+          "end": "2026-10-29",
+          "match": "activity",
+          "reasons": [
+            "Broad jazz connection; no exact subgenre overlap established. · a favourite",
+            "Published dates overlap your selected window."
+          ]
+        }
+      ],
+      "health": [
+        {
+          "name": "Steam official festivals",
+          "count": 1,
+          "status": "Explicit festival date ranges checked; client updates excluded"
+        },
+        {
+          "name": "Bandcamp listening parties",
+          "count": 29,
+          "status": "Official online schedules checked"
+        },
+        {
+          "name": "hololive official preorder windows",
+          "count": 10,
+          "status": "24 official product pages checked; 1 unavailable; only explicit order periods included"
+        }
+      ]
+    }
+  ]
+}

@@ -1,55 +1,49 @@
-# SideQuest two-minute demo
+# SideQuest event-first demo
 
-Use the current app and actual returned routes. Rehearse before recording, and use the date shown on screen. The 29 October 2026 examples below were captured on 28 October. Do not read fixed times or venue names if the live result differs.
+Target length: two minutes. Use actual current results, with source links and dates visible. Counts below are a 28 October 2026 capture, not numbers to repeat if the live feed has changed.
 
-## 0:00–0:15 · One interest, somewhere to go
+## 0:00 to 0:15 · Catch something temporary
 
-**Screen:** Start at SideQuest's single input. Enter Nujabes, then select Find my quest and Records & listening. For a repeatable recording, set the tested visit date under Filter by date or price limit before submitting.
+**Screen:** Open SideQuest. Show the event-first homepage and its current count.
 
-**Voiceover:**
+**Voiceover:** "The places will still be there next month. The listening party, pop-up or order window might not. SideQuest starts with things you can catch while they're happening, in person or online."
 
-"You know what you love. Finding somewhere to go with it takes more work. SideQuest turns one interest into a short Tokyo quest, using Qloo's taste connections and places we can actually source."
+## 0:15 to 0:40 · One interest
 
-## 0:15–0:40 · Taste becomes a route
+**Screen:** Open the optional taste section, enter Nujabes, resolve the name if needed and show the returned events. In our capture, Kota the Friend led with shared Jazz Hop evidence. Show a broader listening-party connection too.
 
-**Screen:** Show the real planning stages. Then show the returned stops, one cultural connection and the estimated walking label. The captured route was Hi-Fi Record Store, HMV record shop Shibuya and Bar Music. If the result changes, show and describe that result.
+**Voiceover:** "Give it one interest. Qloo supplies cultural metadata and artist connections. SideQuest matches those against official announcements, keeping a specific genre connection ahead of broad adjacency. You can see the evidence rather than accepting a personality label."
 
-**Voiceover:**
+## 0:40 to 1:00 · Join from anywhere
 
-"Qloo resolves Nujabes and supplies cultural metadata and affinities. Our scout ranks a curated venue pool, fits published hours and reads the selected pages. Here, jazz and soul connect the record shops and listening bar. The walking times are estimates, and the map opens street directions."
+**Screen:** Set Where to Online only. Show a real Bandcamp listening party, its converted start time and its official page link.
 
-## 0:40–1:05 · Demonstrate replanning
+**Voiceover:** "Online counts too. These listening parties have scheduled starts, and some let you chat with the artist or other fans. Times are shown in your timezone. We label subscriber access and leave unknown admission prices unknown."
 
-**Screen:** Say that this is a simulated visitor report. On one current stop, click Closed? Replan without this stop. Show the real rerun and Why the route changed. Highlight the excluded venue and the supported new route. Keep any shorter result visible.
+## 1:00 to 1:25 · Timed drops
 
-**Voiceover:**
+**Screen:** Choose Limited drops while keeping Online only. Show one hololive order window and a MEDICOM preorder. Highlight the buying deadline, source image where available, and the separate delivery wording.
 
-"For this demonstration, I'll report one stop closed. This is a simulated visitor report, not an official closure notice. The scout keeps my taste and practical choices, removes that stop and plans again. It shows why the route changed. If only two worthwhile stops fit, it keeps two."
+**Voiceover:** "For collecting, we look for a real order window or edition claim. The deadline is when ordering closes, not when the parcel ships. Ordinary shop stock stays outside this feed. Source variety keeps one brand from taking over the whole view."
 
-The report is local to this browser session. Clear reports for the next plan or change the input before the next taste. Do not describe an HTTP failure as a closed venue.
+## 1:25 to 1:45 · Browse without a profile
 
-## 1:05–1:35 · Show contrasting tastes
+**Screen:** Use Browse without my taste, then show Everything or Events. Briefly select Tokyo in person. Show a small gig or temporary art/fashion event, then save it.
 
-**Screen:** Use brief captured runs for Slayer, selecting the artist and Records & listening, and MUJI, selecting the brand and Design & architecture. Keep real run progress visible for at least one case. If waiting is shortened in editing, label the cut rather than presenting it as instant execution.
+**Voiceover:** "You can browse without a profile. The live check found 266 eligible timed opportunities, including 47 online options. Those are source records, not a popularity score or proof that every item fits your taste. Save the things you actually want to follow."
 
-**Voiceover:**
+Use the current live count if it differs. Do not claim all records were added by this update.
 
-"Slayer leads to Record Boy, a metal specialist. We couldn't support a nearby loop, so we return one useful find. MUJI leads to a different outing through coffee, design books and art. Choosing an activity helps shape the route, but it cannot manufacture a taste match."
+## 1:45 to 2:00 · Make a day of it
 
-## 1:35–2:00 · Useful output and honest evidence
+**Screen:** Open Plan a Tokyo walk to show the optional quest tool, then return to the saved event or drop.
 
-**Screen:** Open Events & drops, select Vinyl & record fairs or Fashion & design, and show one current official-source listing. Return to a quest, then open its Google Maps route. End on the three-taste review table.
+**Voiceover:** "If you want to go out, the Tokyo scout can still build a short route with published hours and closure replanning. The event or drop gives you a reason to care. SideQuest helps you catch it."
 
-**Voiceover:**
+## Recording notes
 
-"You can also browse official events, pop-ups and releases, save a quest and take its route into Maps. Our three test tastes produced distinct places. That's a functional check, not a satisfaction score. SideQuest's next test is whether people discover something they want to go and do."
-
-## Preparation and fallback
-
-- Keep this recording under two minutes. The spoken text is roughly 260 words; allow space to read the actual result.
-- Use the deployed app or the local URL printed by `npm run dev`, normally `http://127.0.0.1:5173`.
-- Rehearse the three inputs with a fixed date. Exact-name disambiguation is part of the experience, not a failed run.
-- For deterministic closure evidence, run `node --experimental-strip-types scripts/demo-closed-venue.mjs`. Explain that the source HTML, weekly hours and coordinates are controlled fixtures. It exercises the real closure adapter and planner; it does not prove a live closure.
-- If an upstream service fails, show the failure and use a clearly labelled previously captured run. Never substitute a fabricated live result.
-- Avoid the removed dial, telemetry claims, guaranteed opening times, a Qloo quality-uplift percentage, and claims that three stops always fit.
-- No new video is included in this repository update. This is the recording script and reproduction guide.
+- Rehearse with the date and actual returned listings shown on screen. Do not substitute an expired launch.
+- Label any waiting-time cuts or previously captured footage. No new video recording is included in this repository update.
+- For functional evidence, run `node scripts/audit-moments.mjs`. It checks online-only, timed drops, Tokyo and a named music taste against real sources.
+- The deterministic closure demonstration remains `node --experimental-strip-types scripts/demo-closed-venue.mjs`. Explain that its HTML and coordinates are controlled fixtures. Visitor-report closure replanning remains in `/quests`.
+- Keep official deadlines, access conditions and source links visible. Avoid claims of guaranteed stock, worldwide shipping, measured social hype or a percentage improvement in recommendation quality.

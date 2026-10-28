@@ -15,7 +15,7 @@ export function officialPageContent(url:string,html:string){
 }
 const genreRules:[string,RegExp][]=[['jazz',/\bjazz\b|ジャズ/i],['blues',/\bblues\b|ブルース/i],['metal',/\b(?:heavy metal|death metal|metalcore|deathcore|metal)\b|メタル/i],['punk',/\b(?:punk|hardcore|grindcore)\b|パンク|ハードコア/i],['electronic',/\b(?:electronic|electronica|techno|house music|drum and bass|idm)\b|テクノ|エレクトロニ|電子音楽/i],['ambient',/\b(?:ambient|downtempo|trip.?hop)\b|アンビエント/i],['experimental',/\bexperimental\b|実験音楽|実験的/i],['hip-hop',/\bhip.?hop\b|ヒップホップ/i],['soul',/\bsoul\b|ソウル/i],['R&B',/\bR\s*(?:&|and|n)\s*B\b|リズム.?アンド.?ブルース/i],['funk',/\bfunk\b|ファンク/i],['rock',/\brock\b|ロック(?!フォール)/i],['indie',/\bindie\b|インディー/i],['pop',/\bpop\b(?![ -]?up)|ポップス/i]];
 export function lineupNames(text:string){
- return text.replace(/[【〈<\[](?:Special Guests?|GUEST|LIVE|DJ|出演)[】〉>\]]/gi,'\n').split(/\n|\s*[/／、]\s*|\s+[×]\s+/).map(s=>s.replace(/^[・●■◆]\s*|^(?:GUEST LIVE|FEATURED ARTIST|LIVE|DJ|GUEST|ACT|出演(?:者)?)\s*[:：]\s*/gi,'').trim()).filter(s=>s.length>1&&s.length<100&&!/^[-<〈【\[]*(?:live|djs?|guest|special guests?|line\s*up|shop|vjs?|food|www\s*[xβ]?|and more\.?|[.…]+|tba|未定)[->〉】\]]*$/i.test(s)&&!/(?:https?:|tickets?|問合|予約|開場|開演|税込|[¥￥]|円|^OPEN|^START|^ADV|^DOOR)/i.test(s)).slice(0,32);
+ return text.replace(/[【〈<\[](?:Special Guests?|GUEST|LIVE|DJ|出演)[】〉>\]]/gi,'\n').split(/\n|\s*[/／、]\s*|\s+[×]\s+/).map(s=>s.replace(/^[・●■◆]\s*|^(?:GUEST LIVE|FEATURED ARTIST|LIVE|DJ|GUEST|ACT|出演(?:者)?)\s*[:：]\s*/gi,'').trim()).filter(s=>s.length>1&&s.length<100&&!/^[-<〈【\[]*(?:live|djs?|guest|special guests?|line\s*up|shop|vjs?|food|www\s*[xβ]?|and more\.?|[.…]+|tba|未定)[->〉】\]]*$/i.test(s)&&!/(?:https?:|[^\s]+@[^\s]+|\bbookings\b|^INFO$|tickets?|問合|予約|開場|開演|税込|[¥￥]|円|^OPEN|^START|^ADV|^DOOR)/i.test(s)).slice(0,32);
 }
 export function extractEventDetails(text:string,url:string,checkedAt=new Date().toISOString()):EventDetails{
  const original=text.slice(0,12000),lines=original.normalize('NFKC').split(/\n/).map(s=>s.trim()).filter(Boolean);
@@ -25,7 +25,7 @@ export function extractEventDetails(text:string,url:string,checkedAt=new Date().
   const heading=lines[i].match(/^(?:LINE\s*UP|MEMBER|出演(?:者)?|出演アーティスト|ACT)(?:\s*[:：]\s*(.*)|\s*)$/i);if(!heading)continue;
   artists.push(...lineupNames(heading[1]||''));
   for(let j=i+1;j<Math.min(i+40,lines.length);j++){
-   if(/^(?:TICKET|INFORMATION|CHARGE|DATE|OPEN|START|ADV|DOOR|ATTENTION|UPCOMING|SHOP|FOOD|VJ|予約|※|＜|〈HAIR|【HAIR)/i.test(lines[j]))break;
+   if(/^(?:TICKET|INFO(?:RMATION)?|CHARGE|DATE|OPEN|START|ADV|DOOR|ATTENTION|UPCOMING|SHOP|FOOD|VJ|予約|※|＜|〈HAIR|【HAIR)/i.test(lines[j]))break;
    if(/^(?:【|\[)/.test(lines[j])&&!/Special Guests?|LIVE|DJ|GUEST|出演/i.test(lines[j]))break;
    artists.push(...lineupNames(lines[j]));
   }break;

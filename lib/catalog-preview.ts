@@ -9,7 +9,8 @@ export function catalogPreview(o:Opportunity){
  if(!hasJapanese(o.description))return {text:o.description,label:'',original:false};
  const parts:string[]=[];
  if(o.kind==='gig'){
-  if(d?.artists.length)parts.push('Lineup: '+d.artists.slice(0,8).join(' · ')+(d.artists.length>8?' · more on the official page':'')+'.');
+  const artists=d?.artists.filter(n=>!/@|\bbookings\b|^INFO(?:RMATION)?$/i.test(n))||[];
+  if(artists.length)parts.push('Lineup: '+artists.slice(0,8).join(' · ')+(artists.length>8?' · more on the official page':'')+'.');
   if(d?.genres.length)parts.push('Published genres: '+d.genres.map(g=>g.name).join(', ')+'.');
   if(!parts.length)parts.push('Live music listing. Artist and genre details have not been extracted.');
  }else if(o.actionLabel==='Shop listing published')parts.push('A recent listing from '+o.source+'. Check the linked shop for the format, edition and current stock. The listing date is not a confirmed release or restock date.');

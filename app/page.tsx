@@ -1,1 +1,1 @@
-export {default} from '@/components/quest-builder';
+export {default} from '@/components/moment-feed';

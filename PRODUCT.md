@@ -92,3 +92,8 @@ Corrected activity leakage, verified Qloo genre hydration, bounded source divers
 
 ## v20 — Quests and a measured ranking review
 The main entry accepts one cultural seed and returns one afternoon quest with a title, suggested actions, timed nearby stops and a walking-map link. Optional date and price settings remain folded away. The scout checks fresh Qloo coordinates, weekly hours and Tokyo time, and refuses to pad an unverified route. The earlier catalog is available at `/explore`. The twelve-profile local-model comparison and original workbook review are scored, with limitations and negative results retained in evaluation/RANKING-SCORECARD.md. The benchmark does not evaluate quest quality.
+
+
+## Event-first entry, 28 October 2026
+
+The home route now prioritises time-limited opportunities, not permanent locations. It uses the official persistent event catalog and new Bandcamp, hololive order-period and Steam festival adapters. `/api/moments` excludes ordinary stock listings, expired windows and permanent places, and separates online access from physical retailer announcements. The visitor can browse immediately, optionally expand one exact-name taste input, filter events versus timed drops, choose online-only or Tokyo in-person access, order by deadlines and save items locally. Qloo hydrates interests and artist metadata; specific evidence outranks broad genre adjacency. No popularity or hype score is invented. `/quests` retains the walking scout and closure replanning. The current paper, red and editorial type style remains. See evaluation/EVENT-FIRST.md for the dated functional check and limits.

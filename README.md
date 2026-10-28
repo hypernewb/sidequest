@@ -1,14 +1,26 @@
 # SideQuest
 
-One thing you love. A Tokyo quest.
+Catch it while it's here.
 
 [Open SideQuest](https://sidequest-tokyo-ckx.ckx-1994.chatgpt.site/) · [Two-minute demo script](DEMO.md) · [Three-taste review](evaluation/THREE-TASTES.md)
 
-SideQuest turns an artist, author, film or brand into a short Tokyo outing. Qloo supplies cultural associations and venue affinity. A curated venue catalog and official event pages supply the places, programmes and published schedules. The planner fits supported stops together and explains changes when a venue cannot be used.
+SideQuest now starts with time-limited events and drops. Discover a listening party, gig, pop-up, exhibition or timed order window, in person or online. Qloo connects named interests to source evidence. Permanent venues and ordinary stock listings stay outside the main feed. Tokyo walking quests remain at `/quests`.
 
-## What to try
+## Start with events and drops
 
-Enter a name, choose an activity, then read the quest. Date and price limits are optional. Each stop includes a task, its published hours, source link and door notes where available. Walking distances are estimates; Google Maps provides street directions.
+Browse immediately or enter one artist, film, game or brand. Use Events, Limited drops, Online only or Tokyo in person. Exact online event times and order deadlines use the browser's timezone. Date-only listings retain organiser dates.
+
+A live check on 28 October 2026 returned 266 eligible finds for the next 30 days, including 47 online opportunities and 18 online timed drops. The snapshot contains 151 gigs, 14 exhibitions, 44 pop-ups, 39 other events and 18 releases. These counts combine the existing official catalog with the new online sources; they are not 266 newly added events or a measure of hype.
+
+New adapters read Bandcamp's online listening-party schedules, hololive's explicit order-period blocks and Steam's official festival announcements. Existing sources still supply independent gigs, art, fashion pop-ups and MEDICOM preorders. The main feed excludes generic product-listing dates, manufacturer shipping dates, expired order windows and permanent locations.
+
+Global records persist in D1. Their adapters refresh on demand after one hour and participate in the existing expanded catalog refresh. Source failures preserve earlier records with their original check time. Exact cutoffs still remove expired opportunities. No new developer credentials are needed for these public sources.
+
+Taste matching ranks direct names and specific genre evidence above broad genre adjacency. Source and format variety break ties. No trending score, social popularity count or guaranteed shipping region is inferred. See [the live feed check](evaluation/EVENT-FIRST.md).
+
+## Optional Tokyo walking quests
+
+Open `/quests`, enter a name, choose an activity, then read the quest. Date and price limits are optional. Each stop includes a task, its published hours, source link and door notes where available. Walking distances are estimates; Google Maps provides street directions.
 
 On 28 October 2026 we tested the same visit date, 29 October, with three contrasting tastes. When asked to disambiguate, we chose Slayer the artist and MUJI the brand.
 
@@ -58,7 +70,7 @@ Current exhibitions or events enter a venue quest only when supported by the cat
 
 ## Evidence and limits
 
-The final regression suite has 196 passing tests, including matching, route constraints, reported closures, source-specific closure replanning and failure labels. Automated tests measure behavior, not how much someone enjoys an outing.
+The final regression suite has 203 passing tests, including matching, route constraints, reported closures, source-specific closure replanning and failure labels. Automated tests measure behavior, not how much someone enjoys an outing.
 
 The [25 October comparison](evaluation/QUEST-BENCHMARK.md) remains historical. It used unblinded AI desk judgments and examples also used for debugging. We do not claim a measured percentage improvement in recommendation quality. A held-out human evaluation remains open.
 
