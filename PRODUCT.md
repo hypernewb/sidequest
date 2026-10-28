@@ -107,3 +107,7 @@ The interview, main feed and `/stumble` share bounded tags, reactions, access an
 Stumble shows one actual timed opportunity, with source, dates, practical details and personal/adjacent/wildcard connection wording. Next affects a bounded no-repeat round without permanently dismissing the listing. Save/More like this guide later discovery; explicit passes can hide a listing with a reason. Saved finds use the main feed's existing collection.
 
 Qloo candidate matching now retains affinity and contributor evidence, handles bounded batches beyond the old first-fifty limit, resolves source-named cultural entities across domains and rejects ambiguous identities. Positive reactions use server-known catalog identities rather than accepting browser-supplied affiliations. Exact factual matches, cultural associations, editorial matches and unknown coverage stay inspectable. Verification measures behavior and contrasts, not a claimed human satisfaction lift.
+
+## Visual comparisons update
+
+The entry at /stumble and the /taste route now use real visual comparisons instead of the old six-round interview. The first choice is useful immediately, and the next pair adapts locally. Current-session choices remain distinct from explicit kept interests. Single-find mode remains available. See evaluation/DISCOVERY-PLAY.md for scope and verification. The established paper, red and editorial style remains.

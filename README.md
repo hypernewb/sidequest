@@ -18,14 +18,13 @@ Global records persist in D1 and participate in the existing scheduled catalog r
 
 Taste matching retains direct names and specific genre evidence, then uses Qloo candidate affinity and returned contributor evidence for cultural associations. Source and format variety break ties. No trending score, social popularity count or guaranteed shipping region is inferred. See [the live feed check](evaluation/EVENT-FIRST.md).
 
-## Build taste through choices
+## Build taste through discoveries
 
-`/taste` is a short interview with concrete scenes, follow-up choices, practical access and price limits, and reactions to current announcements. It works without a playlist or a known artist. Earlier choices shape later options. With named interests or positively reacted cultural identities, Qloo can supply a connected follow-up question. Optional persona recipes expose their starting works; they do not silently add favourites or claim a personality type.
+`/taste` and the default `/stumble` entry show two actual events or drops with official artwork where available. Pick what catches you, save a useful find immediately, or choose Neither / Don't know. Later pairs respond to earlier choices. There is no required category, budget or persona questionnaire.
 
-An unfinished round stays separate from applied taste. Review, undo, skip, resume and explicit Apply keep the visitor in control. Positive reactions can guide later Qloo requests. Price, access and format reasons remain separate from liking an artist. The shared browser profile carries across the interview, main feed and Stumble. Legacy interest editors preserve this context.
+Choices guide the current session immediately. After a few comparisons, keep interests explicitly or continue for today. Practical preferences stay separate. The single-find view uses the same exploration and repetition rules. Undo, finite rounds, shared saves and clear source links remain available.
 
-`/stumble` shows one real event or timed drop at a time. Next advances without recording a dislike. Save and More like this influence later finds; passes can carry a reason. A bounded round avoids repeats, and an explicit new round allows revisiting passive skips. Saved items use the same collection as the homepage.
-
+The deterministic selector combines Qloo evidence with source-supported cultural facets, session choices, uncertainty and diversity. It does not claim to be a trained bandit. See [the discovery play check](evaluation/DISCOVERY-PLAY.md).
 ## Qloo and the event inventory
 
 The matching service resolves source-named cultural entities and scores inventory candidates in bounded batches across supported domains. It retains affinity and contributor evidence instead of reducing an association to a name-only flag. Comparisons stay within a domain and request context. A film, game or brand can act as an input signal for related cultural candidates. Exact identity ambiguity stays unresolved.
@@ -86,7 +85,7 @@ Current exhibitions or events enter a venue quest only when supported by the cat
 
 ## Evidence and limits
 
-The final regression suite has 241 passing tests, including matching, route constraints, closures, candidate batches, cross-domain identity persistence, game context, reactions, Stumble and bounded official scouting. Automated tests measure behavior, not how much someone enjoys an outing. See [the adaptive taste check](evaluation/ADAPTIVE-TASTE.md).
+The final regression suite has 252 passing tests, including matching, route constraints, closures, candidate batches, cross-domain identity persistence, game context, reactions, Stumble and bounded official scouting. Automated tests measure behavior, not how much someone enjoys an outing. See [the adaptive taste check](evaluation/ADAPTIVE-TASTE.md).
 
 The [25 October comparison](evaluation/QUEST-BENCHMARK.md) remains historical. It used unblinded AI desk judgments and examples also used for debugging. We do not claim a measured percentage improvement in recommendation quality. A held-out human evaluation remains open.
 

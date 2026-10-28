@@ -12,17 +12,16 @@ Use a separate demo browser profile. Add Nujabes as a confirmed artist through t
 
 **Voiceover:** "SideQuest finds things with a window. A small gig, an online listening party, an artist edition or a temporary shop. You can browse immediately, or spend about a minute teaching it what would make you stop scrolling."
 
-## 0:15 to 1:00 · Choices that carry forward
+## 0:15 to 1:00 · Play with real discoveries
 
-**Screen:** Choose A room full of sound, then Low lights, warm records. Show the actual Qloo follow-up from Nujabes. Choose a supported tag, access and price. React to the current listing, review and Apply.
+**Screen:** Open Stumble's comparison view. Pick one of the actual listings, then show how the next pair changes. Save a find, try Don't know, and inspect the reflection after a few comparisons. Keep interests explicitly or continue for today.
 
-**Voiceover:** "The first choice changes the next question. Qloo can follow a known favourite or a positively reacted cultural identity into another connection. Access and price remain practical choices. An unfamiliar artist is different from an artist you dislike. Nothing changes your applied profile until you choose Apply."
+**Voiceover:** "Start with things you can actually catch. Your choices change the next comparison. We keep unfamiliarity separate from dislike, and today's curiosity separate from interests you choose to keep. Qloo connections update in the background while you explore."
 
-For the clean session, the third round uses a real catalog listing instead of inventing a Qloo association without an anchor. Objects followed by Paper I would keep returned a CORNER BOOKS and ODD TAPE pop-up in the functional check. Use the actual current result when recording.
-
+Use current listings and artwork. The test included CORNER BOOKS and ODD TAPE, a timed hololive release, a record fair and photography exhibitions. Do not substitute expired launches.
 ## 1:00 to 1:25 · Stumble, then teach it
 
-**Screen:** Open Stumble. Show the event, date, source and connection wording. Choose More like this, then show the next actual result. Use Next once to demonstrate a passive skip.
+**Screen:** Choose See one find at a time. Show the event, date, source and connection wording. Choose More like this, then show the next actual result. Use Next once to demonstrate a passive skip.
 
 **Voiceover:** "Stumble gives you one real opportunity. More like this and Save can guide later finds. Next moves on without recording a dislike. A connection based on Qloo is kept separate from a source-based genre match or a wildcard."
 
@@ -41,7 +40,7 @@ For the clean session, the third round uses a real catalog listing instead of in
 ## Evidence and limits
 
 - Run `node scripts/check-taste-game.mjs` against the local preview for the actual API contrast and reaction check. It does not change browser preferences.
-- The interview uses checked catalog snapshots for calibration and provides an eight-second skip path for slow lookups. A person's completion time has not been measured.
+- Comparisons use checked catalog snapshots first and add Qloo evidence in the background. A person's completion time has not been measured.
 - Music identities have better coverage than brands, franchises and independent creators in the current catalog. Do not claim equal recommendation depth in every category.
 - The Nujabes and Iron Maiden shortlists differ in the saved functional check. This is not a human preference benchmark or a measured satisfaction lift.
 - The optional Tokyo walk and controlled closure demonstration remain at `/quests`. They are separate from the timed opportunity feed.

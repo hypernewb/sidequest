@@ -1,0 +1,13 @@
+# Discovery through comparisons
+
+The six-round setup has been replaced by live comparisons at `/taste` and the default `/stumble` entry. The first pair contains actual eligible catalog records. Official artwork is read asynchronously from up to two known announcement pages, with a one-day cache. Missing artwork uses a clearly typographic listing panel rather than a fabricated poster.
+
+Picking a listing immediately changes the next comparison. Neither and Don't know remain distinct outcomes and do not mark an artist disliked. The visitor can save an actual find throughout play, undo choices from the current visit, inspect a reflection early or after five comparisons, keep interests explicitly, or continue for today. A round stops at forty comparisons rather than silently forgetting its early pairs.
+
+The selection rule combines returned Qloo evidence, source-supported subjects and genres, relative choices, uncertain facets and similarity to recent listings. It rejects repeated programme URLs/titles and respects a relevance floor. Literal title evidence distinguishes books from photography even when a publisher assigns both the same broad category. This is a deterministic exploration heuristic, not a trained contextual bandit or a claim of optimal information gain.
+
+Catalog snapshots make the first pair available without waiting for a city refresh or live affinity call. Qloo enrichment runs in the background, at startup and after every second comparison. It updates the pool for future choices without replacing the pair currently being considered. No provider call is required for a tap. Original dates, eligibility and source links remain attached.
+
+Session choices live in sessionStorage and expire on the next Tokyo date. Keep these interests merges interests/reactions with the latest saved profile while preserving practical preferences. Explicit single-view reactions persist only that reaction, not all unkept session choices. Save shares the homepage collection. Unknown and neither never become persistent negative entity signals.
+
+Verification includes contrasting structured preferences, changing the next pair after a choice, title subjects, duplicate programmes, finite exhaustion, bounded session persistence, safe official artwork extraction and the existing Worker/runtime suite. Browser checks covered real pop-up and timed-drop artwork, positive selection, Save/remove, Undo, explicit Keep and single-view switching at desktop and 390-pixel mobile sizes. No human enjoyment score or completion-time result is claimed. Tests cannot establish that a game is fun; a user playtest remains the next evidence.
