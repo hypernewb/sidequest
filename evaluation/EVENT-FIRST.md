@@ -8,12 +8,12 @@ The check used the local Worker preview, current source catalog and real Qloo ca
 
 | View | Eligible results | Online results |
 | --- | ---: | ---: |
-| Everything | 266 | 47 |
-| Online only | 47 | 47 |
+| Everything | 337 | 118 |
+| Online only | 118 | 118 |
 | Online limited drops | 18 | 18 |
 | Tokyo in person | 219 | 0 |
 
-The combined view contains 151 gigs, 14 exhibitions, 44 pop-ups, 39 other events and 18 release windows. These are current eligible records across old and new sources, not the number added by this change. Counts will change as source dates pass.
+The combined view contains 151 gigs, 14 exhibitions, 44 pop-ups, 110 other events and 18 release windows. These are current eligible records across old and new sources, not the number added by this change. Counts will change as source dates pass.
 
 ## New public sources
 
@@ -21,7 +21,7 @@ The combined view contains 151 gigs, 14 exhibitions, 44 pop-ups, 39 other events
 - [hololive official shop](https://shop.hololivepro.com/en) supplies product links. Each product's dedicated Order Period block supplies the start and deadline in JST. Shipping periods are separate. Ten eligible current order windows were captured. Timed ordering does not establish a numbered edition or shipping to every country.
 - [Steam's official event feed](https://store.steampowered.com/events/ajaxgetpartnereventspageable/?clan_accountid=27766192&offset=0&count=15) supplies festival announcements. Only explicit festival date ranges qualify. Client updates and news publication timestamps cannot become festivals. The current Scream festival's 10 a.m. Pacific deadline converts across the November daylight-saving change.
 
-The Bandcamp and shop adapters together parsed 39 records in the API refresh; one Steam festival brought the parsed total to 40. One already-started listening session was ineligible by the check. Existing online MEDICOM windows bring online eligibility to 47.
+The final Bandcamp adapter uses the same public schedule API as its Live page, with two pages of 50 events. One already-started listening session was ineligible by the check. Ten hololive windows, one Steam festival and existing online MEDICOM windows bring online eligibility to 118. These endpoints do not require an account or developer key.
 
 ## Selection and matching
 
@@ -38,3 +38,7 @@ Online source results use the existing event catalog table. Request-triggered ch
 The UI offers Everything, Events & pop-ups, Limited drops, an access selector, deadline ordering, optional exact-name taste input, source links and browser-local saves. No persona, radius or date form is required. Tokyo walking quests and full catalog tools remain accessible.
 
 These are functional and source checks, not human recommendation ratings or measured social hype. Online booking, subscriptions, product stock, shipping regions and physical access still depend on the source. No paid X API or new account access was used.
+
+## Production compatibility repair
+
+The first hosted check returned 254 finds, including 21 online, but no readable Bandcamp schedules. The adapter now uses Bandcamp's public LiveEventsPublicAPI_4 request, with bounded pagination, one normal request-renewal attempt, partial-page preservation and an HTML fallback. A Worker-specific fetch option error found during verification was corrected. A dedicated Worker integration test now exercises that public schedule request. Empty earlier source caches are invalidated by the source schema version. The local rerun above uses this corrected adapter; production counts can differ because its existing catalog is separate.

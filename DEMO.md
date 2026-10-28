@@ -30,7 +30,7 @@ Target length: two minutes. Use actual current results, with source links and da
 
 **Screen:** Use Browse without my taste, then show Everything or Events. Briefly select Tokyo in person. Show a small gig or temporary art/fashion event, then save it.
 
-**Voiceover:** "You can browse without a profile. The live check found 266 eligible timed opportunities, including 47 online options. Those are source records, not a popularity score or proof that every item fits your taste. Save the things you actually want to follow."
+**Voiceover:** "You can browse without a profile. The live check found 337 eligible timed opportunities, including 118 online options. Those are source records, not a popularity score or proof that every item fits your taste. Save the things you actually want to follow."
 
 Use the current live count if it differs. Do not claim all records were added by this update.
 

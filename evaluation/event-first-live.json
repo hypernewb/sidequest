@@ -1,17 +1,17 @@
 {
-  "at": "2026-10-28T05:27:29.752Z",
+  "at": "2026-10-28T05:49:13.687Z",
   "base": "http://127.0.0.1:5173",
   "method": "Live functional checks using official catalog records and Qloo. Counts are a snapshot, not a human recommendation score, stock guarantee or measure of hype.",
   "results": [
     {
       "name": "all",
-      "seconds": 0.496,
-      "total": 266,
-      "online": 47,
+      "seconds": 9.529,
+      "total": 337,
+      "online": 118,
       "byKind": {
         "gig": 151,
         "exhibition": 14,
-        "event": 39,
+        "event": 110,
         "popup": 44,
         "release": 18
       },
@@ -122,8 +122,8 @@
         },
         {
           "name": "Bandcamp listening parties",
-          "count": 29,
-          "status": "Official online schedules checked"
+          "count": 100,
+          "status": "Public schedule API checked; up to two pages"
         },
         {
           "name": "hololive official preorder windows",
@@ -134,11 +134,11 @@
     },
     {
       "name": "online",
-      "seconds": 0.327,
-      "total": 47,
-      "online": 47,
+      "seconds": 0.349,
+      "total": 118,
+      "online": 118,
       "byKind": {
-        "event": 29,
+        "event": 100,
         "release": 18
       },
       "sources": [
@@ -232,8 +232,8 @@
         },
         {
           "name": "Bandcamp listening parties",
-          "count": 29,
-          "status": "Official online schedules checked"
+          "count": 100,
+          "status": "Public schedule API checked; up to two pages"
         },
         {
           "name": "hololive official preorder windows",
@@ -244,7 +244,7 @@
     },
     {
       "name": "online-drops",
-      "seconds": 0.365,
+      "seconds": 0.339,
       "total": 18,
       "online": 18,
       "byKind": {
@@ -338,8 +338,8 @@
         },
         {
           "name": "Bandcamp listening parties",
-          "count": 29,
-          "status": "Official online schedules checked"
+          "count": 100,
+          "status": "Public schedule API checked; up to two pages"
         },
         {
           "name": "hololive official preorder windows",
@@ -350,7 +350,7 @@
     },
     {
       "name": "tokyo",
-      "seconds": 0.402,
+      "seconds": 0.451,
       "total": 219,
       "online": 0,
       "byKind": {
@@ -461,8 +461,8 @@
         },
         {
           "name": "Bandcamp listening parties",
-          "count": 29,
-          "status": "Official online schedules checked"
+          "count": 100,
+          "status": "Public schedule API checked; up to two pages"
         },
         {
           "name": "hololive official preorder windows",
@@ -473,12 +473,12 @@
     },
     {
       "name": "Nujabes",
-      "seconds": 2.581,
-      "total": 266,
-      "online": 47,
+      "seconds": 1.514,
+      "total": 337,
+      "online": 118,
       "byKind": {
         "gig": 151,
-        "event": 39,
+        "event": 110,
         "exhibition": 14,
         "popup": 44,
         "release": 18
@@ -505,8 +505,8 @@
         "PR Times · issuer press release",
         "mograg gallery",
         "pianola records events",
-        "Steam official festivals",
         "Tower Records Shibuya",
+        "Steam official festivals",
         "21_21 DESIGN SIGHT"
       ],
       "examples": [
@@ -540,7 +540,7 @@
           ]
         },
         {
-          "title": "魚返明未 solo piano",
+          "title": "Fish return bright not solo piano",
           "kind": "gig",
           "source": "Cotton Club",
           "url": "https://reserve.cottonclubjapan.co.jp/reserve/schedule/exec/5757",
@@ -568,7 +568,7 @@
           ]
         },
         {
-          "title": "タデクイ / Trooper Salute / MIZ — タデクイpresents \"デルタ\"",
+          "title": "Tadequi/Trooper Salute/MIZ-Tadequi presents \"Delta\"",
           "kind": "gig",
           "source": "WWW / WWW X",
           "url": "https://www-shibuya.jp/schedule/020018.php",
@@ -590,8 +590,8 @@
         },
         {
           "name": "Bandcamp listening parties",
-          "count": 29,
-          "status": "Official online schedules checked"
+          "count": 100,
+          "status": "Public schedule API checked; up to two pages"
         },
         {
           "name": "hololive official preorder windows",

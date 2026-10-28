@@ -7,14 +7,15 @@ const safe=(raw:string,host:string)=>{try{const u=new URL(raw);return u.protocol
 const base=(source:string,url:string,title:string,text:string,at:string):Opportunity=>({id:'global:'+url,title,source,url,description:text.slice(0,900),kind:'event',online:true,location:'Online · worldwide',checkedAt:at,price:null,priceLabel:'Check official access',availability:'Official schedule. Check access conditions with the organiser.',category:'online event'});
 
 export function parseBandcamp(html:string,at=new Date().toISOString()):Opportunity[]{
- const raw=html.match(/\bdata-blob="([^"]+)"/)?.[1];if(!raw)return [];
- let data:any;try{data=JSON.parse(decodeText(raw)).appData;}catch{return [];}
- const rows=[...(data.featuredEvents?.items||[]),...(Array.isArray(data.events)?data.events:data.events?.items||[])];
+ const json=html.trimStart().startsWith('{'),raw=json?html:html.match(/\bdata-blob=(["'])([\s\S]*?)\1/)?.[2];
+ const rows:any[]=[];
+ const visit=(value:any)=>{if(!value||typeof value!=='object')return;if(value.liveEventUrl&&value.scheduledStartDate)rows.push(value);if(Array.isArray(value))value.forEach(visit);else Object.values(value).forEach(visit);};
+ if(raw)try{let data=JSON.parse(json?raw:decodeText(raw));if(typeof data==='string')data=JSON.parse(data);visit(data);}catch{}
  return [...new Map(rows.flatMap((e:any)=>{
   const url=safe(e.liveEventUrl||'','bandcamp.com'),stamp=Date.parse(e.scheduledStartDate);
   if(!url||!e.title||!Number.isFinite(stamp))return [];
   const startsAt=new Date(stamp).toISOString(),o=base('Bandcamp listening parties',url,String(e.title),plainText(String(e.description||'')),at);
-  const image=html.match(new RegExp('https://f[0-9]\\.bcbits\\.com/img/[a-z]?0*'+String(e.imageId).replace(/\D/g,'')+'_[0-9]+\\.jpg'))?.[0];
+  const image=html.match(new RegExp('https://f[0-9]\\.bcbits\\.com/img/[a-z]?0*'+String(e.imageId).replace(/\D/g,'')+'_[0-9]+\\.jpg'))?.[0]||(e.isArt&&Number.isInteger(e.imageId)?'https://f4.bcbits.com/img/a'+String(e.imageId).padStart(10,'0')+'_2.jpg':undefined);
   o.start=day(startsAt);o.end=o.start;o.startsAt=startsAt;o.sourceTimezone=e.dateTimeZone||undefined;o.actionLabel=e.eventType==='l'?'Online listening party':'Online live stream';o.category='online music listening party '+(e.genre||'');o.image=image;o.priceLabel=e.isSubOnly?'Subscriber access · see organiser':'See organiser access';o.availability='Scheduled online event. End time is not published in the listing.'+(e.isSubOnly?' Subscriber-only access.':'');
   o.details=rememberDetail(url,o.title+'\n'+o.description);o.details.artists=typeof e.artist==='string'?[e.artist]:[];
   return [o];
@@ -22,6 +23,29 @@ export function parseBandcamp(html:string,at=new Date().toISOString()):Opportuni
 }
 
 export function hololiveLinks(html:string){return [...new Set([...html.matchAll(/href="((?:\/en)?\/products\/[^"?#]+)"/g)].map(m=>new URL(m[1],'https://shop.hololivepro.com').href))].slice(0,24);}
+
+export async function publicBandcampSchedule(fetcher:typeof fetch=fetch,at=new Date().toISOString()){
+ const items:Opportunity[]=[];let cursor:unknown=null;
+ // This is the same unauthenticated request made by Bandcamp's public Live
+ // page (LiveEventsPublicAPI_4). Two pages bound work and source coverage.
+ for(let page=0;page<2;page++){
+  try{
+  let text='',data:any,crumb:string|undefined;
+  for(let attempt=0;attempt<2;attempt++){
+   const r=await fetcher('https://bandcamp.com/api/live_events_public_api/4/get_upcoming_live_events',{method:'POST',redirect:'manual',headers:{'Content-Type':'application/json; charset=UTF-8',Accept:'application/json',...(crumb?{'X-BC-Crumb':crumb}:{})},body:JSON.stringify({page_size:50,next_cursor:cursor,is_featured:false}),signal:AbortSignal.timeout(12000)});
+   if(!r.ok)throw Error('Public schedule unavailable ('+r.status+')');
+   text=await r.text();if(text.length>1000000)throw Error('Schedule too large');
+   data=JSON.parse(text);
+   const replacement=r.headers.get('X-BC-Crumb');
+   if(attempt===0&&data.__api_special__&&/InvalidCrumbError/.test(data.error_type||'')&&replacement&&replacement.length<1000){crumb=replacement;continue;}
+   break;
+  }
+  if(!Array.isArray(data?.items))throw Error('No public schedule items'+(typeof data?.error_type==='string'?': '+data.error_type.slice(0,120):''));
+  items.push(...parseBandcamp(text,at));cursor=data.nextCursor;if(!cursor)break;
+  }catch(error){if(items.length)break;throw error;}
+ }
+ return [...new Map(items.map(o=>[o.id,o])).values()];
+}
 export function parseHololive(html:string,url:string,at=new Date().toISOString()):Opportunity[]{
  if(!safe(url,'shop.hololivepro.com'))return [];
  // Read the dedicated order-period block, never the shipping or publication date.
@@ -64,7 +88,7 @@ export function parseSteam(json:string,at=new Date().toISOString()):Opportunity[
 export async function collectGlobal(now=new Date(),read:typeof publicSource=publicSource){
  const at=now.toISOString(),items:Opportunity[]=[],health:{name:string;count:number;status:string}[]=[];
  await Promise.all([
-  (async()=>{try{const rows=parseBandcamp(await read('https://bandcamp.com/live'),at);items.push(...rows);health.push({name:'Bandcamp listening parties',count:rows.length,status:'Official online schedules checked'});}catch{health.push({name:'Bandcamp listening parties',count:0,status:'Unavailable'});}})(),
+  (async()=>{try{let rows:Opportunity[]=[],api=false,issue='';try{rows=await publicBandcampSchedule(fetch,at);api=rows.length>0;}catch(error){issue=error instanceof Error?error.message:'Request failed';console.warn('Public Bandcamp schedule API unavailable',issue);}if(!rows.length){const html=await read('https://bandcamp.com/live');rows=parseBandcamp(html,at);if(!rows.length)console.warn('Bandcamp schedule not recognized',{bytes:html.length,title:plainText(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]||''),blob:html.includes('data-blob'),schedule:html.includes('scheduledStartDate')});}items.push(...rows);health.push({name:'Bandcamp listening parties',count:rows.length,status:rows.length?(api?'Public schedule API checked; up to two pages':'Official event page checked'+(issue?' · '+issue:'')):'No readable schedule recognized; source unavailable from this host'+(issue?' · '+issue:'')});}catch{health.push({name:'Bandcamp listening parties',count:0,status:'Unavailable'});}})(),
   (async()=>{try{const links=hololiveLinks(await read('https://shop.hololivepro.com/en'));const rows:Opportunity[]=[];let failed=0;for(let i=0;i<links.length;i+=4)await Promise.all(links.slice(i,i+4).map(async url=>{try{rows.push(...parseHololive(await read(url),url,at));}catch{failed++;}}));items.push(...rows);health.push({name:'hololive official preorder windows',count:rows.length,status:`${links.length} official product pages checked; ${failed} unavailable; only explicit order periods included`});}catch{health.push({name:'hololive official preorder windows',count:0,status:'Unavailable'});}})(),
   (async()=>{try{const rows=parseSteam(await read('https://store.steampowered.com/events/ajaxgetpartnereventspageable/?clan_accountid=27766192&offset=0&count=15'),at);items.push(...rows);health.push({name:'Steam official festivals',count:rows.length,status:'Explicit festival date ranges checked; client updates excluded'});}catch{health.push({name:'Steam official festivals',count:0,status:'Unavailable'});}})()
  ]);

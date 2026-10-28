@@ -10,7 +10,7 @@ SideQuest now starts with time-limited events and drops. Discover a listening pa
 
 Browse immediately or enter one artist, film, game or brand. Use Events, Limited drops, Online only or Tokyo in person. Exact online event times and order deadlines use the browser's timezone. Date-only listings retain organiser dates.
 
-A live check on 28 October 2026 returned 266 eligible finds for the next 30 days, including 47 online opportunities and 18 online timed drops. The snapshot contains 151 gigs, 14 exhibitions, 44 pop-ups, 39 other events and 18 releases. These counts combine the existing official catalog with the new online sources; they are not 266 newly added events or a measure of hype.
+A live check on 28 October 2026 returned 337 eligible finds for the next 30 days, including 118 online opportunities and 18 online timed drops. The snapshot contains 151 gigs, 14 exhibitions, 44 pop-ups, 110 other events and 18 releases. These counts combine the existing official catalog with the new online sources; they are not 266 newly added events or a measure of hype.
 
 New adapters read Bandcamp's online listening-party schedules, hololive's explicit order-period blocks and Steam's official festival announcements. Existing sources still supply independent gigs, art, fashion pop-ups and MEDICOM preorders. The main feed excludes generic product-listing dates, manufacturer shipping dates, expired order windows and permanent locations.
 
@@ -70,7 +70,7 @@ Current exhibitions or events enter a venue quest only when supported by the cat
 
 ## Evidence and limits
 
-The final regression suite has 203 passing tests, including matching, route constraints, reported closures, source-specific closure replanning and failure labels. Automated tests measure behavior, not how much someone enjoys an outing.
+The final regression suite has 207 passing tests, including matching, route constraints, reported closures, source-specific closure replanning and failure labels. Automated tests measure behavior, not how much someone enjoys an outing.
 
 The [25 October comparison](evaluation/QUEST-BENCHMARK.md) remains historical. It used unblinded AI desk judgments and examples also used for debugging. We do not claim a measured percentage improvement in recommendation quality. A held-out human evaluation remains open.
 

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import {extractEventDetails} from '../lib/event-detail-parser.ts';
 import assert from 'node:assert/strict';
-import {parseBandcamp,parseHololive,parseSteam} from '../lib/global-sources.ts';
+import {parseBandcamp,parseHololive,parseSteam,publicBandcampSchedule} from '../lib/global-sources.ts';
 import {momentEligible,selectMoments,onlineMoment} from '../lib/moments.ts';
 import type {Opportunity,Preferences} from '../lib/opportunities.ts';
 const now=new Date('2026-10-28T04:00:00Z'),stamp=now.toISOString();
@@ -18,6 +18,7 @@ test('listening parties use real scheduled instants and do not turn album pricin
  const blob=JSON.stringify({appData:{featuredEvents:{items:[e]},events:{items:[e]}}}).replaceAll('"','&quot;');
  const rows=parseBandcamp(`<div data-blob="${blob}"></div>`,stamp);
  assert.equal(rows.length,1);assert.equal(rows[0].startsAt,'2026-10-28T16:00:00.000Z');assert.equal(rows[0].start,'2026-10-29');assert.equal(rows[0].price,null);assert.equal(rows[0].endsAt,undefined);assert.deepEqual(rows[0].details?.artists,['Real artist']);
+ assert.equal(parseBandcamp(`<div data-blob='${JSON.stringify({differentWrapper:{upcoming:[e]}})}'></div>`,stamp).length,1);
  const bad=blob.replaceAll('artist.bandcamp.com/live/party','evil.example/party');assert.equal(parseBandcamp(`<div data-blob="${bad}"></div>`,stamp).length,0);
 });
 
@@ -27,6 +28,24 @@ test('preorder windows come from the order block, with exact JST cutoffs and sep
  assert.equal(o.endsAt,'2026-11-24T09:00:00.000Z');assert.equal(o.start,'2026-10-19');assert.equal(o.end,'2026-11-24');assert.equal(o.online,true);assert.match(o.availability,/not proof of a numbered edition/);
  assert.deepEqual(parseHololive('<meta property="og:title" content="Ordinary stock"><p>Published 2026/10/19. Shipping May 2027.</p>',o.url,stamp),[]);
  assert.deepEqual(parseHololive(html,'https://malicious.example/products/birthday',stamp),[]);
+});
+
+test('public Bandcamp schedules paginate with the returned cursor and keep JSON entities intact',async()=>{
+ const requests:any[]=[];
+ const rows=await publicBandcampSchedule(async(url,init)=>{assert.equal(url,'https://bandcamp.com/api/live_events_public_api/4/get_upcoming_live_events');requests.push(JSON.parse(String(init?.body)));const n=requests.length;return Response.json({items:[{title:'Party '+n,artist:'Artist',description:'An &quot;album&quot; party',liveEventUrl:'https://artist.bandcamp.com/live/party-'+n,scheduledStartDate:'29 Oct 2026 16:00:00 GMT'}],nextCursor:n===1?{offset:'next'}:null});},stamp);
+ assert.equal(rows.length,2);assert.equal(rows[0].checkedAt,stamp);assert.equal(requests[0].page_size,50);assert.deepEqual(requests[1].next_cursor,{offset:'next'});assert.match(rows[0].description,/"album"/);
+});
+
+test('a failed second Bandcamp page retains the first valid page',async()=>{
+ let calls=0;
+ const rows=await publicBandcampSchedule(async()=>{if(calls++)return new Response('Unavailable',{status:503});return Response.json({items:[{title:'Party',liveEventUrl:'https://artist.bandcamp.com/live/party',scheduledStartDate:'29 Oct 2026 16:00:00 GMT'}],nextCursor:'next'});},stamp);
+ assert.equal(rows.length,1);assert.equal(calls,2);
+});
+
+test('Bandcamp public request renewal follows the response header once without an account',async()=>{
+ let calls=0;
+ const rows=await publicBandcampSchedule(async(_url,init)=>{calls++;if(calls===1)return Response.json({__api_special__:'error',error_type:'IdentityAccessRules::InvalidCrumbError'},{headers:{'X-BC-Crumb':'public-fixture-crumb'}});assert.equal((init?.headers as Record<string,string>)['X-BC-Crumb'],'public-fixture-crumb');return Response.json({items:[{title:'Public party',liveEventUrl:'https://artist.bandcamp.com/live/public',scheduledStartDate:'29 Oct 2026 16:00:00 GMT'}],nextCursor:null});},stamp);
+ assert.equal(calls,2);assert.equal(rows.length,1);
 });
 
 test('Steam requires an explicit festival range and does not mistake news metadata for duration',()=>{
