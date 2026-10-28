@@ -1,12 +1,14 @@
 import type {Opportunity} from './opportunities.ts';
 import {tasteThreads,culturalOverlap} from './curated-taste.ts';
+import {explicitSoulGenre} from './event-detail-parser.ts';
 export const SUBJECTS:[string,RegExp][]=[
  ['Pokémon',/pok[eé]mon|ポケモン|ポケットモンスター/i],['Digimon',/digimon|デジモン|デジタルモンスター/i],['Tamagotchi',/tamagotchi|たまごっち/i],['Gundam',/gundam|gunpla|ガンダム|ガンプラ/i],['Sanrio',/sanrio|サンリオ|hello kitty|ハローキティ|シナモロール|ポムポムプリン|クロミ|マイメロディ/i],['Studio Ghibli',/ghibli|spirited away|my neighbor totoro|ジブリ|千と千尋|となりのトトロ/i],['Attack on Titan',/attack on titan|進撃の巨人/i],['The Legend of Zelda',/legend of zelda|ゼルダの伝説/i],['Super Mario',/super mario|スーパーマリオ/i],['Final Fantasy',/final fantasy|ファイナルファンタジー/i],['Dragon Ball',/dragon ball|ドラゴンボール/i],['One Piece',/\bone piece\b|ワンピース/i],['BE@RBRICK',/be@rbrick|bearbrick|ベアブリック/i],['Batman',/\bbatman\b|バットマン/i],['Basquiat',/basquiat|バスキア/i]
 ];
 export function subjectNames(o:Pick<Opportunity,'title'>){return SUBJECTS.filter(([,r])=>r.test(o.title)).map(([n])=>n);}
 export function programmeGenres(o:Opportunity){
  // The programme's own genre evidence takes precedence over a potentially ambiguous artist identity.
- return o.details?.genres.length?o.details.genres:(o.artists||[]).filter(a=>{
+ const published=(o.details?.genres||[]).filter(g=>g.name.toLowerCase()!=='soul'||explicitSoulGenre(g.evidence));
+ return published.length?published:(o.artists||[]).filter(a=>{
   // Short aliases need programme corroboration. TRiDENT's Japanese rock act
   // was reconciled to a record carrying black/death-metal genres in the live audit.
   const n=a.input.replace(/\s*\([^)]*\)$/,'');

@@ -1,0 +1,533 @@
+{
+  "scope": "Functional API contrast and reaction check. Same current catalog and practical filters. No human quality ratings or causal lift claim.",
+  "profiles": [
+    {
+      "name": "Nujabes",
+      "total": 337,
+      "milliseconds": 5229,
+      "qloo": {
+        "status": "ready",
+        "mappedItems": 102,
+        "candidateEntities": 135,
+        "scoredEntities": 132,
+        "failures": 0,
+        "cacheHits": 14
+      },
+      "scout": {
+        "source": "WWW / WWW X",
+        "url": "https://www-shibuya.jp/schedule/202610.php",
+        "status": "read",
+        "cached": true,
+        "checkedAt": "2026-10-28T16:15:20.391Z",
+        "parsed": 61,
+        "matched": 0,
+        "message": "One official calendar read. Only literal confirmed or Qloo-related names can add announcements; dates and access still require eligibility checks."
+      },
+      "top": [
+        {
+          "id": "global:https://sirintip.bandcamp.com/live/white-lilies-listening-party",
+          "title": "White Lilies Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with Sirintip from Nujabes. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "www:https://www-shibuya.jp/schedule/020018.php#2026-10-29",
+          "title": "タデクイ / Trooper Salute / MIZ — タデクイpresents \"デルタ\"",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with MIZ from Nujabes. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "ufo:2026-10-31",
+          "title": "【kihito+migon Presents HALLOWEEN NIGHTMARE】",
+          "kind": "gig",
+          "source": "U.F.O.CLUB",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with Yuko Araki from Nujabes. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/15199/:2026-11-24",
+          "title": "KOTA THE FRIEND “JUST HAPPY TO BE HERE! “JAPAN TOUR 2026 – HEADLINE SHOW",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with KOTA the Friend from Nujabes. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "livehouse:https://www.fever-popo.com/schedule/2026/11/1118.html#2026-11-11",
+          "title": "THE ORAL CIGARETTES presents \"WANDER ABOUT 放浪 TOUR 2026 関東編\" — THE ORAL CIGARETTES TYOSiN",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with TYOSiN from Nujabes. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "global:https://mosesboyd.bandcamp.com/live/songs-for-sinners-listening-party",
+          "title": "Songs For Sinners Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with Moses Boyd from Nujabes. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/edl2_20261107:2026-11-07",
+          "title": "ELECTRIC DELAY LAND Vol.2",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with Little Tempo from Nujabes. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "cotton:5757:2026-10-29",
+          "title": "魚返明未 solo piano",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "discovery": "adjacent"
+        }
+      ],
+      "reaction": {
+        "title": "White Lilies Listening Party",
+        "beforePosition": 1,
+        "afterPosition": 1,
+        "topChanged": false,
+        "milliseconds": 4562
+      }
+    },
+    {
+      "name": "Iron Maiden",
+      "total": 337,
+      "milliseconds": 1926,
+      "qloo": {
+        "status": "ready",
+        "mappedItems": 102,
+        "candidateEntities": 135,
+        "scoredEntities": 132,
+        "failures": 0,
+        "cacheHits": 42
+      },
+      "scout": {
+        "source": "WWW / WWW X",
+        "url": "https://www-shibuya.jp/schedule/202610.php",
+        "status": "read",
+        "cached": true,
+        "checkedAt": "2026-10-28T16:15:20.391Z",
+        "parsed": 61,
+        "matched": 0,
+        "message": "One official calendar read. Only literal confirmed or Qloo-related names can add announcements; dates and access still require eligibility checks."
+      },
+      "top": [
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/14976/:2026-10-31",
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with Mark Boals from Iron Maiden. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "global:https://officialdarkesthour.bandcamp.com/live/suffer-divine-listening-party",
+          "title": "Suffer Divine Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with Darkest Hour from Iron Maiden. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/see_20261029:2026-10-29",
+          "title": "SOUND ENERGY EX",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with DeathbyRomy from Iron Maiden. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "global:https://minotaur.bandcamp.com/live/pet-smells-listening-party",
+          "title": "Pet Smells Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with Minotaur from Iron Maiden. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "www:https://www-shibuya.jp/schedule/020184.php#2026-11-16",
+          "title": "Maison de Queen / ジエメイ / 魔法少女になり隊 / LADYBABY(BAND) / Rolling Quartz / バンドじゃないもん！MAXX NAKAYOSHI — EVERLAND",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with LADYBABY from Iron Maiden. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "livehouse:https://www.fever-popo.com/schedule/2026/11/1018.html#2026-11-10",
+          "title": "worthwhile — DC View From The Soyuz 明日の叙景",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with DC from Iron Maiden. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/14979/:2026-11-01",
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with Mark Boals from Iron Maiden. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/knosis_20261126:2026-11-26",
+          "title": "Knosis",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with Knosis from Iron Maiden. This is an association, not an event-quality or availability rating."
+        }
+      ],
+      "reaction": {
+        "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+        "beforePosition": 1,
+        "afterPosition": 1,
+        "topChanged": false,
+        "milliseconds": 2297
+      }
+    },
+    {
+      "name": "Nintendo",
+      "total": 337,
+      "milliseconds": 778,
+      "qloo": {
+        "status": "ready",
+        "mappedItems": 102,
+        "candidateEntities": 135,
+        "scoredEntities": 132,
+        "failures": 0,
+        "cacheHits": 46
+      },
+      "scout": {
+        "source": "Shibuya PARCO",
+        "url": "https://shibuya.parco.jp/event/",
+        "status": "read",
+        "cached": true,
+        "checkedAt": "2026-10-28T16:28:19.429Z",
+        "parsed": 9,
+        "matched": 0,
+        "message": "One official calendar read. Only literal confirmed or Qloo-related names can add announcements; dates and access still require eligibility checks."
+      },
+      "top": [
+        {
+          "id": "parco:https://shibuya.parco.jp/event/detail/?id=8975#2026-10-02",
+          "title": "『深夜食堂』と『かもめ食堂』展 フードスタイリスト・ 飯島奈美さん20年の仕事と。",
+          "kind": "exhibition",
+          "source": "Shibuya PARCO",
+          "discovery": "adjacent",
+          "reason": "Qloo taste association with Kamome Diner from Nintendo. This is an association, not an event-quality or availability rating."
+        },
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/14976/:2026-10-31",
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "discovery": "wildcard"
+        },
+        {
+          "id": "global:https://officialdarkesthour.bandcamp.com/live/suffer-divine-listening-party",
+          "title": "Suffer Divine Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "discovery": "wildcard"
+        },
+        {
+          "id": "www:https://www-shibuya.jp/schedule/020018.php#2026-10-29",
+          "title": "タデクイ / Trooper Salute / MIZ — タデクイpresents \"デルタ\"",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "discovery": "wildcard"
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/see_20261029:2026-10-29",
+          "title": "SOUND ENERGY EX",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "discovery": "wildcard"
+        },
+        {
+          "id": "livehouse:https://www.fever-popo.com/schedule/2026/10/2920.html#2026-10-29",
+          "title": "それゆけ大宮セブン Presents「はぐれ者たちの宴vol.2」 — YOUR SONG IS GOOD アイボリーズ",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "discovery": "wildcard"
+        },
+        {
+          "id": "global:https://foghat-official.bandcamp.com/live/live-loud-across-the-u-s-a-listening-party",
+          "title": "Live & Loud Across The U.S.A. Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "discovery": "wildcard"
+        },
+        {
+          "id": "release-source:https://www.animate.co.jp/onlyshop/50973/:2026-11-07",
+          "title": "ガンダムエース25周年記念オンリーショップ",
+          "kind": "popup",
+          "source": "Animate Tokyo pop-ups",
+          "discovery": "wildcard"
+        }
+      ],
+      "reaction": {
+        "title": "『深夜食堂』と『かもめ食堂』展 フードスタイリスト・ 飯島奈美さん20年の仕事と。",
+        "beforePosition": 1,
+        "afterPosition": 1,
+        "topChanged": false,
+        "milliseconds": 5772
+      }
+    }
+  ],
+  "editorial": [
+    {
+      "direction": "music",
+      "total": 337,
+      "milliseconds": 233,
+      "qloo": {
+        "status": "cached-only",
+        "mappedItems": 0,
+        "scoredEntities": 0
+      },
+      "scout": {
+        "status": "skipped"
+      },
+      "top": [
+        {
+          "id": "cotton:5757:2026-10-29",
+          "title": "魚返明未 solo piano",
+          "kind": "gig",
+          "source": "Cotton Club",
+          "discovery": "adjacent",
+          "reason": "Your jazz choices match the listing title, category or published genre evidence."
+        },
+        {
+          "id": "global:https://gregpoppleton.bandcamp.com/live/father-wanted-me-to-learn-a-trade-listening-party",
+          "title": "Father Wanted Me to Learn a Trade Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "discovery": "adjacent",
+          "reason": "Your jazz choices match the listing title, category or published genre evidence."
+        },
+        {
+          "id": "www:https://www-shibuya.jp/schedule/020018.php#2026-10-29",
+          "title": "タデクイ / Trooper Salute / MIZ — タデクイpresents \"デルタ\"",
+          "kind": "gig",
+          "source": "WWW / WWW X",
+          "discovery": "adjacent",
+          "reason": "Your jazz choices match the listing title, category or published genre evidence."
+        },
+        {
+          "id": "global:https://jazz-ish-jazz.bandcamp.com/live/b-ke-listening-party",
+          "title": "Béke Listening Party",
+          "kind": "event",
+          "source": "Bandcamp listening parties",
+          "discovery": "adjacent",
+          "reason": "Your jazz choices match the listing title, category or published genre evidence."
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/see_20261029:2026-10-29",
+          "title": "SOUND ENERGY EX",
+          "kind": "gig",
+          "source": "LIQUIDROOM",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "livehouse:https://www.fever-popo.com/schedule/2026/10/2920.html#2026-10-29",
+          "title": "それゆけ大宮セブン Presents「はぐれ者たちの宴vol.2」 — YOUR SONG IS GOOD アイボリーズ",
+          "kind": "gig",
+          "source": "Shindaita FEVER",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "ufo:2026-10-29",
+          "title": "【My Back Pages Special Edition~Joe Nakamura Birthday Bash~】",
+          "kind": "gig",
+          "source": "U.F.O.CLUB",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/15293/:2026-10-30",
+          "title": "pinponpanpon album release party",
+          "kind": "gig",
+          "source": "UNIT / SALOON",
+          "discovery": "adjacent"
+        }
+      ]
+    },
+    {
+      "direction": "art",
+      "total": 337,
+      "milliseconds": 284,
+      "qloo": {
+        "status": "cached-only",
+        "mappedItems": 0,
+        "scoredEntities": 0
+      },
+      "scout": {
+        "status": "skipped"
+      },
+      "top": [
+        {
+          "id": "expanded:Daikanyama T-Site:https://store.tsite.jp/daikanyama/event/kids/57065-1649380927.html:2026-09-29",
+          "title": "【展示】触って学べる新感覚かるた『爬虫類かるた』",
+          "kind": "exhibition",
+          "source": "Daikanyama T-Site",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "release-source:https://www.tokyo-midtown.com/jp/shops/info/popup/:2026-10-02",
+          "title": "【期間限定ショップ】CRAFT WONDER",
+          "kind": "popup",
+          "source": "Tokyo Midtown",
+          "discovery": "adjacent",
+          "reason": "Your craft choices match the listing title, category or published genre evidence."
+        },
+        {
+          "id": "taka:44069",
+          "title": "Kohei Yamada “green back / front”",
+          "kind": "exhibition",
+          "source": "Taka Ishii Gallery",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "independent:CIBONE:https://www.cibone.com/topics_detail.html?info_id=4311:2026-10-28",
+          "title": "New Jewelry for CIBONE\n- NANA WATANABE -",
+          "kind": "popup",
+          "source": "CIBONE",
+          "discovery": "adjacent",
+          "reason": "Your craft choices match the listing title, category or published genre evidence."
+        },
+        {
+          "id": "independent:WISH LESS:https://wish-less.com/archives/10051:2026-10-31",
+          "title": "WISH LESS presents duo exhibition “PARADISE PARK 2”",
+          "kind": "exhibition",
+          "source": "WISH LESS",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "expanded:Daikanyama T-Site:https://store.tsite.jp/daikanyama/event/art/57245-1708451006.html:2026-10-16",
+          "title": "【フェア】HAN YOUNGSOO PHOTOGRAPHY",
+          "kind": "popup",
+          "source": "Daikanyama T-Site",
+          "discovery": "adjacent",
+          "reason": "Your photography choices match the listing title, category or published genre evidence."
+        },
+        {
+          "id": "independent:PARCEL:https://parceltokyo.jp/exhibition/solo-exhibition-by-kai-yoda/:2026-11-04",
+          "title": "Kai Yoda · The little blue frog",
+          "kind": "exhibition",
+          "source": "PARCEL",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "mograg:https://mograg.com/artist2611.html#2026-11-07",
+          "title": "天久聖一 個展『FANCYSHOCK』",
+          "kind": "exhibition",
+          "source": "mograg gallery",
+          "discovery": "adjacent"
+        }
+      ]
+    },
+    {
+      "direction": "objects",
+      "total": 337,
+      "milliseconds": 257,
+      "qloo": {
+        "status": "cached-only",
+        "mappedItems": 0,
+        "scoredEntities": 0
+      },
+      "scout": {
+        "status": "skipped"
+      },
+      "top": [
+        {
+          "id": "expanded:Daikanyama T-Site:https://store.tsite.jp/daikanyama/event/music/57341-1425181010.html:2026-10-17",
+          "title": "【フェア】CORNER BOOKS × ODD TAPE DUPULICATIONPOPUP SHOP at DAIKANYAMA TSUTAYA BOOKS FEATURING ARTWORK BY DANIEL SHEPARD",
+          "kind": "popup",
+          "source": "Daikanyama T-Site",
+          "discovery": "adjacent",
+          "reason": "Your books choices match the listing title, category or published genre evidence."
+        },
+        {
+          "id": "independent:pianola records events:https://pianola-records.com/blogs/news/10-31%E5%9C%9F-11-1%E6%97%A5-pianola-records-presents-%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%89-%E3%83%95%E3%82%A7%E3%82%A2-at-bonus-track:2026-10-31",
+          "title": "10/31(土),11/1(日 ) pianola records presents レコード・フェア at BONUS TRACK",
+          "kind": "popup",
+          "source": "pianola records events",
+          "discovery": "adjacent",
+          "reason": "Your books choices match the listing title, category or published genre evidence."
+        },
+        {
+          "id": "release-source:https://www.tokyo-midtown.com/jp/shops/info/popup/:2026-10-02",
+          "title": "【期間限定ショップ】CRAFT WONDER",
+          "kind": "popup",
+          "source": "Tokyo Midtown",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "expanded:Laforet Harajuku:https://www.laforet.ne.jp/pop_up_shop/60percent_2610/:2026-10-16",
+          "title": "60% POP UP STORE",
+          "kind": "popup",
+          "source": "Laforet Harajuku",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "global:https://shop.hololivepro.com/en/products/takanelui_1stlive_rebellion_madetoorder",
+          "title": "【Made-to-order】Takane Lui 1st Live \"REBELLION\" Concert Merch",
+          "kind": "release",
+          "source": "hololive official preorder windows",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "release-source:https://store.medicomtoy.co.jp/products/annie:2026-10-24",
+          "title": "アニー",
+          "kind": "release",
+          "source": "MEDICOM TOY preorders",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "parco:https://shibuya.parco.jp/event/detail/?id=8939#2026-09-03",
+          "title": "YEN TOWN MARKET",
+          "kind": "popup",
+          "source": "Shibuya PARCO",
+          "discovery": "adjacent"
+        },
+        {
+          "id": "release-source:https://www.animate.co.jp/onlyshop/52193/:2026-10-16",
+          "title": "HE★VENS GARDEN",
+          "kind": "popup",
+          "source": "Animate Tokyo pop-ups",
+          "discovery": "adjacent"
+        }
+      ]
+    }
+  ],
+  "overlap": [
+    {
+      "profiles": [
+        "Nujabes",
+        "Iron Maiden"
+      ],
+      "sharedTopEight": 0
+    },
+    {
+      "profiles": [
+        "Nujabes",
+        "Nintendo"
+      ],
+      "sharedTopEight": 1
+    },
+    {
+      "profiles": [
+        "Iron Maiden",
+        "Nintendo"
+      ],
+      "sharedTopEight": 3
+    }
+  ],
+  "checkedAt": "2026-10-28T16:37:38.528Z"
+}

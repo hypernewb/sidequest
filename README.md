@@ -8,15 +8,31 @@ SideQuest now starts with time-limited events and drops. Discover a listening pa
 
 ## Start with events and drops
 
-Browse immediately or enter one artist, film, game or brand. Use Events, Limited drops, Online only or Tokyo in person. Exact online event times and order deadlines use the browser's timezone. Date-only listings retain organiser dates.
+Browse immediately, play the short taste round at `/taste`, or enter an artist, film, game or brand. Use Events, Limited drops, Online only or Tokyo in person. Exact online event times and order deadlines use the browser's timezone. Date-only listings retain organiser dates.
 
 A live check on 28 October 2026 returned 337 eligible finds for the next 30 days, including 118 online opportunities and 18 online timed drops. The snapshot contains 151 gigs, 14 exhibitions, 44 pop-ups, 110 other events and 18 releases. These counts combine the existing official catalog with the new online sources; they are not 266 newly added events or a measure of hype.
 
 New adapters read Bandcamp's online listening-party schedules, hololive's explicit order-period blocks and Steam's official festival announcements. Existing sources still supply independent gigs, art, fashion pop-ups and MEDICOM preorders. The main feed excludes generic product-listing dates, manufacturer shipping dates, expired order windows and permanent locations.
 
-Global records persist in D1. Their adapters refresh on demand after one hour and participate in the existing expanded catalog refresh. Source failures preserve earlier records with their original check time. Exact cutoffs still remove expired opportunities. No new developer credentials are needed for these public sources.
+Global records persist in D1 and participate in the existing scheduled catalog refresh. Browsing reads eligible stored records first; an empty catalog has a bounded refresh attempt. The global source adapter retains its one-hour cache. Source failures preserve earlier records with their original check time. Exact cutoffs still remove expired opportunities. No new developer credentials are needed for these public sources.
 
-Taste matching ranks direct names and specific genre evidence above broad genre adjacency. Source and format variety break ties. No trending score, social popularity count or guaranteed shipping region is inferred. See [the live feed check](evaluation/EVENT-FIRST.md).
+Taste matching retains direct names and specific genre evidence, then uses Qloo candidate affinity and returned contributor evidence for cultural associations. Source and format variety break ties. No trending score, social popularity count or guaranteed shipping region is inferred. See [the live feed check](evaluation/EVENT-FIRST.md).
+
+## Build taste through choices
+
+`/taste` is a short interview with concrete scenes, follow-up choices, practical access and price limits, and reactions to current announcements. It works without a playlist or a known artist. Earlier choices shape later options. With named interests or positively reacted cultural identities, Qloo can supply a connected follow-up question. Optional persona recipes expose their starting works; they do not silently add favourites or claim a personality type.
+
+An unfinished round stays separate from applied taste. Review, undo, skip, resume and explicit Apply keep the visitor in control. Positive reactions can guide later Qloo requests. Price, access and format reasons remain separate from liking an artist. The shared browser profile carries across the interview, main feed and Stumble. Legacy interest editors preserve this context.
+
+`/stumble` shows one real event or timed drop at a time. Next advances without recording a dislike. Save and More like this influence later finds; passes can carry a reason. A bounded round avoids repeats, and an explicit new round allows revisiting passive skips. Saved items use the same collection as the homepage.
+
+## Qloo and the event inventory
+
+The matching service resolves source-named cultural entities and scores inventory candidates in bounded batches across supported domains. It retains affinity and contributor evidence instead of reducing an association to a name-only flag. Comparisons stay within a domain and request context. A film, game or brand can act as an input signal for related cultural candidates. Exact identity ambiguity stays unresolved.
+
+The taste scout chooses one supported official calendar from WWW, mograg or Shibuya PARCO using the current direction or seed domain. It only adds dated announcements that name a confirmed or returned related entity. Zero matching announcements remains zero. Research links for other related names are separate, unverified leads. Interview calibration uses stored snapshots and skips remote ranking/scouting so the round can stay short; live question requests have an eight-second recovery path.
+
+No-name interview choices use explicit editorial tags against actual listing/category/genre evidence. Those labels are not passed to Qloo as invented tag IDs or described as Qloo findings. Mapped identities, scored candidates and missing coverage remain inspectable under Sources & taste connections. Automated checks cover behavior; they do not establish that Qloo beats a human or another model.
 
 ## Optional Tokyo walking quests
 
@@ -70,7 +86,7 @@ Current exhibitions or events enter a venue quest only when supported by the cat
 
 ## Evidence and limits
 
-The final regression suite has 207 passing tests, including matching, route constraints, reported closures, source-specific closure replanning and failure labels. Automated tests measure behavior, not how much someone enjoys an outing.
+The final regression suite has 241 passing tests, including matching, route constraints, closures, candidate batches, cross-domain identity persistence, game context, reactions, Stumble and bounded official scouting. Automated tests measure behavior, not how much someone enjoys an outing. See [the adaptive taste check](evaluation/ADAPTIVE-TASTE.md).
 
 The [25 October comparison](evaluation/QUEST-BENCHMARK.md) remains historical. It used unblinded AI desk judgments and examples also used for debugging. We do not claim a measured percentage improvement in recommendation quality. A held-out human evaluation remains open.
 

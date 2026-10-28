@@ -17,6 +17,7 @@ const genreRules:[string,RegExp][]=[['jazz',/\bjazz\b|ジャズ/i],['blues',/\bb
 export function lineupNames(text:string){
  return text.replace(/[【〈<\[](?:Special Guests?|GUEST|LIVE|DJ|出演)[】〉>\]]/gi,'\n').split(/\n|\s*[/／、]\s*|\s+[×]\s+/).map(s=>s.replace(/^[・●■◆]\s*|^(?:GUEST LIVE|FEATURED ARTIST|LIVE|DJ|GUEST|ACT|出演(?:者)?)\s*[:：]\s*/gi,'').trim()).filter(s=>s.length>1&&s.length<100&&!/^[-<〈【\[]*(?:live|djs?|guest|special guests?|line\s*up|shop|vjs?|food|www\s*[xβ]?|and more\.?|[.…]+|tba|未定)[->〉】\]]*$/i.test(s)&&!/(?:https?:|[^\s]+@[^\s]+|\bbookings\b|^INFO$|tickets?|問合|予約|開場|開演|税込|[¥￥]|円|^OPEN|^START|^ADV|^DOOR)/i.test(s)).slice(0,32);
 }
+export function explicitSoulGenre(text:string){return /\bsoul(?:ful)?[ -](?:music|jazz|singer|vocalist|band|groove|records?|albums?|sound)\b|\b(?:jazz|funk|r&b)[, /&+-]+soul\b|\b(?:genre|style)\s*[:：]\s*soul\b|^\s*(?:neo[ -]?)?soul\s*$|ソウル(?:ミュージック|シンガー|音楽|ジャズ)|(?:ジャズ|ファンク)[・、と/]ソウル/i.test(text);}
 export function extractEventDetails(text:string,url:string,checkedAt=new Date().toISOString()):EventDetails{
  const original=text.slice(0,12000),lines=original.normalize('NFKC').split(/\n/).map(s=>s.trim()).filter(Boolean);
  for(let i=0;i<lines.length-1;i++)if(/^(?:OPEN.?START|OPEN|START|開場.?開演)\s*[:：]?$/i.test(lines[i]))lines[i]+=' '+lines[i+1];
@@ -30,7 +31,11 @@ export function extractEventDetails(text:string,url:string,checkedAt=new Date().
    artists.push(...lineupNames(lines[j]));
   }break;
  }
- const genres=genreRules.flatMap(([name,re])=>{const evidence=lines.find(line=>re.test(line.replace(/FUJI ROCK(?: FESTIVAL)?|RISING SUN ROCK(?: FESTIVAL)?|PENTAPORT ROCK FESTIVAL|ROCK IN JAPAN/gi,'').replace(/ソウル(?:を拠点|在住|出身|市|に拠点)/g,''))&&!/(?:not |no |without )jazz|ジャズではない/i.test(line));return evidence&&!(name==='blues'&&/トーキングブルース|talking blues/i.test(evidence))?[{name,evidence:evidence.slice(0,300)}]:[];});
+ const genres=genreRules.flatMap(([name,re])=>{const evidence=lines.find(line=>{
+  const wording=line.replace(/FUJI ROCK(?: FESTIVAL)?|RISING SUN ROCK(?: FESTIVAL)?|PENTAPORT ROCK FESTIVAL|ROCK IN JAPAN/gi,'').replace(/ソウル(?:を拠点|在住|出身|市|に拠点)/g,'');
+  if(name==='soul'&&!explicitSoulGenre(wording))return false;
+  return re.test(wording)&&!/(?:not |no |without )jazz|ジャズではない/i.test(line);
+ });return evidence&&!(name==='blues'&&/トーキングブルース|talking blues/i.test(evidence))?[{name,evidence:evidence.slice(0,300)}]:[];});
  const times=lines.filter(l=>/(?:OPEN|START|開場|開演|営業時間|終演|show).*\d{1,2}[:：]\d{2}/i.test(l)).slice(0,6);
  const prices=lines.filter(l=>/[¥￥]\s*[\d,]+|\d[\d,]*\s*円|入場無料|入場料.*無料/i.test(l)).slice(0,10);
  const feeText=prices.join('\n');const amounts=[...feeText.matchAll(/[¥￥]\s*([\d,]+)|([\d,]+)\s*円/g)].map(m=>Number((m[1]||m[2]).replaceAll(',',''))).filter(n=>n>=0&&n<1000000);

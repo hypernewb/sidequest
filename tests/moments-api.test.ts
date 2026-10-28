@@ -23,6 +23,12 @@ test('event-first API reads persisted online and local events, excludes stock an
   const send=(body:unknown,origin='http://localhost')=>mf.dispatchFetch('http://localhost/api/moments',{method:'POST',headers:{Origin:origin},body:JSON.stringify(body)});
   const response=await send({access:'online'}),b=await response.json() as any;assert.equal(response.status,200);assert.deepEqual(b.items.map((o:any)=>o.id),['global:live']);
   const local=await (await send({access:'tokyo'})).json() as any;assert.deepEqual(local.items.map((o:any)=>o.id),['local']);
+  const capped=await (await send({context:{budget:1000,unknownPrice:false}})).json() as any;assert.deepEqual(capped.items,[]);
+  const contextAccess=await (await send({context:{access:'online'}})).json() as any;assert.deepEqual(contextAccess.items.map((o:any)=>o.id),['global:live']);
+  const passed=await (await send({context:{reactions:[{id:'local',action:'pass',reason:'unknown'}]}})).json() as any;assert.deepEqual(passed.items.map((o:any)=>o.id),['global:live']);
+  const passiveSeen=await (await send({access:'tokyo',context:{reactions:[{id:'local',action:'seen'}]}})).json() as any;assert.deepEqual(passiveSeen.items.map((o:any)=>o.id),['local']);
+  const explicitSeen=await (await send({access:'tokyo',context:{reactions:[{id:'local',action:'seen',reason:'seen'}]}})).json() as any;assert.deepEqual(explicitSeen.items,[]);
+  const calibration=await (await send({cachedOnly:true,context:{direction:'art',tags:[{id:'editorial:photography',name:'Photography',weight:1}]}})).json() as any;assert.equal(calibration.qloo.status,'cached-only');assert.equal(calibration.scout.status,'skipped');assert.equal(calibration.items.length,2);
   assert.equal((await send({access:'anywhere'})).status,400);assert.equal((await send({},'https://evil.example')).status,403);
  }finally{await mf.dispose();}
 });
