@@ -2,9 +2,8 @@ import {env} from 'cloudflare:workers';
 import {z} from 'zod';
 import {tokyoDate,validVisitDate} from '@/lib/discovery';
 import {scoutCurated} from '@/lib/curated-scout';
-import {catalogForQuest} from '@/lib/catalog';
+import {catalogItems} from '@/lib/catalog';
 import {QUEST_FOCUS,focusQuestion} from '@/lib/quest-focus';
-import {artistAffinities} from '@/lib/artist-matching';
 import {reportRun,type RunEvent,type RunMessage,type RunHooks,type QuestReply} from '@/lib/quest-run';
 import {toolResolveEntity,toolSynthesizeQuest} from '@/lib/agent-tools';
 import {venueById} from '@/lib/curated-venues';
@@ -23,10 +22,12 @@ export async function POST(req:Request){
   if(!resolve.seed)return {choices:resolve.choices,message:resolve.message};
   const seed=resolve.seed;
   if(data.askFollowup)return {question:focusQuestion(seed),resolved:{id:seed.id,name:seed.name,type:seed.type}};
-  const catalog=await catalogForQuest(message=>reportRun(hooks,'taste','running',message)).catch(()=>({items:[],refreshed:false,unavailable:true}));
-  let records=catalog.items;
+  // The scheduled catalog owns refresh and artist reconciliation. A walking
+  // request reads its snapshot instead of waiting for a city-wide source crawl.
+  const records=await catalogItems().catch(()=>[]);
+  const catalog={unavailable:records.length===0};
+  if(!records.length)reportRun(hooks,'taste','running','No dated catalog snapshot is available. Planning from curated places; current event leads may be missing.');
   const preferences={intent:'mix' as const,direction:'any',format:'places' as const,date:data.date||tokyoDate(),days:1 as const,budget:data.budget,unknownPrice:data.unknownPrice,seeds:[{id:seed.id,name:seed.name,type:seed.type,feeling:'love' as const}],exclude:data.exclude};
-  if(records.some(o=>o.artists?.length)){reportRun(hooks,'taste','running','Qloo /v2/insights · checking resolved artists from the event catalog.');records=await artistAffinities(records,preferences,env.QLOO_API_KEY!);}
   const run=(exclude:string[])=>scoutCurated({...preferences,exclude},env.QLOO_API_KEY!,seed,new Date(),!data.date,hooks,{focus:data.focus,records,reportedClosed:data.reportedClosed});
   const plan=await run([...new Set([...data.exclude,...data.reportedClosed])]);
   return toolSynthesizeQuest({plan,seed,records,unavailableCatalog:catalog.unavailable,budget:data.budget,focus:data.focus,preferences,events,hooks});

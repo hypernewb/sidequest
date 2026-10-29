@@ -6,6 +6,10 @@ Catch it while it's here.
 
 SideQuest now starts with time-limited events and drops. Discover a listening party, gig, pop-up, exhibition or timed order window, in person or online. Qloo connects named interests to source evidence. Permanent venues and ordinary stock listings stay outside the main feed. Tokyo walking quests remain at `/quests`.
 
+## Final release check
+
+The 29 October check passed 269 automated tests, TypeScript and live feed, taste and route checks. The current snapshot contained 341 eligible timed finds from 24 sources. Nujabes and Iron Maiden shared none of their top six; Nintendo still had weaker direct coverage. The agent excluded a visitor-reported closed stop and returned a replacement route. Read [the final review](evaluation/FINAL-REVIEW.md), [live results](evaluation/FINAL-LOCAL.json) and [updated two-minute script](DEMO.md). These checks do not establish a human-quality lift.
+
 ## Start with events and drops
 
 Browse immediately, tell a short story at `/taste`, or enter an artist, film, game or brand. Use Events, Limited drops, Online only or Tokyo in person. Exact online event times and order deadlines use the browser's timezone. Date-only listings retain organiser dates.

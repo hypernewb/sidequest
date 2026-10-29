@@ -4,14 +4,14 @@ export type LoreName={query:string;weight?:number;phrase?:string};
 // This recognises explicit preference wording, not personality or motivation.
 // Every suggested name and strength is reviewed before it becomes an interest.
 const attitudes:{pattern:RegExp;weight:number}[]=[
- {pattern:/\b(?:don['’]?t|do not|never)\s+(?:really\s+)?(?:like|love|enjoy|listen to)\b|\b(?:not (?:really )?into|not a fan of|dislike|hate|avoid|can['’]?t stand)\b/i,weight:-1},
+ {pattern:/\b(?:don['’]?t|do not|never)\s+(?:really\s+)?(?:like|love|enjoy|listen to)\b|\b(?:not (?:really )?(?:into|interested in)|not a fan of|dislike|hate|avoid|can['’]?t stand)\b/i,weight:-1},
  {pattern:/\b(?:used to (?:love|like|listen to|be into)|grew up (?:with|on)|no longer (?:like|love|listen to|into)|over it)\b/i,weight:0},
  {pattern:/\b(?:obsessed (?:with|by)|love|adore|all[ -]time favou?rite|my favou?rite|on repeat|can['’]?t get enough of)\b/i,weight:1},
  {pattern:/\b(?:curious about|want to (?:try|explore|discover)|getting into|occasionally (?:listen to|enjoy)|sometimes (?:listen to|enjoy))\b/i,weight:.4},
  {pattern:/\b(?:like|enjoy|listen to|a fan of|into)\b/i,weight:.65}
 ];
 export function parseTasteLore(raw:string){
- const text=raw.normalize('NFKC').slice(0,2000),quoted:string[]=[];
+ const text=raw.normalize('NFKC').replace(/[’‘]/g,"'").slice(0,2000),quoted:string[]=[];
  const protectedText=text.replace(/["“「]([^"”」\n]{2,100})["”」]/g,(_,name)=>'LOREREF'+(quoted.push(name.trim())-1));
  const clauses=protectedText.split(/[\n;.!?]+|\s+but\s+|\s+(?:and|while)\s+(?=(?:I\s+)?(?:like|love|hate|enjoy|used to|am |I'm |curious|not |don['’]?t|want to|occasionally))|,\s*(?=(?:I\s+|I'm\s+|not\s+|used to\s+|love\s+|like\s+))/i);
  const names:LoreName[]=[];

@@ -30,6 +30,9 @@ export function interestMatch(o:Opportunity,seed:{id:string;name:string;type:str
  // Music genre metadata only qualifies performances or music places, not merchandise named after a band.
  if(artist&&!['gig','place','event'].includes(o.kind)&&!(o.kind==='release'&&/\bvinyl\b|\brecord\b/i.test(o.category)))return null;
  const overlap=culturalOverlap([...tasteThreads(evidence).keys()],threads).filter(t=>t.weight>=.75);
+ // "Experimental" spans jazz, electronic music and extreme metal. On its own
+ // it cannot establish a specific style connection between two performers.
+ if(artist&&overlap.length&&overlap.every(t=>t.name==='experimental'))return {strength:2,reason:'Broad experimental connection only; no shared musical style established.',kind:'genre' as const};
  const specific=overlap.filter(t=>!['rock','indie'].includes(t.name));
  if(artist&&!specific.length&&[...threads.keys()].some(t=>['metal','jazz','hiphop','soul','ambient','electronic'].includes(t)))return null;
  if(overlap.length){

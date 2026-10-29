@@ -97,7 +97,7 @@ test('incidental company biography books do not turn a listening party into an o
 });
 test('a game-brand seed alone does not label artist-only graph alternatives as a personal match',()=>{
  const rows=selectMoments([item(1,{qlooEvidence:[evidence(1)]})],{...p,seeds:[{id:id(999),name:'Nintendo',type:'brand',feeling:'love'}]},'all','all','for-you',now);
- assert.equal(rows[0].discovery,'wildcard');assert.ok(rows[0].reasons?.some(r=>r.startsWith('Weak cross-domain')));
+ assert.equal(rows[0].discovery,'wildcard');assert.ok(rows[0].reasons?.some(r=>r.startsWith('Weak cross-domain')));assert.equal(rows[0].score,1,'An unsupported music association must not retain a ranking boost');
 });
 test('graph-discovered source identities survive rotating enrichment and keep positive feedback effective',async()=>{
  const cache=new Map(),read=async(k:string)=>cache.get(k),write=async(k:string,v:any)=>{cache.set(k,v);};

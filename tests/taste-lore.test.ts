@@ -30,6 +30,9 @@ test('unknown strength requires a review and quoted multiword names survive list
  assert.deepEqual(parseTasteLore('I love "Belle and Sebastian" and "J Dilla".').map(r=>r.query),['Belle and Sebastian','J Dilla']);
  assert.equal(parseTasteLore('')[0],undefined);
 });
+test('phone smart apostrophes and not-interested wording retain the right names and strengths',()=>{
+ assert.deepEqual(parseTasteLore('I’m obsessed with Nujabes. I’m curious about Björk. I am not interested in Radiohead.').map(r=>[r.query,r.weight]),[['Nujabes',1],['Björk',.4],['Radiohead',-1]]);
+});
 test('strength survives browser persistence, including zero and negatives; legacy feelings still work',()=>{
  const data=new Map<string,string>(),storage={getItem:(k:string)=>data.get(k)||null,setItem:(k:string,v:string)=>{data.set(k,v);}};
  writeBrowserTasteProfile(storage,{seeds:[seed(1,'Nujabes',1),seed(2,'Radiohead',.65),seed(3,'Past favourite',0),seed(4,'Avoided artist',-1)]});

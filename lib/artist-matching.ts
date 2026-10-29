@@ -1,4 +1,5 @@
 import {interestWeight} from './interest-strength.ts';
+import {performerHeading} from './event-detail-parser.ts';
 import {qloo} from './qloo.ts';
 import type {Opportunity,Preferences} from './opportunities';
 import {tasteThreads,culturalOverlap} from './curated-taste.ts';
@@ -25,7 +26,7 @@ export function exactArtist(input:string,items:any[]):ArtistMatch|null{
 }
 export async function matchArtists(items:Opportunity[],key:string,read:(k:string)=>Promise<any>,write:(k:string,v:any)=>Promise<void>){
  const matches=new Map<string,ArtistMatch|null>(),pending:{name:string;n:string}[]=[],upgrade:{n:string;cached:any}[]=[];
- const names=[...new Map(items.flatMap(o=>(o.details?.artists||[]).map(name=>[artistName(name),name] as const))).entries()];
+ const names=[...new Map(items.flatMap(o=>(o.details?.artists||[]).filter(name=>!performerHeading(name)).map(name=>[artistName(name),name] as const))).entries()];
  for(const [n,name] of names){const cached=await read('artist:'+n);if(cached&&Date.now()-cached.at<7*86400000){matches.set(n,cached.match);if(cached.match&&cached.genreSchema!==2)upgrade.push({n,cached});}else if(pending.length<40)pending.push({name,n});}
  // Rehydrate old genre caches in bounded entity batches, not one API call per record.
  for(let i=0;i<upgrade.length;i+=10){const batch=upgrade.slice(i,i+10);try{const b=await qloo('/entities',{entity_ids:batch.map(x=>x.cached.match.id).join(',')},key);for(const x of batch){const e=(Array.isArray(b.results)?b.results:[]).find((e:any)=>String(e.entity_id).toLowerCase()===x.cached.match.id.toLowerCase());const m={...x.cached.match,genres:e?genreTags(e):[]};matches.set(x.n,m);if(e)await write('artist:'+x.n,{...x.cached,match:m,hydrated:true,genreSchema:2});}}catch{for(const x of batch)matches.set(x.n,{...x.cached.match,genres:[]});}}

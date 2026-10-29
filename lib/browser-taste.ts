@@ -1,6 +1,6 @@
 import {z} from 'zod';
 import {preferenceSchema,type Preferences} from './opportunities.ts';
-import {momentsContextSchema,withReaction,type MomentReaction} from './taste-profile.ts';
+import {momentsContextSchema,withReaction,withoutSaveReaction,type MomentReaction} from './taste-profile.ts';
 export type {MomentReaction,MomentTasteContext} from './taste-profile.ts';
 const schema=z.object({seeds:preferenceSchema.innerType().shape.seeds,avoid:z.array(z.string().max(60)).max(20).optional(),context:momentsContextSchema.passthrough().optional()}).passthrough();
 export type BrowserTaste=z.infer<typeof schema>;
@@ -11,4 +11,5 @@ export function writeBrowserTasteProfile(storage:Pick<Storage,'setItem'|'getItem
 export function readBrowserReactions(storage:Pick<Storage,'getItem'>):MomentReaction[]{return readBrowserTaste(storage)?.context?.reactions||[];}
 export function writeBrowserReactions(storage:Pick<Storage,'getItem'|'setItem'>,reactions:MomentReaction[]){const prior=readBrowserTaste(storage)||{seeds:[],avoid:[]};writeBrowserTasteProfile(storage,{...prior,context:momentsContextSchema.parse({...prior.context,reactions:reactions.slice(-100)})});}
 export function appendBrowserReaction(storage:Pick<Storage,'getItem'|'setItem'>,reaction:MomentReaction){const prior=readBrowserTaste(storage)||{seeds:[],avoid:[]};writeBrowserTasteProfile(storage,{...prior,context:withReaction(prior.context||{tags:[],reactions:[]},reaction)});}
+export function removeBrowserSaveReaction(storage:Pick<Storage,'getItem'|'setItem'>,id:string){const prior=readBrowserTaste(storage);if(prior?.context)writeBrowserTasteProfile(storage,{...prior,context:withoutSaveReaction(prior.context,id)});}
 export function clearBrowserTasteProfile(storage:Pick<Storage,'removeItem'>){storage.removeItem(TASTE_KEY);}

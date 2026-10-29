@@ -23,3 +23,4 @@ export function withReaction(context:MomentTasteContext,reaction:MomentReaction)
  const next=momentReactionSchema.parse(reaction);
  return {...context,reactions:[...context.reactions.filter(r=>r.id!==next.id),next].slice(-100)};
 }
+export function withoutSaveReaction(context:MomentTasteContext,id:string):MomentTasteContext{return {...context,reactions:context.reactions.filter(r=>r.id!==id||r.action!=='save')};}

@@ -1,4 +1,5 @@
 import type {Opportunity} from './opportunities.ts';
+import {performerHeading} from './event-detail-parser.ts';
 export const hasJapanese=(text:string)=>/[\u3040-\u30ff\u3400-\u9fff]/.test(text);
 export function catalogPreview(o:Opportunity){
  if(o.englishDescription?.trim())return {text:o.englishDescription,label:'English description',original:hasJapanese(o.description)};
@@ -9,7 +10,7 @@ export function catalogPreview(o:Opportunity){
  if(!hasJapanese(o.description))return {text:o.description,label:'',original:false};
  const parts:string[]=[];
  if(o.kind==='gig'){
-  const artists=d?.artists.filter(n=>!/@|\bbookings\b|^INFO(?:RMATION)?$/i.test(n))||[];
+  const artists=d?.artists.filter(n=>!performerHeading(n)&&!/@|\bbookings\b|^INFO(?:RMATION)?$/i.test(n))||[];
   if(artists.length)parts.push('Lineup: '+artists.slice(0,8).join(' · ')+(artists.length>8?' · more on the official page':'')+'.');
   if(d?.genres.length)parts.push('Published genres: '+d.genres.map(g=>g.name).join(', ')+'.');
   if(!parts.length)parts.push('Live music listing. Artist and genre details have not been extracted.');

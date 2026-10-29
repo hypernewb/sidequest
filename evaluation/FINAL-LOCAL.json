@@ -1,0 +1,427 @@
+{
+  "checkedAt": "2026-10-29T13:12:18.779Z",
+  "environment": "local Workers preview",
+  "scope": "Functional final check with live provider evidence and current persisted official inventory. No visitor profile edits, satisfaction scores or quality-lift claim.",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/taste",
+      "status": 200
+    },
+    {
+      "path": "/stumble",
+      "status": 200
+    },
+    {
+      "path": "/quests",
+      "status": 200
+    },
+    {
+      "path": "/classic",
+      "status": 200
+    }
+  ],
+  "filters": [
+    {
+      "access": "online",
+      "category": "all",
+      "total": 121
+    },
+    {
+      "access": "tokyo",
+      "category": "events",
+      "total": 220
+    },
+    {
+      "access": "all",
+      "category": "drops",
+      "total": 20
+    }
+  ],
+  "profiles": [
+    {
+      "name": "Nujabes",
+      "total": 341,
+      "milliseconds": 2102,
+      "qloo": {
+        "status": "ready",
+        "mappedItems": 91,
+        "scoredEntities": 121,
+        "positiveSignals": [
+          {
+            "id": "E11125AF-936B-4935-B607-F2DA2E6A6B92",
+            "name": "Nujabes",
+            "weight": 1
+          }
+        ]
+      },
+      "top": [
+        {
+          "id": "global:https://mosesboyd.bandcamp.com/live/songs-for-sinners-listening-party",
+          "title": "Songs For Sinners Listening Party",
+          "source": "Bandcamp listening parties",
+          "kind": "event",
+          "discovery": "adjacent",
+          "score": 6.890756302521009,
+          "reasons": [
+            "Broad jazz connection; no exact subgenre overlap established. · Nujabes is a favourite",
+            "Qloo taste association with Moses Boyd from Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "www:https://www-shibuya.jp/schedule/020018.php#2026-10-29",
+          "title": "Tadequi/Trooper Salute/MIZ-Tadequi presents \"Delta\"",
+          "source": "WWW / WWW X",
+          "kind": "gig",
+          "discovery": "adjacent",
+          "score": 6.739495798319328,
+          "reasons": [
+            "Broad jazz connection; no exact subgenre overlap established. · Nujabes is a favourite",
+            "Qloo taste association with MIZ from Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "ufo:2026-10-31",
+          "title": "【kihito+migon Presents HALLOWEEN NIGHTMARE】",
+          "source": "U.F.O.CLUB",
+          "kind": "gig",
+          "discovery": "adjacent",
+          "score": 6.067226890756302,
+          "reasons": [
+            "Broad ambient connection; no exact subgenre overlap established. · Nujabes is a favourite",
+            "Qloo taste association with Yuko Araki from Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/15199/:2026-11-24",
+          "title": "KOTA THE FRIEND “JUST HAPPY TO BE HERE! “JAPAN TOUR 2026 – HEADLINE SHOW",
+          "source": "UNIT / SALOON",
+          "kind": "gig",
+          "discovery": "adjacent",
+          "score": 7.983193277310924,
+          "reasons": [
+            "Broad jazz connection; no exact subgenre overlap established. · Nujabes is a favourite",
+            "Qloo taste association with KOTA the Friend from Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "livehouse:https://www.fever-popo.com/schedule/2026/11/1118.html#2026-11-11",
+          "title": "The oral cigarettes presents \"wander about wandering tour 2026 Kanto Edition\" — the oral cigarettes TYOSiN",
+          "source": "Shindaita FEVER",
+          "kind": "gig",
+          "discovery": "adjacent",
+          "score": 7.815126050420168,
+          "reasons": [
+            "Broad hiphop connection; no exact subgenre overlap established. · Nujabes is a favourite",
+            "Qloo taste association with TYOSiN from Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/edl2_20261107:2026-11-07",
+          "title": "ELECTRIC DELAY LAND Vol.2",
+          "source": "LIQUIDROOM",
+          "kind": "gig",
+          "discovery": "adjacent",
+          "score": 7.579831932773109,
+          "reasons": [
+            "Broad hiphop connection; no exact subgenre overlap established. · Nujabes is a favourite",
+            "Qloo taste association with Little Tempo from Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Iron Maiden",
+      "total": 341,
+      "milliseconds": 965,
+      "qloo": {
+        "status": "ready",
+        "mappedItems": 91,
+        "scoredEntities": 121,
+        "positiveSignals": [
+          {
+            "id": "BD2CDC36-5306-4213-A817-E7677E029CA6",
+            "name": "Iron Maiden",
+            "weight": 1
+          }
+        ]
+      },
+      "top": [
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/14976/:2026-10-31",
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "source": "UNIT / SALOON",
+          "kind": "gig",
+          "discovery": "adjacent",
+          "score": 8,
+          "reasons": [
+            "Broad metal, rock connection; no exact subgenre overlap established. · Iron Maiden is a favourite",
+            "Qloo taste association with Mark Boals from Iron Maiden. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "global:https://minotaur.bandcamp.com/live/pet-smells-listening-party",
+          "title": "Pet Smells Listening Party",
+          "source": "Bandcamp listening parties",
+          "kind": "event",
+          "discovery": "adjacent",
+          "score": 7.949579831932773,
+          "reasons": [
+            "Broad metal connection; no exact subgenre overlap established. · Iron Maiden is a favourite",
+            "Qloo taste association with Minotaur from Iron Maiden. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/see_20261029:2026-10-29",
+          "title": "SOUND ENERGY EX",
+          "source": "LIQUIDROOM",
+          "kind": "gig",
+          "discovery": "adjacent",
+          "score": 6.890756302521009,
+          "reasons": [
+            "Broad metal connection; no exact subgenre overlap established. · Iron Maiden is a favourite",
+            "Qloo taste association with DeathbyRomy from Iron Maiden. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "www:https://www-shibuya.jp/schedule/020184.php#2026-11-16",
+          "title": "Maison de Queen / ジエメイ / 魔法少女になり隊 / LADYBABY(BAND) / Rolling Quartz / バンドじゃないもん！MAXX NAKAYOSHI — EVERLAND",
+          "source": "WWW / WWW X",
+          "kind": "gig",
+          "discovery": "adjacent",
+          "score": 7.915966386554622,
+          "reasons": [
+            "Broad metal, rock connection; no exact subgenre overlap established. · Iron Maiden is a favourite",
+            "Qloo taste association with LADYBABY from Iron Maiden. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "livehouse:https://www.fever-popo.com/schedule/2026/11/1018.html#2026-11-10",
+          "title": "worthwhile — DC View From The Soyuz 明日の叙景",
+          "source": "Shindaita FEVER",
+          "kind": "gig",
+          "discovery": "adjacent",
+          "score": 7.899159663865547,
+          "reasons": [
+            "Broad metal connection; no exact subgenre overlap established. · Iron Maiden is a favourite",
+            "Qloo taste association with DC from Iron Maiden. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "global:https://cria.bandcamp.com/live/la-herida-listening-party",
+          "title": "La herida Listening Party",
+          "source": "Bandcamp listening parties",
+          "kind": "event",
+          "discovery": "adjacent",
+          "score": 5,
+          "reasons": [
+            "Broad metal connection; no exact subgenre overlap established. · Iron Maiden is a favourite"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nintendo",
+      "total": 341,
+      "milliseconds": 860,
+      "qloo": {
+        "status": "ready",
+        "mappedItems": 91,
+        "scoredEntities": 121,
+        "positiveSignals": [
+          {
+            "id": "FFD31D42-DF50-4B60-932C-7497C8E73A80",
+            "name": "Nintendo",
+            "weight": 1
+          }
+        ]
+      },
+      "top": [
+        {
+          "id": "parco:https://shibuya.parco.jp/event/detail/?id=8975#2026-10-02",
+          "title": "『深夜食堂』と『かもめ食堂』展 フードスタイリスト・ 飯島奈美さん20年の仕事と。",
+          "source": "Shibuya PARCO",
+          "kind": "exhibition",
+          "discovery": "adjacent",
+          "score": 3,
+          "reasons": [
+            "Qloo taste association with Kamome Diner from Nintendo. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "global:https://shook.bandcamp.com/live/arcana-listening-party",
+          "title": "Arcana Listening Party",
+          "source": "Bandcamp listening parties",
+          "kind": "event",
+          "discovery": "wildcard",
+          "score": 1,
+          "reasons": [
+            "Weak cross-domain association only. The source does not establish a connection to your chosen activity."
+          ]
+        },
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/14976/:2026-10-31",
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "source": "UNIT / SALOON",
+          "kind": "gig",
+          "discovery": "wildcard",
+          "score": 1,
+          "reasons": [
+            "Weak cross-domain association only. The source does not establish a connection to your chosen activity."
+          ]
+        },
+        {
+          "id": "release-source:https://www.tokyo-midtown.com/jp/shops/info/popup/:2026-10-02",
+          "title": "[limited time store] craft wonder",
+          "source": "Tokyo Midtown",
+          "kind": "popup",
+          "discovery": "wildcard",
+          "score": 1,
+          "reasons": []
+        },
+        {
+          "id": "expanded:Daikanyama T-Site:https://store.tsite.jp/daikanyama/event/kids/57065-1649380927.html:2026-09-29",
+          "title": "【展示】触って学べる新感覚かるた『爬虫類かるた』",
+          "source": "Daikanyama T-Site",
+          "kind": "exhibition",
+          "discovery": "wildcard",
+          "score": 1,
+          "reasons": []
+        },
+        {
+          "id": "ufo:2026-10-31",
+          "title": "【kihito+migon Presents HALLOWEEN NIGHTMARE】",
+          "source": "U.F.O.CLUB",
+          "kind": "gig",
+          "discovery": "wildcard",
+          "score": 0.9999999999999998,
+          "reasons": [
+            "Weak cross-domain association only. The source does not establish a connection to your chosen activity."
+          ]
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Zero and negative weights remain excluded from positive graph inputs",
+      "passed": true
+    },
+    {
+      "name": "Soonest dates and deadlines are chronological",
+      "passed": true
+    },
+    {
+      "name": "Invalid preference strength rejected",
+      "passed": true
+    }
+  ],
+  "catalog": {
+    "total": 341,
+    "sources": 24,
+    "kinds": {
+      "gig": 152,
+      "exhibition": 15,
+      "event": 110,
+      "popup": 44,
+      "release": 20
+    }
+  },
+  "agent": {
+    "milliseconds": 6712,
+    "stages": [
+      "resolve",
+      "taste",
+      "operations",
+      "cluster",
+      "synthesis"
+    ],
+    "date": "2026-10-30",
+    "stops": [
+      {
+        "id": "3AAD60F0-FA59-4B54-8BF3-16DD19B815A8",
+        "name": "Hi-Fi Record Store",
+        "arrival": "16:00",
+        "hours": "12:00–19:00"
+      },
+      {
+        "id": "F740AA78-0D92-44F9-B0ED-BA7092306F45",
+        "name": "HMV record shop Shibuya",
+        "arrival": "17:01",
+        "hours": "11:00–21:00"
+      },
+      {
+        "id": "5A623B12-EBF8-4215-A57C-7CA071EF5030",
+        "name": "Bar Music",
+        "arrival": "18:02",
+        "hours": "18:00–24:00"
+      }
+    ],
+    "title": "Shibuya, from sleeve to sound",
+    "replan": {
+      "basis": "Visitor-reported closure, simulated for this check. Not an organiser closure announcement.",
+      "excluded": "Hi-Fi Record Store",
+      "date": "2026-10-30",
+      "stops": [
+        "Record Station",
+        "Pianola Records",
+        "Little Soul Cafe"
+      ],
+      "changes": [
+        {
+          "venue": "Hi-Fi Record Store",
+          "basis": "visitor_report",
+          "reason": "You reported this stop closed. Excluded from this plan; not an official closure notice.",
+          "before": [],
+          "after": [
+            "Record Station",
+            "Pianola Records",
+            "Little Soul Cafe"
+          ]
+        },
+        {
+          "venue": "Manhattan Records",
+          "basis": "source_unavailable",
+          "reason": "The official page could not be read. This does not establish a closure.",
+          "before": [
+            "Manhattan Records",
+            "HMV record shop Shibuya",
+            "Bar Music"
+          ],
+          "after": [
+            "Record Station",
+            "Pianola Records",
+            "Little Soul Cafe"
+          ]
+        }
+      ],
+      "milliseconds": 5410
+    }
+  },
+  "overlap": [
+    {
+      "profiles": [
+        "Nujabes",
+        "Iron Maiden"
+      ],
+      "sharedTopSix": 0
+    },
+    {
+      "profiles": [
+        "Nujabes",
+        "Nintendo"
+      ],
+      "sharedTopSix": 1
+    },
+    {
+      "profiles": [
+        "Iron Maiden",
+        "Nintendo"
+      ],
+      "sharedTopSix": 1
+    }
+  ]
+}

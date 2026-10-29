@@ -62,6 +62,11 @@ test('music genre matches can surface vinyl but cannot turn a band t-shirt into 
  assert.equal(interestMatch(o,seed)?.kind,'genre');assert.equal(interestMatch({...o,category:'fashion t-shirt'},seed),null);
  const p:Preferences={intent:'collect',direction:'characters',format:'drops',date:'2026-10-25',days:30,budget:'any',unknownPrice:true,seeds:[],exclude:[]};assert.equal(rankOpportunities([o],p,now).length,0);
 });
+test('a generic experimental tag is not a strong Radiohead-to-metal style match',()=>{
+ const seed={id:'00000000-0000-4000-8000-000000000001',name:'Radiohead',type:'artist',taste:[{name:'Alternative Rock',weight:1},{name:'Experimental',weight:1}]};
+ const o={...gig('Knosis'),details:extractEventDetails('Genre: experimental metal','https://www.liquidroom.net/schedule/knosis',at)};
+ const match=interestMatch(o,seed);assert.equal(match?.kind,'genre');assert.ok(match!.strength<=2);assert.ok(match!.reason.includes('no shared musical style'));
+});
 test('Seoul and festival names cannot fabricate soul or rock genres',()=>{
  const d=extractEventDetails('KIRARAはソウルを拠点とするエレクトロニック・ミュージシャン。\nPENTAPORT ROCK FESTIVALとFUJI ROCK FESTIVALに出演。\nテクノとアンビエントを融合。','https://www.liquidroom.net/schedule/kirara',at);
  assert.ok(d.genres.some(g=>g.name==='electronic'));assert.ok(d.genres.some(g=>g.name==='ambient'));assert.ok(!d.genres.some(g=>['soul','rock'].includes(g.name)));
