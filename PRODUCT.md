@@ -111,3 +111,7 @@ Qloo candidate matching now retains affinity and contributor evidence, handles b
 ## Visual comparisons update
 
 The entry at /stumble and the /taste route now use real visual comparisons instead of the old six-round interview. The first choice is useful immediately, and the next pair adapts locally. Current-session choices remain distinct from explicit kept interests. Single-find mode remains available. See evaluation/DISCOVERY-PLAY.md for scope and verification. The established paper, red and editorial style remains.
+
+## Map, day planning and visit ratings, 30 October 2026
+
+The home feed adds All finds, Map & plan and Been & rated controls, a grouped Google map with fallback, and a browser-local day of up to five ordered stops with a date, optional times and Google route links. Visitors can record one 1-to-5 enjoyment rating, edit it and forget visit history. Quest stops share these ratings and offer an explicit action to replace My day. Replacement removes the previous planned intent while preserving actual visits. Positive ratings contribute trusted server-known identities to Qloo; negative feedback remains bounded within local and curated ranking. The existing paper, red, moss and serif system remains. The finish reviewer disposition is ship, with browser and automated checks verified in the implementation task. See `.impeccable/journey-finish.md` for review evidence and documentation drift. No human satisfaction or benchmark lift is established.

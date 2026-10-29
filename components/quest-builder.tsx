@@ -1,8 +1,9 @@
 'use client';
+import {QuestDayActions,QuestStopRating} from './quest-day-actions';
 import {useEffect,useRef,useState} from 'react';
 import type {Quest} from '@/lib/quests';
 import {routeDistance,nextLeg} from '@/lib/quest-presentation';
-import {writeBrowserTaste} from '@/lib/browser-taste';
+import {readBrowserTaste,writeBrowserTaste} from '@/lib/browser-taste';
 import {focusLabels,focusQuestion,type QuestFocus} from '@/lib/quest-focus';
 import type {EventLead} from '@/lib/quest-event-matching';
 import QuestRun from './quest-run';
@@ -62,7 +63,8 @@ export default function QuestBuilder(){
    const old=quest;
    setQuest(null);
    try{
-     const r=await fetch('/api/quests',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/x-ndjson'},body:JSON.stringify({seed,choice,askFollowup:selectedFocus===undefined,focus:selectedFocus,date:date||undefined,budget,unknownPrice:unknown,exclude:another?old?.stops.map(s=>s.item.id):[],reportedClosed:closed}),signal:c.signal});
+     let taste;try{taste=readBrowserTaste(localStorage)?.context;}catch{}
+     const r=await fetch('/api/quests',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/x-ndjson'},body:JSON.stringify({seed,choice,taste,askFollowup:selectedFocus===undefined,focus:selectedFocus,date:date||undefined,budget,unknownPrice:unknown,exclude:another?old?.stops.map(s=>s.item.id):[],reportedClosed:closed}),signal:c.signal});
      const b=await readQuestRun(r,event=>{if(!c.signal.aborted)setEvents(v=>[...v,event].slice(-160));});
      if(!c.signal.aborted){
        if(b.quest?.seed){try{writeBrowserTaste(localStorage,[{id:b.quest.seed.id,name:b.quest.seed.name,type:b.quest.seed.type,feeling:'love'}]);}catch{}}
@@ -220,6 +222,7 @@ export default function QuestBuilder(){
 
            {s.programme&&<p><a href={safeUrl(s.programme.url)||undefined} target="_blank" rel="noreferrer">{s.programme.title} ↗</a> · {s.programme.start}–{s.programme.end} · {englishPrice(s.programme.priceLabel)}</p>}
            <p className="quest-address">{s.item.location}</p>
+           <QuestStopRating item={s.item}/>
            <p className="quest-door"><a href={safeUrl(s.item.url)||undefined} target="_blank" rel="noreferrer">Venue & programme ↗</a><span>{s.hours} JST · {s.item.curation?.hoursBasis||'Weekly hours'}</span></p>
            
            {!showSaved&&<button disabled={busy} onClick={()=>void dispatch(q.seed.id,false,focus||'any',s.item.id)}>Closed? Replan without this stop</button>}
@@ -241,6 +244,7 @@ export default function QuestBuilder(){
        {q.returnMinutes? <p className="quest-return">After the last stop, allow about {q.returnMinutes} minutes back to the start{q.returnTransit?` by the ${q.returnTransit}`:''}.</p>:null}
 
        <div className="outing-actions">
+         {q.stops.length>0&&<QuestDayActions quest={q}/>}
          {q.map&&<a className="quest-route-button" href={safeUrl(q.map)||undefined} target="_blank" rel="noreferrer">Open Route in Google Maps →</a>}
          {q.stops.length>0&&<>
            <button className="quest-share-button" onClick={()=>share(q)}>Share Quest</button>

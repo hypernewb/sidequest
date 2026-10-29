@@ -1,59 +1,179 @@
 'use client';
-import {useEffect,useRef,useState} from 'react';
+
+import {useEffect,useMemo,useRef,useState} from 'react';
+
+import {JourneyPlanner} from './journey-planner';
+
+import {MomentMap} from './moment-map';
+
+import {VisitRating} from './visit-rating';
+
+import {tokyoDate} from '@/lib/discovery';
+
+import {JOURNEY_KEY,VISITS_KEY,JOURNEY_LIMIT,journeyItem,readJourney,readVisits,googlePlace,type Journey,type JourneyItem,type Visit} from '@/lib/journey';
+
 import {interestSummary} from '@/lib/interest-strength';
-import {readBrowserTaste,writeBrowserTaste,appendBrowserReaction,removeBrowserSaveReaction,TASTE_KEY} from '@/lib/browser-taste';
+
+import {readBrowserTaste,writeBrowserTaste,writeBrowserTasteProfile,appendBrowserReaction,removeBrowserSaveReaction,TASTE_KEY} from '@/lib/browser-taste';
+
 import {withReaction,withoutSaveReaction,type MomentReaction,type MomentTasteContext} from '@/lib/taste-profile';
+
 import {readDiscoverySession,activeDiscoveryContext,DISCOVERY_SESSION_KEY} from '@/lib/discovery-session';
+
 import {TASTE_DRAFT_KEY} from '@/lib/taste-game';
+
 import {catalogTitle} from '@/lib/catalog-labels';
+
 import {catalogPreview} from '@/lib/catalog-preview';
+
 import type {Opportunity,Preferences} from '@/lib/opportunities';
+
 import type {MomentAccess,MomentCategory} from '@/lib/moments';
+
 import {englishPrice} from '@/lib/event-english';
+
 import '@/app/opportunities.css';
+
 import '@/app/moments.css';
+import '@/app/journey.css';
+
 type Seed=Preferences['seeds'][number];
+
 type Reply={items:Opportunity[];total:number;seeds:Seed[];tasteAvailable:boolean;qloo?:{status:string;mappedItems:number;catalogItems:number;scoredEntities:number;notes?:string};scout?:{status:string;source?:string;parsed?:number;matched?:number;message?:string};scouting?:{id:string;name:string;type:string;catalogIds:string[];sources:{name:string;url:string;researchUrl:string}[]}[];health:{name:string;count:number;status:string}[];scope:string};
+
 const date=(v:string)=>new Date(v+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+
 function timing(o:Opportunity){
+
  if(o.startsAt&&!o.endsAt)return new Date(o.startsAt).toLocaleString(undefined,{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'});
+
  if(o.endsAt)return 'Closes '+new Date(o.endsAt).toLocaleString(undefined,{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'});
+
  if(o.kind==='release'&&/preorder|order window|lottery window/i.test(o.actionLabel||''))return 'Order window closes '+date(o.end||o.start!);
+
  return o.start===o.end?date(o.start!):`${date(o.start!)} – ${date(o.end||o.start!)}`;
+
 }
+
 export default function MomentFeed(){
+
  const [reload,setReload]=useState(0);
+
  const [context,setContext]=useState<MomentTasteContext>(),[avoid,setAvoid]=useState<string[]>([]);
+
  const [ready,setReady]=useState(false),[seeds,setSeeds]=useState<Seed[]>([]),[query,setQuery]=useState(''),[choices,setChoices]=useState<Seed[]>([]),[searching,setSearching]=useState(false),[access,setAccess]=useState<MomentAccess>('all'),[category,setCategory]=useState<MomentCategory>('all'),[sort,setSort]=useState('for-you'),[reply,setReply]=useState<Reply>(),[busy,setBusy]=useState(true),[error,setError]=useState(''),[saved,setSaved]=useState<Opportunity[]>([]),[showSaved,setShowSaved]=useState(false),[limit,setLimit]=useState(12),[notice,setNotice]=useState('');
+
+ const [journey,setJourney]=useState<Journey>({date:tokyoDate(),entries:[]}),[visits,setVisits]=useState<Visit[]>([]),[view,setView]=useState<'list'|'map'|'visits'>('list');
+
  const lookup=useRef<AbortController|null>(null);
+
+ useEffect(()=>{try{setJourney(readJourney(localStorage,tokyoDate()));setVisits(readVisits(localStorage));}catch{setNotice('Your day and ratings can be kept for this session. Browser storage is unavailable.');}},[]);
+
  useEffect(()=>{try{const taste=readBrowserTaste(localStorage);if(taste){setSeeds(taste.seeds);setContext(activeDiscoveryContext(taste.context,readDiscoverySession(sessionStorage)));setAvoid(taste.avoid||[]);if(taste.context?.access)setAccess(taste.context.access);}const rows=JSON.parse(localStorage.getItem('sidequest-moments-v1')||'[]');if(Array.isArray(rows))setSaved(rows.filter(o=>typeof o?.title==='string'&&typeof o?.url==='string'&&o.url.startsWith('https://')).slice(0,100));}catch{setNotice('Browser saves are unavailable this session.');}try{const session=readDiscoverySession(sessionStorage);if(session)setContext(activeDiscoveryContext(readBrowserTaste(localStorage)?.context,session));}catch{}setReady(true);return()=>lookup.current?.abort();},[]);
- useEffect(()=>{if(!ready)return;const c=new AbortController();setBusy(true);setReply(undefined);setError('');setLimit(12);fetch('/api/moments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({seeds,context,avoid,access,category,sort}),signal:c.signal}).then(async r=>{const b=await r.json() as Reply&{error?:string};if(!r.ok)throw Error(b.error||'Could not check the sources.');if(!c.signal.aborted)setReply(b);}).catch(e=>{if(!c.signal.aborted)setError(e.message);}).finally(()=>{if(!c.signal.aborted)setBusy(false);});return()=>c.abort();},[ready,seeds,context,avoid,access,category,sort,reload]);
+
+ useEffect(()=>{if(!ready)return;const c=new AbortController();setBusy(true);setError('');setLimit(12);fetch('/api/moments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({seeds,context,avoid,access,category,sort}),signal:c.signal}).then(async r=>{const b=await r.json() as Reply&{error?:string};if(!r.ok)throw Error(b.error||'Could not check the sources.');if(!c.signal.aborted)setReply(b);}).catch(e=>{if(!c.signal.aborted)setError(e.message);}).finally(()=>{if(!c.signal.aborted)setBusy(false);});return()=>c.abort();},[ready,seeds,context,avoid,access,category,sort,reload]);
+
  function useSeed(s:Seed){const prior=seeds.find(p=>p.id.toLowerCase()===s.id.toLowerCase());const next=[...seeds.filter(p=>p.id.toLowerCase()!==s.id.toLowerCase()),prior||{...s,feeling:'love' as const,weight:.65}];if(next.length>8){setNotice('Your taste has eight interests. Edit your taste to make room for another.');return;}setSeeds(next);setChoices([]);setQuery('');setShowSaved(false);try{writeBrowserTaste(localStorage,next);}catch{setNotice('Taste kept for this session.');}}
+
  async function search(e:React.FormEvent){e.preventDefault();lookup.current?.abort();const c=new AbortController();lookup.current=c;setSearching(true);setError('');setChoices([]);try{const r=await fetch('/api/search?q='+encodeURIComponent(query.trim()),{signal:c.signal}),b=await r.json() as {interests?:Seed[];error?:string};if(!r.ok)throw Error(b.error||'Name search failed.');if(c.signal.aborted)return;const found=(b.interests||[]) as Seed[];if(found.length===1)useSeed(found[0]);else if(found.length)setChoices(found.slice(0,6));else setError('No exact name found. Try another artist, film, game or brand, or browse everything.');}catch(e){if(!c.signal.aborted)setError(e instanceof Error?e.message:'Try another name.');}finally{if(!c.signal.aborted)setSearching(false);}}
+
  function react(o:Opportunity,action:MomentReaction['action']){const reaction:MomentReaction={id:o.id,action,at:new Date().toISOString()};setContext(v=>withReaction(v||{tags:[],reactions:[]},reaction));try{appendBrowserReaction(localStorage,reaction);}catch{setNotice('This choice is kept for this session.');}setNotice(action==='more'?'Looking for more with this cultural connection.':action==='pass'?'Hidden this find. Other choices will reflect your feedback.':'Recorded your choice.');}
+
  function save(o:Opportunity){const removing=saved.some(s=>s.id===o.id),next=removing?saved.filter(s=>s.id!==o.id):[o,...saved].slice(0,100);setSaved(next);const reaction:MomentReaction={id:o.id,action:'save',at:new Date().toISOString()};setContext(v=>removing?withoutSaveReaction(v||{tags:[],reactions:[]},o.id):withReaction(v||{tags:[],reactions:[]},reaction));try{localStorage.setItem('sidequest-moments-v1',JSON.stringify(next));if(!removing)appendBrowserReaction(localStorage,reaction);else removeBrowserSaveReaction(localStorage,o.id);}catch{setNotice('Saved for this session. Browser storage is unavailable.');}}
+
  function clearTaste(){setSeeds([]);setContext(undefined);setAvoid([]);setAccess('all');try{localStorage.removeItem(TASTE_KEY);localStorage.removeItem(TASTE_DRAFT_KEY);sessionStorage.removeItem(DISCOVERY_SESSION_KEY);}catch{}setNotice('Taste cleared. Your saved finds are still here.');}
+
+ function changeJourney(next:Journey){setJourney(next);try{localStorage.setItem(JOURNEY_KEY,JSON.stringify(next));}catch{setNotice('Your day is kept for this session. Browser storage is unavailable.');}}
+
+ function togglePlan(item:JourneyItem){
+
+  const exists=journey.entries.some(e=>e.item.id===item.id);
+
+  if(!exists&&journey.entries.length>=JOURNEY_LIMIT){setNotice('Your day has five finds. Remove one before adding another.');return;}
+
+  changeJourney({...journey,entries:exists?journey.entries.filter(e=>e.item.id!==item.id):[...journey.entries,{item,time:''}]});
+
+  if(exists){const next={...(context||{tags:[],reactions:[]}),reactions:(context?.reactions||[]).filter(r=>r.id!==item.id||r.action!=='planned')};setContext(next);try{const stored=readBrowserTaste(localStorage);if(stored)writeBrowserTasteProfile(localStorage,{...stored,context:{...(stored.context||{tags:[],reactions:[]}),reactions:(stored.context?.reactions||[]).filter(r=>r.id!==item.id||r.action!=='planned')}});}catch{}}
+
+  else react({...item,description:'',checkedAt:new Date().toISOString(),price:null,priceLabel:'',availability:''},'planned');
+
+  setNotice(exists?'Removed from your day. This is not a dislike.':'Added to your day. A light preference signal; your enjoyment rating will count more.');
+
+ }
+
+ function rateVisit(item:JourneyItem,rating:number){
+
+  const visit={item,rating,at:new Date().toISOString()},next=[visit,...visits.filter(v=>v.item.id!==item.id)].slice(0,100);setVisits(next);
+
+  const reaction:MomentReaction={id:item.id,action:'visit',rating,at:visit.at};setContext(v=>withReaction(v||{tags:[],reactions:[]},reaction));
+
+  try{localStorage.setItem(VISITS_KEY,JSON.stringify(next));appendBrowserReaction(localStorage,reaction);setNotice(`Enjoyment saved · ${rating}/5. Updating your finds. Your named interests stay editable.`);}catch{setNotice('Rating applies this session. Browser storage is unavailable.');}
+
+ }
+
+ function forgetVisit(item:JourneyItem){setVisits(v=>v.filter(r=>r.item.id!==item.id));setContext(v=>v?{...v,reactions:v.reactions.filter(r=>r.id!==item.id||r.action!=='visit')}:v);try{localStorage.setItem(VISITS_KEY,JSON.stringify(visits.filter(v=>v.item.id!==item.id)));const stored=readBrowserTaste(localStorage);if(stored?.context)writeBrowserTasteProfile(localStorage,{...stored,context:{...stored.context,reactions:stored.context.reactions.filter(r=>r.id!==item.id||r.action!=='visit')}});setNotice('Visit and its enjoyment signal removed.');}catch{setNotice('Removed for this session. Browser storage is unavailable.');}}
+
  const personalized=!!seeds.length||!!context?.tags.length||!!context?.reactions.length||!!context?.direction;
- const items=showSaved?saved:busy?[]:reply?.items||[];
+
+ const items=showSaved?saved:reply?.items||[];
+
+ const mapItems=useMemo(()=>[...new Map([...items.map(journeyItem),...journey.entries.map(e=>e.item)].map(o=>[o.id,o])).values()],[items,journey.entries]);
+
+ const plannedIds=useMemo(()=>journey.entries.map(e=>e.item.id),[journey.entries]);
+
  const titleIds=items.slice(0,limit).filter(o=>!o.englishTitle&&/[\u3040-\u30ff\u3400-\u9fff]/.test(o.title)).slice(0,8).map(o=>o.id).join('\n');
+
  useEffect(()=>{if(!titleIds)return;const c=new AbortController();fetch('/api/catalog',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'translate_titles',ids:titleIds.split('\n')}),signal:c.signal}).then(r=>r.ok?r.json() as Promise<{items:{id:string;title:string;englishTitle:string}[]}>:Promise.reject()).then(b=>{if(c.signal.aborted||!b.items.length)return;setReply(v=>v?{...v,items:v.items.map(o=>{const t=b.items.find(t=>t.id===o.id&&t.title===o.title);return t?{...o,englishTitle:t.englishTitle}:o;})}:v);}).catch(()=>{});return()=>c.abort();},[titleIds]);
- return <div className="outing moment-page"><header><a className="outing-logo" href="/">SideQuest<span>.</span></a><nav>{showSaved&&<button onClick={()=>setShowSaved(false)}>Discover</button>}<button aria-pressed={showSaved} onClick={()=>setShowSaved(v=>!v)}>Saved ({saved.length})</button><a href="/taste">Your taste</a><a href="/stumble">Stumble</a></nav></header><main>
+
+ return <div className="outing moment-page"><header><a className="outing-logo" href="/">SideQuest<span>.</span></a><nav>{showSaved&&<button onClick={()=>setShowSaved(false)}>Discover</button>}<button aria-pressed={showSaved} onClick={()=>setShowSaved(v=>!v)}>Saved ({saved.length})</button><a href="/taste">Your taste</a><a href="/stumble">Stumble</a><a href="#my-day" onClick={()=>setView('map')}>My day ({journey.entries.length})</a></nav></header><main>
+
   <h1>{showSaved?'Worth keeping an eye on.':<>Catch it <em>while it’s here.</em></>}</h1>
+
   <p className="outing-intro">Listening parties, small gigs, pop-ups and timed drops. Go out for it, join online, or catch the order window.</p>
+
   {!showSaved&&<><div className="moment-start"><a className="primary" href="/stumble">Stumble into something</a><a href="/taste">{personalized?'Edit your interests & strengths':'Tell us what you love'}</a></div><details className="moment-personalize"><summary>{personalized?'Your taste · '+(context?.tags.slice(0,3).map(t=>t.name).join(', ')||interestSummary(seeds)||'Learning from your choices'):'Already have a favourite? Add its name'}</summary><p><a href="/taste">Tell your story or change how much each interest matters</a></p><form className="moment-taste" onSubmit={search}><label htmlFor="moment-seed">Add an artist, film, game or brand</label><div><input id="moment-seed" placeholder="An artist, film, game or brand" value={query} maxLength={100} onChange={e=>setQuery(e.target.value)}/><button className="primary" disabled={searching||query.trim().length<2}>{searching?'Finding the name…':'Add this interest'}</button></div></form>
+
   {choices.length>0&&<div className="moment-choices"><p>Which one did you mean?</p>{choices.map(s=><button key={s.id} onClick={()=>useSeed(s)}>{s.name} · {s.type}</button>)}</div>}
+
   {personalized&&<p className="moment-profile">{seeds.length?'Your interests include '+interestSummary(seeds)+'. ':''}{context?.tags.length?'Following '+context.tags.map(t=>t.name).join(', ')+'. ':''}<button onClick={clearTaste}>Clear my taste</button></p>}
+
   </details><div className="moment-controls"><div role="group" aria-label="Type of opportunity">{([['all','Everything'],['events','Events'],['drops','Limited drops']] as const).map(([id,label])=><button key={id} aria-pressed={category===id} onClick={()=>setCategory(id)}>{label}</button>)}</div><label>Where<select value={access} onChange={e=>setAccess(e.target.value as MomentAccess)}><option value="all">In person & online</option><option value="online">Online only</option><option value="tokyo">Tokyo in person</option></select></label><label>Order<select value={sort} onChange={e=>setSort(e.target.value)}><option value="for-you">For you & discovery</option><option value="ending">Soonest dates & deadlines</option></select></label></div></>}
+
   {notice&&<p role="status">{notice}</p>}{error&&<div role="alert"><p>{error}</p><button onClick={()=>setReload(n=>n+1)}>Try again</button></div>}
-  {busy&&!showSaved&&<div className="moment-loading" role="status">Checking official schedules and order windows…</div>}
-  {!busy&&!showSaved&&reply&&<p className="moment-count">{reply.total} time-limited finds · next 30 days{personalized&&!reply.tasteAvailable?' · Qloo unavailable; source-based choices still apply':''}</p>}
+
+  {busy&&!showSaved&&<div className="moment-loading" role="status">{reply?'Updating your finds…':'Checking official schedules and order windows…'}</div>}
+
+  {!showSaved&&reply&&<p className="moment-count">{reply.total} time-limited finds · next 30 days{personalized&&!reply.tasteAvailable?' · Qloo unavailable; source-based choices still apply':''}</p>}
+
   {!busy&&!items.length&&!error&&<p>{showSaved?'Save an event or drop to keep it here.':'Nothing fits this view right now. Try Everything or include both in-person and online finds.'}</p>}
+
+  <div className="moment-view-controls" role="group" aria-label="Browse finds"><button aria-pressed={view==='list'} onClick={()=>setView('list')}>All finds</button><button aria-pressed={view==='map'} onClick={()=>setView('map')}>Map & plan</button><button aria-pressed={view==='visits'} onClick={()=>setView('visits')}>Been & rated ({visits.length})</button></div>
+
+  {view==='map'&&<MomentMap items={mapItems} selected={plannedIds} onSelect={togglePlan}/>}
+
+  {view!=='visits'&&(view==='map'||journey.entries.length>0)&&<JourneyPlanner journey={journey} onChange={changeJourney} onRemove={togglePlan} visits={visits} onRate={rateVisit}/>}
+
+  {view==='visits'&&<section className="visit-history" aria-labelledby="visit-history-title"><h2 id="visit-history-title">What was worth it?</h2><p>Your visits stay in this browser. Ratings influence related finds without replacing the interests you chose.</p>{!visits.length&&<p>After you go, rate your enjoyment on a find or a stop in your day. It will appear here.</p>}{visits.map(v=><article key={v.item.id}><h3>{v.item.title}</h3><p>{v.item.location} · Rated {new Date(v.at).toLocaleDateString()}</p><VisitRating item={v.item} rating={v.rating} onRate={rateVisit}/><button onClick={()=>forgetVisit(v.item)}>Forget this visit</button></article>)}</section>}
+
+  {view!=='visits'&&<>
+
   <div className="moment-results" aria-busy={busy&&!showSaved}>{items.slice(0,limit).map(o=><article key={o.id}>
+
    {o.image&&<img src={o.image} alt="" loading="lazy" width={640} height={360}/>}
+
    <div className="moment-card-body"><p className="moment-meta">{o.online?(o.kind==='release'?'Online shop':'Online event'):'In person'} · {o.actionLabel||o.kind} · {o.source}</p><h2>{catalogTitle(o)}</h2><p className="moment-date">{timing(o)}</p><p>{catalogPreview(o).text}</p><p className="moment-location">{o.location}</p>{o.priceLabel&&<p>{englishPrice(o.priceLabel)}</p>}
-   {personalized&&<p className="moment-match">{o.reasons?.find(r=>/Qloo|a favourite|something you want to try|your choices|your taste|an interest you like/i.test(r))||'Something else to explore. No personal match established.'}</p>}
-   <div className="outing-actions"><a href={o.url} target="_blank" rel="noreferrer">{o.kind==='release'?'See the drop ↗':o.online?'Join or check access ↗':'See event details ↗'}</a><button aria-pressed={saved.some(s=>s.id===o.id)} onClick={()=>save(o)}>{saved.some(s=>s.id===o.id)?'Saved · remove':'Save'}</button></div>{!showSaved&&<details className="moment-feedback"><summary>Tune my finds</summary><div><button onClick={()=>react(o,'more')}>More like this</button><button onClick={()=>react(o,'pass')}>Not my taste</button><button onClick={()=>react(o,'too-expensive')}>Too expensive</button><button onClick={()=>react(o,'wrong-place')}>Wrong location</button></div></details>}<details><summary>Dates, access & source</summary><p>{o.availability}</p>{catalogPreview(o).original&&<><p>Original source description:</p><p>{o.description}</p></>}<p>Source checked {o.checkedAt.slice(0,10)}.{o.sourceTimezone?' Source timezone: '+o.sourceTimezone+'.':''} Exact event times and deadlines are shown in your browser’s timezone. Date-only ranges retain the organiser’s dates.</p>{o.reasons?.map(r=><p key={r}>{r}</p>)}</details></div>
+
+   {personalized&&<p className="moment-match">{o.reasons?.find(r=>/enjoyment rating|chose.*day out|Qloo|a favourite|something you want to try|your choices|your taste|an interest you like/i.test(r))||'Something else to explore. No personal match established.'}</p>}
+
+   <div className="outing-actions"><a href={o.url} target="_blank" rel="noreferrer">{o.kind==='release'?'See the drop ↗':o.online?'Join or check access ↗':'See event details ↗'}</a><button aria-pressed={saved.some(s=>s.id===o.id)} onClick={()=>save(o)}>{saved.some(s=>s.id===o.id)?'Saved · remove':'Save'}</button><button aria-pressed={plannedIds.includes(o.id)} onClick={()=>togglePlan(journeyItem(o))}>{plannedIds.includes(o.id)?'In my day · remove':'Add to my day'}</button>{googlePlace(journeyItem(o))&&<a href={googlePlace(journeyItem(o))} target="_blank" rel="noreferrer">Google Maps</a>}</div><VisitRating item={journeyItem(o)} rating={visits.find(v=>v.item.id===o.id)?.rating} onRate={rateVisit}/>{!showSaved&&<details className="moment-feedback"><summary>Tune my finds</summary><div><button onClick={()=>react(o,'more')}>More like this</button><button onClick={()=>react(o,'pass')}>Not my taste</button><button onClick={()=>react(o,'too-expensive')}>Too expensive</button><button onClick={()=>react(o,'wrong-place')}>Wrong location</button></div></details>}<details><summary>Dates, access & source</summary><p>{o.availability}</p>{catalogPreview(o).original&&<><p>Original source description:</p><p>{o.description}</p></>}<p>Source checked {o.checkedAt.slice(0,10)}.{o.sourceTimezone?' Source timezone: '+o.sourceTimezone+'.':''} Exact event times and deadlines are shown in your browser’s timezone. Date-only ranges retain the organiser’s dates.</p>{o.reasons?.map(r=><p key={r}>{r}</p>)}</details></div>
+
   </article>)}</div>{items.length>limit&&<button className="moment-more" onClick={()=>setLimit(n=>n+12)}>Show more finds</button>}
+
+  </>}
+
   {reply&&!showSaved&&<details className="moment-sources"><summary>Sources & taste connections</summary><p>{reply.scope}</p>{reply.qloo?.status==='partial'&&<p>Some taste connections could not be checked in this run. A source listing without an established connection is still available to explore.</p>}{reply.qloo&&<p>Qloo cultural identities matched to {reply.qloo.mappedItems} of {reply.qloo.catalogItems} eligible listings. {reply.qloo.scoredEntities} entities have returned affinity evidence for this request. {reply.qloo.notes}</p>}{reply.scout?.source&&<p>Taste scout · {reply.scout.source} · {reply.scout.status==='read'?`${reply.scout.parsed} calendar entries read, ${reply.scout.matched} named matches.`:reply.scout.message}</p>}{reply.scouting?.length?<><h2>Connections to investigate</h2><p>Qloo returned these related cultural names. Search the sampled official sources for announcements. These links are research leads.</p><ul>{reply.scouting.slice(0,6).map(s=><li key={s.type+s.id}><strong>{s.name}</strong> · {s.type}{s.catalogIds.length?' · Named in '+s.catalogIds.length+' current listings':''}<div>{s.sources.map(source=><a key={source.researchUrl} href={source.researchUrl} target="_blank" rel="noreferrer">Search {source.name} ↗</a>)}</div></li>)}</ul></>:null}{reply.health.map(h=><p key={h.name}>{h.name} · {h.count} parsed · {h.status}</p>)}<p>Ordinary shop listings and permanent places stay outside this feed. An order window is not proof of a numbered edition or shipping to your country.</p></details>}
- </main><footer><a href="/quests">Build a Tokyo walking quest</a> · <a href="/explore">Full catalog & filters</a> · <a href="/classic">Connections & announcement import</a></footer></div>;
+
+ </main><footer><a href="/quests">Build a Tokyo walking quest</a> · <a href="/explore">Full catalog & filters</a> · <a href="/announcements">Import an announcement</a></footer></div>;
+
 }
+

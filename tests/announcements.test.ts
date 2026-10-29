@@ -19,3 +19,10 @@ test('HTML metadata and visible article are read as text, without executing embe
 test('candidate evidence preserves preorder, release and delivery wording, with no fabricated year or coordinates',()=>{const fields=extractFields('受注受付：10月23日〜10月25日\n発売：2027年3月予定\n会場：渋谷MODI\n価格：5,500円（税込）\n抽選販売・完売の場合あり');assert.ok(fields.some(f=>f.kind==='dates'&&f.original.includes('10月25日')));assert.ok(fields.some(f=>f.kind==='location'&&f.value.includes('渋谷MODI')));assert.ok(fields.some(f=>f.kind==='price'&&f.value.includes('5,500円')));assert.ok(fields.every(f=>f.edited===false));assert.ok(!JSON.stringify(fields).includes('2026'));});
 test('taste matching recognises Japanese franchises and respects explicit pass versus positive follows',()=>{const topics=detectedTopics('デジモン・ポケモン・たまごっち');assert.deepEqual(topics,['digimon','pokemon','tamagotchi']);const a=announcementSchema.parse({url:'https://example.com/post',title:'Release',kind:'release',original:'デジモン・ポケモン・たまごっち',english:'',source:'pasted_text',translation:'unavailable',notices:[],fields:[],topics,checkedAt:new Date().toISOString()});assert.deepEqual(explicitAnnouncementMatches(a,{...EMPTY_TASTE,answers:{digimon:'love',pokemon:'pass',tamagotchi:'unknown'}},[]).map(m=>m.name),['Digimon']);});
 test('translation splits by UTF-8 bytes and quota failures preserve the original',async()=>{assert.ok(translationSegments('東京'.repeat(300)).every(s=>new TextEncoder().encode(s).length<=450));const r=await translateJapanese('テスト用の未知の文',(async()=>Response.json({responseStatus:429,responseData:{translatedText:'MYMEMORY WARNING'}})) as typeof fetch);assert.equal(r.status,'unavailable');assert.equal(r.text,'テスト用の未知の文');});
+
+test('livehouse imports preserve separated door and start times without guessing a year',()=>{
+ const fields=extractFields('11/24\nOPEN:\n18:30\nSTART:\n19:30\n¥7,000');
+ assert.ok(fields.some(f=>f.kind==='dates'&&f.original==='OPEN: 18:30'));
+ assert.ok(fields.some(f=>f.kind==='dates'&&f.original==='START: 19:30'));
+ assert.ok(!JSON.stringify(fields).includes('2026'));
+});

@@ -50,7 +50,7 @@ export function selectMoments(items:Opportunity[],p:Preferences,access:MomentAcc
   const weakMusicGraph=graph&&!musicEvidence&&(o.qlooEvidence||[]).every(e=>e.domain==='artist');
   const reasons=weakMusicGraph?(o.reasons||[]).map(r=>r.startsWith('Qloo taste association')?'Weak cross-domain association only. The source does not establish a connection to your chosen activity.':r):o.reasons||[];
   const unsupportedMusicBoost=weakMusicGraph?Math.max(0,...(o.qlooEvidence||[]).map(graphStrength)):0;
-  return {...o,tastePriority,score:(o.score||0)-unsupportedMusicBoost+editorial.score+(o.sourceFeedback?.score||0),reasons:[...reasons,...editorial.reasons,...(o.sourceFeedback?.reasons||[])],discovery:direct?'direct' as const:matches.length||graph&&!weakMusicGraph||editorial.score||o.sourceFeedback?.score?'adjacent' as const:'wildcard' as const,matchLevel:strong?'taste' as const:'activity' as const};
+  return {...o,tastePriority,score:(o.score||0)-unsupportedMusicBoost+editorial.score+(o.sourceFeedback?.score||0),reasons:[...(o.sourceFeedback?.reasons||[]),...reasons,...editorial.reasons],discovery:direct?'direct' as const:matches.length||graph&&!weakMusicGraph||editorial.score||(o.sourceFeedback?.score||0)>0?'adjacent' as const:'wildcard' as const,matchLevel:strong?'taste' as const:'activity' as const};
  });
  const deadline=(o:Opportunity)=>Date.parse(o.endsAt||o.startsAt||(o.end||o.start)+'T23:59:59+09:00');
  if(sort==='ending')return ranked.sort((a,b)=>deadline(a)-deadline(b));

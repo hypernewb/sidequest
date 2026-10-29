@@ -10,6 +10,7 @@ import {selectMoments} from '@/lib/moments';
 import {tokyoDate} from '@/lib/discovery';
 import {scoutOfficialTaste} from '@/lib/taste-scout';
 import {candidatePercentiles} from '@/lib/qloo-candidates';
+import {withEventLocation} from '@/lib/event-locations';
 const schema=z.object({seeds:z.array(interestSeedSchema.omit({taste:true})).max(8).default([]),access:z.enum(['all','online','tokyo']).optional(),category:z.enum(['all','events','drops']).default('all'),sort:z.enum(['for-you','ending']).default('for-you'),context:momentsContextSchema.optional(),avoid:z.array(z.string().max(60)).max(20).default([]),cachedOnly:z.boolean().default(false)});
 async function within<T>(job:Promise<T>,ms:number,fallback:T){let timer:ReturnType<typeof setTimeout>;try{return await Promise.race([job,new Promise<T>(resolve=>{timer=setTimeout(()=>resolve(fallback),ms);})]);}catch{return fallback;}finally{clearTimeout(timer!);}}
 export async function POST(req:Request){
@@ -22,7 +23,7 @@ export async function POST(req:Request){
   // scheduled updater owns normal repair; empty reads have a bounded fallback.
   const [catalog,global]=await Promise.allSettled([stored.length||input.cachedOnly?Promise.resolve({items:stored}):within(catalogForQuest(),8000,{items:stored,refreshed:false,unavailable:stored.length===0}),stored.some(o=>o.id.startsWith('global:'))||input.cachedOnly?Promise.resolve({items:[] as typeof stored,health:(await state('lastGlobal'))?.health||[]}):within(refreshGlobalCatalog(),8000,{items:[],health:[]})]);
   const local=catalog.status==='fulfilled'?catalog.value.items:[],world=global.status==='fulfilled'?global.value.items:[];
-  const all=[...new Map([...local,...world].map(o=>[o.id,o])).values()];
+  const all=[...new Map([...local,...world].map(o=>[o.id,o])).values()].map(withEventLocation);
   let p=preferenceSchema.parse({intent:'mix',direction:'any',format:'dated',date:tokyoDate(),days:30,budget:'any',unknownPrice:input.context?.unknownPrice??true,seeds:input.seeds,exclude:(input.context?.reactions||[]).filter(r=>['pass','too-expensive','wrong-place'].includes(r.action)||r.action==='seen'&&r.reason==='seen').map(r=>r.id),avoid:input.avoid});
   let tasteAvailable=!!env.QLOO_API_KEY;
   if(env.QLOO_API_KEY&&!input.cachedOnly)try{p.seeds=await within(hydrateInterests(p.seeds,env.QLOO_API_KEY,k=>state(k),async(k,v)=>{await state(k,v);}),3500,p.seeds);}catch{tasteAvailable=false;}

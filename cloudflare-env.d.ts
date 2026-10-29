@@ -1,6 +1,7 @@
 declare namespace Cloudflare {
   interface Env {
     QLOO_API_KEY?: string;
+    GOOGLE_MAPS_BROWSER_KEY?: string;
     CONNPASS_API_KEY?: string;
     PULLMD_URL?: string;
     PULLMD_BEARER_TOKEN?: string;

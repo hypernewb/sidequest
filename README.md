@@ -6,6 +6,19 @@ Catch it while it's here.
 
 SideQuest now starts with time-limited events and drops. Discover a listening party, gig, pop-up, exhibition or timed order window, in person or online. Qloo connects named interests to source evidence. Permanent venues and ordinary stock listings stay outside the main feed. Tokyo walking quests remain at `/quests`.
 
+## Map, build a day and learn from visits
+
+The home feed now has All finds, Map & plan, and Been & rated. Browse the full range before choosing up to five stops. The map groups announcements at shared venue points, using existing source coordinates and reviewed Qloo place matches. Missing coordinates remain explicit; online finds stay in the list. Google Maps loads with `GOOGLE_MAPS_BROWSER_KEY`, a browser credential restricted to the Site's origin and Maps JavaScript API. Without usable Google access, the interactive OpenStreetMap fallback and Google Maps links remain available.
+
+My day retains a visit date, stop order and optional arrival times. It flags published-date conflicts and backwards arrival times. Google Maps calculates actual directions after export. This manual plan does not invent travel times or claim to solve ticket availability or every venue's operating hours. The SideQuest Agent checks supported published schedules and replans around a reported closure. Its stops can replace My day, and each stop has the same enjoyment rating. Known curated place IDs are trusted Qloo interest signals; venue ratings also adjust the quest ranking within its existing cultural-fit and scheduling constraints.
+
+After a visit or online experience, give one enjoyment rating from 1 to 5. Visits are self-reported. Planning is a weak signal; enjoyment is stronger, and a visit rating supersedes saving or planning when learning from the same item. Three is neutral. Re-rating replaces the prior rating, and Forget this visit removes its learning signal. Explicit interest strengths remain editable and are not silently overwritten.
+
+Positive visit signals use server-resolved cultural identities in later Qloo requests. Low ratings apply bounded local penalties to listings with the same verified identity, never a whole genre. Unmapped positive experiences can influence published subject and format matches. Browser-supplied entity IDs are not trusted. Server-side catalog identity history keeps past events usable after they expire. Plans, visit snapshots and taste reactions stay in this browser, with no cross-device sync or automatic attendance tracking.
+
+Verification on 30 October passed 283 automated tests and TypeScript. Browser checks used an isolated local origin, confirmed the embedded Google map and rating persistence, and exercised selection and Google directions. These checks demonstrate behavior, not human satisfaction or a measured recommendation-quality lift.
+
+
 ## Final release check
 
 The 29 October check passed 270 automated tests, TypeScript and live feed, taste and route checks. The current snapshot contained 341 eligible timed finds from 24 sources. Nujabes and Iron Maiden shared none of their top six; Nintendo still had weaker direct coverage. The agent excluded a visitor-reported closed stop and returned a replacement route. Read [the final review](evaluation/FINAL-REVIEW.md), [live results](evaluation/FINAL-LOCAL.json) and [updated two-minute script](DEMO.md). These checks do not establish a human-quality lift.

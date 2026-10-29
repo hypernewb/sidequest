@@ -1,73 +1,51 @@
-# SideQuest final demo
+# SideQuest hackathon submission video
 
-Target length is two minutes with labelled cuts for provider waits. Rehearse against current listings. This script follows the current story-and-strength setup and single-find Stumble. The old comparison-game recording sequence is retired.
+The current narration is outputs/demo-video/voiceover-human.txt. It introduces the product and vision before demonstrating the features. The creator will record it in their own voice. Aim for about two minutes, then set the final picture timing around the recording.
 
-## Before recording
+The existing MP4 files use the previous walkthrough order. They have not been recut for this script.
 
-Use a separate demo browser profile. Keep the main feed, Your taste and Tokyo quest pages ready. Do not edit your personal profile for the recording.
+## Revised shot sequence
 
-Run **node scripts/check-final.mjs** against the local preview. Read [the local check](evaluation/FINAL-LOCAL.json) and [the final review](evaluation/FINAL-REVIEW.md). The check exercises contrasting tastes, filters, preference validation, streamed agent stages and a visitor-reported closure. Use the --hosted option only with the private Site credential supplied through hidden stdin. Never put the credential in a command, screenshot or recording.
+The current script adds the full range of choices, map, selectable day plan and enjoyment learning. Capture the catalog grid with several different sources and formats before using the artist comparison. Show Google Maps with grouped venue pins, select two compatible stops, reorder and open the directions link. Label any staged visit rating as a demo interaction. Do not imply the creator attended a future event.
 
-Choose one current listening party and one open preorder window. Show the official dates and source. On 29 October, useful rehearsal leads included Moses Boyd's Songs For Sinners listening party and MEDICOM or hololive order windows. Check them again before recording. Replace an expired example rather than changing the app's clock.
+There are now separate map, planner and visit-history controls on the home feed. Use an isolated test profile while recording ratings. Source availability, prices and counts can change. Keep unmapped listings and online opportunities visibly separate from physical pins.
 
-Start with a clean profile for the story segment. For the agent segment, use Nujabes and Records & listening. If Tokyo's afternoon has passed, show the date the planner selects for tomorrow. Allow the actual waits or label any time cut. There is no measured human completion-time claim.
+The times below describe the earlier footage and are retained as source notes. Follow voiceover-human.txt for the new narration and recut after the creator records it.
 
-## 0:00 to 0:12 · The reason to open SideQuest
+## Earlier opening, approximately 0:00
 
-**Screen:** Start on the main feed. Show a dated listening party and a timed product window.
+Introduce SideQuest and its purpose. Start with a SideQuest title card and the question "What would I love that I don't know to search for?" Show the actual catalog as the narration introduces events, pop-ups and limited drops. Use current, source-backed items from the app, rather than invented example releases.
 
-**Voiceover:** "Tokyo has plenty of place lists. SideQuest starts with things you can miss. A small gig, a listening party, a pop-up or a product order window. Online counts too."
+## Taste engine, approximately 0:28
 
-## 0:12 to 0:38 · Taste with different strengths
+Show the interest weights and artist identity confirmation. Qloo supplies cultural associations. The catalog and ranking pipeline turn them into candidate opportunities. Avoid implying that Qloo alone provides the event listings or all operational details.
 
-**Screen:** Open Your taste. Enter "I’m obsessed with Nujabes. I like Radiohead. I used to love Digimon." Choose Find the names. Confirm the intended artist or work for each suggestion. Keep Nujabes at Love, Radiohead at Like and Digimon at Not using, then Save my taste.
+## Contrasting tastes, approximately 0:43
 
-**Voiceover:** "A list of names misses how much they matter. Here, Nujabes is a favourite. Radiohead is a lighter interest. A childhood favourite can stay in my profile without steering today's results. Qloo resolves the cultural identities. I check the suggested names and strengths before saving."
+Use the editorial comparison card from saved live API checks. Nujabes returned KOTA the Friend at Daikanyama UNIT on November 24, 2026. Iron Maiden returned Mark Boals and Kelly SIMONZ at UNIT on October 31, 2026. The saved responses are outputs/demo-video/stronger-examples.json.
 
-Do not describe the wording reader as a language model or a psychological assessment. It recognises explicit preference wording and can be corrected. Avoid hides named matches; it does not reject a whole genre.
+Keep the card labelled as selected results from captured live API responses. These are not necessarily the first-ranked results, and this is not a human satisfaction benchmark. Prior browser reactions can affect ordering. No browser reactions were supplied to these API checks.
 
-## 0:38 to 0:58 · One discovery, then a useful reaction
+After the comparison, show a brief actual Stumble interaction as the narrator introduces one-at-a-time discovery. Do not imply that feedback guarantees a better match.
 
-**Screen:** Choose See what finds me. Show the event's date, source and connection. Use Next stumble once, then More like this on a find you actually want to follow. Save it and show it under Saved in the main feed.
+## Announcement import, approximately 1:09
 
-**Voiceover:** "Stumble gives me one opportunity to react to. Next moves on without recording a dislike. More like this and Save guide later finds. The explanation separates a Qloo association, a published genre connection and a wildcard."
+Use the recorded /announcements footage with https://www.unit-tokyo.com/schedule/15199/ . Show the official source, extracted date and time fields, published price, and English reading beside the Japanese. The page lists OPEN 18:30, START 19:30, 7,000 yen advance admission and a separate 600 yen drink charge.
 
-Do not claim that every reaction must produce a different top item. Undoing Save removes that save signal while preserving other explicit feedback.
+The translation still has phrasing errors. The structured venue field is missing in the recorded extraction. Keep the machine translation notice and source visible. Do not imply perfect extraction or current ticket availability.
 
-## 0:58 to 1:18 · Catch an actual window
+## Agent and replanning, approximately 1:23
 
-**Screen:** In the feed, choose Limited drops and Online only. Show one open order window, its cutoff and official source link. If there is no personal match, leave that wording visible. Open the official page only to check details, without buying anything.
+Show graph expansion, published hours checks and route planning. Then show the visitor closure report and the changed route. Overlay "Simulated visitor closure report" during the report and replanning. Retain "Wait shortened" wherever provider waits are cut.
 
-**Voiceover:** "A shop listing isn't automatically a limited drop. This feed keeps explicit buying windows and dated events. The deadline, price and conditions come from the source. Shipping and availability still need checking with the shop."
+## Closing, approximately 1:43
 
-An order deadline and a shipping period are different facts. Do not call made-to-order stock a numbered edition or invent a hype score.
+Return to actual dated opportunities in the catalog. Finish with the SideQuest title and "Something you love becomes something to do."
 
-## 1:18 to 1:52 · Let the agent plan, then change the plan
+## Recording and edit notes
 
-**Screen:** Open Build a Tokyo walking quest. Enter Nujabes, choose Find my quest, then Records & listening. Show the streamed stages. Read the returned date and route. Use Closed? Replan without this stop on the first stop, then show Why the route changed.
+Read naturally, with short pauses between sections. The section times are cues, not hard deadlines. Keep the factual caveats on screen and in these notes instead of making the narrator read an evaluation disclaimer.
 
-**Voiceover:** "For an afternoon out, the agent resolves my seed, follows Qloo connections, checks published hours and compares routes. If I report a stop closed, it excludes that stop and plans again. Here is what changed and why. A visitor report stays distinct from an organiser's closure notice."
+The current silent footage is outputs/demo-video/SideQuest-demo-revised-1080p.mp4. The synthetic-voice draft is outputs/demo-video/SideQuest-demo-narrated-1080p.mp4. Both are earlier edits. The opening and comparison cards use the app's cream, green and serif styling. Final narration and a new opening edit are pending.
 
-Label this action "Simulated visitor closure report" in the recording. Do not present it as a new closure detected from the official page. If the route uses a train, say so. A shorter supported route is acceptable; never promise three stops when only one or two pass the checks.
-
-## 1:52 to 2:00 · State what Qloo contributes
-
-**Screen:** Show the returned cultural connection and source evidence, or expand How the agent built this quest. End on an actual find or the route map button.
-
-**Voiceover:** "Qloo supplies cultural connections. SideQuest combines them with my strengths, dates and source evidence to find something worth catching."
-
-## If judges ask for proof
-
-The final live check compares Nujabes, Iron Maiden, Nintendo and Pokemon FireRed Version under the same practical filters. Use the captured overlap and returned evidence in the report, not a remembered catalog count. This is a functional contrast check, not a human quality score or a percentage improvement over a baseline.
-
-The automated closure fixture separately proves that a published dated closure can trigger replanning. That test uses controlled official-page content. Do not describe it as a current live organiser announcement.
-
-The primary feed reads stored official records. Its source refresh and artist reconciliation run separately from a walking request. Qloo and official-page latency still vary. If a provider is partial, keep that status visible and show the source-backed fallback.
-
-## If the live demo fails
-
-- **Qloo lookup unavailable:** Keep the writing visible, retry once, then browse without adding a guessed identity.
-- **No personal connection:** Show the wildcard label and official deadline. Do not invent a taste explanation.
-- **No current drops in a filter:** Broaden to Everything. Do not substitute ordinary shop stock for a timed release.
-- **No supported route:** Keep the empty or shorter result and change direction or date. Do not narrate an unreturned route.
-- **A source cannot be read:** Show the replacement or source-unavailable note. An unreadable page is not proof of closure.
+Local announcement fixes have not been deployed to the hosted site.

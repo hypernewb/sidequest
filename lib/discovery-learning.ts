@@ -1,5 +1,5 @@
 import type {Opportunity} from './opportunities.ts';
-import type {MomentTasteContext} from './taste-profile.ts';
+import {withReaction,learningReactions,reactionTasteWeight,type MomentTasteContext} from './taste-profile.ts';
 import {programmeGenres,subjectNames} from './interest-match.ts';
 import {graphStrength} from './qloo-candidates.ts';
 
@@ -48,7 +48,7 @@ function preferences(items:readonly Opportunity[],context:MomentTasteContext,his
    if(key?slug(f)===key:(f.startsWith('genre:')||f.startsWith('category:'))&&structuredLabel===clean(tag.name))weights.set(f,Math.max(weights.get(f)||0,tag.weight));
   }
  }
- for(const r of context.reactions){if(r.action==='more'||r.action==='save')add(items.find(o=>o.id===r.id),r.action==='save'?1.4:1);}
+ for(const r of learningReactions(context)){const weight=reactionTasteWeight(r);if(weight>0)add(items.find(o=>o.id===r.id),weight*(r.action==='visit'?2:1));}
  for(const h of history.slice(-40)){if(h.outcome==='left'||h.outcome==='right'){add(items.find(o=>o.id===(h.outcome==='left'?h.leftId:h.rightId)),1.2);add(items.find(o=>o.id===(h.outcome==='left'?h.rightId:h.leftId)),-.15);}}
  return weights;
 }
@@ -95,5 +95,5 @@ export function applyChoice(context:MomentTasteContext,chosen:Opportunity,_rejec
   const id='editorial:discovery-'+slug(facet),existing=tags.find(t=>t.id===id);
   if(existing)existing.weight=Math.min(1,existing.weight+.1);else if(tags.length<16)tags.push({id,name:facet.slice(facet.indexOf(':')+1).replaceAll('-',' ').slice(0,100),weight:.35});
  }
- return {...context,tags,reactions:[...context.reactions.filter(r=>r.id!==chosen.id),{id:chosen.id,action:'more' as const,reason:'taste' as const}].slice(-100)};
+ return withReaction({...context,tags},{id:chosen.id,action:'more',reason:'taste'});
 }
