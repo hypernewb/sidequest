@@ -67,6 +67,12 @@ test('a generic experimental tag is not a strong Radiohead-to-metal style match'
  const o={...gig('Knosis'),details:extractEventDetails('Genre: experimental metal','https://www.liquidroom.net/schedule/knosis',at)};
  const match=interestMatch(o,seed);assert.equal(match?.kind,'genre');assert.ok(match!.strength<=2);assert.ok(match!.reason.includes('no shared musical style'));
 });
+test('a game visual style cannot become musical genre evidence for an online listening party',()=>{
+ const seed={id:'00000000-0000-4000-8000-000000000001',name:'Pokemon FireRed Version',type:'videogame',taste:[{name:'Pixel Art',weight:1}]};
+ const o={...gig('ALTUS Listening Party'),kind:'event' as const,category:'online music event',details:{...extractEventDetails('Art rock concert','https://artist.bandcamp.com/live/altus',at),genres:[{name:'Art Rock',evidence:'Genre: Art Rock'}]}};
+ assert.equal(interestMatch(o,seed),null);
+ assert.equal(interestMatch({...o,title:'Pokémon orchestral concert'},seed)?.kind,'subject');
+});
 test('Seoul and festival names cannot fabricate soul or rock genres',()=>{
  const d=extractEventDetails('KIRARAはソウルを拠点とするエレクトロニック・ミュージシャン。\nPENTAPORT ROCK FESTIVALとFUJI ROCK FESTIVALに出演。\nテクノとアンビエントを融合。','https://www.liquidroom.net/schedule/kirara',at);
  assert.ok(d.genres.some(g=>g.name==='electronic'));assert.ok(d.genres.some(g=>g.name==='ambient'));assert.ok(!d.genres.some(g=>['soul','rock'].includes(g.name)));

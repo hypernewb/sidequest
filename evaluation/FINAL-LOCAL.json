@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-29T13:12:18.779Z",
+  "checkedAt": "2026-10-29T13:21:25.930Z",
   "environment": "local Workers preview",
   "scope": "Functional final check with live provider evidence and current persisted official inventory. No visitor profile edits, satisfaction scores or quality-lift claim.",
   "pages": [
@@ -45,7 +45,7 @@
     {
       "name": "Nujabes",
       "total": 341,
-      "milliseconds": 2102,
+      "milliseconds": 915,
       "qloo": {
         "status": "ready",
         "mappedItems": 91,
@@ -136,7 +136,7 @@
     {
       "name": "Iron Maiden",
       "total": 341,
-      "milliseconds": 965,
+      "milliseconds": 907,
       "qloo": {
         "status": "ready",
         "mappedItems": 91,
@@ -226,7 +226,7 @@
     {
       "name": "Nintendo",
       "total": 341,
-      "milliseconds": 860,
+      "milliseconds": 788,
       "qloo": {
         "status": "ready",
         "mappedItems": 91,
@@ -303,6 +303,83 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Pokemon FireRed Version",
+      "total": 341,
+      "milliseconds": 15027,
+      "qloo": {
+        "status": "partial",
+        "mappedItems": 91,
+        "scoredEntities": 49,
+        "positiveSignals": [
+          {
+            "id": "B069A50F-4B91-481D-95F0-187DA3CF9F05",
+            "name": "Pokemon FireRed Version",
+            "weight": 1
+          }
+        ]
+      },
+      "top": [
+        {
+          "id": "global:https://agebjorn.bandcamp.com/live/casablanca-nights-2-the-unveiled-chapter-listening-party",
+          "title": "Casablanca Nights 2: The Unveiled Chapter - Listening Party",
+          "source": "Bandcamp listening parties",
+          "kind": "event",
+          "discovery": "wildcard",
+          "score": 1,
+          "reasons": [
+            "Weak cross-domain association only. The source does not establish a connection to your chosen activity."
+          ]
+        },
+        {
+          "id": "expanded:Daikanyama T-Site:https://store.tsite.jp/daikanyama/event/kids/57065-1649380927.html:2026-09-29",
+          "title": "【展示】触って学べる新感覚かるた『爬虫類かるた』",
+          "source": "Daikanyama T-Site",
+          "kind": "exhibition",
+          "discovery": "wildcard",
+          "score": 1,
+          "reasons": []
+        },
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/14976/:2026-10-31",
+          "title": "Mark Boals x Kelly SIMONZ – A NEW ERA at Daikanyama UNIT",
+          "source": "UNIT / SALOON",
+          "kind": "gig",
+          "discovery": "wildcard",
+          "score": 1,
+          "reasons": [
+            "Weak cross-domain association only. The source does not establish a connection to your chosen activity."
+          ]
+        },
+        {
+          "id": "release-source:https://www.tokyo-midtown.com/jp/shops/info/popup/:2026-10-02",
+          "title": "[limited time store] craft wonder",
+          "source": "Tokyo Midtown",
+          "kind": "popup",
+          "discovery": "wildcard",
+          "score": 1,
+          "reasons": []
+        },
+        {
+          "id": "taka:44069",
+          "title": "Kohei Yamada “green back / front”",
+          "source": "Taka Ishii Gallery",
+          "kind": "exhibition",
+          "discovery": "wildcard",
+          "score": 1,
+          "reasons": []
+        },
+        {
+          "id": "parco:https://shibuya.parco.jp/event/detail/?id=9047#2026-10-23",
+          "title": "WHITE CINE QUINTO 上映スケジュール",
+          "source": "Shibuya PARCO",
+          "kind": "event",
+          "discovery": "wildcard",
+          "score": 1,
+          "reasons": []
+        }
+      ]
     }
   ],
   "checks": [
@@ -331,7 +408,7 @@
     }
   },
   "agent": {
-    "milliseconds": 6712,
+    "milliseconds": 18769,
     "stages": [
       "resolve",
       "taste",
@@ -398,7 +475,7 @@
           ]
         }
       ],
-      "milliseconds": 5410
+      "milliseconds": 27538
     }
   },
   "overlap": [
@@ -418,10 +495,31 @@
     },
     {
       "profiles": [
+        "Nujabes",
+        "Pokemon FireRed Version"
+      ],
+      "sharedTopSix": 0
+    },
+    {
+      "profiles": [
         "Iron Maiden",
         "Nintendo"
       ],
       "sharedTopSix": 1
+    },
+    {
+      "profiles": [
+        "Iron Maiden",
+        "Pokemon FireRed Version"
+      ],
+      "sharedTopSix": 1
+    },
+    {
+      "profiles": [
+        "Nintendo",
+        "Pokemon FireRed Version"
+      ],
+      "sharedTopSix": 3
     }
   ]
 }

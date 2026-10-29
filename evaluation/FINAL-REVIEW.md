@@ -4,7 +4,7 @@ Checked on 29 October 2026. The evidence describes working behavior and current 
 
 ## Result
 
-All 269 automated tests passed. TypeScript passed. The local Workers preview passed the live final check for the main feed, taste setup, Stumble, quest page and announcement-import entry. Browser checks covered saved-drop persistence, Undo Save, smart-apostrophe story input, the single-find handoff, Next advancing and the phone layout without horizontal overflow.
+All 270 automated tests passed. TypeScript passed. The local Workers preview passed the live final check for the main feed, taste setup, Stumble, quest page and announcement-import entry. Browser checks covered saved-drop persistence, Undo Save, smart-apostrophe story input, the single-find handoff, Next advancing and the phone layout without horizontal overflow.
 
 The final live catalog contained 341 eligible timed finds from 24 sources. It had 152 gigs, 15 exhibitions, 110 other events, 44 pop-ups and 20 releases. Online-only returned 121 finds. These are a dated snapshot; they change as sources refresh and cutoffs pass.
 
@@ -12,6 +12,8 @@ The final live catalog contained 341 eligible timed finds from 24 sources. It ha
 
 - Phone smart apostrophes no longer turn "I'm obsessed with Nujabes" into a search for an apostrophe fragment. "Not interested in" is also recognised and reviewed as an avoid suggestion.
 - An Experimental-only music overlap is a weak connection rather than an exact style match. The Radiohead-to-metal case no longer receives a strong genre bonus.
+- Visual-style tags from a game no longer count as musical genre evidence for online listening parties. Literal game/franchise references still qualify.
+- Partial taste-check coverage is now explicit under the source details in the feed and Stumble.
 - An unsupported music association for a non-music seed no longer keeps a positive ranking boost while being labelled a wildcard.
 - New browser reactions override an older session snapshot. More like this and Save are no longer silently replaced by stale feedback during the next request.
 - Undo Save removes that save signal. It preserves a later explicit More like this reaction and unrelated feedback.
@@ -20,7 +22,7 @@ The final live catalog contained 341 eligible timed finds from 24 sources. It ha
 
 ## Contrasting tastes
 
-All three final requests returned ready Qloo evidence. Each had 91 mapped listings and 121 scored cultural entities within the current inventory. A ready response does not mean all 341 listings are personally matched.
+The captured Nujabes, Iron Maiden and Nintendo requests returned ready Qloo evidence. The final regression also includes Pokemon FireRed Version after the production-discovered visual-style mismatch. Each had 91 mapped listings and 121 scored cultural entities within the current inventory. A ready response does not mean all 341 listings are personally matched.
 
 | Seed | First result | Shared top six with Nujabes |
 | --- | --- | --- |
@@ -29,6 +31,8 @@ All three final requests returned ready Qloo evidence. Each had 91 mapped listin
 | Nintendo | A PARCO exhibition involving the film Kamome Diner | 1 |
 
 Nintendo is still the weakest case. The captured lead is a lateral film association, not a Nintendo event. Removing an unsupported music bonus prevents false prioritisation; it does not manufacture missing gaming inventory. Keep that limitation in the pitch.
+
+The Pokemon FireRed Version regression no longer claims a visual-style-to-music genre match. Its captured top six remained wildcards, so the game-specific coverage gap is still open.
 
 The report retains the actual reasons and wildcard labels. See [the captured live results](FINAL-LOCAL.json). None of these numbers establishes a percentage quality lift over a baseline.
 
@@ -40,7 +44,7 @@ Reporting Hi-Fi Record Store closed excluded it. The replacement route used Reco
 
 This was a simulated visitor closure report. It is not an organiser announcement. Controlled tests separately prove replanning from a published dated closure.
 
-The first diagnostic run took about 82 seconds while the older route path could wait on catalog refresh and extra artist scoring. After the critical-path fix, the final route took 6.7 seconds and replanning took 5.4 seconds. Earlier warm runs took around 11 seconds. Provider and source conditions vary, so these captures do not establish a guaranteed speed or a controlled performance lift.
+The first diagnostic run took about 82 seconds while the older route path could wait on catalog refresh and extra artist scoring. After the critical-path fix, a captured route took 6.7 seconds and replanning took 5.4 seconds. Earlier warm runs took around 11 seconds. The latest full regression took 18.8 seconds for the route and 27.5 seconds for replanning. Provider and source conditions vary, so these captures do not establish a guaranteed speed or a controlled performance lift.
 
 ## Recording and reproduction
 

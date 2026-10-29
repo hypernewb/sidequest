@@ -8,7 +8,7 @@ SideQuest now starts with time-limited events and drops. Discover a listening pa
 
 ## Final release check
 
-The 29 October check passed 269 automated tests, TypeScript and live feed, taste and route checks. The current snapshot contained 341 eligible timed finds from 24 sources. Nujabes and Iron Maiden shared none of their top six; Nintendo still had weaker direct coverage. The agent excluded a visitor-reported closed stop and returned a replacement route. Read [the final review](evaluation/FINAL-REVIEW.md), [live results](evaluation/FINAL-LOCAL.json) and [updated two-minute script](DEMO.md). These checks do not establish a human-quality lift.
+The 29 October check passed 270 automated tests, TypeScript and live feed, taste and route checks. The current snapshot contained 341 eligible timed finds from 24 sources. Nujabes and Iron Maiden shared none of their top six; Nintendo still had weaker direct coverage. The agent excluded a visitor-reported closed stop and returned a replacement route. Read [the final review](evaluation/FINAL-REVIEW.md), [live results](evaluation/FINAL-LOCAL.json) and [updated two-minute script](DEMO.md). These checks do not establish a human-quality lift.
 
 ## Start with events and drops
 

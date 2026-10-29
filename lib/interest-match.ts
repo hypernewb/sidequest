@@ -22,10 +22,11 @@ export function namedMention(text:string,name:string){const n=name.normalize('NF
 // Avoiding an artist is not evidence against every other artist in that genre.
 export function avoidedInterest(o:Opportunity,seeds:{id:string;name:string;type:string;weight?:number;feeling?:string}[]){return seeds.some(s=>interestWeight(s)<0&&((o.catalogEntities||[]).some(e=>e.id.toLowerCase()===s.id.toLowerCase())||(()=>{const m=interestMatch(o,s);return m?.kind==='direct'||m?.kind==='subject';})()));}
 export function interestMatch(o:Opportunity,seed:{id:string;name:string;type:string;taste?:{name:string;weight?:number}[]}){
- if(o.kind==='gig'&&!['artist','album'].includes(seed.type))return null;
  const artist=seed.type==='artist',subject=[o.title,...(artist?o.details?.artists||[]:[]),...(artist?(o.artists||[]).map(a=>a.name):[])];
  if(artist&&(o.artists||[]).some(a=>a.id.toLowerCase()===seed.id.toLowerCase())||subject.some(t=>namedMention(t,seed.name)))return {strength:12,reason:'Names '+seed.name,kind:'direct' as const};
  if(!artist){const same=SUBJECTS.find(([,r])=>r.test(seed.name)&&r.test(o.title));if(same)return {strength:10,reason:'Same franchise or creator: '+same[0],kind:'subject' as const};}
+ const musical=o.kind==='gig'||o.kind==='event'&&/listening party|concert|live music|online.*music|music event/i.test(o.title+' '+o.category);
+ if(musical&&!['artist','album'].includes(seed.type))return null;
  const threads=tasteThreads(seed.taste||[]),evidence=programmeGenres(o);
  // Music genre metadata only qualifies performances or music places, not merchandise named after a band.
  if(artist&&!['gig','place','event'].includes(o.kind)&&!(o.kind==='release'&&/\bvinyl\b|\brecord\b/i.test(o.category)))return null;

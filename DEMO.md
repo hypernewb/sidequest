@@ -58,7 +58,7 @@ Label this action "Simulated visitor closure report" in the recording. Do not pr
 
 ## If judges ask for proof
 
-The final live check compares Nujabes, Iron Maiden and Nintendo under the same practical filters. Use the captured overlap and returned evidence in the report, not a remembered catalog count. This is a functional contrast check, not a human quality score or a percentage improvement over a baseline.
+The final live check compares Nujabes, Iron Maiden, Nintendo and Pokemon FireRed Version under the same practical filters. Use the captured overlap and returned evidence in the report, not a remembered catalog count. This is a functional contrast check, not a human quality score or a percentage improvement over a baseline.
 
 The automated closure fixture separately proves that a published dated closure can trigger replanning. That test uses controlled official-page content. Do not describe it as a current live organiser announcement.
 
