@@ -9,3 +9,5 @@
 @media(max-width:360px){.rating-options{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 .outing .visit-rating .rating-options button{margin:0;padding:9px 4px;font-size:12px;min-width:0;box-sizing:border-box}.outing .visit-rating .rating-options button span{font-size:12px;line-height:1.35;overflow-wrap:normal}
+
+.outing .moment-view-controls button[aria-pressed=true],.outing .moment-controls button[aria-pressed=true],.outing .visit-rating .rating-options button[aria-pressed=true]{background:#505e47;color:#fffdf8;border-color:#505e47}
