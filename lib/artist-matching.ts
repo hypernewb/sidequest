@@ -1,3 +1,4 @@
+import {interestWeight} from './interest-strength.ts';
 import {qloo} from './qloo.ts';
 import type {Opportunity,Preferences} from './opportunities';
 import {tasteThreads,culturalOverlap} from './curated-taste.ts';
@@ -35,6 +36,6 @@ export async function artistAffinities(items:Opportunity[],p:Preferences,key:str
  if(!p.seeds.length||!items.some(o=>o.artists?.length))return items;
  const {scoreInventoryCandidates}=await import('./qloo-candidates.ts');
  const entities=items.flatMap(o=>(o.artists||[]).filter(a=>artistFitsProgramme(o,a)).map(a=>({id:a.id,name:a.name,type:'artist',input:a.input,evidence:'performer' as const})));
- const scored=await scoreInventoryCandidates(entities,p.seeds.map(s=>({id:s.id,name:s.name,weight:s.feeling==='love'?1:.4})),key,{maxBatches:12});
+ const scored=await scoreInventoryCandidates(entities,p.seeds.filter(s=>interestWeight(s)>0).map(s=>({id:s.id,name:s.name,weight:interestWeight(s)})),key,{maxBatches:12});
  return items.map(o=>{const evidence=scored.evidence.filter(e=>(o.artists||[]).some(a=>a.id.toLowerCase()===e.entityId.toLowerCase()));return {...o,qlooEvidence:evidence,signals:[...new Set([...(o.signals||[]),...evidence.flatMap(e=>e.contributors.map(c=>c.name))])]};});
 }

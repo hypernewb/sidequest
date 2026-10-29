@@ -29,6 +29,8 @@ test('event-first API reads persisted online and local events, excludes stock an
   const passiveSeen=await (await send({access:'tokyo',context:{reactions:[{id:'local',action:'seen'}]}})).json() as any;assert.deepEqual(passiveSeen.items.map((o:any)=>o.id),['local']);
   const explicitSeen=await (await send({access:'tokyo',context:{reactions:[{id:'local',action:'seen',reason:'seen'}]}})).json() as any;assert.deepEqual(explicitSeen.items,[]);
   const calibration=await (await send({cachedOnly:true,context:{direction:'art',tags:[{id:'editorial:photography',name:'Photography',weight:1}]}})).json() as any;assert.equal(calibration.qloo.status,'cached-only');assert.equal(calibration.scout.status,'skipped');assert.equal(calibration.items.length,2);
+  const weighted=await (await send({cachedOnly:true,seeds:[{id:'00000000-0000-4000-8000-000000000001',name:'Test',type:'artist',feeling:'love',weight:-1}]})).json() as any;assert.equal(weighted.seeds[0].weight,-1);
+  assert.equal((await send({seeds:[{id:'00000000-0000-4000-8000-000000000001',name:'Test',type:'artist',weight:4}]})).status,400);
   assert.equal((await send({access:'anywhere'})).status,400);assert.equal((await send({},'https://evil.example')).status,403);
  }finally{await mf.dispose();}
 });

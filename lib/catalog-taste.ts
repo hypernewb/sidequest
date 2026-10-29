@@ -1,3 +1,4 @@
+import {interestWeight} from './interest-strength.ts';
 import type {Opportunity,Preferences} from './opportunities.ts';
 import {namedMention,subjectNames} from './interest-match.ts';
 import {qloo} from './qloo.ts';
@@ -29,14 +30,15 @@ export function retainedCatalogEntities(o:Opportunity,history:CatalogEntity[]=[]
  return [...new Map([...retained,...catalogEntities(o)].map(e=>[e.id.toLowerCase(),e])).values()];
 }
 export function positiveSignals(items:Opportunity[],p:Preferences,context?:MomentTasteContext,history:Record<string,CatalogEntity[]>={}):TasteSignal[]{
- const signals:TasteSignal[]=p.seeds.map(s=>({id:s.id,name:s.name,weight:s.feeling==='love'?1:.4}));
+ const signals:TasteSignal[]=p.seeds.filter(s=>interestWeight(s)>0).map(s=>({id:s.id,name:s.name,weight:interestWeight(s)}));
  for(const r of (context?.reactions||[]).slice(-100)){
   if(r.action!=='save'&&r.action!=='more')continue;
   const item=items.find(o=>o.id===r.id),entities=item?retainedCatalogEntities(item,history[r.id]):history[r.id]||[];
   // The browser cannot assign a fabricated entity identity to a saved event.
   for(const e of entities)signals.push({id:e.id,name:e.name,weight:r.action==='save'?.8:.6});
  }
- return [...new Map(signals.sort((a,b)=>a.weight-b.weight).map(s=>[s.id.toLowerCase(),s])).values()].sort((a,b)=>b.weight-a.weight).slice(0,16);
+ const explicit=new Map(p.seeds.map(s=>[s.id.toLowerCase(),s]));
+ return [...new Map(signals.filter(s=>!explicit.has(s.id.toLowerCase())||interestWeight(explicit.get(s.id.toLowerCase())!)>0).map(s=>({...s,weight:explicit.has(s.id.toLowerCase())?interestWeight(explicit.get(s.id.toLowerCase())!):s.weight})).sort((a,b)=>a.weight-b.weight).map(s=>[s.id.toLowerCase(),s])).values()].sort((a,b)=>b.weight-a.weight).slice(0,16);
 }
 function namesFromSource(o:Opportunity){
  const quoted=[...o.title.matchAll(/[「『"]([^「」『』"]{3,70})[」』"]/g)].map(m=>m[1]);
@@ -52,7 +54,7 @@ export async function enrichMomentTaste(items:Opportunity[],p:Preferences,key:st
  // Resolve source names, not guessed product affiliations. Ambiguous exact-name
  // records remain unresolved. Successful/empty searches share a six-hour cache.
  const names=[...new Map([...enriched.flatMap(o=>subjectNames(o)),...enriched.flatMap(namesFromSource)].map(n=>[normalize(n),n] as const)).values()].sort((a,b)=>Number(p.seeds.some(s=>normalize(s.name)===normalize(b)))-Number(p.seeds.some(s=>normalize(s.name)===normalize(a))));
- const hasTaste=!!p.seeds.length||!!context?.tags.some(t=>/^urn:tag:/.test(t.id))||!!context?.reactions.some(r=>r.action==='save'||r.action==='more');
+ const hasTaste=p.seeds.some(s=>interestWeight(s)>0)||!!context?.tags.some(t=>/^urn:tag:/.test(t.id))||!!context?.reactions.some(r=>r.action==='save'||r.action==='more');
  let cursor=0;try{cursor=Number((await read('catalog-taste:identity-cursor'))?.index)||0;}catch{}
  const ordered=[...new Set([...names.filter(n=>p.seeds.some(s=>normalize(s.name)===normalize(n))),...names.slice(cursor%Math.max(1,names.length)),...names.slice(0,cursor%Math.max(1,names.length))])];
  const identityStart=calls;
@@ -73,7 +75,7 @@ export async function enrichMomentTaste(items:Opportunity[],p:Preferences,key:st
  // Related names produce bounded official-source research links and can be
  // attached to inventory only where the actual source names that entity.
  const availableDomains=[...new Set(enriched.flatMap(o=>o.catalogEntities.map(e=>entityDomain(e.type))))];
- const seedDomains=p.seeds.map(s=>entityDomain(s.type)).filter(supportedDomain);
+ const seedDomains=p.seeds.filter(s=>interestWeight(s)>0).sort((a,b)=>interestWeight(b)-interestWeight(a)).map(s=>entityDomain(s.type)).filter(supportedDomain);
  const domains=[...new Set([...seedDomains,...availableDomains,...DOMAINS])].slice(0,2);
  if(signals.length||tags.length)for(const domain of domains)try{
   const params:Record<string,string>={'filter.type':'urn:entity:'+domain,take:'6','feature.explainability':'true'};
@@ -95,7 +97,7 @@ export async function enrichMomentTaste(items:Opportunity[],p:Preferences,key:st
  for(const o of sourceInventory)history[o.id]=catalogEntities(o);
  history=Object.fromEntries(Object.entries(history).slice(-2000));
  try{await write('catalog-taste:subject-history:v1',{at:Date.now(),items:history,features:featureHistory});}catch{}
- const feedback=positiveSignals(sourceInventory,{...p,seeds:[]},context,history);
+ const feedback=positiveSignals(sourceInventory,p,context,history).filter(s=>!p.seeds.some(seed=>seed.id.toLowerCase()===s.id.toLowerCase()));
  const sourceTargets=(context?.reactions||[]).filter(r=>['save','more'].includes(r.action)&&!history[r.id]?.length&&featureHistory[r.id]).map(r=>({...featureHistory[r.id],weight:r.action==='save'?1:.8}));
  enriched=enriched.map(o=>({...o,catalogEntities:catalogEntities(o),sourceFeedback:sourceFeedbackMatch(o,sourceTargets),feedbackEntities:feedback.filter(s=>o.catalogEntities.some(e=>e.id.toLowerCase()===s.id.toLowerCase())),qlooEvidence:scored.evidence.filter(e=>o.catalogEntities.some(c=>c.id.toLowerCase()===e.entityId.toLowerCase()))}));
  return {items:enriched,scouting,diagnostics:{status:!signals.length&&!tags.length?'no-taste':failures?'partial':scored.evidence.length?'ready':'no-mapped-results',calls,cacheHits:hits,failures,catalogItems:items.length,mappedItems:enriched.filter(o=>o.catalogEntities.length).length,candidateEntities:new Set(enriched.flatMap(o=>o.catalogEntities.map(e=>e.id.toLowerCase()))).size,scoredEntities:scored.evidence.length,unscoredEntities:new Set(enriched.flatMap(o=>o.catalogEntities.map(e=>e.id.toLowerCase()))).size-scored.evidence.length,unrequestedEntities:scored.remaining,identityNamesAvailable:names.length,identitySearches,resolvedNames:resolved,unresolvedNames:ambiguous,positiveSignals:signals.map(s=>({id:s.id,name:s.name,weight:s.weight})),tagSignals:tags.length,graphAffinityFloor:.55,scoutingMode:'research-links',notes:'Qloo ranks mapped cultural entities within eligible announcements. Identity gaps and provider failures leave unpersonalised options. The 0.55 affinity floor is a conservative app ranking rule, not a provider quality threshold. Scouting prepares searches of sampled official sources; it does not automatically read or verify new announcements.'}};

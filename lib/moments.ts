@@ -5,6 +5,7 @@ import {graphStrength} from './qloo-candidates.ts';
 import type {MomentTasteContext} from './taste-profile.ts';
 import {programmeGenres} from './interest-match.ts';
 import {explicitSoulGenre} from './event-detail-parser.ts';
+import {interestWeight} from './interest-strength.ts';
 export type MomentAccess='all'|'online'|'tokyo';
 export type MomentCategory='all'|'events'|'drops';
 export function onlineMoment(o:Opportunity){return !!o.online&&!/participating retailers|Japan retailers|prize.machine|in.store lottery/i.test(o.location+' '+o.actionLabel);}
@@ -41,19 +42,20 @@ export function editorialMomentMatch(o:Opportunity,context?:MomentTasteContext){
 export function selectMoments(items:Opportunity[],p:Preferences,access:MomentAccess='all',category:MomentCategory='all',sort='for-you',now=new Date(),context?:MomentTasteContext){
  const candidates=items.map(o=>({...o,online:onlineMoment(o)})).filter(o=>momentEligible(o,now)&&(access==='all'||access==='online'&&o.online||access==='tokyo'&&!o.online&&/Tokyo|東京|Shibuya|渋谷|Shinjuku|新宿|Shimokitazawa|下北沢|Ebisu|恵比寿|Roppongi|六本木/i.test(o.location))&&(category==='all'||category==='drops'&&o.kind==='release'||category==='events'&&o.kind!=='release'));
  const ranked=rankOpportunities(candidates,{...p,intent:'mix',direction:'any',format:'dated'},now).map(o=>{
-  const matches=p.seeds.map(s=>interestMatch(o,s)).filter(Boolean);
-  const direct=matches.some(m=>m!.kind==='direct')||!!o.feedbackEntities?.length,strong=matches.some(m=>m!.kind!=='genre'||m!.strength>=5),graph=(o.qlooEvidence||[]).some(e=>graphStrength(e)>0);
+  const matches=p.seeds.filter(s=>interestWeight(s)>0).flatMap(s=>{const m=interestMatch(o,s);return m?[{...m,weight:interestWeight(s)}]:[];});
+  const direct=matches.some(m=>m.kind==='direct')||!!o.feedbackEntities?.length,strong=matches.some(m=>m.kind!=='genre'||m.strength>=5),graph=(o.qlooEvidence||[]).some(e=>graphStrength(e)>0);
+  const tastePriority=Math.max(0,...matches.map(m=>(m.kind==='direct'?100:m.kind==='subject'?40:20*m.strength/9)*m.weight),...(o.feedbackEntities||[]).map(e=>80*e.weight));
   const editorial=editorialMomentMatch(o,context);
-  const musicEvidence=p.seeds.some(s=>['artist','album'].includes(s.type))||context?.direction==='music'||context?.answers?.invitation==='music'||!!editorial.score||!!o.feedbackEntities?.length;
+  const musicEvidence=p.seeds.some(s=>interestWeight(s)>0&&['artist','album'].includes(s.type))||context?.direction==='music'||context?.answers?.invitation==='music'||!!editorial.score||!!o.feedbackEntities?.length;
   const weakMusicGraph=graph&&!musicEvidence&&(o.qlooEvidence||[]).every(e=>e.domain==='artist');
   const reasons=weakMusicGraph?(o.reasons||[]).map(r=>r.startsWith('Qloo taste association')?'Weak cross-domain association only. The source does not establish a connection to your chosen activity.':r):o.reasons||[];
-  return {...o,score:(o.score||0)+editorial.score+(o.sourceFeedback?.score||0),reasons:[...reasons,...editorial.reasons,...(o.sourceFeedback?.reasons||[])],discovery:direct?'direct' as const:matches.length||graph&&!weakMusicGraph||editorial.score||o.sourceFeedback?.score?'adjacent' as const:'wildcard' as const,matchLevel:strong?'taste' as const:'activity' as const};
+  return {...o,tastePriority,score:(o.score||0)+editorial.score+(o.sourceFeedback?.score||0),reasons:[...reasons,...editorial.reasons,...(o.sourceFeedback?.reasons||[])],discovery:direct?'direct' as const:matches.length||graph&&!weakMusicGraph||editorial.score||o.sourceFeedback?.score?'adjacent' as const:'wildcard' as const,matchLevel:strong?'taste' as const:'activity' as const};
  });
  const deadline=(o:Opportunity)=>Date.parse(o.endsAt||o.startsAt||(o.end||o.start)+'T23:59:59+09:00');
  if(sort==='ending')return ranked.sort((a,b)=>deadline(a)-deadline(b));
  // Taste remains primary. Urgency only orders comparable matches, while source
  // and format penalties keep one publisher from filling the whole first screen.
  const out:Opportunity[]=[],counts=new Map<string,number>(),pool=[...ranked];
- while(pool.length){let index=0,best=-Infinity;pool.forEach((o,i)=>{const hours=(deadline(o)-now.getTime())/3600000,urgency=hours>=0&&hours<=72?2:0,related=o.discovery==='adjacent',span=Date.parse(o.end||o.start!)-Date.parse(o.start!),value=(o.discovery==='direct'?100:o.matchLevel==='taste'?40:related?5:0)+(o.score||0)+urgency-(span>60*86400000?4:0)-(counts.get(o.source)||0)*2-(counts.get(o.kind)||0)*.4;if(value>best){best=value;index=i;}});const o=pool.splice(index,1)[0];out.push(o);counts.set(o.source,(counts.get(o.source)||0)+1);counts.set(o.kind,(counts.get(o.kind)||0)+1);}
+ while(pool.length){let index=0,best=-Infinity;pool.forEach((o,i)=>{const hours=(deadline(o)-now.getTime())/3600000,urgency=hours>=0&&hours<=72?2:0,related=o.discovery==='adjacent',span=Date.parse(o.end||o.start!)-Date.parse(o.start!),value=(o.tastePriority|| (related?5:0))+(o.score||0)+urgency-(span>60*86400000?4:0)-(counts.get(o.source)||0)*2-(counts.get(o.kind)||0)*.4;if(value>best){best=value;index=i;}});const o=pool.splice(index,1)[0];out.push(o);counts.set(o.source,(counts.get(o.source)||0)+1);counts.set(o.kind,(counts.get(o.kind)||0)+1);}
  return out;
 }

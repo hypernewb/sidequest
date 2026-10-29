@@ -2,7 +2,7 @@ import {qloo} from './qloo.ts';
 
 export type CatalogEntity={id:string;name:string;type:string;input:string;evidence:'performer'|'source-name'|'confirmed-seed'};
 export type TasteSignal={id:string;name:string;weight:number};
-export type QlooEvidence={entityId:string;entityName:string;domain:string;affinity:number;contributors:{id:string;name:string;score:number;weight:number}[];percentile:number};
+export type QlooEvidence={entityId:string;entityName:string;domain:string;affinity:number;contributors:{id:string;name:string;score:number;weight:number}[];percentile:number;inputWeight?:number};
 export type QlooRequest=(path:string,params:Record<string,string>,key:string)=>Promise<any>;
 export const entityDomain=(type:string)=>type.replace(/^urn:entity:/,'').replace(/^video_game$/,'videogame');
 export const supportedDomain=(type:string)=>['artist','brand','movie','tv_show','book','videogame','person'].includes(entityDomain(type));
@@ -13,7 +13,7 @@ export function evidenceFromEntity(e:any,domain:string,signals:TasteSignal[]):Ql
   const s=signals.find(s=>s.id.toLowerCase()===String(c.entity_id).toLowerCase());
   return s&&Number.isFinite(c.score)&&c.score>0?[{id:s.id,name:s.name,score:c.score,weight:s.weight}]:[];
  });
- return {entityId:e.entity_id,entityName:String(e.name||''),domain,affinity,contributors,percentile:0};
+ return {entityId:e.entity_id,entityName:String(e.name||''),domain,affinity,contributors,percentile:0,inputWeight:signals.length?Math.max(...signals.map(s=>s.weight)):1};
 }
 // Compare percentiles only within one domain and one request context. Raw Qloo
 // affinity is retained as evidence, never represented as a satisfaction percentage.
@@ -22,7 +22,7 @@ export function candidatePercentiles(evidence:QlooEvidence[]){
 }
 export function graphStrength(e:QlooEvidence){
  if(e.affinity<.55)return 0;
- const influence=e.contributors.length?Math.max(...e.contributors.map(c=>Math.min(1,c.score)*c.weight)):.25;
+ const influence=e.contributors.length?Math.max(...e.contributors.map(c=>Math.min(1,c.score)*c.weight)):.25*(e.inputWeight??1);
  return (1+e.percentile*2)*influence;
 }
 export async function scoreInventoryCandidates(entities:CatalogEntity[],signals:TasteSignal[],key:string,options:{request?:QlooRequest;tags?:{id:string;weight:number}[];maxBatches?:number}={}){

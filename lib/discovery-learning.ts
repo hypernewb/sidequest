@@ -1,6 +1,7 @@
 import type {Opportunity} from './opportunities.ts';
 import type {MomentTasteContext} from './taste-profile.ts';
 import {programmeGenres,subjectNames} from './interest-match.ts';
+import {graphStrength} from './qloo-candidates.ts';
 
 export type ChoiceOutcome='left'|'right'|'neither'|'unknown';
 export type ChoiceHistory={leftId:string;rightId:string;outcome:ChoiceOutcome}[];
@@ -34,7 +35,7 @@ function sameProgramme(a:Opportunity,b:Opportunity){
  return url(a)===url(b)||!!programme(a)&&programme(a)===programme(b);
 }
 function prior(o:Opportunity){
- const graph=Math.max(0,...(o.qlooEvidence||[]).map(e=>e.affinity>=.55?(1+Math.max(0,Math.min(1,e.percentile))*2)*(e.contributors.length?Math.max(...e.contributors.map(c=>Math.min(1,c.score)*c.weight)):.25):0));
+ const graph=Math.max(0,...(o.qlooEvidence||[]).map(graphStrength));
  return Math.min(4,Math.max(0,o.score||0)/5)+graph+Math.min(2,Math.max(0,o.sourceFeedback?.score||0))+(o.discovery==='direct'?1:o.discovery==='adjacent'?.5:0);
 }
 function preferences(items:readonly Opportunity[],context:MomentTasteContext,history:ChoiceHistory){

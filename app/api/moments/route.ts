@@ -5,11 +5,12 @@ import {hydrateInterests} from '@/lib/profile-matching';
 import {enrichMomentTaste} from '@/lib/catalog-taste';
 import {momentsContextSchema} from '@/lib/taste-profile';
 import {preferenceSchema} from '@/lib/opportunities';
+import {interestSeedSchema} from '@/lib/interest-strength';
 import {selectMoments} from '@/lib/moments';
 import {tokyoDate} from '@/lib/discovery';
 import {scoutOfficialTaste} from '@/lib/taste-scout';
 import {candidatePercentiles} from '@/lib/qloo-candidates';
-const schema=z.object({seeds:z.array(z.object({id:z.string().uuid(),name:z.string().min(1).max(100),type:z.string().max(40),feeling:z.enum(['love','curious']).default('love')})).max(8).default([]),access:z.enum(['all','online','tokyo']).optional(),category:z.enum(['all','events','drops']).default('all'),sort:z.enum(['for-you','ending']).default('for-you'),context:momentsContextSchema.optional(),avoid:z.array(z.string().max(60)).max(20).default([]),cachedOnly:z.boolean().default(false)});
+const schema=z.object({seeds:z.array(interestSeedSchema.omit({taste:true})).max(8).default([]),access:z.enum(['all','online','tokyo']).optional(),category:z.enum(['all','events','drops']).default('all'),sort:z.enum(['for-you','ending']).default('for-you'),context:momentsContextSchema.optional(),avoid:z.array(z.string().max(60)).max(20).default([]),cachedOnly:z.boolean().default(false)});
 async function within<T>(job:Promise<T>,ms:number,fallback:T){let timer:ReturnType<typeof setTimeout>;try{return await Promise.race([job,new Promise<T>(resolve=>{timer=setTimeout(()=>resolve(fallback),ms);})]);}catch{return fallback;}finally{clearTimeout(timer!);}}
 export async function POST(req:Request){
  const headers={'Cache-Control':'private, no-store'};

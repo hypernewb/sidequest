@@ -1,0 +1,351 @@
+{
+  "checkedAt": "2026-10-29T03:08:24.014Z",
+  "note": "Local Workers preview with live Qloo and current persisted official catalog. Functional check, not a satisfaction benchmark.",
+  "results": [
+    {
+      "weights": [
+        1,
+        0.4
+      ],
+      "returned": [
+        {
+          "name": "Nujabes",
+          "weight": 1
+        },
+        {
+          "name": "Radiohead",
+          "weight": 0.4
+        }
+      ],
+      "total": 270,
+      "qloo": {
+        "status": "ready",
+        "calls": 4,
+        "positiveSignals": [
+          {
+            "id": "E11125AF-936B-4935-B607-F2DA2E6A6B92",
+            "name": "Nujabes",
+            "weight": 1
+          },
+          {
+            "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "name": "Radiohead",
+            "weight": 0.4
+          }
+        ]
+      },
+      "top": [
+        {
+          "id": "ufo:2026-10-31",
+          "title": "【kihito+migon Presents HALLOWEEN NIGHTMARE】",
+          "source": "U.F.O.CLUB",
+          "score": 9.203764814903147,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad ambient connection; no exact subgenre overlap established. · a favourite",
+            "Shared genre evidence: Experimental · something you want to try",
+            "Qloo taste association with Yuko Araki from Nujabes and Radiohead. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/15053/:2026-11-12",
+          "title": "JAPAN 2026",
+          "source": "UNIT / SALOON",
+          "score": 10.24908907470694,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad ambient connection; no exact subgenre overlap established. · a favourite",
+            "Shared genre evidence: Experimental · something you want to try",
+            "Qloo taste association with KIRARA from Nujabes and Radiohead. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "global:https://mosesboyd.bandcamp.com/live/songs-for-sinners-listening-party",
+          "title": "Songs For Sinners Listening Party",
+          "source": "Bandcamp listening parties",
+          "score": 7.798234497549657,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad jazz connection; no exact subgenre overlap established. · a favourite",
+            "Broad electronic connection; no exact subgenre overlap established. · something you want to try",
+            "Qloo taste association with Moses Boyd from Nujabes and Radiohead. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "www:https://www-shibuya.jp/schedule/020086.php#2026-11-06",
+          "title": "Skaai / Jody Fontaine (AG Club) / Bonbero / Flowerboi Take / otuyyuto / Siero — WWW presents Skaai 『BOSS』",
+          "source": "WWW / WWW X",
+          "score": 8.6,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad hiphop connection; no exact subgenre overlap established. · a favourite",
+            "Shared genre evidence: Experimental · something you want to try"
+          ]
+        },
+        {
+          "id": "livehouse:https://www.fever-popo.com/schedule/2026/11/2618.html#2026-11-26",
+          "title": "\"PIZZA OF DEATH RECOREDS presesnts Hub Slice8\" — SPARK!!SOUND!!SHOW!! STARKIDS トップシークレットマン",
+          "source": "Shindaita FEVER",
+          "score": 8.079273803092072,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad hiphop connection; no exact subgenre overlap established. · a favourite",
+            "Broad electronic connection; no exact subgenre overlap established. · something you want to try",
+            "Qloo taste association with Starkids from Nujabes and Radiohead. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "global:https://scottlawlor.bandcamp.com/live/dreams-edge-fireside-chat-european-edition",
+          "title": "Dream's Edge fireside chat, european edition",
+          "source": "Bandcamp listening parties",
+          "score": 7.238394585883087,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad ambient connection; no exact subgenre overlap established. · a favourite",
+            "Broad ambient connection; no exact subgenre overlap established. · something you want to try",
+            "Qloo taste association with Scott Lawlor from Nujabes and Radiohead. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/edl2_20261107:2026-11-07",
+          "title": "ELECTRIC DELAY LAND Vol.2",
+          "source": "LIQUIDROOM",
+          "score": 7.915491751245758,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad hiphop connection; no exact subgenre overlap established. · a favourite",
+            "Broad electronic connection; no exact subgenre overlap established. · something you want to try",
+            "Qloo taste association with Little Tempo from Nujabes and Radiohead. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "parco:https://shibuya.parco.jp/event/detail/?id=8987#2026-11-05",
+          "title": "HERALBONY × Brutus | ART&MUSIC session \"Overflowing, Uzuru.\"",
+          "source": "Shibuya PARCO",
+          "score": 6.6,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad hiphop connection; no exact subgenre overlap established. · a favourite",
+            "Broad electronic connection; no exact subgenre overlap established. · something you want to try"
+          ]
+        }
+      ]
+    },
+    {
+      "weights": [
+        0.4,
+        1
+      ],
+      "returned": [
+        {
+          "name": "Nujabes",
+          "weight": 0.4
+        },
+        {
+          "name": "Radiohead",
+          "weight": 1
+        }
+      ],
+      "total": 270,
+      "qloo": {
+        "status": "ready",
+        "calls": 4,
+        "positiveSignals": [
+          {
+            "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "name": "Radiohead",
+            "weight": 1
+          },
+          {
+            "id": "E11125AF-936B-4935-B607-F2DA2E6A6B92",
+            "name": "Nujabes",
+            "weight": 0.4
+          }
+        ]
+      },
+      "top": [
+        {
+          "id": "ufo:2026-10-31",
+          "title": "【kihito+migon Presents HALLOWEEN NIGHTMARE】",
+          "source": "U.F.O.CLUB",
+          "score": 12.082442081648576,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad ambient connection; no exact subgenre overlap established. · something you want to try",
+            "Shared genre evidence: Experimental · a favourite",
+            "Qloo taste association with Yuko Araki from Radiohead and Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "expanded:UNIT / SALOON:https://www.unit-tokyo.com/schedule/15053/:2026-11-12",
+          "title": "JAPAN 2026",
+          "source": "UNIT / SALOON",
+          "score": 12.77849713218961,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad ambient connection; no exact subgenre overlap established. · something you want to try",
+            "Shared genre evidence: Experimental · a favourite",
+            "Qloo taste association with KIRARA from Radiohead and Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "www:https://www-shibuya.jp/schedule/020086.php#2026-11-06",
+          "title": "Skaai / Jody Fontaine (AG Club) / Bonbero / Flowerboi Take / otuyyuto / Siero — WWW presents Skaai 『BOSS』",
+          "source": "WWW / WWW X",
+          "score": 11.6,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad hiphop connection; no exact subgenre overlap established. · something you want to try",
+            "Shared genre evidence: Experimental · a favourite"
+          ]
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/knosis_20261126:2026-11-26",
+          "title": "Knosis",
+          "source": "LIQUIDROOM",
+          "score": 11.099088919568047,
+          "discovery": "adjacent",
+          "reasons": [
+            "Shared genre evidence: Experimental · a favourite",
+            "Qloo taste association with Knosis from Radiohead and Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "global:https://mosesboyd.bandcamp.com/live/songs-for-sinners-listening-party",
+          "title": "Songs For Sinners Listening Party",
+          "source": "Bandcamp listening parties",
+          "score": 7.694868950726203,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad jazz connection; no exact subgenre overlap established. · something you want to try",
+            "Broad electronic connection; no exact subgenre overlap established. · a favourite",
+            "Qloo taste association with Moses Boyd from Radiohead and Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "global:https://agebjorn.bandcamp.com/live/casablanca-nights-2-the-unveiled-chapter-listening-party",
+          "title": "Casablanca Nights 2: The Unveiled Chapter - Listening Party",
+          "source": "Bandcamp listening parties",
+          "score": 7.112194427572279,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad ambient connection; no exact subgenre overlap established. · something you want to try",
+            "Broad ambient, electronic connection; no exact subgenre overlap established. · a favourite",
+            "Qloo taste association with Johan Agebjörn from Radiohead and Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "livehouse:https://www.fever-popo.com/schedule/2026/11/2618.html#2026-11-26",
+          "title": "\"PIZZA OF DEATH RECOREDS presesnts Hub Slice8\" — SPARK!!SOUND!!SHOW!! STARKIDS トップシークレットマン",
+          "source": "Shindaita FEVER",
+          "score": 7.74141585208034,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad hiphop connection; no exact subgenre overlap established. · something you want to try",
+            "Broad electronic connection; no exact subgenre overlap established. · a favourite",
+            "Qloo taste association with Starkids from Radiohead and Nujabes. This is an association, not an event-quality or availability rating."
+          ]
+        },
+        {
+          "id": "parco:https://shibuya.parco.jp/event/detail/?id=8987#2026-11-05",
+          "title": "HERALBONY × Brutus | ART&MUSIC session \"Overflowing, Uzuru.\"",
+          "source": "Shibuya PARCO",
+          "score": 6.6,
+          "discovery": "adjacent",
+          "reasons": [
+            "Broad hiphop connection; no exact subgenre overlap established. · something you want to try",
+            "Broad electronic connection; no exact subgenre overlap established. · a favourite"
+          ]
+        }
+      ]
+    },
+    {
+      "weights": [
+        0,
+        -1
+      ],
+      "returned": [
+        {
+          "name": "Nujabes",
+          "weight": 0
+        },
+        {
+          "name": "Radiohead",
+          "weight": -1
+        }
+      ],
+      "total": 270,
+      "qloo": {
+        "status": "no-taste",
+        "calls": 0,
+        "positiveSignals": []
+      },
+      "top": [
+        {
+          "id": "cotton:5757:2026-10-29",
+          "title": "Fish return bright not solo piano",
+          "source": "Cotton Club",
+          "score": 1,
+          "discovery": "wildcard",
+          "reasons": []
+        },
+        {
+          "id": "expanded:Daikanyama T-Site:https://store.tsite.jp/daikanyama/event/kids/57065-1649380927.html:2026-09-29",
+          "title": "【展示】触って学べる新感覚かるた『爬虫類かるた』",
+          "source": "Daikanyama T-Site",
+          "score": 1,
+          "discovery": "wildcard",
+          "reasons": []
+        },
+        {
+          "id": "global:https://edymeaday.bandcamp.com/live/elmers-new-album-nothing-listening-party",
+          "title": "Elmer's new album 'nothing' Listening Party",
+          "source": "Bandcamp listening parties",
+          "score": 1,
+          "discovery": "wildcard",
+          "reasons": []
+        },
+        {
+          "id": "release-source:https://www.tokyo-midtown.com/jp/shops/info/popup/:2026-10-02",
+          "title": "[limited time store] craft wonder",
+          "source": "Tokyo Midtown",
+          "score": 1,
+          "discovery": "wildcard",
+          "reasons": []
+        },
+        {
+          "id": "expanded:LIQUIDROOM:https://www.liquidroom.net/schedule/see_20261029:2026-10-29",
+          "title": "SOUND ENERGY EX",
+          "source": "LIQUIDROOM",
+          "score": 1,
+          "discovery": "wildcard",
+          "reasons": []
+        },
+        {
+          "id": "taka:44069",
+          "title": "Kohei Yamada “green back / front”",
+          "source": "Taka Ishii Gallery",
+          "score": 1,
+          "discovery": "wildcard",
+          "reasons": []
+        },
+        {
+          "id": "parco:https://shibuya.parco.jp/event/detail/?id=9047#2026-10-23",
+          "title": "WHITE CINE QUINTO 上映スケジュール",
+          "source": "Shibuya PARCO",
+          "score": 1,
+          "discovery": "wildcard",
+          "reasons": []
+        },
+        {
+          "id": "expanded:Laforet Harajuku:https://www.laforet.ne.jp/pop_up_shop/60percent_2610/:2026-10-16",
+          "title": "60% POP UP STORE",
+          "source": "Laforet Harajuku",
+          "score": 1,
+          "discovery": "wildcard",
+          "reasons": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import type {Opportunity} from './opportunities.ts';
 import {tasteThreads,culturalOverlap} from './curated-taste.ts';
 import {explicitSoulGenre} from './event-detail-parser.ts';
+import {interestWeight} from './interest-strength.ts';
 export const SUBJECTS:[string,RegExp][]=[
  ['Pokémon',/pok[eé]mon|ポケモン|ポケットモンスター/i],['Digimon',/digimon|デジモン|デジタルモンスター/i],['Tamagotchi',/tamagotchi|たまごっち/i],['Gundam',/gundam|gunpla|ガンダム|ガンプラ/i],['Sanrio',/sanrio|サンリオ|hello kitty|ハローキティ|シナモロール|ポムポムプリン|クロミ|マイメロディ/i],['Studio Ghibli',/ghibli|spirited away|my neighbor totoro|ジブリ|千と千尋|となりのトトロ/i],['Attack on Titan',/attack on titan|進撃の巨人/i],['The Legend of Zelda',/legend of zelda|ゼルダの伝説/i],['Super Mario',/super mario|スーパーマリオ/i],['Final Fantasy',/final fantasy|ファイナルファンタジー/i],['Dragon Ball',/dragon ball|ドラゴンボール/i],['One Piece',/\bone piece\b|ワンピース/i],['BE@RBRICK',/be@rbrick|bearbrick|ベアブリック/i],['Batman',/\bbatman\b|バットマン/i],['Basquiat',/basquiat|バスキア/i]
 ];
@@ -18,6 +19,8 @@ export function programmeGenres(o:Opportunity){
  }).flatMap(a=>a.genres.map(name=>({name})));
 }
 export function namedMention(text:string,name:string){const n=name.normalize('NFKC').trim().toLocaleLowerCase();if(n.length<2)return false;return new RegExp('(?<![\\p{L}\\p{N}])'+n.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?![\\p{L}\\p{N}])','u').test(text.normalize('NFKC').toLocaleLowerCase());}
+// Avoiding an artist is not evidence against every other artist in that genre.
+export function avoidedInterest(o:Opportunity,seeds:{id:string;name:string;type:string;weight?:number;feeling?:string}[]){return seeds.some(s=>interestWeight(s)<0&&((o.catalogEntities||[]).some(e=>e.id.toLowerCase()===s.id.toLowerCase())||(()=>{const m=interestMatch(o,s);return m?.kind==='direct'||m?.kind==='subject';})()));}
 export function interestMatch(o:Opportunity,seed:{id:string;name:string;type:string;taste?:{name:string;weight?:number}[]}){
  if(o.kind==='gig'&&!['artist','album'].includes(seed.type))return null;
  const artist=seed.type==='artist',subject=[o.title,...(artist?o.details?.artists||[]:[]),...(artist?(o.artists||[]).map(a=>a.name):[])];

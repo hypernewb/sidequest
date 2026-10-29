@@ -8,7 +8,7 @@ SideQuest now starts with time-limited events and drops. Discover a listening pa
 
 ## Start with events and drops
 
-Browse immediately, play the short taste round at `/taste`, or enter an artist, film, game or brand. Use Events, Limited drops, Online only or Tokyo in person. Exact online event times and order deadlines use the browser's timezone. Date-only listings retain organiser dates.
+Browse immediately, tell a short story at `/taste`, or enter an artist, film, game or brand. Use Events, Limited drops, Online only or Tokyo in person. Exact online event times and order deadlines use the browser's timezone. Date-only listings retain organiser dates.
 
 A live check on 28 October 2026 returned 337 eligible finds for the next 30 days, including 118 online opportunities and 18 online timed drops. The snapshot contains 151 gigs, 14 exhibitions, 44 pop-ups, 110 other events and 18 releases. These counts combine the existing official catalog with the new online sources; they are not 266 newly added events or a measure of hype.
 
@@ -18,20 +18,23 @@ Global records persist in D1 and participate in the existing scheduled catalog r
 
 Taste matching retains direct names and specific genre evidence, then uses Qloo candidate affinity and returned contributor evidence for cultural associations. Source and format variety break ties. No trending score, social popularity count or guaranteed shipping region is inferred. See [the live feed check](evaluation/EVENT-FIRST.md).
 
-## Build taste through discoveries
+## Tell us what matters
 
-`/taste` and the default `/stumble` entry show two actual events or drops with official artwork where available. Pick what catches you, save a useful find immediately, or choose Neither / Don't know. Later pairs respond to earlier choices. There is no required category, budget or persona questionnaire.
+At `/taste`, describe named cultural interests in your own words, or add one name. Qloo resolves artists, works and brands. Review each suggestion before adding it, then set its strength. Existing profiles open directly on the strength controls. Stumble opens with one actual find rather than a required either/or game.
 
-Choices guide the current session immediately. After a few comparisons, keep interests explicitly or continue for today. Practical preferences stay separate. The single-find view uses the same exploration and repetition rules. Undo, finite rounds, shared saves and clear source links remain available.
+Love has weight 1, Like 0.65 and Curious 0.4. Not using has weight 0 and remains in the profile without steering results. Avoid has weight -1 and excludes listings that name the artist, work or franchise. It does not reject a whole genre. Changing these strengths changes direct and genre ranking, Qloo contributor influence, and the single-find selector. Explicit strengths override old positive saves for the same identity.
 
-The deterministic selector combines Qloo evidence with source-supported cultural facets, session choices, uncertainty and diversity. It does not claim to be a trained bandit. See [the discovery play check](evaluation/DISCOVERY-PLAY.md).
+The story reader recognises explicit English preference wording. It suggests cultural names and strengths, with an editable review for errors and ambiguous identities. It does not infer motives, diagnose a personality or invent a persona. Raw writing stays in component memory; only extracted name searches go to the existing Qloo lookup. Confirmed names and strengths stay in this browser. Save clears older interview tags and session comparisons while preserving practical settings and saved-event reactions.
+
+Qloo receives confirmed positive entity IDs. SideQuest applies the relative strengths to source matching, priority and the returned contributor evidence. A per-entity weight is not fabricated in the provider request, and provider affinity values are retained unchanged. When contributor evidence is absent, the smaller fallback boost follows overall positive strength but cannot distinguish which individual interest caused the association. See [the weighted taste checks](evaluation/TASTE-STRENGTH.md).
+
 ## Qloo and the event inventory
 
 The matching service resolves source-named cultural entities and scores inventory candidates in bounded batches across supported domains. It retains affinity and contributor evidence instead of reducing an association to a name-only flag. Comparisons stay within a domain and request context. A film, game or brand can act as an input signal for related cultural candidates. Exact identity ambiguity stays unresolved.
 
-The taste scout chooses one supported official calendar from WWW, mograg or Shibuya PARCO using the current direction or seed domain. It only adds dated announcements that name a confirmed or returned related entity. Zero matching announcements remains zero. Research links for other related names are separate, unverified leads. Interview calibration uses stored snapshots and skips remote ranking/scouting so the round can stay short; live question requests have an eight-second recovery path.
+The taste scout chooses one supported official calendar from WWW, mograg or Shibuya PARCO using the current direction or seed domain. It only adds dated announcements that name a confirmed or returned related entity. Zero matching announcements remains zero. Research links for other related names are separate, unverified leads. The optional comparison round remains in source; the primary story setup uses live name lookup and an editable review.
 
-No-name interview choices use explicit editorial tags against actual listing/category/genre evidence. Those labels are not passed to Qloo as invented tag IDs or described as Qloo findings. Mapped identities, scored candidates and missing coverage remain inspectable under Sources & taste connections. Automated checks cover behavior; they do not establish that Qloo beats a human or another model.
+Legacy no-name interview choices use explicit editorial tags against actual listing/category/genre evidence. Those labels are not passed to Qloo as invented tag IDs or described as Qloo findings. Mapped identities, scored candidates and missing coverage remain inspectable under Sources & taste connections. Automated checks cover behavior; they do not establish that Qloo beats a human or another model.
 
 ## Optional Tokyo walking quests
 

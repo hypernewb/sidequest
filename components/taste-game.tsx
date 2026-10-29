@@ -1,2 +1,2 @@
 'use client';
-export {default} from './discovery-play';
+export {default} from './taste-lore';

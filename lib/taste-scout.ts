@@ -1,3 +1,4 @@
+import {interestWeight} from './interest-strength.ts';
 import {parseWWW,parseParco,parseMograg,type OfficialItem} from './official-events.ts';
 import {namedMention} from './interest-match.ts';
 import type {Opportunity,Preferences} from './opportunities.ts';
@@ -5,12 +6,12 @@ import type {MomentTasteContext} from './taste-profile.ts';
 import type {TasteScouting} from './catalog-taste.ts';
 
 export async function scoutOfficialTaste(related:TasteScouting[],p:Preferences,context:MomentTasteContext|undefined,read:(k:string)=>Promise<any>,write:(k:string,v:any)=>Promise<void>,fetcher:typeof fetch=fetch,now=new Date()){
- const direction=context?.direction||context?.answers?.invitation,domain=p.seeds[0]?.type;
+ const direction=context?.direction||context?.answers?.invitation,domain=[...p.seeds.filter(s=>interestWeight(s)>0)].filter(s=>interestWeight(s)>0).sort((a,b)=>interestWeight(b)-interestWeight(a))[0]?.type;
  const choice=direction==='music'||!direction&&domain==='artist'?'www':direction==='art'?'mograg':'parco';
  const local=new Date(now.toLocaleDateString('en-CA',{timeZone:'Asia/Tokyo'})+'T12:00:00Z'),year=local.getUTCFullYear(),month=local.getUTCMonth()+1;
  const url=choice==='www'?`https://www-shibuya.jp/schedule/${year}${String(month).padStart(2,'0')}.php`:choice==='mograg'?'https://mograg.com/index.html':'https://shibuya.parco.jp/event/';
  const source=choice==='www'?'WWW / WWW X':choice==='mograg'?'mograg gallery':'Shibuya PARCO';
- const names=[...related.map(e=>({id:e.id,name:e.name,type:e.type})),...p.seeds].filter(e=>e.name.length>=4);
+ const names=[...related.map(e=>({id:e.id,name:e.name,type:e.type})),...p.seeds.filter(s=>interestWeight(s)>0)].filter(e=>e.name.length>=4);
  if(!names.length)return {items:[] as Opportunity[],health:{source,url,status:'skipped',parsed:0,matched:0,message:'No confirmed cultural names to scout yet.'}};
  const cacheKey='taste-scout:v1:'+choice+':'+year+':'+month;let records:OfficialItem[]=[],cached=false,checkedAt=now.toISOString();
  try{
