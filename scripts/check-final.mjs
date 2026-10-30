@@ -2,17 +2,18 @@
 // hidden stdin. This never changes a visitor's browser taste or saved finds.
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
-const hosted=process.argv.includes('--hosted');
+const publicHosted=process.argv.includes('--public');
+const hosted=process.argv.includes('--hosted')||publicHosted;
 const base=hosted?'https://sidequest-tokyo-ckx.ckx-1994.chatgpt.site':'http://127.0.0.1:5173';
 let token='';
-if(hosted){
+if(hosted&&!publicHosted){
  console.log('Ready for private Site credential on hidden stdin.');
  if(!process.stdin.isTTY)throw Error('Use an interactive terminal for the private Site check.');
  process.stdin.setRawMode(true);process.stdin.resume();
  token=await new Promise(resolve=>{let text='';const read=data=>{for(const c of data.toString()){if(c==='\n'||c==='\r'){process.stdin.off('data',read);process.stdin.setRawMode(false);process.stdin.pause();resolve(text);return;}text+=c;}};process.stdin.on('data',read);});
 }
-const headers={...(hosted?{'OAI-Sites-Authorization':'Bearer '+token}:{}),'Content-Type':'application/json',Origin:base};
-const report={checkedAt:new Date().toISOString(),environment:hosted?'private production':'local Workers preview',scope:'Functional final check with live provider evidence and current persisted official inventory. No visitor profile edits, satisfaction scores or quality-lift claim.',pages:[],filters:[],profiles:[],checks:[]};
+const headers={...(hosted&&!publicHosted?{'OAI-Sites-Authorization':'Bearer '+token}:{}),'Content-Type':'application/json',Origin:base};
+const report={checkedAt:new Date().toISOString(),environment:publicHosted?'anonymous public production':hosted?'private production':'local Workers preview',scope:'Functional final check with live provider evidence and current persisted official inventory. No visitor profile edits, satisfaction scores or quality-lift claim.',pages:[],filters:[],profiles:[],checks:[]};
 async function request(path,body,options={}){
  const start=Date.now(),r=await fetch(base+path,{headers,...(body===undefined?{}:{method:'POST',body:JSON.stringify(body)}),signal:AbortSignal.timeout(options.timeout||45000),...options});
  const result=await r.json();assert.equal(r.status,200,path+' '+(result.error||r.status));return {...result,milliseconds:Date.now()-start};
@@ -21,6 +22,7 @@ function summary(b){return {total:b.total,milliseconds:b.milliseconds,qloo:b.qlo
 for(const [path,marker]of [['/','moment-page'],['/taste','taste-lore'],['/stumble','stumble-page'],['/quests','quest-page'],['/classic','SideQuest']]){
  const r=await fetch(base+path,{headers,signal:AbortSignal.timeout(20000)}),html=await r.text();assert.equal(r.status,200,path);assert.ok(html.includes(marker),path+' surface missing');report.pages.push({path,status:r.status});
 }
+if(publicHosted){const denied=await fetch(base+'/api/catalog',{method:'POST',headers,body:JSON.stringify({action:'import',items:[]})});assert.equal(denied.status,403);report.checks.push({name:'Anonymous catalog edit denied',passed:true});}
 console.log('Pages passed.');
 const all=await request('/api/moments',{cachedOnly:true});assert.ok(all.items.length>0,'Catalog is empty');assert.ok(all.items.every(o=>o.kind!=='place'&&(!o.endsAt||Date.parse(o.endsAt)>Date.now())),'Place or expired cutoff leaked into feed');report.catalog={total:all.total,sources:new Set(all.items.map(o=>o.source)).size,kinds:Object.fromEntries([...new Set(all.items.map(o=>o.kind))].map(kind=>[kind,all.items.filter(o=>o.kind===kind).length]))};
 for(const [access,category]of [['online','all'],['tokyo','events'],['all','drops']]){
@@ -45,4 +47,4 @@ report.agent.replan={basis:'Visitor-reported closure, simulated for this check. 
 assert.ok(!replan.quest.stops.some(s=>s.item.title==='Pianola Records')||new Date(replan.quest.date+'T12:00:00+09:00').getUTCDay()!==4,'Thursday closure leaked into route');
 console.log('Reported-closure replan passed.',report.agent.replan.stops.join(' -> '));
 report.overlap=report.profiles.flatMap((a,i)=>report.profiles.slice(i+1).map(b=>({profiles:[a.name,b.name],sharedTopSix:a.top.filter(o=>b.top.some(v=>v.id===o.id)).length})));
-await mkdir(hosted?'outputs':'evaluation',{recursive:true});const path=hosted?'outputs/final-hosted-check.json':'evaluation/FINAL-LOCAL.json';await writeFile(path,JSON.stringify(report,null,2)+'\n');console.log('Passed. Saved '+path);
+await mkdir(hosted?'outputs':'evaluation',{recursive:true});const path=publicHosted?'outputs/final-public-check.json':hosted?'outputs/final-hosted-check.json':'evaluation/FINAL-LOCAL.json';await writeFile(path,JSON.stringify(report,null,2)+'\n');console.log('Passed. Saved '+path);

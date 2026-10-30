@@ -5,7 +5,7 @@ if(process.argv.includes('--hosted')){
  console.log('Ready for service credential on hidden stdin.');
  process.stdin.setRawMode(true);process.stdin.resume();
  const token=await new Promise(resolve=>{let input='';const onData=chunk=>{for(const c of chunk.toString()){if(c==='\r'||c==='\n'){process.stdin.off('data',onData);process.stdin.setRawMode(false);process.stdin.pause();resolve(input);return;}input+=c;}};process.stdin.on('data',onData);});
- headers['OAI-Sites-Authorization']='Bearer '+token;
+ headers['OAI-Sites-Authorization']='Bearer '+token;headers['X-SideQuest-Catalog-Key']=token;
 }
 const call=async(path,body)=>{const r=await fetch(base+path,{method:body?'POST':'GET',headers,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(120000)});if(!r.ok)throw Error(path+' returned '+r.status);return r.json();};
 if(process.argv.includes('--refresh'))for(const action of ['refresh','expand']){const b=await call('/api/catalog',{action});console.log(action,b.records,b.at);}

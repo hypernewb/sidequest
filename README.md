@@ -2,6 +2,12 @@
 
 Catch it while it's here.
 
+[Submission checklist](SUBMISSION-CHECKLIST.md) · [Submission text](DEVPOST.md) · [Third-party notices](THIRD-PARTY-NOTICES.md)
+
+The local final delivery packet is `outputs/submission-ready/`. Read its `START-HERE.md` for the narrated video and supporting assets. Earlier recordings are archived with a restore manifest. The submission audit found restricted demo access and an outdated public GitHub snapshot; resolve both before entering.
+
+Public release maintenance uses a separate server-side catalog credential. Anonymous visitors can request generated title and excerpt translations, but cannot import records, supply translations or run bulk maintenance. Read [the maintenance instructions](.openai/catalog-maintenance.md) before running the existing cloud updater. Its prompt needs the added maintenance header; that prompt update has not been verified.
+
 [Open SideQuest](https://sidequest-tokyo-ckx.ckx-1994.chatgpt.site/) · [Two-minute demo script](DEMO.md) · [Three-taste review](evaluation/THREE-TASTES.md)
 
 SideQuest now starts with time-limited events and drops. Discover a listening party, gig, pop-up, exhibition or timed order window, in person or online. Qloo connects named interests to source evidence. Permanent venues and ordinary stock listings stay outside the main feed. Tokyo walking quests remain at `/quests`.
