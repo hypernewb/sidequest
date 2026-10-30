@@ -36,13 +36,13 @@ Published weekly schedules do not establish a special closure or ticket availabi
 
 ## What we tested
 
-The last application verification recorded 290 passing automated tests, TypeScript and a production build. Functional reviews compare contrasting tastes, exercise closure replanning, inspect map and planning behavior, and check sourced door notes. Evidence is linked in README.md and evaluation/.
+The last application verification recorded 292 passing automated tests, TypeScript and a production build. Functional reviews compare contrasting tastes, exercise closure replanning, inspect map and planning behavior, and check sourced door notes. Evidence is linked in README.md and evaluation/PUBLIC-RELEASE.md.
 
 The demo compares selected Nujabes and Iron Maiden recommendations. Its closure report and visit rating are labelled demo interactions. These checks do not establish a human satisfaction score or a percentage improvement over a baseline.
 
 ## What comes next
 
-Broader independent source coverage, more complete Japanese extraction and translation, and a held-out human recommendation study. Provider access and reuse terms still constrain which sources can be offered publicly.
+Broader independent source coverage, more complete Japanese extraction and translation, and a held-out human recommendation study. The existing scheduled updater needs its new maintenance header configured and verified. Provider access and reuse terms still constrain which sources can be offered publicly.
 
 ## Built with
 
@@ -50,8 +50,8 @@ Qloo API, TypeScript, Next.js, React, Tailwind CSS, Cloudflare Workers, Vinext, 
 
 ## Links and judge walkthrough
 
-- App URL: https://sidequest-tokyo-ckx.ckx-1994.chatgpt.site/ . Restricted at audit time. Release and test signed out before submitting.
-- Repository: https://github.com/hypernewb/sidequest . Public, but the latest work still needs to be pushed.
+- App URL: https://sidequest-tokyo-ckx.ckx-1994.chatgpt.site/ . Public and tested signed out on 30 October 2026.
+- Repository: https://github.com/hypernewb/sidequest . Public and updated with the current application release.
 - Optional video: outputs/submission-ready/SideQuest-submission-with-your-voice-1080p.mp4 . Add a hosted URL if using the video field. Do not paste a local path into Devpost.
 - Begin with Nujabes, confirm the artist and adjust interest strength. Browse finds and the map, then open /quests to dispatch an outing. Try Iron Maiden separately to compare recommendations. Current availability can change results.
 - Setup and evidence: README.md. License: LICENSE. Provider and asset notices: THIRD-PARTY-NOTICES.md.

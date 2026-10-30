@@ -1,6 +1,6 @@
 # SideQuest submission checklist
 
-Audited 30 October 2026. This is a release checklist, not a claim that an entry has been submitted.
+Updated after the public release on 30 October 2026. Public access, the GitHub release and signed-out functional checks are complete. This is not a claim that the Devpost entry has been submitted. See evaluation/PUBLIC-RELEASE.md.
 
 ## Deadline and official references
 
@@ -17,15 +17,15 @@ The current Agentic competition does not require a demo video. Do not confuse it
 
 | Requirement | Audit result | Next action |
 | --- | --- | --- |
-| Working Qloo-powered agentic application | Implemented; prior functional checks documented | Run the final signed-out production walkthrough after access changes. |
-| Externally hosted and accessible demo | BLOCKED. Sites reports custom access, not public | Change audience deliberately and verify a new visitor can use the core flow. The overview explicitly excludes private-access-only entries, although the rules mention testing credentials. Follow the stricter public-demo requirement. |
-| Public source repository | Public GitHub repository confirmed | Push the reviewed current source. GitHub main is 442d7a7ff9a682a2f016b75dd649f6093d78e666, last pushed 26 October. Local application commit is 04321570645e02ad7791039424986f529d1bb71e, with documentation changes pending. Reconcile branches before pushing; do not force-push blindly. |
-| Detectable open-source license | Local MIT text repaired | Provider notes moved to THIRD-PARTY-NOTICES.md. Push and confirm GitHub detects MIT rather than Other. |
+| Working Qloo-powered agentic application | PASSED. 292 tests, TypeScript, build and public walkthrough | Review evaluation/PUBLIC-RELEASE.md for evidence and limits. |
+| Externally hosted and accessible demo | PASSED. Sites access is public | Fresh Chrome contexts and anonymous HTTP calls exercised the core features without an owner login or service credential. |
+| Public source repository | PASSED. Current application release pushed | Application commit 55533a6c9501b51e9787bbf32b1c8a22ab87d61e is public. Release documentation follows in GitHub. No force push was used. |
+| Detectable open-source license | PASSED. GitHub recognizes MIT | Provider notices are retained separately in THIRD-PARTY-NOTICES.md. |
 | Source, assets and setup instructions | README, code and environment example present | Verify a clean checkout installs, starts and documents required credentials and optional integrations. No credentials in repository or uploaded archives. |
 | English feature description | DEVPOST.md rewritten | Paste it into the actual entry fields and confirm every mandatory field there. |
 | Eligibility and registration | Not verified | Entrant confirms age, residency, conflicts, team representation and registration. Complete the entry, not only a saved draft. |
 | Third-party authorization | Requires review | Confirm Qloo/Fever/source reuse permissions and dependency/asset notices for public distribution. Attribution alone is not permission. |
-| Keep demo available for judging | Pending public release | Keep it free and usable through the end of 5 November Eastern time. Avoid disabling credentials or catalog access during judging. |
+| Keep demo available for judging | Public release is live | Keep it free and usable through the end of 5 November Eastern time. Avoid disabling credentials or catalog access during judging. |
 
 The rules and schedule give different judging end times on 5 November. Keep the demo online through the later rules time, 11:45 PM Eastern, and preferably until results are settled.
 
@@ -53,3 +53,7 @@ The judging criteria are technological implementation, design, potential impact 
 78 obsolete video takes, render segments and capture tests were moved into outputs/demo-video/archive/2026-10-30/ . Nothing was deleted. cleanup-manifest.json records original paths, archive paths, sizes and SHA-256 hashes. The current source takes, edit scripts and audio stems remain in outputs/demo-video/ so the final cut can be reproduced. Nine final delivery assets were copied to outputs/submission-ready/ and checked byte-for-byte using SHA-256.
 
 Source code, provider credentials, dependencies, databases, managed attachments, other projects and research/evaluation evidence were left in place. This cleanup covers SideQuest, not the user's whole computer.
+
+## Remaining operational limits
+
+The signed-out Japanese import retained its original and extracted times and pricing, but translation was partial and the structured venue field remained missing. The UI says so. The cloud catalog updater needs the maintenance header described in .openai/catalog-maintenance.md; authorized maintenance passed, but updating the existing task was blocked by an unavailable automation-management connection. Do not claim unattended refresh is verified after this release. Clean-checkout installation was not repeated.

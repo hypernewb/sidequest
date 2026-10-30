@@ -4,7 +4,7 @@ Catch it while it's here.
 
 [Submission checklist](SUBMISSION-CHECKLIST.md) · [Submission text](DEVPOST.md) · [Third-party notices](THIRD-PARTY-NOTICES.md)
 
-The local final delivery packet is `outputs/submission-ready/`. Read its `START-HERE.md` for the narrated video and supporting assets. Earlier recordings are archived with a restore manifest. The submission audit found restricted demo access and an outdated public GitHub snapshot; resolve both before entering.
+The local final delivery packet is `outputs/submission-ready/`. Read its `START-HERE.md` for the narrated video and supporting assets. Earlier recordings are archived with a restore manifest. The app is now public and GitHub has the current release. Read the [signed-out release check](evaluation/PUBLIC-RELEASE.md) for verification and remaining submission tasks.
 
 Public release maintenance uses a separate server-side catalog credential. Anonymous visitors can request generated title and excerpt translations, but cannot import records, supply translations or run bulk maintenance. Read [the maintenance instructions](.openai/catalog-maintenance.md) before running the existing cloud updater. Its prompt needs the added maintenance header; that prompt update has not been verified.
 
