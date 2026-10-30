@@ -46,5 +46,5 @@ test('stream reader handles split UTF-8 updates and rejects incomplete runs',asy
 
 test('sharing contains the actual schedule, source notes and map without requiring private app access',()=>{
  const q={title:'The record loop',date:'2026-10-25',seed:{name:'Nujabes'},invitation:'Follow one new name.',walkingMinutes:35,map:'https://www.google.com/maps/dir/?api=1',stops:[{arrival:'19:00',departure:'19:45',travelMinutes:8,mission:'Listen for a full record.',item:{title:'Little Soul Cafe',location:'Second floor, Tokyo',url:'https://www.littlesoulcafe.com/',curation:{doorNotes:['Opens at 19:00.']}}}]} as Quest;
- const text=questShareText(q);assert.match(text,/19:00–19:45 JST/);assert.match(text,/Opens at 19:00/);assert.match(text,/google.com\/maps/);assert.ok(!text.includes('Cash only'));assert.ok(!text.includes('chatgpt.site'));assert.ok(!text.includes('token'));
+ const text=questShareText(q);assert.match(text,/19:00–19:45 JST/);assert.ok(!text.includes('Door note: Opens at 19:00'));assert.match(text,/SideQuest suggestion: Listen for a full record/);assert.match(text,/google.com\/maps/);assert.ok(!text.includes('Cash only'));assert.ok(!text.includes('chatgpt.site'));assert.ok(!text.includes('token'));
 });

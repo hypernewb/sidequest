@@ -1,6 +1,7 @@
 import type {ScoutPlan,ScoutStop} from './scout.ts';
 import type {QuestSeed} from './quest-seeds.ts';
-export type Quest=Omit<ScoutPlan,'stops'> & {title:string;vibe:string;invitation:string;stops:(ScoutStop & {mission:string;programme?:{title:string;url:string;start:string;end:string;priceLabel:string}})[];catalogNote?:string;run?:import('./quest-run.ts').RunEvent[];seed:{id:string;name:string;type:string}};
+import {guideFor,type StopGuide} from './door-notes.ts';
+export type Quest=Omit<ScoutPlan,'stops'> & {title:string;vibe:string;invitation:string;stops:(ScoutStop & {mission:string;guide?:StopGuide;programme?:{title:string;url:string;start:string;end:string;priceLabel:string}})[];catalogNote?:string;run?:import('./quest-run.ts').RunEvent[];seed:{id:string;name:string;type:string}};
 const normalized=(v:string)=>v.normalize('NFKC').toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
 export function questChoices<T extends Pick<QuestSeed,'name'>>(query:string,candidates:T[]){const exact=candidates.filter(c=>normalized(c.name)===normalized(query));return (exact.length?exact:candidates).slice(0,4);}
 const SEED_ALIASES:Record<string,string>={
@@ -34,7 +35,7 @@ export function missionFor(category:string,index:number){
  return 'Go in with one small question. Ask the staff what is worth spending time with today, then follow the answer if it interests you. Check entry requirements first.';
 }
 export function composeQuest(plan:ScoutPlan,seed:Pick<QuestSeed,'id'|'name'|'type'>):Quest{
- const stops=plan.stops.map((s,i)=>({...s,mission:s.item.curation?.mission||missionFor(s.item.category,i)}));
+ const stops=plan.stops.map((s,i)=>({...s,mission:s.item.curation?.mission||missionFor(s.item.category,i),guide:guideFor(s.item,seed,i)}));
  const area=stops[0]?.item.curation?.area||'Tokyo',roles=stops.map(s=>s.item.curation?.role),has=(r:string)=>roles.includes(r as any);
  let title=area+', one shelf over';
  if(has('dig')&&has('listen'))title=area+', from sleeve to sound';

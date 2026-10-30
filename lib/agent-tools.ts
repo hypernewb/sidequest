@@ -11,6 +11,7 @@ import {planScout,prepareScout,openingWindows,type ScoutPlan,type RouteChange} f
 import {plainText} from './announcements.ts';
 import {composeQuest,resolveQuestSeed,questChoices,type Quest} from './quests.ts';
 import {programmeFor} from './quest-programmes.ts';
+import {applyDoorFacts} from './door-notes.ts';
 
 // Official weekly hours explicitly checked by the curator. Unknown admission stays unknown.
 const daily=(opens:string,closes:string)=>Object.fromEntries(['monday','tuesday','wednesday','thursday','friday','saturday','sunday'].map(d=>[d,[{opens,closes}]]));
@@ -32,7 +33,7 @@ export async function checkVenuePage(item:Opportunity,fetcher:typeof fetch=fetch
  const reader=r.body?.getReader();if(!reader)throw Error('Empty venue page');let size=0;const chunks:Uint8Array[]=[];try{for(;;){const {done,value}=await reader.read();if(done)break;size+=value.length;if(size>2500000)throw Error('Page too large');chunks.push(value);}}finally{await reader.cancel();}
  const bytes=new Uint8Array(size);let offset=0;for(const c of chunks){bytes.set(c,offset);offset+=c.length;}const head=new TextDecoder('latin1').decode(bytes.slice(0,5000)),charset=head.match(/charset=["']?([a-zA-Z0-9_-]+)/i)?.[1]||'utf-8';let html;try{html=new TextDecoder(charset).decode(bytes);}catch{html=new TextDecoder().decode(bytes);}
  const text=plainText(html);if(text.length<80||/^(?:.*\n)?(?:Checking your browser|メンテナンス中)/i.test(text.slice(0,200)))throw Error('No usable venue information');
- return datedVenueHours({...item,curation:{...item.curation!,sourceReadAt:now.toISOString()}},html,date);
+ return datedVenueHours(applyDoorFacts(item,html,now.toISOString()),html,date);
 }
 
 // ---------------------------------------------------------------------------
@@ -459,7 +460,7 @@ export async function toolSpatialCluster(input: ToolSpatialClusterInput): Promis
     const value = await checkVenuePage(s.item, fetch, now, plan.date, runSignal);
     const original = items.find(o => o.id === s.item.id)!;
     original.hours = value.hours;
-    original.curation = {...original.curation!, sourceReadAt: value.curation?.sourceReadAt, hoursBasis: value.curation?.hoursBasis};
+    original.curation = {...original.curation!, sourceReadAt: value.curation?.sourceReadAt, hoursBasis: value.curation?.hoursBasis, doorFacts:value.curation?.doorFacts};
     checked.add(s.item.id);
     if(!openingWindows(value.hours||{},plan.date).length){
      batch.push({venue:s.item.title,basis:'published_schedule',reason:'The official programme has no public opening window for '+plan.date+'.',before,after:[]});

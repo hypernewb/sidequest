@@ -1,5 +1,6 @@
 'use client';
 import {QuestDayActions,QuestStopRating} from './quest-day-actions';
+import QuestStopGuide from './quest-stop-guide';
 import {useEffect,useRef,useState} from 'react';
 import type {Quest} from '@/lib/quests';
 import {routeDistance,nextLeg} from '@/lib/quest-presentation';
@@ -209,16 +210,7 @@ export default function QuestBuilder(){
            <p className="outing-meta">{s.arrival}–{s.departure} JST {s.travelMinutes?`· Allow ${s.travelMinutes} minutes from the last stop${s.transit?' · Train: '+s.transit:''}`:'· Meet the afternoon here'}</p>
            <p className="quest-chapter">{s.item.curation?roleLabels[s.item.curation.role]:`Stop ${n+1}`}</p>
            <h3>{s.item.title}</h3>
-           <p className="quest-mission">{s.mission}</p>
-           
-           {!!s.item.curation?.doorNotes.length&&(
-             <div className="quest-tactical-notes">
-               <div className="quest-tactical-label">DOOR NOTES</div>
-               <ul>
-                 {s.item.curation.doorNotes.map(note=><li key={note}>{note}</li>)}
-               </ul>
-             </div>
-           )}
+           <QuestStopGuide guide={s.guide} mission={s.mission}/>
 
            {s.programme&&<p><a href={safeUrl(s.programme.url)||undefined} target="_blank" rel="noreferrer">{s.programme.title} ↗</a> · {s.programme.start}–{s.programme.end} · {englishPrice(s.programme.priceLabel)}</p>}
            <p className="quest-address">{s.item.location}</p>
@@ -229,6 +221,7 @@ export default function QuestBuilder(){
            <details>
              <summary>The connection</summary>
              <p>{s.reason}</p>
+             {typeof s.guide?.appreciation?.basis==='string'&&<p>{s.guide.appreciation.basis}</p>}
              {s.item.curation?.matchBasis==='album_tags'&&<p>This uses the album’s genres rather than a direct album-to-venue affinity.</p>}
              <p>{s.item.curation?.sourceReadAt?'Official page read at dispatch.':'Venue source in the curated catalog.'} Admission and stock are only confirmed when listed above.</p>
            </details>

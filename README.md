@@ -6,6 +6,16 @@ Catch it while it's here.
 
 SideQuest now starts with time-limited events and drops. Discover a listening party, gig, pop-up, exhibition or timed order window, in person or online. Qloo connects named interests to source evidence. Permanent venues and ordinary stock listings stay outside the main feed. Tokyo walking quests remain at `/quests`.
 
+## Quest door notes
+
+Each new quest stop separates **Before you go**, practical details extracted from its official page, from **A way into it**, a short SideQuest suggestion based on supported Qloo taste tags and the stop's activity. Suggestions vary between record browsing, listening, gallery viewing and reading. A nearby stopover does not inherit an invented taste connection.
+
+Source wording, the official link and the time read in Tokyo are expandable. Japanese access details retain their original wording alongside a scoped English rendering. Current extraction covers access and selected published hours or entry details for ten named venues, plus exact-name JSON-LD addresses elsewhere. It does not infer cash policies, fees, accessibility, photography rules or booking requirements from a venue category. When extraction has no supported fact, the stop links the official page and says the entry details are missing. Programme prices remain in the existing programme line when supplied.
+
+Source-specific weekly hours can update the route before replanning. Bar Music's weekday opening is now read as 18:30 when its official text supports that value. Special closures and public holidays still need the existing dated-source checks or visitor confirmation. Shared quests preserve the sourced facts and label editorial suggestions; older browser saves do not gain new verification claims.
+
+Validation includes 290 passing tests, real Qloo quests for Nujabes and Wong Kar-wai, and desktop/mobile source-disclosure checks. TypeScript and a production build passed before the final copy and spacing adjustments; final packaging verification is recorded separately in the implementation handoff. This is evidence-aware authored guidance, not a claim that Qloo writes venue rules or that every venue has complete practical data.
+
 ## Map, build a day and learn from visits
 
 The home feed now has All finds, Map & plan, and Been & rated. Browse the full range before choosing up to five stops. The map groups announcements at shared venue points, using existing source coordinates and reviewed Qloo place matches. Missing coordinates remain explicit; online finds stay in the list. Google Maps loads with `GOOGLE_MAPS_BROWSER_KEY`, a browser credential restricted to the Site's origin and Maps JavaScript API. Without usable Google access, the interactive OpenStreetMap fallback and Google Maps links remain available.
