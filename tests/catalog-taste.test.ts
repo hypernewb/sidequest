@@ -44,6 +44,18 @@ test('service caches bounded graph calls and editorial tags never reach Qloo',as
  const a=await enrichMomentTaste([item(1)],p,'fixture',read,write,context,request),count=calls,b=await enrichMomentTaste([item(1)],p,'fixture',read,write,context,request);
  assert.equal(calls,count);assert.ok(b.diagnostics.cacheHits>0);assert.equal(a.diagnostics.scoredEntities,1);assert.equal(a.diagnostics.tagSignals,0);
 });
+
+test('cold catalog requests score known candidates before optional graph discovery and name resolution',async()=>{
+ const order:string[]=[];
+ const result=await enrichMomentTaste([item(1,{title:'"Unresolved Film" screening'})],p,'fixture',undefined,undefined,undefined,async(path,params)=>{
+  order.push(params['filter.results.entities']?'candidate-score':path==='/search'?'identity-search':'graph-discovery');
+  if(path==='/search')throw Error('Optional name lookup unavailable');
+  return {results:{entities:params['filter.results.entities']?[{entity_id:id(1),name:'Artist 1',query:{affinity:.9}}]:[]}};
+ });
+ assert.equal(order[0],'candidate-score');
+ assert.ok(order.includes('identity-search'));
+ assert.equal(result.diagnostics.scoredEntities,1);
+});
 test('saving a real catalog identity changes subsequent candidate ranking without a negative signal',async()=>{
  const items=[item(1),item(2)];
  const request=async(_path:string,params:Record<string,string>)=>({results:{entities:params['filter.results.entities']?.split(',').map(entity_id=>({entity_id,name:'Artist '+(entity_id===id(1)?1:2),query:{affinity:params['signal.interests.entities'].includes(id(2))?(entity_id===id(2)?.95:.6):(entity_id===id(1)?.95:.6),explainability:{'signal.interests.entities':[{entity_id:id(999),score:1}]}}}))||[]}});

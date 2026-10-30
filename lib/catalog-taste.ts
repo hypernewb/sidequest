@@ -61,20 +61,14 @@ export async function enrichMomentTaste(items:Opportunity[],p:Preferences,key:st
  const hasTaste=p.seeds.some(s=>interestWeight(s)>0)||!!context?.tags.some(t=>/^urn:tag:/.test(t.id))||!!context?.reactions.some(r=>reactionTasteWeight(r)!==0);
  let cursor=0;try{cursor=Number((await read('catalog-taste:identity-cursor'))?.index)||0;}catch{}
  const ordered=[...new Set([...names.filter(n=>p.seeds.some(s=>normalize(s.name)===normalize(n))),...names.slice(cursor%Math.max(1,names.length)),...names.slice(0,cursor%Math.max(1,names.length))])];
- const identityStart=calls;
- for(const name of (hasTaste?ordered.slice(0,40):[]))try{
-  if(calls-identityStart>=4)break;identitySearches++;
-  const b=await cached('/search',{query:name,types:DOMAINS.map(d=>'urn:entity:'+d).join(','),take:'20'},key),entity=exactCatalogEntity(name,Array.isArray(b.results)?b.results:[]);
-  if(entity){resolved++;enriched=enriched.map(o=>entityFitsSourceRole(o,entity)&&namesFromSource(o).some(n=>normalize(n)===normalize(name))?{...o,catalogEntities:[...o.catalogEntities,entity]}:o);}else ambiguous++;
-  cursor=(names.indexOf(name)+1)%Math.max(1,names.length);
- }catch{}
- if(hasTaste)try{await write('catalog-taste:identity-cursor',{index:cursor});}catch{}
  let sourceInventory=[...new Map([...signalInventory.map(o=>({...o,catalogEntities:retainedCatalogEntities(o,history[o.id])})),...enriched].map(o=>[o.id,o])).values()];
  for(const o of sourceInventory)history[o.id]=catalogEntities(o);
  history=Object.fromEntries(Object.entries(history).slice(-2000));
  for(const o of sourceInventory)featureHistory[o.id]=momentTasteFeatures(o);
  featureHistory=Object.fromEntries(Object.entries(featureHistory).slice(-2000));
  const signals=positiveSignals(sourceInventory,p,context,history),tags=context?.tags.filter(t=>/^urn:tag:/.test(t.id))||[];
+ // Score known inventory before optional discovery spends the request budget.
+ const scored=await scoreInventoryCandidates(enriched.flatMap(o=>o.catalogEntities).sort((a,b)=>entityDomain(a.type).localeCompare(entityDomain(b.type))||a.id.toLowerCase().localeCompare(b.id.toLowerCase())),signals,key,{request:cached,tags,maxBatches:10});
  const scouting:TasteScouting[]=[];
  // Related names produce bounded official-source research links and can be
  // attached to inventory only where the actual source names that entity.
@@ -96,7 +90,15 @@ export async function enrichMomentTaste(items:Opportunity[],p:Preferences,key:st
  }catch{}
  // Stable identity ordering keeps rotating searches from reshuffling batch
  // membership. Newly discovered mappings are retained after this graph pass.
- const scored=await scoreInventoryCandidates(enriched.flatMap(o=>o.catalogEntities).sort((a,b)=>entityDomain(a.type).localeCompare(entityDomain(b.type))||a.id.toLowerCase().localeCompare(b.id.toLowerCase())),signals,key,{request:cached,tags,maxBatches:10});
+
+ const identityStart=calls;
+ for(const name of (hasTaste?ordered.slice(0,40):[]))try{
+  if(calls-identityStart>=4)break;identitySearches++;
+  const b=await cached('/search',{query:name,types:DOMAINS.map(d=>'urn:entity:'+d).join(','),take:'20'},key),entity=exactCatalogEntity(name,Array.isArray(b.results)?b.results:[]);
+  if(entity){resolved++;enriched=enriched.map(o=>entityFitsSourceRole(o,entity)&&namesFromSource(o).some(n=>normalize(n)===normalize(name))?{...o,catalogEntities:[...o.catalogEntities,entity]}:o);}else ambiguous++;
+  cursor=(names.indexOf(name)+1)%Math.max(1,names.length);
+ }catch{}
+ if(hasTaste)try{await write('catalog-taste:identity-cursor',{index:cursor});}catch{}
  sourceInventory=[...new Map([...sourceInventory,...enriched].map(o=>[o.id,o])).values()];
  for(const o of sourceInventory)history[o.id]=catalogEntities(o);
  history=Object.fromEntries(Object.entries(history).slice(-2000));
